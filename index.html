@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="ElectroMedición - Expertos en equipos de medición eléctrica para profesionales. Multímetros, pinzas amperimétricas, telurómetros y más.">
+  <title>ElectroMedición | Equipos de Medición Eléctrica Profesional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- H8: Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- H1: Page Loading Indicator -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-spinner"></div>
+    <span>Cargando...</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <span class="logo-text">Electro<span>Medición</span></span>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Inicio</a></li>
+          <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+          <li><a href="productos.html" class="nav-link">Productos</a></li>
+          <li><a href="cotizacion.html" class="nav-link">Cotización</a></li>
+        </ul>
+
+        <a href="cotizacion.html" class="cart-btn">
+          <span class="cart-icon">🛒</span>
+          <span>Cotizar</span>
+          <span class="cart-count hidden">0</span>
+        </a>
+
+        <button class="mobile-menu-btn" aria-label="Menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Presentación principal">
+      <div class="container hero-content">
+        <span class="hero-badge">🔧 Expertos en Medición Eléctrica</span>
+        <h1 class="hero-title">
+          Equipos de <span>Medición Profesional</span> para el Terreno
+        </h1>
+        <p class="hero-description">
+          Proveemos los mejores instrumentos de medición eléctrica para profesionales.
+          Multímetros, pinzas amperimétricas, telurómetros y todo lo que necesitas para
+          tus trabajos en terreno.
+        </p>
+        <div class="hero-buttons">
+          <a href="productos.html" class="btn btn-primary">
+            Ver Productos
+          </a>
+          <a href="cotizacion.html" class="btn btn-secondary">
+            Solicitar Cotización
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
+          <circle cx="200" cy="200" r="140" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
+          <circle cx="200" cy="200" r="100" stroke="rgba(255,255,255,0.2)" stroke-width="2" />
+          <text x="200" y="220" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="80">⚡</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section categories">
+      <div class="container">
+        <h2 class="section-title">Categorías de Productos</h2>
+        <p class="section-subtitle">Encuentra el equipo de medición perfecto para tus necesidades profesionales</p>
+
+        <div class="categories-grid">
+          <a href="productos.html?cat=multimetros" class="category-card">
+            <div class="category-icon">📊</div>
+            <h3 class="category-title">Multímetros</h3>
+            <p class="category-count">Digitales y analógicos</p>
+          </a>
+
+          <a href="productos.html?cat=pinzas" class="category-card">
+            <div class="category-icon">🔌</div>
+            <h3 class="category-title">Pinzas Amperimétricas</h3>
+            <p class="category-count">AC/DC profesionales</p>
+          </a>
+
+          <a href="productos.html?cat=telurometros" class="category-card">
+            <div class="category-icon">🌍</div>
+            <h3 class="category-title">Telurómetros</h3>
+            <p class="category-count">Medición de tierra</p>
+          </a>
+
+          <a href="productos.html?cat=megohmetros" class="category-card">
+            <div class="category-icon">🔋</div>
+            <h3 class="category-title">Megóhmetros</h3>
+            <p class="category-count">Aislación eléctrica</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Productos Destacados</h2>
+        <p class="section-subtitle">Los equipos más solicitados por nuestros clientes profesionales</p>
+
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card" data-product-id="prod-001" data-category="multimetros">
+            <div class="product-image">
+              <span class="product-badge">Popular</span>
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Crect x='60' y='30' width='80' height='140' rx='8' fill='%23003366'/%3E%3Crect x='70' y='45' width='60' height='40' rx='4' fill='%234D9FFF'/%3E%3Ccircle cx='100' cy='120' r='20' fill='%23222'/%3E%3Ctext x='100' y='125' text-anchor='middle' fill='white' font-size='12'%3EAUTO%3C/text%3E%3C/svg%3E"
+                alt="Multímetro Digital">
+            </div>
+            <div class="product-content">
+              <span class="product-category">Multímetros</span>
+              <h3 class="product-title">Multímetro Digital Profesional TRMS</h3>
+              <p class="product-description">Multímetro digital True RMS con rango automático, ideal para mediciones
+                precisas en terreno.</p>
+              <div class="product-footer">
+                <span class="product-sku">SKU: MUL-001</span>
+                <button class="add-to-quote-btn">
+                  <span>+</span> Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card" data-product-id="prod-002" data-category="pinzas">
+            <div class="product-image">
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Cpath d='M70 60 Q100 20 130 60 L130 80 Q100 100 70 80 Z' fill='%23003366'/%3E%3Crect x='80' y='80' width='40' height='90' rx='6' fill='%230066CC'/%3E%3Crect x='85' y='90' width='30' height='25' rx='3' fill='%234D9FFF'/%3E%3C/svg%3E"
+                alt="Pinza Amperimétrica">
+            </div>
+            <div class="product-content">
+              <span class="product-category">Pinzas</span>
+              <h3 class="product-title">Pinza Amperimétrica AC/DC 1000A</h3>
+              <p class="product-description">Pinza de alta precisión para corriente alterna y continua hasta 1000A.</p>
+              <div class="product-footer">
+                <span class="product-sku">SKU: PIN-002</span>
+                <button class="add-to-quote-btn">
+                  <span>+</span> Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card" data-product-id="prod-003" data-category="telurometros">
+            <div class="product-image">
+              <span class="product-badge">Nuevo</span>
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Crect x='50' y='40' width='100' height='80' rx='8' fill='%23003366'/%3E%3Crect x='60' y='50' width='80' height='40' rx='4' fill='%234D9FFF'/%3E%3Crect x='55' y='130' width='20' height='40' fill='%23666'/%3E%3Crect x='85' y='130' width='20' height='40' fill='%23666'/%3E%3Crect x='125' y='130' width='20' height='40' fill='%23666'/%3E%3C/svg%3E"
+                alt="Telurómetro Digital">
+            </div>
+            <div class="product-content">
+              <span class="product-category">Telurómetros</span>
+              <h3 class="product-title">Telurómetro Digital 4 Polos</h3>
+              <p class="product-description">Medidor de resistencia de tierra con método de 4 polos para máxima
+                precisión.</p>
+              <div class="product-footer">
+                <span class="product-sku">SKU: TEL-003</span>
+                <button class="add-to-quote-btn">
+                  <span>+</span> Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card" data-product-id="prod-004" data-category="megohmetros">
+            <div class="product-image">
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Crect x='55' y='35' width='90' height='130' rx='10' fill='%230066CC'/%3E%3Crect x='65' y='50' width='70' height='45' rx='5' fill='%234D9FFF'/%3E%3Ccircle cx='100' cy='135' r='25' fill='%23003366'/%3E%3Cline x1='100' y1='115' x2='120' y2='140' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+                alt="Megóhmetro">
+            </div>
+            <div class="product-content">
+              <span class="product-category">Megóhmetros</span>
+              <h3 class="product-title">Megóhmetro 5kV Digital</h3>
+              <p class="product-description">Medidor de aislación hasta 5000V para cables, motores y transformadores.
+              </p>
+              <div class="product-footer">
+                <span class="product-sku">SKU: MEG-004</span>
+                <button class="add-to-quote-btn">
+                  <span>+</span> Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="productos.html" class="btn btn-primary">Ver Todos los Productos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features">
+      <div class="container">
+        <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+        <p class="section-subtitle">Más de 20 años entregando soluciones de medición eléctrica a profesionales</p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">✓</div>
+            <h3 class="feature-title">Calidad Garantizada</h3>
+            <p class="feature-description">Todos nuestros equipos cuentan con certificación y garantía extendida.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🚚</div>
+            <h3 class="feature-title">Despacho Nacional</h3>
+            <p class="feature-description">Enviamos a todo el país con seguimiento en tiempo real de tu pedido.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💼</div>
+            <h3 class="feature-title">Soporte Técnico</h3>
+            <p class="feature-description">Equipo de ingenieros disponibles para asesorarte en tu compra.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3 class="feature-title">Mejores Precios</h3>
+            <p class="feature-description">Cotizaciones competitivas para empresas y profesionales.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: var(--gray-50);">
+      <div class="container" style="text-align: center;">
+        <h2 class="section-title">¿Necesitas una Cotización?</h2>
+        <p class="section-subtitle">Agrega los productos que necesitas y solicita tu cotización personalizada</p>
+        <a href="productos.html" class="btn btn-primary" style="margin-right: 1rem;">Explorar Productos</a>
+        <a href="cotizacion.html" class="btn btn-secondary">Ver Mi Cotización</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <div class="logo-icon">⚡</div>
+              <span class="logo-text" style="color: white;">Electro<span>Medición</span></span>
+            </a>
+            <p>Expertos en equipos de medición eléctrica para profesionales. Más de 20 años entregando calidad y
+              confianza.</p>
+            <div class="footer-social">
+              <a href="#" class="social-link" aria-label="Facebook">📘</a>
+              <a href="#" class="social-link" aria-label="Instagram">📷</a>
+              <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+              <a href="#" class="social-link" aria-label="YouTube">🎬</a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4 class="footer-title">Navegación</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="nosotros.html">Nosotros</a></li>
+              <li><a href="productos.html">Productos</a></li>
+              <li><a href="cotizacion.html">Cotización</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 class="footer-title">Productos</h4>
+            <ul class="footer-links">
+              <li><a href="productos.html?cat=multimetros">Multímetros</a></li>
+              <li><a href="productos.html?cat=pinzas">Pinzas Amperimétricas</a></li>
+              <li><a href="productos.html?cat=telurometros">Telurómetros</a></li>
+              <li><a href="productos.html?cat=megohmetros">Megóhmetros</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 class="footer-title">Contacto</h4>
+            <div class="footer-contact-item">
+              <span>📍</span>
+              <span>Av. Principal 1234, Santiago</span>
+            </div>
+            <div class="footer-contact-item">
+              <span>📞</span>
+              <span>+56 2 2345 6789</span>
+            </div>
+            <div class="footer-contact-item">
+              <span>✉️</span>
+              <span>ventas@electromedicion.cl</span>
+            </div>
+            <div class="footer-contact-item">
+              <span>🕐</span>
+              <span>Lun - Vie: 9:00 - 18:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 ElectroMedición. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

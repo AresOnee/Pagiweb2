@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Solicita tu cotización de equipos de medición eléctrica. Respuesta rápida y precios competitivos.">
+    <title>Cotización | ElectroMedición</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- H8: Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- H1: Page Loading Indicator -->
+    <div class="page-loader" id="page-loader">
+        <div class="loader-spinner"></div>
+        <span>Cargando...</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">Electro<span>Medición</span></span>
+            </a>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="productos.html" class="nav-link">Productos</a></li>
+                    <li><a href="cotizacion.html" class="nav-link active">Cotización</a></li>
+                </ul>
+
+                <a href="cotizacion.html" class="cart-btn">
+                    <span class="cart-icon">🛒</span>
+                    <span>Cotizar</span>
+                    <span class="cart-count hidden">0</span>
+                </a>
+
+                <button class="mobile-menu-btn" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero" aria-label="Encabezado de página">
+            <div class="container">
+                <h1 class="page-hero-title">Solicitar Cotización</h1>
+                <div class="page-hero-breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <span>Cotización</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="section quote-section">
+            <div class="container">
+                <h2 class="section-title">Tu Lista de Cotización</h2>
+                <p class="section-subtitle">Revisa los productos seleccionados y completa el formulario para recibir tu
+                    cotización</p>
+
+                <div class="quote-container">
+                    <!-- Quote Items -->
+                    <div class="quote-items-wrapper">
+                        <div class="quote-items" id="quote-items">
+                            <!-- Items will be rendered by JavaScript -->
+                        </div>
+
+                        <!-- Empty Cart Message -->
+                        <div class="empty-cart" id="empty-cart" style="display: none;">
+                            <div class="empty-cart-icon">🛒</div>
+                            <h3>Tu lista está vacía</h3>
+                            <p>Agrega productos desde nuestro catálogo para solicitar una cotización</p>
+                            <a href="productos.html" class="btn btn-primary" style="margin-top: 1rem;">Ver Productos</a>
+                        </div>
+                    </div>
+
+                    <!-- Quote Form -->
+                    <div class="quote-form-container" id="quote-form">
+                        <form id="quote-form-element" class="quote-form">
+                            <h3>Datos de Contacto</h3>
+
+                            <div class="form-group">
+                                <label for="nombre" class="form-label">Nombre Completo *</label>
+                                <input type="text" id="nombre" name="nombre" class="form-input" required
+                                    placeholder="Juan Pérez">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="empresa" class="form-label">Empresa</label>
+                                <input type="text" id="empresa" name="empresa" class="form-input"
+                                    placeholder="Nombre de tu empresa">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="rut" class="form-label">RUT</label>
+                                <input type="text" id="rut" name="rut" class="form-input" placeholder="12.345.678-9">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" id="email" name="email" class="form-input" required
+                                    placeholder="tu@email.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefono" class="form-label">Teléfono *</label>
+                                <input type="tel" id="telefono" name="telefono" class="form-input" required
+                                    placeholder="+56 9 1234 5678">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="comentarios" class="form-label">Comentarios o Consultas</label>
+                                <textarea id="comentarios" name="comentarios" class="form-textarea"
+                                    placeholder="¿Tienes alguna pregunta o requerimiento especial?"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary submit-quote-btn">
+                                📧 Enviar Solicitud de Cotización
+                            </button>
+
+                            <p
+                                style="font-size: 0.75rem; color: var(--gray-500); margin-top: 1rem; text-align: center;">
+                                * Campos obligatorios. Te responderemos en menos de 24 horas hábiles.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works -->
+        <section class="section" style="background: var(--gray-50);">
+            <div class="container">
+                <h2 class="section-title">¿Cómo Funciona?</h2>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div style="text-align: center; padding: 2rem;">
+                        <div
+                            style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem; color: white;">
+                            1</div>
+                        <h4 style="color: var(--dark-blue); margin-bottom: 0.5rem;">Selecciona Productos</h4>
+                        <p style="color: var(--gray-600); font-size: 0.9rem;">Navega por nuestro catálogo y agrega los
+                            productos que necesitas a tu lista de cotización.</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 2rem;">
+                        <div
+                            style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem; color: white;">
+                            2</div>
+                        <h4 style="color: var(--dark-blue); margin-bottom: 0.5rem;">Completa tus Datos</h4>
+                        <p style="color: var(--gray-600); font-size: 0.9rem;">Ingresa tu información de contacto para
+                            que
+                            podamos enviarte la cotización.</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 2rem;">
+                        <div
+                            style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem; color: white;">
+                            3</div>
+                        <h4 style="color: var(--dark-blue); margin-bottom: 0.5rem;">Recibe tu Cotización</h4>
+                        <p style="color: var(--gray-600); font-size: 0.9rem;">En menos de 24 horas hábiles recibirás tu
+                            cotización personalizada por email.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Info -->
+        <section class="section features">
+            <div class="container">
+                <h2 class="section-title">¿Necesitas Ayuda?</h2>
+                <p class="section-subtitle">Nuestro equipo está disponible para asistirte</p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📞</div>
+                        <h3 class="feature-title">Llámanos</h3>
+                        <p class="feature-description">+56 2 2345 6789<br>Lun - Vie: 9:00 - 18:00</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">✉️</div>
+                        <h3 class="feature-title">Email</h3>
+                        <p class="feature-description">ventas@electromedicion.cl<br>Respuesta en 24 hrs</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3 class="feature-title">WhatsApp</h3>
+                        <p class="feature-description">+56 9 8765 4321<br>Respuesta inmediata</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">📍</div>
+                        <h3 class="feature-title">Visítanos</h3>
+                        <p class="feature-description">Av. Principal 1234<br>Santiago, Chile</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="logo">
+                            <div class="logo-icon">⚡</div>
+                            <span class="logo-text" style="color: white;">Electro<span>Medición</span></span>
+                        </a>
+                        <p>Expertos en equipos de medición eléctrica para profesionales. Más de 20 años entregando
+                            calidad y
+                            confianza.</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+                            <a href="#" class="social-link" aria-label="YouTube">🎬</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4 class="footer-title">Navegación</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="productos.html">Productos</a></li>
+                            <li><a href="cotizacion.html">Cotización</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4 class="footer-title">Productos</h4>
+                        <ul class="footer-links">
+                            <li><a href="productos.html?cat=multimetros">Multímetros</a></li>
+                            <li><a href="productos.html?cat=pinzas">Pinzas Amperimétricas</a></li>
+                            <li><a href="productos.html?cat=telurometros">Telurómetros</a></li>
+                            <li><a href="productos.html?cat=megohmetros">Megóhmetros</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4 class="footer-title">Contacto</h4>
+                        <div class="footer-contact-item">
+                            <span>📍</span>
+                            <span>Av. Principal 1234, Santiago</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span>📞</span>
+                            <span>+56 2 2345 6789</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span>✉️</span>
+                            <span>ventas@electromedicion.cl</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span>🕐</span>
+                            <span>Lun - Vie: 9:00 - 18:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>© 2026 ElectroMedición. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
