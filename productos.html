@@ -2,426 +2,496 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Catálogo de equipos de medición eléctrica - Multímetros, pinzas amperimétricas, telurómetros, megóhmetros y más.">
-    <title>Productos | ElectroMedición</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catalogo de equipos de medicion electrica - Multimetros, pinzas amperimetricas, telurometros, megohmetros y mas.">
+  <meta name="keywords" content="multimetros, pinzas amperimetricas, telurometros, megohmetros, equipos medicion">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Productos | ElectroMedicion">
+  <meta property="og:description" content="Catalogo completo de equipos de medicion electrica profesional.">
+  <meta property="og:type" content="website">
+
+  <title>Productos | ElectroMedicion</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230052CC'/%3E%3Cpath d='M16 6l3 8h8l-6.5 5 2.5 8-7-5-7 5 2.5-8L5 14h8z' fill='%23FFD700'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <!-- H8: Skip Link for Accessibility -->
-    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    <!-- H1: Page Loading Indicator -->
-    <div class="page-loader" id="page-loader">
-        <div class="loader-spinner"></div>
-        <span>Cargando...</span>
+  <div class="page-loader" id="page-loader">
+    <div class="loader-spinner"></div>
+    <span class="loader-text">Cargando...</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <span>Electro<strong>Medicion</strong></span>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+          <li><a href="productos.html" class="nav-link active">Productos</a></li>
+          <li><a href="cotizacion.html" class="nav-link">Cotizacion</a></li>
+        </ul>
+
+        <a href="cotizacion.html" class="cart-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span>Cotizar</span>
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+
+        <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <ul class="nav-list">
+      <li><a href="index.html" class="nav-link">Inicio</a></li>
+      <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+      <li><a href="productos.html" class="nav-link active">Productos</a></li>
+      <li><a href="cotizacion.html" class="nav-link">Cotizacion</a></li>
+    </ul>
+  </div>
+
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="about-hero">
+      <div class="container">
+        <h1 class="section-title" data-aos="fade-up">Nuestros Productos</h1>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Equipos de medicion profesional para todas tus necesidades en terreno</p>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <div class="container">
+        <ul class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-separator">/</li>
+          <li class="breadcrumb-item active">Productos</li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">⚡</div>
-                <span class="logo-text">Electro<span>Medición</span></span>
-            </a>
-
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
-                    <li><a href="productos.html" class="nav-link active">Productos</a></li>
-                    <li><a href="cotizacion.html" class="nav-link">Cotización</a></li>
-                </ul>
-
-                <a href="cotizacion.html" class="cart-btn">
-                    <span class="cart-icon">🛒</span>
-                    <span>Cotizar</span>
-                    <span class="cart-count hidden">0</span>
-                </a>
-
-                <button class="mobile-menu-btn" aria-label="Menú">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </nav>
+    <!-- Products Section -->
+    <section class="section products">
+      <div class="container">
+        <!-- Filters -->
+        <div class="filter-container" data-aos="fade-up">
+          <button class="filter-btn active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="multimetros">Multimetros</button>
+          <button class="filter-btn" data-filter="pinzas">Pinzas Amperimetricas</button>
+          <button class="filter-btn" data-filter="telurometros">Telurometros</button>
+          <button class="filter-btn" data-filter="megohmetros">Megohmetros</button>
+          <button class="filter-btn" data-filter="analizadores">Analizadores</button>
+          <button class="filter-btn" data-filter="detectores">Detectores</button>
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Page Hero -->
-        <section class="page-hero" aria-label="Encabezado de página">
-            <div class="container">
-                <h1 class="page-hero-title">Productos</h1>
-                <div class="page-hero-breadcrumb">
-                    <a href="index.html">Inicio</a>
-                    <span>/</span>
-                    <span>Productos</span>
-                </div>
+        <!-- Products Grid -->
+        <div class="product-grid">
+          <!-- Product 1 -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="100" data-category="multimetros">
+            <div class="product-image">
+              <span class="product-badge">Popular</span>
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="30" y="10" width="60" height="100" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <rect x="38" y="20" width="44" height="30" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
+                <text x="60" y="42" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">12.45V</text>
+                <circle cx="60" cy="75" r="18" fill="#f8fafc" stroke="#94a3b8"/>
+                <circle cx="60" cy="75" r="3" fill="#0052CC"/>
+                <line x1="60" y1="75" x2="72" y2="65" stroke="#0052CC" stroke-width="2"/>
+              </svg>
             </div>
-        </section>
-
-        <!-- Products Section -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Nuestro Catálogo</h2>
-                <p class="section-subtitle">Equipos de medición profesional para todas tus necesidades en terreno</p>
-
-                <!-- Filters -->
-                <div class="product-filters">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="multimetros">Multímetros</button>
-                    <button class="filter-btn" data-filter="pinzas">Pinzas Amperimétricas</button>
-                    <button class="filter-btn" data-filter="telurometros">Telurómetros</button>
-                    <button class="filter-btn" data-filter="megohmetros">Megóhmetros</button>
-                    <button class="filter-btn" data-filter="analizadores">Analizadores</button>
-                    <button class="filter-btn" data-filter="detectores">Detectores</button>
-                </div>
-
-                <!-- Products Grid -->
-                <div class="products-grid">
-                    <!-- Product 1 -->
-                    <div class="product-card" data-product-id="prod-001" data-category="multimetros">
-                        <div class="product-image">
-                            <span class="product-badge">Popular</span>
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Crect x='60' y='30' width='80' height='140' rx='8' fill='%23003366'/%3E%3Crect x='70' y='45' width='60' height='40' rx='4' fill='%234D9FFF'/%3E%3Ccircle cx='100' cy='120' r='20' fill='%23222'/%3E%3Ctext x='100' y='125' text-anchor='middle' fill='white' font-size='12'%3EAUTO%3C/text%3E%3C/svg%3E"
-                                alt="Multímetro Digital">
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category">Multímetros</span>
-                            <h3 class="product-title">Multímetro Digital Profesional TRMS</h3>
-                            <p class="product-description">Multímetro digital True RMS con rango automático. Mide
-                                voltaje,
-                                corriente, resistencia, capacitancia y frecuencia.</p>
-                            <div class="product-footer">
-                                <span class="product-sku">SKU: MUL-001</span>
-                                <button class="add-to-quote-btn">
-                                    <span>+</span> Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 2 -->
-                    <div class="product-card" data-product-id="prod-002" data-category="multimetros">
-                        <div class="product-image">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Crect x='55' y='25' width='90' height='150' rx='10' fill='%230066CC'/%3E%3Crect x='65' y='40' width='70' height='45' rx='5' fill='%234D9FFF'/%3E%3Ccircle cx='100' cy='125' r='25' fill='%23222'/%3E%3Ctext x='100' y='130' text-anchor='middle' fill='white' font-size='10'%3ERANGE%3C/text%3E%3C/svg%3E"
-                                alt="Multímetro Compacto">
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category">Multímetros</span>
-                            <h3 class="product-title">Multímetro Compacto de Bolsillo</h3>
-                            <p class="product-description">Multímetro portátil ideal para trabajos rápidos. Diseño
-                                compacto
-                                y resistente a impactos.</p>
-                            <div class="product-footer">
-                                <span class="product-sku">SKU: MUL-002</span>
-                                <button class="add-to-quote-btn">
-                                    <span>+</span> Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 3 -->
-                    <div class="product-card" data-product-id="prod-003" data-category="pinzas">
-                        <div class="product-image">
-                            <span class="product-badge">Bestseller</span>
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Cpath d='M70 60 Q100 20 130 60 L130 80 Q100 100 70 80 Z' fill='%23003366'/%3E%3Crect x='80' y='80' width='40' height='90' rx='6' fill='%230066CC'/%3E%3Crect x='85' y='90' width='30' height='25' rx='3' fill='%234D9FFF'/%3E%3C/svg%3E"
-                                alt="Pinza Amperimétrica">
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category">Pinzas Amperimétricas</span>
-                            <h3 class="product-title">Pinza Amperimétrica AC/DC 1000A</h3>
-                            <p class="product-description">Pinza de alta precisión para corriente alterna y continua
-                                hasta
-                                1000A. Incluye función de retención.</p>
-                            <div class="product-footer">
-                                <span class="product-sku">SKU: PIN-001</span>
-                                <button class="add-to-quote-btn">
-                                    <span>+</span> Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 4 -->
-                    <div class="product-card" data-product-id="prod-004" data-category="pinzas">
-                        <div class="product-image">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Cpath d='M65 55 Q100 15 135 55 L135 75 Q100 95 65 75 Z' fill='%23004080'/%3E%3Crect x='75' y='75' width='50' height='100' rx='8' fill='%230066CC'/%3E%3Crect x='82' y='85' width='36' height='30' rx='4' fill='%234D9FFF'/%3E%3C/svg%3E"
-                                alt="Pinza Flexible">
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category">Pinzas Amperimétricas</span>
-                            <h3 class="product-title">Pinza Flexible 3000A</h3>
-                            <p class="product-description">Pinza con sensor flexible para mediciones en espacios
-                                reducidos.
-                                Ideal para barras y cables gruesos.</p>
-                            <div class="product-footer">
-                                <span class="product-sku">SKU: PIN-002</span>
-                                <button class="add-to-quote-btn">
-                                    <span>+</span> Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 5 -->
-                    <div class="product-card" data-product-id="prod-005" data-category="telurometros">
-                        <div class="product-image">
-                            <span class="product-badge">Nuevo</span>
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Crect x='50' y='40' width='100' height='80' rx='8' fill='%23003366'/%3E%3Crect x='60' y='50' width='80' height='40' rx='4' fill='%234D9FFF'/%3E%3Crect x='55' y='130' width='20' height='40' fill='%23666'/%3E%3Crect x='85' y='130' width='20' height='40' fill='%23666'/%3E%3Crect x='125' y='130' width='20' height='40' fill='%23666'/%3E%3C/svg%3E"
-                                alt="Telurómetro Digital">
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category">Telurómetros</span>
-                            <h3 class="product-title">Telurómetro Digital 4 Polos</h3>
-                            <p class="product-description">Medidor de resistencia de tierra con método de 4 polos para
-                                máxima precisión. Resistividad del terreno.</p>
-                            <div class="product-footer">
-                                <span class="product-sku">SKU: TEL-001</span>
-                                <button class="add-to-quote-btn">
-                                    <span>+</span> Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 6 -->
-                    <div class="product-card" data-product-id="prod-006" data-category="telurometros">
-                        <div class="product-image">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Crect x='45' y='35' width='110' height='90' rx='10' fill='%230066CC'/%3E%3Crect x='55' y='45' width='90' height='50' rx='5' fill='%234D9FFF'/%3E%3Crect x='60' y='135' width='25' height='35' fill='%23555'/%3E%3Crect x='115' y='135' width='25' height='35' fill='%23555'/%3E%3C/svg%3E"
-                                alt="Telurómetro Pinza">
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category">Telurómetros</span>
-                            <h3 class="product-title">Telurómetro de Pinza</h3>
-                            <p class="product-description">Medición de tierra sin necesidad de desconectar. Ideal para
-                                sistemas de puesta a tierra en servicio.</p>
-                            <div class="product-footer">
-                                <span class="product-sku">SKU: TEL-002</span>
-                                <button class="add-to-quote-btn">
-                                    <span>+</span> Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 7 -->
-                    <div class="product-card" data-product-id="prod-007" data-category="megohmetros">
-                        <div class="product-image">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Crect x='55' y='35' width='90' height='130' rx='10' fill='%230066CC'/%3E%3Crect x='65' y='50' width='70' height='45' rx='5' fill='%234D9FFF'/%3E%3Ccircle cx='100' cy='135' r='25' fill='%23003366'/%3E%3Cline x1='100' y1='115' x2='120' y2='140' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
-                                alt="Megóhmetro">
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category">Megóhmetros</span>
-                            <h3 class="product-title">Megóhmetro 5kV Digital</h3>
-                            <p class="product-description">Medidor de aislación hasta 5000V para cables, motores y
-                                transformadores. Rango hasta 1TΩ.</p>
-                            <div class="product-footer">
-                                <span class="product-sku">SKU: MEG-001</span>
-                                <button class="add-to-quote-btn">
-                                    <span>+</span> Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 8 -->
-                    <div class="product-card" data-product-id="prod-008" data-category="megohmetros">
-                        <div class="product-image">
-                            <span class="product-badge">Pro</span>
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Crect x='50' y='30' width='100' height='140' rx='12' fill='%23003366'/%3E%3Crect x='60' y='45' width='80' height='50' rx='6' fill='%234D9FFF'/%3E%3Ccircle cx='100' cy='140' r='30' fill='%23004080'/%3E%3Cline x1='100' y1='115' x2='125' y2='150' stroke='%234D9FFF' stroke-width='4'/%3E%3C/svg%3E"
-                                alt="Megóhmetro 10kV">
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category">Megóhmetros</span>
-                            <h3 class="product-title">Megóhmetro 10kV Profesional</h3>
-                            <p class="product-description">Equipo de alta tensión para pruebas de aislación en
-                                subestaciones
-                                y equipos de potencia.</p>
-                            <div class="product-footer">
-                                <span class="product-sku">SKU: MEG-002</span>
-                                <button class="add-to-quote-btn">
-                                    <span>+</span> Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 9 -->
-                    <div class="product-card" data-product-id="prod-009" data-category="analizadores">
-                        <div class="product-image">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Crect x='40' y='40' width='120' height='100' rx='10' fill='%230066CC'/%3E%3Crect x='50' y='50' width='100' height='60' rx='5' fill='%23001a33'/%3E%3Cpath d='M60 90 L80 70 L100 85 L120 60 L140 80' stroke='%2300ff88' stroke-width='3' fill='none'/%3E%3Crect x='50' y='150' width='100' height='10' rx='3' fill='%23444'/%3E%3C/svg%3E"
-                                alt="Analizador de Redes">
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category">Analizadores</span>
-                            <h3 class="product-title">Analizador de Redes Trifásico</h3>
-                            <p class="product-description">Analizador de calidad de energía para redes trifásicas. Mide
-                                armónicos, potencia y factor de potencia.</p>
-                            <div class="product-footer">
-                                <span class="product-sku">SKU: ANA-001</span>
-                                <button class="add-to-quote-btn">
-                                    <span>+</span> Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 10 -->
-                    <div class="product-card" data-product-id="prod-010" data-category="analizadores">
-                        <div class="product-image">
-                            <span class="product-badge">Nuevo</span>
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Crect x='35' y='35' width='130' height='110' rx='8' fill='%23003366'/%3E%3Crect x='45' y='45' width='110' height='70' rx='5' fill='%23111'/%3E%3Cpath d='M55 90 Q70 50 85 80 Q100 110 115 70 Q130 30 145 90' stroke='%2300ff00' stroke-width='2' fill='none'/%3E%3Crect x='45' y='155' width='110' height='8' rx='4' fill='%23555'/%3E%3C/svg%3E"
-                                alt="Osciloscopio Portátil">
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category">Analizadores</span>
-                            <h3 class="product-title">Osciloscopio Portátil 100MHz</h3>
-                            <p class="product-description">Osciloscopio de mano con 2 canales, 100MHz de ancho de banda.
-                                Ideal para diagnóstico en terreno.</p>
-                            <div class="product-footer">
-                                <span class="product-sku">SKU: ANA-002</span>
-                                <button class="add-to-quote-btn">
-                                    <span>+</span> Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 11 -->
-                    <div class="product-card" data-product-id="prod-011" data-category="detectores">
-                        <div class="product-image">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Crect x='85' y='30' width='30' height='140' rx='15' fill='%230066CC'/%3E%3Ccircle cx='100' cy='55' r='12' fill='%23ff4444'/%3E%3Crect x='92' y='80' width='16' height='60' rx='3' fill='%23003366'/%3E%3C/svg%3E"
-                                alt="Detector de Voltaje">
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category">Detectores</span>
-                            <h3 class="product-title">Detector de Voltaje Sin Contacto</h3>
-                            <p class="product-description">Detector de tensión con indicador LED y sonoro. Detecta
-                                voltajes
-                                desde 12V hasta 1000V AC.</p>
-                            <div class="product-footer">
-                                <span class="product-sku">SKU: DET-001</span>
-                                <button class="add-to-quote-btn">
-                                    <span>+</span> Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 12 -->
-                    <div class="product-card" data-product-id="prod-012" data-category="detectores">
-                        <div class="product-image">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f8fafc' width='200' height='200'/%3E%3Crect x='60' y='40' width='80' height='120' rx='8' fill='%23003366'/%3E%3Crect x='70' y='55' width='60' height='35' rx='4' fill='%234D9FFF'/%3E%3Ccircle cx='100' cy='130' r='20' fill='%23004080'/%3E%3Ctext x='100' y='135' text-anchor='middle' fill='white' font-size='14'%3ESCAN%3C/text%3E%3C/svg%3E"
-                                alt="Localizador de Cables">
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category">Detectores</span>
-                            <h3 class="product-title">Localizador de Cables y Tuberías</h3>
-                            <p class="product-description">Detecta cables eléctricos, tuberías metálicas y estructuras
-                                ocultas en paredes y suelos.</p>
-                            <div class="product-footer">
-                                <span class="product-sku">SKU: DET-002</span>
-                                <button class="add-to-quote-btn">
-                                    <span>+</span> Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="product-content">
+              <span class="product-category">Multimetros</span>
+              <h3 class="product-title">Multimetro Digital Profesional TRMS</h3>
+              <p class="product-description">Multimetro digital True RMS con rango automatico. Mide voltaje, corriente, resistencia.</p>
+              <span class="product-sku">SKU: MUL-001</span>
+              <div class="product-footer">
+                <button class="btn-add-quote">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+                  Cotizar
+                </button>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <!-- CTA -->
-        <section class="section features">
-            <div class="container" style="text-align: center;">
-                <h2 class="section-title">¿No Encuentras lo que Buscas?</h2>
-                <p class="section-subtitle">Contáctanos y te ayudaremos a encontrar el equipo perfecto para tus
-                    necesidades
-                </p>
-                <a href="cotizacion.html" class="btn btn-primary"
-                    style="background: white; color: var(--dark-blue);">Solicitar Cotización Especial</a>
+          <!-- Product 2 -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="150" data-category="multimetros">
+            <div class="product-image">
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="35" y="15" width="50" height="90" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <rect x="42" y="25" width="36" height="25" rx="3" fill="#e2e8f0" stroke="#94a3b8"/>
+                <circle cx="60" cy="72" r="15" fill="#f8fafc" stroke="#94a3b8"/>
+              </svg>
             </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-brand">
-                        <a href="index.html" class="logo">
-                            <div class="logo-icon">⚡</div>
-                            <span class="logo-text" style="color: white;">Electro<span>Medición</span></span>
-                        </a>
-                        <p>Expertos en equipos de medición eléctrica para profesionales. Más de 20 años entregando
-                            calidad y
-                            confianza.</p>
-                        <div class="footer-social">
-                            <a href="#" class="social-link" aria-label="Facebook">📘</a>
-                            <a href="#" class="social-link" aria-label="Instagram">📷</a>
-                            <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
-                            <a href="#" class="social-link" aria-label="YouTube">🎬</a>
-                        </div>
-                    </div>
-
-                    <div class="footer-section">
-                        <h4 class="footer-title">Navegación</h4>
-                        <ul class="footer-links">
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="nosotros.html">Nosotros</a></li>
-                            <li><a href="productos.html">Productos</a></li>
-                            <li><a href="cotizacion.html">Cotización</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-section">
-                        <h4 class="footer-title">Productos</h4>
-                        <ul class="footer-links">
-                            <li><a href="productos.html?cat=multimetros">Multímetros</a></li>
-                            <li><a href="productos.html?cat=pinzas">Pinzas Amperimétricas</a></li>
-                            <li><a href="productos.html?cat=telurometros">Telurómetros</a></li>
-                            <li><a href="productos.html?cat=megohmetros">Megóhmetros</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-section">
-                        <h4 class="footer-title">Contacto</h4>
-                        <div class="footer-contact-item">
-                            <span>📍</span>
-                            <span>Av. Principal 1234, Santiago</span>
-                        </div>
-                        <div class="footer-contact-item">
-                            <span>📞</span>
-                            <span>+56 2 2345 6789</span>
-                        </div>
-                        <div class="footer-contact-item">
-                            <span>✉️</span>
-                            <span>ventas@electromedicion.cl</span>
-                        </div>
-                        <div class="footer-contact-item">
-                            <span>🕐</span>
-                            <span>Lun - Vie: 9:00 - 18:00</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer-bottom">
-                    <p>© 2026 ElectroMedición. Todos los derechos reservados.</p>
-                </div>
+            <div class="product-content">
+              <span class="product-category">Multimetros</span>
+              <h3 class="product-title">Multimetro Compacto de Bolsillo</h3>
+              <p class="product-description">Multimetro portatil ideal para trabajos rapidos. Diseno compacto y resistente.</p>
+              <span class="product-sku">SKU: MUL-002</span>
+              <div class="product-footer">
+                <button class="btn-add-quote">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+                  Cotizar
+                </button>
+              </div>
             </div>
-        </footer>
-    </main>
+          </div>
 
-    <script src="js/main.js"></script>
+          <!-- Product 3 -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="200" data-category="pinzas">
+            <div class="product-image">
+              <span class="product-badge">Bestseller</span>
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M40 25 Q60 5 80 25 L80 40 Q60 55 40 40 Z" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <rect x="48" y="40" width="24" height="65" rx="4" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <rect x="52" y="48" width="16" height="20" rx="2" fill="#e2e8f0" stroke="#94a3b8"/>
+                <text x="60" y="62" text-anchor="middle" fill="#334155" font-size="8" font-weight="bold">1000A</text>
+              </svg>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Pinzas</span>
+              <h3 class="product-title">Pinza Amperimetrica AC/DC 1000A</h3>
+              <p class="product-description">Pinza de alta precision para corriente alterna y continua hasta 1000A.</p>
+              <span class="product-sku">SKU: PIN-001</span>
+              <div class="product-footer">
+                <button class="btn-add-quote">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+                  Cotizar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="250" data-category="pinzas">
+            <div class="product-image">
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M35 20 Q60 0 85 20 L85 38 Q60 55 35 38 Z" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <rect x="45" y="38" width="30" height="70" rx="5" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <rect x="50" y="46" width="20" height="22" rx="2" fill="#e2e8f0" stroke="#94a3b8"/>
+              </svg>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Pinzas</span>
+              <h3 class="product-title">Pinza Flexible 3000A</h3>
+              <p class="product-description">Pinza con sensor flexible para mediciones en espacios reducidos.</p>
+              <span class="product-sku">SKU: PIN-002</span>
+              <div class="product-footer">
+                <button class="btn-add-quote">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+                  Cotizar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="100" data-category="telurometros">
+            <div class="product-image">
+              <span class="product-badge new">Nuevo</span>
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="25" y="20" width="70" height="50" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <rect x="32" y="28" width="56" height="28" rx="3" fill="#e2e8f0" stroke="#94a3b8"/>
+                <text x="60" y="47" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">0.5 ohm</text>
+                <line x1="35" y1="70" x2="35" y2="100" stroke="#64748b" stroke-width="3"/>
+                <line x1="60" y1="70" x2="60" y2="100" stroke="#64748b" stroke-width="3"/>
+                <line x1="85" y1="70" x2="85" y2="100" stroke="#64748b" stroke-width="3"/>
+              </svg>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Telurometros</span>
+              <h3 class="product-title">Telurometro Digital 4 Polos</h3>
+              <p class="product-description">Medidor de resistencia de tierra con metodo de 4 polos para maxima precision.</p>
+              <span class="product-sku">SKU: TEL-001</span>
+              <div class="product-footer">
+                <button class="btn-add-quote">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+                  Cotizar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="150" data-category="telurometros">
+            <div class="product-image">
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="25" y="25" width="70" height="55" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <rect x="32" y="32" width="56" height="32" rx="3" fill="#e2e8f0" stroke="#94a3b8"/>
+                <line x1="40" y1="80" x2="40" y2="100" stroke="#64748b" stroke-width="4"/>
+                <line x1="80" y1="80" x2="80" y2="100" stroke="#64748b" stroke-width="4"/>
+              </svg>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Telurometros</span>
+              <h3 class="product-title">Telurometro de Pinza</h3>
+              <p class="product-description">Medicion de tierra sin necesidad de desconectar. Ideal para sistemas en servicio.</p>
+              <span class="product-sku">SKU: TEL-002</span>
+              <div class="product-footer">
+                <button class="btn-add-quote">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+                  Cotizar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 7 -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="200" data-category="megohmetros">
+            <div class="product-image">
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="30" y="15" width="60" height="90" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <rect x="38" y="25" width="44" height="30" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
+                <text x="60" y="45" text-anchor="middle" fill="#334155" font-size="9" font-weight="bold">5000V</text>
+                <circle cx="60" cy="80" r="15" fill="#f8fafc" stroke="#94a3b8"/>
+                <path d="M52 80 L60 72 L68 88" stroke="#0052CC" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Megohmetros</span>
+              <h3 class="product-title">Megohmetro 5kV Digital</h3>
+              <p class="product-description">Medidor de aislacion hasta 5000V para cables, motores y transformadores.</p>
+              <span class="product-sku">SKU: MEG-001</span>
+              <div class="product-footer">
+                <button class="btn-add-quote">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+                  Cotizar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 8 -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="250" data-category="megohmetros">
+            <div class="product-image">
+              <span class="product-badge">Pro</span>
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="28" y="12" width="64" height="96" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <rect x="36" y="22" width="48" height="35" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
+                <text x="60" y="45" text-anchor="middle" fill="#334155" font-size="9" font-weight="bold">10kV</text>
+                <circle cx="60" cy="82" r="18" fill="#f8fafc" stroke="#94a3b8"/>
+              </svg>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Megohmetros</span>
+              <h3 class="product-title">Megohmetro 10kV Profesional</h3>
+              <p class="product-description">Equipo de alta tension para pruebas de aislacion en subestaciones.</p>
+              <span class="product-sku">SKU: MEG-002</span>
+              <div class="product-footer">
+                <button class="btn-add-quote">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+                  Cotizar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 9 -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="100" data-category="analizadores">
+            <div class="product-image">
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="20" y="25" width="80" height="60" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <rect x="28" y="32" width="64" height="38" rx="3" fill="#1e293b"/>
+                <path d="M35 58 L50 42 L65 52 L80 38" stroke="#22c55e" stroke-width="2" fill="none"/>
+                <rect x="35" y="90" width="50" height="6" rx="2" fill="#64748b"/>
+              </svg>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Analizadores</span>
+              <h3 class="product-title">Analizador de Redes Trifasico</h3>
+              <p class="product-description">Analizador de calidad de energia para redes trifasicas. Mide armonicos y potencia.</p>
+              <span class="product-sku">SKU: ANA-001</span>
+              <div class="product-footer">
+                <button class="btn-add-quote">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+                  Cotizar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 10 -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="150" data-category="analizadores">
+            <div class="product-image">
+              <span class="product-badge new">Nuevo</span>
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="18" y="22" width="84" height="65" rx="5" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <rect x="25" y="28" width="70" height="45" rx="3" fill="#0f172a"/>
+                <path d="M32 55 Q45 30 58 50 Q71 70 84 45" stroke="#22c55e" stroke-width="2" fill="none"/>
+                <rect x="30" y="92" width="60" height="5" rx="2" fill="#64748b"/>
+              </svg>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Analizadores</span>
+              <h3 class="product-title">Osciloscopio Portatil 100MHz</h3>
+              <p class="product-description">Osciloscopio de mano con 2 canales, 100MHz. Ideal para diagnostico en terreno.</p>
+              <span class="product-sku">SKU: ANA-002</span>
+              <div class="product-footer">
+                <button class="btn-add-quote">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+                  Cotizar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 11 -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="200" data-category="detectores">
+            <div class="product-image">
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="50" y="20" width="20" height="85" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <circle cx="60" cy="35" r="8" fill="#ef4444"/>
+                <rect x="54" y="50" width="12" height="45" rx="2" fill="#e2e8f0" stroke="#94a3b8"/>
+              </svg>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Detectores</span>
+              <h3 class="product-title">Detector de Voltaje Sin Contacto</h3>
+              <p class="product-description">Detector de tension con indicador LED y sonoro. Detecta 12V hasta 1000V AC.</p>
+              <span class="product-sku">SKU: DET-001</span>
+              <div class="product-footer">
+                <button class="btn-add-quote">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+                  Cotizar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 12 -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="250" data-category="detectores">
+            <div class="product-image">
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="35" y="25" width="50" height="75" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <rect x="42" y="35" width="36" height="25" rx="3" fill="#e2e8f0" stroke="#94a3b8"/>
+                <circle cx="60" cy="80" r="12" fill="#f8fafc" stroke="#94a3b8"/>
+                <text x="60" y="84" text-anchor="middle" fill="#334155" font-size="8" font-weight="bold">SCAN</text>
+              </svg>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Detectores</span>
+              <h3 class="product-title">Localizador de Cables y Tuberias</h3>
+              <p class="product-description">Detecta cables electricos, tuberias metalicas y estructuras ocultas.</p>
+              <span class="product-sku">SKU: DET-002</span>
+              <div class="product-footer">
+                <button class="btn-add-quote">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+                  Cotizar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content" data-aos="zoom-in">
+          <h2 class="cta-title">No Encuentras lo que Buscas?</h2>
+          <p class="cta-description">Contactanos y te ayudaremos a encontrar el equipo perfecto para tus necesidades.</p>
+          <div class="cta-buttons">
+            <a href="cotizacion.html" class="btn btn-white btn-lg">Solicitar Cotizacion Especial</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <span>Electro<strong>Medicion</strong></span>
+          </a>
+          <p>Expertos en equipos de medicion electrica para profesionales.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Navegacion</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Inicio</a></li>
+            <li><a href="nosotros.html" class="footer-link">Nosotros</a></li>
+            <li><a href="productos.html" class="footer-link">Productos</a></li>
+            <li><a href="cotizacion.html" class="footer-link">Cotizacion</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Av. Principal 1234, Santiago</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>+56 2 2345 6789</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span>ventas@electromedicion.cl</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ElectroMedicion. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>
