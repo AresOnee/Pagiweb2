@@ -1,23 +1,318 @@
 /**
- * ElectroMedición - JavaScript Principal
- * Funcionalidades: Carrito, Filtros, Menú Móvil, Animaciones, Validación
+ * ElectroMedicion - JavaScript Principal
+ * Funcionalidades: Carrito, Filtros, Menu Movil, Animaciones, Validacion, Modal, Dark Mode
  */
 
 // ============================================
-// 1. CONFIGURACIÓN GLOBAL
+// 1. CONFIGURACION GLOBAL
 // ============================================
 const CONFIG = {
   storageKey: 'electromedicion_cart',
+  themeKey: 'electromedicion_theme',
   animationThreshold: 0.1,
   toastDuration: 3000,
   counterDuration: 2000
+};
+
+// Base de datos de productos (para detalles)
+const PRODUCTS_DB = {
+  'MUL-001': {
+    sku: 'MUL-001',
+    title: 'Multimetro Digital Profesional TRMS',
+    category: 'Multimetros',
+    description: 'Multimetro digital True RMS con rango automatico, ideal para mediciones precisas en terreno. Pantalla LCD retroiluminada de alta visibilidad.',
+    features: [
+      'True RMS para mediciones precisas',
+      'Rango automatico',
+      'Categoria de seguridad CAT III 1000V',
+      'Pantalla LCD retroiluminada',
+      'Retencion de datos (HOLD)',
+      'Medicion de temperatura incluida'
+    ],
+    specs: {
+      'Voltaje DC': '0.1mV - 1000V',
+      'Voltaje AC': '0.1mV - 750V',
+      'Corriente DC': '0.1uA - 10A',
+      'Corriente AC': '0.1uA - 10A',
+      'Resistencia': '0.1ohm - 60Mohm',
+      'Capacitancia': '1pF - 60mF',
+      'Frecuencia': '0.01Hz - 60MHz',
+      'Peso': '350g',
+      'Dimensiones': '175 x 85 x 45 mm'
+    },
+    inStock: true,
+    badge: 'Popular'
+  },
+  'MUL-002': {
+    sku: 'MUL-002',
+    title: 'Multimetro Compacto de Bolsillo',
+    category: 'Multimetros',
+    description: 'Multimetro portatil ideal para trabajos rapidos. Diseno compacto y resistente para llevar a cualquier lugar.',
+    features: [
+      'Diseno ultra compacto',
+      'Carcasa resistente a golpes',
+      'Apagado automatico',
+      'Indicador de bateria baja',
+      'Facil de usar'
+    ],
+    specs: {
+      'Voltaje DC': '200mV - 600V',
+      'Voltaje AC': '200V - 600V',
+      'Corriente DC': '200uA - 10A',
+      'Resistencia': '200ohm - 20Mohm',
+      'Peso': '150g',
+      'Dimensiones': '130 x 70 x 25 mm'
+    },
+    inStock: true,
+    badge: null
+  },
+  'PIN-001': {
+    sku: 'PIN-001',
+    title: 'Pinza Amperimetrica AC/DC 1000A',
+    category: 'Pinzas',
+    description: 'Pinza de alta precision para corriente alterna y continua hasta 1000A. Ideal para instalaciones industriales.',
+    features: [
+      'Medicion AC/DC hasta 1000A',
+      'Apertura de mordaza 42mm',
+      'Funcion de pico (Peak Hold)',
+      'True RMS',
+      'Retroiluminacion automatica',
+      'Categoria CAT III 1000V'
+    ],
+    specs: {
+      'Corriente AC': '0.1A - 1000A',
+      'Corriente DC': '0.1A - 1000A',
+      'Voltaje AC': '0.1V - 750V',
+      'Voltaje DC': '0.1V - 1000V',
+      'Resistencia': '0.1ohm - 60Mohm',
+      'Apertura mordaza': '42mm',
+      'Peso': '420g'
+    },
+    inStock: true,
+    badge: 'Bestseller'
+  },
+  'PIN-002': {
+    sku: 'PIN-002',
+    title: 'Pinza Flexible 3000A',
+    category: 'Pinzas',
+    description: 'Pinza con sensor flexible para mediciones en espacios reducidos. Ideal para cables gruesos y barras.',
+    features: [
+      'Sensor flexible de 24 pulgadas',
+      'Medicion hasta 3000A AC',
+      'Ideal para espacios reducidos',
+      'Compatible con cables gruesos',
+      'Salida analogica para registro'
+    ],
+    specs: {
+      'Corriente AC': '10A - 3000A',
+      'Frecuencia': '40Hz - 1kHz',
+      'Longitud sensor': '610mm (24")',
+      'Diametro minimo': '7mm',
+      'Diametro maximo': '178mm',
+      'Peso': '280g'
+    },
+    inStock: true,
+    badge: null
+  },
+  'TEL-001': {
+    sku: 'TEL-001',
+    title: 'Telurometro Digital 4 Polos',
+    category: 'Telurometros',
+    description: 'Medidor de resistencia de tierra con metodo de 4 polos para maxima precision. Cumple normas internacionales.',
+    features: [
+      'Metodo de 4 polos (Wenner)',
+      'Metodo de 3 polos',
+      'Metodo de 2 polos',
+      'Medicion de resistividad',
+      'Memoria para 500 registros',
+      'Interfaz USB para PC'
+    ],
+    specs: {
+      'Rango tierra': '0.01ohm - 30kohm',
+      'Rango resistividad': '0.01ohm·m - 9999kohm·m',
+      'Precision': '±2%',
+      'Frecuencia de prueba': '94Hz, 105Hz, 111Hz, 128Hz',
+      'Memoria': '500 registros',
+      'Peso': '680g'
+    },
+    inStock: true,
+    badge: 'Nuevo'
+  },
+  'TEL-002': {
+    sku: 'TEL-002',
+    title: 'Telurometro de Pinza',
+    category: 'Telurometros',
+    description: 'Medicion de tierra sin necesidad de desconectar. Ideal para sistemas en servicio y mediciones rapidas.',
+    features: [
+      'Medicion sin desconexion',
+      'Medicion de corriente de fuga',
+      'Apertura de pinza 32mm',
+      'Alarma configurable',
+      'Memoria de datos'
+    ],
+    specs: {
+      'Rango tierra': '0.01ohm - 1500ohm',
+      'Rango corriente': '0.2mA - 30A',
+      'Apertura pinza': '32mm',
+      'Frecuencia': '1kHz',
+      'Memoria': '100 registros',
+      'Peso': '580g'
+    },
+    inStock: true,
+    badge: null
+  },
+  'MEG-001': {
+    sku: 'MEG-001',
+    title: 'Megohmetro 5kV Digital',
+    category: 'Megohmetros',
+    description: 'Medidor de aislacion hasta 5000V para cables, motores y transformadores. Uso profesional e industrial.',
+    features: [
+      'Tensiones de prueba: 500V, 1kV, 2.5kV, 5kV',
+      'Indice de polarizacion (PI)',
+      'Relacion de absorcion (DAR)',
+      'Prueba de rampa de voltaje',
+      'Descarga automatica',
+      'Memoria USB'
+    ],
+    specs: {
+      'Tensiones': '500V, 1kV, 2.5kV, 5kV',
+      'Rango aislacion': '100kohm - 15Tohm',
+      'Corriente de cortocircuito': '2mA max',
+      'PI y DAR': 'Automatico',
+      'Memoria': '1000 registros',
+      'Peso': '1.8kg'
+    },
+    inStock: true,
+    badge: null
+  },
+  'MEG-002': {
+    sku: 'MEG-002',
+    title: 'Megohmetro 10kV Profesional',
+    category: 'Megohmetros',
+    description: 'Equipo de alta tension para pruebas de aislacion en subestaciones y equipos de alta potencia.',
+    features: [
+      'Tensiones hasta 10kV',
+      'Pantalla grafica color',
+      'Pruebas automaticas programables',
+      'Software de analisis incluido',
+      'Bateria de larga duracion',
+      'Certificado de calibracion'
+    ],
+    specs: {
+      'Tensiones': '500V, 1kV, 2.5kV, 5kV, 10kV',
+      'Rango aislacion': '100kohm - 35Tohm',
+      'Precision': '±5%',
+      'Pantalla': '5.7" color TFT',
+      'Bateria': '8 horas continuas',
+      'Peso': '3.2kg'
+    },
+    inStock: true,
+    badge: 'Pro'
+  },
+  'ANA-001': {
+    sku: 'ANA-001',
+    title: 'Analizador de Redes Trifasico',
+    category: 'Analizadores',
+    description: 'Analizador de calidad de energia para redes trifasicas. Mide armonicos, potencia y calidad de energia.',
+    features: [
+      'Analisis trifasico completo',
+      'Medicion de armonicos hasta 50',
+      'Registro de eventos',
+      'Analisis de flicker',
+      'Conexion WiFi y Bluetooth',
+      'Software de analisis profesional'
+    ],
+    specs: {
+      'Voltaje': '1V - 1000V RMS',
+      'Corriente': '1mA - 6000A (con pinzas)',
+      'Frecuencia': '45Hz - 65Hz',
+      'Armonicos': 'Hasta orden 50',
+      'Clase de precision': 'A segun IEC 61000-4-30',
+      'Peso': '2.1kg'
+    },
+    inStock: true,
+    badge: null
+  },
+  'ANA-002': {
+    sku: 'ANA-002',
+    title: 'Osciloscopio Portatil 100MHz',
+    category: 'Analizadores',
+    description: 'Osciloscopio de mano con 2 canales, 100MHz. Ideal para diagnostico en terreno y mantenimiento.',
+    features: [
+      '2 canales analogicos',
+      'Ancho de banda 100MHz',
+      'Muestreo 1GS/s',
+      'Pantalla color 5.7"',
+      'Bateria integrada',
+      'Multimetro integrado'
+    ],
+    specs: {
+      'Canales': '2 analogicos',
+      'Ancho de banda': '100MHz',
+      'Muestreo': '1GS/s',
+      'Memoria': '40Mpts',
+      'Pantalla': '5.7" TFT color',
+      'Bateria': '6 horas',
+      'Peso': '1.5kg'
+    },
+    inStock: true,
+    badge: 'Nuevo'
+  },
+  'DET-001': {
+    sku: 'DET-001',
+    title: 'Detector de Voltaje Sin Contacto',
+    category: 'Detectores',
+    description: 'Detector de tension con indicador LED y sonoro. Detecta 12V hasta 1000V AC de forma segura.',
+    features: [
+      'Deteccion sin contacto',
+      'Rango 12V - 1000V AC',
+      'Indicador LED y sonoro',
+      'Linterna integrada',
+      'Clip de bolsillo',
+      'Categoria CAT IV 1000V'
+    ],
+    specs: {
+      'Rango': '12V - 1000V AC',
+      'Frecuencia': '50/60Hz',
+      'Indicacion': 'LED rojo + sonido',
+      'Linterna': 'LED blanco',
+      'Bateria': '2 x AAA',
+      'Peso': '50g'
+    },
+    inStock: true,
+    badge: null
+  },
+  'DET-002': {
+    sku: 'DET-002',
+    title: 'Localizador de Cables y Tuberias',
+    category: 'Detectores',
+    description: 'Detecta cables electricos, tuberias metalicas y estructuras ocultas en paredes y pisos.',
+    features: [
+      'Deteccion de cables electricos',
+      'Deteccion de metales',
+      'Deteccion de madera',
+      'Pantalla LCD con indicador',
+      'Calibracion automatica',
+      'Profundidad hasta 120mm'
+    ],
+    specs: {
+      'Cables electricos': 'Hasta 60mm',
+      'Metales ferrosos': 'Hasta 120mm',
+      'Metales no ferrosos': 'Hasta 80mm',
+      'Madera': 'Hasta 38mm',
+      'Pantalla': 'LCD retroiluminada',
+      'Bateria': '9V',
+      'Peso': '210g'
+    },
+    inStock: true,
+    badge: null
+  }
 };
 
 // ============================================
 // 2. UTILIDADES
 // ============================================
 const Utils = {
-  // Debounce para optimizar eventos
   debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -30,7 +325,6 @@ const Utils = {
     };
   },
 
-  // Throttle para scroll
   throttle(func, limit) {
     let inThrottle;
     return function(...args) {
@@ -42,19 +336,93 @@ const Utils = {
     };
   },
 
-  // Formatear número con separadores
   formatNumber(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   },
 
-  // Generar ID único
   generateId() {
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
   }
 };
 
 // ============================================
-// 3. PAGE LOADER
+// 3. DARK MODE
+// ============================================
+const DarkMode = {
+  toggle: null,
+  isDark: false,
+
+  init() {
+    // Cargar preferencia guardada
+    const savedTheme = localStorage.getItem(CONFIG.themeKey);
+    if (savedTheme) {
+      this.isDark = savedTheme === 'dark';
+    } else {
+      // Detectar preferencia del sistema
+      this.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    this.applyTheme();
+    this.createToggle();
+    this.bindEvents();
+  },
+
+  createToggle() {
+    // Crear boton de toggle
+    const toggle = document.createElement('button');
+    toggle.className = 'theme-toggle';
+    toggle.setAttribute('aria-label', 'Cambiar tema');
+    toggle.innerHTML = `
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    `;
+    document.body.appendChild(toggle);
+    this.toggle = toggle;
+  },
+
+  bindEvents() {
+    if (this.toggle) {
+      this.toggle.addEventListener('click', () => this.toggleTheme());
+    }
+
+    // Escuchar cambios en preferencia del sistema
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem(CONFIG.themeKey)) {
+        this.isDark = e.matches;
+        this.applyTheme();
+      }
+    });
+  },
+
+  toggleTheme() {
+    this.isDark = !this.isDark;
+    this.applyTheme();
+    localStorage.setItem(CONFIG.themeKey, this.isDark ? 'dark' : 'light');
+    Toast.show(this.isDark ? 'Modo oscuro activado' : 'Modo claro activado', 'info');
+  },
+
+  applyTheme() {
+    document.documentElement.setAttribute('data-theme', this.isDark ? 'dark' : 'light');
+    if (this.toggle) {
+      this.toggle.classList.toggle('dark', this.isDark);
+    }
+  }
+};
+
+// ============================================
+// 4. PAGE LOADER
 // ============================================
 const PageLoader = {
   loader: null,
@@ -63,7 +431,6 @@ const PageLoader = {
     this.loader = document.querySelector('.page-loader');
     if (this.loader) {
       window.addEventListener('load', () => this.hide());
-      // Fallback: ocultar después de 3 segundos
       setTimeout(() => this.hide(), 3000);
     }
   },
@@ -86,7 +453,7 @@ const PageLoader = {
 };
 
 // ============================================
-// 4. HEADER SCROLL EFFECT
+// 5. HEADER SCROLL EFFECT
 // ============================================
 const HeaderScroll = {
   header: null,
@@ -101,19 +468,17 @@ const HeaderScroll = {
 
   onScroll() {
     const currentScroll = window.pageYOffset;
-
     if (currentScroll > 50) {
       this.header.classList.add('scrolled');
     } else {
       this.header.classList.remove('scrolled');
     }
-
     this.lastScroll = currentScroll;
   }
 };
 
 // ============================================
-// 5. MENÚ MÓVIL
+// 6. MENU MOVIL
 // ============================================
 const MobileMenu = {
   menuBtn: null,
@@ -124,22 +489,19 @@ const MobileMenu = {
     this.menuBtn = document.querySelector('.mobile-menu-btn');
     this.menu = document.querySelector('.mobile-menu');
 
-    if (this.menuBtn) {
+    if (this.menuBtn && this.menu) {
       this.menuBtn.addEventListener('click', () => this.toggle());
 
-      // Cerrar al hacer click en un link
       document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
         link.addEventListener('click', () => this.close());
       });
 
-      // Cerrar al hacer click fuera
       document.addEventListener('click', (e) => {
         if (this.isOpen && !this.menu.contains(e.target) && !this.menuBtn.contains(e.target)) {
           this.close();
         }
       });
 
-      // Cerrar con ESC
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && this.isOpen) {
           this.close();
@@ -170,7 +532,217 @@ const MobileMenu = {
 };
 
 // ============================================
-// 6. CARRITO DE COTIZACIÓN
+// 7. MODAL DE PRODUCTO
+// ============================================
+const ProductModal = {
+  modal: null,
+  isOpen: false,
+
+  init() {
+    this.createModal();
+    this.bindEvents();
+  },
+
+  createModal() {
+    const modal = document.createElement('div');
+    modal.className = 'product-modal';
+    modal.innerHTML = `
+      <div class="product-modal-overlay"></div>
+      <div class="product-modal-content">
+        <button class="product-modal-close" aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+        <div class="product-modal-body"></div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    this.modal = modal;
+  },
+
+  bindEvents() {
+    // Cerrar modal
+    this.modal.querySelector('.product-modal-overlay').addEventListener('click', () => this.close());
+    this.modal.querySelector('.product-modal-close').addEventListener('click', () => this.close());
+
+    // Escuchar ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) {
+        this.close();
+      }
+    });
+
+    // Click en productos para abrir modal
+    document.addEventListener('click', (e) => {
+      const card = e.target.closest('.product-card');
+      const isButton = e.target.closest('.btn-add-quote') || e.target.closest('.quantity-controls');
+
+      if (card && !isButton) {
+        const sku = card.querySelector('.product-sku')?.textContent?.replace('SKU: ', '');
+        if (sku) {
+          this.open(sku);
+        }
+      }
+    });
+  },
+
+  open(sku) {
+    const product = PRODUCTS_DB[sku];
+    if (!product) return;
+
+    const body = this.modal.querySelector('.product-modal-body');
+    const cartItem = Cart.items.find(item => item.sku === sku);
+    const quantity = cartItem ? cartItem.quantity : 1;
+
+    body.innerHTML = `
+      <div class="product-modal-grid">
+        <div class="product-modal-image">
+          ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+          <div class="product-modal-image-main">
+            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1">
+              <rect x="40" y="20" width="120" height="160" rx="12" fill="var(--color-gray-100)" stroke="var(--color-gray-300)"/>
+              <rect x="55" y="35" width="90" height="50" rx="6" fill="var(--color-gray-200)" stroke="var(--color-gray-400)"/>
+              <circle cx="100" cy="130" r="30" fill="var(--color-gray-50)" stroke="var(--color-gray-400)"/>
+              <circle cx="100" cy="130" r="5" fill="var(--color-primary)"/>
+              <line x1="100" y1="130" x2="120" y2="110" stroke="var(--color-primary)" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="product-modal-stock ${product.inStock ? 'in-stock' : 'out-stock'}">
+            <span class="stock-dot"></span>
+            ${product.inStock ? 'En Stock' : 'Sin Stock'}
+          </div>
+        </div>
+
+        <div class="product-modal-info">
+          <span class="product-category">${product.category}</span>
+          <h2 class="product-modal-title">${product.title}</h2>
+          <p class="product-modal-sku">SKU: ${product.sku}</p>
+
+          <p class="product-modal-description">${product.description}</p>
+
+          <div class="product-modal-actions">
+            <div class="quantity-selector">
+              <label>Cantidad:</label>
+              <div class="quantity-controls">
+                <button class="qty-btn" data-action="decrease">-</button>
+                <input type="number" class="qty-input" value="${quantity}" min="1" max="99">
+                <button class="qty-btn" data-action="increase">+</button>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-add-modal" data-sku="${product.sku}">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+              ${cartItem ? 'Actualizar Cotizacion' : 'Agregar a Cotizacion'}
+            </button>
+
+            ${cartItem ? `
+              <a href="cotizacion.html" class="btn btn-secondary btn-lg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                </svg>
+                Ver Cotizacion
+              </a>
+            ` : ''}
+          </div>
+        </div>
+      </div>
+
+      <div class="product-modal-tabs">
+        <button class="tab-btn active" data-tab="specs">Especificaciones Tecnicas</button>
+        <button class="tab-btn" data-tab="features">Caracteristicas</button>
+      </div>
+
+      <div class="product-modal-tab-content">
+        <div class="tab-panel active" data-panel="specs">
+          <div class="specs-grid">
+            ${Object.entries(product.specs).map(([key, value]) => `
+              <div class="spec-item">
+                <span class="spec-label">${key}</span>
+                <span class="spec-value">${value}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="features">
+          <ul class="features-list">
+            ${product.features.map(feature => `
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                ${feature}
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      </div>
+    `;
+
+    // Bind eventos del modal
+    this.bindModalEvents(sku);
+
+    this.modal.classList.add('active');
+    this.isOpen = true;
+    document.body.style.overflow = 'hidden';
+  },
+
+  bindModalEvents(sku) {
+    const body = this.modal.querySelector('.product-modal-body');
+    const qtyInput = body.querySelector('.qty-input');
+
+    // Controles de cantidad
+    body.querySelectorAll('.qty-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const action = btn.dataset.action;
+        let value = parseInt(qtyInput.value) || 1;
+        if (action === 'increase') value++;
+        if (action === 'decrease' && value > 1) value--;
+        qtyInput.value = value;
+      });
+    });
+
+    // Agregar a cotizacion
+    body.querySelector('.btn-add-modal').addEventListener('click', () => {
+      const quantity = parseInt(qtyInput.value) || 1;
+      const product = PRODUCTS_DB[sku];
+
+      Cart.addItemWithQuantity({
+        id: Utils.generateId(),
+        sku: product.sku,
+        title: product.title,
+        category: product.category,
+        quantity: quantity
+      });
+
+      this.close();
+    });
+
+    // Tabs
+    body.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        body.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        body.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        body.querySelector(`[data-panel="${btn.dataset.tab}"]`).classList.add('active');
+      });
+    });
+  },
+
+  close() {
+    this.modal.classList.remove('active');
+    this.isOpen = false;
+    document.body.style.overflow = '';
+  }
+};
+
+// ============================================
+// 8. CARRITO DE COTIZACION
 // ============================================
 const Cart = {
   items: [],
@@ -202,9 +774,9 @@ const Cart = {
   },
 
   bindEvents() {
-    // Botones de agregar a cotización
     document.querySelectorAll('.btn-add-quote').forEach(btn => {
       btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const card = e.target.closest('.product-card');
         if (card) {
           const product = this.getProductFromCard(card);
@@ -236,7 +808,21 @@ const Cart = {
 
     this.saveToStorage();
     this.updateUI();
-    Toast.show('Producto agregado a la cotización', 'success');
+    Toast.show('Producto agregado a la cotizacion', 'success');
+  },
+
+  addItemWithQuantity(product) {
+    const existingIndex = this.items.findIndex(item => item.sku === product.sku);
+
+    if (existingIndex > -1) {
+      this.items[existingIndex].quantity = product.quantity;
+    } else {
+      this.items.push(product);
+    }
+
+    this.saveToStorage();
+    this.updateUI();
+    Toast.show(`${product.quantity} unidad(es) agregada(s) a la cotizacion`, 'success');
   },
 
   removeItem(sku) {
@@ -257,12 +843,21 @@ const Cart = {
     }
   },
 
+  setQuantity(sku, quantity) {
+    const item = this.items.find(item => item.sku === sku);
+    if (item) {
+      item.quantity = Math.max(1, parseInt(quantity) || 1);
+      this.saveToStorage();
+      this.updateUI();
+    }
+  },
+
   clearAll() {
     this.items = [];
     this.saveToStorage();
     this.updateUI();
     this.renderQuoteItems();
-    Toast.show('Cotización limpiada', 'info');
+    Toast.show('Cotizacion limpiada', 'info');
   },
 
   getTotal() {
@@ -270,30 +865,35 @@ const Cart = {
   },
 
   updateUI() {
-    if (this.countElement) {
+    // Actualizar todos los contadores
+    document.querySelectorAll('.cart-count').forEach(el => {
       const total = this.getTotal();
-      this.countElement.textContent = total;
-
-      // Animación de bump
-      this.countElement.classList.remove('bump');
-      void this.countElement.offsetWidth; // Trigger reflow
-      this.countElement.classList.add('bump');
-
-      // Mostrar/ocultar contador
-      this.countElement.style.display = total > 0 ? 'flex' : 'none';
-    }
+      el.textContent = total;
+      el.classList.remove('bump');
+      void el.offsetWidth;
+      el.classList.add('bump');
+      el.style.display = total > 0 ? 'flex' : 'none';
+    });
 
     // Actualizar botones de productos
     document.querySelectorAll('.product-card').forEach(card => {
       const sku = card.querySelector('.product-sku')?.textContent?.replace('SKU: ', '');
       const btn = card.querySelector('.btn-add-quote');
-      const inCart = this.items.some(item => item.sku === sku);
+      const cartItem = this.items.find(item => item.sku === sku);
 
       if (btn) {
-        btn.classList.toggle('added', inCart);
-        btn.innerHTML = inCart
-          ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Agregado'
-          : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg> Cotizar';
+        btn.classList.toggle('added', !!cartItem);
+        if (cartItem) {
+          btn.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Agregado (${cartItem.quantity})
+          `;
+        } else {
+          btn.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            Cotizar
+          `;
+        }
       }
     });
   },
@@ -306,54 +906,83 @@ const Cart = {
   },
 
   renderQuoteItems() {
-    const container = document.querySelector('.quote-items-list');
-    const emptyState = document.querySelector('.quote-empty');
-    const clearBtn = document.querySelector('.clear-all-btn');
+    const container = document.querySelector('#quote-items');
+    const emptyState = document.querySelector('#empty-cart');
+    const formContainer = document.querySelector('#quote-form');
 
     if (!container) return;
 
     if (this.items.length === 0) {
       container.innerHTML = '';
       if (emptyState) emptyState.style.display = 'block';
-      if (clearBtn) clearBtn.style.display = 'none';
+      if (formContainer) formContainer.style.display = 'none';
       return;
     }
 
     if (emptyState) emptyState.style.display = 'none';
-    if (clearBtn) clearBtn.style.display = 'block';
+    if (formContainer) formContainer.style.display = 'block';
 
-    container.innerHTML = this.items.map(item => `
-      <div class="quote-item" data-sku="${item.sku}">
-        <div class="quote-item-image">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <path d="M9 12h6M12 9v6"/>
+    container.innerHTML = `
+      <div class="quote-items-header">
+        <h3>Productos seleccionados (${this.items.length})</h3>
+        <button class="clear-all-btn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
           </svg>
-        </div>
-        <div class="quote-item-info">
-          <div class="quote-item-title">${item.title}</div>
-          <div class="quote-item-sku">SKU: ${item.sku}</div>
-        </div>
-        <div class="quote-item-quantity">
-          <button class="qty-btn qty-decrease" data-sku="${item.sku}">−</button>
-          <span class="qty-value">${item.quantity}</span>
-          <button class="qty-btn qty-increase" data-sku="${item.sku}">+</button>
-        </div>
-        <button class="remove-item-btn" data-sku="${item.sku}" aria-label="Eliminar producto">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 6L6 18M6 6l12 12"/>
-          </svg>
+          Limpiar todo
         </button>
       </div>
-    `).join('');
+      <div class="quote-items-list">
+        ${this.items.map(item => {
+          const product = PRODUCTS_DB[item.sku] || {};
+          return `
+            <div class="quote-item" data-sku="${item.sku}">
+              <div class="quote-item-image">
+                <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1">
+                  <rect x="15" y="8" width="30" height="44" rx="4" fill="var(--color-gray-100)" stroke="var(--color-gray-300)"/>
+                  <rect x="20" y="14" width="20" height="12" rx="2" fill="var(--color-gray-200)"/>
+                  <circle cx="30" cy="40" r="8" fill="var(--color-gray-50)" stroke="var(--color-gray-300)"/>
+                </svg>
+              </div>
+              <div class="quote-item-info">
+                <div class="quote-item-title">${item.title}</div>
+                <div class="quote-item-meta">
+                  <span class="quote-item-sku">SKU: ${item.sku}</span>
+                  <span class="quote-item-category">${item.category}</span>
+                </div>
+              </div>
+              <div class="quote-item-quantity">
+                <button class="qty-btn qty-decrease" data-sku="${item.sku}" type="button">-</button>
+                <input type="number" class="qty-input" value="${item.quantity}" min="1" max="99" data-sku="${item.sku}">
+                <button class="qty-btn qty-increase" data-sku="${item.sku}" type="button">+</button>
+              </div>
+              <button class="remove-item-btn" data-sku="${item.sku}" type="button" aria-label="Eliminar producto">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+          `;
+        }).join('')}
+      </div>
+      <div class="quote-items-footer">
+        <span>Total de productos: <strong>${this.getTotal()} unidades</strong></span>
+      </div>
+    `;
 
-    // Bind events for quantity buttons
+    // Bind eventos
+    container.querySelector('.clear-all-btn')?.addEventListener('click', () => this.clearAll());
+
     container.querySelectorAll('.qty-decrease').forEach(btn => {
       btn.addEventListener('click', () => this.updateQuantity(btn.dataset.sku, -1));
     });
 
     container.querySelectorAll('.qty-increase').forEach(btn => {
       btn.addEventListener('click', () => this.updateQuantity(btn.dataset.sku, 1));
+    });
+
+    container.querySelectorAll('.qty-input').forEach(input => {
+      input.addEventListener('change', (e) => this.setQuantity(input.dataset.sku, e.target.value));
     });
 
     container.querySelectorAll('.remove-item-btn').forEach(btn => {
@@ -363,7 +992,7 @@ const Cart = {
 };
 
 // ============================================
-// 7. FILTRO DE PRODUCTOS
+// 9. FILTRO DE PRODUCTOS
 // ============================================
 const ProductFilter = {
   buttons: null,
@@ -376,7 +1005,6 @@ const ProductFilter = {
 
     if (this.buttons.length === 0) return;
 
-    // Leer filtro de URL
     const urlParams = new URLSearchParams(window.location.search);
     const categoryParam = urlParams.get('cat');
     if (categoryParam) {
@@ -400,12 +1028,10 @@ const ProductFilter = {
   applyFilter(filter) {
     this.currentFilter = filter;
 
-    // Actualizar botones activos
     this.buttons.forEach(btn => {
       btn.classList.toggle('active', btn.dataset.filter === filter);
     });
 
-    // Filtrar productos con animación
     this.products.forEach(product => {
       const category = product.dataset.category;
       const shouldShow = filter === 'todos' || category === filter;
@@ -438,7 +1064,7 @@ const ProductFilter = {
 };
 
 // ============================================
-// 8. VALIDACIÓN DE FORMULARIOS
+// 10. VALIDACION DE FORMULARIOS
 // ============================================
 const FormValidator = {
   form: null,
@@ -457,12 +1083,12 @@ const FormValidator = {
       email: {
         element: this.form.querySelector('#email'),
         validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
-        message: 'Ingresa un email válido'
+        message: 'Ingresa un email valido'
       },
       telefono: {
         element: this.form.querySelector('#telefono'),
         validate: (value) => /^[\d\s+()-]{8,}$/.test(value),
-        message: 'Ingresa un teléfono válido'
+        message: 'Ingresa un telefono valido'
       }
     };
 
@@ -470,7 +1096,6 @@ const FormValidator = {
   },
 
   bindEvents() {
-    // Validación en tiempo real
     Object.values(this.fields).forEach(field => {
       if (field.element) {
         field.element.addEventListener('blur', () => this.validateField(field));
@@ -482,7 +1107,6 @@ const FormValidator = {
       }
     });
 
-    // Submit
     this.form.addEventListener('submit', (e) => this.handleSubmit(e));
   },
 
@@ -496,10 +1120,6 @@ const FormValidator = {
 
     if (group) {
       group.classList.toggle('has-error', !isValid);
-      const errorElement = group.querySelector('.form-error');
-      if (errorElement) {
-        errorElement.textContent = field.message;
-      }
     }
 
     return isValid;
@@ -524,11 +1144,10 @@ const FormValidator = {
     }
 
     if (Cart.items.length === 0) {
-      Toast.show('Agrega productos a tu cotización', 'error');
+      Toast.show('Agrega productos a tu cotizacion', 'error');
       return;
     }
 
-    // Recopilar datos
     const formData = new FormData(this.form);
     const data = {
       ...Object.fromEntries(formData),
@@ -536,33 +1155,35 @@ const FormValidator = {
       fecha: new Date().toISOString()
     };
 
-    // Simular envío
     this.showLoading(true);
 
     setTimeout(() => {
       this.showLoading(false);
-      console.log('Cotización enviada:', data);
-      Toast.show('¡Cotización enviada con éxito! Te contactaremos pronto.', 'success');
+      console.log('Cotizacion enviada:', data);
+      Toast.show('Cotizacion enviada con exito! Te contactaremos pronto.', 'success');
 
-      // Limpiar
       this.form.reset();
       Cart.clearAll();
     }, 2000);
   },
 
   showLoading(loading) {
-    const submitBtn = this.form.querySelector('.form-submit');
+    const submitBtn = this.form.querySelector('.submit-quote-btn');
     if (submitBtn) {
       submitBtn.disabled = loading;
       submitBtn.innerHTML = loading
         ? '<span class="loader-spinner" style="width:20px;height:20px;border-width:2px;"></span> Enviando...'
-        : 'Enviar Cotización';
+        : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Enviar Solicitud de Cotizacion`;
     }
   }
 };
 
 // ============================================
-// 9. ANIMACIONES DE SCROLL (AOS-like)
+// 11. ANIMACIONES DE SCROLL
 // ============================================
 const ScrollAnimations = {
   elements: null,
@@ -577,8 +1198,6 @@ const ScrollAnimations = {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('aos-animate');
-            // Opcional: dejar de observar después de animar
-            // this.observer.unobserve(entry.target);
           }
         });
       },
@@ -593,7 +1212,7 @@ const ScrollAnimations = {
 };
 
 // ============================================
-// 10. CONTADOR ANIMADO
+// 12. CONTADOR ANIMADO
 // ============================================
 const AnimatedCounter = {
   counters: null,
@@ -627,8 +1246,6 @@ const AnimatedCounter = {
     const updateCounter = (currentTime) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-
-      // Easing function (ease-out)
       const easeOut = 1 - Math.pow(1 - progress, 3);
       const current = Math.round(target * easeOut);
 
@@ -644,13 +1261,12 @@ const AnimatedCounter = {
 };
 
 // ============================================
-// 11. TOAST NOTIFICATIONS
+// 13. TOAST NOTIFICATIONS
 // ============================================
 const Toast = {
   container: null,
 
   init() {
-    // Crear contenedor si no existe
     this.container = document.querySelector('.toast-container');
     if (!this.container) {
       this.container = document.createElement('div');
@@ -660,6 +1276,8 @@ const Toast = {
   },
 
   show(message, type = 'info') {
+    if (!this.container) this.init();
+
     const toast = document.createElement('div');
     toast.className = `toast toast-${type}`;
 
@@ -681,15 +1299,12 @@ const Toast = {
 
     this.container.appendChild(toast);
 
-    // Trigger animation
     requestAnimationFrame(() => {
       toast.classList.add('show');
     });
 
-    // Auto close
     const autoClose = setTimeout(() => this.close(toast), CONFIG.toastDuration);
 
-    // Manual close
     toast.querySelector('.toast-close').addEventListener('click', () => {
       clearTimeout(autoClose);
       this.close(toast);
@@ -703,7 +1318,7 @@ const Toast = {
 };
 
 // ============================================
-// 12. SMOOTH SCROLL
+// 14. SMOOTH SCROLL & NAV
 // ============================================
 const SmoothScroll = {
   init() {
@@ -728,9 +1343,6 @@ const SmoothScroll = {
   }
 };
 
-// ============================================
-// 13. ACTIVE NAV LINK
-// ============================================
 const ActiveNavLink = {
   init() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -745,18 +1357,16 @@ const ActiveNavLink = {
 };
 
 // ============================================
-// 14. LAZY LOADING IMAGES
+// 15. LAZY LOADING
 // ============================================
 const LazyImages = {
   init() {
     if ('loading' in HTMLImageElement.prototype) {
-      // Browser supports native lazy loading
       document.querySelectorAll('img[data-src]').forEach(img => {
         img.src = img.dataset.src;
         img.loading = 'lazy';
       });
     } else {
-      // Fallback with Intersection Observer
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -775,46 +1385,44 @@ const LazyImages = {
 };
 
 // ============================================
-// 15. INICIALIZACIÓN
+// 16. INICIALIZACION
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
   // Core
+  DarkMode.init();
   PageLoader.init();
   HeaderScroll.init();
   MobileMenu.init();
   ActiveNavLink.init();
   SmoothScroll.init();
+  Toast.init();
 
   // Features
   Cart.init();
   ProductFilter.init();
   FormValidator.init();
-  Toast.init();
+  ProductModal.init();
 
   // Animations
   ScrollAnimations.init();
   AnimatedCounter.init();
   LazyImages.init();
 
-  // Renderizar items del carrito si estamos en la página de cotización
+  // Renderizar items del carrito si estamos en la pagina de cotizacion
   if (window.location.pathname.includes('cotizacion')) {
     Cart.renderQuoteItems();
-
-    // Bind clear all button
-    const clearBtn = document.querySelector('.clear-all-btn');
-    if (clearBtn) {
-      clearBtn.addEventListener('click', () => Cart.clearAll());
-    }
   }
 
-  console.log('🔌 ElectroMedición initialized successfully!');
+  console.log('ElectroMedicion initialized successfully!');
 });
 
 // ============================================
-// 16. EXPORTS (para uso modular si es necesario)
+// 17. EXPORTS
 // ============================================
 window.ElectroMedicion = {
   Cart,
   Toast,
-  Utils
+  Utils,
+  DarkMode,
+  ProductModal
 };
