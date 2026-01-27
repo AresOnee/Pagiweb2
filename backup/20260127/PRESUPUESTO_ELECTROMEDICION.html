@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presupuesto - ElectroMedición</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 2cm;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #333;
+      max-width: 21cm;
+      margin: 0 auto;
+      padding: 1.5cm;
+      background: white;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 3px solid #0052CC;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    .header-left h1 {
+      font-size: 28pt;
+      color: #0052CC;
+      margin-bottom: 5px;
+    }
+
+    .header-left p {
+      font-size: 14pt;
+      color: #666;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 10pt;
+      color: #666;
+    }
+
+    .header-right strong {
+      color: #333;
+    }
+
+    /* Info boxes */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .info-box {
+      background: #f8f9fa;
+      border-left: 4px solid #0052CC;
+      padding: 15px;
+    }
+
+    .info-box h3 {
+      font-size: 10pt;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .info-box p {
+      font-size: 12pt;
+      color: #333;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .section-title {
+      font-size: 14pt;
+      color: #0052CC;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+
+    .section-number {
+      background: #0052CC;
+      color: white;
+      padding: 2px 10px;
+      border-radius: 3px;
+      margin-right: 10px;
+      font-size: 12pt;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background: #0052CC;
+      color: white;
+      font-weight: 600;
+      font-size: 10pt;
+    }
+
+    tr:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    tr:hover {
+      background: #e8f4ff;
+    }
+
+    .total-row {
+      background: #e8f4ff !important;
+      font-weight: bold;
+    }
+
+    .subtotal-row {
+      background: #f0f7ff !important;
+    }
+
+    .free-item {
+      color: #28a745;
+      font-weight: 600;
+    }
+
+    /* Price highlight */
+    .price-box {
+      background: linear-gradient(135deg, #0052CC 0%, #003d99 100%);
+      color: white;
+      padding: 25px;
+      text-align: center;
+      border-radius: 8px;
+      margin: 25px 0;
+    }
+
+    .price-box h2 {
+      font-size: 16pt;
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
+
+    .price-box .price {
+      font-size: 36pt;
+      font-weight: bold;
+    }
+
+    .price-box .price-note {
+      font-size: 10pt;
+      opacity: 0.9;
+      margin-top: 5px;
+    }
+
+    /* Features list */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 8px;
+      background: #f0f7ff;
+      border-radius: 4px;
+    }
+
+    .feature-item .check {
+      color: #28a745;
+      font-weight: bold;
+      font-size: 14pt;
+    }
+
+    /* Tech box */
+    .tech-box {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border: 2px solid #dee2e6;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .tech-box h3 {
+      color: #0052CC;
+      margin-bottom: 15px;
+      font-size: 12pt;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .tech-item {
+      text-align: center;
+      padding: 15px;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .tech-item .tech-name {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .tech-item .tech-desc {
+      font-size: 9pt;
+      color: #666;
+    }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+    }
+
+    .checklist li {
+      padding: 8px 0;
+      border-bottom: 1px dashed #ddd;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .checklist li::before {
+      content: "☐";
+      font-size: 14pt;
+      color: #0052CC;
+    }
+
+    /* Service card */
+    .service-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .service-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      background: #fafafa;
+    }
+
+    .service-card h4 {
+      color: #0052CC;
+      font-size: 11pt;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .service-card h4 .price {
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .service-card p {
+      font-size: 10pt;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .service-card ul {
+      font-size: 9pt;
+      color: #555;
+      margin-left: 15px;
+    }
+
+    .service-card ul li {
+      margin-bottom: 3px;
+    }
+
+    /* Warning box */
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .warning-box h4 {
+      color: #856404;
+      margin-bottom: 8px;
+    }
+
+    .warning-box p {
+      font-size: 10pt;
+      color: #856404;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #0052CC;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .footer-section h4 {
+      color: #0052CC;
+      margin-bottom: 10px;
+      font-size: 11pt;
+    }
+
+    .signature-line {
+      margin-top: 40px;
+      padding-top: 10px;
+      border-top: 1px solid #333;
+      font-size: 10pt;
+      color: #666;
+    }
+
+    /* Notes */
+    .notes {
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 15px;
+      font-size: 10pt;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+
+    .notes strong {
+      color: #333;
+    }
+
+    /* Comparison */
+    .comparison {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .comparison-item {
+      text-align: center;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    .comparison-item.highlight {
+      background: #e8f4ff;
+      border: 2px solid #0052CC;
+    }
+
+    .comparison-item h4 {
+      font-size: 10pt;
+      color: #666;
+      margin-bottom: 5px;
+    }
+
+    .comparison-item .comp-price {
+      font-size: 14pt;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .comparison-item.highlight .comp-price {
+      color: #0052CC;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        padding: 0;
+      }
+
+      .price-box, th, .tech-item, .service-card {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page-break {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>PRESUPUESTO</h1>
+      <p>Desarrollo de Sitio Web Profesional</p>
+    </div>
+    <div class="header-right">
+      <p><strong>Fecha:</strong> Enero 2025</p>
+      <p><strong>Validez:</strong> 30 días</p>
+      <p><strong>N° Presupuesto:</strong> 2025-001</p>
+    </div>
+  </div>
+
+  <!-- CLIENT INFO -->
+  <div class="info-grid">
+    <div class="info-box">
+      <h3>Cliente</h3>
+      <p><strong>ElectroMedición</strong></p>
+      <p>Equipos de Medición Eléctrica</p>
+    </div>
+    <div class="info-box">
+      <h3>Proyecto</h3>
+      <p><strong>Sitio Web Catálogo</strong></p>
+      <p>Sistema de Cotización en Línea</p>
+    </div>
+  </div>
+
+  <!-- SECTION 1: DESCRIPCIÓN -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">1</span>Descripción del Proyecto</h2>
+    <p>Desarrollo de un sitio web profesional para la presentación y cotización de equipos de medición eléctrica. El sitio permitirá a sus clientes explorar el catálogo de productos, ver especificaciones técnicas detalladas y solicitar cotizaciones de manera sencilla.</p>
+  </div>
+
+  <!-- SECTION 2: TECNOLOGÍA -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">2</span>Tecnología Utilizada</h2>
+
+    <div class="tech-box">
+      <h3>Stack Tecnológico del Proyecto</h3>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-name">🚀 Astro</div>
+          <div class="tech-desc">Framework moderno para sitios web ultra rápidos</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">🎨 CSS3</div>
+          <div class="tech-desc">Estilos modernos y responsive design</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">⚡ JavaScript</div>
+          <div class="tech-desc">Interactividad y funcionalidades dinámicas</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size: 11pt; margin: 15px 0 10px;">¿Por qué Astro?</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Beneficio</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Velocidad superior</strong></td>
+          <td>Páginas que cargan hasta 3x más rápido que sitios tradicionales</td>
+        </tr>
+        <tr>
+          <td><strong>Mejor SEO</strong></td>
+          <td>Google posiciona mejor los sitios rápidos, más visibilidad orgánica</td>
+        </tr>
+        <tr>
+          <td><strong>Escalabilidad</strong></td>
+          <td>Agregar nuevos productos es simple, sin tocar código complejo</td>
+        </tr>
+        <tr>
+          <td><strong>Mantenimiento fácil</strong></td>
+          <td>Código organizado y modular, cambios se aplican globalmente</td>
+        </tr>
+        <tr>
+          <td><strong>Hosting gratuito</strong></td>
+          <td>Compatible con plataformas como Netlify y Vercel sin costo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 3: ALCANCE -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">3</span>Alcance del Proyecto</h2>
+
+    <h3 style="font-size: 11pt; color: #333; margin: 15px 0 10px;">Páginas Incluidas</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 20%;">Página</th>
+          <th>Descripción y Contenido</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Inicio</strong></td>
+          <td>Hero principal, categorías de productos, productos destacados, beneficios de la empresa, testimonios de clientes, llamados a la acción</td>
+        </tr>
+        <tr>
+          <td><strong>Productos</strong></td>
+          <td>Catálogo completo con filtros por categoría (multímetros, pinzas, telurómetros, megóhmetros, analizadores, detectores), tarjetas de producto con imagen, descripción y botón de cotizar</td>
+        </tr>
+        <tr>
+          <td><strong>Cotización</strong></td>
+          <td>Lista de productos seleccionados con selector de cantidades, formulario de solicitud con validación (nombre, email, teléfono, empresa, mensaje), envío de cotización por email</td>
+        </tr>
+        <tr>
+          <td><strong>Nosotros</strong></td>
+          <td>Historia de la empresa, misión y visión, valores corporativos, certificaciones, equipo de trabajo (opcional)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-size: 11pt; color: #333; margin: 15px 0 10px;">Funcionalidades Incluidas</h3>
+    <div class="features-grid">
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span>Catálogo de hasta 50 productos</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span>Filtros por categoría</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span>Modal de detalle con especificaciones</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span>Pestañas: características y specs</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span>Sistema de cotización completo</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span>Selector de cantidades</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span>Formulario con validación</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span>Diseño responsive (móvil/tablet/PC)</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span>Modo oscuro / claro</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span>Animaciones profesionales</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span>Optimización SEO básica</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span>Integración Google Analytics</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE BREAK FOR PRINT -->
+  <div class="page-break"></div>
+
+  <!-- SECTION 4: DESGLOSE DE COSTOS -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">4</span>Desglose de Costos</h2>
+
+    <h3 style="font-size: 11pt; color: #333; margin: 15px 0 10px;">4.1 Desarrollo (Inversión Única)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Ítem</th>
+          <th>Descripción</th>
+          <th style="text-align: right; width: 15%;">Valor CLP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Diseño UI/UX</td>
+          <td>Diseño visual, paleta de colores, tipografías, componentes</td>
+          <td style="text-align: right;">$70.000</td>
+        </tr>
+        <tr>
+          <td>Desarrollo Frontend</td>
+          <td>Maquetación en Astro, estilos CSS, responsive design</td>
+          <td style="text-align: right;">$120.000</td>
+        </tr>
+        <tr>
+          <td>Sistema de Productos</td>
+          <td>Catálogo, filtros, modal de detalle, especificaciones</td>
+          <td style="text-align: right;">$80.000</td>
+        </tr>
+        <tr>
+          <td>Sistema de Cotización</td>
+          <td>Carrito, cantidades, formulario, validaciones</td>
+          <td style="text-align: right;">$60.000</td>
+        </tr>
+        <tr>
+          <td>Carga de Productos</td>
+          <td>Hasta 50 productos con descripciones y especificaciones</td>
+          <td style="text-align: right;">$25.000</td>
+        </tr>
+        <tr>
+          <td>Deploy y Configuración</td>
+          <td>Publicación, dominio, SSL, configuración inicial</td>
+          <td style="text-align: right;">$15.000</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td colspan="2"><strong>Subtotal Desarrollo</strong></td>
+          <td style="text-align: right;"><strong>$370.000</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-size: 11pt; color: #333; margin: 15px 0 10px;">4.2 Infraestructura y Servicios (Primer Año)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Servicio</th>
+          <th>Proveedor</th>
+          <th>Detalle</th>
+          <th style="text-align: right; width: 15%;">Valor CLP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dominio .cl</td>
+          <td>NIC Chile / Registrador</td>
+          <td>Registro por 1 año (ej: electromedicion.cl)</td>
+          <td style="text-align: right;">$20.000</td>
+        </tr>
+        <tr>
+          <td>Hosting Web</td>
+          <td>Netlify / Vercel</td>
+          <td>Alojamiento en la nube, plan gratuito</td>
+          <td style="text-align: right;" class="free-item">$0 (Gratis)</td>
+        </tr>
+        <tr>
+          <td>Certificado SSL</td>
+          <td>Let's Encrypt</td>
+          <td>Conexión segura HTTPS, incluido en hosting</td>
+          <td style="text-align: right;" class="free-item">$0 (Gratis)</td>
+        </tr>
+        <tr>
+          <td>CDN (Red de distribución)</td>
+          <td>Cloudflare / Netlify</td>
+          <td>Acelera carga global del sitio</td>
+          <td style="text-align: right;" class="free-item">$0 (Gratis)</td>
+        </tr>
+        <tr>
+          <td>Formulario de contacto</td>
+          <td>Web3Forms / Formspree</td>
+          <td>Hasta 250 envíos/mes en plan gratuito</td>
+          <td style="text-align: right;" class="free-item">$0 (Gratis)</td>
+        </tr>
+        <tr>
+          <td>Google Analytics</td>
+          <td>Google</td>
+          <td>Estadísticas de visitas y comportamiento</td>
+          <td style="text-align: right;" class="free-item">$0 (Gratis)</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td colspan="3"><strong>Subtotal Infraestructura (Año 1)</strong></td>
+          <td style="text-align: right;"><strong>$20.000</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-size: 10pt; color: #666; margin-top: 10px;"><em>* El dominio está incluido en el precio total del proyecto. Los servicios gratuitos tienen límites generosos que cubren las necesidades de una pequeña empresa.</em></p>
+
+    <div class="price-box">
+      <h2>Inversión Total del Proyecto</h2>
+      <div class="price">$370.000 CLP</div>
+      <div class="price-note">Precio final - IVA incluido - Dominio primer año incluido</div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: COSTOS RECURRENTES -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">5</span>Costos Recurrentes (desde el 2° año)</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Concepto</th>
+          <th>Proveedor</th>
+          <th>Frecuencia</th>
+          <th style="text-align: right;">Valor Anual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Renovación dominio .cl</td>
+          <td>NIC Chile</td>
+          <td>Anual</td>
+          <td style="text-align: right;">$20.000</td>
+        </tr>
+        <tr>
+          <td>Hosting web</td>
+          <td>Netlify / Vercel</td>
+          <td>-</td>
+          <td style="text-align: right;" class="free-item">$0 (Gratis)</td>
+        </tr>
+        <tr>
+          <td>Certificado SSL</td>
+          <td>Let's Encrypt</td>
+          <td>-</td>
+          <td style="text-align: right;" class="free-item">$0 (Gratis)</td>
+        </tr>
+        <tr>
+          <td>CDN</td>
+          <td>Cloudflare</td>
+          <td>-</td>
+          <td style="text-align: right;" class="free-item">$0 (Gratis)</td>
+        </tr>
+        <tr>
+          <td>Formularios</td>
+          <td>Web3Forms</td>
+          <td>-</td>
+          <td style="text-align: right;" class="free-item">$0 (Gratis)*</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="3"><strong>Total Anual (desde año 2)</strong></td>
+          <td style="text-align: right;"><strong>$20.000</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-size: 10pt; color: #666; margin-top: 10px;"><em>* Si supera 250 cotizaciones mensuales, el plan pagado cuesta aproximadamente $5.000/mes.</em></p>
+  </div>
+
+  <!-- SECTION 6: IMPREVISTOS -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">6</span>Contingencia e Imprevistos</h2>
+
+    <div class="warning-box">
+      <h4>⚠️ Reserva para Imprevistos (Recomendación)</h4>
+      <p>Se recomienda contemplar un margen del <strong>10%</strong> del costo del proyecto para cubrir posibles imprevistos, cambios menores de alcance o ajustes no contemplados inicialmente.</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Concepto</th>
+          <th>Descripción</th>
+          <th style="text-align: right; width: 15%;">Valor CLP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Costo base del proyecto</td>
+          <td>Desarrollo + infraestructura año 1</td>
+          <td style="text-align: right;">$370.000</td>
+        </tr>
+        <tr>
+          <td>Contingencia (10%)</td>
+          <td>Reserva para imprevistos, cambios menores, ajustes</td>
+          <td style="text-align: right;">$37.000</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="2"><strong>Presupuesto con contingencia</strong></td>
+          <td style="text-align: right;"><strong>$407.000</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-size: 11pt; color: #333; margin: 15px 0 10px;">¿Qué cubre la contingencia?</h3>
+    <ul style="margin-left: 20px; font-size: 10pt; color: #555;">
+      <li>Cambios menores en diseño no contemplados inicialmente</li>
+      <li>Ajustes en funcionalidades existentes</li>
+      <li>Corrección de contenido después de la entrega</li>
+      <li>Pequeñas adiciones al alcance original</li>
+      <li>Problemas técnicos imprevistos con terceros (dominio, hosting)</li>
+    </ul>
+
+    <p style="font-size: 10pt; color: #666; margin-top: 15px;"><strong>Nota:</strong> La contingencia es una recomendación para el cliente. El precio acordado es <strong>$370.000</strong>. La contingencia no se cobra por adelantado, solo si se utiliza.</p>
+  </div>
+
+  <!-- PAGE BREAK FOR PRINT -->
+  <div class="page-break"></div>
+
+  <!-- SECTION 7: SERVICIOS ADICIONALES -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">7</span>Servicios Adicionales (Opcionales)</h2>
+
+    <div class="service-cards">
+      <div class="service-card">
+        <h4>Productos Adicionales <span class="price">$50.000</span></h4>
+        <p>Carga de 51 a 100 productos adicionales al catálogo</p>
+        <ul>
+          <li>Incluye especificaciones técnicas</li>
+          <li>Organización por categorías</li>
+          <li>Optimización de imágenes</li>
+          <li>Tiempo estimado: 2-3 días</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h4>Capacitación <span class="price">$25.000</span></h4>
+        <p>1 hora de capacitación personalizada</p>
+        <ul>
+          <li>Cómo agregar/editar productos</li>
+          <li>Cómo modificar textos e imágenes</li>
+          <li>Gestión básica del sitio</li>
+          <li>Sesión por videollamada grabada</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h4>WhatsApp Business <span class="price">$15.000</span></h4>
+        <p>Integración con WhatsApp para atención directa</p>
+        <ul>
+          <li>Botón flotante en todas las páginas</li>
+          <li>Mensaje predefinido con producto</li>
+          <li>Link directo al chat de ventas</li>
+          <li>Compatible con WhatsApp Business</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h4>Google My Business <span class="price">$20.000</span></h4>
+        <p>Configuración de perfil de empresa en Google</p>
+        <ul>
+          <li>Creación/optimización del perfil</li>
+          <li>Carga de fotos y horarios</li>
+          <li>Vinculación con sitio web</li>
+          <li>Aparecer en Google Maps</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h4>Mantenimiento Básico <span class="price">$25.000/mes</span></h4>
+        <p>Soporte mensual continuo</p>
+        <ul>
+          <li>Hasta 3 cambios menores al mes</li>
+          <li>Actualización de productos</li>
+          <li>Backup mensual del sitio</li>
+          <li>Soporte por email/WhatsApp</li>
+          <li>Tiempo de respuesta: 48 hrs</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h4>Mantenimiento Premium <span class="price">$45.000/mes</span></h4>
+        <p>Soporte prioritario y completo</p>
+        <ul>
+          <li>Cambios ilimitados</li>
+          <li>Prioridad en atención</li>
+          <li>Backup semanal</li>
+          <li>Reporte mensual de visitas</li>
+          <li>Tiempo de respuesta: 24 hrs</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-size: 11pt; color: #333; margin: 15px 0 10px;">Cambios Puntuales (Sin Plan de Mantenimiento)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo de Cambio</th>
+          <th>Ejemplo</th>
+          <th style="text-align: right;">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cambio menor</td>
+          <td>Corregir texto, cambiar imagen, actualizar teléfono</td>
+          <td style="text-align: right;">$5.000</td>
+        </tr>
+        <tr>
+          <td>Cambio medio</td>
+          <td>Agregar producto, modificar sección, nuevo banner</td>
+          <td style="text-align: right;">$10.000</td>
+        </tr>
+        <tr>
+          <td>Cambio mayor</td>
+          <td>Nueva funcionalidad, página adicional, rediseño sección</td>
+          <td style="text-align: right;">Cotizar</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 8: COMPARATIVA -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">8</span>Comparativa de Mercado</h2>
+    <p style="margin-bottom: 15px;">Según estudios de precios de desarrollo web en Chile (Enero 2025):</p>
+
+    <div class="comparison">
+      <div class="comparison-item">
+        <h4>Landing Page Básica</h4>
+        <div class="comp-price">$100.000 - $150.000</div>
+      </div>
+      <div class="comparison-item">
+        <h4>Web Pyme (3-5 páginas)</h4>
+        <div class="comp-price">$250.000 - $500.000</div>
+      </div>
+      <div class="comparison-item highlight">
+        <h4>Nuestra Propuesta</h4>
+        <div class="comp-price">$370.000 ✓</div>
+      </div>
+    </div>
+
+    <p style="font-size: 10pt; color: #666; font-style: italic;">Fuentes: BigRedes, GoDaddy Chile, Neolo, AG Marketing, 2x3.cl (2025)</p>
+  </div>
+
+  <!-- SECTION 9: CRONOGRAMA -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">9</span>Cronograma de Trabajo</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 10%;">Fase</th>
+          <th style="width: 20%;">Etapa</th>
+          <th>Actividades</th>
+          <th style="text-align: center; width: 12%;">Duración</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center;"><strong>1</strong></td>
+          <td>Inicio</td>
+          <td>Reunión kickoff, recopilación de logo, textos, productos</td>
+          <td style="text-align: center;">2-3 días</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><strong>2</strong></td>
+          <td>Diseño</td>
+          <td>Propuesta visual, revisión y aprobación del cliente</td>
+          <td style="text-align: center;">3-4 días</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><strong>3</strong></td>
+          <td>Desarrollo</td>
+          <td>Maquetación en Astro, funcionalidades, responsive</td>
+          <td style="text-align: center;">7-10 días</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><strong>4</strong></td>
+          <td>Contenido</td>
+          <td>Carga de productos, textos, optimización de imágenes</td>
+          <td style="text-align: center;">2-3 días</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><strong>5</strong></td>
+          <td>QA y Ajustes</td>
+          <td>Pruebas en dispositivos, correcciones, optimización</td>
+          <td style="text-align: center;">2-3 días</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><strong>6</strong></td>
+          <td>Lanzamiento</td>
+          <td>Deploy, configuración dominio, entrega final</td>
+          <td style="text-align: center;">1 día</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="3"><strong>Tiempo Total Estimado</strong></td>
+          <td style="text-align: center;"><strong>2-3 semanas</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-size: 10pt; color: #666; margin-top: 10px;"><em>* El tiempo de entrega depende de la velocidad de respuesta del cliente con el material solicitado.</em></p>
+  </div>
+
+  <!-- SECTION 10: FORMA DE PAGO -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">10</span>Forma de Pago</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Hito</th>
+          <th>Momento</th>
+          <th style="text-align: center;">%</th>
+          <th style="text-align: right;">Monto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Anticipo</strong></td>
+          <td>Al aceptar presupuesto</td>
+          <td style="text-align: center;">50%</td>
+          <td style="text-align: right;"><strong>$185.000</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Saldo</strong></td>
+          <td>Al entregar proyecto finalizado</td>
+          <td style="text-align: center;">50%</td>
+          <td style="text-align: right;"><strong>$185.000</strong></td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="2"><strong>Total</strong></td>
+          <td style="text-align: center;"><strong>100%</strong></td>
+          <td style="text-align: right;"><strong>$370.000</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top: 15px;"><strong>Método de pago:</strong> Transferencia bancaria</p>
+    <p style="font-size: 10pt; color: #666; margin-top: 5px;">Los datos bancarios serán enviados al confirmar la aceptación del presupuesto.</p>
+  </div>
+
+  <!-- SECTION 11: REQUISITOS -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">11</span>Información Requerida del Cliente</h2>
+    <p style="margin-bottom: 15px;">Para iniciar el proyecto, necesitamos que nos proporcione:</p>
+
+    <ul class="checklist">
+      <li>Logo de la empresa en alta resolución (PNG, JPG o SVG)</li>
+      <li>Listado de productos con: nombre, código/SKU, categoría, descripción breve</li>
+      <li>Especificaciones técnicas de cada producto (voltaje, corriente, peso, dimensiones, etc.)</li>
+      <li>Características principales de cada producto (bullet points)</li>
+      <li>Fotografías de productos (opcional - podemos usar iconos representativos)</li>
+      <li>Textos institucionales: historia de la empresa, misión, visión, valores</li>
+      <li>Información de contacto: teléfono, email, dirección física</li>
+      <li>Redes sociales de la empresa (si existen)</li>
+      <li>Acceso al dominio actual (si ya existe uno registrado)</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 12: GARANTÍAS -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">12</span>Garantías y Entregables</h2>
+
+    <h3 style="font-size: 11pt; color: #333; margin: 15px 0 10px;">Garantías</h3>
+    <div class="features-grid">
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span><strong>30 días de garantía</strong> - Corrección de errores sin costo adicional</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span><strong>Código fuente</strong> - Entrega completa, es 100% propiedad del cliente</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span><strong>Soporte</strong> - Comunicación directa por WhatsApp/Email durante desarrollo</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✓</span>
+        <span><strong>Capacitación básica</strong> - Explicación del funcionamiento del sitio</span>
+      </div>
+    </div>
+
+    <h3 style="font-size: 11pt; color: #333; margin: 20px 0 10px;">Entregables Finales</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Entregable</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sitio web publicado</td>
+          <td>Sitio funcionando en el dominio acordado con SSL activo</td>
+        </tr>
+        <tr>
+          <td>Código fuente</td>
+          <td>Repositorio Git con todo el código del proyecto</td>
+        </tr>
+        <tr>
+          <td>Accesos</td>
+          <td>Credenciales de hosting, dominio y servicios configurados</td>
+        </tr>
+        <tr>
+          <td>Documentación básica</td>
+          <td>Guía para agregar/editar productos (si aplica)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- NOTES -->
+  <div class="notes">
+    <strong>📋 Notas Importantes:</strong>
+    <ul style="margin-top: 10px; margin-left: 20px;">
+      <li>Este presupuesto tiene una validez de <strong>30 días</strong> desde la fecha de emisión.</li>
+      <li>Los precios están expresados en pesos chilenos (CLP) e <strong>incluyen IVA</strong>.</li>
+      <li>Cualquier requerimiento adicional fuera del alcance descrito será cotizado por separado.</li>
+      <li>El plazo de entrega comienza una vez recibido el anticipo y el material necesario del cliente.</li>
+      <li>Se incluyen hasta <strong>2 rondas de revisiones</strong> en el diseño. Revisiones adicionales tienen costo extra.</li>
+      <li>El cliente es responsable de proporcionar el contenido (textos, productos, imágenes) en tiempo y forma.</li>
+    </ul>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-section">
+      <h4>Desarrollador</h4>
+      <p><strong>[Tu Nombre]</strong></p>
+      <p>📱 +56 9 XXXX XXXX</p>
+      <p>📧 tu@email.com</p>
+      <p>🌐 www.tusitio.cl</p>
+
+      <div class="signature-line">
+        Firma del Desarrollador
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h4>Cliente</h4>
+      <p><strong>ElectroMedición</strong></p>
+      <p>Representante: _______________________</p>
+      <p>RUT: _______________________</p>
+      <p>Fecha de aceptación: _______________________</p>
+
+      <div class="signature-line">
+        Firma y Timbre del Cliente
+      </div>
+    </div>
+  </div>
+
+  <p style="text-align: center; margin-top: 40px; font-size: 10pt; color: #999;">
+    — Gracias por su confianza —
+  </p>
+
+</body>
+</html>
