@@ -1,0 +1,25 @@
+{
+  "sku": "MEG-001",
+  "title": "Megohmetro 5kV Digital",
+  "category": "Megohmetros",
+  "categorySlug": "megohmetros",
+  "description": "Medidor de aislacion hasta 5000V para cables, motores y transformadores. Uso profesional e industrial.",
+  "features": [
+    "Tensiones de prueba: 500V, 1kV, 2.5kV, 5kV",
+    "Indice de polarizacion (PI)",
+    "Relacion de absorcion (DAR)",
+    "Prueba de rampa de voltaje",
+    "Descarga automatica",
+    "Memoria USB"
+  ],
+  "specs": {
+    "Tensiones": "500V, 1kV, 2.5kV, 5kV",
+    "Rango aislacion": "100kohm - 15Tohm",
+    "Corriente de cortocircuito": "2mA max",
+    "PI y DAR": "Automatico",
+    "Memoria": "1000 registros",
+    "Peso": "1.8kg"
+  },
+  "inStock": true,
+  "badge": null
+}

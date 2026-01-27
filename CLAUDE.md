@@ -183,3 +183,99 @@ npm run build
 
 - Completar datos en `PRESUPUESTO_ELECTROMEDICION.html`
 - Secciones: [Tu Nombre], +56 9 XXXX XXXX, tu@email.com
+
+---
+
+## Preparación para Migración a Astro
+
+El proyecto incluye archivos preparados para facilitar la migración a Astro cuando el cliente apruebe.
+
+### Estructura de Preparación
+
+```
+Pagiweb2/
+├── data/
+│   ├── products/           # 12 archivos JSON (1 por producto)
+│   │   ├── mul-001.json
+│   │   ├── mul-002.json
+│   │   ├── pin-001.json
+│   │   ├── pin-002.json
+│   │   ├── tel-001.json
+│   │   ├── tel-002.json
+│   │   ├── meg-001.json
+│   │   ├── meg-002.json
+│   │   ├── ana-001.json
+│   │   ├── ana-002.json
+│   │   ├── det-001.json
+│   │   └── det-002.json
+│   └── categories.json     # Categorías del catálogo
+├── js/
+│   ├── config.js           # Configuración centralizada
+│   ├── utils.js            # Funciones utilitarias (slugify, etc.)
+│   ├── cart-store.js       # Store del carrito (API nanostores)
+│   └── theme-store.js      # Store del tema (dark mode)
+├── docs/
+│   └── astro-components.md # Guía de componentes e islas
+├── css/
+│   └── modules/
+│       └── README.md       # Mapeo CSS → componentes
+├── types/
+│   └── index.ts            # Interfaces TypeScript
+├── schemas/
+│   └── product.schema.js   # Schema para Content Collections
+└── backup/
+    └── 20260127/           # Backup de archivos originales
+```
+
+### Archivos Clave para Migración
+
+| Archivo | Destino en Astro | Descripción |
+|---------|------------------|-------------|
+| `data/products/*.json` | `src/content/products/` | Content Collections |
+| `data/categories.json` | `src/data/categories.json` | Datos estáticos |
+| `js/cart-store.js` | `src/stores/cart.ts` | Convertir a nanostores |
+| `js/theme-store.js` | `src/stores/theme.ts` | Convertir a nanostores |
+| `types/index.ts` | `src/types/index.ts` | Copiar directo |
+| `schemas/product.schema.js` | `src/content/config.ts` | Copiar schema Zod |
+
+### Cómo Agregar/Quitar Productos
+
+**Agregar un producto:**
+1. Copiar un archivo existente en `data/products/`
+2. Renombrar con el nuevo SKU (ej: `mul-003.json`)
+3. Editar los datos del producto
+4. Actualizar `count` en `data/categories.json`
+
+**Quitar un producto:**
+1. Eliminar el archivo JSON correspondiente
+2. Actualizar `count` en `data/categories.json`
+
+### Stores (API nanostores)
+
+Los stores tienen una API compatible con nanostores:
+
+```javascript
+// Carrito
+CartStore.init();
+CartStore.addItem({ sku: 'MUL-001', title: '...', category: '...', quantity: 1 });
+CartStore.subscribe(items => console.log(items));
+
+// Tema
+ThemeStore.init();
+ThemeStore.toggle();
+ThemeStore.subscribe(theme => console.log(theme));
+```
+
+### Documentación Adicional
+
+- **Componentes Astro:** Ver `docs/astro-components.md`
+- **Mapeo CSS:** Ver `css/modules/README.md`
+- **Tipos TypeScript:** Ver `types/index.ts`
+- **Schema de Productos:** Ver `schemas/product.schema.js`
+
+### Notas Importantes
+
+1. Los archivos de preparación **NO afectan** el sitio actual
+2. El sitio sigue funcionando con `main.js` original
+3. Los stores son solo **referencia** para cuando se migre
+4. El backup está en `backup/20260127/` por si se necesita restaurar

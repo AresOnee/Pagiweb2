@@ -1,0 +1,25 @@
+{
+  "sku": "MEG-002",
+  "title": "Megohmetro 10kV Profesional",
+  "category": "Megohmetros",
+  "categorySlug": "megohmetros",
+  "description": "Equipo de alta tension para pruebas de aislacion en subestaciones y equipos de alta potencia.",
+  "features": [
+    "Tensiones hasta 10kV",
+    "Pantalla grafica color",
+    "Pruebas automaticas programables",
+    "Software de analisis incluido",
+    "Bateria de larga duracion",
+    "Certificado de calibracion"
+  ],
+  "specs": {
+    "Tensiones": "500V, 1kV, 2.5kV, 5kV, 10kV",
+    "Rango aislacion": "100kohm - 35Tohm",
+    "Precision": "±5%",
+    "Pantalla": "5.7\" color TFT",
+    "Bateria": "8 horas continuas",
+    "Peso": "3.2kg"
+  },
+  "inStock": true,
+  "badge": "Pro"
+}
