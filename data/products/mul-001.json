@@ -1,0 +1,28 @@
+{
+  "sku": "MUL-001",
+  "title": "Multimetro Digital Profesional TRMS",
+  "category": "Multimetros",
+  "categorySlug": "multimetros",
+  "description": "Multimetro digital True RMS con rango automatico, ideal para mediciones precisas en terreno. Pantalla LCD retroiluminada de alta visibilidad.",
+  "features": [
+    "True RMS para mediciones precisas",
+    "Rango automatico",
+    "Categoria de seguridad CAT III 1000V",
+    "Pantalla LCD retroiluminada",
+    "Retencion de datos (HOLD)",
+    "Medicion de temperatura incluida"
+  ],
+  "specs": {
+    "Voltaje DC": "0.1mV - 1000V",
+    "Voltaje AC": "0.1mV - 750V",
+    "Corriente DC": "0.1uA - 10A",
+    "Corriente AC": "0.1uA - 10A",
+    "Resistencia": "0.1ohm - 60Mohm",
+    "Capacitancia": "1pF - 60mF",
+    "Frecuencia": "0.01Hz - 60MHz",
+    "Peso": "350g",
+    "Dimensiones": "175 x 85 x 45 mm"
+  },
+  "inStock": true,
+  "badge": "Popular"
+}

@@ -1,0 +1,24 @@
+{
+  "sku": "MUL-002",
+  "title": "Multimetro Compacto de Bolsillo",
+  "category": "Multimetros",
+  "categorySlug": "multimetros",
+  "description": "Multimetro portatil ideal para trabajos rapidos. Diseno compacto y resistente para llevar a cualquier lugar.",
+  "features": [
+    "Diseno ultra compacto",
+    "Carcasa resistente a golpes",
+    "Apagado automatico",
+    "Indicador de bateria baja",
+    "Facil de usar"
+  ],
+  "specs": {
+    "Voltaje DC": "200mV - 600V",
+    "Voltaje AC": "200V - 600V",
+    "Corriente DC": "200uA - 10A",
+    "Resistencia": "200ohm - 20Mohm",
+    "Peso": "150g",
+    "Dimensiones": "130 x 70 x 25 mm"
+  },
+  "inStock": true,
+  "badge": null
+}

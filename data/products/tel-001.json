@@ -1,0 +1,25 @@
+{
+  "sku": "TEL-001",
+  "title": "Telurometro Digital 4 Polos",
+  "category": "Telurometros",
+  "categorySlug": "telurometros",
+  "description": "Medidor de resistencia de tierra con metodo de 4 polos para maxima precision. Cumple normas internacionales.",
+  "features": [
+    "Metodo de 4 polos (Wenner)",
+    "Metodo de 3 polos",
+    "Metodo de 2 polos",
+    "Medicion de resistividad",
+    "Memoria para 500 registros",
+    "Interfaz USB para PC"
+  ],
+  "specs": {
+    "Rango tierra": "0.01ohm - 30kohm",
+    "Rango resistividad": "0.01ohm·m - 9999kohm·m",
+    "Precision": "±2%",
+    "Frecuencia de prueba": "94Hz, 105Hz, 111Hz, 128Hz",
+    "Memoria": "500 registros",
+    "Peso": "680g"
+  },
+  "inStock": true,
+  "badge": "Nuevo"
+}

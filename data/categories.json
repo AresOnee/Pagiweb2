@@ -1,0 +1,38 @@
+[
+  {
+    "id": "multimetros",
+    "name": "Multímetros",
+    "description": "Digitales y analógicos",
+    "count": 2
+  },
+  {
+    "id": "pinzas",
+    "name": "Pinzas Amperimétricas",
+    "description": "AC/DC profesionales",
+    "count": 2
+  },
+  {
+    "id": "telurometros",
+    "name": "Telurómetros",
+    "description": "Medición de tierra",
+    "count": 2
+  },
+  {
+    "id": "megohmetros",
+    "name": "Megóhmetros",
+    "description": "Aislación eléctrica",
+    "count": 2
+  },
+  {
+    "id": "analizadores",
+    "name": "Analizadores",
+    "description": "Redes y calidad",
+    "count": 2
+  },
+  {
+    "id": "detectores",
+    "name": "Detectores",
+    "description": "Voltaje y cables",
+    "count": 2
+  }
+]

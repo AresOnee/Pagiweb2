@@ -1,0 +1,25 @@
+{
+  "sku": "DET-001",
+  "title": "Detector de Voltaje Sin Contacto",
+  "category": "Detectores",
+  "categorySlug": "detectores",
+  "description": "Detector de tension con indicador LED y sonoro. Detecta 12V hasta 1000V AC de forma segura.",
+  "features": [
+    "Deteccion sin contacto",
+    "Rango 12V - 1000V AC",
+    "Indicador LED y sonoro",
+    "Linterna integrada",
+    "Clip de bolsillo",
+    "Categoria CAT IV 1000V"
+  ],
+  "specs": {
+    "Rango": "12V - 1000V AC",
+    "Frecuencia": "50/60Hz",
+    "Indicacion": "LED rojo + sonido",
+    "Linterna": "LED blanco",
+    "Bateria": "2 x AAA",
+    "Peso": "50g"
+  },
+  "inStock": true,
+  "badge": null
+}

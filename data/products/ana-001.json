@@ -1,0 +1,25 @@
+{
+  "sku": "ANA-001",
+  "title": "Analizador de Redes Trifasico",
+  "category": "Analizadores",
+  "categorySlug": "analizadores",
+  "description": "Analizador de calidad de energia para redes trifasicas. Mide armonicos, potencia y calidad de energia.",
+  "features": [
+    "Analisis trifasico completo",
+    "Medicion de armonicos hasta 50",
+    "Registro de eventos",
+    "Analisis de flicker",
+    "Conexion WiFi y Bluetooth",
+    "Software de analisis profesional"
+  ],
+  "specs": {
+    "Voltaje": "1V - 1000V RMS",
+    "Corriente": "1mA - 6000A (con pinzas)",
+    "Frecuencia": "45Hz - 65Hz",
+    "Armonicos": "Hasta orden 50",
+    "Clase de precision": "A segun IEC 61000-4-30",
+    "Peso": "2.1kg"
+  },
+  "inStock": true,
+  "badge": null
+}
