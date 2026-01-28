@@ -12,16 +12,41 @@ Sitio web de catálogo para empresa de equipos de medición eléctrica en Chile.
 
 ```
 Pagiweb2/
-├── index.html          # Página de inicio
-├── productos.html      # Catálogo de productos
-├── cotizacion.html     # Carrito y formulario de cotización
-├── nosotros.html       # Información de la empresa
+├── index.html              # Página de inicio
+├── productos.html          # Catálogo de productos
+├── cotizacion.html         # Carrito y formulario de cotización
+├── nosotros.html           # Información de la empresa
 ├── css/
-│   └── styles.css      # Sistema de diseño completo (~2800 líneas)
+│   ├── styles.css          # Sistema de diseño completo (~3800 líneas)
+│   └── modules/
+│       └── README.md       # Mapeo CSS → componentes Astro
 ├── js/
-│   └── main.js         # Funcionalidades (~1400 líneas)
-├── PRESUPUESTO_ELECTROMEDICION.html  # Presupuesto para cliente
-└── PRESUPUESTO_ELECTROMEDICION.md    # Versión markdown
+│   ├── main.js             # Funcionalidades principales (~1400 líneas)
+│   ├── config.js           # Configuración centralizada
+│   ├── utils.js            # Funciones utilitarias
+│   ├── cart-store.js       # Store del carrito (API nanostores)
+│   └── theme-store.js      # Store del tema (dark mode)
+├── data/
+│   ├── products/           # 12 archivos JSON (1 por producto)
+│   │   ├── mul-001.json, mul-002.json
+│   │   ├── pin-001.json, pin-002.json
+│   │   ├── tel-001.json, tel-002.json
+│   │   ├── meg-001.json, meg-002.json
+│   │   ├── ana-001.json, ana-002.json
+│   │   └── det-001.json, det-002.json
+│   └── categories.json     # Categorías del catálogo
+├── docs/
+│   └── astro-components.md # Guía de componentes e islas
+├── types/
+│   └── index.ts            # Interfaces TypeScript
+├── schemas/
+│   └── product.schema.js   # Schema Zod para Content Collections
+├── backup/
+│   └── 20260127/           # Backup de archivos originales
+├── PRESUPUESTO_ELECTROMEDICION.html
+├── PRESENTACION_CLIENTE.html
+├── BENEFICIOS_ROI.md
+└── CHECKLIST_PROYECTO.md
 ```
 
 ## Funcionalidades Implementadas
