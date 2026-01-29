@@ -1,0 +1,32 @@
+{
+  "sku": "ELE-006",
+  "title": "Electrodo Electromagnético Hunter Energy HE-700",
+  "category": "Electrodos Electromagnéticos",
+  "categorySlug": "electrodos-electromagneticos",
+  "description": "Kit de electrodo electromagnético de cobre electrolítico de alta conductividad con tratamiento anticorrosivo. Incluye dispositivo de filtración LCR, acoplador de 700 amperios con gabinete NEMA 4 y aditivo Power Gem. Diseñado para sites de cómputo y aplicaciones industriales de alta demanda.",
+  "features": [
+    "Cobre electrolítico de alta conductividad",
+    "Dispositivo de filtración LCR de baja frecuencia",
+    "Acoplador de impedancia capacidad 700A",
+    "Gabinete NEMA 4 de 20 x 30 x 12 cm",
+    "Incluye 4 sacos Power Gem (11,36 kg c/u)",
+    "Ideal para sites de cómputo y data centers",
+    "Pozo de 110 x 90 x 90 cm",
+    "Tratamiento anticorrosivo"
+  ],
+  "specs": {
+    "Modelo": "HE-700k",
+    "Capacidad": "700 Amperios",
+    "Material Electrodo": "Cobre electrolítico",
+    "Gabinete": "NEMA 4 — 20 x 30 x 12 cm",
+    "Pozo": "110 x 90 x 90 cm",
+    "Power Gem Incluido": "4 sacos de 11,36 kg",
+    "Resistividad Diseño": "ρ = 30 Ω·m",
+    "Factor Vertical (Fv)": "0,86",
+    "Factor Horizontal (Fh)": "0,5",
+    "Unidad": "Kit completo"
+  },
+  "image": "/assets/img/products/electrode-he-700-product.png",
+  "inStock": true,
+  "badge": null
+}

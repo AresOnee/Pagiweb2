@@ -1,0 +1,25 @@
+{
+  "sku": "PAR-002",
+  "title": "Masilla para Soldadura Exotérmica",
+  "category": "Pararrayos y Protección",
+  "categorySlug": "pararrayos",
+  "description": "Pasta de sellado compuesta de material refractario aislante para evitar pérdidas de cobre fundido entre las paredes del molde de grafito y los conductores en el proceso de soldadura exotérmica. No requiere secado, mantiene su plasticidad original durante largo periodo de tiempo.",
+  "features": [
+    "Material refractario aislante",
+    "Evita pérdidas de cobre fundido en soldadura exotérmica",
+    "No requiere secado previo",
+    "Mantiene plasticidad original por largo periodo",
+    "Elemento neutral durante el proceso de soldadura",
+    "Fácil aplicación manual"
+  ],
+  "specs": {
+    "Tipo": "Pasta de sellado / Masilla",
+    "Material": "Refractario aislante",
+    "Secado": "No requiere",
+    "Uso": "Sellado de moldes de grafito en soldadura exotérmica",
+    "Aplicación": "Manual, amasar alrededor del conductor de forma uniforme"
+  },
+  "image": "/assets/img/products/mas-001.png",
+  "inStock": true,
+  "badge": null
+}

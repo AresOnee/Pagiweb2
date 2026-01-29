@@ -4,7 +4,7 @@
 Sitio web de catálogo para **Gel Chile**, empresa chilena especializada en **sistemas de puesta a tierra y protección eléctrica**. Permite a los clientes explorar productos, ver especificaciones técnicas y solicitar cotizaciones.
 
 ## Estado Actual
-- **Fase:** Migración a Astro en curso — Fase 0 completada, pendiente Fase 1
+- **Fase:** Migración a Astro en curso — Fases 0-4 completadas, pendiente Fase 5
 - **Stack actual:** HTML5, CSS3, JavaScript vanilla (sitio demo funcional)
 - **Stack objetivo:** Astro + Preact + nanostores
 - **Datos de productos:** 21 productos reales de Gel Chile (JSON) — reemplazan los 12 demo antiguos
@@ -80,6 +80,43 @@ Pagiweb2/
 │   └── product.schema.js   # Schema Zod (pendiente actualización categorías)
 ├── backup/
 │   └── 20260127/           # Backup de archivos originales
+├── src/                     # ★ PROYECTO ASTRO (Fase 1+)
+│   ├── content.config.ts    # Content Collections + Zod schema (Fase 2)
+│   ├── components/
+│   │   ├── islands/         # Preact interactive islands (Fase 6)
+│   │   │   ├── DarkModeToggle.module.css  # CSS Module (Fase 3)
+│   │   │   ├── Toast.module.css           # CSS Module (Fase 3)
+│   │   │   ├── ProductModal.module.css    # CSS Module (Fase 3)
+│   │   │   ├── QuoteItems.module.css      # CSS Module (Fase 3)
+│   │   │   ├── QuoteForm.module.css       # CSS Module (Fase 3)
+│   │   │   └── ProductFilter.module.css   # CSS Module (Fase 3)
+│   │   └── ui/              # Astro UI components (Fase 5)
+│   ├── content/
+│   │   └── products/        # 21 JSON validados por Zod schema
+│   ├── data/
+│   │   ├── categories.json  # 7 categorías
+│   │   └── site-config.ts   # Configuración centralizada Gel Chile
+│   ├── layouts/             # MainLayout.astro (Fase 5)
+│   ├── pages/
+│   │   ├── index.astro      # Verificación Content Collections (temporal)
+│   │   └── productos/       # Catálogo y detalle (Fase 7)
+│   ├── stores/
+│   │   ├── cart.ts          # Store carrito (nanostores, Fase 4)
+│   │   └── theme.ts         # Store tema (nanostores, Fase 4)
+│   ├── styles/              # CSS global (Fase 3)
+│   │   ├── global.css       # Variables + Reset + Utilidades + Botones
+│   │   ├── dark-mode.css    # [data-theme="dark"] overrides
+│   │   └── animations.css   # 8 keyframes + AOS + skeleton + preferences
+│   └── types/
+│       └── index.ts         # Interfaces TypeScript (CategorySlug, Product, etc.)
+├── public/
+│   └── assets/img/
+│       ├── gelchile-logo.png
+│       ├── gelchile-electrodo-grafito.png
+│       └── products/        # 57 imágenes de productos (54 originales + 3 barras químicas)
+├── astro.config.mjs         # Astro + Preact config
+├── tsconfig.json            # TypeScript strict (Astro preset)
+├── package.json             # gelchile-web (Astro + Preact + nanostores)
 ├── PRESUPUESTO_ELECTROMEDICION.html
 ├── PRESENTACION_CLIENTE.html
 ├── BENEFICIOS_ROI.md
@@ -206,17 +243,17 @@ const CONFIG = {
 
 ## Plan de Migración a Astro
 
-Plan completo en: `/root/.claude/plans/cozy-mapping-quiche.md`
+Plan completo en: `/root/.claude/plans/cheerful-twirling-spring.md`
 
 ### Estado de las Fases
 
 | Fase | Nombre | Estado |
 |------|--------|--------|
 | **Fase 0** | Extracción de datos del cliente | ✅ COMPLETADA |
-| Fase 1 | Inicialización proyecto Astro | Pendiente |
-| Fase 2 | Content Collections y Schema | Pendiente |
-| Fase 3 | CSS (global + scoped) | Pendiente |
-| Fase 4 | Stores (nanostores) | Pendiente |
+| **Fase 1** | Inicialización proyecto Astro | ✅ COMPLETADA |
+| **Fase 2** | Content Collections y Schema | ✅ COMPLETADA |
+| **Fase 3** | CSS (global + scoped) | ✅ COMPLETADA |
+| **Fase 4** | Stores (nanostores) | ✅ COMPLETADA |
 | Fase 5 | Componentes estáticos (Astro) | Pendiente |
 | Fase 6 | Islands interactivos (Preact) | Pendiente |
 | Fase 7 | Páginas | Pendiente |
@@ -234,6 +271,62 @@ Plan completo en: `/root/.claude/plans/cozy-mapping-quiche.md`
 6. Eliminación de los 12 archivos JSON demo antiguos (multímetros, pinzas, etc.)
 7. Extracción de logo Gel Chile a `assets/img/gelchile-logo.png`
 8. Descubrimiento de datos de contacto reales en documentos
+
+### Fase 1 — Lo que se hizo
+
+1. Instalación de Astro v5.17.1 (`astro` como devDependency)
+2. Instalación de `@astrojs/preact` + `preact` para islands architecture
+3. Instalación de `nanostores` + `@nanostores/preact` para state management
+4. Configuración de `astro.config.mjs` con integración Preact y site URL
+5. Configuración de `tsconfig.json` con preset strict de Astro
+6. Creación de estructura completa `src/` (components, islands, ui, content, data, layouts, pages, stores, styles, types)
+7. Creación de `public/assets/img/products/` con 54 imágenes de producto + logo
+8. Copia de 21 JSON de productos a `src/content/products/`
+9. Copia de `categories.json` a `src/data/`
+10. Creación de `src/data/site-config.ts` (configuración centralizada Gel Chile)
+11. Scaffolding de stores (`cart.ts`, `theme.ts`) y tipos (`types/index.ts`)
+12. Creación de `.gitignore` para Astro (dist/, .astro/, node_modules/)
+13. Página placeholder `src/pages/index.astro`
+14. Build verificado exitosamente
+
+### Fase 2 — Lo que se hizo
+
+1. Extracción de imágenes barras químicas del PDF (PyMuPDF) → bqh-001.png, bqv-001.png, bq-diagram.png
+2. Corrección de image paths en bqh-001.json y bqv-001.json (apuntaban a par-001.png)
+3. Creación de `src/content.config.ts` con Zod schema + glob loader
+4. Definición de enums estrictos: 7 categorySlugs, 7 categoryNames, 3 badgeValues
+5. Validación de campos: sku regex, title, description, features[], specs record, image nullable, badge nullable
+6. Actualización de `src/types/index.ts` con CategorySlug, CategoryName, BadgeValue union types
+7. Fix de `image: string` → `string | null` (SRV-001 tiene image null)
+8. Página de verificación `src/pages/index.astro` con getCollection() mostrando 21 productos en 7 categorías
+9. Build exitoso: 0 errores Zod, 21 productos validados, sin warning de auto-generating collections
+
+### Fase 3 — Lo que se hizo
+
+1. Creación de `src/styles/global.css` — Variables CSS (:root), reset, utilidades, tipografía, botones (líneas 8-369 de styles.css)
+2. Creación de `src/styles/dark-mode.css` — Overrides [data-theme="dark"] para todos los componentes (líneas 2329-2507)
+3. Creación de `src/styles/animations.css` — 8 @keyframes recolectados de todo el archivo + AOS + skeleton + prefers-reduced-motion + print
+4. Creación de 6 CSS Modules para islands Preact en `src/components/islands/`:
+   - `ProductModal.module.css` (líneas 2601-3438) — Modal completo con tabs, specs, features, responsive, dark mode
+   - `DarkModeToggle.module.css` (líneas 2510-2598) — Toggle fijo con tooltip y dark mode
+   - `Toast.module.css` (líneas 1983-2047) — Notificaciones toast con variantes
+   - `QuoteItems.module.css` (líneas 3440-3738) — Lista items cotización con qty controls
+   - `QuoteForm.module.css` (líneas 1393-1704) — Formulario cotización completo
+   - `ProductFilter.module.css` — Filtros categoría + grid productos + responsive
+5. CSS Modules usan `:global([data-theme="dark"])` para dark mode scoped
+6. Importación de 3 CSS globales en `src/pages/index.astro`
+7. Build verificado: CSS bundled 12KB, 0 errores
+8. CSS scoped de componentes Astro documentado (se integrará en Fase 5)
+
+### Fase 4 — Lo que se hizo
+
+1. Implementación de `src/stores/cart.ts` — `$cart` atom, `$cartCount` computed, funciones `addItem`, `removeItem`, `updateQuantity`, `clearCart`, `initCart`
+2. Implementación de `src/stores/theme.ts` — `$theme` atom, `toggleTheme`, `initTheme` con detección prefers-color-scheme
+3. Persistencia automática en localStorage vía `.subscribe()` (gelchile_cart, gelchile_theme)
+4. Guards SSR: `typeof window !== 'undefined'` y `typeof document !== 'undefined'`
+5. Aplicación de tema al DOM: `document.documentElement.setAttribute('data-theme', theme)`
+6. Limpieza: Eliminados 59 archivos duplicados de `assets/img/` (las copias correctas están en `public/assets/img/`)
+7. Build verificado: 0 errores TypeScript, build exitoso
 
 ### Estructura Astro Propuesta
 ```
@@ -273,15 +366,17 @@ src/
 
 ## Cómo Agregar/Quitar Productos
 
-**Agregar un producto:**
-1. Crear archivo JSON en `data/products/` con el SKU correspondiente (ej: `cab-001.json`)
-2. Seguir la estructura del schema (ver cualquier JSON existente como referencia)
-3. Agregar imagen a `assets/img/products/`
-4. Actualizar `count` en `data/categories.json`
+**Agregar un producto (proyecto Astro):**
+1. Crear archivo JSON en `src/content/products/` con el SKU correspondiente (ej: `cab-001.json`)
+2. Seguir el schema Zod en `src/content.config.ts` (campos requeridos: sku, title, category, categorySlug, description, features, specs, image, inStock, badge)
+3. Si es categoría nueva: agregar a los arrays `categorySlugs` y `categoryNames` en `src/content.config.ts`
+4. Agregar imagen a `public/assets/img/products/`
+5. Actualizar `count` en `src/data/categories.json`
+6. Ejecutar `npm run build` para validar el JSON contra el schema
 
 **Quitar un producto:**
-1. Eliminar el archivo JSON correspondiente
-2. Actualizar `count` en `data/categories.json`
+1. Eliminar el archivo JSON de `src/content/products/`
+2. Actualizar `count` en `src/data/categories.json`
 
 ## Notas de Desarrollo
 
@@ -295,22 +390,23 @@ src/
 
 ## Documentación Adicional
 
-- **Plan de migración completo:** `/root/.claude/plans/cozy-mapping-quiche.md`
+- **Plan de migración completo:** `/root/.claude/plans/cheerful-twirling-spring.md`
+- **Content Collections schema:** `src/content.config.ts` (Zod, Fase 2)
+- **Tipos TypeScript (Astro):** `src/types/index.ts` (CategorySlug, Product, Category)
 - **Componentes Astro:** `docs/astro-components.md`
 - **Mapeo CSS:** `css/modules/README.md`
-- **Tipos TypeScript:** `types/index.ts` (pendiente actualización de categorías)
-- **Schema de Productos:** `schemas/product.schema.js` (pendiente actualización de categorías)
+- **Schema legacy (demo):** `schemas/product.schema.js` (categorías demo, no usado por Astro)
+- **Tipos legacy (demo):** `types/index.ts` (categorías demo, no usado por Astro)
 
 ## Comandos Útiles
 
 ```bash
-# Ver el sitio demo actual localmente
+# Ver el sitio demo actual localmente (HTML/CSS/JS vanilla)
 npx serve .
 
-# Cuando se migre a Astro (Fase 1+)
-npm create astro@latest -- --template minimal
-npx astro add preact
-npm install nanostores @nanostores/preact
-npm run dev
-npm run build
+# Proyecto Astro (ya inicializado en Fase 1)
+npm run dev       # Servidor de desarrollo Astro
+npm run build     # Build estático a dist/
+npm run preview   # Preview del build
+npx astro sync    # Regenerar tipos de Content Collections
 ```

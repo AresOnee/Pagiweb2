@@ -1,9 +1,9 @@
 {
-  "sku": "BQH-001",
-  "title": "Barra Química Horizontal",
+  "sku": "BQV-001",
+  "title": "Barra Química Vertical",
   "category": "Barras Químicas",
   "categorySlug": "barras-quimicas",
-  "description": "Sistema de tierra física ultra eficiente en configuración horizontal. Contiene mezcla de sales cristalinas ricas en iones que al ser afectadas por la humedad inician el despido de iones libres al terreno. Fabricada en cañería de cobre ASTM C1100 (ETP 110). Ideal para suelos rocosos o condiciones difíciles de excavación.",
+  "description": "Sistema de tierra física ultra eficiente en configuración vertical. Contiene mezcla de sales cristalinas ricas en iones que al ser afectadas por la humedad inician el despido de iones libres al terreno. Fabricada en cañería de cobre ASTM C1100 (ETP 110). Disponible con conexión mecánica o exotérmica.",
   "features": [
     "Cañería de cobre ASTM C1100 (ETP 110)",
     "Diámetro 2\" interior, longitud 3000 mm con radio de 500 mm",
@@ -12,11 +12,11 @@
     "Tapa superior rosca UNC, tapa inferior soldadura MIG/oxígeno",
     "Perforaciones circunferenciales y perimetrales de 4 mm",
     "Cable cobre RVK (calibres #4, 2, 2/0, 3/0, 4/0)",
-    "Se aplican 4 sacos Power Gem exteriormente",
+    "Se aplican 7 sacos Power Gem exteriormente",
     "Mantención correctiva cada 15 años"
   ],
   "specs": {
-    "Nombre": "Barra Química Horizontal",
+    "Nombre": "Electrodo Químico Vertical",
     "Material Cañería": "Cobre ASTM C1100 (ETP 110)",
     "Diámetro Interior": "2 pulgadas",
     "Longitud": "3000 mm con 500 mm de radio 100°",
@@ -27,12 +27,10 @@
     "Tapa Inferior": "Soldadura MIG u oxígeno",
     "Perforaciones": "4 mm Ø circunferenciales y perimetrales",
     "Relleno": "Sales de cobre despolarizantes, solubles en agua",
-    "Power Gem Exterior": "4 sacos de 11,36 kg c/u",
+    "Power Gem Exterior": "7 sacos de 11,36 kg c/u",
     "Mantención": "Cada 15 años (recarga Power Sub)"
   },
   "image": "/assets/img/products/bqv-001.png",
-  "image": "/assets/img/products/bqh-001.png",
   "inStock": true,
   "badge": null
 }
-

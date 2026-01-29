@@ -1,0 +1,24 @@
+{
+  "sku": "TAB-002",
+  "title": "Tablero Eléctrico TIBOX 400x300x200 mm",
+  "category": "Accesorios",
+  "categorySlug": "accesorios",
+  "description": "Tablero eléctrico TIBOX de 400 x 300 x 200 mm con protección IP65 para uso en sistemas de puesta a tierra y distribución eléctrica. Construcción robusta para ambientes industriales y exteriores. Tamaño mayor para instalaciones que requieren más espacio.",
+  "features": [
+    "Dimensiones: 400 x 300 x 200 mm",
+    "Protección IP65",
+    "Marca TIBOX",
+    "Apto para ambientes industriales y exteriores",
+    "Construcción robusta",
+    "Mayor capacidad interior"
+  ],
+  "specs": {
+    "Marca": "TIBOX",
+    "Dimensiones": "400 x 300 x 200 mm",
+    "Protección": "IP65",
+    "Uso": "Sistemas de puesta a tierra y distribución eléctrica"
+  },
+  "image": "/assets/img/products/tab-002.png",
+  "inStock": true,
+  "badge": null
+}

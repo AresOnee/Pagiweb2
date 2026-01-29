@@ -1,0 +1,113 @@
+/* ============================================
+   ProductFilter — CSS Module
+   Extraído de css/styles.css (filtros de categoría)
+   Import: import styles from './ProductFilter.module.css'
+   ============================================ */
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-8);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: var(--spacing-2) var(--spacing-5);
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-600);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(0, 82, 204, 0.3);
+}
+
+/* Product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-6);
+}
+
+/* Product count */
+.product-count {
+  text-align: center;
+  margin-bottom: var(--spacing-6);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+}
+
+/* Add to cart animation */
+.btn-add-quote.adding {
+  animation: addToCart 0.3s ease;
+}
+
+.btn-add-quote.added {
+  background: var(--color-success);
+}
+
+.btn-add-quote.added svg {
+  animation: checkmark 0.3s ease;
+}
+
+/* Product card clickable */
+.product-card {
+  cursor: pointer;
+}
+
+.product-card .btn-add-quote {
+  position: relative;
+  z-index: 2;
+}
+
+.product-card-clickable {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-container {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: var(--spacing-2);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}

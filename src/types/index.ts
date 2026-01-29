@@ -1,0 +1,53 @@
+/**
+ * Type definitions for Gel Chile — derived from content.config.ts Zod schema.
+ *
+ * These types are used in components and pages that consume product data.
+ * The canonical source of truth is the Zod schema in src/content.config.ts.
+ * After running `astro sync`, Astro also generates CollectionEntry<'products'>
+ * which can be used as an alternative.
+ */
+
+/** Product category slug — used in URLs and filtering */
+export type CategorySlug =
+  | 'electrodos-electromagneticos'
+  | 'electrodos-grafito'
+  | 'barras-quimicas'
+  | 'aditivos'
+  | 'pararrayos'
+  | 'accesorios'
+  | 'servicios';
+
+/** Product category display name */
+export type CategoryName =
+  | 'Electrodos Electromagnéticos'
+  | 'Electrodos de Grafito'
+  | 'Barras Químicas'
+  | 'Aditivos'
+  | 'Pararrayos y Protección'
+  | 'Accesorios'
+  | 'Servicios';
+
+/** Product badge values */
+export type BadgeValue = 'Popular' | 'Pro' | 'Servicio';
+
+/** Product data shape — matches content.config.ts schema */
+export interface Product {
+  sku: string;
+  title: string;
+  category: CategoryName;
+  categorySlug: CategorySlug;
+  description: string;
+  features: string[];
+  specs: Record<string, string>;
+  image: string | null;
+  inStock: boolean;
+  badge: BadgeValue | null;
+}
+
+/** Category metadata from categories.json */
+export interface Category {
+  id: CategorySlug;
+  name: CategoryName;
+  description: string;
+  count: number;
+}

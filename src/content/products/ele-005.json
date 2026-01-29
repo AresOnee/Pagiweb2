@@ -1,0 +1,34 @@
+{
+  "sku": "ELE-005",
+  "title": "Electrodo Electromagnético Hunter Energy HE-400",
+  "category": "Electrodos Electromagnéticos",
+  "categorySlug": "electrodos-electromagneticos",
+  "description": "Kit de electrodo electromagnético de cobre electrolítico de alta conductividad con tratamiento anticorrosivo. Incluye dispositivo de filtración LCR, acoplador de 400 amperios con gabinete NEMA 4 y aditivo Power Gem certificado LAPEM. Ideal para sites de cómputo y aplicaciones de alta demanda.",
+  "features": [
+    "Cobre electrolítico de alta conductividad",
+    "Dispositivo de filtración LCR de baja frecuencia",
+    "Acoplador de impedancia capacidad 400A",
+    "Gabinete NEMA 4 de 20 x 30 x 15 cm",
+    "Incluye 4 sacos Power Gem (11,36 kg c/u)",
+    "Power Gem certificado LAPEM y laboratorio acreditado EMMA",
+    "Cumple norma CRETIB de no toxicidad",
+    "Ideal para sites de cómputo y data centers",
+    "Pozo de 110 x 90 x 90 cm"
+  ],
+  "specs": {
+    "Modelo": "HE-400k",
+    "Capacidad": "400 Amperios",
+    "Material Electrodo": "Cobre electrolítico",
+    "Gabinete": "NEMA 4 — 20 x 30 x 15 cm",
+    "Pozo": "110 x 90 x 90 cm",
+    "Power Gem Incluido": "4 sacos de 11,36 kg",
+    "Certificación": "LAPEM, EMMA, CRETIB",
+    "Resistividad Diseño": "ρ = 30 Ω·m",
+    "Factor Vertical (Fv)": "0,86",
+    "Factor Horizontal (Fh)": "0,5",
+    "Unidad": "Kit completo"
+  },
+  "image": "/assets/img/products/electrode-he-400-product.png",
+  "inStock": true,
+  "badge": "Popular"
+}

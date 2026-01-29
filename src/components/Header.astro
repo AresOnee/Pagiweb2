@@ -1,0 +1,344 @@
+---
+import { siteConfig } from '../data/site-config';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Inicio' },
+  { href: '/nosotros', label: 'Nosotros' },
+  { href: '/productos', label: 'Productos' },
+  { href: '/cotizacion', label: 'Cotización' },
+];
+
+function isActive(href: string, current: string): boolean {
+  if (href === '/') return current === '/';
+  return current.startsWith(href);
+}
+---
+
+<header class="header">
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="/assets/img/gelchile-logo.png" alt="Gel Chile" class="logo-img" />
+      <span>Gel <strong>Chile</strong></span>
+    </a>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        {navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={['nav-link', { active: isActive(link.href, currentPath) }]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <a href="/cotizacion" class="cart-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span>Cotizar</span>
+        <span class="cart-count" id="cart-count-slot" style="display: none;">0</span>
+      </a>
+
+      <button class="mobile-menu-btn" aria-label="Menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <ul class="nav-list">
+    {navLinks.map((link) => (
+      <li>
+        <a
+          href={link.href}
+          class:list={['nav-link', { active: isActive(link.href, currentPath) }]}
+        >
+          {link.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <a href="/cotizacion" class="cart-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <path d="M16 10a4 4 0 0 1-8 0"/>
+    </svg>
+    <span>Ver Cotización</span>
+  </a>
+</div>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+    z-index: var(--z-fixed);
+    transition: all var(--transition-base);
+  }
+
+  .header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+  }
+
+  .logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+  }
+
+  .nav-link {
+    position: relative;
+    padding: var(--spacing-2) var(--spacing-4);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-600);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: all var(--transition-base);
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-primary);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: calc(100% - var(--spacing-8));
+  }
+
+  .nav-link:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Cart button */
+  .cart-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-4);
+    background: var(--color-primary-50);
+    color: var(--color-primary);
+    border-radius: var(--radius-full);
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-base);
+  }
+
+  .cart-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .cart-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cart-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 var(--spacing-1);
+    background: var(--color-accent);
+    color: var(--color-white);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    border-radius: var(--radius-full);
+  }
+
+  /* Mobile menu button */
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: var(--spacing-2);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+  }
+
+  .mobile-menu-btn:hover {
+    background: var(--color-gray-100);
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-gray-700);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+  }
+
+  /* Mobile menu overlay */
+  .mobile-menu {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-white);
+    padding: var(--spacing-6);
+    transform: translateX(100%);
+    transition: transform var(--transition-base);
+    z-index: var(--z-fixed);
+    overflow-y: auto;
+  }
+
+  .mobile-menu.active {
+    transform: translateX(0);
+  }
+
+  .mobile-menu .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+
+  .mobile-menu .nav-link {
+    display: block;
+    padding: var(--spacing-4);
+    font-size: var(--font-size-lg);
+    border-radius: var(--radius-md);
+  }
+
+  .mobile-menu .nav-link:hover,
+  .mobile-menu .nav-link.active {
+    background: var(--color-primary-50);
+  }
+
+  .mobile-menu .cart-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: var(--spacing-4);
+    padding: var(--spacing-4);
+  }
+
+  /* Dark mode */
+  :global([data-theme="dark"]) .header {
+    background: rgba(23, 43, 77, 0.95);
+  }
+
+  :global([data-theme="dark"]) .logo {
+    color: var(--color-white);
+  }
+
+  :global([data-theme="dark"]) .nav-link {
+    color: var(--color-gray-300);
+  }
+
+  :global([data-theme="dark"]) .nav-link:hover,
+  :global([data-theme="dark"]) .nav-link.active {
+    color: var(--color-primary-light);
+  }
+
+  :global([data-theme="dark"]) .nav-link::after {
+    background: var(--color-primary-light);
+  }
+
+  :global([data-theme="dark"]) .cart-btn {
+    background: rgba(76, 154, 255, 0.15);
+    color: var(--color-primary-light);
+  }
+
+  :global([data-theme="dark"]) .cart-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  :global([data-theme="dark"]) .mobile-menu {
+    background: var(--color-gray-800);
+  }
+
+  :global([data-theme="dark"]) .mobile-menu .nav-link:hover,
+  :global([data-theme="dark"]) .mobile-menu .nav-link.active {
+    background: rgba(76, 154, 255, 0.15);
+  }
+
+  :global([data-theme="dark"]) .mobile-menu-btn span {
+    background: var(--color-gray-300);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-list {
+      display: none;
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header .container {
+      height: 64px;
+    }
+  }
+</style>

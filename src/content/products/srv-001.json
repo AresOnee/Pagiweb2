@@ -1,0 +1,27 @@
+{
+  "sku": "SRV-001",
+  "title": "Servicio de Medición de Puesta a Tierra",
+  "category": "Servicios",
+  "categorySlug": "servicios",
+  "description": "Servicio profesional de medición de resistencia de puesta a tierra. Se utilizan los métodos de caída de potencial 61.8% desconectada o tenaza conectada según normas RIC N°06 y IEEE 81. Se recomienda esperar 2 a 3 semanas después de la instalación para realizar la medición.",
+  "features": [
+    "Método caída de potencial 61.8% desconectada",
+    "Método tenaza conectada",
+    "Cumple RIC N°06 Puesta a Tierra y Enlace Equipotencial",
+    "Cumple RIC N°05 Protección contra Tensiones Peligrosas",
+    "Basado en IEEE 81 Mediciones de Puestas a Tierra",
+    "Personal técnico capacitado",
+    "Informe de medición incluido"
+  ],
+  "specs": {
+    "Tipo": "Servicio de medición",
+    "Métodos": "Caída de potencial 61.8%, tenaza conectada",
+    "Normativa Chile": "RIC N°06, RIC N°05, NSEG 5 E.n. 7 (SEC)",
+    "Normativa Internacional": "IEEE 80, IEEE 81",
+    "Tiempo Post-Instalación": "2 a 3 semanas recomendado",
+    "Entregable": "Informe de medición"
+  },
+  "image": null,
+  "inStock": true,
+  "badge": "Servicio"
+}
