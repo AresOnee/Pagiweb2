@@ -1,0 +1,36 @@
+{
+  "sku": "ELE-007",
+  "title": "Electrodo Electromagnético Hunter Energy HE-1500",
+  "category": "Electrodos Electromagnéticos",
+  "categorySlug": "electrodos-electromagneticos",
+  "description": "Kit de electrodo electromagnético de cobre electrolítico de alta conductividad. Capacidad nominal de 1500 amperios con capacidad máxima de 3750A. Incluye dispositivo de filtración LCR y aditivo Power Gem certificado LAPEM. Diseñado para aplicaciones industriales de alta potencia.",
+  "features": [
+    "Cobre electrolítico de alta conductividad",
+    "Dispositivo de filtración LCR de baja frecuencia",
+    "Capacidad nominal 1500A, máxima 3750A",
+    "Gabinete calibre 18 de 200 x 300 x 120 mm",
+    "Conexión estándar de 1/2 pulgada con tuerca",
+    "Power Gem certificado LAPEM y laboratorio acreditado EMMA",
+    "Cumple norma CRETIB de no toxicidad",
+    "Gabinete texturizado gris"
+  ],
+  "specs": {
+    "Modelo": "HE-1500k",
+    "Capacidad Nominal": "1500 Amperios",
+    "Capacidad Máxima": "3750 Amperios",
+    "Material Electrodo": "Cobre electrolítico",
+    "Gabinete": "200 x 300 x 120 mm, calibre 18",
+    "Peso Gabinete": "4,914 kg",
+    "Conexión": "1/2\" estándar con tuerca",
+    "Acabado": "Texturizado gris",
+    "Power Gem": "11,36 kg, base orgánica",
+    "Certificación": "LAPEM, EMMA, CRETIB",
+    "Resistividad Diseño": "ρ = 30 Ω·m",
+    "Factor Vertical (Fv)": "0,86",
+    "Factor Horizontal (Fh)": "0,5",
+    "Unidad": "Kit completo"
+  },
+  "image": "/assets/img/products/electrode-he-1500-product.png",
+  "inStock": true,
+  "badge": "Pro"
+}

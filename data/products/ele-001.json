@@ -1,0 +1,30 @@
+{
+  "sku": "ELE-001",
+  "title": "Electrodo Electromagnético Hunter Energy HE-45",
+  "category": "Electrodos Electromagnéticos",
+  "categorySlug": "electrodos-electromagneticos",
+  "description": "Kit de electrodo electromagnético de cobre electrolítico de alta conductividad con tratamiento anticorrosivo. Incluye dispositivo de filtración LCR de baja frecuencia, acoplador de impedancia de 45 amperios y aditivo Power Gem para mejoramiento de suelo.",
+  "features": [
+    "Cobre electrolítico de alta conductividad",
+    "Dispositivo de filtración LCR de baja frecuencia",
+    "Acoplador de impedancia capacidad 45A",
+    "Gabinete NEMA 4 de 20 x 30 x 12 cm",
+    "Incluye 2 sacos Power Gem (11,36 kg c/u)",
+    "Terminal de conexión de 1/2 pulgada",
+    "Tratamiento anticorrosivo"
+  ],
+  "specs": {
+    "Modelo": "HE-45k",
+    "Capacidad": "45 Amperios",
+    "Material Electrodo": "Cobre electrolítico",
+    "Gabinete": "NEMA 4 — 20 x 30 x 12 cm",
+    "Power Gem Incluido": "2 sacos de 11,36 kg",
+    "Resistividad Diseño": "ρ = 30 Ω·m",
+    "Factor Vertical (Fv)": "0,86",
+    "Factor Horizontal (Fh)": "0,5",
+    "Unidad": "Kit completo"
+  },
+  "image": "/assets/img/products/electrode-he-45-product.png",
+  "inStock": true,
+  "badge": null
+}

@@ -1,38 +1,44 @@
 [
   {
-    "id": "multimetros",
-    "name": "Multímetros",
-    "description": "Digitales y analógicos",
+    "id": "electrodos-electromagneticos",
+    "name": "Electrodos Electromagnéticos",
+    "description": "Hunter Energy HE — 45A a 2500A",
+    "count": 8
+  },
+  {
+    "id": "electrodos-grafito",
+    "name": "Electrodos de Grafito",
+    "description": "Alto rendimiento para suelos corrosivos",
+    "count": 1
+  },
+  {
+    "id": "barras-quimicas",
+    "name": "Barras Químicas",
+    "description": "Horizontales y verticales, cobre ASTM C1100",
     "count": 2
   },
   {
-    "id": "pinzas",
-    "name": "Pinzas Amperimétricas",
-    "description": "AC/DC profesionales",
+    "id": "aditivos",
+    "name": "Aditivos",
+    "description": "Power Gem y Power Gel para mejora de suelo",
     "count": 2
   },
   {
-    "id": "telurometros",
-    "name": "Telurómetros",
-    "description": "Medición de tierra",
-    "count": 2
+    "id": "pararrayos",
+    "name": "Pararrayos y Protección",
+    "description": "Franklin, masilla y chispero para soldadura exotérmica",
+    "count": 3
   },
   {
-    "id": "megohmetros",
-    "name": "Megóhmetros",
-    "description": "Aislación eléctrica",
-    "count": 2
+    "id": "accesorios",
+    "name": "Accesorios",
+    "description": "Camarillas, tableros eléctricos y componentes",
+    "count": 3
   },
   {
-    "id": "analizadores",
-    "name": "Analizadores",
-    "description": "Redes y calidad",
-    "count": 2
-  },
-  {
-    "id": "detectores",
-    "name": "Detectores",
-    "description": "Voltaje y cables",
+    "id": "servicios",
+    "name": "Servicios",
+    "description": "Medición e instalación de puesta a tierra",
     "count": 2
   }
 ]

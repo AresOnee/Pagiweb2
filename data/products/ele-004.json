@@ -1,0 +1,32 @@
+{
+  "sku": "ELE-004",
+  "title": "Electrodo Electromagnético Hunter Energy HE-200",
+  "category": "Electrodos Electromagnéticos",
+  "categorySlug": "electrodos-electromagneticos",
+  "description": "Kit de electrodo electromagnético de cobre electrolítico de alta conductividad con tratamiento anticorrosivo. Especificación técnica formal para suministro, instalación y uso. Incluye dispositivo de filtración LCR, acoplador de 200 amperios, cámara de registro normalizada y aditivo Power Gem.",
+  "features": [
+    "Cobre electrolítico de alta conductividad",
+    "Dispositivo de filtración LCR de baja frecuencia",
+    "Acoplador de impedancia capacidad 200A",
+    "Gabinete de 30 x 25 x 15 cm",
+    "Incluye 3 sacos Power Gem (11,36 kg c/u)",
+    "Cámara de registro normalizada incluida",
+    "Terminal de conexión de 1/2 pulgada",
+    "Cumple normas IEEE de puesta a tierra"
+  ],
+  "specs": {
+    "Modelo": "HE-200k",
+    "Capacidad": "200 Amperios",
+    "Material Electrodo": "Cobre electrolítico",
+    "Gabinete": "30 x 25 x 15 cm",
+    "Power Gem Incluido": "3 sacos de 11,36 kg",
+    "Resistividad Diseño": "ρ = 30 Ω·m",
+    "Factor Vertical (Fv)": "0,86",
+    "Factor Horizontal (Fh)": "0,5",
+    "Normativa": "IEEE puesta a tierra",
+    "Unidad": "Kit completo"
+  },
+  "image": "/assets/img/products/electrode-he-200-product.png",
+  "inStock": true,
+  "badge": null
+}

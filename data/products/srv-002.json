@@ -1,0 +1,24 @@
+{
+  "sku": "SRV-002",
+  "title": "Servicio de Instalación de Malla de Fleje",
+  "category": "Servicios",
+  "categorySlug": "servicios",
+  "description": "Servicio profesional de instalación de malla de fleje para sistemas de puesta a tierra. Incluye tendido de malla de fleje de cobre según diseño del proyecto, conexiones exotérmicas y verificación del sistema instalado.",
+  "features": [
+    "Instalación profesional de malla de fleje",
+    "Conexiones mediante soldadura exotérmica",
+    "Personal técnico capacitado con EPP",
+    "Verificación del sistema instalado",
+    "Cumple normativas RIC vigentes"
+  ],
+  "specs": {
+    "Tipo": "Servicio de instalación",
+    "Material": "Malla de fleje de cobre",
+    "Conexiones": "Soldadura exotérmica",
+    "Normativa": "RIC N°06, RIC N°05",
+    "Seguridad": "Personal con EPP completo"
+  },
+  "image": "/assets/img/products/srv-malla-01.jpeg",
+  "inStock": true,
+  "badge": "Servicio"
+}
