@@ -1,0 +1,230 @@
+---
+interface Props {
+  sku: string;
+  title: string;
+  category: string;
+  categorySlug: string;
+  description: string;
+  image: string | null;
+  badge: string | null;
+  inStock: boolean;
+}
+
+const { sku, title, category, categorySlug, description, image, badge, inStock } = Astro.props;
+const productUrl = `/productos/${sku.toLowerCase()}`;
+---
+
+<article class="product-card">
+  <a href={productUrl} class="product-link">
+    <div class="product-image">
+      {badge && <span class="product-badge">{badge}</span>}
+      {image ? (
+        <img src={image} alt={title} loading="lazy" />
+      ) : (
+        <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+          <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+          <circle cx="60" cy="50" r="15" fill="#e2e8f0" stroke="#94a3b8"/>
+          <path d="M50 75h20" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      )}
+    </div>
+    <div class="product-content">
+      <span class="product-category">{category}</span>
+      <h3 class="product-title">{title}</h3>
+      <p class="product-description">{description}</p>
+      <span class="product-sku">SKU: {sku}</span>
+    </div>
+  </a>
+  <div class="product-footer">
+    <button
+      class="btn-add-quote"
+      data-sku={sku}
+      data-title={title}
+      data-category={category}
+      data-image={image}
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+        <path d="M12 5v14M5 12h14"/>
+      </svg>
+      Cotizar
+    </button>
+  </div>
+</article>
+
+<style>
+  .product-card {
+    position: relative;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-card);
+  }
+
+  .product-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .product-link {
+    display: block;
+    color: inherit;
+  }
+
+  .product-image {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(135deg, var(--color-gray-100) 0%, var(--color-gray-50) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+  }
+
+  .product-card:hover .product-image img {
+    transform: scale(1.05);
+  }
+
+  .product-image svg {
+    width: 120px;
+    height: 120px;
+    color: var(--color-gray-400);
+    transition: all var(--transition-base);
+  }
+
+  .product-card:hover .product-image svg {
+    transform: scale(1.1);
+    color: var(--color-primary);
+  }
+
+  .product-badge {
+    position: absolute;
+    top: var(--spacing-3);
+    left: var(--spacing-3);
+    padding: var(--spacing-1) var(--spacing-3);
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 1;
+  }
+
+  .product-content {
+    padding: var(--spacing-5);
+  }
+
+  .product-category {
+    display: inline-block;
+    padding: var(--spacing-1) var(--spacing-2);
+    background: var(--color-primary-50);
+    color: var(--color-primary);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-2);
+  }
+
+  .product-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-2);
+    line-height: 1.3;
+  }
+
+  .product-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    margin-bottom: var(--spacing-3);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .product-sku {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 var(--spacing-5) var(--spacing-5);
+    padding-top: var(--spacing-4);
+    border-top: 1px solid var(--color-gray-100);
+    margin: 0 var(--spacing-5);
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: var(--spacing-5);
+  }
+
+  .btn-add-quote {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-4);
+    background: var(--color-accent);
+    color: var(--color-white);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+  }
+
+  .btn-add-quote:hover {
+    background: var(--color-accent-dark);
+    transform: scale(1.05);
+  }
+
+  .btn-add-quote svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Dark mode */
+  :global([data-theme="dark"]) .product-card {
+    background: var(--color-gray-800);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  :global([data-theme="dark"]) .product-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  :global([data-theme="dark"]) .product-image {
+    background: linear-gradient(135deg, var(--color-gray-700) 0%, var(--color-gray-800) 100%);
+  }
+
+  :global([data-theme="dark"]) .product-category {
+    background: rgba(76, 154, 255, 0.15);
+    color: var(--color-primary-light);
+  }
+
+  :global([data-theme="dark"]) .product-title {
+    color: var(--color-white);
+  }
+
+  :global([data-theme="dark"]) .product-description {
+    color: var(--color-gray-400);
+  }
+
+  :global([data-theme="dark"]) .product-footer {
+    border-top-color: var(--color-gray-700);
+  }
+</style>

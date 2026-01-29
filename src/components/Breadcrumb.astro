@@ -1,0 +1,103 @@
+---
+interface Props {
+  items: { label: string; href?: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <ol class="breadcrumb-list">
+      {items.map((item, index) => (
+        <>
+          <li class:list={['breadcrumb-item', { active: index === items.length - 1 }]}>
+            {item.href && index !== items.length - 1 ? (
+              <a href={item.href}>{item.label}</a>
+            ) : (
+              <span>{item.label}</span>
+            )}
+          </li>
+          {index < items.length - 1 && (
+            <li class="breadcrumb-separator" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </li>
+          )}
+        </>
+      ))}
+    </ol>
+  </div>
+</nav>
+
+<style>
+  .breadcrumb {
+    padding: var(--spacing-4) 0;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-gray-100);
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    color: var(--color-gray-500);
+  }
+
+  .breadcrumb-item a {
+    color: var(--color-gray-600);
+    transition: color var(--transition-fast);
+  }
+
+  .breadcrumb-item a:hover {
+    color: var(--color-primary);
+  }
+
+  .breadcrumb-item.active {
+    color: var(--color-gray-900);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .breadcrumb-separator {
+    display: flex;
+    align-items: center;
+    color: var(--color-gray-300);
+  }
+
+  /* Dark mode */
+  :global([data-theme="dark"]) .breadcrumb {
+    background: var(--color-gray-800);
+    border-bottom-color: var(--color-gray-700);
+  }
+
+  :global([data-theme="dark"]) .breadcrumb-item {
+    color: var(--color-gray-400);
+  }
+
+  :global([data-theme="dark"]) .breadcrumb-item a {
+    color: var(--color-gray-400);
+  }
+
+  :global([data-theme="dark"]) .breadcrumb-item a:hover {
+    color: var(--color-primary-light);
+  }
+
+  :global([data-theme="dark"]) .breadcrumb-item.active {
+    color: var(--color-white);
+  }
+
+  :global([data-theme="dark"]) .breadcrumb-separator {
+    color: var(--color-gray-600);
+  }
+</style>
