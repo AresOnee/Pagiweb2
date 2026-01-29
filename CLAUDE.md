@@ -4,7 +4,7 @@
 Sitio web de catálogo para **Gel Chile**, empresa chilena especializada en **sistemas de puesta a tierra y protección eléctrica**. Permite a los clientes explorar productos, ver especificaciones técnicas y solicitar cotizaciones.
 
 ## Estado Actual
-- **Fase:** Migración a Astro en curso — Fases 0, 1, 2 y 3 completadas, pendiente Fase 4
+- **Fase:** Migración a Astro en curso — Fases 0-4 completadas, pendiente Fase 5
 - **Stack actual:** HTML5, CSS3, JavaScript vanilla (sitio demo funcional)
 - **Stack objetivo:** Astro + Preact + nanostores
 - **Datos de productos:** 21 productos reales de Gel Chile (JSON) — reemplazan los 12 demo antiguos
@@ -253,7 +253,7 @@ Plan completo en: `/root/.claude/plans/cheerful-twirling-spring.md`
 | **Fase 1** | Inicialización proyecto Astro | ✅ COMPLETADA |
 | **Fase 2** | Content Collections y Schema | ✅ COMPLETADA |
 | **Fase 3** | CSS (global + scoped) | ✅ COMPLETADA |
-| Fase 4 | Stores (nanostores) | Pendiente |
+| **Fase 4** | Stores (nanostores) | ✅ COMPLETADA |
 | Fase 5 | Componentes estáticos (Astro) | Pendiente |
 | Fase 6 | Islands interactivos (Preact) | Pendiente |
 | Fase 7 | Páginas | Pendiente |
@@ -317,6 +317,16 @@ Plan completo en: `/root/.claude/plans/cheerful-twirling-spring.md`
 6. Importación de 3 CSS globales en `src/pages/index.astro`
 7. Build verificado: CSS bundled 12KB, 0 errores
 8. CSS scoped de componentes Astro documentado (se integrará en Fase 5)
+
+### Fase 4 — Lo que se hizo
+
+1. Implementación de `src/stores/cart.ts` — `$cart` atom, `$cartCount` computed, funciones `addItem`, `removeItem`, `updateQuantity`, `clearCart`, `initCart`
+2. Implementación de `src/stores/theme.ts` — `$theme` atom, `toggleTheme`, `initTheme` con detección prefers-color-scheme
+3. Persistencia automática en localStorage vía `.subscribe()` (gelchile_cart, gelchile_theme)
+4. Guards SSR: `typeof window !== 'undefined'` y `typeof document !== 'undefined'`
+5. Aplicación de tema al DOM: `document.documentElement.setAttribute('data-theme', theme)`
+6. Limpieza: Eliminados 59 archivos duplicados de `assets/img/` (las copias correctas están en `public/assets/img/`)
+7. Build verificado: 0 errores TypeScript, build exitoso
 
 ### Estructura Astro Propuesta
 ```
