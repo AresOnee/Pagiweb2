@@ -1,7 +1,11 @@
 ---
-// Gel Chile — Phase 2 Verification Page
+// Gel Chile — Phase 2+3 Verification Page
 // Confirms Content Collections loads all 21 products with valid data.
+// Phase 3: Imports global CSS (variables, dark-mode, animations).
 // Will be replaced in Phase 7 with the actual home page.
+import '../styles/global.css';
+import '../styles/dark-mode.css';
+import '../styles/animations.css';
 import { getCollection } from 'astro:content';
 
 const allProducts = await getCollection('products');

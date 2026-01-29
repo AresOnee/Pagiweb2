@@ -1,0 +1,94 @@
+/* ============================================
+   DarkModeToggle — CSS Module
+   Extraído de css/styles.css (líneas 2510-2598)
+   Import: import styles from './DarkModeToggle.module.css'
+   ============================================ */
+
+.theme-toggle {
+  position: fixed;
+  bottom: var(--spacing-6);
+  left: var(--spacing-6);
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  z-index: var(--z-fixed);
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-xl);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.icon-sun {
+  position: absolute;
+  opacity: 0;
+  transform: rotate(-90deg) scale(0);
+}
+
+.icon-moon {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+/* Dark mode state — applied via [data-theme="dark"] on <html> */
+:global([data-theme="dark"]) .theme-toggle {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+}
+
+:global([data-theme="dark"]) .icon-sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+:global([data-theme="dark"]) .icon-moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+
+/* Tooltip */
+.theme-toggle::before {
+  content: 'Modo oscuro';
+  position: absolute;
+  left: calc(100% + var(--spacing-3));
+  background: var(--color-gray-900);
+  color: var(--color-white);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-10px);
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+:global([data-theme="dark"]) .theme-toggle::before {
+  content: 'Modo claro';
+}
