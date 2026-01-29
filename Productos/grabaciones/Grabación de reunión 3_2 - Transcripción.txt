@@ -1,0 +1,785 @@
+Grabación de reunión 3_2 - Transcripción
+
+Hora:  29 de enero de 2026 01:08:03
+Tema:  Grabación de reunión 3_2
+
+00:00
+Aquí te voy a mostrar.
+
+00:06
+Mira, ¿viste que ahí cuando instalamos el electrodo y ponemos el electrodo y la camarilla?
+
+00:17
+Así queda, ¿viste?Y esa es la tubería MT.
+
+00:21
+Y ahí queda.Ahí está una caja y después va el tablero.
+
+00:26
+No se donde está el tablero en estos momentos aquí.
+
+00:28
+Pero también está el tablero por ahí.
+
+8:44:09
+Aquí está, ahí está el tablero, viste, ahí está el tablero y ahí están esas cositas que te mostré yo Ahí van para las conexiones Ahí van para las conexiones Y la cañería MT,
+
+15:44:01
+ voy a escribir lo que es porque nadie sabe lo que es Malla de fleje, para que te cheque Entonces también nosotros vendemos fleje Mallas de fleje, mallas de cobre, trenzado
+
+01:21
+No sé qué más información te puedo dar, esas son las páginas que más o menos me acuerdo yo, las que te nombré.
+
+01:32
+Y no, que diga Gel Chile no más.
+
+01:35
+Gel Chile no más.Y el logo tiene el logo para colocar el logo.
+
+01:39
+¿Cómo te lo mando por correo?
+
+01:40
+Sí, como sea, para colocar el logo también.
+
+01:43
+Ah, viste esto, está con la teléfono fijo, no tenemos teléfono fijo ya, ¿cachai.
+
+01:47
+Ya.
+
+01:47
+Solo teléfono de celular.
+
+01:50
+¿Ahí es el logo también.
+
+01:51
+Ese es el logo, este logo es el chile.
+
+01:54
+Ah, pero está en todas las industrias.
+
+01:56
+Ya desde ahí lo saco entonces.
+
+01:57
+Sí, sácalo de ahí porque no sé dónde es.
+
+01:59
+No sé dónde sacarlo más Eso.
+
+02:03
+Más o menos la cosa.
+
+02:05
+La cosa.
+
+02:06
+La cosa nada.
+
+02:07
+Ahora le voy a mostrar el el presupuesto que le tenía
+
+02:18
+Yo también voy a probar con usted que sea como.
+
+02:26
+¿Cómo se llama?Para crear portafolio, para poder después mostrarle esto a otras personas también lo mismo.
+
+02:32
+Por supuesto.
+
+02:33
+Entonces aquí yo tenía el presupuesto y a donde.
+
+02:36
+Se te perdió.Ahí está, presupuesto.
+
+02:40
+Si no, pero ahí está, ahí está.
+
+02:42
+Entonces iba a empezar a ocupar la misma plantilla para.
+
+02:49
+Para otros proyectos.Ya lo que va a tener la página va a ser, se llama Astro, la nueva tecnología que voy a usar, o sea, nueva tecnología.
+
+03:03
+Somos como 5 años, pero esta es súper rápida, no necesita de hosting.
+
+03:09
+Simplemente uno carga la página que se llama Uncloudfar page, que sería el hosting y sería gratuito.
+
+03:18
+O sea, no necesita pagar anualmente por el hosting.
+
+03:23
+ya.Entonces, la página que va a tener, la página de inicio va a tener la sección de nosotros como empresa, que eso también me tiene que mandar información más o menos de qué va a tener la empresa.
+
+03:33
+El catálogo con aproximadamente como con 50 productos, también va a tener un filtro por búsqueda, por categoría.
+
+03:40
+También la página va a tener detalles del de cada producto.
+
+03:44
+También va a tener sistema de cotización, que en este caso sería el carrito de cotización.
+
+03:48
+También un formulario de contacto.
+
+03:51
+Que el funcional que sería para enviarlo por correo, también va a ser, va a ser para el responsive, que significa que para celular, para tablet o para PC.
+
+04:01
+También le voy a agregar que sea tema oscuro y tema claro.
+
+04:05
+No sé si es que le gusta que sea así o cuando cuando ve una página, por ejemplo, el esto de acá se puede colocar como oscuro.
+
+04:14
+Que se puede cambiar la tonalidad, por ejemplo, a la gente le gusta, por ejemplo, aquí colócalo todo más claro y aquí queda una pestañita arriba.
+
+04:24
+A mi me gustaron los colores porque la persona que no ve bien, ve súper bien así, por eso me gustó.
+
+04:29
+Entonces le gustaron estos colores, dejémoslo así y también voy a colocar un tema claro para la gente que es que uno no sabe la gente, entonces de repente voy a colocar un tema claro aquí arriba.
+
+04:40
+Entonces uno pierde el botón y va a quedar todo en blanco, en blanco, es el tema claro y oscuro, también optimizado, SEO básico, es el SEO cuando se posiciona el, por ejemplo, Astro, que es la nueva tecnología, como que a Google le gusta que sea la página.
+
+05:00
+en Astro, más que sea en Huerpest, más arriba.
+
+05:05
+Certificado SSL que es cuando es HTTPS, que sea con la seguridad.
+
+05:10
+Y el código se lo va a entregar todo a ustedes cuando termine.
+
+05:14
+Esto va a ser suyo.Entonces, nota sobre el alcance el catálogo, carga inicial con 50 productos con ficha técnica y fotografía optimizada.
+
+05:21
+También va a tener los filtros que les ha dicho y los formularios.
+
+05:24
+Entonces este va a ser el presupuesto inicial.
+
+05:28
+Aquí le descontamos el hosting porque usted ya lo tiene supuestamente.
+
+05:34
+Sí, pero tengo que adírselo al.
+
+05:36
+Sí, también instituto urgente también es sobre el hosting para poder.
+
+05:39
+Mandamelo por WhatsApp y yo pedírselo a Rodrigo.
+
+05:40
+Sí, porque con esto redirecciono toda la página al extremo.
+
+05:46
+¿En qué página vamos?Acá.
+
+05:49
+Ya, entonces, mire, estos son las cosas extras que si usted quiere agregar o no agregar.
+
+05:55
+Que sería un botón de WhatsApp.
+
+05:59
+Flotante con enlace directo.
+
+06:00
+Integración con Google Maps, que saldría como una página abajito que sería la ubicación exacta de la empresa.
+
+06:09
+El Google Analytics para ver la estadística de las visitas.
+
+06:13
+Galería de imágenes, que sería como solamente pura imágenes.
+
+06:17
+Excepción de testimonio de los clientes.
+
+06:20
+Servicio de preguntas frecuentes, como por ejemplo, cuántas cargas se usan, no sé, una malla o cosas.
+
+06:28
+Preguntas que la gente se puede hacer, sí, pero que igual te necesita que sea páginas adicionales, por ejemplo.
+
+06:37
+Bueno, ahí abajo venden más detalles.
+
+06:39
+El blog yo creo que le podría interesar que sea como un blog, que es un blog cuando uno publica como una historia de lo de lo que pasó en una medición, nosotros hicimos tal tal cosa o colocamos tal cosa, hicimos tal medición y se hace así, tal cosa así.
+
+06:56
+Ah, pero es que igual tengo que renovarlo.
+
+07:00
+No, no, esto sería una única vez.
+
+07:04
+Si usted lo quiere, ahí me avisa y creo.
+
+07:06
+No, eso lo podemos ir viendo en el camino.
+
+07:08
+Si en el camino, si se ve la cosa, no es ahora.
+
+07:11
+Y esto sería el presupuesto semestral que sería como el mantenimiento que si usted quiere que le haga mantenimiento a la web.
+
+07:20
+¿Y qué mantenimiento se le hace?
+
+07:22
+Aquí, por ejemplo, cambio de textos.
+
+07:24
+Hasta tres cambios de texto que usted quiera.
+
+07:27
+Por ejemplo, cambios de Mac existentes.
+
+07:29
+Esto igual lo pudimos ir negociando.
+
+07:31
+Correcciones de errores, subook.
+
+07:33
+Eso da lo mismo porque es como un.
+
+07:36
+Backup del sitio también una vez al mes.
+
+07:40
+Por si se llega a caer el sitio o cosa así, va a tener un respaldo de lo último que se guardó.
+
+07:47
+El monitoreo del funcionamiento.
+
+07:49
+Bueno, y también soporte de WhatsApp le puse yo para responderle a usted, cosa así.
+
+07:54
+Renovación del SSL que eso se hace, estaba está incluido en esta en esta mantenimiento semestral.
+
+08:03
+Entonces si usted quiere, me dice que por un semestre va a tener todo esto incluido ya y después el otro semestre si quiere renovar ahí me avisa que es lo que no incluye, que sería como que no, que no incluye la parte de esto del mantenimiento.
+
+08:21
+Yo ahora te dije todo lo que yo trabajo, pero si yo agrego algo nuevo, eso se paga.
+
+08:26
+Sí, dependiendo.Aquí le puse alguna de las cosas que se me ocurrieron ahí.
+
+08:32
+Ahí usted dice que yo creé este producto ahora, entonces es nuevo?
+
+08:36
+Sí, y ahí habría que agregar con un producto que sería páginas adicionales.
+
+08:44
+No, no lo puse.Sí, pero tiene un costo de ir agregándolo después, ¿ya?
+
+08:51
+¿Entonces, qué no incluye?
+
+08:52
+Que sería páginas nuevas que no existan, eso tiene un costo más o menos de 30000 pesos, crear una sección aparte de la que están.
+
+09:06
+No, ahora sí, ahora sí tiene el este, pero esto después, sí, pero después.
+
+09:12
+Nuevas funcionalidades según la complejidad, por ejemplo, que quiere agregarle un carrito de compra para que sea por vuelta y todas esas cosas.
+
+09:19
+Ahí hay que ver, depende de la complejidad, y podemos ir viendo artículos adicionales a los que estaban acá, porque lo que le dije eran 5 como blogs y un adicional serían 12000 cada uno.
+
+09:30
+Cambios urgentes, menos de 24 horas.
+
+09:35
+Sí, algo urgente, urgente.
+
+09:36
+Y aquí está el detalle de las páginas adicionales, por ejemplo, trabajar con nosotros, proyectos realizados, garantías y certificaciones que tengan, distribuciones, fichas técnicas.
+
+09:48
+No puede ser que meter todo el disco block 5 artículos, sí, pues de los 5 artículos.
+
+09:55
+Bueno, aquí igual tengo un más o menos como se vería.
+
+10:00
+El blog y las.Aquí está.
+
+10:08
+No, este me abrió.
+
+10:10
+Claro, igual, las páginas se caen porque se meten en otros gases y te las bajan.
+
+10:21
+Sí, pero en este caso, como Astro y el Cloudfarm, el que sea, puede aguantar hasta millones de visitas.
+
+10:29
+Porque no es una página, a ver cómo le puedo explicar, no, el WordPress ocupa como plugin.
+
+10:35
+cositas aparte para poder empezar a crear la página.
+
+10:38
+Esto usted va a tener como un link a la página y usted solamente va a direccionar ahí.
+
+10:44
+No va a descargar.Como que va a descargar la página?
+
+10:46
+Ponte tú.Yo voy a poner dos teléfonos o tres.
+
+10:49
+Ponte tú el teléfono mío, el de la Jocelyn de Claudio.
+
+10:52
+Ya.
+
+10:53
+Y el correo de venta?
+
+10:56
+Sí, cachai.Es que ahí eso sería cosa aparte.
+
+11:00
+No es como de la página.
+
+11:02
+En la página no va a ser como una base de datos.
+
+11:04
+entonces no pueden como hackearla en ese sentido, le puede llegar spam, que eso sería otra cosa aparte porque gente que llega copia y pega el tiempo.
+
+11:12
+Pero por eso tú estás todos los meses revisando, limpiando y todo.
+
+11:15
+Sí, todo es el asunto.
+
+11:16
+Justo aquí no me abrió el.
+
+11:18
+Ya, no importa porque me lo mandai, si vamos a juntarnos después.
+
+11:23
+¿Qué más?Ah, lo que le estaba diciendo, lo del artículo, como se iba a ver, bueno, ahí después le muestro más detalle.
+
+11:28
+Esto es lo que tenía más o menos planeado cómo hacer lo que estamos haciendo ahora.
+
+11:38
+Reunión inicial, prototipo visual, eso lo mostré, si es que le gusta o no.
+
+11:42
+Ahí después voy a seguir realizando los ajustes que me dijo con el Gel Chile y todo eso.
+
+11:47
+El desarrollo ya yo tenía pensado ya, no sé si el día viernes tiene tiempo, el día día viernes para mostrarle con más detalle las cosas.
+
+11:59
+Sí, pero podemos juntar
+
+12:00
+Que no vengai para acá, que están por lejos, o donde mi mami, o en donde era yo, o en el local.
+
+12:07
+Yo pensé que estabai y andabai por allá por la universidad, si no me iré yo a tu local.
+
+12:14
+No te salís de clases ya tía, si por eso ya tengo mas tiempo.
+
+12:18
+Ya po, ni un problema, yo creo que esta super bien.
+
+12:23
+Ahora lo que si yo tengo que ver es la cuestión del.
+
+12:26
+Del Rodrigo que me dé el hosting.
+
+12:29
+Sí, pues es el problema de lo que necesito.
+
+12:31
+Bueno, ya me lo dio ya, el logo en buena calidad y yo los tengo ahí.
+
+12:34
+Los textos también de servicio, información y contacto, fotografías también.
+
+12:38
+Esto ya lo tengo en casi todo lo que me pidió.
+
+12:41
+Pues mándame tu cuenta para yo hacerte el tiro del 50% y para que empezamos a trabajar.
+
+12:51
+Le gustó como.Me encantó.
+
+12:53
+Ya.No, pero es que igual yo le.
+
+12:57
+Le estoy mostrando para que sea más profesional.
+
+13:00
+Sí, está súper bien.Para después mostrarle a otra gente y todo eso.
+
+13:03
+Y está bien explicado.
+
+13:06
+Ahí.No, está súper bien.
+
+13:10
+Yo encuentro que está bien.
+
+13:11
+Esto lo que yo pienso que, bueno, claro, porque aquí ya tú estás presentando tu.
+
+13:16
+Tu producto te está dando el precio, pero y aquí después tu desglosas lo adicional.
+
+13:21
+Los adicionales sí.Más el plan de mantenimiento, más todo lo que incluye y lo que no incluyen.
+
+13:27
+Está bien, me acuerdo que está súper claro.
+
+13:29
+Está bien.Muy bien.
+
+13:32
+Entonces, quedamos en eso pues, tía.
+
+13:36
+¿Y a usted no le pega al online?
+
+13:39
+Hacerlo como un.Yo le muestro desde mi computador como se ve y cosas así.
+
+13:43
+No tiene un problema, sí.
+
+13:45
+Mándame el tengo.
+
+13:46
+Sí, pues no sería el.
+
+13:47
+Tengo esto, mira, también para que no.
+
+13:49
+eso Entonces, no, tú me mandas ahí.
+
+13:57
+No te mando el.
+
+13:58
+No, yo le mando el Google Meets, ¿lo ubicas?
+
+14:00
+No.
+
+14:00
+Ya, bueno.No, no, si es un link nomás.
+
+14:03
+Ah, ya no puedo.Yo le mando una.
+
+14:05
+Lo aprieto y listo.
+
+14:06
+Mire, le voy a, vamos a crear al tiro una para que probeme y se lo mando.
+
+14:11
+¿Qué es lo que es esto?
+
+14:14
+IPI.
+
+14:15
+Debe ser un programa de WIN.
+
+14:21
+WIN, no sé qué es lo que es.
+
+14:25
+Ah, lo que te había dicho, porque me dijiste que me comprara una tarjeta, no la compré la weá, se me olvidó.
+
+14:29
+Lo que pasa es que necesito información de mi abuelita porque yo estoy haciendo una.
+
+14:33
+Ah.Y buscó por donde le dijo, ¿no.
+
+14:37
+No, que me da miedo, si no compré la tarjeta, ¿viste?
+
+14:40
+Yo tengo hartas cosas de ella aquí
+
+14:42
+no tenía contra tu el nombre de la abuela de mi mamá y el del papá.
+
+14:47
+Que no tenía esos nombres?
+
+14:49
+Claro, y el nombre del papá de mi mamá se llama José Mario Valtierra Carrasco.
+
+14:53
+Ya va consiguiendo nombres, ya.
+
+14:55
+Tengo harto, ya tengo fecha.
+
+15:00
+Tengo, pero no me da cosa meterme a esas cuestiones con la tarjeta, entonces tú me dijiste que me pagan una tarjeta prepago, ¿cómo?
+
+15:10
+No, pues tener la, no sé si ubica la match o la tempo o cosas así, que son las de prepago.
+
+15:16
+Y entonces ahí yo le pongo 10 mil pesos.
+
+15:17
+Si po, una cosa así.¿La tempo.
+
+15:19
+Si po, la tempo, la tempo o la.
+
+15:21
+porque quizá incluso los chiquillos deben tener una de esas po.
+
+15:24
+Ya, no tengo idea, pues si no está, así no está.
+
+15:27
+Tempo tarjeta.Geta Entonces con esa yo puedo crear esa cuestión Todavía no llega Es cavasquez b@gelchile.cl ¿Lo mandaste bien o no?
+
+15:54
+No, la corte porque era otra cosa Era la.
+
+15:59
+Esta bueno ya tengo que pagar 5 millones 5 millones setecientos
+
+16:09
+estoy loca con la ostia juntando plata para pagar eso no pudimos pagar a las 6:20 ya llegó la isla me esta doliendo la cabeza, estoy muy encansada yo creo y tengo que hacer este informe.
+
+16:37
+Mas encima le queda.
+
+16:38
+Desde 2 megas bolas en perio y es de media y de baja atención y con tu mente igual me da la pensa igual le dolió
+
+16:48
+Está ocupado.¿Viste?Este es un informe de resistencia del teleférico Pionono.
+
+17:03
+Al que están haciendo?
+
+17:06
+Entonces este es el se llama Estación Chile Nativo.
+
+17:12
+Algo ¡Métete, métete! Y la otra le dice cura escucha.
+
+17:58
+Vamos a hacer una reunión y así no nos pegamos ninguno de los dos picks.
+
+18:02
+Claro.Tantos incendios?
+
+18:10
+Y donde hace más calor me encima.
+
+18:13
+En la boleta, ¿eh?¿El agua?
+
+18:17
+¿Ya?La emergencia.Ya.
+
+18:19
+Ya hay emergencia y el emergencia afuera.
+
+18:22
+cuando la muerte se aventó, le tapó el registro.
+
+18:25
+Tiene dónde cortar el agua para arreglar su llave de esta?
+
+18:30
+¿Y esto va a tener una llave de pasa también.
+
+18:34
+No, pero si ustedes necesitan la de afuera.
+
+18:37
+Esta es la que corta toda la casa.
+
+18:40
+¿Eh?Usted necesita acá?
+
+18:42
+Claro.Está adentro, ¿Cómo?
+
+18:44
+¿Tiene alguna?No, si ahí quedó.
+
+18:49
+No, porque ustedes necesitan una afuera.
+
+18:50
+Y entonces lo de afuera se llama rap ¿Cómo era que decía usted?
+
+19:02
+Viste que Clorito me manda las mediciones Lo que hizo hoy día él me lo mandó.
+
+19:08
+Y le manda fotos.
+
+19:09
+Me manda todo eso Tengo cualquier pega Mira, yo quería hacer esto no más En la mañana la locatell y me llama me dicen a mi me han dado hablar Y yo le digo buenos días
+
+19:22
+Buenos días, ahí empieza el día.
+
+19:25
+Ahí se calman, primero se destresan y después se calman.
+
+19:29
+Cálmate, desgraciada, no estamos las poses porque era una misión y el proyecto hizo tres.
+
+19:39
+Ya estamos entonces?
+
+19:42
+Ahí le mando la cuenta.
+
+19:43
+Mándeme la cuenta no más para crearla.
+
+19:45
+a pagarle y empezamos a trabajar inmediatamente porque necesitamos todo urgente.
+
+19:51
+Si tengo gran parte avanzado, así que ahora vamos a recopilar todos los datos.
+
+20:00
+Xiaolin.¿Esto lo voy a sacar.
+
+20:05
+Sí, sáquelo.
+
+20:05
+Esto lo voy a sacar el amor.
+
+20:07
+Va a mostrarle los colores al.
+
+20:10
+Al.
+
+20:10
+Al chuperín.
+
+20:11
+¿Y ahí qué foto quería?
+
+20:13
+Oh, ¿esa foto está bien ahí.
+
+20:14
+Ay, no, no, no.¿Qué cosa?
+
+20:18
+¿Dónde?
+
+20:18
+Bueno, ahí.Donde estaba antes donde estaba recibiendo.
+
+20:22
+¿Esta.
+
+20:25
+Sí, ¿ese voltímetro está bien ahí o no?
+
+20:27
+¿O quiero otra foto.
+
+20:29
+Es lo que está en la hoja de Gel Chile, eso tenés que.
+
+20:31
+Poner Ya, no, no, pero es que te va a hacer una imagen.
+
+20:34
+Sí po, pero está en la hoja de Gel Chile, ahí está la imagen Ah, ya Mire, como los informes.
+
+20:39
+Ya, ah, como el fondo del informe, ya.
+
+20:42
+Oh, está muy colapsado el edipo Tengo que apagarlo Tengo que apagarlo y.
+
+20:52
+Mira po, está todo lo que está abierto, también borrando todo esto Ya la hice ya Todo eso es lo que he trabajado
+
+21:00
+o bochines, mira ¿viste?
+
+21:01
+Ah tampoco, este no tiene, justo este no tiene, tiene solo el logo de arriba.
+
+21:09
+¿viste ese es el logo.
+
+21:10
+Si, pues es el logo.Es incluso el logo puede ir como arribita de la.
+
+21:14
+de las páginas.
+
+21:17
+Ese es el electrodo de las pistas.
+
+21:19
+Ah, le iba a decir lo del.
+
+21:22
+para que recuerde lo del.
+
+21:24
+Lo del hosting.Mándamelo escrito para que yo pedíselo de la misma forma al que me asignó.
+
+21:29
+que te creí Marcia le pusiste el gorro ahora, no se me borró todo ya, después de ahí no se ya te voy a dejar donde voy a dejar?
+
+21:40
+eh no sé po, te voy a tirar Ale, está colgado donde dejé mis llaves ah ya se me contesté, me recogí
+
+21:59
+Todo sola, espérate que tengo que estar a la cookie.
+

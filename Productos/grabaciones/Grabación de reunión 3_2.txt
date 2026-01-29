@@ -1,0 +1,35 @@
+La conversación se centra en la presentación de una propuesta detallada para el desarrollo de un sitio web para Gel Chile, incluyendo características técnicas, contenido, opciones de mantenimiento y costos asociados. Se discuten aspectos como la tecnología a utilizar, el diseño, la optimización SEO, la seguridad y la gestión de productos, así como la posibilidad de añadir funcionalidades adicionales y un plan de mantenimiento semestral.
+
+ 1. Presentación de la Propuesta Web
+- Detalles de la Propuesta:
+    - Se propone una página web utilizando la tecnología Astro, que es rápida y no requiere hosting de pago anual.
+    - La página incluirá una sección "Nosotros", un catálogo con 50 productos filtrables y detalles de cada producto.
+    - Se integrará un sistema de cotización (carrito), un formulario de contacto funcional y diseño responsive para diversos dispositivos.
+- Funcionalidades Adicionales y Diseño:
+    - Se ofrecerá la opción de tema oscuro y claro, optimización SEO básica y certificado SSL para seguridad.
+    - El código de la página será entregado al cliente al finalizar el proyecto, asegurando la propiedad total del sitio.
+    - Se discutió la inclusión de un botón flotante de WhatsApp, integración con Google Maps y Google Analytics.
+- Contenido y Mantenimiento:
+    - Se mencionó la posibilidad de una galería de imágenes, testimonios de clientes y una sección de preguntas frecuentes.
+    - Se propuso un blog para publicar historias y mediciones, con la opción de renovación única si se desea.
+    - Se presentó un presupuesto semestral para mantenimiento, que incluye cambios de texto, corrección de errores y copias de seguridad.
+
+ 2. Discusión de Requerimientos y Próximos Pasos
+- Requerimientos del Cliente:
+    - La cliente solicitó que el logo de Gel Chile se incluyera en la página y proporcionó el logo existente para su uso.
+    - Se confirmó la necesidad de actualizar la información de contacto, eliminando el teléfono fijo y usando solo el celular.
+    - Se discutió la importancia de obtener el hosting de Rodrigo para redireccionar la página correctamente.
+- Acuerdos y Próximas Acciones:
+    - Se acordó que la cliente enviaría la cuenta bancaria para realizar el pago del 50% inicial y comenzar el trabajo.
+    - Se planificó una reunión para el viernes para mostrar más detalles del prototipo visual y realizar ajustes.
+    - Se mencionó la necesidad de recopilar todos los datos y textos de servicios, información y contacto, así como fotografías.
+- Aclaraciones y Consideraciones:
+    - Se explicó que el mantenimiento no incluye la creación de nuevas páginas o funcionalidades complejas, las cuales tendrían un costo adicional.
+    - Se aclaró que la tecnología Astro y Cloudflare permiten manejar millones de visitas sin problemas de caída del sitio.
+    - Se discutió la seguridad de la página, indicando que no será una base de datos y que el spam sería un problema aparte.
+
+ Lista De Tareas
+- La cliente necesita enviar la cuenta bancaria para el pago del 50% inicial.
+- La cliente necesita enviar el hosting para redireccionar la página correctamente.
+- La cliente necesita recopilar todos los datos y textos de servicios, información y contacto.
+- La cliente necesita recopilar las fotografías para la página web.
