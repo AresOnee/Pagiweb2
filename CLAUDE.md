@@ -4,7 +4,7 @@
 Sitio web de catálogo para **Gel Chile**, empresa chilena especializada en **sistemas de puesta a tierra y protección eléctrica**. Permite a los clientes explorar productos, ver especificaciones técnicas y solicitar cotizaciones.
 
 ## Estado Actual
-- **Fase:** Migración a Astro en curso — Fase 0 completada, pendiente Fase 1
+- **Fase:** Migración a Astro en curso — Fases 0 y 1 completadas, pendiente Fase 2
 - **Stack actual:** HTML5, CSS3, JavaScript vanilla (sitio demo funcional)
 - **Stack objetivo:** Astro + Preact + nanostores
 - **Datos de productos:** 21 productos reales de Gel Chile (JSON) — reemplazan los 12 demo antiguos
@@ -80,6 +80,33 @@ Pagiweb2/
 │   └── product.schema.js   # Schema Zod (pendiente actualización categorías)
 ├── backup/
 │   └── 20260127/           # Backup de archivos originales
+├── src/                     # ★ PROYECTO ASTRO (Fase 1+)
+│   ├── components/
+│   │   ├── islands/         # Preact interactive islands (Fase 6)
+│   │   └── ui/              # Astro UI components (Fase 5)
+│   ├── content/
+│   │   └── products/        # 21 JSON (Content Collections, Fase 2)
+│   ├── data/
+│   │   ├── categories.json  # 7 categorías
+│   │   └── site-config.ts   # Configuración centralizada Gel Chile
+│   ├── layouts/             # MainLayout.astro (Fase 5)
+│   ├── pages/
+│   │   ├── index.astro      # Placeholder (Fase 7)
+│   │   └── productos/       # Catálogo y detalle (Fase 7)
+│   ├── stores/
+│   │   ├── cart.ts          # Store carrito (nanostores, Fase 4)
+│   │   └── theme.ts         # Store tema (nanostores, Fase 4)
+│   ├── styles/              # CSS global + scoped (Fase 3)
+│   └── types/
+│       └── index.ts         # Interfaces TypeScript
+├── public/
+│   └── assets/img/
+│       ├── gelchile-logo.png
+│       ├── gelchile-electrodo-grafito.png
+│       └── products/        # 54 imágenes de productos
+├── astro.config.mjs         # Astro + Preact config
+├── tsconfig.json            # TypeScript strict (Astro preset)
+├── package.json             # gelchile-web (Astro + Preact + nanostores)
 ├── PRESUPUESTO_ELECTROMEDICION.html
 ├── PRESENTACION_CLIENTE.html
 ├── BENEFICIOS_ROI.md
@@ -213,7 +240,7 @@ Plan completo en: `/root/.claude/plans/cozy-mapping-quiche.md`
 | Fase | Nombre | Estado |
 |------|--------|--------|
 | **Fase 0** | Extracción de datos del cliente | ✅ COMPLETADA |
-| Fase 1 | Inicialización proyecto Astro | Pendiente |
+| **Fase 1** | Inicialización proyecto Astro | ✅ COMPLETADA |
 | Fase 2 | Content Collections y Schema | Pendiente |
 | Fase 3 | CSS (global + scoped) | Pendiente |
 | Fase 4 | Stores (nanostores) | Pendiente |
@@ -234,6 +261,23 @@ Plan completo en: `/root/.claude/plans/cozy-mapping-quiche.md`
 6. Eliminación de los 12 archivos JSON demo antiguos (multímetros, pinzas, etc.)
 7. Extracción de logo Gel Chile a `assets/img/gelchile-logo.png`
 8. Descubrimiento de datos de contacto reales en documentos
+
+### Fase 1 — Lo que se hizo
+
+1. Instalación de Astro v5.17.1 (`astro` como devDependency)
+2. Instalación de `@astrojs/preact` + `preact` para islands architecture
+3. Instalación de `nanostores` + `@nanostores/preact` para state management
+4. Configuración de `astro.config.mjs` con integración Preact y site URL
+5. Configuración de `tsconfig.json` con preset strict de Astro
+6. Creación de estructura completa `src/` (components, islands, ui, content, data, layouts, pages, stores, styles, types)
+7. Creación de `public/assets/img/products/` con 54 imágenes de producto + logo
+8. Copia de 21 JSON de productos a `src/content/products/`
+9. Copia de `categories.json` a `src/data/`
+10. Creación de `src/data/site-config.ts` (configuración centralizada Gel Chile)
+11. Scaffolding de stores (`cart.ts`, `theme.ts`) y tipos (`types/index.ts`)
+12. Creación de `.gitignore` para Astro (dist/, .astro/, node_modules/)
+13. Página placeholder `src/pages/index.astro`
+14. Build verificado exitosamente
 
 ### Estructura Astro Propuesta
 ```

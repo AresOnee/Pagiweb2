@@ -1,0 +1,34 @@
+{
+  "sku": "ADI-001",
+  "title": "Aditivo Power Gem",
+  "category": "Aditivos",
+  "categorySlug": "aditivos",
+  "description": "Refuerzo de tierra natural no corrosivo de 11,36 kg. Material conductor de excelente calidad que modifica el comportamiento eléctrico de los procesos de puesta a tierra. Ideal para zonas de baja conductividad como suelo rocoso, arenoso, cimas de montañas e instalaciones bajo radier o losa. Permanente, no requiere mantenimiento.",
+  "features": [
+    "Presentación en bolsa de 11,36 kg",
+    "No corrosivo, compuesto de polvo de carbón",
+    "Permanente: no se disuelve ni descompone",
+    "No requiere mantenimiento ni recarga de sales",
+    "No necesita agua continua para mantener conductividad",
+    "Reduce resistencia a tierra de forma permanente",
+    "Cumplimiento normativa IEC 62561-7",
+    "Cemento puzolánico según norma NCh 148.Of68",
+    "Compatible con el medio ambiente",
+    "Una sola persona para instalación"
+  ],
+  "specs": {
+    "Producto": "Power Gem",
+    "Peso": "11,36 kg por saco",
+    "Composición": "Polvo de carbón y cemento puzolánico",
+    "Normativa": "IEC 62561-7",
+    "Cemento": "Puzolánico, Grado Alta Resistencia, NCh 148.Of68",
+    "Cobertura": "11,36 kg por cada 3 m lineales de conductor",
+    "Profundidad Zanjas": "0,5 m, ancho máx. 40 cm",
+    "Tiempo Reposo": "20 minutos antes de cubrir",
+    "Reducción Resistividad": "Hasta 94,5% después de 75 días",
+    "Mantenimiento": "No requiere"
+  },
+  "image": "/assets/img/products/adi-008.png",
+  "inStock": true,
+  "badge": "Popular"
+}

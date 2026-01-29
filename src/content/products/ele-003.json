@@ -1,0 +1,31 @@
+{
+  "sku": "ELE-003",
+  "title": "Electrodo Electromagnético Hunter Energy HE-100",
+  "category": "Electrodos Electromagnéticos",
+  "categorySlug": "electrodos-electromagneticos",
+  "description": "Kit de electrodo electromagnético de cobre electrolítico de alta conductividad con tratamiento anticorrosivo. Incluye dispositivo de filtración LCR de baja frecuencia, acoplador de impedancia de 100 amperios y aditivo Power Gem para mejoramiento de suelo.",
+  "features": [
+    "Cobre electrolítico de alta conductividad",
+    "Dispositivo de filtración LCR de baja frecuencia",
+    "Acoplador de impedancia capacidad 100A",
+    "Gabinete de 300 x 250 x 150 mm",
+    "Incluye 3 sacos Power Gem (11,36 kg c/u)",
+    "Terminal de conexión de 1/2 pulgada",
+    "Tratamiento anticorrosivo",
+    "Mejora de suelo de 0,47%"
+  ],
+  "specs": {
+    "Modelo": "HE-100k",
+    "Capacidad": "100 Amperios",
+    "Material Electrodo": "Cobre electrolítico",
+    "Gabinete": "300 x 250 x 150 mm",
+    "Power Gem Incluido": "3 sacos de 11,36 kg",
+    "Resistividad Diseño": "ρ = 30 Ω·m",
+    "Factor Vertical (Fv)": "0,86",
+    "Factor Horizontal (Fh)": "0,5",
+    "Unidad": "Kit completo"
+  },
+  "image": "/assets/img/products/electrode-he-100-product.png",
+  "inStock": true,
+  "badge": null
+}
