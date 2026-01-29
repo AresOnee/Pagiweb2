@@ -81,24 +81,25 @@ Pagiweb2/
 ├── backup/
 │   └── 20260127/           # Backup de archivos originales
 ├── src/                     # ★ PROYECTO ASTRO (Fase 1+)
+│   ├── content.config.ts    # Content Collections + Zod schema (Fase 2)
 │   ├── components/
 │   │   ├── islands/         # Preact interactive islands (Fase 6)
 │   │   └── ui/              # Astro UI components (Fase 5)
 │   ├── content/
-│   │   └── products/        # 21 JSON (Content Collections, Fase 2)
+│   │   └── products/        # 21 JSON validados por Zod schema
 │   ├── data/
 │   │   ├── categories.json  # 7 categorías
 │   │   └── site-config.ts   # Configuración centralizada Gel Chile
 │   ├── layouts/             # MainLayout.astro (Fase 5)
 │   ├── pages/
-│   │   ├── index.astro      # Placeholder (Fase 7)
+│   │   ├── index.astro      # Verificación Content Collections (temporal)
 │   │   └── productos/       # Catálogo y detalle (Fase 7)
 │   ├── stores/
 │   │   ├── cart.ts          # Store carrito (nanostores, Fase 4)
 │   │   └── theme.ts         # Store tema (nanostores, Fase 4)
 │   ├── styles/              # CSS global + scoped (Fase 3)
 │   └── types/
-│       └── index.ts         # Interfaces TypeScript
+│       └── index.ts         # Interfaces TypeScript (CategorySlug, Product, etc.)
 ├── public/
 │   └── assets/img/
 │       ├── gelchile-logo.png
@@ -233,7 +234,7 @@ const CONFIG = {
 
 ## Plan de Migración a Astro
 
-Plan completo en: `/root/.claude/plans/cozy-mapping-quiche.md`
+Plan completo en: `/root/.claude/plans/cheerful-twirling-spring.md`
 
 ### Estado de las Fases
 
@@ -317,15 +318,17 @@ src/
 
 ## Cómo Agregar/Quitar Productos
 
-**Agregar un producto:**
-1. Crear archivo JSON en `data/products/` con el SKU correspondiente (ej: `cab-001.json`)
-2. Seguir la estructura del schema (ver cualquier JSON existente como referencia)
-3. Agregar imagen a `assets/img/products/`
-4. Actualizar `count` en `data/categories.json`
+**Agregar un producto (proyecto Astro):**
+1. Crear archivo JSON en `src/content/products/` con el SKU correspondiente (ej: `cab-001.json`)
+2. Seguir el schema Zod en `src/content.config.ts` (campos requeridos: sku, title, category, categorySlug, description, features, specs, image, inStock, badge)
+3. Si es categoría nueva: agregar a los arrays `categorySlugs` y `categoryNames` en `src/content.config.ts`
+4. Agregar imagen a `public/assets/img/products/`
+5. Actualizar `count` en `src/data/categories.json`
+6. Ejecutar `npm run build` para validar el JSON contra el schema
 
 **Quitar un producto:**
-1. Eliminar el archivo JSON correspondiente
-2. Actualizar `count` en `data/categories.json`
+1. Eliminar el archivo JSON de `src/content/products/`
+2. Actualizar `count` en `src/data/categories.json`
 
 ## Notas de Desarrollo
 
@@ -339,22 +342,23 @@ src/
 
 ## Documentación Adicional
 
-- **Plan de migración completo:** `/root/.claude/plans/cozy-mapping-quiche.md`
+- **Plan de migración completo:** `/root/.claude/plans/cheerful-twirling-spring.md`
+- **Content Collections schema:** `src/content.config.ts` (Zod, Fase 2)
+- **Tipos TypeScript (Astro):** `src/types/index.ts` (CategorySlug, Product, Category)
 - **Componentes Astro:** `docs/astro-components.md`
 - **Mapeo CSS:** `css/modules/README.md`
-- **Tipos TypeScript:** `types/index.ts` (pendiente actualización de categorías)
-- **Schema de Productos:** `schemas/product.schema.js` (pendiente actualización de categorías)
+- **Schema legacy (demo):** `schemas/product.schema.js` (categorías demo, no usado por Astro)
+- **Tipos legacy (demo):** `types/index.ts` (categorías demo, no usado por Astro)
 
 ## Comandos Útiles
 
 ```bash
-# Ver el sitio demo actual localmente
+# Ver el sitio demo actual localmente (HTML/CSS/JS vanilla)
 npx serve .
 
-# Cuando se migre a Astro (Fase 1+)
-npm create astro@latest -- --template minimal
-npx astro add preact
-npm install nanostores @nanostores/preact
-npm run dev
-npm run build
+# Proyecto Astro (ya inicializado en Fase 1)
+npm run dev       # Servidor de desarrollo Astro
+npm run build     # Build estático a dist/
+npm run preview   # Preview del build
+npx astro sync    # Regenerar tipos de Content Collections
 ```
