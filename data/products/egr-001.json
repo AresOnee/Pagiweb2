@@ -1,0 +1,33 @@
+{
+  "sku": "EGR-001",
+  "title": "Electrodo de Grafito EG-GELCHILE",
+  "category": "Electrodos de Grafito",
+  "categorySlug": "electrodos-grafito",
+  "description": "Electrodo de grafito de alto rendimiento para sistemas de puesta a tierra. Aconsejado para terrenos con alto índice de corrosión o condiciones extremas de temperatura y baja conductividad. Se suministra con saco de algodón orgánico relleno de grafito en polvo y sales conductoras.",
+  "features": [
+    "Alto rendimiento y alta conductividad",
+    "Conexión de latón para conductor de 50-70 mm²",
+    "Saco de algodón orgánico con grafito en polvo y sales conductoras",
+    "Excelente resistencia a corrosión química (reacción redox)",
+    "Mayor vida útil que electrodos metálicos",
+    "Mejora contacto eléctrico mediante sales conductoras",
+    "Incluye brújula, nivel de mano y camarilla de registro 300x300",
+    "Incluye 1 saco Power Gem de 11,36 kg"
+  ],
+  "specs": {
+    "Modelo": "EG-GELCHILE",
+    "Material": "Grafito",
+    "Diámetro": "250 mm",
+    "Longitud": "1000 mm",
+    "Peso": "12 kg",
+    "Conexión": "Latón, conductor 50-70 mm²",
+    "Manguito": "3 conexiones",
+    "Excavación Requerida": "50 x 50 cm, profundidad 1,2 m",
+    "Camarilla de Registro": "300 x 300 mm, a nivel de piso",
+    "Power Gem Incluido": "1 saco de 11,36 kg",
+    "Componentes": "Barra grafito, manguito, saco, Power Gem, brújula, nivel, camarilla"
+  },
+  "image": "/assets/img/products/ele-001.png",
+  "inStock": true,
+  "badge": null
+}

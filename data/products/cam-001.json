@@ -1,0 +1,25 @@
+{
+  "sku": "CAM-001",
+  "title": "Camarilla de Registro PVC Naranja",
+  "category": "Accesorios",
+  "categorySlug": "accesorios",
+  "description": "Camarilla de registro de PVC naranja normalizada para sistemas de puesta a tierra. Permite realizar futuras revisiones y mediciones del sistema. Cumple con RIC N°06 artículo 5.15 que establece que todo sistema de puesta a tierra debe contar con un punto accesible de medición.",
+  "features": [
+    "Material PVC naranja de alta resistencia",
+    "Diámetro 160 mm",
+    "Cumple RIC N°06 art. 5.15",
+    "Punto accesible de medición de puesta a tierra",
+    "Permite futuras revisiones y mantención",
+    "Instalación a nivel de piso"
+  ],
+  "specs": {
+    "Material": "PVC naranja",
+    "Diámetro": "160 mm",
+    "Normativa": "RIC N°06 art. 5.15",
+    "Uso": "Registro e inspección de puesta a tierra",
+    "Instalación": "A nivel de piso"
+  },
+  "image": "/assets/img/products/cam-001.png",
+  "inStock": true,
+  "badge": null
+}
