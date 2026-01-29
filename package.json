@@ -1,5 +1,21 @@
 {
+  "name": "gelchile-web",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
   "devDependencies": {
-    "puppeteer": "^24.36.0"
+    "astro": "^5.17.1"
+  },
+  "dependencies": {
+    "@astrojs/preact": "^4.1.3",
+    "@nanostores/preact": "^1.0.0",
+    "nanostores": "^1.1.0",
+    "preact": "^10.28.2"
   }
 }

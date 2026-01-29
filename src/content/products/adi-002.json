@@ -1,0 +1,30 @@
+{
+  "sku": "ADI-002",
+  "title": "Aditivo Power Gel",
+  "category": "Aditivos",
+  "categorySlug": "aditivos",
+  "description": "Tratamiento químico de suelo que reduce la resistencia del sistema de puesta a tierra al disminuir la resistividad del suelo. Formulado a base de silicatos dobles de aluminio, bentonita y magnesio. Óptima relación costo/beneficio con alto rendimiento, facilidad de aplicación y compatibilidad ambiental.",
+  "features": [
+    "Formulado con silicatos dobles de aluminio, bentonita y magnesio",
+    "Reducción sustancial de resistencia de puesta a tierra",
+    "Aumento en capacidad de dispersión de corriente",
+    "Estabilidad del valor de resistencia",
+    "Disminución de potenciales de toque y de paso",
+    "Óptima relación costo/beneficio",
+    "Facilidad de aplicación y bajo costo de mano de obra",
+    "Compatible con el medio ambiente",
+    "Compatible con cobre, aluminio y acero galvanizado"
+  ],
+  "specs": {
+    "Producto": "Power Gel",
+    "Composición": "Silicatos dobles de aluminio, bentonita y magnesio",
+    "Compatibilidad": "Cobre, aluminio, acero galvanizado",
+    "Efecto": "Reducción de resistividad del suelo",
+    "Fórmula": "R suelo tratado = K × R suelo sin tratar",
+    "Propiedades": "Sales químicas con iones afines al conductor",
+    "Seguridad": "Aumenta seguridad al reducir potenciales de toque/paso"
+  },
+  "image": "/assets/img/products/adi-001.png",
+  "inStock": true,
+  "badge": null
+}
