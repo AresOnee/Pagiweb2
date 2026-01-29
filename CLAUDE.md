@@ -4,7 +4,7 @@
 Sitio web de catálogo para **Gel Chile**, empresa chilena especializada en **sistemas de puesta a tierra y protección eléctrica**. Permite a los clientes explorar productos, ver especificaciones técnicas y solicitar cotizaciones.
 
 ## Estado Actual
-- **Fase:** Migración a Astro en curso — Fases 0 y 1 completadas, pendiente Fase 2
+- **Fase:** Migración a Astro en curso — Fases 0, 1, 2 y 3 completadas, pendiente Fase 4
 - **Stack actual:** HTML5, CSS3, JavaScript vanilla (sitio demo funcional)
 - **Stack objetivo:** Astro + Preact + nanostores
 - **Datos de productos:** 21 productos reales de Gel Chile (JSON) — reemplazan los 12 demo antiguos
@@ -84,6 +84,12 @@ Pagiweb2/
 │   ├── content.config.ts    # Content Collections + Zod schema (Fase 2)
 │   ├── components/
 │   │   ├── islands/         # Preact interactive islands (Fase 6)
+│   │   │   ├── DarkModeToggle.module.css  # CSS Module (Fase 3)
+│   │   │   ├── Toast.module.css           # CSS Module (Fase 3)
+│   │   │   ├── ProductModal.module.css    # CSS Module (Fase 3)
+│   │   │   ├── QuoteItems.module.css      # CSS Module (Fase 3)
+│   │   │   ├── QuoteForm.module.css       # CSS Module (Fase 3)
+│   │   │   └── ProductFilter.module.css   # CSS Module (Fase 3)
 │   │   └── ui/              # Astro UI components (Fase 5)
 │   ├── content/
 │   │   └── products/        # 21 JSON validados por Zod schema
@@ -97,14 +103,17 @@ Pagiweb2/
 │   ├── stores/
 │   │   ├── cart.ts          # Store carrito (nanostores, Fase 4)
 │   │   └── theme.ts         # Store tema (nanostores, Fase 4)
-│   ├── styles/              # CSS global + scoped (Fase 3)
+│   ├── styles/              # CSS global (Fase 3)
+│   │   ├── global.css       # Variables + Reset + Utilidades + Botones
+│   │   ├── dark-mode.css    # [data-theme="dark"] overrides
+│   │   └── animations.css   # 8 keyframes + AOS + skeleton + preferences
 │   └── types/
 │       └── index.ts         # Interfaces TypeScript (CategorySlug, Product, etc.)
 ├── public/
 │   └── assets/img/
 │       ├── gelchile-logo.png
 │       ├── gelchile-electrodo-grafito.png
-│       └── products/        # 54 imágenes de productos
+│       └── products/        # 57 imágenes de productos (54 originales + 3 barras químicas)
 ├── astro.config.mjs         # Astro + Preact config
 ├── tsconfig.json            # TypeScript strict (Astro preset)
 ├── package.json             # gelchile-web (Astro + Preact + nanostores)
@@ -242,8 +251,8 @@ Plan completo en: `/root/.claude/plans/cheerful-twirling-spring.md`
 |------|--------|--------|
 | **Fase 0** | Extracción de datos del cliente | ✅ COMPLETADA |
 | **Fase 1** | Inicialización proyecto Astro | ✅ COMPLETADA |
-| Fase 2 | Content Collections y Schema | Pendiente |
-| Fase 3 | CSS (global + scoped) | Pendiente |
+| **Fase 2** | Content Collections y Schema | ✅ COMPLETADA |
+| **Fase 3** | CSS (global + scoped) | ✅ COMPLETADA |
 | Fase 4 | Stores (nanostores) | Pendiente |
 | Fase 5 | Componentes estáticos (Astro) | Pendiente |
 | Fase 6 | Islands interactivos (Preact) | Pendiente |
@@ -279,6 +288,35 @@ Plan completo en: `/root/.claude/plans/cheerful-twirling-spring.md`
 12. Creación de `.gitignore` para Astro (dist/, .astro/, node_modules/)
 13. Página placeholder `src/pages/index.astro`
 14. Build verificado exitosamente
+
+### Fase 2 — Lo que se hizo
+
+1. Extracción de imágenes barras químicas del PDF (PyMuPDF) → bqh-001.png, bqv-001.png, bq-diagram.png
+2. Corrección de image paths en bqh-001.json y bqv-001.json (apuntaban a par-001.png)
+3. Creación de `src/content.config.ts` con Zod schema + glob loader
+4. Definición de enums estrictos: 7 categorySlugs, 7 categoryNames, 3 badgeValues
+5. Validación de campos: sku regex, title, description, features[], specs record, image nullable, badge nullable
+6. Actualización de `src/types/index.ts` con CategorySlug, CategoryName, BadgeValue union types
+7. Fix de `image: string` → `string | null` (SRV-001 tiene image null)
+8. Página de verificación `src/pages/index.astro` con getCollection() mostrando 21 productos en 7 categorías
+9. Build exitoso: 0 errores Zod, 21 productos validados, sin warning de auto-generating collections
+
+### Fase 3 — Lo que se hizo
+
+1. Creación de `src/styles/global.css` — Variables CSS (:root), reset, utilidades, tipografía, botones (líneas 8-369 de styles.css)
+2. Creación de `src/styles/dark-mode.css` — Overrides [data-theme="dark"] para todos los componentes (líneas 2329-2507)
+3. Creación de `src/styles/animations.css` — 8 @keyframes recolectados de todo el archivo + AOS + skeleton + prefers-reduced-motion + print
+4. Creación de 6 CSS Modules para islands Preact en `src/components/islands/`:
+   - `ProductModal.module.css` (líneas 2601-3438) — Modal completo con tabs, specs, features, responsive, dark mode
+   - `DarkModeToggle.module.css` (líneas 2510-2598) — Toggle fijo con tooltip y dark mode
+   - `Toast.module.css` (líneas 1983-2047) — Notificaciones toast con variantes
+   - `QuoteItems.module.css` (líneas 3440-3738) — Lista items cotización con qty controls
+   - `QuoteForm.module.css` (líneas 1393-1704) — Formulario cotización completo
+   - `ProductFilter.module.css` — Filtros categoría + grid productos + responsive
+5. CSS Modules usan `:global([data-theme="dark"])` para dark mode scoped
+6. Importación de 3 CSS globales en `src/pages/index.astro`
+7. Build verificado: CSS bundled 12KB, 0 errores
+8. CSS scoped de componentes Astro documentado (se integrará en Fase 5)
 
 ### Estructura Astro Propuesta
 ```

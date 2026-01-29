@@ -1,0 +1,279 @@
+/* ============================================
+   QuoteItems — CSS Module
+   Extraído de css/styles.css (líneas 3440-3738)
+   Import: import styles from './QuoteItems.module.css'
+   ============================================ */
+
+.quote-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.quote-item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto auto;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.quote-item:hover {
+  background: var(--color-primary-50);
+  transform: translateX(4px);
+}
+
+.quote-item-image {
+  width: 80px;
+  height: 80px;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.quote-item-image svg {
+  width: 48px;
+  height: 48px;
+  color: var(--color-gray-400);
+}
+
+.quote-item-info {
+  min-width: 0;
+}
+
+.quote-item-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quote-item-sku {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+  margin-bottom: var(--spacing-1);
+}
+
+.quote-item-category {
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-2);
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-sm);
+}
+
+.quote-item-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-1);
+}
+
+/* Quantity controls */
+.quote-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-600);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.qty-btn:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.qty-value {
+  width: 40px;
+  text-align: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  color: var(--color-gray-900);
+}
+
+.qty-input {
+  width: 50px;
+  text-align: center;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-1);
+  -moz-appearance: textfield;
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.qty-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 82, 204, 0.1);
+}
+
+/* Remove button */
+.remove-item-btn {
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  color: var(--color-gray-400);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.remove-item-btn:hover {
+  background: var(--color-error);
+  color: var(--color-white);
+}
+
+.remove-item-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Summary */
+.quote-summary {
+  margin-top: var(--spacing-6);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.quote-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-2) 0;
+}
+
+.quote-summary-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+}
+
+.quote-summary-value {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+}
+
+.quote-summary-total {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+/* Header and footer */
+.quote-items-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--spacing-4);
+  border-bottom: 1px solid var(--color-gray-200);
+  margin-bottom: var(--spacing-4);
+}
+
+.quote-items-header h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+}
+
+.clear-all-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.clear-all-btn:hover {
+  background: rgba(255, 86, 48, 0.1);
+}
+
+.quote-items-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--spacing-4);
+  margin-top: var(--spacing-4);
+  border-top: 1px solid var(--color-gray-200);
+  font-size: var(--font-size-base);
+  color: var(--color-gray-600);
+}
+
+.quote-items-footer strong {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .quote-item {
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--spacing-3);
+    position: relative;
+    padding-right: var(--spacing-12);
+  }
+
+  .quote-item-image {
+    width: 60px;
+    height: 60px;
+    grid-row: span 2;
+  }
+
+  .quote-item-quantity {
+    grid-column: 2;
+    justify-content: flex-start;
+  }
+
+  .remove-item-btn {
+    position: absolute;
+    top: var(--spacing-2);
+    right: var(--spacing-2);
+  }
+}

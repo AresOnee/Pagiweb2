@@ -1,0 +1,184 @@
+/* ============================================
+   GEL CHILE - Dark Mode Overrides
+   Extraído de css/styles.css (líneas 2329-2507)
+   ============================================ */
+
+[data-theme="dark"] {
+  /* Colores de fondo */
+  --color-background: #0f172a;
+  --color-white: #1e293b;
+
+  /* Escala de grises invertida */
+  --color-gray-50: #1e293b;
+  --color-gray-100: #334155;
+  --color-gray-200: #475569;
+  --color-gray-300: #64748b;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #cbd5e1;
+  --color-gray-600: #e2e8f0;
+  --color-gray-700: #f1f5f9;
+  --color-gray-800: #f8fafc;
+  --color-gray-900: #ffffff;
+
+  /* Colores primarios ajustados */
+  --color-primary-50: rgba(0, 82, 204, 0.2);
+  --color-primary-light: #60a5fa;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--color-background);
+  color: var(--color-gray-700);
+}
+
+[data-theme="dark"] .header {
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+[data-theme="dark"] .logo {
+  color: var(--color-gray-900);
+}
+
+[data-theme="dark"] .nav-link {
+  color: var(--color-gray-400);
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+  color: var(--color-primary-light);
+}
+
+[data-theme="dark"] .cart-btn {
+  background: rgba(0, 82, 204, 0.2);
+  color: var(--color-primary-light);
+}
+
+[data-theme="dark"] .cart-btn:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+[data-theme="dark"] .mobile-menu-btn span {
+  background: var(--color-gray-400);
+}
+
+[data-theme="dark"] .mobile-menu-btn:hover {
+  background: var(--color-gray-100);
+}
+
+[data-theme="dark"] .category-card,
+[data-theme="dark"] .product-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .value-card,
+[data-theme="dark"] .quote-items,
+[data-theme="dark"] .quote-form-container {
+  background: var(--color-white);
+  border-color: var(--color-gray-100);
+}
+
+[data-theme="dark"] .feature-card {
+  background: var(--color-gray-50);
+}
+
+[data-theme="dark"] .feature-card:hover {
+  background: var(--color-white);
+}
+
+[data-theme="dark"] .filter-btn {
+  background: var(--color-white);
+  border-color: var(--color-gray-200);
+  color: var(--color-gray-500);
+}
+
+[data-theme="dark"] .filter-btn:hover {
+  border-color: var(--color-primary-light);
+  color: var(--color-primary-light);
+}
+
+[data-theme="dark"] .filter-btn.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="dark"] .product-image {
+  background: linear-gradient(135deg, var(--color-gray-100) 0%, var(--color-gray-50) 100%);
+}
+
+[data-theme="dark"] .quote-item {
+  background: var(--color-gray-50);
+}
+
+[data-theme="dark"] .quote-item:hover {
+  background: rgba(0, 82, 204, 0.15);
+}
+
+[data-theme="dark"] .quote-item-image {
+  background: var(--color-gray-100);
+}
+
+[data-theme="dark"] .qty-btn {
+  background: var(--color-gray-100);
+  border-color: var(--color-gray-200);
+  color: var(--color-gray-600);
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-textarea {
+  background: var(--color-gray-50);
+  color: var(--color-gray-800);
+}
+
+[data-theme="dark"] .form-input:hover,
+[data-theme="dark"] .form-textarea:hover {
+  background: var(--color-gray-100);
+  border-color: var(--color-gray-300);
+}
+
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-textarea:focus {
+  background: var(--color-gray-100);
+  border-color: var(--color-primary-light);
+}
+
+[data-theme="dark"] .footer {
+  background: #020617;
+}
+
+[data-theme="dark"] .breadcrumb {
+  background: var(--color-white);
+  border-color: var(--color-gray-100);
+}
+
+[data-theme="dark"] .mobile-menu {
+  background: var(--color-background);
+}
+
+[data-theme="dark"] .mobile-menu .nav-link:hover,
+[data-theme="dark"] .mobile-menu .nav-link.active {
+  background: rgba(0, 82, 204, 0.2);
+}
+
+[data-theme="dark"] .toast {
+  background: var(--color-white);
+}
+
+[data-theme="dark"] .categories,
+[data-theme="dark"] .features {
+  background: var(--color-white);
+}
+
+[data-theme="dark"] .products,
+[data-theme="dark"] .testimonials {
+  background: var(--color-gray-50);
+}
