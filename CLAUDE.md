@@ -1,21 +1,36 @@
-# Contexto del Proyecto: ElectroMedición
+# Contexto del Proyecto: Gel Chile
 
 ## Descripción General
-Sitio web de catálogo para empresa de equipos de medición eléctrica en Chile. Permite a los clientes explorar productos, ver especificaciones técnicas y solicitar cotizaciones.
+Sitio web de catálogo para **Gel Chile**, empresa chilena especializada en **sistemas de puesta a tierra y protección eléctrica**. Permite a los clientes explorar productos, ver especificaciones técnicas y solicitar cotizaciones.
 
 ## Estado Actual
-- **Fase:** Borrador/Demo para presentar al cliente
-- **Stack actual:** HTML5, CSS3, JavaScript vanilla
-- **Migración planificada:** Astro (post-aprobación del cliente)
+- **Fase:** Migración a Astro en curso — Fase 0 completada, pendiente Fase 1
+- **Stack actual:** HTML5, CSS3, JavaScript vanilla (sitio demo funcional)
+- **Stack objetivo:** Astro + Preact + nanostores
+- **Datos de productos:** 21 productos reales de Gel Chile (JSON) — reemplazan los 12 demo antiguos
+- **Cliente aprobó presupuesto:** $370.000 CLP (reunión 3_2)
+
+## Datos de la Empresa
+
+| Dato | Valor |
+|------|-------|
+| **Empresa** | Gel Chile |
+| **Rubro** | Sistemas de puesta a tierra y protección eléctrica |
+| **Email ventas** | ventas@gelchile.cl |
+| **Email contacto** | kvasquezb@gelchile.cl |
+| **Teléfonos** | +56 9 9949 6909 / +56 9 9825 0271 / +56 9 5098 7979 |
+| **Oficina** | Los Diamantes N°0360, Maipú, RM |
+| **Bodega** | Camino Lo Ermita Parcela-21, Calera de Tango |
+| **Dominio** | gelchile.cl (acceso nic.cl confirmado) |
 
 ## Estructura del Proyecto
 
 ```
 Pagiweb2/
-├── index.html              # Página de inicio
-├── productos.html          # Catálogo de productos
-├── cotizacion.html         # Carrito y formulario de cotización
-├── nosotros.html           # Información de la empresa
+├── index.html              # Página de inicio (demo, pendiente migración)
+├── productos.html          # Catálogo de productos (demo)
+├── cotizacion.html         # Carrito y formulario de cotización (demo)
+├── nosotros.html           # Información de la empresa (demo)
 ├── css/
 │   ├── styles.css          # Sistema de diseño completo (~3800 líneas)
 │   └── modules/
@@ -27,20 +42,42 @@ Pagiweb2/
 │   ├── cart-store.js       # Store del carrito (API nanostores)
 │   └── theme-store.js      # Store del tema (dark mode)
 ├── data/
-│   ├── products/           # 12 archivos JSON (1 por producto)
-│   │   ├── mul-001.json, mul-002.json
-│   │   ├── pin-001.json, pin-002.json
-│   │   ├── tel-001.json, tel-002.json
-│   │   ├── meg-001.json, meg-002.json
-│   │   ├── ana-001.json, ana-002.json
-│   │   └── det-001.json, det-002.json
-│   └── categories.json     # Categorías del catálogo
+│   ├── products/           # 21 archivos JSON (productos reales Gel Chile)
+│   │   ├── ele-001.json a ele-008.json  # 8 electrodos electromagnéticos HE
+│   │   ├── egr-001.json                 # 1 electrodo de grafito
+│   │   ├── bqh-001.json, bqv-001.json   # 2 barras químicas (H y V)
+│   │   ├── adi-001.json, adi-002.json   # 2 aditivos (Power Gem, Power Gel)
+│   │   ├── par-001.json a par-003.json  # 3 pararrayos y protección
+│   │   ├── cam-001.json                 # 1 camarilla PVC
+│   │   ├── tab-001.json, tab-002.json   # 2 tableros eléctricos TIBOX
+│   │   └── srv-001.json, srv-002.json   # 2 servicios
+│   └── categories.json     # 7 categorías reales
+├── assets/
+│   └── img/
+│       ├── gelchile-logo.png             # Logo Gel Chile (extraído de DOCX)
+│       ├── gelchile-electrodo-grafito.png # Imagen producto (extraída de DOCX)
+│       └── products/                      # 55 imágenes de productos extraídas
+│           ├── electrode-he-*.png         # Fotos electrodos HE (producto + detalle)
+│           ├── hunter-energy-*.png        # Branding, specs, certificaciones HE
+│           ├── adi-*.png                  # Fotos aditivos
+│           ├── par-*.png, mas-*.png       # Pararrayos, masilla
+│           ├── chi-*.jpeg/gif             # Chispero
+│           ├── cam-001.png, tab-*.png     # Camarilla, tableros
+│           ├── ele-001.png               # Electrodo grafito
+│           └── srv-malla-*.jpeg           # Fotos servicio malla de fleje
+├── Productos/              # Documentos originales del cliente (DOCX/PDF/XLSX)
+│   ├── ELECTRDOS ELECTROMAGNETICOS HUNTER ENERGY HE/
+│   ├── BARRAS QUIMICAS HORIZONTALES Y VERTICALES/
+│   ├── ADITIVO POWER GEM Y GE/
+│   ├── PARARRAYO/
+│   ├── Servicio Malla de fleje/
+│   └── grabaciones/        # Transcripciones de reuniones con el cliente
 ├── docs/
 │   └── astro-components.md # Guía de componentes e islas
 ├── types/
-│   └── index.ts            # Interfaces TypeScript
+│   └── index.ts            # Interfaces TypeScript (pendiente actualización)
 ├── schemas/
-│   └── product.schema.js   # Schema Zod para Content Collections
+│   └── product.schema.js   # Schema Zod (pendiente actualización categorías)
 ├── backup/
 │   └── 20260127/           # Backup de archivos originales
 ├── PRESUPUESTO_ELECTROMEDICION.html
@@ -49,11 +86,45 @@ Pagiweb2/
 └── CHECKLIST_PROYECTO.md
 ```
 
-## Funcionalidades Implementadas
+## Productos Reales (21 productos)
+
+### Categorías y productos
+
+| Categoría | Slug | Productos | SKUs |
+|-----------|------|-----------|------|
+| Electrodos Electromagnéticos | `electrodos-electromagneticos` | 8 electrodos Hunter Energy | ELE-001 a ELE-008 (HE-45, 70, 100, 200, 400, 700, 1500, 2500) |
+| Electrodos de Grafito | `electrodos-grafito` | 1 electrodo grafito | EGR-001 (EG-GELCHILE, 250mm x 1000mm, 12kg) |
+| Barras Químicas | `barras-quimicas` | 2 barras (horizontal/vertical) | BQH-001, BQV-001 (cobre ASTM C1100, 2" x 3000mm) |
+| Aditivos | `aditivos` | 2 aditivos | ADI-001 (Power Gem 11,36kg), ADI-002 (Power Gel) |
+| Pararrayos y Protección | `pararrayos` | 3 productos | PAR-001 (Franklin tridente), PAR-002 (masilla), PAR-003 (chispero) |
+| Accesorios | `accesorios` | 3 productos | CAM-001 (camarilla PVC), TAB-001/002 (tableros TIBOX IP65) |
+| Servicios | `servicios` | 2 servicios | SRV-001 (medición), SRV-002 (instalación malla de fleje) |
+
+### Estructura JSON por producto
+```json
+{
+  "sku": "ELE-001",
+  "title": "Electrodo Electromagnético Hunter Energy HE-45",
+  "category": "Electrodos Electromagnéticos",
+  "categorySlug": "electrodos-electromagneticos",
+  "description": "...",
+  "features": ["Cobre electrolítico de alta conductividad", ...],
+  "specs": { "Modelo": "HE-45k", "Capacidad": "45 Amperios", ... },
+  "image": "/assets/img/products/electrode-he-45-product.png",
+  "inStock": true,
+  "badge": null
+}
+```
+
+**SKU pattern:** `[A-Z]{2,3}-\d{3}` (ELE-, EGR-, BQH-, BQV-, ADI-, PAR-, CAM-, TAB-, SRV-)
+
+**Campos nuevos vs schema original:** `image` (ruta a foto extraída del DOCX). Campo `datasheet` planificado pero no implementado aún.
+
+## Funcionalidades Implementadas (sitio demo actual)
 
 ### Sistema de Productos
-- Base de datos de 12 productos en `PRODUCTS_DB` (js/main.js:18-310)
-- Categorías: Multímetros, Pinzas, Telurómetros, Megóhmetros, Analizadores, Detectores
+- Base de datos hardcodeada en `PRODUCTS_DB` (js/main.js:18-310) — **DESACTUALIZADA, usa datos demo**
+- Los datos reales están en `data/products/*.json` (21 archivos)
 - Filtros por categoría
 - Modal de detalle con tabs (especificaciones/características)
 
@@ -81,7 +152,7 @@ Pagiweb2/
 - Toggle de tema: líneas 2422-2500
 
 ### JavaScript (js/main.js)
-- `PRODUCTS_DB`: Base de datos de productos (líneas 18-310)
+- `PRODUCTS_DB`: Base de datos de productos (líneas 18-310) — DEMO, será reemplazada
 - `DarkMode`: Control de tema (líneas 351-422)
 - `ProductModal`: Modal de detalle (líneas 537-742)
 - `Cart`: Sistema de cotización (líneas 747-991)
@@ -113,12 +184,13 @@ Pagiweb2/
 ## Configuración Global
 
 ```javascript
+// ACTUAL (demo) — será reemplazado en migración
 const CONFIG = {
-  storageKey: 'electromedicion_cart',    // Key del carrito en localStorage
-  themeKey: 'electromedicion_theme',     // Key del tema en localStorage
-  animationThreshold: 0.1,               // Threshold para animaciones
-  toastDuration: 3000,                   // Duración de toasts (ms)
-  counterDuration: 2000                  // Duración de contadores animados
+  storageKey: 'electromedicion_cart',    // → gelchile_cart
+  themeKey: 'electromedicion_theme',     // → gelchile_theme
+  animationThreshold: 0.1,
+  toastDuration: 3000,
+  counterDuration: 2000
 };
 ```
 
@@ -126,181 +198,119 @@ const CONFIG = {
 
 | Concepto | Valor |
 |----------|-------|
-| Desarrollo | $370.000 CLP |
-| Contingencia (10%) | $37.000 CLP |
+| Desarrollo base | $370.000 CLP |
 | Dominio .cl (año 1) | Incluido |
-| Hosting | $0 (Netlify gratis) |
-| **Costo anual (año 2+)** | $20.000 CLP |
+| Hosting | $0 (Cloudflare Pages gratis) |
+| SSL | $0 (automático Cloudflare) |
+| Pago | 50% inicio + 50% al entregar |
 
 ## Plan de Migración a Astro
 
-### Estructura Propuesta
+Plan completo en: `/root/.claude/plans/cozy-mapping-quiche.md`
+
+### Estado de las Fases
+
+| Fase | Nombre | Estado |
+|------|--------|--------|
+| **Fase 0** | Extracción de datos del cliente | ✅ COMPLETADA |
+| Fase 1 | Inicialización proyecto Astro | Pendiente |
+| Fase 2 | Content Collections y Schema | Pendiente |
+| Fase 3 | CSS (global + scoped) | Pendiente |
+| Fase 4 | Stores (nanostores) | Pendiente |
+| Fase 5 | Componentes estáticos (Astro) | Pendiente |
+| Fase 6 | Islands interactivos (Preact) | Pendiente |
+| Fase 7 | Páginas | Pendiente |
+| Fase 8 | Branding Gel Chile | Pendiente |
+| Fase 9 | Verificación y deploy | Pendiente |
+| Fase 10 | Extras opcionales (post-lanzamiento) | Futuro |
+
+### Fase 0 — Lo que se hizo
+
+1. Lectura y análisis de todos los documentos DOCX/PDF del cliente en `Productos/`
+2. Extracción de texto técnico (specs, features, dimensiones, normativas)
+3. Extracción de 55 imágenes de producto desde los DOCX a `assets/img/products/`
+4. Creación de 21 archivos JSON con datos reales en `data/products/`
+5. Actualización de `data/categories.json` con 7 categorías reales
+6. Eliminación de los 12 archivos JSON demo antiguos (multímetros, pinzas, etc.)
+7. Extracción de logo Gel Chile a `assets/img/gelchile-logo.png`
+8. Descubrimiento de datos de contacto reales en documentos
+
+### Estructura Astro Propuesta
 ```
 src/
 ├── components/
-│   ├── ProductCard.astro
-│   ├── ProductModal.astro
-│   ├── Header.astro
-│   └── Footer.astro
-├── layouts/
-│   └── MainLayout.astro
+│   ├── Header.astro, Footer.astro, HeroSection.astro
+│   ├── ProductCard.astro, CategoryCard.astro, FeatureCard.astro
+│   ├── islands/   # Preact (~3KB vs React ~40KB)
+│   │   ├── CartCount.tsx, AddToQuoteBtn.tsx
+│   │   ├── ProductFilter.tsx (búsqueda + filtro categoría)
+│   │   ├── ProductModal.tsx, QuoteItems.tsx, QuoteForm.tsx
+│   │   ├── DarkModeToggle.tsx, MobileMenu.tsx, Toast.tsx
+│   └── ui/  Button.astro, Badge.astro, Breadcrumb.astro
+├── content/products/*.json    # Content Collections (desde data/products/)
+├── data/categories.json, site-config.ts
+├── layouts/MainLayout.astro
 ├── pages/
-│   ├── index.astro
-│   ├── nosotros.astro
-│   ├── cotizacion.astro
-│   └── productos/
-│       ├── index.astro
-│       └── [sku].astro
-└── content/
-    └── productos/
-        ├── mul-001.json
-        └── ...
+│   ├── index.astro, nosotros.astro, cotizacion.astro
+│   └── productos/index.astro, [slug].astro  # Página individual por producto
+├── stores/cart.ts, theme.ts   # nanostores
+├── styles/global.css, animations.css, dark-mode.css
+└── types/index.ts
 ```
-
-### Beneficios de Astro
-- Páginas estáticas ultra rápidas
-- Mejor SEO (HTML pre-renderizado)
-- Generación automática de páginas por producto
-- Un template = infinitos productos
-- Hosting gratuito en Netlify/Vercel
 
 ## Servicios de Terceros
 
-| Servicio | Uso | Plan |
-|----------|-----|------|
-| Netlify/Vercel | Hosting | Gratis |
-| Web3Forms | Formularios | Gratis (250/mes) |
-| Cloudflare | CDN | Gratis |
-| Let's Encrypt | SSL | Gratis |
-| Google Analytics | Estadísticas | Gratis |
+| Servicio | Uso | Plan | Estado |
+|----------|-----|------|--------|
+| Cloudflare Pages | Hosting + CDN + SSL | Gratis | Pendiente crear cuenta |
+| Web3Forms | Formulario cotización | Gratis (250/mes) | Pendiente API key |
+| GitHub | Repositorio | Gratis | ✅ AresOnee/Pagiweb2 |
+| nic.cl | Dominio gelchile.cl | Pagado | ✅ Acceso confirmado |
 
-## Cliente
+### NO incluido de momento (postergado por el cliente):
+- Google Analytics, botón flotante WhatsApp, Google Maps
+- Galería de imágenes, FAQ, Blog, Testimonios (extras con costo adicional)
 
-- **Empresa:** ElectroMedición
-- **Rubro:** Equipos de medición eléctrica
-- **Tamaño:** Pequeña empresa, primera página web
-- **Ubicación:** Chile
-- **Productos:** Multímetros, pinzas amperimétricas, telurómetros, megóhmetros, analizadores, detectores
-
-## Notas de Desarrollo
-
-1. **Bug corregido:** Los productos no se mostraban en cotización porque el selector era `.quote-items-list` pero el HTML tenía `#quote-items`
-
-2. **Modo oscuro:** Detecta preferencia del sistema y guarda elección en localStorage
-
-3. **Modal de producto:** Se abre al hacer clic en la tarjeta, pero NO si se hace clic en el botón de cotizar
-
-4. **Formulario:** Actualmente simula envío. Para producción, configurar Web3Forms con API key real
-
-## Comandos Útiles
-
-```bash
-# Ver el sitio localmente
-npx serve .
-
-# Si se migra a Astro
-npm create astro@latest
-npm run dev
-npm run build
-```
-
-## Contacto del Desarrollador
-
-- Completar datos en `PRESUPUESTO_ELECTROMEDICION.html`
-- Secciones: [Tu Nombre], +56 9 XXXX XXXX, tu@email.com
-
----
-
-## Preparación para Migración a Astro
-
-El proyecto incluye archivos preparados para facilitar la migración a Astro cuando el cliente apruebe.
-
-### Estructura de Preparación
-
-```
-Pagiweb2/
-├── data/
-│   ├── products/           # 12 archivos JSON (1 por producto)
-│   │   ├── mul-001.json
-│   │   ├── mul-002.json
-│   │   ├── pin-001.json
-│   │   ├── pin-002.json
-│   │   ├── tel-001.json
-│   │   ├── tel-002.json
-│   │   ├── meg-001.json
-│   │   ├── meg-002.json
-│   │   ├── ana-001.json
-│   │   ├── ana-002.json
-│   │   ├── det-001.json
-│   │   └── det-002.json
-│   └── categories.json     # Categorías del catálogo
-├── js/
-│   ├── config.js           # Configuración centralizada
-│   ├── utils.js            # Funciones utilitarias (slugify, etc.)
-│   ├── cart-store.js       # Store del carrito (API nanostores)
-│   └── theme-store.js      # Store del tema (dark mode)
-├── docs/
-│   └── astro-components.md # Guía de componentes e islas
-├── css/
-│   └── modules/
-│       └── README.md       # Mapeo CSS → componentes
-├── types/
-│   └── index.ts            # Interfaces TypeScript
-├── schemas/
-│   └── product.schema.js   # Schema para Content Collections
-└── backup/
-    └── 20260127/           # Backup de archivos originales
-```
-
-### Archivos Clave para Migración
-
-| Archivo | Destino en Astro | Descripción |
-|---------|------------------|-------------|
-| `data/products/*.json` | `src/content/products/` | Content Collections |
-| `data/categories.json` | `src/data/categories.json` | Datos estáticos |
-| `js/cart-store.js` | `src/stores/cart.ts` | Convertir a nanostores |
-| `js/theme-store.js` | `src/stores/theme.ts` | Convertir a nanostores |
-| `types/index.ts` | `src/types/index.ts` | Copiar directo |
-| `schemas/product.schema.js` | `src/content/config.ts` | Copiar schema Zod |
-
-### Cómo Agregar/Quitar Productos
+## Cómo Agregar/Quitar Productos
 
 **Agregar un producto:**
-1. Copiar un archivo existente en `data/products/`
-2. Renombrar con el nuevo SKU (ej: `mul-003.json`)
-3. Editar los datos del producto
+1. Crear archivo JSON en `data/products/` con el SKU correspondiente (ej: `cab-001.json`)
+2. Seguir la estructura del schema (ver cualquier JSON existente como referencia)
+3. Agregar imagen a `assets/img/products/`
 4. Actualizar `count` en `data/categories.json`
 
 **Quitar un producto:**
 1. Eliminar el archivo JSON correspondiente
 2. Actualizar `count` en `data/categories.json`
 
-### Stores (API nanostores)
+## Notas de Desarrollo
 
-Los stores tienen una API compatible con nanostores:
+1. **Bug corregido:** Los productos no se mostraban en cotización porque el selector era `.quote-items-list` pero el HTML tenía `#quote-items`
+2. **Modo oscuro:** Detecta preferencia del sistema y guarda elección en localStorage
+3. **Modal de producto:** Se abre al hacer clic en la tarjeta, pero NO si se hace clic en el botón de cotizar
+4. **Formulario:** Actualmente simula envío. Para producción, configurar Web3Forms con API key → ventas@gelchile.cl
+5. **Imágenes extraídas:** HE-1500 y HE-2500 comparten la misma foto de producto. Algunos DOCX son image-only (camarilla, tableros) sin texto extraíble
+6. **HE-150:** Mencionado en reunión 3_4 pero no existe DOCX con ficha técnica — solo aparece en tabla de dimensiones XLSX. No se creó JSON
+7. **Productos faltantes (~25-30):** El cliente mencionó ~50 productos. Faltan cables, cargas exotérmicas, moldes de grafito, conectores. Se agregarán cuando el cliente envíe los datos
 
-```javascript
-// Carrito
-CartStore.init();
-CartStore.addItem({ sku: 'MUL-001', title: '...', category: '...', quantity: 1 });
-CartStore.subscribe(items => console.log(items));
+## Documentación Adicional
 
-// Tema
-ThemeStore.init();
-ThemeStore.toggle();
-ThemeStore.subscribe(theme => console.log(theme));
+- **Plan de migración completo:** `/root/.claude/plans/cozy-mapping-quiche.md`
+- **Componentes Astro:** `docs/astro-components.md`
+- **Mapeo CSS:** `css/modules/README.md`
+- **Tipos TypeScript:** `types/index.ts` (pendiente actualización de categorías)
+- **Schema de Productos:** `schemas/product.schema.js` (pendiente actualización de categorías)
+
+## Comandos Útiles
+
+```bash
+# Ver el sitio demo actual localmente
+npx serve .
+
+# Cuando se migre a Astro (Fase 1+)
+npm create astro@latest -- --template minimal
+npx astro add preact
+npm install nanostores @nanostores/preact
+npm run dev
+npm run build
 ```
-
-### Documentación Adicional
-
-- **Componentes Astro:** Ver `docs/astro-components.md`
-- **Mapeo CSS:** Ver `css/modules/README.md`
-- **Tipos TypeScript:** Ver `types/index.ts`
-- **Schema de Productos:** Ver `schemas/product.schema.js`
-
-### Notas Importantes
-
-1. Los archivos de preparación **NO afectan** el sitio actual
-2. El sitio sigue funcionando con `main.js` original
-3. Los stores son solo **referencia** para cuando se migre
-4. El backup está en `backup/20260127/` por si se necesita restaurar
