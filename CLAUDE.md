@@ -4,7 +4,7 @@
 Sitio web de catálogo para **Gel Chile**, empresa chilena especializada en **sistemas de puesta a tierra y protección eléctrica**. Permite a los clientes explorar productos, ver especificaciones técnicas y solicitar cotizaciones.
 
 ## Estado Actual
-- **Fase:** Migración a Astro en curso — Fases 0 y 1 completadas, pendiente Fase 2
+- **Fase:** Migración a Astro en curso — Fases 0, 1 y 2 completadas, pendiente Fase 3
 - **Stack actual:** HTML5, CSS3, JavaScript vanilla (sitio demo funcional)
 - **Stack objetivo:** Astro + Preact + nanostores
 - **Datos de productos:** 21 productos reales de Gel Chile (JSON) — reemplazan los 12 demo antiguos
@@ -242,7 +242,7 @@ Plan completo en: `/root/.claude/plans/cheerful-twirling-spring.md`
 |------|--------|--------|
 | **Fase 0** | Extracción de datos del cliente | ✅ COMPLETADA |
 | **Fase 1** | Inicialización proyecto Astro | ✅ COMPLETADA |
-| Fase 2 | Content Collections y Schema | Pendiente |
+| **Fase 2** | Content Collections y Schema | ✅ COMPLETADA |
 | Fase 3 | CSS (global + scoped) | Pendiente |
 | Fase 4 | Stores (nanostores) | Pendiente |
 | Fase 5 | Componentes estáticos (Astro) | Pendiente |
@@ -279,6 +279,18 @@ Plan completo en: `/root/.claude/plans/cheerful-twirling-spring.md`
 12. Creación de `.gitignore` para Astro (dist/, .astro/, node_modules/)
 13. Página placeholder `src/pages/index.astro`
 14. Build verificado exitosamente
+
+### Fase 2 — Lo que se hizo
+
+1. Extracción de imágenes barras químicas del PDF (PyMuPDF) → bqh-001.png, bqv-001.png, bq-diagram.png
+2. Corrección de image paths en bqh-001.json y bqv-001.json (apuntaban a par-001.png)
+3. Creación de `src/content.config.ts` con Zod schema + glob loader
+4. Definición de enums estrictos: 7 categorySlugs, 7 categoryNames, 3 badgeValues
+5. Validación de campos: sku regex, title, description, features[], specs record, image nullable, badge nullable
+6. Actualización de `src/types/index.ts` con CategorySlug, CategoryName, BadgeValue union types
+7. Fix de `image: string` → `string | null` (SRV-001 tiene image null)
+8. Página de verificación `src/pages/index.astro` con getCollection() mostrando 21 productos en 7 categorías
+9. Build exitoso: 0 errores Zod, 21 productos validados, sin warning de auto-generating collections
 
 ### Estructura Astro Propuesta
 ```

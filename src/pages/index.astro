@@ -1,16 +1,71 @@
 ---
-// Gel Chile — Sistemas de Puesta a Tierra y Protección Eléctrica
-// Placeholder page — will be replaced in Phase 7
+// Gel Chile — Phase 2 Verification Page
+// Confirms Content Collections loads all 21 products with valid data.
+// Will be replaced in Phase 7 with the actual home page.
+import { getCollection } from 'astro:content';
+
+const allProducts = await getCollection('products');
+const byCategory = allProducts.reduce((acc, p) => {
+  const slug = p.data.categorySlug;
+  if (!acc[slug]) acc[slug] = [];
+  acc[slug].push(p);
+  return acc;
+}, {} as Record<string, typeof allProducts>);
 ---
 
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Gel Chile — Sistemas de Puesta a Tierra</title>
+    <title>Gel Chile — Content Collections Verification</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+      h1 { color: #1a5632; }
+      h2 { margin-top: 2rem; color: #2d7a4f; }
+      table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+      th, td { border: 1px solid #ddd; padding: 0.5rem; text-align: left; font-size: 0.9em; }
+      th { background: #f5f5f5; }
+      .ok { color: green; }
+      .fail { color: red; }
+    </style>
   </head>
   <body>
-    <h1>Gel Chile</h1>
-    <p>Sitio en construcción — migración a Astro en curso.</p>
+    <h1>Gel Chile — Phase 2 Verification</h1>
+    <p>
+      Content Collections: <strong>{allProducts.length}</strong> products,
+      <strong>{Object.keys(byCategory).length}</strong> categories.
+    </p>
+    <p class={allProducts.length === 21 ? 'ok' : 'fail'}>
+      {allProducts.length === 21 ? '✓ All 21 products loaded' : `✗ Expected 21, got ${allProducts.length}`}
+    </p>
+
+    {Object.entries(byCategory).map(([slug, products]) => (
+      <section>
+        <h2>{products[0].data.category} ({products.length})</h2>
+        <table>
+          <thead>
+            <tr><th>SKU</th><th>Title</th><th>Image</th><th>Badge</th><th>Features</th></tr>
+          </thead>
+          <tbody>
+            {products.map(p => (
+              <tr>
+                <td><code>{p.data.sku}</code></td>
+                <td>{p.data.title}</td>
+                <td>{p.data.image ? '✓' : '—'}</td>
+                <td>{p.data.badge ?? '—'}</td>
+                <td>{p.data.features.length}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    ))}
+
+    <h2>Diagnostics</h2>
+    <ul>
+      <li>Null image: {allProducts.filter(p => p.data.image === null).map(p => p.data.sku).join(', ') || 'none'}</li>
+      <li>With badge: {allProducts.filter(p => p.data.badge !== null).map(p => `${p.data.sku} (${p.data.badge})`).join(', ')}</li>
+    </ul>
+    <p><em>This page will be replaced in Phase 7.</em></p>
   </body>
 </html>
