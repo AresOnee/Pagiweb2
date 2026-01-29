@@ -104,7 +104,7 @@ Pagiweb2/
 │   └── assets/img/
 │       ├── gelchile-logo.png
 │       ├── gelchile-electrodo-grafito.png
-│       └── products/        # 54 imágenes de productos
+│       └── products/        # 57 imágenes de productos (54 originales + 3 barras químicas)
 ├── astro.config.mjs         # Astro + Preact config
 ├── tsconfig.json            # TypeScript strict (Astro preset)
 ├── package.json             # gelchile-web (Astro + Preact + nanostores)
