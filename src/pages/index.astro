@@ -21,8 +21,8 @@ const featured = withBadge.length >= 6
   <!-- Categorías -->
   <section class="section categories-section">
     <div class="container">
-      <h2 class="section-title">Categorías de Productos</h2>
-      <p class="section-subtitle">
+      <h2 class="section-title" data-aos="fade-up">Categorías de Productos</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
         Soluciones integrales para sistemas de puesta a tierra y protección eléctrica
       </p>
       <div class="categories-grid">
@@ -36,8 +36,8 @@ const featured = withBadge.length >= 6
   <!-- Productos Destacados -->
   <section class="section featured-section">
     <div class="container">
-      <h2 class="section-title">Productos Destacados</h2>
-      <p class="section-subtitle">
+      <h2 class="section-title" data-aos="fade-up">Productos Destacados</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
         Los productos más solicitados por nuestros clientes
       </p>
       <div class="featured-grid">
@@ -56,6 +56,62 @@ const featured = withBadge.length >= 6
       </div>
       <div class="featured-cta">
         <a href="/productos" class="btn btn-primary btn-lg">Ver Todos los Productos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por Qué Elegirnos -->
+  <section class="section features-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Por Qué Elegirnos</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Especialistas en sistemas de puesta a tierra y protección eléctrica
+      </p>
+      <div class="feature-grid">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Calidad Garantizada</h3>
+          <p class="feature-description">Todos nuestros productos cuentan con certificación y garantía extendida.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="3" width="15" height="13" rx="2"/>
+              <path d="M16 8h4l3 3v5a2 2 0 0 1-2 2h-1"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Despacho Nacional</h3>
+          <p class="feature-description">Enviamos a todo el país con seguimiento en tiempo real de tu pedido.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Soporte Técnico</h3>
+          <p class="feature-description">Equipo de ingenieros disponibles para asesorarte en tu compra.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Mejores Precios</h3>
+          <p class="feature-description">Cotizaciones competitivas para empresas y profesionales.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -106,6 +162,68 @@ const featured = withBadge.length >= 6
   .featured-cta {
     text-align: center;
     margin-top: var(--spacing-10);
+  }
+
+  /* Features Section */
+  .features-section {
+    background: var(--color-white);
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-6);
+    margin-top: var(--spacing-10);
+  }
+
+  .feature-card {
+    padding: var(--spacing-8);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    transition: all var(--transition-base);
+  }
+
+  .feature-card:hover {
+    background: var(--color-white);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .feature-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--spacing-4);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    transition: all var(--transition-base);
+  }
+
+  .feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 8px 20px rgba(0, 82, 204, 0.3);
+  }
+
+  .feature-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .feature-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-2);
+  }
+
+  .feature-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    line-height: 1.6;
   }
 
   /* CTA Section */
@@ -162,11 +280,37 @@ const featured = withBadge.length >= 6
     background: var(--color-gray-800);
   }
 
+  :global([data-theme="dark"]) .features-section {
+    background: var(--color-gray-800);
+  }
+
+  :global([data-theme="dark"]) .feature-card {
+    background: var(--color-gray-700);
+  }
+
+  :global([data-theme="dark"]) .feature-card:hover {
+    background: var(--color-gray-600);
+  }
+
+  :global([data-theme="dark"]) .feature-title {
+    color: var(--color-white);
+  }
+
+  :global([data-theme="dark"]) .feature-description {
+    color: var(--color-gray-300);
+  }
+
   :global([data-theme="dark"]) .cta-section {
     background: linear-gradient(135deg, #0a1628 0%, var(--color-primary-dark) 100%);
   }
 
   /* Responsive */
+  @media (max-width: 1024px) {
+    .feature-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   @media (max-width: 768px) {
     .categories-grid,
     .featured-grid {
@@ -185,7 +329,8 @@ const featured = withBadge.length >= 6
 
   @media (max-width: 480px) {
     .categories-grid,
-    .featured-grid {
+    .featured-grid,
+    .feature-grid {
       grid-template-columns: 1fr;
     }
 
