@@ -282,7 +282,7 @@
 
 /* Dark mode */
 :global([data-theme="dark"]) .product-card {
-  background: var(--color-gray-800);
+  background: #1e293b;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -291,7 +291,7 @@
 }
 
 :global([data-theme="dark"]) .product-image {
-  background: linear-gradient(135deg, var(--color-gray-700) 0%, var(--color-gray-800) 100%);
+  background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
 }
 
 :global([data-theme="dark"]) .product-category {
@@ -300,27 +300,27 @@
 }
 
 :global([data-theme="dark"]) .product-title {
-  color: var(--color-white);
+  color: #e2e8f0;
 }
 
 :global([data-theme="dark"]) .product-description {
-  color: var(--color-gray-400);
+  color: #94a3b8;
 }
 
 :global([data-theme="dark"]) .product-footer {
-  border-top-color: var(--color-gray-700);
+  border-top-color: #334155;
 }
 
 :global([data-theme="dark"]) .filter-btn {
-  background: var(--color-gray-800);
-  border-color: var(--color-gray-600);
-  color: var(--color-gray-300);
+  background: #1e293b;
+  border-color: #475569;
+  color: #cbd5e1;
 }
 
 :global([data-theme="dark"]) .search-input {
-  background: var(--color-gray-800);
-  border-color: var(--color-gray-600);
-  color: var(--color-white);
+  background: #1e293b;
+  border-color: #475569;
+  color: #e2e8f0;
 }
 
 /* Responsive */
