@@ -26,8 +26,8 @@ const featured = withBadge.length >= 6
         Soluciones integrales para sistemas de puesta a tierra y protección eléctrica
       </p>
       <div class="categories-grid">
-        {categories.map((cat) => (
-          <CategoryCard id={cat.id} name={cat.name} description={cat.description} count={cat.count} />
+        {categories.map((cat, i) => (
+          <CategoryCard id={cat.id} name={cat.name} description={cat.description} count={cat.count} delay={(i % 4) * 100} />
         ))}
       </div>
     </div>
@@ -41,7 +41,7 @@ const featured = withBadge.length >= 6
         Los productos más solicitados por nuestros clientes
       </p>
       <div class="featured-grid">
-        {featured.map((p) => (
+        {featured.map((p, i) => (
           <ProductCard
             sku={p.data.sku}
             title={p.data.title}
@@ -51,6 +51,7 @@ const featured = withBadge.length >= 6
             image={p.data.image}
             badge={p.data.badge}
             inStock={p.data.inStock}
+            delay={(i % 3) * 100}
           />
         ))}
       </div>

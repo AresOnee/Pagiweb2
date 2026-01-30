@@ -8,13 +8,14 @@ interface Props {
   image: string | null;
   badge: string | null;
   inStock: boolean;
+  delay?: number;
 }
 
-const { sku, title, category, categorySlug, description, image, badge, inStock } = Astro.props;
+const { sku, title, category, categorySlug, description, image, badge, inStock, delay } = Astro.props;
 const productUrl = `/productos/${sku.toLowerCase()}`;
 ---
 
-<article class="product-card">
+<article class="product-card" data-aos="fade-up" data-aos-delay={delay ? String(delay) : undefined}>
   <a href={productUrl} class="product-link">
     <div class="product-image">
       {badge && <span class="product-badge">{badge}</span>}
