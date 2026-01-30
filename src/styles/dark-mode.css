@@ -63,7 +63,31 @@
 
 [data-theme="dark"] .cart-btn:hover {
   background: var(--color-primary);
-  color: var(--color-white);
+  color: #ffffff;
+}
+
+/* Button text fixes — var(--color-white) resolves to #1e293b in dark mode,
+   which is invisible on colored/gradient button backgrounds */
+[data-theme="dark"] .btn-primary {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .btn-accent {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .btn-white {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="dark"] .btn-white:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 [data-theme="dark"] .mobile-menu-btn span {
