@@ -30,8 +30,8 @@ const categories = categoriesData as Category[];
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
-      <h1 class="page-hero-title">Nuestros Productos</h1>
-      <p class="page-hero-subtitle">
+      <h1 class="page-hero-title" data-aos="fade-up">Nuestros Productos</h1>
+      <p class="page-hero-subtitle" data-aos="fade-up" data-aos-delay="100">
         Soluciones profesionales en puesta a tierra y protección eléctrica
       </p>
     </div>
@@ -142,7 +142,7 @@ const categories = categoriesData as Category[];
 
   /* Dark Mode — override already-dark elements with hardcoded values */
   :global([data-theme="dark"]) .page-hero {
-    background: linear-gradient(135deg, #0a1628 0%, #172554 100%);
+    background: linear-gradient(135deg, #0a1628 0%, var(--color-primary-dark) 100%);
   }
 
   :global([data-theme="dark"]) .page-hero-title {
@@ -151,6 +151,10 @@ const categories = categoriesData as Category[];
 
   :global([data-theme="dark"]) .cta-section {
     background: linear-gradient(135deg, #0a1628 0%, #003D99 100%);
+  }
+
+  :global([data-theme="dark"]) .cta-title {
+    color: #ffffff;
   }
 
   :global([data-theme="dark"]) .cta-title {

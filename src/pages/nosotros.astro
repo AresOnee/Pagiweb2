@@ -8,8 +8,8 @@ import { siteConfig } from '../data/site-config';
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
-      <h1 class="page-hero-title">Nosotros</h1>
-      <p class="page-hero-subtitle">
+      <h1 class="page-hero-title" data-aos="fade-up">Nosotros</h1>
+      <p class="page-hero-subtitle" data-aos="fade-up" data-aos-delay="100">
         Especialistas en sistemas de puesta a tierra y protección eléctrica
       </p>
     </div>
@@ -21,12 +21,12 @@ import { siteConfig } from '../data/site-config';
   <section class="section about-section">
     <div class="container">
       <div class="about-grid">
-        <div class="about-image">
+        <div class="about-image" data-aos="fade-right">
           <div class="about-image-container">
             <img src="/assets/img/gelchile-logo.png" alt="Gel Chile" class="about-logo" />
           </div>
         </div>
-        <div class="about-text">
+        <div class="about-text" data-aos="fade-left">
           <h2>Especialistas en Puesta a Tierra</h2>
           <p>
             <strong>Gel Chile</strong> es una empresa chilena dedicada a proveer soluciones
@@ -52,12 +52,12 @@ import { siteConfig } from '../data/site-config';
   <!-- Values Section -->
   <section class="section values-section">
     <div class="container">
-      <h2 class="section-title">Nuestro Compromiso</h2>
-      <p class="section-subtitle">
+      <h2 class="section-title" data-aos="fade-up">Nuestro Compromiso</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
         Valores que guían cada proyecto que realizamos
       </p>
       <div class="values-grid">
-        <div class="value-card">
+        <div class="value-card" data-aos="fade-up" data-aos-delay="100">
           <div class="value-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="32" height="32">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -69,7 +69,7 @@ import { siteConfig } from '../data/site-config';
             para garantizar la máxima seguridad en cada instalación.
           </p>
         </div>
-        <div class="value-card">
+        <div class="value-card" data-aos="fade-up" data-aos-delay="200">
           <div class="value-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="32" height="32">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -84,7 +84,7 @@ import { siteConfig } from '../data/site-config';
             del producto adecuado según las características de tu proyecto.
           </p>
         </div>
-        <div class="value-card">
+        <div class="value-card" data-aos="fade-up" data-aos-delay="300">
           <div class="value-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="32" height="32">
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -96,7 +96,7 @@ import { siteConfig } from '../data/site-config';
             electromagnéticos hasta servicios de medición e instalación.
           </p>
         </div>
-        <div class="value-card">
+        <div class="value-card" data-aos="fade-up" data-aos-delay="400">
           <div class="value-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="32" height="32">
               <circle cx="12" cy="12" r="3" />
@@ -116,8 +116,8 @@ import { siteConfig } from '../data/site-config';
   <!-- Contact Section -->
   <section class="section contact-section">
     <div class="container">
-      <h2 class="section-title">Contacto</h2>
-      <p class="section-subtitle">
+      <h2 class="section-title" data-aos="fade-up">Contacto</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
         Estamos disponibles para atender tus consultas
       </p>
       <div class="contact-grid">
@@ -176,7 +176,7 @@ import { siteConfig } from '../data/site-config';
   <!-- CTA -->
   <section class="cta-section">
     <div class="container">
-      <div class="cta-content">
+      <div class="cta-content" data-aos="zoom-in">
         <h2 class="cta-title">¿Listo para Trabajar con Nosotros?</h2>
         <p class="cta-description">
           Solicita tu cotización personalizada o explora nuestro catálogo completo
@@ -419,7 +419,11 @@ import { siteConfig } from '../data/site-config';
   /* Dark Mode — variable inversion handles cards, text, borders automatically.
      Only override already-dark elements (page-hero, CTA) and link contrast. */
   :global([data-theme="dark"]) .page-hero {
-    background: linear-gradient(135deg, #0a1628 0%, #172554 100%);
+    background: linear-gradient(135deg, #0a1628 0%, var(--color-primary-dark) 100%);
+  }
+
+  :global([data-theme="dark"]) .page-hero-title {
+    color: #ffffff;
   }
 
   :global([data-theme="dark"]) .page-hero-title {
@@ -432,6 +436,10 @@ import { siteConfig } from '../data/site-config';
 
   :global([data-theme="dark"]) .cta-section {
     background: linear-gradient(135deg, #0a1628 0%, #003D99 100%);
+  }
+
+  :global([data-theme="dark"]) .cta-title {
+    color: #ffffff;
   }
 
   :global([data-theme="dark"]) .cta-title {
