@@ -304,6 +304,10 @@ const featured = withBadge.length >= 6
     background: linear-gradient(135deg, #0a1628 0%, var(--color-primary-dark) 100%);
   }
 
+  :global([data-theme="dark"]) .cta-title {
+    color: #ffffff;
+  }
+
   /* Responsive */
   @media (max-width: 1024px) {
     .feature-grid {

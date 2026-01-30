@@ -267,7 +267,11 @@ import { siteConfig } from '../data/site-config';
 
   /* Dark Mode */
   :global([data-theme="dark"]) .page-hero {
-    background: linear-gradient(135deg, #0a1628 0%, var(--color-gray-900) 100%);
+    background: linear-gradient(135deg, #0a1628 0%, var(--color-primary-dark) 100%);
+  }
+
+  :global([data-theme="dark"]) .page-hero-title {
+    color: #ffffff;
   }
 
   :global([data-theme="dark"]) .how-it-works {
