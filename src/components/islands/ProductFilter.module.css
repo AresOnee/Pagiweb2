@@ -294,17 +294,13 @@
   background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
 }
 
-:global([data-theme="dark"]) .product-badge {
-  color: #ffffff;
-}
-
 :global([data-theme="dark"]) .product-category {
   background: rgba(76, 154, 255, 0.15);
   color: #60a5fa;
 }
 
 :global([data-theme="dark"]) .product-title {
-  color: #ffffff;
+  color: #e2e8f0;
 }
 
 :global([data-theme="dark"]) .product-description {
@@ -315,28 +311,15 @@
   border-top-color: #334155;
 }
 
-:global([data-theme="dark"]) .btn-add-quote {
-  color: #ffffff;
-}
-
 :global([data-theme="dark"]) .filter-btn {
   background: #1e293b;
   border-color: #475569;
-  color: #94a3b8;
-}
-
-:global([data-theme="dark"]) .filter-btn:hover {
-  border-color: #60a5fa;
-  color: #60a5fa;
+  color: #cbd5e1;
 }
 
 :global([data-theme="dark"]) .search-input {
   background: #1e293b;
   border-color: #475569;
-  color: #ffffff;
-}
-
-:global([data-theme="dark"]) .no-results h3 {
   color: #e2e8f0;
 }
 
