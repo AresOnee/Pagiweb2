@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../data/site-config';
+import categories from '../data/categories.json';
 
 const navLinks = [
   { href: '/', label: 'Inicio' },
@@ -27,6 +28,15 @@ const currentYear = new Date().getFullYear();
         <ul class="footer-links">
           {navLinks.map((link) => (
             <li><a href={link.href} class="footer-link">{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Productos</h4>
+        <ul class="footer-links">
+          {categories.map((cat) => (
+            <li><a href={`/productos?categoria=${cat.id}`} class="footer-link">{cat.name}</a></li>
           ))}
         </ul>
       </div>
@@ -81,7 +91,7 @@ const currentYear = new Date().getFullYear();
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1.5fr;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: var(--spacing-12);
     padding-bottom: var(--spacing-12);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
