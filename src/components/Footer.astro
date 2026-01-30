@@ -181,6 +181,42 @@ const currentYear = new Date().getFullYear();
     font-size: var(--font-size-sm);
   }
 
+  /* Dark mode — footer is already dark; prevent variable inversion from lightening text */
+  :global([data-theme="dark"]) .footer {
+    background: #020617;
+    color: #94a3b8;
+  }
+
+  :global([data-theme="dark"]) .footer-logo {
+    color: #f1f5f9;
+  }
+
+  :global([data-theme="dark"]) .footer-section h4 {
+    color: #f1f5f9;
+  }
+
+  :global([data-theme="dark"]) .footer-link {
+    color: #94a3b8;
+  }
+
+  :global([data-theme="dark"]) .footer-link:hover {
+    color: #f1f5f9;
+  }
+
+  :global([data-theme="dark"]) .footer-contact-item a {
+    color: #94a3b8;
+  }
+
+  :global([data-theme="dark"]) .footer-contact-item a:hover {
+    color: #f1f5f9;
+  }
+
+  :global([data-theme="dark"]) .footer-logo-img {
+    background: #ffffff;
+    border-radius: 6px;
+    padding: 2px;
+  }
+
   /* Responsive */
   @media (max-width: 1024px) {
     .footer-grid {
