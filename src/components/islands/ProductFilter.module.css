@@ -280,7 +280,7 @@
   margin-bottom: var(--spacing-2);
 }
 
-/* Dark mode */
+/* Dark mode — hardcoded hex values (variable inversion maps gray-800 to near-white) */
 :global([data-theme="dark"]) .product-card {
   background: #1e293b;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -296,7 +296,7 @@
 
 :global([data-theme="dark"]) .product-category {
   background: rgba(76, 154, 255, 0.15);
-  color: var(--color-primary-light);
+  color: #60a5fa;
 }
 
 :global([data-theme="dark"]) .product-title {
