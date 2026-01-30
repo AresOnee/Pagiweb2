@@ -75,29 +75,9 @@ const { items } = Astro.props;
     color: var(--color-gray-300);
   }
 
-  /* Dark mode */
-  :global([data-theme="dark"]) .breadcrumb {
-    background: #1e293b;
-    border-bottom-color: #334155;
-  }
-
-  :global([data-theme="dark"]) .breadcrumb-item {
-    color: var(--color-gray-400);
-  }
-
-  :global([data-theme="dark"]) .breadcrumb-item a {
-    color: var(--color-gray-400);
-  }
-
+  /* Dark mode — variable inversion handles bg/borders/text.
+     Only override link hover for better contrast on dark bg. */
   :global([data-theme="dark"]) .breadcrumb-item a:hover {
-    color: var(--color-primary-light);
-  }
-
-  :global([data-theme="dark"]) .breadcrumb-item.active {
-    color: #e2e8f0;
-  }
-
-  :global([data-theme="dark"]) .breadcrumb-separator {
-    color: var(--color-gray-600);
+    color: #60a5fa;
   }
 </style>

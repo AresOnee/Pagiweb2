@@ -197,34 +197,5 @@ const productUrl = `/productos/${sku.toLowerCase()}`;
     height: 18px;
   }
 
-  /* Dark mode */
-  :global([data-theme="dark"]) .product-card {
-    background: #1e293b;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  :global([data-theme="dark"]) .product-card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-  }
-
-  :global([data-theme="dark"]) .product-image {
-    background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
-  }
-
-  :global([data-theme="dark"]) .product-category {
-    background: rgba(76, 154, 255, 0.15);
-    color: var(--color-primary-light);
-  }
-
-  :global([data-theme="dark"]) .product-title {
-    color: #e2e8f0;
-  }
-
-  :global([data-theme="dark"]) .product-description {
-    color: #94a3b8;
-  }
-
-  :global([data-theme="dark"]) .product-footer {
-    border-top-color: #334155;
-  }
+  /* Dark mode — handled by CSS variable inversion in dark-mode.css */
 </style>

@@ -103,30 +103,5 @@ const { id, name, description, count } = Astro.props;
     font-weight: var(--font-weight-medium);
   }
 
-  /* Dark mode */
-  :global([data-theme="dark"]) .category-card {
-    background: #1e293b;
-    border-color: #334155;
-  }
-
-  :global([data-theme="dark"]) .category-card:hover {
-    border-color: transparent;
-  }
-
-  :global([data-theme="dark"]) .category-title {
-    color: #e2e8f0;
-  }
-
-  :global([data-theme="dark"]) .category-description,
-  :global([data-theme="dark"]) .category-count {
-    color: var(--color-gray-400);
-  }
-
-  :global([data-theme="dark"]) .category-icon {
-    background: linear-gradient(135deg, rgba(76, 154, 255, 0.15) 0%, rgba(76, 154, 255, 0.3) 100%);
-  }
-
-  :global([data-theme="dark"]) .category-icon svg {
-    color: var(--color-primary-light);
-  }
+  /* Dark mode — handled by CSS variable inversion in dark-mode.css */
 </style>

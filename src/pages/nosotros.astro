@@ -416,7 +416,8 @@ import { siteConfig } from '../data/site-config';
     flex-wrap: wrap;
   }
 
-  /* Dark Mode */
+  /* Dark Mode — variable inversion handles cards, text, borders automatically.
+     Only override already-dark elements (page-hero, CTA) and link contrast. */
   :global([data-theme="dark"]) .page-hero {
     background: linear-gradient(135deg, #0a1628 0%, var(--color-primary-dark) 100%);
   }
@@ -425,55 +426,20 @@ import { siteConfig } from '../data/site-config';
     color: #ffffff;
   }
 
-  :global([data-theme="dark"]) .about-image-container {
-    background: linear-gradient(145deg, #1e293b 0%, #334155 100%);
-    border-color: #334155;
-  }
-
-  :global([data-theme="dark"]) .about-text h2 {
-    color: #e2e8f0;
-  }
-
-  :global([data-theme="dark"]) .about-text p {
-    color: #94a3b8;
-  }
-
-  :global([data-theme="dark"]) .values-section {
-    background: #0f172a;
-  }
-
-  :global([data-theme="dark"]) .value-card {
-    background: #1e293b;
-    border-color: #334155;
-  }
-
-  :global([data-theme="dark"]) .value-card h3 {
-    color: #e2e8f0;
-  }
-
-  :global([data-theme="dark"]) .value-card p {
-    color: #94a3b8;
-  }
-
-  :global([data-theme="dark"]) .contact-card {
-    background: #1e293b;
-    border-color: #334155;
-  }
-
-  :global([data-theme="dark"]) .contact-card h3 {
-    color: #e2e8f0;
-  }
-
-  :global([data-theme="dark"]) .contact-card p {
-    color: #94a3b8;
+  :global([data-theme="dark"]) .page-hero-title {
+    color: #ffffff;
   }
 
   :global([data-theme="dark"]) .contact-card a {
-    color: var(--color-primary-light);
+    color: #60a5fa;
   }
 
   :global([data-theme="dark"]) .cta-section {
-    background: linear-gradient(135deg, #0a1628 0%, var(--color-primary-dark) 100%);
+    background: linear-gradient(135deg, #0a1628 0%, #003D99 100%);
+  }
+
+  :global([data-theme="dark"]) .cta-title {
+    color: #ffffff;
   }
 
   :global([data-theme="dark"]) .cta-title {

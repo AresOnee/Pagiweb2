@@ -332,52 +332,7 @@ const specsEntries = Object.entries(product.specs);
     gap: var(--spacing-2);
   }
 
-  /* Dark Mode */
-  :global([data-theme="dark"]) .product-detail-image {
-    background: linear-gradient(145deg, #1e293b 0%, #334155 100%);
-    border-color: #334155;
-  }
-
-  :global([data-theme="dark"]) .detail-stock {
-    border-color: #334155;
-  }
-
-  :global([data-theme="dark"]) .detail-category {
-    background: rgba(0, 82, 204, 0.15);
-    color: var(--color-primary-light);
-  }
-
-  :global([data-theme="dark"]) .detail-title {
-    color: #e2e8f0;
-  }
-
-  :global([data-theme="dark"]) .detail-description {
-    color: #94a3b8;
-  }
-
-  :global([data-theme="dark"]) .product-specs h2,
-  :global([data-theme="dark"]) .product-features h2 {
-    color: #e2e8f0;
-  }
-
-  :global([data-theme="dark"]) .specs-table {
-    border-color: #334155;
-  }
-
-  :global([data-theme="dark"]) .spec-label {
-    background: #1e293b;
-    color: #94a3b8;
-    border-color: #334155;
-  }
-
-  :global([data-theme="dark"]) .spec-value {
-    color: #e2e8f0;
-    border-color: #334155;
-  }
-
-  :global([data-theme="dark"]) .features-list li {
-    color: #cbd5e1;
-  }
+  /* Dark mode — handled by CSS variable inversion in dark-mode.css */
 
   /* Responsive */
   @media (max-width: 768px) {
