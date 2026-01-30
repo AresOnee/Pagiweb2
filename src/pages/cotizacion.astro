@@ -3,14 +3,15 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import QuoteItems from '../components/islands/QuoteItems.tsx';
 import QuoteForm from '../components/islands/QuoteForm.tsx';
+import { siteConfig } from '../data/site-config';
 ---
 
 <MainLayout title="Cotización — Gel Chile" description="Solicita tu cotización personalizada de productos para puesta a tierra y protección eléctrica">
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
-      <h1 class="page-hero-title">Solicitar Cotización</h1>
-      <p class="page-hero-subtitle">
+      <h1 class="page-hero-title" data-aos="fade-up">Solicitar Cotización</h1>
+      <p class="page-hero-subtitle" data-aos="fade-up" data-aos-delay="100">
         Revisa los productos seleccionados y completa el formulario para recibir tu cotización
       </p>
     </div>
@@ -35,9 +36,9 @@ import QuoteForm from '../components/islands/QuoteForm.tsx';
   <!-- How it Works -->
   <section class="section how-it-works">
     <div class="container">
-      <h2 class="section-title">¿Cómo Funciona?</h2>
+      <h2 class="section-title" data-aos="fade-up">¿Cómo Funciona?</h2>
       <div class="steps-grid">
-        <div class="step-card">
+        <div class="step-card" data-aos="fade-up" data-aos-delay="100">
           <div class="step-number">1</div>
           <h3>Selecciona Productos</h3>
           <p>
@@ -45,7 +46,7 @@ import QuoteForm from '../components/islands/QuoteForm.tsx';
             sistema de puesta a tierra.
           </p>
         </div>
-        <div class="step-card">
+        <div class="step-card" data-aos="fade-up" data-aos-delay="200">
           <div class="step-number">2</div>
           <h3>Completa tus Datos</h3>
           <p>
@@ -53,13 +54,61 @@ import QuoteForm from '../components/islands/QuoteForm.tsx';
             personalizada.
           </p>
         </div>
-        <div class="step-card">
+        <div class="step-card" data-aos="fade-up" data-aos-delay="300">
           <div class="step-number">3</div>
           <h3>Recibe tu Cotización</h3>
           <p>
             En menos de 24 horas hábiles recibirás tu cotización detallada con precios
             y condiciones.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Necesitas Ayuda -->
+  <section class="section help-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">¿Necesitas Ayuda?</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Nuestro equipo está disponible para asistirte</p>
+      <div class="help-grid">
+        <div class="help-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="help-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h3>Llámanos</h3>
+          <p>{siteConfig.contact.phones[0]}<br/>Lun - Vie: 9:00 - 18:00</p>
+        </div>
+        <div class="help-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="help-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <h3>Email</h3>
+          <p>{siteConfig.contact.email}<br/>Respuesta en 24 hrs</p>
+        </div>
+        <div class="help-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="help-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </div>
+          <h3>WhatsApp</h3>
+          <p>{siteConfig.contact.phones[1]}<br/>Respuesta inmediata</p>
+        </div>
+        <div class="help-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="help-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h3>Visítanos</h3>
+          <p>{siteConfig.contact.office}</p>
         </div>
       </div>
     </div>
@@ -154,6 +203,68 @@ import QuoteForm from '../components/islands/QuoteForm.tsx';
     line-height: 1.6;
   }
 
+  /* Help Section */
+  .help-section {
+    background: var(--color-white);
+  }
+
+  .help-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-6);
+    margin-top: var(--spacing-10);
+  }
+
+  .help-card {
+    padding: var(--spacing-8);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    transition: all var(--transition-base);
+  }
+
+  .help-card:hover {
+    background: var(--color-white);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .help-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--spacing-4);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    transition: all var(--transition-base);
+  }
+
+  .help-card:hover .help-icon {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 8px 20px rgba(0, 82, 204, 0.3);
+  }
+
+  .help-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .help-card h3 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-2);
+  }
+
+  .help-card p {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    line-height: 1.6;
+  }
+
   /* Dark Mode */
   :global([data-theme="dark"]) .page-hero {
     background: linear-gradient(135deg, #0a1628 0%, var(--color-gray-900) 100%);
@@ -174,6 +285,26 @@ import QuoteForm from '../components/islands/QuoteForm.tsx';
 
   :global([data-theme="dark"]) .step-card p {
     color: var(--color-gray-400);
+  }
+
+  :global([data-theme="dark"]) .help-section {
+    background: var(--color-gray-800);
+  }
+
+  :global([data-theme="dark"]) .help-card {
+    background: var(--color-gray-700);
+  }
+
+  :global([data-theme="dark"]) .help-card:hover {
+    background: var(--color-gray-600);
+  }
+
+  :global([data-theme="dark"]) .help-card h3 {
+    color: var(--color-white);
+  }
+
+  :global([data-theme="dark"]) .help-card p {
+    color: var(--color-gray-300);
   }
 
   /* Responsive */
@@ -197,6 +328,16 @@ import QuoteForm from '../components/islands/QuoteForm.tsx';
     }
 
     .steps-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .help-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .help-grid {
       grid-template-columns: 1fr;
     }
   }
