@@ -206,3 +206,28 @@
 [data-theme="dark"] .testimonials {
   background: var(--color-gray-50);
 }
+
+/* ============================================
+   Fix text elements using var(--color-white)
+   that must always render as white in dark mode
+   (the variable inverts to #1e293b which is dark)
+   ============================================ */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .btn-accent,
+[data-theme="dark"] .btn-add-quote,
+[data-theme="dark"] .product-badge {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .btn-white {
+  background: #ffffff;
+  color: #0052CC;
+}
+
+[data-theme="dark"] .section-title {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .section-subtitle {
+  color: #94a3b8;
+}
