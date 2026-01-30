@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import Toast from '../components/islands/Toast.tsx';
 import DarkModeToggle from '../components/islands/DarkModeToggle.tsx';
 import MobileMenu from '../components/islands/MobileMenu.tsx';
+import { siteConfig } from '../data/site-config';
 import '../styles/global.css';
 import '../styles/dark-mode.css';
 import '../styles/animations.css';
@@ -31,11 +32,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_CL" />
   <meta property="og:url" content={canonicalURL} />
+  <meta property="og:site_name" content="Gel Chile" />
+  <meta property="og:image" content={`${Astro.site}assets/img/gelchile-logo.png`} />
+  <meta property="og:image:alt" content="Gel Chile - Sistemas de Puesta a Tierra" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${Astro.site}assets/img/gelchile-logo.png`} />
 
   <title>{title}</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230052CC'/%3E%3Cpath d='M16 6l3 8h8l-6.5 5 2.5 8-7-5-7 5 2.5-8L5 14h8z' fill='%23FFD700'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,6 +60,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": siteConfig.name,
+    "description": siteConfig.description,
+    "url": siteConfig.url,
+    "telephone": siteConfig.contact.phones[0].replace(/\s/g, ''),
+    "email": siteConfig.contact.email,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Los Diamantes N°0360",
+      "addressLocality": "Maipú",
+      "addressRegion": "RM",
+      "addressCountry": "CL"
+    }
+  })} />
 </head>
 <body>
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>

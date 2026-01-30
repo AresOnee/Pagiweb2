@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../data/site-config';
+import CartCount from './islands/CartCount.tsx';
 
 interface Props {
   currentPath: string;
@@ -48,7 +49,7 @@ function isActive(href: string, current: string): boolean {
           <path d="M16 10a4 4 0 0 1-8 0"/>
         </svg>
         <span>Cotizar</span>
-        <span class="cart-count" id="cart-count-slot" style="display: none;">0</span>
+        <CartCount client:load />
       </a>
 
       <button class="mobile-menu-btn" aria-label="Menú" aria-expanded="false">
