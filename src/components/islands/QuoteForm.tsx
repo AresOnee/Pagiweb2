@@ -137,7 +137,7 @@ export default function QuoteForm() {
     return (
       <div class={styles['quote-form-container']}>
         <div style={{ textAlign: 'center', padding: 'var(--spacing-8)' }}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2" width="64" height="64" style={{ margin: '0 auto var(--spacing-4)' }}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" strokeWidth="2" width="64" height="64" style={{ margin: '0 auto var(--spacing-4)' }}>
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
             <polyline points="22 4 12 14.01 9 11.01" />
           </svg>
@@ -249,7 +249,7 @@ export default function QuoteForm() {
             </>
           ) : (
             <>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
                 <line x1="22" y1="2" x2="11" y2="13" />
                 <polygon points="22 2 15 22 11 13 2 9 22 2" />
               </svg>

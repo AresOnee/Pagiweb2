@@ -35,7 +35,7 @@ export default function QuoteItems() {
     return (
       <div class={styles['quote-empty']}>
         <div class={styles['quote-empty-icon']}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
             <line x1="3" y1="6" x2="21" y2="6" />
             <path d="M16 10a4 4 0 0 1-8 0" />
@@ -54,7 +54,7 @@ export default function QuoteItems() {
       <div class={styles['quote-items-header']}>
         <h3>Productos seleccionados ({cart.length})</h3>
         <button class={styles['clear-all-btn']} onClick={handleClearAll}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
             <polyline points="3 6 5 6 21 6" />
             <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
           </svg>
@@ -71,10 +71,10 @@ export default function QuoteItems() {
               {item.image ? (
                 <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'var(--radius-md)' }} />
               ) : (
-                <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+                <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
                   <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
                   <circle cx="60" cy="50" r="15" fill="#e2e8f0" stroke="#94a3b8" />
-                  <path d="M50 75h20" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" />
+                  <path d="M50 75h20" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" />
                 </svg>
               )}
             </div>
@@ -120,7 +120,7 @@ export default function QuoteItems() {
               onClick={() => handleRemove(item.sku, item.title)}
               aria-label={`Eliminar ${item.title}`}
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
