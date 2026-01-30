@@ -181,6 +181,28 @@ const currentYear = new Date().getFullYear();
     font-size: var(--font-size-sm);
   }
 
+  /* Dark mode */
+  :global([data-theme="dark"]) .footer {
+    background: #020617;
+    color: #94a3b8;
+  }
+
+  :global([data-theme="dark"]) .footer-logo {
+    color: #ffffff;
+  }
+
+  :global([data-theme="dark"]) .footer-section h4 {
+    color: #ffffff;
+  }
+
+  :global([data-theme="dark"]) .footer-link:hover {
+    color: #ffffff;
+  }
+
+  :global([data-theme="dark"]) .footer-contact-item a:hover {
+    color: #ffffff;
+  }
+
   /* Responsive */
   @media (max-width: 1024px) {
     .footer-grid {
