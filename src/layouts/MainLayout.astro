@@ -1,6 +1,9 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Toast from '../components/islands/Toast.tsx';
+import DarkModeToggle from '../components/islands/DarkModeToggle.tsx';
+import MobileMenu from '../components/islands/MobileMenu.tsx';
 import '../styles/global.css';
 import '../styles/dark-mode.css';
 import '../styles/animations.css';
@@ -58,5 +61,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </main>
 
   <Footer />
+
+  <Toast client:load />
+  <DarkModeToggle client:load />
+  <MobileMenu client:load />
 </body>
 </html>
