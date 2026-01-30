@@ -213,6 +213,23 @@
     50% { transform: translateY(-20px) rotate(5deg); }
   }
 
+  /* Dark mode — hero is already dark; prevent variable inversion from lightening it */
+  :global([data-theme="dark"]) .hero {
+    background: linear-gradient(135deg, #0a1628 0%, #172554 50%, #1e3a5f 100%);
+  }
+
+  :global([data-theme="dark"]) .hero-badge {
+    color: #f1f5f9;
+  }
+
+  :global([data-theme="dark"]) .hero-title {
+    color: #ffffff;
+  }
+
+  :global([data-theme="dark"]) .hero-stat-value {
+    color: #ffffff;
+  }
+
   /* Responsive */
   @media (max-width: 1024px) {
     .hero-content {

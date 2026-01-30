@@ -154,26 +154,14 @@ import QuoteForm from '../components/islands/QuoteForm.tsx';
     line-height: 1.6;
   }
 
-  /* Dark Mode */
+  /* Dark Mode — variable inversion handles cards, text, borders automatically.
+     Only override already-dark elements (page-hero). */
   :global([data-theme="dark"]) .page-hero {
-    background: linear-gradient(135deg, #0a1628 0%, var(--color-gray-900) 100%);
+    background: linear-gradient(135deg, #0a1628 0%, #172554 100%);
   }
 
-  :global([data-theme="dark"]) .how-it-works {
-    background: var(--color-gray-900);
-  }
-
-  :global([data-theme="dark"]) .step-card {
-    background: var(--color-gray-800);
-    border-color: var(--color-gray-700);
-  }
-
-  :global([data-theme="dark"]) .step-card h3 {
-    color: var(--color-white);
-  }
-
-  :global([data-theme="dark"]) .step-card p {
-    color: var(--color-gray-400);
+  :global([data-theme="dark"]) .page-hero-title {
+    color: #ffffff;
   }
 
   /* Responsive */
