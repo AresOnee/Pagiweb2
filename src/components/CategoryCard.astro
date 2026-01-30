@@ -4,12 +4,13 @@ interface Props {
   name: string;
   description: string;
   count: number;
+  delay?: number;
 }
 
-const { id, name, description, count } = Astro.props;
+const { id, name, description, count, delay } = Astro.props;
 ---
 
-<a href={`/productos?categoria=${id}`} class="category-card">
+<a href={`/productos?categoria=${id}`} class="category-card" data-aos="fade-up" data-aos-delay={delay ? String(delay) : undefined}>
   <div class="category-icon">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
       <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>

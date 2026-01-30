@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect, useRef } from 'preact/hooks';
 import { useStore } from '@nanostores/preact';
 import { $cart, addItem } from '../../stores/cart';
 import { openProductModal } from '../../stores/ui';
@@ -67,6 +67,34 @@ export default function ProductFilter({ products, categories }: Props) {
 
   const isInCart = (sku: string) => cart.find((item) => item.sku === sku);
 
+  // Scroll reveal for dynamically rendered product cards
+  const gridRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (typeof window === 'undefined' || !gridRef.current) return;
+    const cards = gridRef.current.querySelectorAll('[data-aos]');
+    if (!cards.length) return;
+    if (!('IntersectionObserver' in window)) {
+      cards.forEach((el) => el.classList.add('aos-animate'));
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('aos-animate');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    cards.forEach((el) => {
+      el.classList.remove('aos-animate');
+      observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [filtered]);
+
   return (
     <div>
       {/* Search */}
@@ -112,13 +140,15 @@ export default function ProductFilter({ products, categories }: Props) {
 
       {/* Product grid */}
       {filtered.length > 0 ? (
-        <div class={styles['product-grid']}>
-          {filtered.map((product) => {
+        <div class={styles['product-grid']} ref={gridRef}>
+          {filtered.map((product, index) => {
             const existing = isInCart(product.sku);
             return (
               <article
                 key={product.sku}
                 class={styles['product-card']}
+                data-aos="fade-up"
+                data-aos-delay={String((index % 4) * 100)}
                 onClick={() => handleCardClick(product)}
               >
                 <div class={styles['product-image']}>
