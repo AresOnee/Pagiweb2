@@ -1,0 +1,177 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ProductFilter from '../../components/islands/ProductFilter.tsx';
+import ProductModal from '../../components/islands/ProductModal.tsx';
+import { getCollection } from 'astro:content';
+import categoriesData from '../../data/categories.json';
+import type { Product, Category } from '../../types';
+
+const allProducts = await getCollection('products');
+
+// Map to plain Product[] for island serialization
+const products: Product[] = allProducts.map(p => ({
+  sku: p.data.sku,
+  title: p.data.title,
+  category: p.data.category,
+  categorySlug: p.data.categorySlug,
+  description: p.data.description,
+  features: p.data.features,
+  specs: p.data.specs,
+  image: p.data.image,
+  inStock: p.data.inStock,
+  badge: p.data.badge,
+}));
+
+const categories = categoriesData as Category[];
+---
+
+<MainLayout title="Productos — Gel Chile" description="Catálogo completo de productos para sistemas de puesta a tierra y protección eléctrica">
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">Nuestros Productos</h1>
+      <p class="page-hero-subtitle">
+        Soluciones profesionales en puesta a tierra y protección eléctrica
+      </p>
+    </div>
+  </section>
+
+  <Breadcrumb items={[{ label: 'Inicio', href: '/' }, { label: 'Productos' }]} />
+
+  <!-- Product Filter + Grid -->
+  <section class="section products-section">
+    <div class="container">
+      <ProductFilter client:load products={products} categories={categories} />
+    </div>
+  </section>
+
+  <!-- Product Modal (reads from $selectedProduct store) -->
+  <ProductModal client:load />
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">¿No encuentras lo que buscas?</h2>
+        <p class="cta-description">
+          Contáctanos directamente y te ayudaremos a encontrar la solución perfecta
+          para tu sistema de puesta a tierra.
+        </p>
+        <div class="cta-buttons">
+          <a href="/cotizacion" class="btn btn-white btn-lg">Solicitar Cotización</a>
+          <a href="mailto:ventas@gelchile.cl" class="btn btn-accent btn-lg">Escríbenos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  /* Page Hero */
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-primary-dark) 100%);
+    padding: calc(72px + var(--spacing-12)) 0 var(--spacing-12);
+    text-align: center;
+  }
+
+  .page-hero-title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-3);
+  }
+
+  .page-hero-subtitle {
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Products Section */
+  .products-section {
+    padding-top: var(--spacing-8);
+    padding-bottom: var(--spacing-8);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    position: relative;
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    padding: var(--spacing-20) 0;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .cta-content {
+    position: relative;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .cta-description {
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: var(--spacing-8);
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-4);
+    flex-wrap: wrap;
+  }
+
+  /* Dark Mode */
+  :global([data-theme="dark"]) .page-hero {
+    background: linear-gradient(135deg, #0a1628 0%, var(--color-gray-900) 100%);
+  }
+
+  :global([data-theme="dark"]) .cta-section {
+    background: linear-gradient(135deg, #0a1628 0%, var(--color-primary-dark) 100%);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .page-hero {
+      padding: calc(64px + var(--spacing-8)) 0 var(--spacing-8);
+    }
+
+    .page-hero-title {
+      font-size: var(--font-size-2xl);
+    }
+
+    .cta-title {
+      font-size: var(--font-size-2xl);
+    }
+
+    .cta-section {
+      padding: var(--spacing-12) 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
