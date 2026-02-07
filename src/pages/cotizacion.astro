@@ -3,6 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import QuoteItems from '../components/islands/QuoteItems.tsx';
 import QuoteForm from '../components/islands/QuoteForm.tsx';
+import ObfuscatedEmail from '../components/ObfuscatedEmail.astro';
 import { siteConfig } from '../data/site-config';
 ---
 
@@ -89,7 +90,7 @@ import { siteConfig } from '../data/site-config';
             </svg>
           </div>
           <h3>Email</h3>
-          <p>{siteConfig.contact.email}<br/>Respuesta en 24 hrs</p>
+          <p><ObfuscatedEmail email={siteConfig.contact.email} /><br/>Respuesta en 24 hrs</p>
         </div>
         <div class="help-card" data-aos="fade-up" data-aos-delay="300">
           <div class="help-icon">

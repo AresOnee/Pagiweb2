@@ -21,4 +21,14 @@ export const siteConfig = {
     toastDuration: 3000,
     animationThreshold: 0.1,
   },
+  /**
+   * Cloudflare Turnstile configuration for anti-spam protection.
+   * Get your site key from: https://dash.cloudflare.com/turnstile
+   *
+   * Leave as 'YOUR_TURNSTILE_SITE_KEY' for development (auto-verifies).
+   * Replace with actual key for production.
+   */
+  turnstile: {
+    siteKey: 'YOUR_TURNSTILE_SITE_KEY',
+  },
 } as const;
