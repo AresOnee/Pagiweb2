@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import Toast from '../components/islands/Toast.tsx';
 import DarkModeToggle from '../components/islands/DarkModeToggle.tsx';
 import MobileMenu from '../components/islands/MobileMenu.tsx';
+import InstallPrompt from '../components/InstallPrompt.astro';
 import { siteConfig } from '../data/site-config';
 import '../styles/global.css';
 import '../styles/dark-mode.css';
@@ -47,6 +48,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#0052cc" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Gel Chile" />
+  <link rel="apple-touch-icon" href="/icon-192.svg" />
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -97,6 +106,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <Toast client:load />
   <DarkModeToggle client:load />
   <MobileMenu client:load />
+  <InstallPrompt />
 
   <!-- AOS: Animate On Scroll via IntersectionObserver -->
   <script is:inline>
@@ -116,6 +126,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       }, { threshold: 0.1 });
       els.forEach(function(el) { observer.observe(el); });
     })();
+  </script>
+
+  <!-- Service Worker Registration -->
+  <script is:inline>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(reg) {
+            console.log('[SW] Registered:', reg.scope);
+          })
+          .catch(function(err) {
+            console.log('[SW] Registration failed:', err);
+          });
+      });
+    }
   </script>
 </body>
 </html>

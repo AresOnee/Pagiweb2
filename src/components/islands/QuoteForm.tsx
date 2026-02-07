@@ -2,8 +2,13 @@ import { useState, useRef } from 'preact/hooks';
 import { useStore } from '@nanostores/preact';
 import { $cart, clearCart } from '../../stores/cart';
 import { showToast } from '../../stores/toast';
+import { siteConfig } from '../../data/site-config';
 import TurnstileWidget from './TurnstileWidget';
 import styles from './QuoteForm.module.css';
+
+// Check if Web3Forms is configured
+const isWeb3FormsConfigured = siteConfig.web3forms?.accessKey &&
+  siteConfig.web3forms.accessKey !== 'YOUR_WEB3FORMS_ACCESS_KEY';
 
 // Anti-spam: minimum time before submission allowed (3 seconds)
 const MIN_SUBMIT_TIME_MS = 3000;
@@ -47,7 +52,6 @@ export default function QuoteForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   const validateField = (name: string, value: string): string | undefined => {
@@ -121,35 +125,62 @@ export default function QuoteForm() {
 
     setIsSubmitting(true);
 
-    // Build payload
+    // Build payload for Web3Forms
+    const productsList = cart
+      .map((item) => `• ${item.title} (SKU: ${item.sku}) - Cantidad: ${item.quantity}`)
+      .join('\n');
+
     const payload = {
-      access_key: 'YOUR_WEB3FORMS_API_KEY',
-      subject: `Nueva cotización - ${form.nombre}`,
+      access_key: siteConfig.web3forms.accessKey,
+      subject: `🔌 Nueva Cotización - ${form.nombre} | Gel Chile`,
       from_name: form.nombre,
-      nombre: form.nombre,
-      empresa: form.empresa || 'No especificada',
-      email: form.email,
-      telefono: form.telefono,
-      mensaje: form.mensaje || 'Sin mensaje adicional',
-      productos: cart.map((item) => `${item.title} (SKU: ${item.sku}) x${item.quantity}`).join('\n'),
-      total_items: cart.length.toString(),
-      fecha: new Date().toISOString(),
-      'cf-turnstile-response': turnstileToken, // For server-side Turnstile verification
+      replyto: form.email,
+      // Form fields
+      Nombre: form.nombre,
+      Empresa: form.empresa || 'No especificada',
+      Email: form.email,
+      Teléfono: form.telefono,
+      Mensaje: form.mensaje || 'Sin mensaje adicional',
+      // Products
+      'Productos Solicitados': productsList,
+      'Total de Productos': cart.length.toString(),
+      // Metadata
+      Fecha: new Date().toLocaleString('es-CL', { timeZone: 'America/Santiago' }),
+      // Turnstile token for server-side verification
+      'cf-turnstile-response': turnstileToken,
     };
 
-    // Simulate API call (Web3Forms API key will be configured in Phase 9)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      console.log('Cotización enviada:', payload);
+      if (isWeb3FormsConfigured) {
+        // Production: send via Web3Forms API
+        const response = await fetch(siteConfig.web3forms.endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
 
-      showToast('¡Cotización enviada con éxito! Te contactaremos pronto.', 'success');
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || 'Error al enviar');
+        }
+      } else {
+        // Development: simulate API call
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+        console.log('[Dev Mode] Cotización simulada:', payload);
+      }
+
+      // Success - clear form and redirect
       clearCart();
       setForm({ nombre: '', empresa: '', email: '', telefono: '', mensaje: '', website: '' });
       setErrors({});
       setTouched({});
       setTurnstileToken(null);
-      setIsSubmitted(true);
-    } catch {
+
+      // Redirect to success page
+      window.location.href = '/cotizacion-enviada';
+    } catch (error) {
+      console.error('Error al enviar cotización:', error);
       showToast('Error al enviar la cotización. Inténtalo nuevamente.', 'error');
     } finally {
       setIsSubmitting(false);
@@ -166,24 +197,6 @@ export default function QuoteForm() {
     if (errors[name as keyof FormErrors] && touched[name]) return `${styles['form-group']} ${styles['has-error']}`;
     return styles['form-group'];
   };
-
-  if (isSubmitted && cart.length === 0) {
-    return (
-      <div class={styles['quote-form-container']}>
-        <div style={{ textAlign: 'center', padding: 'var(--spacing-8)' }}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" strokeWidth="2" width="64" height="64" style={{ margin: '0 auto var(--spacing-4)' }}>
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-            <polyline points="22 4 12 14.01 9 11.01" />
-          </svg>
-          <h3 style={{ marginBottom: 'var(--spacing-2)' }}>¡Cotización Enviada!</h3>
-          <p style={{ color: 'var(--color-gray-500)', marginBottom: 'var(--spacing-6)' }}>
-            Te contactaremos pronto con los detalles de tu cotización.
-          </p>
-          <a href="/productos" class="btn btn-primary">Seguir Comprando</a>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div class={styles['quote-form-container']}>

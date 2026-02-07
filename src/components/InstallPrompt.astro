@@ -1,0 +1,252 @@
+---
+/**
+ * PWA Install Prompt - Shows a banner prompting users to install the app
+ * Uses beforeinstallprompt API to detect installability
+ */
+---
+
+<div id="install-prompt" class="install-prompt" hidden>
+  <div class="install-content">
+    <div class="install-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+    </div>
+    <div class="install-text">
+      <strong>Instalar Gel Chile</strong>
+      <span>Accede más rápido desde tu pantalla de inicio</span>
+    </div>
+  </div>
+  <div class="install-actions">
+    <button id="install-dismiss" class="install-btn dismiss" type="button">
+      Ahora no
+    </button>
+    <button id="install-accept" class="install-btn accept" type="button">
+      Instalar
+    </button>
+  </div>
+</div>
+
+<script>
+  const DISMISS_KEY = 'gelchile_install_dismissed';
+  const DISMISS_DURATION = 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  let deferredPrompt: BeforeInstallPromptEvent | null = null;
+
+  interface BeforeInstallPromptEvent extends Event {
+    prompt(): Promise<void>;
+    userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
+  }
+
+  function shouldShowPrompt(): boolean {
+    // Don't show if already installed (standalone mode)
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      return false;
+    }
+
+    // Don't show if dismissed recently
+    const dismissed = localStorage.getItem(DISMISS_KEY);
+    if (dismissed) {
+      const dismissedTime = parseInt(dismissed, 10);
+      if (Date.now() - dismissedTime < DISMISS_DURATION) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  function showInstallPrompt() {
+    const prompt = document.getElementById('install-prompt');
+    if (prompt && shouldShowPrompt()) {
+      prompt.hidden = false;
+      prompt.classList.add('show');
+    }
+  }
+
+  function hideInstallPrompt() {
+    const prompt = document.getElementById('install-prompt');
+    if (prompt) {
+      prompt.classList.remove('show');
+      setTimeout(() => {
+        prompt.hidden = true;
+      }, 300);
+    }
+  }
+
+  // Listen for beforeinstallprompt
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e as BeforeInstallPromptEvent;
+
+    // Show prompt after a short delay
+    setTimeout(showInstallPrompt, 3000);
+  });
+
+  // Handle dismiss button
+  document.getElementById('install-dismiss')?.addEventListener('click', () => {
+    localStorage.setItem(DISMISS_KEY, Date.now().toString());
+    hideInstallPrompt();
+    deferredPrompt = null;
+  });
+
+  // Handle install button
+  document.getElementById('install-accept')?.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+
+    hideInstallPrompt();
+
+    await deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+
+    if (outcome === 'accepted') {
+      console.log('[PWA] User accepted install prompt');
+    }
+
+    deferredPrompt = null;
+  });
+
+  // Hide prompt if app is installed
+  window.addEventListener('appinstalled', () => {
+    hideInstallPrompt();
+    deferredPrompt = null;
+    console.log('[PWA] App installed successfully');
+  });
+</script>
+
+<style>
+  .install-prompt {
+    position: fixed;
+    bottom: var(--spacing-4);
+    left: var(--spacing-4);
+    right: var(--spacing-4);
+    max-width: 400px;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    padding: var(--spacing-4);
+    z-index: 1000;
+    transform: translateY(120%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .install-prompt.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .install-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .install-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .install-icon svg {
+    color: white;
+  }
+
+  .install-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+  }
+
+  .install-text strong {
+    color: var(--color-gray-900);
+    font-size: var(--font-size-base);
+  }
+
+  .install-text span {
+    color: var(--color-gray-500);
+    font-size: var(--font-size-sm);
+  }
+
+  .install-actions {
+    display: flex;
+    gap: var(--spacing-2);
+    justify-content: flex-end;
+  }
+
+  .install-btn {
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+  }
+
+  .install-btn.dismiss {
+    background: transparent;
+    color: var(--color-gray-600);
+  }
+
+  .install-btn.dismiss:hover {
+    background: var(--color-gray-100);
+  }
+
+  .install-btn.accept {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .install-btn.accept:hover {
+    background: var(--color-primary-dark);
+  }
+
+  /* Dark mode */
+  :global([data-theme="dark"]) .install-prompt {
+    background: #1e293b;
+    border: 1px solid #334155;
+  }
+
+  :global([data-theme="dark"]) .install-text strong {
+    color: #f1f5f9;
+  }
+
+  :global([data-theme="dark"]) .install-text span {
+    color: #94a3b8;
+  }
+
+  :global([data-theme="dark"]) .install-btn.dismiss {
+    color: #94a3b8;
+  }
+
+  :global([data-theme="dark"]) .install-btn.dismiss:hover {
+    background: #334155;
+  }
+
+  /* Mobile positioning */
+  @media (max-width: 480px) {
+    .install-prompt {
+      left: var(--spacing-2);
+      right: var(--spacing-2);
+      bottom: var(--spacing-2);
+    }
+  }
+
+  /* Position above dark mode toggle */
+  @media (min-width: 481px) {
+    .install-prompt {
+      left: auto;
+      right: var(--spacing-4);
+      bottom: calc(var(--spacing-4) + 60px);
+    }
+  }
+</style>
