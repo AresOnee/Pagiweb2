@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import Toast from '../components/islands/Toast.tsx';
 import DarkModeToggle from '../components/islands/DarkModeToggle.tsx';
 import MobileMenu from '../components/islands/MobileMenu.tsx';
+import InstallPrompt from '../components/InstallPrompt.astro';
 import { siteConfig } from '../data/site-config';
 import '../styles/global.css';
 import '../styles/dark-mode.css';
@@ -48,6 +49,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#0052cc" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Gel Chile" />
+  <link rel="apple-touch-icon" href="/icon-192.svg" />
+
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -84,6 +93,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   })} />
 </head>
 <body>
+  <!-- H1: Barra de progreso de navegación -->
+  <div id="page-progress" class="page-progress"></div>
+
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   <Header currentPath={Astro.url.pathname} />
@@ -97,6 +109,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <Toast client:load />
   <DarkModeToggle client:load />
   <MobileMenu client:load />
+  <InstallPrompt />
 
   <!-- AOS: Animate On Scroll via IntersectionObserver -->
   <script is:inline>
@@ -117,5 +130,57 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       els.forEach(function(el) { observer.observe(el); });
     })();
   </script>
+
+  <!-- Service Worker Registration -->
+  <script is:inline>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(reg) {
+            console.log('[SW] Registered:', reg.scope);
+          })
+          .catch(function(err) {
+            console.log('[SW] Registration failed:', err);
+          });
+      });
+    }
+  </script>
+
+  <!-- H1: Page transition progress bar script -->
+  <script is:inline>
+    (function() {
+      var bar = document.getElementById('page-progress');
+      if (!bar) return;
+
+      // Handle link clicks for SPA-like navigation feedback
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a');
+        if (link && link.href && link.href.startsWith(window.location.origin) && !link.hasAttribute('download')) {
+          bar.style.width = '30%';
+        }
+      });
+
+      // Complete progress on page load
+      window.addEventListener('load', function() {
+        bar.style.width = '100%';
+        setTimeout(function() { bar.style.width = '0%'; }, 300);
+      });
+    })();
+  </script>
+
+  <style is:global>
+    /* H1: Page progress bar */
+    .page-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-primary-500), var(--color-accent));
+      width: 0%;
+      z-index: 9999;
+      transition: width 0.3s ease;
+      pointer-events: none;
+    }
+  </style>
 </body>
 </html>

@@ -1,0 +1,35 @@
+# Gel Chile - robots.txt
+# https://gelchile.cl
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# AI Crawlers - explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow admin and internal paths
+Disallow: /api/
+Disallow: /_astro/
+
+# Sitemap location
+Sitemap: https://gelchile.cl/sitemap-index.xml

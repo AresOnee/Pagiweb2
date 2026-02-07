@@ -1,12 +1,20 @@
-import { useState, useRef } from 'preact/hooks';
+import { useState, useRef, useEffect } from 'preact/hooks';
 import { useStore } from '@nanostores/preact';
 import { $cart, clearCart } from '../../stores/cart';
 import { showToast } from '../../stores/toast';
+import { siteConfig } from '../../data/site-config';
 import TurnstileWidget from './TurnstileWidget';
 import styles from './QuoteForm.module.css';
 
+// Check if Web3Forms is configured
+const isWeb3FormsConfigured = siteConfig.web3forms?.accessKey &&
+  siteConfig.web3forms.accessKey !== 'YOUR_WEB3FORMS_ACCESS_KEY';
+
 // Anti-spam: minimum time before submission allowed (3 seconds)
 const MIN_SUBMIT_TIME_MS = 3000;
+
+// H5: Auto-save form data key
+const FORM_DRAFT_KEY = 'gelchile_quote_draft';
 
 interface FormData {
   nombre: string;
@@ -23,10 +31,30 @@ interface FormErrors {
   telefono?: string;
 }
 
+// H9: More specific error messages
 const validators: Record<string, (value: string) => string | undefined> = {
-  nombre: (v) => (v.trim().length >= 3 ? undefined : 'Ingresa tu nombre completo'),
-  email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? undefined : 'Ingresa un email válido'),
-  telefono: (v) => (/^[\d\s+()-]{8,}$/.test(v) ? undefined : 'Ingresa un teléfono válido'),
+  nombre: (v) => {
+    const trimmed = v.trim();
+    if (!trimmed) return 'El nombre es obligatorio';
+    if (trimmed.length < 3) return 'Ingresa nombre completo (mínimo 3 caracteres)';
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/.test(trimmed)) return 'Solo letras y espacios permitidos';
+    return undefined;
+  },
+  email: (v) => {
+    const trimmed = v.trim();
+    if (!trimmed) return 'El email es obligatorio';
+    if (!/@/.test(trimmed)) return 'Falta el símbolo @';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) return 'Formato inválido. Ejemplo: usuario@empresa.cl';
+    return undefined;
+  },
+  telefono: (v) => {
+    const digits = v.replace(/\D/g, '');
+    if (!v.trim()) return 'El teléfono es obligatorio';
+    if (digits.length < 8) return 'Mínimo 8 dígitos';
+    if (digits.length > 15) return 'Máximo 15 dígitos';
+    if (!/^[\d\s+()-]+$/.test(v)) return 'Solo números, espacios y símbolos +()-';
+    return undefined;
+  },
 };
 
 /** Quote form with validation. Mount with client:load on /cotizacion. */
@@ -47,8 +75,61 @@ export default function QuoteForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [hasDraft, setHasDraft] = useState(false);
+
+  // H5: Restore form draft on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(FORM_DRAFT_KEY);
+      if (saved) {
+        const draft = JSON.parse(saved);
+        // Only restore non-sensitive fields (exclude honeypot)
+        setForm((prev) => ({
+          ...prev,
+          nombre: draft.nombre || '',
+          empresa: draft.empresa || '',
+          email: draft.email || '',
+          telefono: draft.telefono || '',
+          mensaje: draft.mensaje || '',
+        }));
+        setHasDraft(true);
+      }
+    } catch (e) {
+      console.error('Error restoring form draft:', e);
+    }
+  }, []);
+
+  // H5: Auto-save form data (debounced via form state changes)
+  useEffect(() => {
+    // Don't save honeypot or empty forms
+    const hasContent = form.nombre || form.empresa || form.email || form.telefono || form.mensaje;
+    if (!hasContent) return;
+
+    try {
+      const toSave = {
+        nombre: form.nombre,
+        empresa: form.empresa,
+        email: form.email,
+        telefono: form.telefono,
+        mensaje: form.mensaje,
+        savedAt: Date.now(),
+      };
+      localStorage.setItem(FORM_DRAFT_KEY, JSON.stringify(toSave));
+    } catch (e) {
+      console.error('Error saving form draft:', e);
+    }
+  }, [form.nombre, form.empresa, form.email, form.telefono, form.mensaje]);
+
+  // H5: Clear draft helper
+  const clearDraft = () => {
+    try {
+      localStorage.removeItem(FORM_DRAFT_KEY);
+      setHasDraft(false);
+    } catch (e) {
+      console.error('Error clearing form draft:', e);
+    }
+  };
 
   const validateField = (name: string, value: string): string | undefined => {
     const validator = validators[name];
@@ -121,35 +202,63 @@ export default function QuoteForm() {
 
     setIsSubmitting(true);
 
-    // Build payload
+    // Build payload for Web3Forms
+    const productsList = cart
+      .map((item) => `• ${item.title} (SKU: ${item.sku}) - Cantidad: ${item.quantity}`)
+      .join('\n');
+
     const payload = {
-      access_key: 'YOUR_WEB3FORMS_API_KEY',
-      subject: `Nueva cotización - ${form.nombre}`,
+      access_key: siteConfig.web3forms.accessKey,
+      subject: `🔌 Nueva Cotización - ${form.nombre} | Gel Chile`,
       from_name: form.nombre,
-      nombre: form.nombre,
-      empresa: form.empresa || 'No especificada',
-      email: form.email,
-      telefono: form.telefono,
-      mensaje: form.mensaje || 'Sin mensaje adicional',
-      productos: cart.map((item) => `${item.title} (SKU: ${item.sku}) x${item.quantity}`).join('\n'),
-      total_items: cart.length.toString(),
-      fecha: new Date().toISOString(),
-      'cf-turnstile-response': turnstileToken, // For server-side Turnstile verification
+      replyto: form.email,
+      // Form fields
+      Nombre: form.nombre,
+      Empresa: form.empresa || 'No especificada',
+      Email: form.email,
+      Teléfono: form.telefono,
+      Mensaje: form.mensaje || 'Sin mensaje adicional',
+      // Products
+      'Productos Solicitados': productsList,
+      'Total de Productos': cart.length.toString(),
+      // Metadata
+      Fecha: new Date().toLocaleString('es-CL', { timeZone: 'America/Santiago' }),
+      // Turnstile token for server-side verification
+      'cf-turnstile-response': turnstileToken,
     };
 
-    // Simulate API call (Web3Forms API key will be configured in Phase 9)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      console.log('Cotización enviada:', payload);
+      if (isWeb3FormsConfigured) {
+        // Production: send via Web3Forms API
+        const response = await fetch(siteConfig.web3forms.endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
 
-      showToast('¡Cotización enviada con éxito! Te contactaremos pronto.', 'success');
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || 'Error al enviar');
+        }
+      } else {
+        // Development: simulate API call
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+        console.log('[Dev Mode] Cotización simulada:', payload);
+      }
+
+      // Success - clear form, draft, and redirect
       clearCart();
+      clearDraft(); // H5: Clear auto-saved draft
       setForm({ nombre: '', empresa: '', email: '', telefono: '', mensaje: '', website: '' });
       setErrors({});
       setTouched({});
       setTurnstileToken(null);
-      setIsSubmitted(true);
-    } catch {
+
+      // Redirect to success page
+      window.location.href = '/cotizacion-enviada';
+    } catch (error) {
+      console.error('Error al enviar cotización:', error);
       showToast('Error al enviar la cotización. Inténtalo nuevamente.', 'error');
     } finally {
       setIsSubmitting(false);
@@ -167,23 +276,14 @@ export default function QuoteForm() {
     return styles['form-group'];
   };
 
-  if (isSubmitted && cart.length === 0) {
-    return (
-      <div class={styles['quote-form-container']}>
-        <div style={{ textAlign: 'center', padding: 'var(--spacing-8)' }}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" strokeWidth="2" width="64" height="64" style={{ margin: '0 auto var(--spacing-4)' }}>
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-            <polyline points="22 4 12 14.01 9 11.01" />
-          </svg>
-          <h3 style={{ marginBottom: 'var(--spacing-2)' }}>¡Cotización Enviada!</h3>
-          <p style={{ color: 'var(--color-gray-500)', marginBottom: 'var(--spacing-6)' }}>
-            Te contactaremos pronto con los detalles de tu cotización.
-          </p>
-          <a href="/productos" class="btn btn-primary">Seguir Comprando</a>
-        </div>
-      </div>
-    );
-  }
+  // H3: Reset form handler
+  const handleReset = () => {
+    setForm({ nombre: '', empresa: '', email: '', telefono: '', mensaje: '', website: '' });
+    setErrors({});
+    setTouched({});
+    clearDraft();
+    showToast('Formulario limpiado', 'info');
+  };
 
   return (
     <div class={styles['quote-form-container']}>
@@ -292,27 +392,51 @@ export default function QuoteForm() {
           onError={() => showToast('Error en verificación de seguridad', 'error')}
         />
 
-        {/* Submit */}
-        <button
-          type="submit"
-          class={`btn btn-primary ${styles['form-submit']}`}
-          disabled={isSubmitting || !turnstileToken}
-        >
-          {isSubmitting ? (
-            <>
-              <span style={{ display: 'inline-block', width: '20px', height: '20px', border: '2px solid rgba(255,255,255,0.3)', borderTopColor: 'white', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
-              Enviando...
-            </>
-          ) : (
-            <>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
-                <line x1="22" y1="2" x2="11" y2="13" />
-                <polygon points="22 2 15 22 11 13 2 9 22 2" />
-              </svg>
-              Enviar Solicitud de Cotización
-            </>
-          )}
-        </button>
+        {/* H5: Form actions with auto-save indicator */}
+        <div class={styles['form-actions']}>
+          <button
+            type="submit"
+            class={`btn btn-primary ${styles['form-submit']}`}
+            disabled={isSubmitting || !turnstileToken}
+          >
+            {isSubmitting ? (
+              <>
+                <span style={{ display: 'inline-block', width: '20px', height: '20px', border: '2px solid rgba(255,255,255,0.3)', borderTopColor: 'white', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+                Enviando...
+              </>
+            ) : (
+              <>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+                Enviar Solicitud de Cotización
+              </>
+            )}
+          </button>
+
+          {/* H3: Reset form button */}
+          <button
+            type="button"
+            class={styles['form-reset']}
+            onClick={handleReset}
+            disabled={isSubmitting}
+          >
+            Limpiar formulario
+          </button>
+        </div>
+
+        {/* H5: Auto-save indicator */}
+        {hasDraft && (
+          <p class={styles['draft-indicator']}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+              <polyline points="17 21 17 13 7 13 7 21" />
+              <polyline points="7 3 7 8 15 8" />
+            </svg>
+            Borrador guardado automáticamente
+          </p>
+        )}
       </form>
     </div>
   );

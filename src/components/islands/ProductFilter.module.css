@@ -108,6 +108,75 @@
   pointer-events: none;
 }
 
+/* H7: Keyboard shortcut indicator */
+.search-shortcut {
+  position: absolute;
+  right: var(--spacing-4);
+  top: 50%;
+  transform: translateY(-50%);
+  padding: var(--spacing-1) var(--spacing-2);
+  background: var(--color-gray-100);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-family: inherit;
+  color: var(--color-gray-500);
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* H7: Results bar with count + sorting */
+.results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-6);
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+.results-bar .product-count {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.sort-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+}
+
+.sort-select {
+  padding: var(--spacing-2) var(--spacing-3);
+  padding-right: var(--spacing-8);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-700);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-2) center;
+  transition: all var(--transition-fast);
+}
+
+.sort-select:hover {
+  border-color: var(--color-gray-300);
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 82, 204, 0.1);
+}
+
 /* Product card */
 .product-card {
   position: relative;
@@ -321,6 +390,24 @@
   background: #1e293b;
   border-color: #475569;
   color: #e2e8f0;
+}
+
+/* H7: Dark mode for new elements */
+:global([data-theme="dark"]) .search-shortcut {
+  background: #334155;
+  border-color: #475569;
+  color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .sort-select {
+  background: #1e293b;
+  border-color: #475569;
+  color: #e2e8f0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+:global([data-theme="dark"]) .sort-label {
+  color: #94a3b8;
 }
 
 /* Responsive */

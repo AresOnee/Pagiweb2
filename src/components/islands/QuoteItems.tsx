@@ -1,6 +1,6 @@
-import { useEffect } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
 import { useStore } from '@nanostores/preact';
-import { $cart, $cartCount, removeItem, updateQuantity, clearCart, initCart } from '../../stores/cart';
+import { $cart, $cartCount, removeItem, updateQuantity, clearCart, initCart, restoreItem, restoreCart, type CartItem } from '../../stores/cart';
 import { showToast } from '../../stores/toast';
 import styles from './QuoteItems.module.css';
 
@@ -13,14 +13,39 @@ export default function QuoteItems() {
     initCart();
   }, []);
 
+  // H3: Remove with Undo action
   const handleRemove = (sku: string, title: string) => {
-    removeItem(sku);
-    showToast(`${title} eliminado de la cotización`, 'info');
+    const removedItem = removeItem(sku);
+    if (removedItem) {
+      showToast(`${title} eliminado`, 'info', {
+        label: 'Deshacer',
+        onClick: () => {
+          restoreItem(removedItem);
+          showToast(`${title} restaurado`, 'success');
+        }
+      });
+    }
   };
 
+  // H3: Confirm before clearing + Undo
   const handleClearAll = () => {
-    clearCart();
-    showToast('Cotización vaciada', 'info');
+    const itemCount = cart.length;
+    if (itemCount === 0) return;
+
+    const confirmed = window.confirm(
+      `¿Eliminar ${itemCount} ${itemCount === 1 ? 'producto' : 'productos'} de la cotización?`
+    );
+
+    if (confirmed) {
+      const previousItems = clearCart();
+      showToast('Cotización vaciada', 'info', {
+        label: 'Deshacer',
+        onClick: () => {
+          restoreCart(previousItems);
+          showToast('Cotización restaurada', 'success');
+        }
+      });
+    }
   };
 
   const handleQuantityChange = (sku: string, value: string) => {

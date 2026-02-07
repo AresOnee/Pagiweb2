@@ -272,7 +272,93 @@
 
 .form-submit {
   width: 100%;
+}
+
+/* H5: Form actions container */
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
   margin-top: var(--spacing-6);
+}
+
+/* H3: Reset form button */
+.form-reset {
+  width: 100%;
+  padding: var(--spacing-3);
+  background: transparent;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  color: var(--color-gray-600);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.form-reset:hover:not(:disabled) {
+  background: var(--color-gray-50);
+  border-color: var(--color-gray-400);
+  color: var(--color-gray-700);
+}
+
+.form-reset:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* H5: Draft indicator */
+.draft-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--color-success);
+  background: rgba(54, 179, 126, 0.1);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  color: var(--color-success);
+}
+
+.draft-indicator svg {
+  flex-shrink: 0;
+}
+
+/* Dark mode support */
+:global([data-theme="dark"]) .quote-form-container {
+  background: var(--color-gray-800);
+}
+
+:global([data-theme="dark"]) .form-input,
+:global([data-theme="dark"]) .form-textarea {
+  background: var(--color-gray-700);
+  color: var(--color-gray-100);
+}
+
+:global([data-theme="dark"]) .form-input:hover,
+:global([data-theme="dark"]) .form-textarea:hover {
+  background: var(--color-gray-600);
+  border-color: var(--color-gray-500);
+}
+
+:global([data-theme="dark"]) .form-label {
+  color: var(--color-gray-300);
+}
+
+:global([data-theme="dark"]) .form-reset {
+  border-color: var(--color-gray-600);
+  color: var(--color-gray-400);
+}
+
+:global([data-theme="dark"]) .form-reset:hover:not(:disabled) {
+  background: var(--color-gray-700);
+  border-color: var(--color-gray-500);
+  color: var(--color-gray-300);
+}
+
+:global([data-theme="dark"]) .draft-indicator {
+  background: rgba(54, 179, 126, 0.15);
 }
 
 /* How it works */

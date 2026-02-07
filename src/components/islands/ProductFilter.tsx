@@ -11,11 +11,23 @@ interface Props {
   categories: Category[];
 }
 
+// H7: Sort options
+type SortOption = 'default' | 'name-asc' | 'name-desc' | 'category';
+
+const sortLabels: Record<SortOption, string> = {
+  'default': 'Destacados',
+  'name-asc': 'Nombre A-Z',
+  'name-desc': 'Nombre Z-A',
+  'category': 'Categoría',
+};
+
 /** Product filter + search + grid. Mount with client:load on /productos. */
 export default function ProductFilter({ products, categories }: Props) {
   const [selectedCategory, setSelectedCategory] = useState<string>('todos');
   const [searchText, setSearchText] = useState('');
+  const [sortBy, setSortBy] = useState<SortOption>('default');
   const cart = useStore($cart);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   // Read initial category from URL on mount
   useEffect(() => {
@@ -39,6 +51,26 @@ export default function ProductFilter({ products, categories }: Props) {
     window.history.replaceState({}, '', url.toString());
   }, [selectedCategory]);
 
+  // H7: Cmd+K / Ctrl+K keyboard shortcut to focus search
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Cmd+K on Mac, Ctrl+K on Windows/Linux
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+        searchInputRef.current?.select();
+      }
+      // Escape to blur search and clear
+      if (e.key === 'Escape' && document.activeElement === searchInputRef.current) {
+        searchInputRef.current?.blur();
+        if (searchText) setSearchText('');
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [searchText]);
+
   // Filter products
   const query = searchText.toLowerCase().trim();
   const filtered = products.filter((p) => {
@@ -48,6 +80,23 @@ export default function ProductFilter({ products, categories }: Props) {
       p.sku.toLowerCase().includes(query) ||
       p.description.toLowerCase().includes(query);
     return matchCategory && matchSearch;
+  });
+
+  // H7: Sort filtered products
+  const sorted = [...filtered].sort((a, b) => {
+    switch (sortBy) {
+      case 'name-asc':
+        return a.title.localeCompare(b.title, 'es');
+      case 'name-desc':
+        return b.title.localeCompare(a.title, 'es');
+      case 'category':
+        return a.category.localeCompare(b.category, 'es');
+      default:
+        // Default: prioritize products with badges, then by order in array
+        if (a.badge && !b.badge) return -1;
+        if (!a.badge && b.badge) return 1;
+        return 0;
+    }
   });
 
   const handleCategoryClick = (catId: string) => {
@@ -97,7 +146,7 @@ export default function ProductFilter({ products, categories }: Props) {
 
   return (
     <div>
-      {/* Search */}
+      {/* Search with H7: keyboard shortcut indicator */}
       <div class={styles['search-container']}>
         <div class={styles['search-wrapper']}>
           <svg class={styles['search-icon']} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -105,12 +154,14 @@ export default function ProductFilter({ products, categories }: Props) {
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
           </svg>
           <input
+            ref={searchInputRef}
             type="text"
             class={styles['search-input']}
             placeholder="Buscar productos..."
             value={searchText}
             onInput={(e) => setSearchText((e.target as HTMLInputElement).value)}
           />
+          <kbd class={styles['search-shortcut']}>⌘K</kbd>
         </div>
       </div>
 
@@ -133,15 +184,30 @@ export default function ProductFilter({ products, categories }: Props) {
         ))}
       </div>
 
-      {/* Product count */}
-      <p class={styles['product-count']}>
-        {filtered.length} {filtered.length === 1 ? 'producto encontrado' : 'productos encontrados'}
-      </p>
+      {/* H7: Product count + sorting */}
+      <div class={styles['results-bar']}>
+        <p class={styles['product-count']}>
+          {sorted.length} {sorted.length === 1 ? 'producto encontrado' : 'productos encontrados'}
+        </p>
+        <div class={styles['sort-container']}>
+          <label class={styles['sort-label']} htmlFor="sort-select">Ordenar:</label>
+          <select
+            id="sort-select"
+            class={styles['sort-select']}
+            value={sortBy}
+            onChange={(e) => setSortBy((e.target as HTMLSelectElement).value as SortOption)}
+          >
+            {Object.entries(sortLabels).map(([value, label]) => (
+              <option key={value} value={value}>{label}</option>
+            ))}
+          </select>
+        </div>
+      </div>
 
       {/* Product grid */}
-      {filtered.length > 0 ? (
+      {sorted.length > 0 ? (
         <div class={styles['product-grid']} ref={gridRef}>
-          {filtered.map((product, index) => {
+          {sorted.map((product, index) => {
             const existing = isInCart(product.sku);
             return (
               <article

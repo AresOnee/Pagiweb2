@@ -8,6 +8,7 @@ const navLinks = [
   { href: '/nosotros', label: 'Nosotros' },
   { href: '/productos', label: 'Productos' },
   { href: '/cotizacion', label: 'Cotización' },
+  { href: '/faq', label: 'Preguntas Frecuentes' },
 ];
 
 const currentYear = new Date().getFullYear();
@@ -76,9 +77,47 @@ const currentYear = new Date().getFullYear();
       </div>
     </div>
 
+    <!-- Certifications Section -->
+    <div class="footer-certifications">
+      <div class="certifications-container">
+        <div class="certification-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span>IEEE 80</span>
+        </div>
+        <div class="certification-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+          <span>NEC</span>
+        </div>
+        <div class="certification-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <polyline points="9 11 12 14 22 4"/>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+          <span>SEC Chile</span>
+        </div>
+        <div class="certification-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span>ISO 9001</span>
+        </div>
+      </div>
+    </div>
+
     <div class="footer-bottom">
+      <div class="footer-warranty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+          <polyline points="9 11 12 14 22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+        Garantía de calidad en todos nuestros productos · Asesoría técnica especializada
+      </div>
       <p>&copy; {currentYear} {siteConfig.name}. Todos los derechos reservados.</p>
-      <p>Desarrollado con profesionalismo</p>
     </div>
   </div>
 </footer>
@@ -174,12 +213,63 @@ const currentYear = new Date().getFullYear();
     color: var(--color-white);
   }
 
+  /* Certifications section */
+  .footer-certifications {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-6) 0;
+    margin-top: var(--spacing-8);
+  }
+
+  .certifications-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-6);
+  }
+
+  .certification-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-4);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-300);
+    transition: all var(--transition-fast);
+  }
+
+  .certification-badge:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .certification-badge svg {
+    color: var(--color-primary-light);
+    flex-shrink: 0;
+  }
+
   .footer-bottom {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: var(--spacing-4);
     padding-top: var(--spacing-8);
     font-size: var(--font-size-sm);
+    text-align: center;
+  }
+
+  .footer-warranty {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    color: var(--color-primary-light);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .footer-warranty svg {
+    flex-shrink: 0;
   }
 
   /* Dark mode — footer is already dark; prevent variable inversion from lightening text */

@@ -31,4 +31,15 @@ export const siteConfig = {
   turnstile: {
     siteKey: 'YOUR_TURNSTILE_SITE_KEY',
   },
+  /**
+   * Web3Forms configuration for sending quote emails.
+   * Get your access key from: https://web3forms.com (free: 250 emails/month)
+   *
+   * Leave as 'YOUR_WEB3FORMS_ACCESS_KEY' for development (simulates sending).
+   * Replace with actual key for production to send emails to ventas@gelchile.cl
+   */
+  web3forms: {
+    accessKey: 'YOUR_WEB3FORMS_ACCESS_KEY',
+    endpoint: 'https://api.web3forms.com/submit',
+  },
 } as const;

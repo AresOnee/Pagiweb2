@@ -10,6 +10,9 @@ function ToastItem({ toast }: { toast: ToastMessage }) {
   const [visible, setVisible] = useState(false);
   const timerRef = useRef<number | null>(null);
 
+  // Longer duration for toasts with actions (5s vs 3s)
+  const duration = toast.action ? 5000 : siteConfig.ui.toastDuration;
+
   useEffect(() => {
     // Slide-in animation on next frame
     requestAnimationFrame(() => {
@@ -21,17 +24,24 @@ function ToastItem({ toast }: { toast: ToastMessage }) {
       setVisible(false);
       // Wait for CSS transition to complete before removing
       setTimeout(() => dismissToast(toast.id), 300);
-    }, siteConfig.ui.toastDuration);
+    }, duration);
 
     return () => {
       if (timerRef.current !== null) clearTimeout(timerRef.current);
     };
-  }, [toast.id]);
+  }, [toast.id, duration]);
 
   const handleClose = () => {
     if (timerRef.current !== null) clearTimeout(timerRef.current);
     setVisible(false);
     setTimeout(() => dismissToast(toast.id), 300);
+  };
+
+  const handleAction = () => {
+    if (toast.action?.onClick) {
+      toast.action.onClick();
+    }
+    handleClose();
   };
 
   const typeClass = toast.type === 'success'
@@ -65,6 +75,11 @@ function ToastItem({ toast }: { toast: ToastMessage }) {
         )}
       </span>
       <span class={styles['toast-message']}>{toast.message}</span>
+      {toast.action && (
+        <button class={styles['toast-action']} onClick={handleAction}>
+          {toast.action.label}
+        </button>
+      )}
       <button class={styles['toast-close']} onClick={handleClose} aria-label="Cerrar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
           <line x1="18" y1="6" x2="6" y2="18" />

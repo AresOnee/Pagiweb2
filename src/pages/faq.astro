@@ -1,0 +1,184 @@
+---
+/**
+ * FAQ Page — Preguntas Frecuentes
+ * H10: Help and documentation heuristic
+ */
+import MainLayout from '../layouts/MainLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+import { siteConfig } from '../data/site-config';
+
+// FAQ items for Gel Chile
+const faqItems = [
+  {
+    question: '¿Cuánto demora recibir una cotización?',
+    answer: 'Respondemos todas las cotizaciones en un máximo de 24 horas hábiles. Para consultas urgentes, puedes contactarnos por WhatsApp o teléfono y te atenderemos de inmediato durante horario de oficina.'
+  },
+  {
+    question: '¿Cuáles son los métodos de pago disponibles?',
+    answer: 'Aceptamos transferencia bancaria, cheque a fecha y tarjetas de crédito/débito. Para proyectos de mayor envergadura, ofrecemos opciones de financiamiento. Consulta con nuestro equipo de ventas para más detalles.'
+  },
+  {
+    question: '¿Hacen envíos a todo Chile?',
+    answer: 'Sí, despachamos a todo Chile continental. Los tiempos de entrega varían según la ubicación: 1-2 días hábiles en Región Metropolitana y 3-5 días hábiles en regiones. Los costos de envío se calculan según peso y destino.'
+  },
+  {
+    question: '¿Los productos tienen garantía?',
+    answer: 'Todos nuestros productos cuentan con garantía del fabricante. Los electrodos electromagnéticos Hunter Energy tienen 2 años de garantía. Las barras químicas y accesorios tienen 1 año de garantía contra defectos de fabricación.'
+  },
+  {
+    question: '¿Ofrecen servicio de instalación?',
+    answer: 'Sí, contamos con un equipo técnico certificado para instalación de sistemas de puesta a tierra en la Región Metropolitana y zonas cercanas. Para otras regiones, podemos coordinar con técnicos asociados o proporcionar asesoría técnica remota.'
+  },
+  {
+    question: '¿Qué electrodo necesito para mi terreno?',
+    answer: 'La selección del electrodo depende de la resistividad del suelo y los requerimientos de resistencia a tierra de tu proyecto. Contáctanos para una evaluación técnica gratuita donde analizaremos tu caso específico y recomendaremos la mejor solución.'
+  },
+  {
+    question: '¿Puedo visitar la oficina o bodega?',
+    answer: `Sí, nuestra oficina está ubicada en ${siteConfig.contact.office}. Atendemos de Lunes a Viernes de 9:00 a 18:00 horas. Te recomendamos agendar una visita previamente para asegurarnos de poder atenderte.`
+  },
+  {
+    question: '¿Realizan mediciones de resistencia de tierra?',
+    answer: 'Sí, ofrecemos servicio de medición de resistencia de tierra con equipos certificados. Este servicio incluye informe técnico detallado con recomendaciones. Solicita una cotización para tu proyecto específico.'
+  },
+  {
+    question: '¿Trabajan con proyectos de gran escala?',
+    answer: 'Sí, atendemos desde proyectos residenciales hasta instalaciones industriales de gran envergadura. Contamos con capacidad de stock y logística para proyectos de cualquier tamaño. Solicita una reunión con nuestro equipo comercial para proyectos especiales.'
+  },
+  {
+    question: '¿Qué normativas cumplen sus productos?',
+    answer: 'Nuestros productos cumplen con las normativas IEEE 80 (sistemas de puesta a tierra), NEC (National Electrical Code), y están certificados por la SEC (Superintendencia de Electricidad y Combustibles) de Chile. Los electrodos Hunter Energy cuentan además con certificación UL.'
+  }
+];
+---
+
+<MainLayout title="Preguntas Frecuentes — Gel Chile" description="Encuentra respuestas a las preguntas más frecuentes sobre nuestros productos y servicios de puesta a tierra">
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title" data-aos="fade-up">Preguntas Frecuentes</h1>
+      <p class="page-hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Encuentra respuestas a las dudas más comunes sobre nuestros productos y servicios
+      </p>
+    </div>
+  </section>
+
+  <Breadcrumb items={[{ label: 'Inicio', href: '/' }, { label: 'Preguntas Frecuentes' }]} />
+
+  <!-- FAQ Section -->
+  <FAQ items={faqItems} title="" />
+
+  <!-- Contact CTA -->
+  <section class="section faq-cta">
+    <div class="container">
+      <div class="cta-box" data-aos="fade-up">
+        <h3>¿No encontraste lo que buscabas?</h3>
+        <p>Nuestro equipo está disponible para resolver cualquier duda adicional</p>
+        <div class="cta-buttons">
+          <a href="/cotizacion" class="btn btn-primary">Solicitar Cotización</a>
+          <a href={`tel:${siteConfig.contact.phones[0].replace(/\s/g, '')}`} class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            Llamar Ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    padding: calc(72px + var(--spacing-12)) 0 var(--spacing-12);
+    text-align: center;
+    color: var(--color-white);
+  }
+
+  .page-hero-title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .page-hero-subtitle {
+    font-size: var(--font-size-lg);
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .faq-cta {
+    background: var(--color-gray-50);
+    padding: var(--spacing-16) 0;
+  }
+
+  .cta-box {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--spacing-10);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .cta-box h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-2);
+  }
+
+  .cta-box p {
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-6);
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--spacing-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+  }
+
+  /* Dark mode */
+  :global([data-theme="dark"]) .faq-cta {
+    background: #0f172a;
+  }
+
+  :global([data-theme="dark"]) .cta-box {
+    background: #1e293b;
+  }
+
+  :global([data-theme="dark"]) .cta-box h3 {
+    color: var(--color-gray-100);
+  }
+
+  :global([data-theme="dark"]) .cta-box p {
+    color: var(--color-gray-400);
+  }
+
+  @media (max-width: 768px) {
+    .page-hero-title {
+      font-size: var(--font-size-3xl);
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
