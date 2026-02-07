@@ -1,0 +1,106 @@
+---
+/**
+ * ObfuscatedEmail - Anti-spam email protection component
+ *
+ * Protects email addresses from bot harvesting by:
+ * 1. Encoding as HTML entities (initial display, confuses simple scrapers)
+ * 2. Storing base64 encoded for JS reveal (decodes on client-side)
+ * 3. Showing fallback for no-JS users
+ */
+interface Props {
+  email: string;
+  class?: string;
+}
+
+const { email, class: className = '' } = Astro.props;
+
+// Encode email as base64 for JavaScript reveal
+const encodedEmail = Buffer.from(email).toString('base64');
+
+// Create HTML entities version as fallback/initial display
+const obfuscatedEmail = email
+  .split('')
+  .map((char) => `&#${char.charCodeAt(0)};`)
+  .join('');
+---
+
+<span
+  class:list={['obfuscated-email', className]}
+  data-email={encodedEmail}
+>
+  <a
+    href="javascript:void(0)"
+    class="email-link"
+    aria-label="Email de contacto"
+  >
+    <span class="email-text" set:html={obfuscatedEmail} />
+  </a>
+  <noscript>
+    <span class="noscript-email">
+      {email.replace('@', ' [arroba] ')}
+    </span>
+  </noscript>
+</span>
+
+<script>
+  // Reveal emails on page load
+  function revealEmails() {
+    document.querySelectorAll('.obfuscated-email').forEach((el) => {
+      const encoded = el.getAttribute('data-email');
+      if (!encoded) return;
+
+      try {
+        const decoded = atob(encoded);
+        const link = el.querySelector('.email-link') as HTMLAnchorElement;
+        const text = el.querySelector('.email-text');
+
+        if (link) {
+          link.href = `mailto:${decoded}`;
+        }
+        if (text) {
+          text.textContent = decoded;
+        }
+      } catch (e) {
+        // Fallback: keep HTML entities version
+        console.warn('[ObfuscatedEmail] Failed to decode email:', e);
+      }
+    });
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', revealEmails);
+  } else {
+    revealEmails();
+  }
+</script>
+
+<style>
+  .obfuscated-email {
+    display: inline;
+  }
+
+  .email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .email-link:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .noscript-email {
+    color: var(--color-gray-500);
+    font-size: var(--font-size-sm);
+  }
+
+  /* Hide noscript content when JS is enabled */
+  .obfuscated-email noscript {
+    display: none;
+  }
+</style>

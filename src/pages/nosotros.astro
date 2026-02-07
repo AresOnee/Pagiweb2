@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import ObfuscatedEmail from '../components/ObfuscatedEmail.astro';
 import { siteConfig } from '../data/site-config';
 ---
 
@@ -129,7 +130,7 @@ import { siteConfig } from '../data/site-config';
             </svg>
           </div>
           <h3>Email</h3>
-          <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
+          <ObfuscatedEmail email={siteConfig.contact.email} />
         </div>
 
         <div class="contact-card">

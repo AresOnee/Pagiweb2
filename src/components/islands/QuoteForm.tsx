@@ -1,8 +1,12 @@
-import { useState } from 'preact/hooks';
+import { useState, useRef } from 'preact/hooks';
 import { useStore } from '@nanostores/preact';
 import { $cart, clearCart } from '../../stores/cart';
 import { showToast } from '../../stores/toast';
+import TurnstileWidget from './TurnstileWidget';
 import styles from './QuoteForm.module.css';
+
+// Anti-spam: minimum time before submission allowed (3 seconds)
+const MIN_SUBMIT_TIME_MS = 3000;
 
 interface FormData {
   nombre: string;
@@ -10,6 +14,7 @@ interface FormData {
   email: string;
   telefono: string;
   mensaje: string;
+  website: string; // Honeypot field
 }
 
 interface FormErrors {
@@ -27,17 +32,23 @@ const validators: Record<string, (value: string) => string | undefined> = {
 /** Quote form with validation. Mount with client:load on /cotizacion. */
 export default function QuoteForm() {
   const cart = useStore($cart);
+
+  // Anti-spam: track form load time
+  const formLoadTimeRef = useRef<number>(Date.now());
+
   const [form, setForm] = useState<FormData>({
     nombre: '',
     empresa: '',
     email: '',
     telefono: '',
     mensaje: '',
+    website: '', // Honeypot
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   const validateField = (name: string, value: string): string | undefined => {
     const validator = validators[name];
@@ -77,6 +88,27 @@ export default function QuoteForm() {
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
 
+    // Anti-spam: time validation (silent rejection)
+    const timeElapsed = Date.now() - formLoadTimeRef.current;
+    if (timeElapsed < MIN_SUBMIT_TIME_MS) {
+      // Fake success to fool bots
+      showToast('¡Cotización enviada con éxito! Te contactaremos pronto.', 'success');
+      return;
+    }
+
+    // Anti-spam: honeypot check (silent rejection)
+    if (form.website) {
+      // Fake success to fool bots
+      showToast('¡Cotización enviada con éxito! Te contactaremos pronto.', 'success');
+      return;
+    }
+
+    // Anti-spam: Turnstile verification
+    if (!turnstileToken) {
+      showToast('Por favor completa la verificación de seguridad', 'error');
+      return;
+    }
+
     if (!validateAll()) {
       showToast('Por favor corrige los errores del formulario', 'error');
       return;
@@ -102,6 +134,7 @@ export default function QuoteForm() {
       productos: cart.map((item) => `${item.title} (SKU: ${item.sku}) x${item.quantity}`).join('\n'),
       total_items: cart.length.toString(),
       fecha: new Date().toISOString(),
+      'cf-turnstile-response': turnstileToken, // For server-side Turnstile verification
     };
 
     // Simulate API call (Web3Forms API key will be configured in Phase 9)
@@ -111,9 +144,10 @@ export default function QuoteForm() {
 
       showToast('¡Cotización enviada con éxito! Te contactaremos pronto.', 'success');
       clearCart();
-      setForm({ nombre: '', empresa: '', email: '', telefono: '', mensaje: '' });
+      setForm({ nombre: '', empresa: '', email: '', telefono: '', mensaje: '', website: '' });
       setErrors({});
       setTouched({});
+      setTurnstileToken(null);
       setIsSubmitted(true);
     } catch {
       showToast('Error al enviar la cotización. Inténtalo nuevamente.', 'error');
@@ -236,11 +270,33 @@ export default function QuoteForm() {
           />
         </div>
 
+        {/* Honeypot - hidden from humans, visible to bots */}
+        <div class={styles.honeypot} aria-hidden="true">
+          <label>
+            Website
+            <input
+              type="text"
+              name="website"
+              value={form.website}
+              onInput={(e) => handleInput('website', (e.target as HTMLInputElement).value)}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </label>
+        </div>
+
+        {/* Cloudflare Turnstile */}
+        <TurnstileWidget
+          onVerify={(token) => setTurnstileToken(token)}
+          onExpire={() => setTurnstileToken(null)}
+          onError={() => showToast('Error en verificación de seguridad', 'error')}
+        />
+
         {/* Submit */}
         <button
           type="submit"
           class={`btn btn-primary ${styles['form-submit']}`}
-          disabled={isSubmitting}
+          disabled={isSubmitting || !turnstileToken}
         >
           {isSubmitting ? (
             <>

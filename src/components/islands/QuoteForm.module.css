@@ -327,3 +327,16 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================
+   Anti-spam: Honeypot field
+   Hidden from humans, visible to bots
+   ============================================ */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}

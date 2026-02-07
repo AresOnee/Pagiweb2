@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from '../data/site-config';
 import categories from '../data/categories.json';
+import ObfuscatedEmail from './ObfuscatedEmail.astro';
 
 const navLinks = [
   { href: '/', label: 'Inicio' },
@@ -48,7 +49,7 @@ const currentYear = new Date().getFullYear();
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
           </svg>
-          <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
+          <ObfuscatedEmail email={siteConfig.contact.email} />
         </div>
         {siteConfig.contact.phones.map((phone) => (
           <div class="footer-contact-item">
