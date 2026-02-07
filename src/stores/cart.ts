@@ -41,9 +41,26 @@ export function addItem(product: CartItem): void {
   }
 }
 
-/** Remove an item from the cart by SKU. */
-export function removeItem(sku: string): void {
-  $cart.set($cart.get().filter((item) => item.sku !== sku));
+/** Remove an item from the cart by SKU. Returns the removed item for undo. */
+export function removeItem(sku: string): CartItem | null {
+  const current = $cart.get();
+  const item = current.find((i) => i.sku === sku) || null;
+  $cart.set(current.filter((i) => i.sku !== sku));
+  return item;
+}
+
+/** Restore a previously removed item (for Undo functionality). H3. */
+export function restoreItem(item: CartItem): void {
+  const current = $cart.get();
+  // If item already exists, update quantity; otherwise add
+  const idx = current.findIndex((i) => i.sku === item.sku);
+  if (idx > -1) {
+    const updated = [...current];
+    updated[idx] = { ...updated[idx], quantity: updated[idx].quantity + item.quantity };
+    $cart.set(updated);
+  } else {
+    $cart.set([...current, item]);
+  }
 }
 
 /** Update the quantity of an item. Minimum is 1. */
@@ -56,9 +73,16 @@ export function updateQuantity(sku: string, quantity: number): void {
   );
 }
 
-/** Clear all items from the cart. */
-export function clearCart(): void {
+/** Clear all items from the cart. Returns previous items for undo. H3. */
+export function clearCart(): CartItem[] {
+  const previous = $cart.get();
   $cart.set([]);
+  return previous;
+}
+
+/** Restore entire cart state (for Undo after clear). H3. */
+export function restoreCart(items: CartItem[]): void {
+  $cart.set(items);
 }
 
 /**
