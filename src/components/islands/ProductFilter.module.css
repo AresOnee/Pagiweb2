@@ -422,6 +422,11 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Hide keyboard shortcut on mobile - not useful on touch devices */
+  .search-shortcut {
+    display: none;
+  }
+
   .filter-container {
     overflow-x: auto;
     flex-wrap: nowrap;

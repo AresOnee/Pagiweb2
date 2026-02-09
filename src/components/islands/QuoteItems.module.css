@@ -250,6 +250,61 @@
   font-weight: var(--font-weight-bold);
 }
 
+/* Empty state */
+.quote-empty {
+  text-align: center;
+  padding: var(--spacing-12);
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+.quote-empty-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-4);
+  background: var(--color-gray-100);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-400);
+}
+
+.quote-empty-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.quote-empty h3 {
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+}
+
+.quote-empty p {
+  color: var(--color-gray-500);
+  margin-bottom: var(--spacing-6);
+}
+
+/* Dark mode for empty state */
+:global([data-theme="dark"]) .quote-empty {
+  background: #1e293b;
+}
+
+:global([data-theme="dark"]) .quote-empty-icon {
+  background: #334155;
+  color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .quote-empty h3 {
+  color: #e2e8f0;
+}
+
+:global([data-theme="dark"]) .quote-empty p {
+  color: #94a3b8;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .quote-item {
