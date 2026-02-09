@@ -25,6 +25,7 @@ const specsEntries = Object.entries(product.specs);
     "name": product.title,
     "description": product.description,
     "sku": product.sku,
+    "url": `${siteConfig.url}/productos/${product.sku.toLowerCase()}`,
     "image": product.image ? `${siteConfig.url}${product.image}` : undefined,
     "brand": {
       "@type": "Brand",
@@ -33,6 +34,7 @@ const specsEntries = Object.entries(product.specs);
     "category": product.category,
     "offers": {
       "@type": "Offer",
+      "url": `${siteConfig.url}/productos/${product.sku.toLowerCase()}`,
       "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       "priceCurrency": "CLP",
       "price": "0",
@@ -88,6 +90,7 @@ const specsEntries = Object.entries(product.specs);
               title={product.title}
               category={product.category}
               image={product.image}
+              inStock={product.inStock}
             />
           </div>
         </div>

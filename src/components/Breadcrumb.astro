@@ -1,4 +1,6 @@
 ---
+import { siteConfig } from '../data/site-config';
+
 interface Props {
   items: { label: string; href?: string }[];
 }
@@ -12,7 +14,7 @@ const breadcrumbJsonLd = {
     "@type": "ListItem",
     "position": index + 1,
     "name": item.label,
-    ...(item.href ? { "item": `https://gelchile.cl${item.href}` } : {})
+    ...(item.href ? { "item": `${siteConfig.url}${item.href}` } : {})
   }))
 };
 ---

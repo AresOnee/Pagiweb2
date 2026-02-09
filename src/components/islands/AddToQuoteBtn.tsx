@@ -7,6 +7,7 @@ interface Props {
   title: string;
   category: string;
   image: string | null;
+  inStock?: boolean;
 }
 
 const btnStyle = {
@@ -30,16 +31,33 @@ const btnAddedStyle = {
 };
 
 /** Add-to-quote button. Mount with client:visible on ProductCard. */
-export default function AddToQuoteBtn({ sku, title, category, image }: Props) {
+export default function AddToQuoteBtn({ sku, title, category, image, inStock = true }: Props) {
   const cart = useStore($cart);
   const existing = cart.find((item) => item.sku === sku);
 
   const handleClick = (e: Event) => {
     e.stopPropagation();
     e.preventDefault();
+    if (!inStock) return;
     addItem({ sku, title, category, quantity: 1, image });
     showToast(`${title} agregado a la cotización`, 'success');
   };
+
+  if (!inStock) {
+    return (
+      <button
+        style={{ ...btnStyle, background: 'var(--color-gray-400)', cursor: 'not-allowed', opacity: '0.7' }}
+        disabled
+        aria-label={`${title} sin stock`}
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
+        </svg>
+        Sin Stock
+      </button>
+    );
+  }
 
   return (
     <button
