@@ -130,6 +130,9 @@ const featured = withBadge.length >= 6
           <a href="/productos" class="btn btn-white btn-lg">Explorar Productos</a>
           <a href="/cotizacion" class="btn btn-accent btn-lg">Ver Mi Cotización</a>
         </div>
+        <p class="cta-founder">
+          GelChile, fundada por <strong>Claudio Mitchel Ramirez Sepulveda</strong> — más de <strong>20 años de experiencia</strong> respaldando cada solución.
+        </p>
       </div>
     </div>
   </section>
@@ -270,6 +273,18 @@ const featured = withBadge.length >= 6
     justify-content: center;
     gap: var(--spacing-4);
     flex-wrap: wrap;
+  }
+
+  .cta-founder {
+    margin-top: var(--spacing-6);
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+
+  .cta-founder strong {
+    color: var(--color-white);
+    font-weight: var(--font-weight-semibold);
   }
 
   /* Dark Mode — hardcoded hex values (variable inversion maps gray-800 to near-white) */

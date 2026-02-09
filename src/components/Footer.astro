@@ -23,6 +23,9 @@ const currentYear = new Date().getFullYear();
           <span><strong>GelChile</strong></span>
         </a>
         <p>{siteConfig.description}</p>
+        <p class="footer-founder">
+          Fundada por <strong>Claudio Mitchel Ramirez Sepulveda</strong>, con más de <strong>20 años de experiencia</strong> en el rubro eléctrico.
+        </p>
       </div>
 
       <div class="footer-section">
@@ -161,7 +164,19 @@ const currentYear = new Date().getFullYear();
   .footer-brand p {
     font-size: var(--font-size-sm);
     line-height: 1.7;
-    margin-bottom: var(--spacing-6);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .footer-founder {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-400);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-2);
+  }
+
+  .footer-founder strong {
+    color: var(--color-white);
+    font-weight: var(--font-weight-semibold);
   }
 
   .footer-section h4 {
@@ -300,6 +315,14 @@ const currentYear = new Date().getFullYear();
 
   :global([data-theme="dark"]) .footer-contact-item a:hover {
     color: #f1f5f9;
+  }
+
+  :global([data-theme="dark"]) .footer-founder {
+    color: #94a3b8;
+  }
+
+  :global([data-theme="dark"]) .footer-founder strong {
+    color: #e2e8f0;
   }
 
   :global([data-theme="dark"]) .footer-logo-img {
