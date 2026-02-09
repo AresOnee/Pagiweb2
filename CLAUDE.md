@@ -1,20 +1,22 @@
-# Contexto del Proyecto: Gel Chile
+# Contexto del Proyecto: GelChile
 
 ## Descripción General
-Sitio web de catálogo para **Gel Chile**, empresa chilena especializada en **sistemas de puesta a tierra y protección eléctrica**. Permite a los clientes explorar productos, ver especificaciones técnicas y solicitar cotizaciones.
+Sitio web de catálogo para **GelChile**, empresa chilena con **más de 20 años de experiencia** especializada en **sistemas de puesta a tierra y protección eléctrica**. Permite a los clientes explorar productos, ver especificaciones técnicas y solicitar cotizaciones.
 
 ## Estado Actual
-- **Fase:** Migración a Astro en curso — Fases 0-4 completadas, pendiente Fase 5
-- **Stack actual:** HTML5, CSS3, JavaScript vanilla (sitio demo funcional)
-- **Stack objetivo:** Astro + Preact + nanostores
-- **Datos de productos:** 21 productos reales de Gel Chile (JSON) — reemplazan los 12 demo antiguos
+- **Fase:** Migración a Astro completada — Fases 0-8 finalizadas, pendiente deploy
+- **Stack:** Astro 5.17.1 + Preact + nanostores (sitio funcional)
+- **Datos de productos:** 21 productos reales de GelChile (JSON validados por Zod)
 - **Cliente aprobó presupuesto:** $370.000 CLP (reunión 3_2)
+- **Nielsen Heuristics:** 10/10 implementadas
 
 ## Datos de la Empresa
 
 | Dato | Valor |
 |------|-------|
-| **Empresa** | Gel Chile |
+| **Empresa** | GelChile (escrito junto, sin espacio) |
+| **Representante Legal** | Claudio Mitchel Ramirez Sepulveda |
+| **Experiencia** | +20 años en el rubro eléctrico chileno |
 | **Rubro** | Sistemas de puesta a tierra y protección eléctrica |
 | **Email ventas** | ventas@gelchile.cl |
 | **Email contacto** | kvasquezb@gelchile.cl |
@@ -22,6 +24,8 @@ Sitio web de catálogo para **Gel Chile**, empresa chilena especializada en **si
 | **Oficina** | Los Diamantes N°0360, Maipú, RM |
 | **Bodega** | Camino Lo Ermita Parcela-21, Calera de Tango |
 | **Dominio** | gelchile.cl (acceso nic.cl confirmado) |
+
+**IMPORTANTE:** El nombre de la empresa se escribe **"GelChile"** (una sola palabra, sin espacio).
 
 ## Estructura del Proyecto
 
@@ -54,7 +58,7 @@ Pagiweb2/
 │   └── categories.json     # 7 categorías reales
 ├── assets/
 │   └── img/
-│       ├── gelchile-logo.png             # Logo Gel Chile (extraído de DOCX)
+│       ├── gelchile-logo.png             # Logo GelChile (extraído de DOCX)
 │       ├── gelchile-electrodo-grafito.png # Imagen producto (extraída de DOCX)
 │       └── products/                      # 55 imágenes de productos extraídas
 │           ├── electrode-he-*.png         # Fotos electrodos HE (producto + detalle)
@@ -95,7 +99,7 @@ Pagiweb2/
 │   │   └── products/        # 21 JSON validados por Zod schema
 │   ├── data/
 │   │   ├── categories.json  # 7 categorías
-│   │   └── site-config.ts   # Configuración centralizada Gel Chile
+│   │   └── site-config.ts   # Configuración centralizada GelChile
 │   ├── layouts/             # MainLayout.astro (Fase 5)
 │   ├── pages/
 │   │   ├── index.astro      # Verificación Content Collections (temporal)
@@ -254,10 +258,10 @@ Plan completo en: `/root/.claude/plans/cheerful-twirling-spring.md`
 | **Fase 2** | Content Collections y Schema | ✅ COMPLETADA |
 | **Fase 3** | CSS (global + scoped) | ✅ COMPLETADA |
 | **Fase 4** | Stores (nanostores) | ✅ COMPLETADA |
-| Fase 5 | Componentes estáticos (Astro) | Pendiente |
-| Fase 6 | Islands interactivos (Preact) | Pendiente |
-| Fase 7 | Páginas | Pendiente |
-| Fase 8 | Branding Gel Chile | Pendiente |
+| **Fase 5** | Componentes estáticos (Astro) | ✅ COMPLETADA |
+| **Fase 6** | Islands interactivos (Preact) | ✅ COMPLETADA |
+| **Fase 7** | Páginas | ✅ COMPLETADA |
+| **Fase 8** | Branding GelChile | ✅ COMPLETADA |
 | Fase 9 | Verificación y deploy | Pendiente |
 | Fase 10 | Extras opcionales (post-lanzamiento) | Futuro |
 
@@ -269,7 +273,7 @@ Plan completo en: `/root/.claude/plans/cheerful-twirling-spring.md`
 4. Creación de 21 archivos JSON con datos reales en `data/products/`
 5. Actualización de `data/categories.json` con 7 categorías reales
 6. Eliminación de los 12 archivos JSON demo antiguos (multímetros, pinzas, etc.)
-7. Extracción de logo Gel Chile a `assets/img/gelchile-logo.png`
+7. Extracción de logo GelChile a `assets/img/gelchile-logo.png`
 8. Descubrimiento de datos de contacto reales en documentos
 
 ### Fase 1 — Lo que se hizo
@@ -283,7 +287,7 @@ Plan completo en: `/root/.claude/plans/cheerful-twirling-spring.md`
 7. Creación de `public/assets/img/products/` con 54 imágenes de producto + logo
 8. Copia de 21 JSON de productos a `src/content/products/`
 9. Copia de `categories.json` a `src/data/`
-10. Creación de `src/data/site-config.ts` (configuración centralizada Gel Chile)
+10. Creación de `src/data/site-config.ts` (configuración centralizada GelChile)
 11. Scaffolding de stores (`cart.ts`, `theme.ts`) y tipos (`types/index.ts`)
 12. Creación de `.gitignore` para Astro (dist/, .astro/, node_modules/)
 13. Página placeholder `src/pages/index.astro`
@@ -328,25 +332,70 @@ Plan completo en: `/root/.claude/plans/cheerful-twirling-spring.md`
 6. Limpieza: Eliminados 59 archivos duplicados de `assets/img/` (las copias correctas están en `public/assets/img/`)
 7. Build verificado: 0 errores TypeScript, build exitoso
 
-### Estructura Astro Propuesta
+### Fase 5-8 — Lo que se hizo
+
+1. **Componentes Astro creados:**
+   - `Header.astro`, `Footer.astro`, `HeroSection.astro`
+   - `ProductCard.astro`, `Breadcrumb.astro`, `FAQ.astro`
+   - `ObfuscatedEmail.astro`, `InstallPrompt.astro`
+
+2. **Islands Preact implementados:**
+   - `CartCount.tsx`, `AddToQuoteBtn.tsx`, `DarkModeToggle.tsx`
+   - `ProductFilter.tsx` (búsqueda + filtro + ordenamiento + Cmd+K)
+   - `ProductModal.tsx`, `QuoteItems.tsx`, `QuoteForm.tsx`
+   - `MobileMenu.tsx`, `Toast.tsx`
+
+3. **Páginas creadas:**
+   - `index.astro` — Página principal con hero y categorías
+   - `nosotros.astro` — Con sección del fundador Claudio Mitchel Ramirez Sepulveda
+   - `cotizacion.astro` — Carrito y formulario
+   - `cotizacion-enviada.astro` — Página de éxito
+   - `faq.astro` — Preguntas frecuentes (10 items)
+   - `productos/index.astro` — Catálogo con filtros
+   - `productos/[slug].astro` — Detalle de producto
+
+4. **Branding GelChile:**
+   - Nombre "GelChile" (una palabra) en todos los títulos y meta tags
+   - Sección del fundador con badge "+20 años de experiencia"
+   - Certificaciones en footer (IEEE 80, NEC, SEC Chile, ISO 9001)
+
+### Nielsen's 10 Usability Heuristics — Implementadas
+
+| # | Heurística | Implementación |
+|---|------------|----------------|
+| H1 | Visibilidad del estado | Loader, toasts, estados de botón |
+| H2 | Coincidencia sistema-mundo real | Iconografía intuitiva, lenguaje técnico chileno |
+| H3 | Control y libertad del usuario | Undo en carrito, confirmación antes de vaciar |
+| H4 | Consistencia y estándares | Design tokens, componentes reutilizables |
+| H5 | Prevención de errores | Auto-guardado de formulario, validación en tiempo real |
+| H6 | Reconocer antes que recordar | Breadcrumbs, categorías visibles, SKU en cards |
+| H7 | Flexibilidad y eficiencia | Cmd+K para búsqueda, ordenamiento de productos |
+| H8 | Diseño estético y minimalista | UI limpia, sin elementos distractores |
+| H9 | Ayudar a reconocer errores | Mensajes de error específicos en formulario |
+| H10 | Ayuda y documentación | Página FAQ, tiempos de respuesta en cotización |
+
+### Estructura Astro Actual
 ```
 src/
 ├── components/
 │   ├── Header.astro, Footer.astro, HeroSection.astro
-│   ├── ProductCard.astro, CategoryCard.astro, FeatureCard.astro
+│   ├── ProductCard.astro, Breadcrumb.astro, FAQ.astro
+│   ├── ObfuscatedEmail.astro, InstallPrompt.astro
 │   ├── islands/   # Preact (~3KB vs React ~40KB)
 │   │   ├── CartCount.tsx, AddToQuoteBtn.tsx
-│   │   ├── ProductFilter.tsx (búsqueda + filtro categoría)
+│   │   ├── ProductFilter.tsx (búsqueda + filtro + sort + Cmd+K)
 │   │   ├── ProductModal.tsx, QuoteItems.tsx, QuoteForm.tsx
 │   │   ├── DarkModeToggle.tsx, MobileMenu.tsx, Toast.tsx
-│   └── ui/  Button.astro, Badge.astro, Breadcrumb.astro
-├── content/products/*.json    # Content Collections (desde data/products/)
+│   │   └── *.module.css (6 CSS Modules con dark mode)
+│   └── ui/
+├── content/products/*.json    # 21 productos validados por Zod
 ├── data/categories.json, site-config.ts
 ├── layouts/MainLayout.astro
 ├── pages/
 │   ├── index.astro, nosotros.astro, cotizacion.astro
-│   └── productos/index.astro, [slug].astro  # Página individual por producto
-├── stores/cart.ts, theme.ts   # nanostores
+│   ├── cotizacion-enviada.astro, faq.astro
+│   └── productos/index.astro, [slug].astro
+├── stores/cart.ts, theme.ts, toast.ts   # nanostores
 ├── styles/global.css, animations.css, dark-mode.css
 └── types/index.ts
 ```
@@ -362,7 +411,9 @@ src/
 
 ### NO incluido de momento (postergado por el cliente):
 - Google Analytics, botón flotante WhatsApp, Google Maps
-- Galería de imágenes, FAQ, Blog, Testimonios (extras con costo adicional)
+- Galería de imágenes, Blog, Testimonios (extras con costo adicional)
+
+**Nota:** FAQ fue implementado como parte de Nielsen H10.
 
 ## Cómo Agregar/Quitar Productos
 
