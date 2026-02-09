@@ -209,7 +209,7 @@ export default function QuoteForm() {
 
     const payload = {
       access_key: siteConfig.web3forms.accessKey,
-      subject: `🔌 Nueva Cotización - ${form.nombre} | Gel Chile`,
+      subject: `🔌 Nueva Cotización - ${form.nombre} | GelChile`,
       from_name: form.nombre,
       replyto: form.email,
       // Form fields

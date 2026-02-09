@@ -3,7 +3,7 @@
  * Reemplaza el CONFIG de js/config.js para el stack Astro.
  */
 export const siteConfig = {
-  name: 'Gel Chile',
+  name: 'GelChile',
   description: 'Sistemas de Puesta a Tierra y Protección Eléctrica',
   url: 'https://gelchile.cl',
   contact: {
