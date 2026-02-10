@@ -25,15 +25,26 @@
   max-height: 280px;
   overflow-y: auto;
   padding-right: var(--spacing-1);
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-gray-300) var(--color-gray-100);
 }
 
 .list::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
+  border-radius: 4px;
 }
 
 .list::-webkit-scrollbar-thumb {
   background: var(--color-gray-300);
-  border-radius: var(--radius-full);
+  border-radius: 4px;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-400);
 }
 
 /* Variant row */
@@ -220,8 +231,20 @@
   color: var(--color-gray-400);
 }
 
+:global([data-theme="dark"]) .list {
+  scrollbar-color: var(--color-gray-600) var(--color-gray-800);
+}
+
+:global([data-theme="dark"]) .list::-webkit-scrollbar-track {
+  background: var(--color-gray-800);
+}
+
 :global([data-theme="dark"]) .list::-webkit-scrollbar-thumb {
   background: var(--color-gray-600);
+}
+
+:global([data-theme="dark"]) .list::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-500);
 }
 
 /* ============================================
