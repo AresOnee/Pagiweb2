@@ -1,0 +1,25 @@
+{
+  "sku": "PAR-004",
+  "title": "Molde de Grafito para Soldadura Exotérmica",
+  "category": "Pararrayos y Protección",
+  "categorySlug": "pararrayos",
+  "description": "Molde de grafito para uniones exotérmicas de conductores de cobre en sistemas de puesta a tierra. Permite realizar conexiones permanentes mediante soldadura exotérmica, garantizando uniones de alta conductividad y resistencia mecánica.",
+  "features": [
+    "Grafito de alta densidad y resistencia térmica",
+    "Diseñado para uniones exotérmicas de conductores de cobre",
+    "Conexiones permanentes de alta conductividad",
+    "Resistente a múltiples usos",
+    "Compatible con cargas exotérmicas estándar",
+    "Incluye caja de presentación GelChile"
+  ],
+  "specs": {
+    "Tipo": "Molde de grafito",
+    "Material": "Grafito de alta densidad",
+    "Uso": "Soldadura exotérmica de conductores",
+    "Compatibilidad": "Conductores de cobre",
+    "Marca": "GelChile"
+  },
+  "image": "/assets/img/products/molde.jpg",
+  "inStock": true,
+  "badge": null
+}
