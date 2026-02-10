@@ -18,6 +18,7 @@ const categorySlugs = [
   'barras-quimicas',
   'aditivos',
   'pararrayos',
+  'soldadura-exotermica',
   'accesorios',
   'servicios',
 ] as const;
@@ -32,6 +33,7 @@ const categoryNames = [
   'Barras Químicas',
   'Aditivos',
   'Pararrayos y Protección',
+  'Soldadura Exotérmica',
   'Accesorios',
   'Servicios',
 ] as const;

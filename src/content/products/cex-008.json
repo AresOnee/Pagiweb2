@@ -1,0 +1,32 @@
+{
+  "sku": "CEX-008",
+  "title": "Carga Exotérmica Electro Material C-45",
+  "category": "Soldadura Exotérmica",
+  "categorySlug": "soldadura-exotermica",
+  "description": "Pack de cargas exotérmicas Electro Material C-45 para soldadura por termofusión. Caja con 20 cartuchos de 45g de polvo aluminotérmico, polvo de ignición (5g) y disco metálico. Certificación UL Listed. Alternativa de calidad para uniones permanentes de conductores de cobre.",
+  "features": [
+    "Polvo aluminotérmico de 45g por cartucho",
+    "Incluye polvo de ignición (5g por envase)",
+    "Disco metálico incluido",
+    "Unión molecular permanente cobre-cobre",
+    "Compatible con moldes de grafito estándar",
+    "No requiere fuente de energía externa",
+    "Certificación UL Listed",
+    "Marca Electro Material",
+    "20 cartuchos por caja"
+  ],
+  "specs": {
+    "Modelo": "C-45",
+    "Marca": "Electro Material",
+    "Peso por cartucho": "45 g (aluminotérmico) + 5 g (ignición)",
+    "Cantidad por caja": "20 cartuchos",
+    "Tipo": "Polvo aluminotérmico para soldadura exotérmica",
+    "Método": "Soldadura por termofusión",
+    "Certificación": "UL Listed",
+    "Aplicación": "Sistemas de puesta a tierra",
+    "Compatibilidad": "Moldes de grafito estándar"
+  },
+  "image": "/assets/img/products/cex-008.jpg",
+  "inStock": true,
+  "badge": null
+}

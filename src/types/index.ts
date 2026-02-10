@@ -14,6 +14,7 @@ export type CategorySlug =
   | 'barras-quimicas'
   | 'aditivos'
   | 'pararrayos'
+  | 'soldadura-exotermica'
   | 'accesorios'
   | 'servicios';
 
@@ -24,6 +25,7 @@ export type CategoryName =
   | 'Barras Químicas'
   | 'Aditivos'
   | 'Pararrayos y Protección'
+  | 'Soldadura Exotérmica'
   | 'Accesorios'
   | 'Servicios';
 

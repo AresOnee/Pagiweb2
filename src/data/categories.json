@@ -26,14 +26,20 @@
   {
     "id": "pararrayos",
     "name": "Pararrayos y Protección",
-    "description": "Franklin, masilla, chispero y moldes para soldadura exotérmica",
-    "count": 4
+    "description": "Pararrayo tipo Franklin tridente para protección contra descargas atmosféricas",
+    "count": 1
+  },
+  {
+    "id": "soldadura-exotermica",
+    "name": "Soldadura Exotérmica",
+    "description": "Cargas, moldes, herramientas y accesorios para soldadura por termofusión",
+    "count": 13
   },
   {
     "id": "accesorios",
     "name": "Accesorios",
     "description": "Camarillas, tableros eléctricos, barras toma tierra y componentes",
-    "count": 10
+    "count": 9
   },
   {
     "id": "servicios",

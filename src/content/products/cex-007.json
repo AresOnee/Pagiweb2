@@ -1,0 +1,33 @@
+{
+  "sku": "CEX-007",
+  "title": "Carga Exotérmica ESTWELD CAP-250",
+  "category": "Soldadura Exotérmica",
+  "categorySlug": "soldadura-exotermica",
+  "description": "Pack de cargas exotérmicas ESTWELD CAP-250 para soldadura por termofusión. Caja con 10 cartuchos individuales de polvo aluminotérmico (tapa roja), polvo de ignición (tapa negra), disco metálico y accesorios. Certificación UL. Para uniones permanentes de conductores de cobre en sistemas de puesta a tierra.",
+  "features": [
+    "Polvo aluminotérmico de alta pureza",
+    "Incluye polvo de ignición en cada cartucho",
+    "Disco metálico incluido",
+    "Unión molecular permanente cobre-cobre",
+    "Resistencia superior a conexiones mecánicas",
+    "Compatible con moldes de grafito estándar",
+    "No requiere fuente de energía externa",
+    "Certificación UL Listed",
+    "Marca ESTWELD",
+    "10 cartuchos por caja"
+  ],
+  "specs": {
+    "Modelo": "CAP-250",
+    "Marca": "ESTWELD",
+    "Tipo": "Polvo aluminotérmico para soldadura exotérmica",
+    "Método": "Soldadura por termofusión (Cadweld)",
+    "Material de unión": "Cobre molecular",
+    "Certificación": "UL Listed",
+    "Cantidad por caja": "10 cartuchos",
+    "Aplicación": "Sistemas de puesta a tierra",
+    "Compatibilidad": "Moldes de grafito estándar"
+  },
+  "image": "/assets/img/products/cex-007.jpg",
+  "inStock": true,
+  "badge": null
+}
