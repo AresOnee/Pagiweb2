@@ -62,21 +62,26 @@
   gap: var(--spacing-2);
   overflow-x: auto;
   padding: var(--spacing-1) 0;
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-gray-300) transparent;
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-gray-300) var(--color-gray-100);
 }
 
 .gallery-thumbs::-webkit-scrollbar {
-  height: 4px;
+  height: 8px;
 }
 
 .gallery-thumbs::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--color-gray-100);
+  border-radius: 4px;
 }
 
 .gallery-thumbs::-webkit-scrollbar-thumb {
   background: var(--color-gray-300);
-  border-radius: 2px;
+  border-radius: 4px;
+}
+
+.gallery-thumbs::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-400);
 }
 
 .gallery-thumb {
