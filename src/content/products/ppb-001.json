@@ -1,0 +1,28 @@
+{
+  "sku": "PPB-001",
+  "title": "Prensa Paralela de Bronce",
+  "category": "Accesorios",
+  "categorySlug": "accesorios",
+  "description": "Prensa paralela de bronce para conexión de conductores en paralelo. Alta resistencia a la corrosión y excelente conductividad eléctrica. Disponible en modelos GC, GB y GCM para distintos calibres y configuraciones de conexión.",
+  "features": [
+    "Fabricada en bronce fundido de alta calidad",
+    "Alta resistencia a la corrosión",
+    "Excelente conductividad eléctrica",
+    "Modelos disponibles: GC, GB y GCM",
+    "Perno de apriete de bronce para máximo contacto",
+    "Ideal para conexiones paralelas en sistemas de puesta a tierra",
+    "Instalación sencilla con herramienta estándar"
+  ],
+  "specs": {
+    "Tipo": "Prensa Paralela (Parallel Groove Clamp)",
+    "Material": "Bronce fundido",
+    "Modelo GC": "Conexión estándar",
+    "Modelo GB": "Conexión estándar alternativa",
+    "Modelo GCM": "Conexión múltiple",
+    "Perno": "Bronce con tuerca",
+    "Aplicación": "Conexiones paralelas en puesta a tierra y distribución"
+  },
+  "image": "/assets/img/products/ppb-001.png",
+  "inStock": true,
+  "badge": null
+}

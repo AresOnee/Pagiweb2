@@ -1,0 +1,29 @@
+{
+  "sku": "TDC-001",
+  "title": "Terminal de Compresión de Cobre",
+  "category": "Accesorios",
+  "categorySlug": "accesorios",
+  "description": "Terminales de compresión de cobre electrolítico y estañado para conexiones eléctricas seguras. Disponibles en calibres de 8 AWG a 1000 MCM, en versiones estándar, doble perforación y extra largo. Ideales para sistemas de puesta a tierra y conexiones de potencia.",
+  "features": [
+    "Cobre electrolítico de alta conductividad",
+    "Versión estañada disponible para mayor resistencia a la corrosión",
+    "Rango de calibres: 8 AWG a 1000 MCM",
+    "Modelos: estándar, doble perforación y extra largo",
+    "Compresión mecánica para conexión firme y duradera",
+    "Compatible con herramientas de compresión estándar",
+    "Ideal para sistemas de puesta a tierra y tableros eléctricos"
+  ],
+  "specs": {
+    "Tipo": "Terminal de Compresión (Lug)",
+    "Material": "Cobre electrolítico / Cobre estañado",
+    "Rango de Calibres": "8 AWG a 1000 MCM",
+    "Versión Estándar": "Una perforación, largo estándar",
+    "Versión Doble Perforación": "Dos orificios de fijación",
+    "Versión Extra Largo": "Mayor longitud de barril",
+    "Instalación": "Compresión mecánica con herramienta",
+    "Aplicación": "Puesta a tierra, tableros y conexiones de potencia"
+  },
+  "image": "/assets/img/products/tdc-001.png",
+  "inStock": true,
+  "badge": null
+}

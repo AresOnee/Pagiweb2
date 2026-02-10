@@ -1,0 +1,34 @@
+{
+  "sku": "CPP-001",
+  "title": "Conector con Perno Partido",
+  "category": "Accesorios",
+  "categorySlug": "accesorios",
+  "description": "Conectores tipo perno partido (split bolt) para unión de conductores sin soldadura. Disponibles con y sin espiga en 5 tamaños cada uno, cubriendo cables de 8 AWG a 4/0 AWG. Fabricados en cobre y bronce para máxima conductividad y resistencia a la corrosión.",
+  "features": [
+    "Conexión rápida sin soldadura",
+    "Disponible con espiga (CPPE) y sin espiga (CPP)",
+    "5 tamaños por tipo: 0.50, 1, 2, 3 y 4",
+    "Rango de cables: 8 AWG (10mm²) a 4/0 AWG (95mm²)",
+    "Fabricado en cobre y bronce de alta conductividad",
+    "Ideal para empalmes y derivaciones en puesta a tierra",
+    "Instalación rápida con llave de tuerca estándar"
+  ],
+  "specs": {
+    "Tipo": "Perno Partido (Split Bolt)",
+    "Material": "Cobre / Bronce",
+    "CPPE 0.50 (con espiga)": "Cables 8 a 6 AWG (10mm² - 16mm²)",
+    "CPPE 1 (con espiga)": "Cables 6 a 3 AWG (16mm² - 25mm²)",
+    "CPPE 2 (con espiga)": "Cables 3 a 2 AWG (25mm² - 35mm²)",
+    "CPPE 3 (con espiga)": "Cables 2 a 2/0 AWG (35mm² - 70mm²)",
+    "CPPE 4 (con espiga)": "Cables 2/0 a 4/0 AWG (70mm² - 95mm²)",
+    "CPP 0.50 (sin espiga)": "Cables 8 a 6 AWG (10mm² - 16mm²)",
+    "CPP 1 (sin espiga)": "Cables 6 a 3 AWG (16mm² - 25mm²)",
+    "CPP 2 (sin espiga)": "Cables 3 a 2 AWG (25mm² - 35mm²)",
+    "CPP 3 (sin espiga)": "Cables 2 a 2/0 AWG (35mm² - 70mm²)",
+    "CPP 4 (sin espiga)": "Cables 2/0 a 4/0 AWG (70mm² - 95mm²)",
+    "Total Variantes": "10 modelos (5 con espiga + 5 sin espiga)"
+  },
+  "image": "/assets/img/products/cpp-001.png",
+  "inStock": true,
+  "badge": null
+}
