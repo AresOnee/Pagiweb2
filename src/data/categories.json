@@ -32,8 +32,8 @@
   {
     "id": "accesorios",
     "name": "Accesorios",
-    "description": "Camarillas, tableros eléctricos y componentes",
-    "count": 3
+    "description": "Camarillas, tableros eléctricos, barras toma tierra y componentes",
+    "count": 6
   },
   {
     "id": "servicios",

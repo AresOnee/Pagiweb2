@@ -1,0 +1,30 @@
+{
+  "sku": "BTT-001",
+  "title": "Barra Toma Tierra Copperweld 1/2\"",
+  "category": "Accesorios",
+  "categorySlug": "accesorios",
+  "description": "Barra de puesta a tierra tipo Copperweld de 1/2 pulgada con recubrimiento de cobre electrolítico de 30 micras sobre núcleo de acero. Disponible en largos de 1.0m, 1.5m y 3.0m. Alta resistencia a la corrosión y excelente conductividad para sistemas de puesta a tierra.",
+  "features": [
+    "Núcleo de acero de alta resistencia mecánica",
+    "Recubrimiento de cobre electrolítico de 30 micras",
+    "Punta cónica de acero para fácil hincado",
+    "Resistente a la corrosión en suelos agresivos",
+    "Disponible en 3 largos: 1.0m, 1.5m y 3.0m",
+    "Compatible con conectores y accesorios estándar de puesta a tierra",
+    "Ideal para instalaciones residenciales y comerciales"
+  ],
+  "specs": {
+    "Tipo": "Barra Toma Tierra Copperweld",
+    "Material": "Acero con recubrimiento de cobre electrolítico",
+    "Recubrimiento": "30 micras de cobre",
+    "Diámetro": "1/2 pulgada (12,7 mm)",
+    "Largo Opción 1": "1.0 m",
+    "Largo Opción 2": "1.5 m",
+    "Largo Opción 3": "3.0 m",
+    "Punta": "Cónica de acero",
+    "Aplicación": "Sistemas de puesta a tierra residencial y comercial"
+  },
+  "image": "/assets/img/products/btt-001.png",
+  "inStock": true,
+  "badge": null
+}
