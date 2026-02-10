@@ -16,6 +16,7 @@
     "Certificación": "Certificado de calidad"
   },
   "image": "/assets/img/products/chi-001.jpeg",
+  "images": ["/assets/img/products/chi-003.jpeg"],
   "inStock": true,
   "badge": null
 }

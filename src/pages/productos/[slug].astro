@@ -3,6 +3,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import AddToQuoteBtn from '../../components/islands/AddToQuoteBtn.tsx';
 import VariantSelector from '../../components/islands/VariantSelector.tsx';
+import ImageGallery from '../../components/islands/ImageGallery.tsx';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '../../data/site-config';
 
@@ -16,6 +17,10 @@ export async function getStaticPaths() {
 
 const { product } = Astro.props;
 const specsEntries = Object.entries(product.specs);
+const allImages = [
+  ...(product.image ? [product.image] : []),
+  ...(product.images || []),
+];
 ---
 
 <MainLayout title={`${product.title} — GelChile`} description={product.description}>
@@ -27,7 +32,7 @@ const specsEntries = Object.entries(product.specs);
     "description": product.description,
     "sku": product.sku,
     "url": `${siteConfig.url}/productos/${product.sku.toLowerCase()}`,
-    "image": product.image ? `${siteConfig.url}${product.image}` : undefined,
+    "image": allImages.length > 0 ? allImages.map(img => `${siteConfig.url}${img}`) : undefined,
     "brand": {
       "@type": "Brand",
       "name": "GelChile"
@@ -59,18 +64,20 @@ const specsEntries = Object.entries(product.specs);
       <div class="product-detail-grid">
         <!-- Image Column -->
         <div class="product-detail-image">
-          {product.badge && <span class="detail-badge">{product.badge}</span>}
-          <div class="detail-image-wrapper">
-            {product.image ? (
-              <img src={product.image} alt={product.title} loading="lazy" width="400" height="400" />
-            ) : (
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true" class="detail-placeholder">
-                <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
-                <circle cx="60" cy="50" r="15" fill="#e2e8f0" stroke="#94a3b8" />
-                <path d="M50 75h20" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            )}
-          </div>
+          {allImages.length > 0 ? (
+            <ImageGallery client:visible images={allImages} alt={product.title} badge={product.badge} />
+          ) : (
+            <>
+              {product.badge && <span class="detail-badge">{product.badge}</span>}
+              <div class="detail-image-wrapper">
+                <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true" class="detail-placeholder">
+                  <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
+                  <circle cx="60" cy="50" r="15" fill="#e2e8f0" stroke="#94a3b8" />
+                  <path d="M50 75h20" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+              </div>
+            </>
+          )}
           <div class:list={['detail-stock', { 'out-stock': !product.inStock }]}>
             <span class="stock-dot"></span>
             {product.inStock ? 'En Stock' : 'Sin Stock'}

@@ -40,6 +40,7 @@ export interface Product {
   features: string[];
   specs: Record<string, string>;
   image: string | null;
+  images?: string[];
   inStock: boolean;
   badge: BadgeValue | null;
   variants?: Array<{ id: string; label: string }>;

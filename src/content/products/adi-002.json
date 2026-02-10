@@ -25,6 +25,10 @@
     "Seguridad": "Aumenta seguridad al reducir potenciales de toque/paso"
   },
   "image": "/assets/img/products/adi-001.png",
+  "images": [
+    "/assets/img/products/adi-006.png",
+    "/assets/img/products/adi-007.png"
+  ],
   "inStock": true,
   "badge": null
 }

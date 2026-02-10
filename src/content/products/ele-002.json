@@ -25,6 +25,7 @@
     "Unidad": "Kit completo"
   },
   "image": "/assets/img/products/electrode-he-70-product.png",
+  "images": ["/assets/img/products/electrode-he-70-detail.png"],
   "inStock": true,
   "badge": null
 }

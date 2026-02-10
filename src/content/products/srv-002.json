@@ -19,6 +19,11 @@
     "Seguridad": "Personal con EPP completo"
   },
   "image": "/assets/img/products/srv-malla-01.jpeg",
+  "images": [
+    "/assets/img/products/srv-malla-02.jpeg",
+    "/assets/img/products/srv-malla-03.jpeg",
+    "/assets/img/products/srv-malla-04.jpeg"
+  ],
   "inStock": true,
   "badge": "Servicio"
 }

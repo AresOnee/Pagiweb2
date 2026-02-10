@@ -31,6 +31,7 @@
     "Mantención": "Cada 15 años (recarga Power Sub)"
   },
   "image": "/assets/img/products/bqh-001.png",
+  "images": ["/assets/img/products/bq-diagram.png"],
   "inStock": true,
   "badge": null
 }
