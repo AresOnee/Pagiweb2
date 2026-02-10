@@ -1,0 +1,25 @@
+{
+  "sku": "HRE-001",
+  "title": "Herramienta Raspador de Escoria",
+  "category": "Accesorios",
+  "categorySlug": "accesorios",
+  "description": "Herramienta metálica para eliminación de escorias luego de realizada la soldadura exotérmica. Mango en forma de L para un agarre firme y paleta plana de acero para raspar residuos de forma eficiente.",
+  "features": [
+    "Paleta plana de acero para remoción eficiente de escoria",
+    "Mango en forma de L para agarre ergonómico",
+    "Construcción robusta en acero galvanizado",
+    "Diseñada para uso con soldadura exotérmica (Cadweld)",
+    "Herramienta indispensable para instalaciones de puesta a tierra",
+    "Resistente al calor residual de la soldadura"
+  ],
+  "specs": {
+    "Tipo": "Raspador de Escoria",
+    "Material": "Acero galvanizado",
+    "Forma del Mango": "L (angular)",
+    "Uso": "Eliminación de escoria post soldadura exotérmica",
+    "Aplicación": "Sistemas de puesta a tierra y soldadura exotérmica"
+  },
+  "image": "/assets/img/products/hre-001.png",
+  "inStock": true,
+  "badge": null
+}

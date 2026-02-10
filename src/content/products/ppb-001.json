@@ -1,0 +1,35 @@
+{
+  "sku": "PPB-001",
+  "title": "Prensa Paralela de Bronce",
+  "category": "Accesorios",
+  "categorySlug": "accesorios",
+  "description": "Prensas paralelas de bronce fundido para conexión de conductores en paralelo y a superficie plana. Alta resistencia a la corrosión y excelente conductividad eléctrica. Disponible en 4 modelos (TMG, GC, GB, GCM) con variantes para cables de 8 AWG a 4/0 AWG.",
+  "features": [
+    "Fabricada en bronce fundido de alta calidad",
+    "Alta resistencia a la corrosión",
+    "Excelente conductividad eléctrica",
+    "4 modelos disponibles: TMG, GC, GB y GCM",
+    "Rango de cables: 8 AWG (10mm²) a 4/0 AWG (95mm²)",
+    "Modelo GC y GCM para dos cables en paralelo",
+    "Modelo GB para un cable a barra o superficie",
+    "Modelo TMG para conexión estándar de cables",
+    "Instalación sencilla con herramienta estándar"
+  ],
+  "specs": {
+    "Tipo": "Prensa Paralela (Parallel Groove Clamp)",
+    "Material": "Bronce fundido",
+    "TMG 180.1": "Cables de 8 a 2 AWG (10mm² - 35mm²)",
+    "TMG 180.2": "Cables de 2 a 2/0 AWG (35mm² - 70mm²)",
+    "TMG 180.3": "Cables de 2/0 a 4/0 AWG (70mm² - 95mm²)",
+    "GC 26": "Dos cables de 2 a 2/0 AWG (10mm² - 35mm²)",
+    "GC 29": "Dos cables de 2/0 a 4/0 AWG (70mm² - 95mm²)",
+    "GCM 26": "Dos cables a superficie plana, 2 a 2/0 AWG (10mm² - 35mm²)",
+    "GCM 29": "Dos cables a superficie plana, 2/0 a 4/0 AWG (70mm² - 95mm²)",
+    "GB 26": "Un cable de 2 a 2/0 AWG (10mm² - 35mm²)",
+    "GB 29": "Un cable de 2/0 a 4/0 AWG (70mm² - 95mm²)",
+    "Total Variantes": "11 modelos (3 TMG + 2 GC + 2 GCM + 2 GB + 2 GCM superficie)"
+  },
+  "image": "/assets/img/products/ppb-001.png",
+  "inStock": true,
+  "badge": null
+}
