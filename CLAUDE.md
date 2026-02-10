@@ -6,7 +6,7 @@ Sitio web de catálogo para **GelChile**, empresa chilena con **más de 20 años
 ## Estado Actual
 - **Fase:** Migración a Astro completada — Fases 0-8 finalizadas, pendiente deploy
 - **Stack:** Astro 5.17.1 + Preact + nanostores (sitio funcional)
-- **Datos de productos:** 21 productos reales de GelChile (JSON validados por Zod)
+- **Datos de productos:** 38 productos reales de GelChile (JSON validados por Zod)
 - **Cliente aprobó presupuesto:** $370.000 CLP (reunión 3_2)
 - **Nielsen Heuristics:** 10/10 implementadas
 
@@ -46,26 +46,32 @@ Pagiweb2/
 │   ├── cart-store.js       # Store del carrito (API nanostores)
 │   └── theme-store.js      # Store del tema (dark mode)
 ├── data/
-│   ├── products/           # 21 archivos JSON (productos reales Gel Chile)
+│   ├── products/           # 38 archivos JSON (productos reales GelChile)
 │   │   ├── ele-001.json a ele-008.json  # 8 electrodos electromagnéticos HE
 │   │   ├── egr-001.json                 # 1 electrodo de grafito
 │   │   ├── bqh-001.json, bqv-001.json   # 2 barras químicas (H y V)
 │   │   ├── adi-001.json, adi-002.json   # 2 aditivos (Power Gem, Power Gel)
-│   │   ├── par-001.json a par-003.json  # 3 pararrayos y protección
+│   │   ├── par-001.json                 # 1 pararrayo Franklin
+│   │   ├── par-002.json a par-004.json  # 3 productos soldadura exotérmica (masilla, chispero, molde)
+│   │   ├── cex-001.json a cex-009.json  # 9 cargas exotérmicas (ESTWELD + Electro Material)
+│   │   ├── hre-001.json                 # 1 raspador de escoria
 │   │   ├── cam-001.json                 # 1 camarilla PVC
 │   │   ├── tab-001.json, tab-002.json   # 2 tableros eléctricos TIBOX
+│   │   ├── btt-001.json a btt-003.json  # 3 barras toma tierra Copperweld
+│   │   ├── cpp-001.json, ppb-001.json, tdc-001.json  # 3 conectores/terminales
 │   │   └── srv-001.json, srv-002.json   # 2 servicios
-│   └── categories.json     # 7 categorías reales
+│   └── categories.json     # 8 categorías reales
 ├── assets/
 │   └── img/
 │       ├── gelchile-logo.png             # Logo GelChile (extraído de DOCX)
 │       ├── gelchile-electrodo-grafito.png # Imagen producto (extraída de DOCX)
-│       └── products/                      # 55 imágenes de productos extraídas
+│       └── products/                      # 78 imágenes de productos
 │           ├── electrode-he-*.png         # Fotos electrodos HE (producto + detalle)
 │           ├── hunter-energy-*.png        # Branding, specs, certificaciones HE
 │           ├── adi-*.png                  # Fotos aditivos
 │           ├── par-*.png, mas-*.png       # Pararrayos, masilla
 │           ├── chi-*.jpeg/gif             # Chispero
+│           ├── cex-*.jpg/png              # Cargas exotérmicas (ESTWELD + Electro Material)
 │           ├── cam-001.png, tab-*.png     # Camarilla, tableros
 │           ├── ele-001.png               # Electrodo grafito
 │           └── srv-malla-*.jpeg           # Fotos servicio malla de fleje
@@ -96,9 +102,9 @@ Pagiweb2/
 │   │   │   └── ProductFilter.module.css   # CSS Module (Fase 3)
 │   │   └── ui/              # Astro UI components (Fase 5)
 │   ├── content/
-│   │   └── products/        # 21 JSON validados por Zod schema
+│   │   └── products/        # 38 JSON validados por Zod schema
 │   ├── data/
-│   │   ├── categories.json  # 7 categorías
+│   │   ├── categories.json  # 8 categorías
 │   │   └── site-config.ts   # Configuración centralizada GelChile
 │   ├── layouts/             # MainLayout.astro (Fase 5)
 │   ├── pages/
@@ -117,7 +123,7 @@ Pagiweb2/
 │   └── assets/img/
 │       ├── gelchile-logo.png
 │       ├── gelchile-electrodo-grafito.png
-│       └── products/        # 57 imágenes de productos (54 originales + 3 barras químicas)
+│       └── products/        # 78 imágenes de productos
 ├── astro.config.mjs         # Astro + Preact config
 ├── tsconfig.json            # TypeScript strict (Astro preset)
 ├── package.json             # gelchile-web (Astro + Preact + nanostores)
@@ -127,7 +133,7 @@ Pagiweb2/
 └── CHECKLIST_PROYECTO.md
 ```
 
-## Productos Reales (21 productos)
+## Productos Reales (38 productos)
 
 ### Categorías y productos
 
@@ -137,8 +143,9 @@ Pagiweb2/
 | Electrodos de Grafito | `electrodos-grafito` | 1 electrodo grafito | EGR-001 (EG-GELCHILE, 250mm x 1000mm, 12kg) |
 | Barras Químicas | `barras-quimicas` | 2 barras (horizontal/vertical) | BQH-001, BQV-001 (cobre ASTM C1100, 2" x 3000mm) |
 | Aditivos | `aditivos` | 2 aditivos | ADI-001 (Power Gem 11,36kg), ADI-002 (Power Gel) |
-| Pararrayos y Protección | `pararrayos` | 3 productos | PAR-001 (Franklin tridente), PAR-002 (masilla), PAR-003 (chispero) |
-| Accesorios | `accesorios` | 3 productos | CAM-001 (camarilla PVC), TAB-001/002 (tableros TIBOX IP65) |
+| Pararrayos y Protección | `pararrayos` | 1 producto | PAR-001 (Franklin tridente) |
+| Soldadura Exotérmica | `soldadura-exotermica` | 13 productos | CEX-001–007 (cargas ESTWELD CAP-45 a CAP-250), CEX-008/009 (cargas Electro Material C-45/C-65), PAR-002 (masilla), PAR-003 (chispero), PAR-004 (molde grafito), HRE-001 (raspador escoria) |
+| Accesorios | `accesorios` | 9 productos | CAM-001 (camarilla PVC), TAB-001/002 (tableros TIBOX), BTT-001/002/003 (barras Copperweld), CPP-001 (conector), PPB-001 (grapa), TDC-001 (terminal) |
 | Servicios | `servicios` | 2 servicios | SRV-001 (medición), SRV-002 (instalación malla de fleje) |
 
 ### Estructura JSON por producto
@@ -157,7 +164,7 @@ Pagiweb2/
 }
 ```
 
-**SKU pattern:** `[A-Z]{2,3}-\d{3}` (ELE-, EGR-, BQH-, BQV-, ADI-, PAR-, CAM-, TAB-, SRV-)
+**SKU pattern:** `[A-Z]{2,3}-\d{3}` (ELE-, EGR-, BQH-, BQV-, ADI-, PAR-, CEX-, HRE-, CAM-, TAB-, BTT-, CPP-, PPB-, TDC-, SRV-)
 
 **Campos nuevos vs schema original:** `image` (ruta a foto extraída del DOCX). Campo `datasheet` planificado pero no implementado aún.
 
@@ -165,7 +172,7 @@ Pagiweb2/
 
 ### Sistema de Productos
 - Base de datos hardcodeada en `PRODUCTS_DB` (js/main.js:18-310) — **DESACTUALIZADA, usa datos demo**
-- Los datos reales están en `data/products/*.json` (21 archivos)
+- Los datos reales están en `src/content/products/*.json` (38 archivos, validados por Zod)
 - Filtros por categoría
 - Modal de detalle con tabs (especificaciones/características)
 
@@ -298,12 +305,12 @@ Plan completo en: `/root/.claude/plans/cheerful-twirling-spring.md`
 1. Extracción de imágenes barras químicas del PDF (PyMuPDF) → bqh-001.png, bqv-001.png, bq-diagram.png
 2. Corrección de image paths en bqh-001.json y bqv-001.json (apuntaban a par-001.png)
 3. Creación de `src/content.config.ts` con Zod schema + glob loader
-4. Definición de enums estrictos: 7 categorySlugs, 7 categoryNames, 3 badgeValues
+4. Definición de enums estrictos: 8 categorySlugs, 8 categoryNames, 3 badgeValues
 5. Validación de campos: sku regex, title, description, features[], specs record, image nullable, badge nullable
 6. Actualización de `src/types/index.ts` con CategorySlug, CategoryName, BadgeValue union types
 7. Fix de `image: string` → `string | null` (SRV-001 tiene image null)
-8. Página de verificación `src/pages/index.astro` con getCollection() mostrando 21 productos en 7 categorías
-9. Build exitoso: 0 errores Zod, 21 productos validados, sin warning de auto-generating collections
+8. Página de verificación `src/pages/index.astro` con getCollection() mostrando 38 productos en 8 categorías
+9. Build exitoso: 0 errores Zod, 38 productos validados, sin warning de auto-generating collections
 
 ### Fase 3 — Lo que se hizo
 
@@ -388,7 +395,7 @@ src/
 │   │   ├── DarkModeToggle.tsx, MobileMenu.tsx, Toast.tsx
 │   │   └── *.module.css (6 CSS Modules con dark mode)
 │   └── ui/
-├── content/products/*.json    # 21 productos validados por Zod
+├── content/products/*.json    # 38 productos validados por Zod
 ├── data/categories.json, site-config.ts
 ├── layouts/MainLayout.astro
 ├── pages/
@@ -420,7 +427,7 @@ src/
 **Agregar un producto (proyecto Astro):**
 1. Crear archivo JSON en `src/content/products/` con el SKU correspondiente (ej: `cab-001.json`)
 2. Seguir el schema Zod en `src/content.config.ts` (campos requeridos: sku, title, category, categorySlug, description, features, specs, image, inStock, badge)
-3. Si es categoría nueva: agregar a los arrays `categorySlugs` y `categoryNames` en `src/content.config.ts`
+3. Si es categoría nueva: agregar a los arrays `categorySlugs` y `categoryNames` en `src/content.config.ts`, y actualizar los tipos en `src/types/index.ts` (CategorySlug, CategoryName)
 4. Agregar imagen a `public/assets/img/products/`
 5. Actualizar `count` en `src/data/categories.json`
 6. Ejecutar `npm run build` para validar el JSON contra el schema
@@ -437,7 +444,7 @@ src/
 4. **Formulario:** Actualmente simula envío. Para producción, configurar Web3Forms con API key → ventas@gelchile.cl
 5. **Imágenes extraídas:** HE-1500 y HE-2500 comparten la misma foto de producto. Algunos DOCX son image-only (camarilla, tableros) sin texto extraíble
 6. **HE-150:** Mencionado en reunión 3_4 pero no existe DOCX con ficha técnica — solo aparece en tabla de dimensiones XLSX. No se creó JSON
-7. **Productos faltantes (~25-30):** El cliente mencionó ~50 productos. Faltan cables, cargas exotérmicas, moldes de grafito, conectores. Se agregarán cuando el cliente envíe los datos
+7. **Productos faltantes (~10-15):** El cliente mencionó ~50 productos. Faltan cables, cargas exotérmicas de otros tamaños, y algunos accesorios. Se agregarán cuando el cliente envíe los datos
 
 ## Documentación Adicional
 
