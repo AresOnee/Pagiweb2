@@ -20,6 +20,10 @@
     "Aplicación": "Manual, amasar alrededor del conductor de forma uniforme"
   },
   "image": "/assets/img/products/mas-001.png",
+  "images": [
+    "/assets/img/products/mas-002.png",
+    "/assets/img/products/mas-003.png"
+  ],
   "inStock": true,
   "badge": null
 }

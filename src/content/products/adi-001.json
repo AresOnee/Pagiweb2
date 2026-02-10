@@ -29,6 +29,13 @@
     "Mantenimiento": "No requiere"
   },
   "image": "/assets/img/products/adi-008.png",
+  "images": [
+    "/assets/img/products/adi-011.png",
+    "/assets/img/products/adi-009.png",
+    "/assets/img/products/adi-003.png",
+    "/assets/img/products/adi-004.png",
+    "/assets/img/products/adi-005.png"
+  ],
   "inStock": true,
   "badge": "Popular"
 }

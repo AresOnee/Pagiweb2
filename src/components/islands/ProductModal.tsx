@@ -4,6 +4,7 @@ import { $selectedProduct, closeProductModal } from '../../stores/ui';
 import { $cart, addItem } from '../../stores/cart';
 import { showToast } from '../../stores/toast';
 import VariantSelector from './VariantSelector';
+import ImageGallery from './ImageGallery';
 import styles from './ProductModal.module.css';
 
 /** Product detail modal with tabs, quantity controls, add-to-cart. Mount with client:load. */
@@ -116,20 +117,28 @@ export default function ProductModal() {
           <div class={styles['product-modal-grid']}>
             {/* Left: Image */}
             <div class={styles['product-modal-image']}>
-              {product.badge && (
-                <span class={styles['product-badge']}>{product.badge}</span>
-              )}
-              <div class={styles['product-modal-image-main']}>
-                {product.image ? (
-                  <img src={product.image} alt={product.title} loading="lazy" width="400" height="400" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              {(() => {
+                const allImages = [
+                  ...(product.image ? [product.image] : []),
+                  ...(product.images || []),
+                ];
+                return allImages.length > 0 ? (
+                  <ImageGallery images={allImages} alt={product.title} badge={product.badge} />
                 ) : (
-                  <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
-                    <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
-                    <circle cx="60" cy="50" r="15" fill="#e2e8f0" stroke="#94a3b8" />
-                    <path d="M50 75h20" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
-                )}
-              </div>
+                  <>
+                    {product.badge && (
+                      <span class={styles['product-badge']}>{product.badge}</span>
+                    )}
+                    <div class={styles['product-modal-image-main']}>
+                      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
+                        <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
+                        <circle cx="60" cy="50" r="15" fill="#e2e8f0" stroke="#94a3b8" />
+                        <path d="M50 75h20" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" />
+                      </svg>
+                    </div>
+                  </>
+                );
+              })()}
               {/* Stock indicator */}
               <div class={`${styles['product-modal-stock']} ${!product.inStock ? styles['out-stock'] : ''}`}>
                 <span class={styles['stock-dot']} />

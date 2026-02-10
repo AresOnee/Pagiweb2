@@ -54,6 +54,7 @@ const products = defineCollection({
     features: z.array(z.string().min(1)).min(1).max(20),
     specs: z.record(z.string(), z.string()),
     image: z.string().startsWith('/').nullable(),
+    images: z.array(z.string().startsWith('/')).optional(),
     inStock: z.boolean().default(true),
     badge: z.enum(badgeValues).nullable(),
     variants: z.array(z.object({
