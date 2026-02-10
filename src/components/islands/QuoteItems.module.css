@@ -59,6 +59,19 @@
   text-overflow: ellipsis;
 }
 
+.quote-item-variant {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+  margin-bottom: var(--spacing-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+:global([data-theme="dark"]) .quote-item-variant {
+  color: var(--color-gray-400);
+}
+
 .quote-item-sku {
   font-size: var(--font-size-xs);
   color: var(--color-gray-500);

@@ -204,7 +204,10 @@ export default function QuoteForm() {
 
     // Build payload for Web3Forms
     const productsList = cart
-      .map((item) => `• ${item.title} (SKU: ${item.sku}) - Cantidad: ${item.quantity}`)
+      .map((item) => {
+        const variantStr = item.variant ? ` — Variante: ${item.variant}` : '';
+        return `• ${item.title} (SKU: ${item.sku})${variantStr} - Cantidad: ${item.quantity}`;
+      })
       .join('\n');
 
     const payload = {

@@ -3,6 +3,7 @@ import { useStore } from '@nanostores/preact';
 import { $selectedProduct, closeProductModal } from '../../stores/ui';
 import { $cart, addItem } from '../../stores/cart';
 import { showToast } from '../../stores/toast';
+import VariantSelector from './VariantSelector';
 import styles from './ProductModal.module.css';
 
 /** Product detail modal with tabs, quantity controls, add-to-cart. Mount with client:load. */
@@ -146,55 +147,66 @@ export default function ProductModal() {
               {/* Actions */}
               <div class={styles['product-modal-actions']}>
                 {product.inStock ? (
-                  <>
-                    {/* Quantity selector */}
-                    <div class={styles['quantity-selector']}>
-                      <label>Cantidad:</label>
-                      <div class={styles['quantity-controls']}>
-                        <button
-                          class={styles['qty-btn']}
-                          onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                          aria-label="Disminuir cantidad"
-                        >
-                          −
-                        </button>
-                        <input
-                          class={styles['qty-input']}
-                          type="number"
-                          min="1"
-                          max="99"
-                          value={quantity}
-                          onInput={(e) => {
-                            const val = parseInt((e.target as HTMLInputElement).value);
-                            if (!isNaN(val) && val >= 1 && val <= 99) setQuantity(val);
-                          }}
-                        />
-                        <button
-                          class={styles['qty-btn']}
-                          onClick={() => setQuantity(Math.min(99, quantity + 1))}
-                          aria-label="Aumentar cantidad"
-                        >
-                          +
-                        </button>
+                  product.variants && product.variants.length > 0 ? (
+                    <VariantSelector
+                      sku={product.sku}
+                      title={product.title}
+                      category={product.category}
+                      image={product.image}
+                      variants={product.variants}
+                      onAdd={() => closeProductModal()}
+                    />
+                  ) : (
+                    <>
+                      {/* Quantity selector */}
+                      <div class={styles['quantity-selector']}>
+                        <label>Cantidad:</label>
+                        <div class={styles['quantity-controls']}>
+                          <button
+                            class={styles['qty-btn']}
+                            onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                            aria-label="Disminuir cantidad"
+                          >
+                            −
+                          </button>
+                          <input
+                            class={styles['qty-input']}
+                            type="number"
+                            min="1"
+                            max="99"
+                            value={quantity}
+                            onInput={(e) => {
+                              const val = parseInt((e.target as HTMLInputElement).value);
+                              if (!isNaN(val) && val >= 1 && val <= 99) setQuantity(val);
+                            }}
+                          />
+                          <button
+                            class={styles['qty-btn']}
+                            onClick={() => setQuantity(Math.min(99, quantity + 1))}
+                            aria-label="Aumentar cantidad"
+                          >
+                            +
+                          </button>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Add button */}
-                    <button class={styles['btn-add-modal']} onClick={handleAdd}>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
-                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-                        <line x1="3" y1="6" x2="21" y2="6" />
-                        <path d="M16 10a4 4 0 0 1-8 0" />
-                      </svg>
-                      {isInCart ? 'Actualizar Cotización' : 'Agregar a Cotización'}
-                    </button>
+                      {/* Add button */}
+                      <button class={styles['btn-add-modal']} onClick={handleAdd}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
+                          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                          <line x1="3" y1="6" x2="21" y2="6" />
+                          <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                        {isInCart ? 'Actualizar Cotización' : 'Agregar a Cotización'}
+                      </button>
 
-                    {isInCart && (
-                      <a href="/cotizacion" style={{ textAlign: 'center', color: 'var(--color-primary)', fontWeight: '600', fontSize: 'var(--font-size-sm)' }}>
-                        Ver Cotización →
-                      </a>
-                    )}
-                  </>
+                      {isInCart && (
+                        <a href="/cotizacion" style={{ textAlign: 'center', color: 'var(--color-primary)', fontWeight: '600', fontSize: 'var(--font-size-sm)' }}>
+                          Ver Cotización →
+                        </a>
+                      )}
+                    </>
+                  )
                 ) : (
                   <div class={styles['out-stock-notice']} style={{
                     padding: 'var(--spacing-4)',

@@ -26,5 +26,10 @@
   },
   "image": "/assets/img/products/btt-001.png",
   "inStock": true,
-  "badge": null
+  "badge": null,
+  "variants": [
+    { "id": "1.0m", "label": "Largo 1.0 m" },
+    { "id": "1.5m", "label": "Largo 1.5 m" },
+    { "id": "3.0m", "label": "Largo 3.0 m" }
+  ]
 }

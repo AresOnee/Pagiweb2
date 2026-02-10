@@ -2,6 +2,7 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import AddToQuoteBtn from '../../components/islands/AddToQuoteBtn.tsx';
+import VariantSelector from '../../components/islands/VariantSelector.tsx';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '../../data/site-config';
 
@@ -84,14 +85,25 @@ const specsEntries = Object.entries(product.specs);
           <p class="detail-description">{product.description}</p>
 
           <div class="detail-actions">
-            <AddToQuoteBtn
-              client:visible
-              sku={product.sku}
-              title={product.title}
-              category={product.category}
-              image={product.image}
-              inStock={product.inStock}
-            />
+            {product.variants && product.variants.length > 0 && product.inStock ? (
+              <VariantSelector
+                client:visible
+                sku={product.sku}
+                title={product.title}
+                category={product.category}
+                image={product.image}
+                variants={product.variants}
+              />
+            ) : (
+              <AddToQuoteBtn
+                client:visible
+                sku={product.sku}
+                title={product.title}
+                category={product.category}
+                image={product.image}
+                inStock={product.inStock}
+              />
+            )}
           </div>
         </div>
       </div>

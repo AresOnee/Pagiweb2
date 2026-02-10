@@ -21,6 +21,7 @@ const products: Product[] = allProducts.map(p => ({
   image: p.data.image,
   inStock: p.data.inStock,
   badge: p.data.badge,
+  variants: p.data.variants,
 }));
 
 const categories = categoriesData as Category[];
