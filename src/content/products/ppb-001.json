@@ -31,5 +31,16 @@
   },
   "image": "/assets/img/products/ppb-001.png",
   "inStock": true,
-  "badge": null
+  "badge": null,
+  "variants": [
+    { "id": "tmg-180-1", "label": "TMG 180.1 — Cables 8-2 AWG (10-35mm²)" },
+    { "id": "tmg-180-2", "label": "TMG 180.2 — Cables 2-2/0 AWG (35-70mm²)" },
+    { "id": "tmg-180-3", "label": "TMG 180.3 — Cables 2/0-4/0 AWG (70-95mm²)" },
+    { "id": "gc-26", "label": "GC 26 — Dos cables, 2-2/0 AWG (10-35mm²)" },
+    { "id": "gc-29", "label": "GC 29 — Dos cables, 2/0-4/0 AWG (70-95mm²)" },
+    { "id": "gcm-26", "label": "GCM 26 — Superficie plana, 2-2/0 AWG (10-35mm²)" },
+    { "id": "gcm-29", "label": "GCM 29 — Superficie plana, 2/0-4/0 AWG (70-95mm²)" },
+    { "id": "gb-26", "label": "GB 26 — Un cable, 2-2/0 AWG (10-35mm²)" },
+    { "id": "gb-29", "label": "GB 29 — Un cable, 2/0-4/0 AWG (70-95mm²)" }
+  ]
 }

@@ -110,11 +110,16 @@ export default function ProductFilter({ products, categories }: Props) {
   const handleAddToQuote = (e: Event, product: Product) => {
     e.stopPropagation();
     e.preventDefault();
+    if (product.variants?.length) {
+      openProductModal(product);
+      return;
+    }
     addItem({ sku: product.sku, title: product.title, category: product.category, quantity: 1, image: product.image });
     showToast(`${product.title} agregado a la cotización`, 'success');
   };
 
-  const isInCart = (sku: string) => cart.find((item) => item.sku === sku);
+  const getCartCount = (sku: string) =>
+    cart.filter((item) => item.sku === sku).reduce((sum, item) => sum + item.quantity, 0);
 
   // Scroll reveal for dynamically rendered product cards
   const gridRef = useRef<HTMLDivElement>(null);
@@ -208,7 +213,7 @@ export default function ProductFilter({ products, categories }: Props) {
       {sorted.length > 0 ? (
         <div class={styles['product-grid']} ref={gridRef}>
           {sorted.map((product, index) => {
-            const existing = isInCart(product.sku);
+            const count = getCartCount(product.sku);
             return (
               <article
                 key={product.sku}
@@ -239,15 +244,15 @@ export default function ProductFilter({ products, categories }: Props) {
                 </div>
                 <div class={styles['product-footer']}>
                   <button
-                    class={`${styles['btn-add-quote']} ${existing ? styles.added : ''}`}
+                    class={`${styles['btn-add-quote']} ${count > 0 ? styles.added : ''}`}
                     onClick={(e) => handleAddToQuote(e, product)}
                   >
-                    {existing ? (
+                    {count > 0 ? (
                       <>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
-                        Agregado ({existing.quantity})
+                        Agregado ({count})
                       </>
                     ) : (
                       <>

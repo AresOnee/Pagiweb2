@@ -56,6 +56,10 @@ const products = defineCollection({
     image: z.string().startsWith('/').nullable(),
     inStock: z.boolean().default(true),
     badge: z.enum(badgeValues).nullable(),
+    variants: z.array(z.object({
+      id: z.string(),
+      label: z.string(),
+    })).optional(),
   }),
 });
 

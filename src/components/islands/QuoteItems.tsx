@@ -14,14 +14,15 @@ export default function QuoteItems() {
   }, []);
 
   // H3: Remove with Undo action
-  const handleRemove = (sku: string, title: string) => {
-    const removedItem = removeItem(sku);
+  const handleRemove = (sku: string, title: string, variant?: string) => {
+    const removedItem = removeItem(sku, variant);
     if (removedItem) {
-      showToast(`${title} eliminado`, 'info', {
+      const label = variant ? `${title} (${variant})` : title;
+      showToast(`${label} eliminado`, 'info', {
         label: 'Deshacer',
         onClick: () => {
           restoreItem(removedItem);
-          showToast(`${title} restaurado`, 'success');
+          showToast(`${label} restaurado`, 'success');
         }
       });
     }
@@ -48,10 +49,10 @@ export default function QuoteItems() {
     }
   };
 
-  const handleQuantityChange = (sku: string, value: string) => {
+  const handleQuantityChange = (sku: string, value: string, variant?: string) => {
     const qty = parseInt(value);
     if (!isNaN(qty) && qty >= 1) {
-      updateQuantity(sku, qty);
+      updateQuantity(sku, qty, variant);
     }
   };
 
@@ -90,7 +91,7 @@ export default function QuoteItems() {
       {/* Items list */}
       <div class={styles['quote-items-list']}>
         {cart.map((item) => (
-          <div key={item.sku} class={styles['quote-item']}>
+          <div key={`${item.sku}::${item.variant || ''}`} class={styles['quote-item']}>
             {/* Image */}
             <div class={styles['quote-item-image']}>
               {item.image ? (
@@ -107,6 +108,9 @@ export default function QuoteItems() {
             {/* Info */}
             <div class={styles['quote-item-info']}>
               <div class={styles['quote-item-title']}>{item.title}</div>
+              {item.variant && (
+                <div class={styles['quote-item-variant']}>{item.variant}</div>
+              )}
               <div class={styles['quote-item-meta']}>
                 <span class={styles['quote-item-sku']}>SKU: {item.sku}</span>
                 <span class={styles['quote-item-category']}>{item.category}</span>
@@ -117,7 +121,7 @@ export default function QuoteItems() {
             <div class={styles['quote-item-quantity']}>
               <button
                 class={styles['qty-btn']}
-                onClick={() => updateQuantity(item.sku, Math.max(1, item.quantity - 1))}
+                onClick={() => updateQuantity(item.sku, Math.max(1, item.quantity - 1), item.variant)}
                 aria-label="Disminuir cantidad"
               >
                 −
@@ -128,11 +132,11 @@ export default function QuoteItems() {
                 min="1"
                 max="99"
                 value={item.quantity}
-                onInput={(e) => handleQuantityChange(item.sku, (e.target as HTMLInputElement).value)}
+                onInput={(e) => handleQuantityChange(item.sku, (e.target as HTMLInputElement).value, item.variant)}
               />
               <button
                 class={styles['qty-btn']}
-                onClick={() => updateQuantity(item.sku, item.quantity + 1)}
+                onClick={() => updateQuantity(item.sku, item.quantity + 1, item.variant)}
                 aria-label="Aumentar cantidad"
               >
                 +
@@ -142,8 +146,8 @@ export default function QuoteItems() {
             {/* Remove */}
             <button
               class={styles['remove-item-btn']}
-              onClick={() => handleRemove(item.sku, item.title)}
-              aria-label={`Eliminar ${item.title}`}
+              onClick={() => handleRemove(item.sku, item.title, item.variant)}
+              aria-label={`Eliminar ${item.title}${item.variant ? ` (${item.variant})` : ''}`}
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="18" y1="6" x2="6" y2="18" />

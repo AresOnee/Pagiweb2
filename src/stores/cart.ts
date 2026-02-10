@@ -12,7 +12,13 @@ export type CartItem = {
   category: string;
   quantity: number;
   image: string | null;
+  variant?: string;
 };
+
+/** Match cart item by SKU + variant (composite key). */
+function matchItem(item: CartItem, sku: string, variant?: string): boolean {
+  return item.sku === sku && (item.variant || '') === (variant || '');
+}
 
 /** Main cart state */
 export const $cart = atom<CartItem[]>([]);
@@ -24,11 +30,11 @@ export const $cartCount = computed($cart, (items) =>
 
 /**
  * Add a product to the cart.
- * If the SKU already exists, increments its quantity.
+ * If the SKU+variant already exists, increments its quantity.
  */
 export function addItem(product: CartItem): void {
   const current = $cart.get();
-  const idx = current.findIndex((item) => item.sku === product.sku);
+  const idx = current.findIndex((item) => matchItem(item, product.sku, product.variant));
   if (idx > -1) {
     const updated = [...current];
     updated[idx] = {
@@ -41,11 +47,11 @@ export function addItem(product: CartItem): void {
   }
 }
 
-/** Remove an item from the cart by SKU. Returns the removed item for undo. */
-export function removeItem(sku: string): CartItem | null {
+/** Remove an item from the cart by SKU+variant. Returns the removed item for undo. */
+export function removeItem(sku: string, variant?: string): CartItem | null {
   const current = $cart.get();
-  const item = current.find((i) => i.sku === sku) || null;
-  $cart.set(current.filter((i) => i.sku !== sku));
+  const item = current.find((i) => matchItem(i, sku, variant)) || null;
+  $cart.set(current.filter((i) => !matchItem(i, sku, variant)));
   return item;
 }
 
@@ -53,7 +59,7 @@ export function removeItem(sku: string): CartItem | null {
 export function restoreItem(item: CartItem): void {
   const current = $cart.get();
   // If item already exists, update quantity; otherwise add
-  const idx = current.findIndex((i) => i.sku === item.sku);
+  const idx = current.findIndex((i) => matchItem(i, item.sku, item.variant));
   if (idx > -1) {
     const updated = [...current];
     updated[idx] = { ...updated[idx], quantity: updated[idx].quantity + item.quantity };
@@ -64,11 +70,11 @@ export function restoreItem(item: CartItem): void {
 }
 
 /** Update the quantity of an item. Minimum is 1. */
-export function updateQuantity(sku: string, quantity: number): void {
+export function updateQuantity(sku: string, quantity: number, variant?: string): void {
   const q = Math.max(1, quantity);
   $cart.set(
     $cart.get().map((item) =>
-      item.sku === sku ? { ...item, quantity: q } : item
+      matchItem(item, sku, variant) ? { ...item, quantity: q } : item
     )
   );
 }
