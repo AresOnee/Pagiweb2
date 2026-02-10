@@ -54,6 +54,20 @@ const faqItems = [
 ---
 
 <MainLayout title="Preguntas Frecuentes — GelChile" description="Encuentra respuestas a las preguntas más frecuentes sobre nuestros productos y servicios de puesta a tierra">
+  {/* JSON-LD FAQPage schema for Google Rich Snippets */}
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  })} />
+
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">

@@ -3,6 +3,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import AddToQuoteBtn from '../../components/islands/AddToQuoteBtn.tsx';
 import { getCollection } from 'astro:content';
+import { siteConfig } from '../../data/site-config';
 
 export async function getStaticPaths() {
   const products = await getCollection('products');
@@ -17,6 +18,34 @@ const specsEntries = Object.entries(product.specs);
 ---
 
 <MainLayout title={`${product.title} — GelChile`} description={product.description}>
+  {/* JSON-LD Product schema for Google Shopping / Rich Results */}
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.title,
+    "description": product.description,
+    "sku": product.sku,
+    "url": `${siteConfig.url}/productos/${product.sku.toLowerCase()}`,
+    "image": product.image ? `${siteConfig.url}${product.image}` : undefined,
+    "brand": {
+      "@type": "Brand",
+      "name": "GelChile"
+    },
+    "category": product.category,
+    "offers": {
+      "@type": "Offer",
+      "url": `${siteConfig.url}/productos/${product.sku.toLowerCase()}`,
+      "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "priceCurrency": "CLP",
+      "price": "0",
+      "priceValidUntil": new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+      "seller": {
+        "@type": "Organization",
+        "name": "GelChile"
+      }
+    }
+  })} />
+
   <Breadcrumb items={[
     { label: 'Inicio', href: '/' },
     { label: 'Productos', href: '/productos' },
@@ -32,7 +61,7 @@ const specsEntries = Object.entries(product.specs);
           {product.badge && <span class="detail-badge">{product.badge}</span>}
           <div class="detail-image-wrapper">
             {product.image ? (
-              <img src={product.image} alt={product.title} />
+              <img src={product.image} alt={product.title} loading="lazy" width="400" height="400" />
             ) : (
               <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true" class="detail-placeholder">
                 <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
@@ -61,6 +90,7 @@ const specsEntries = Object.entries(product.specs);
               title={product.title}
               category={product.category}
               image={product.image}
+              inStock={product.inStock}
             />
           </div>
         </div>

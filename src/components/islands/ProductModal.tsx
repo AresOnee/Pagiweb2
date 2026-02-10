@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect, useRef } from 'preact/hooks';
 import { useStore } from '@nanostores/preact';
 import { $selectedProduct, closeProductModal } from '../../stores/ui';
 import { $cart, addItem } from '../../stores/cart';
@@ -11,6 +11,8 @@ export default function ProductModal() {
   const cart = useStore($cart);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<'specs' | 'features'>('specs');
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   // Reset state when product changes
   useEffect(() => {
@@ -18,20 +20,41 @@ export default function ProductModal() {
     setActiveTab('specs');
   }, [product?.sku]);
 
-  // Body scroll lock
+  // Body scroll lock + focus close button on open
   useEffect(() => {
     if (!product) return;
     document.body.style.overflow = 'hidden';
+    setTimeout(() => closeRef.current?.focus(), 50);
     return () => {
       document.body.style.overflow = '';
     };
   }, [product]);
 
-  // Escape key to close
+  // Escape key + focus trap
   useEffect(() => {
-    if (!product) return;
+    if (!product || !modalRef.current) return;
+    const modal = modalRef.current;
+
     const handleKeydown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeProductModal();
+      if (e.key === 'Escape') {
+        closeProductModal();
+        return;
+      }
+      if (e.key === 'Tab') {
+        const focusable = modal.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     };
     document.addEventListener('keydown', handleKeydown);
     return () => document.removeEventListener('keydown', handleKeydown);
@@ -43,6 +66,7 @@ export default function ProductModal() {
   const isInCart = !!existing;
 
   const handleAdd = () => {
+    if (!product.inStock) return;
     addItem({
       sku: product.sku,
       title: product.title,
@@ -68,11 +92,18 @@ export default function ProductModal() {
   const specsEntries = Object.entries(product.specs);
 
   return (
-    <div class={`${styles['product-modal']} ${styles.active}`} onClick={handleOverlayClick}>
+    <div
+      class={`${styles['product-modal']} ${styles.active}`}
+      onClick={handleOverlayClick}
+      ref={modalRef}
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Detalle de ${product.title}`}
+    >
       <div class={styles['product-modal-overlay']} />
       <div class={styles['product-modal-content']}>
         {/* Close button */}
-        <button class={styles['product-modal-close']} onClick={closeProductModal} aria-label="Cerrar modal">
+        <button ref={closeRef} class={styles['product-modal-close']} onClick={closeProductModal} aria-label="Cerrar modal">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <line x1="18" y1="6" x2="6" y2="18" />
             <line x1="6" y1="6" x2="18" y2="18" />
@@ -89,7 +120,7 @@ export default function ProductModal() {
               )}
               <div class={styles['product-modal-image-main']}>
                 {product.image ? (
-                  <img src={product.image} alt={product.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  <img src={product.image} alt={product.title} loading="lazy" width="400" height="400" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 ) : (
                   <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
                     <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
@@ -114,68 +145,92 @@ export default function ProductModal() {
 
               {/* Actions */}
               <div class={styles['product-modal-actions']}>
-                {/* Quantity selector */}
-                <div class={styles['quantity-selector']}>
-                  <label>Cantidad:</label>
-                  <div class={styles['quantity-controls']}>
-                    <button
-                      class={styles['qty-btn']}
-                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      aria-label="Disminuir cantidad"
-                    >
-                      −
+                {product.inStock ? (
+                  <>
+                    {/* Quantity selector */}
+                    <div class={styles['quantity-selector']}>
+                      <label>Cantidad:</label>
+                      <div class={styles['quantity-controls']}>
+                        <button
+                          class={styles['qty-btn']}
+                          onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                          aria-label="Disminuir cantidad"
+                        >
+                          −
+                        </button>
+                        <input
+                          class={styles['qty-input']}
+                          type="number"
+                          min="1"
+                          max="99"
+                          value={quantity}
+                          onInput={(e) => {
+                            const val = parseInt((e.target as HTMLInputElement).value);
+                            if (!isNaN(val) && val >= 1 && val <= 99) setQuantity(val);
+                          }}
+                        />
+                        <button
+                          class={styles['qty-btn']}
+                          onClick={() => setQuantity(Math.min(99, quantity + 1))}
+                          aria-label="Aumentar cantidad"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Add button */}
+                    <button class={styles['btn-add-modal']} onClick={handleAdd}>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                      </svg>
+                      {isInCart ? 'Actualizar Cotización' : 'Agregar a Cotización'}
                     </button>
-                    <input
-                      class={styles['qty-input']}
-                      type="number"
-                      min="1"
-                      max="99"
-                      value={quantity}
-                      onInput={(e) => {
-                        const val = parseInt((e.target as HTMLInputElement).value);
-                        if (!isNaN(val) && val >= 1 && val <= 99) setQuantity(val);
-                      }}
-                    />
-                    <button
-                      class={styles['qty-btn']}
-                      onClick={() => setQuantity(Math.min(99, quantity + 1))}
-                      aria-label="Aumentar cantidad"
-                    >
-                      +
-                    </button>
+
+                    {isInCart && (
+                      <a href="/cotizacion" style={{ textAlign: 'center', color: 'var(--color-primary)', fontWeight: '600', fontSize: 'var(--font-size-sm)' }}>
+                        Ver Cotización →
+                      </a>
+                    )}
+                  </>
+                ) : (
+                  <div class={styles['out-stock-notice']} style={{
+                    padding: 'var(--spacing-4)',
+                    background: 'rgba(239, 68, 68, 0.08)',
+                    borderRadius: 'var(--radius-md)',
+                    color: 'var(--color-error)',
+                    fontWeight: '600',
+                    textAlign: 'center',
+                    fontSize: 'var(--font-size-sm)',
+                  }}>
+                    Producto sin stock — Contáctanos para disponibilidad
                   </div>
-                </div>
-
-                {/* Add button */}
-                <button class={styles['btn-add-modal']} onClick={handleAdd}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <path d="M16 10a4 4 0 0 1-8 0" />
-                  </svg>
-                  {isInCart ? 'Actualizar Cotización' : 'Agregar a Cotización'}
-                </button>
-
-                {isInCart && (
-                  <a href="/cotizacion" class={styles['product-card-clickable']} style={{ textAlign: 'center', color: 'var(--color-primary)', fontWeight: '600', fontSize: 'var(--font-size-sm)' }}>
-                    Ver Cotización →
-                  </a>
                 )}
               </div>
             </div>
           </div>
 
-          {/* Tabs */}
-          <div class={styles['product-modal-tabs']}>
+          {/* Tabs — ARIA tablist/tab/tabpanel */}
+          <div class={styles['product-modal-tabs']} role="tablist" aria-label="Información del producto">
             <button
               class={`${styles['tab-btn']} ${activeTab === 'specs' ? styles.active : ''}`}
               onClick={() => setActiveTab('specs')}
+              role="tab"
+              id="tab-specs"
+              aria-selected={activeTab === 'specs'}
+              aria-controls="tabpanel-specs"
             >
               Especificaciones Técnicas
             </button>
             <button
               class={`${styles['tab-btn']} ${activeTab === 'features' ? styles.active : ''}`}
               onClick={() => setActiveTab('features')}
+              role="tab"
+              id="tab-features"
+              aria-selected={activeTab === 'features'}
+              aria-controls="tabpanel-features"
             >
               Características
             </button>
@@ -185,7 +240,7 @@ export default function ProductModal() {
           <div class={styles['product-modal-tab-content']}>
             {/* Specs tab */}
             {activeTab === 'specs' && (
-              <div class={styles['specs-grid']}>
+              <div class={styles['specs-grid']} role="tabpanel" id="tabpanel-specs" aria-labelledby="tab-specs">
                 {specsEntries.map(([label, value]) => (
                   <div key={label} class={styles['spec-item']}>
                     <span class={styles['spec-label']}>{label}</span>
@@ -197,7 +252,7 @@ export default function ProductModal() {
 
             {/* Features tab */}
             {activeTab === 'features' && (
-              <ul class={styles['features-list']}>
+              <ul class={styles['features-list']} role="tabpanel" id="tabpanel-features" aria-labelledby="tab-features">
                 {product.features.map((feature, i) => (
                   <li key={i}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
