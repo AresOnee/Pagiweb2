@@ -6,6 +6,7 @@ import DarkModeToggle from '../components/islands/DarkModeToggle.tsx';
 import MobileMenu from '../components/islands/MobileMenu.tsx';
 import InstallPrompt from '../components/InstallPrompt.astro';
 import { siteConfig } from '../data/site-config';
+import '@fontsource-variable/inter';
 import '../styles/global.css';
 import '../styles/dark-mode.css';
 import '../styles/animations.css';
@@ -61,14 +62,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="apple-mobile-web-app-title" content="GelChile" />
   <link rel="apple-touch-icon" href="/icon-192.svg" />
 
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional" rel="stylesheet" />
-  </noscript>
+  <!-- Inter font: self-hosted via @fontsource-variable/inter (imported in frontmatter) -->
 
   <!-- Cloudflare Turnstile (anti-spam) — solo en páginas con formulario -->
   {includeTurnstile && (
