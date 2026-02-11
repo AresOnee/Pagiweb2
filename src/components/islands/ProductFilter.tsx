@@ -242,7 +242,7 @@ export default function ProductFilter({ products, categories }: Props) {
           {sorted.map((product, index) => {
             const count = getCartCount(product.sku);
             return (
-              <article
+              <div
                 key={product.sku}
                 class={styles['product-card']}
                 data-aos="fade-up"
@@ -302,7 +302,7 @@ export default function ProductFilter({ products, categories }: Props) {
                     )}
                   </button>
                 </div>
-              </article>
+              </div>
             );
           })}
         </div>
