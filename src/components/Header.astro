@@ -34,6 +34,7 @@ function isActive(href: string, current: string): boolean {
             <a
               href={link.href}
               class:list={['nav-link', { active: isActive(link.href, currentPath) }]}
+              aria-current={isActive(link.href, currentPath) ? 'page' : undefined}
             >
               {link.label}
             </a>
@@ -61,13 +62,14 @@ function isActive(href: string, current: string): boolean {
 </header>
 
 <!-- Mobile Menu -->
-<div class="mobile-menu">
+<nav class="mobile-menu" aria-label="Menu movil">
   <ul class="nav-list">
     {navLinks.map((link) => (
       <li>
         <a
           href={link.href}
           class:list={['nav-link', { active: isActive(link.href, currentPath) }]}
+          aria-current={isActive(link.href, currentPath) ? 'page' : undefined}
         >
           {link.label}
         </a>
@@ -82,7 +84,7 @@ function isActive(href: string, current: string): boolean {
     </svg>
     <span>Ver Cotización</span>
   </a>
-</div>
+</nav>
 
 <style>
   .header {

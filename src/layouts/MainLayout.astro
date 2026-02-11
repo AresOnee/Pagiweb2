@@ -7,6 +7,7 @@ import MobileMenu from '../components/islands/MobileMenu.tsx';
 import InstallPrompt from '../components/InstallPrompt.astro';
 import { siteConfig } from '../data/site-config';
 import '@fontsource-variable/inter';
+import interLatinUrl from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import '../styles/global.css';
 import '../styles/dark-mode.css';
 import '../styles/animations.css';
@@ -51,8 +52,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <!-- Preload logo for faster LCP -->
-  <link rel="preload" as="image" href="/assets/img/gelchile-logo.webp" />
+  <!-- Preload Inter Latin font for faster LCP text rendering -->
+  <link rel="preload" as="font" type="font/woff2" href={interLatinUrl} crossorigin />
 
   <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.webmanifest" />
@@ -62,7 +63,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="apple-mobile-web-app-title" content="GelChile" />
   <link rel="apple-touch-icon" href="/icon-192.svg" />
 
-  <!-- Inter font: self-hosted via @fontsource-variable/inter (imported in frontmatter) -->
+  <!-- Inter font: self-hosted via @fontsource-variable/inter, preloaded above -->
 
   <!-- Cloudflare Turnstile (anti-spam) — solo en páginas con formulario -->
   {includeTurnstile && (
@@ -186,7 +187,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       transform-origin: left;
       transition: transform 0.3s ease;
       pointer-events: none;
-      will-change: transform;
     }
   </style>
 </body>
