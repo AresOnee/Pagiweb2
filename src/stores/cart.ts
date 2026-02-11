@@ -28,6 +28,15 @@ export const $cartCount = computed($cart, (items) =>
   items.reduce((sum, item) => sum + item.quantity, 0)
 );
 
+/** Map of SKU → total quantity for O(1) lookup. */
+export const $cartSkuMap = computed($cart, (items) => {
+  const map = new Map<string, number>();
+  for (const item of items) {
+    map.set(item.sku, (map.get(item.sku) || 0) + item.quantity);
+  }
+  return map;
+});
+
 /**
  * Add a product to the cart.
  * If the SKU+variant already exists, increments its quantity.

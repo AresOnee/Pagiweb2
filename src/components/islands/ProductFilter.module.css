@@ -21,7 +21,7 @@
   font-weight: var(--font-weight-medium);
   color: var(--color-gray-600);
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: background var(--transition-base), border-color var(--transition-base), color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .filter-btn:hover {
@@ -82,7 +82,7 @@
   border-radius: var(--radius-full);
   font-size: var(--font-size-base);
   color: var(--color-gray-800);
-  transition: all var(--transition-base);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .search-input:focus {
@@ -164,7 +164,7 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right var(--spacing-2) center;
-  transition: all var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .sort-select:hover {
@@ -186,6 +186,7 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.4s ease;
   box-shadow: var(--shadow-card);
   cursor: pointer;
+  contain: layout style paint;
 }
 
 .product-card:hover {
@@ -224,7 +225,7 @@
   width: 120px;
   height: 120px;
   color: var(--color-gray-400);
-  transition: all var(--transition-base);
+  transition: transform var(--transition-base), color var(--transition-base);
 }
 
 .product-card:hover .product-image svg {
@@ -311,7 +312,7 @@
   font-weight: var(--font-weight-semibold);
   border: none;
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: background var(--transition-base), transform var(--transition-base);
 }
 
 .btn-add-quote:hover {

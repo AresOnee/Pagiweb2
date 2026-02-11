@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'preact/hooks';
 import { useStore } from '@nanostores/preact';
-import { $cart, addItem } from '../../stores/cart';
+import { $cartSkuMap, addItem } from '../../stores/cart';
 import { openProductModal } from '../../stores/ui';
 import { showToast } from '../../stores/toast';
 import type { Product, Category } from '../../types';
@@ -27,7 +27,7 @@ export default function ProductFilter({ products, categories }: Props) {
   const [searchText, setSearchText] = useState('');
   const [inputValue, setInputValue] = useState('');
   const [sortBy, setSortBy] = useState<SortOption>('default');
-  const cart = useStore($cart);
+  const cartSkuMap = useStore($cartSkuMap);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -130,38 +130,46 @@ export default function ProductFilter({ products, categories }: Props) {
     showToast(`${product.title} agregado a la cotización`, 'success');
   };
 
-  const getCartCount = (sku: string) =>
-    cart.filter((item) => item.sku === sku).reduce((sum, item) => sum + item.quantity, 0);
+  const getCartCount = (sku: string) => cartSkuMap.get(sku) || 0;
 
   // Scroll reveal for dynamically rendered product cards
   const gridRef = useRef<HTMLDivElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  // Create observer once
   useEffect(() => {
-    if (typeof window === 'undefined' || !gridRef.current) return;
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('aos-animate');
+            observerRef.current?.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.05, rootMargin: '50px' }
+    );
+    return () => observerRef.current?.disconnect();
+  }, []);
+
+  // Observe only new cards when filter results change
+  useEffect(() => {
+    if (!gridRef.current || !observerRef.current) return;
+    const observer = observerRef.current;
     const cards = gridRef.current.querySelectorAll('[data-aos]');
     if (!cards.length) return;
     if (!('IntersectionObserver' in window)) {
       cards.forEach((el) => el.classList.add('aos-animate'));
       return;
     }
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('aos-animate');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.05, rootMargin: '50px' }
-    );
-    // Use requestAnimationFrame to avoid blocking main thread during filter changes
     requestAnimationFrame(() => {
       cards.forEach((el) => {
-        el.classList.remove('aos-animate');
-        observer.observe(el);
+        if (!el.classList.contains('aos-animate')) {
+          observer.observe(el);
+        }
       });
     });
-    return () => observer.disconnect();
   }, [sorted.length, selectedCategory, searchText]);
 
   return (

@@ -51,7 +51,6 @@ const productUrl = `/productos/${sku.toLowerCase()}`;
     overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     box-shadow: var(--shadow-card);
-    will-change: transform;
     contain: layout style paint;
   }
 
@@ -167,7 +166,7 @@ const productUrl = `/productos/${sku.toLowerCase()}`;
     font-weight: var(--font-weight-semibold);
     border: none;
     cursor: pointer;
-    transition: all var(--transition-base);
+    transition: background var(--transition-base), transform var(--transition-base);
   }
 
   .btn-add-quote:hover {
