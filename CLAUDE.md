@@ -21,7 +21,7 @@ Sitio web de catálogo para **GelChile**, empresa chilena con **más de 20 años
 | **Email ventas** | ventas@gelchile.cl |
 | **Email contacto** | kvasquezb@gelchile.cl |
 | **Teléfonos** | +56 9 9949 6909 / +56 9 9825 0271 / +56 9 5098 7979 |
-| **Oficina** | Los Diamantes N°0360, Maipú, RM |
+| **Oficina** | Av. Uno #3016, Cerrillos, Santiago |
 | **Bodega** | Camino Lo Ermita Parcela-21, Calera de Tango |
 | **Dominio** | gelchile.cl (acceso nic.cl confirmado) |
 

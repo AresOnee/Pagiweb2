@@ -243,6 +243,11 @@
   background: #FFF5F5;
 }
 
+:global([data-theme="dark"]) .form-input.error,
+:global([data-theme="dark"]) .form-textarea.error {
+  background: rgba(255, 86, 48, 0.1);
+}
+
 .form-input.success,
 .form-textarea.success {
   border-color: var(--color-success);

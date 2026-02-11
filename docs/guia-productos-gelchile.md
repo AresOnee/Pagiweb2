@@ -6,7 +6,7 @@ GelChile es una empresa chilena con mas de 20 anos de experiencia que se dedica 
 
 Cada edificio, casa, fabrica o torre de telecomunicaciones necesita un sistema que lleve la electricidad no deseada (fallas, cortocircuitos, rayos) de forma segura hacia la tierra. Sin esto, las personas pueden recibir descargas electricas y los equipos pueden danarse o incendiarse.
 
-GelChile vende todos los materiales necesarios para instalar estos sistemas y tambien ofrece servicios de instalacion y medicion profesional. Su oficina esta en Maipu (Santiago) y su bodega en Calera de Tango.
+GelChile vende todos los materiales necesarios para instalar estos sistemas y tambien ofrece servicios de instalacion y medicion profesional. Su oficina esta en Cerrillos (Santiago) y su bodega en Calera de Tango.
 
 ---
 

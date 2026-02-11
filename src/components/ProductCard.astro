@@ -58,12 +58,14 @@ const productUrl = `/productos/${sku.toLowerCase()}`;
     background: var(--color-white);
     border-radius: var(--radius-xl);
     overflow: hidden;
-    transition: all var(--transition-base);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     box-shadow: var(--shadow-card);
+    will-change: transform;
+    contain: layout style paint;
   }
 
   .product-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-card-hover);
   }
 
@@ -86,23 +88,12 @@ const productUrl = `/productos/${sku.toLowerCase()}`;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform var(--transition-base);
-  }
-
-  .product-card:hover .product-image img {
-    transform: scale(1.05);
   }
 
   .product-image svg {
     width: 120px;
     height: 120px;
     color: var(--color-gray-400);
-    transition: all var(--transition-base);
-  }
-
-  .product-card:hover .product-image svg {
-    transform: scale(1.1);
-    color: var(--color-primary);
   }
 
   .product-badge {
@@ -235,5 +226,23 @@ const productUrl = `/productos/${sku.toLowerCase()}`;
 
   :global([data-theme="dark"]) .btn-add-quote {
     color: #ffffff;
+  }
+
+  :global([data-theme="dark"]) .product-image svg rect {
+    fill: #334155;
+    stroke: #475569;
+  }
+
+  :global([data-theme="dark"]) .product-image svg circle {
+    fill: #1e293b;
+    stroke: #64748b;
+  }
+
+  :global([data-theme="dark"]) .product-image svg path {
+    stroke: #64748b;
+  }
+
+  :global([data-theme="dark"]) .product-sku {
+    color: #64748b;
   }
 </style>

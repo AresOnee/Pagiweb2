@@ -13,6 +13,12 @@
   --color-primary-dark: #003D99;
   --color-primary-light: #4C9AFF;
   --color-primary-50: #E6F0FF;
+  --color-primary-100: #CCE0FF;
+  --color-primary-200: #99C2FF;
+  --color-primary-300: #66A3FF;
+  --color-primary-400: #3385FF;
+  --color-primary-500: #0052CC;
+  --color-primary-600: #0043A8;
 
   /* Colores Secundarios/Acento */
   --color-accent: #FF6B00;
