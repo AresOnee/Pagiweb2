@@ -25,9 +25,17 @@ const sortLabels: Record<SortOption, string> = {
 export default function ProductFilter({ products, categories }: Props) {
   const [selectedCategory, setSelectedCategory] = useState<string>('todos');
   const [searchText, setSearchText] = useState('');
+  const [inputValue, setInputValue] = useState('');
   const [sortBy, setSortBy] = useState<SortOption>('default');
   const cart = useStore($cart);
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>();
+
+  const handleSearchInput = (value: string) => {
+    setInputValue(value);
+    clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => setSearchText(value), 200);
+  };
 
   // Read initial category from URL on mount
   useEffect(() => {
@@ -64,12 +72,16 @@ export default function ProductFilter({ products, categories }: Props) {
       // Escape to blur search and clear
       if (e.key === 'Escape' && document.activeElement === searchInputRef.current) {
         searchInputRef.current?.blur();
-        if (searchText) setSearchText('');
+        if (inputValue) {
+          clearTimeout(debounceRef.current);
+          setInputValue('');
+          setSearchText('');
+        }
       }
     };
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [searchText]);
+  }, [inputValue]);
 
   // Filter products
   const query = searchText.toLowerCase().trim();
@@ -166,8 +178,8 @@ export default function ProductFilter({ products, categories }: Props) {
             type="text"
             class={styles['search-input']}
             placeholder="Buscar productos..."
-            value={searchText}
-            onInput={(e) => setSearchText((e.target as HTMLInputElement).value)}
+            value={inputValue}
+            onInput={(e) => handleSearchInput((e.target as HTMLInputElement).value)}
           />
           <kbd class={styles['search-shortcut']}>⌘K</kbd>
         </div>
@@ -230,7 +242,7 @@ export default function ProductFilter({ products, categories }: Props) {
                     <span class={styles['product-badge']}>{product.badge}</span>
                   )}
                   {product.image ? (
-                    <img src={product.image} alt={product.title} loading="lazy" />
+                    <img src={product.image} alt={product.title} loading="lazy" width="280" height="200" />
                   ) : (
                     <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
                       <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />

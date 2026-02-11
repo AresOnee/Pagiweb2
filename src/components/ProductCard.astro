@@ -1,4 +1,6 @@
 ---
+import AddToQuoteBtn from './islands/AddToQuoteBtn.tsx';
+
 interface Props {
   sku: string;
   title: string;
@@ -37,18 +39,7 @@ const productUrl = `/productos/${sku.toLowerCase()}`;
     </div>
   </a>
   <div class="product-footer">
-    <button
-      class="btn-add-quote"
-      data-sku={sku}
-      data-title={title}
-      data-category={category}
-      data-image={image}
-    >
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
-        <path d="M12 5v14M5 12h14"/>
-      </svg>
-      Cotizar
-    </button>
+    <AddToQuoteBtn client:idle sku={sku} title={title} category={category} image={image} inStock={inStock} />
   </div>
 </article>
 

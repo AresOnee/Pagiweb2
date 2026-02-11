@@ -91,8 +91,6 @@ function isActive(href: string, current: string): boolean {
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
     z-index: var(--z-fixed);
     transition: all var(--transition-base);
@@ -117,6 +115,7 @@ function isActive(href: string, current: string): boolean {
   .logo-img {
     width: 250px;
     height: auto;
+    aspect-ratio: 250 / 63;
     object-fit: contain;
   }
 
