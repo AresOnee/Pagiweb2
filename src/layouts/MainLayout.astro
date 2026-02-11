@@ -13,9 +13,10 @@ import '../styles/animations.css';
 interface Props {
   title: string;
   description?: string;
+  includeTurnstile?: boolean;
 }
 
-const { title, description = 'Sistemas de Puesta a Tierra y Protección Eléctrica' } = Astro.props;
+const { title, description = 'Sistemas de Puesta a Tierra y Protección Eléctrica', includeTurnstile = false } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -65,8 +66,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Cloudflare Turnstile (anti-spam) -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!-- Cloudflare Turnstile (anti-spam) — solo en páginas con formulario -->
+  {includeTurnstile && (
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  )}
 
   <!-- Anti-flash dark mode script -->
   <script is:inline>

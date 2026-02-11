@@ -187,6 +187,8 @@
   box-shadow: var(--shadow-card);
   cursor: pointer;
   contain: layout style paint;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 400px;
 }
 
 .product-card:hover {
