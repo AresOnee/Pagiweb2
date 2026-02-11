@@ -22,7 +22,7 @@ const btnStyle = {
   fontWeight: 'var(--font-weight-semibold)',
   border: 'none',
   cursor: 'pointer',
-  transition: 'all 300ms ease',
+  transition: 'background 300ms ease, transform 300ms ease',
 };
 
 const btnAddedStyle = {
