@@ -25,8 +25,10 @@
     "Factor Horizontal (Fh)": "0,5",
     "Unidad": "Kit completo"
   },
-  "image": "/assets/img/products/electrode-he-2500-product.png",
-  "images": ["/assets/img/products/electrode-he-2500-detail.png"],
+  "image": "/assets/img/products/electrode-he-2500-product.webp",
+  "images": [
+    "/assets/img/products/electrode-he-2500-detail.webp"
+  ],
   "inStock": true,
   "badge": "Pro"
 }

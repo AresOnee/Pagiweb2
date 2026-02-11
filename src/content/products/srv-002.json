@@ -18,11 +18,11 @@
     "Normativa": "RIC N°06, RIC N°05",
     "Seguridad": "Personal con EPP completo"
   },
-  "image": "/assets/img/products/srv-malla-01.jpeg",
+  "image": "/assets/img/products/srv-malla-01.webp",
   "images": [
-    "/assets/img/products/srv-malla-02.jpeg",
-    "/assets/img/products/srv-malla-03.jpeg",
-    "/assets/img/products/srv-malla-04.jpeg"
+    "/assets/img/products/srv-malla-02.webp",
+    "/assets/img/products/srv-malla-03.webp",
+    "/assets/img/products/srv-malla-04.webp"
   ],
   "inStock": true,
   "badge": "Servicio"

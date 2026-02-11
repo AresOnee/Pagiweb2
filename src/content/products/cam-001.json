@@ -19,8 +19,10 @@
     "Uso": "Registro e inspección de puesta a tierra",
     "Instalación": "A nivel de piso"
   },
-  "image": "/assets/img/products/cam-002.jpg",
-  "images": ["/assets/img/products/cam-003.jpg"],
+  "image": "/assets/img/products/cam-002.webp",
+  "images": [
+    "/assets/img/products/cam-003.webp"
+  ],
   "inStock": true,
   "badge": null
 }

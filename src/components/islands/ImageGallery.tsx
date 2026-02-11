@@ -159,6 +159,7 @@ export default function ImageGallery({ images, alt, badge }: Props) {
               src={images[lightboxIndex]}
               alt={`${alt} — imagen ${lightboxIndex + 1}`}
               class={styles['lightbox-image']}
+              decoding="async"
             />
           </div>
 
@@ -202,6 +203,7 @@ export default function ImageGallery({ images, alt, badge }: Props) {
           class={styles['gallery-main-img']}
           width="400"
           height="400"
+          decoding="async"
         />
       </div>
 
@@ -216,7 +218,7 @@ export default function ImageGallery({ images, alt, badge }: Props) {
               aria-label={`Ver imagen ${i + 1}`}
               aria-pressed={i === activeIndex}
             >
-              <img src={src} alt="" loading="lazy" />
+              <img src={src} alt="" loading="lazy" decoding="async" />
             </button>
           ))}
         </div>

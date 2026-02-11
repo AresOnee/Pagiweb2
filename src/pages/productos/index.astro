@@ -45,7 +45,7 @@ const categories = categoriesData as Category[];
   <section class="section products-section">
     <div class="container">
       <h2 class="sr-only">Catálogo de productos</h2>
-      <ProductFilter client:load products={products} categories={categories} />
+      <ProductFilter client:idle products={products} categories={categories} />
     </div>
   </section>
 

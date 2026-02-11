@@ -24,12 +24,21 @@
     "Punta": "Cónica de acero",
     "Aplicación": "Sistemas de puesta a tierra industrial y alta resistividad"
   },
-  "image": "/assets/img/products/btt-001.png",
+  "image": "/assets/img/products/btt-001.webp",
   "inStock": true,
   "badge": null,
   "variants": [
-    { "id": "1.0m", "label": "Largo 1.0 m" },
-    { "id": "1.5m", "label": "Largo 1.5 m" },
-    { "id": "3.0m", "label": "Largo 3.0 m" }
+    {
+      "id": "1.0m",
+      "label": "Largo 1.0 m"
+    },
+    {
+      "id": "1.5m",
+      "label": "Largo 1.5 m"
+    },
+    {
+      "id": "3.0m",
+      "label": "Largo 3.0 m"
+    }
   ]
 }

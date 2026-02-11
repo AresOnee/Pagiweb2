@@ -263,7 +263,7 @@ export default function ProductFilter({ products, categories }: Props) {
                     <span class={styles['product-badge']}>{product.badge}</span>
                   )}
                   {product.image ? (
-                    <img src={product.image} alt={product.title} loading="lazy" decoding="async" width="280" height="200" />
+                    <img src={product.image} alt={product.title} loading={index < 4 ? "eager" : "lazy"} fetchpriority={index < 4 ? "high" : undefined} decoding="async" width="280" height="200" />
                   ) : (
                     <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
                       <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />

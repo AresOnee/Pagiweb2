@@ -24,8 +24,10 @@
     "Factor Horizontal (Fh)": "0,5",
     "Unidad": "Kit completo"
   },
-  "image": "/assets/img/products/electrode-he-45-product.png",
-  "images": ["/assets/img/products/electrode-he-45-detail.png"],
+  "image": "/assets/img/products/electrode-he-45-product.webp",
+  "images": [
+    "/assets/img/products/electrode-he-45-detail.webp"
+  ],
   "inStock": true,
   "badge": null
 }

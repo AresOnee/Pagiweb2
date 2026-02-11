@@ -24,10 +24,10 @@
     "Propiedades": "Sales químicas con iones afines al conductor",
     "Seguridad": "Aumenta seguridad al reducir potenciales de toque/paso"
   },
-  "image": "/assets/img/products/adi-001.png",
+  "image": "/assets/img/products/adi-001.webp",
   "images": [
-    "/assets/img/products/adi-006.png",
-    "/assets/img/products/adi-007.png"
+    "/assets/img/products/adi-006.webp",
+    "/assets/img/products/adi-007.webp"
   ],
   "inStock": true,
   "badge": null

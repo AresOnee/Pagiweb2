@@ -28,19 +28,49 @@
     "CPP 4 (sin espiga)": "Cables 2/0 a 4/0 AWG (70mm² - 95mm²)",
     "Total Variantes": "10 modelos (5 con espiga + 5 sin espiga)"
   },
-  "image": "/assets/img/products/cpp-001.png",
+  "image": "/assets/img/products/cpp-001.webp",
   "inStock": true,
   "badge": null,
   "variants": [
-    { "id": "cppe-050", "label": "CPPE 0.50 \u2014 Con espiga, 8-6 AWG (10-16mm\u00b2)" },
-    { "id": "cppe-1", "label": "CPPE 1 \u2014 Con espiga, 6-3 AWG (16-25mm\u00b2)" },
-    { "id": "cppe-2", "label": "CPPE 2 \u2014 Con espiga, 3-2 AWG (25-35mm\u00b2)" },
-    { "id": "cppe-3", "label": "CPPE 3 \u2014 Con espiga, 2-2/0 AWG (35-70mm\u00b2)" },
-    { "id": "cppe-4", "label": "CPPE 4 \u2014 Con espiga, 2/0-4/0 AWG (70-95mm\u00b2)" },
-    { "id": "cpp-050", "label": "CPP 0.50 \u2014 Sin espiga, 8-6 AWG (10-16mm\u00b2)" },
-    { "id": "cpp-1", "label": "CPP 1 \u2014 Sin espiga, 6-3 AWG (16-25mm\u00b2)" },
-    { "id": "cpp-2", "label": "CPP 2 \u2014 Sin espiga, 3-2 AWG (25-35mm\u00b2)" },
-    { "id": "cpp-3", "label": "CPP 3 \u2014 Sin espiga, 2-2/0 AWG (35-70mm\u00b2)" },
-    { "id": "cpp-4", "label": "CPP 4 \u2014 Sin espiga, 2/0-4/0 AWG (70-95mm\u00b2)" }
+    {
+      "id": "cppe-050",
+      "label": "CPPE 0.50 — Con espiga, 8-6 AWG (10-16mm²)"
+    },
+    {
+      "id": "cppe-1",
+      "label": "CPPE 1 — Con espiga, 6-3 AWG (16-25mm²)"
+    },
+    {
+      "id": "cppe-2",
+      "label": "CPPE 2 — Con espiga, 3-2 AWG (25-35mm²)"
+    },
+    {
+      "id": "cppe-3",
+      "label": "CPPE 3 — Con espiga, 2-2/0 AWG (35-70mm²)"
+    },
+    {
+      "id": "cppe-4",
+      "label": "CPPE 4 — Con espiga, 2/0-4/0 AWG (70-95mm²)"
+    },
+    {
+      "id": "cpp-050",
+      "label": "CPP 0.50 — Sin espiga, 8-6 AWG (10-16mm²)"
+    },
+    {
+      "id": "cpp-1",
+      "label": "CPP 1 — Sin espiga, 6-3 AWG (16-25mm²)"
+    },
+    {
+      "id": "cpp-2",
+      "label": "CPP 2 — Sin espiga, 3-2 AWG (25-35mm²)"
+    },
+    {
+      "id": "cpp-3",
+      "label": "CPP 3 — Sin espiga, 2-2/0 AWG (35-70mm²)"
+    },
+    {
+      "id": "cpp-4",
+      "label": "CPP 4 — Sin espiga, 2/0-4/0 AWG (70-95mm²)"
+    }
   ]
 }
