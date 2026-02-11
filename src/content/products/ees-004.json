@@ -1,0 +1,29 @@
+{
+  "sku": "EES-004",
+  "title": "Electrodo Electromagnético Solo HE-700",
+  "category": "Electrodos Electromagnéticos",
+  "categorySlug": "electrodos-electromagneticos",
+  "description": "Electrodo electromagnético HE-700 de cobre electrolítico de alta conductividad, versión solo sin kit. Elaborado con tratamiento anticorrosivo especial, incluye dispositivo de filtración LCR de baja frecuencia, suple al medio y borne de conexión de ½ pulgada.",
+  "features": [
+    "Cobre electrolítico de alta conductividad",
+    "Tratamiento anticorrosivo especial",
+    "Dispositivo de filtración LCR de baja frecuencia",
+    "Suple al medio incluido",
+    "Borne de conexión de ½ pulgada",
+    "Electrodo solo — no incluye gabinete, acoplador ni Power Gem"
+  ],
+  "specs": {
+    "Modelo": "HE-700 Solo",
+    "Capacidad": "700 Amperios",
+    "Material": "Cobre electrolítico",
+    "Medidas": "64 x 70 cm (alto)",
+    "Bobina": "10 x 20 Ø",
+    "Tubo": "1¼ pulgada",
+    "Adicional": "Suple al medio",
+    "Conexión": "Borne de ½ pulgada",
+    "Unidad": "Electrodo solo"
+  },
+  "image": "/assets/img/products/ees-004.jpg",
+  "inStock": true,
+  "badge": null
+}
