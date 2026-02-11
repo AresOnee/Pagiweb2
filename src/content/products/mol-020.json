@@ -1,0 +1,35 @@
+{
+  "sku": "MOL-020",
+  "title": "Molde de Grafito VT — Cable Despegado de Superficie Vertical",
+  "category": "Soldadura Exotérmica",
+  "categorySlug": "soldadura-exotermica",
+  "description": "Molde de grafito de alta densidad tipo VT para conexión exotérmica de cable despegado (off surface) a superficie plana de acero vertical. Subtipo VTC para cable de cobre trenzado. El cable queda separado de la superficie, ideal para instalaciones que requieren espacio entre el conductor y la pared metálica.",
+  "features": [
+    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Conexión tipo Cable Despegado de Superficie Vertical (VT)",
+    "Subtipo VTC según calibre de cable",
+    "Cables compatibles: N°4, 2, 1, 1/0, 2/0, 3/0 y 4/0 AWG",
+    "Cable queda separado de la superficie metálica",
+    "Reutilizable para múltiples soldaduras",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "VT",
+    "Tipo de Unión": "Cable despegado de superficie de acero vertical",
+    "Material": "Grafito de alta densidad",
+    "Subtipo": "VTC",
+    "Cables Compatibles": "N°4, 2, 1, 1/0, 2/0, 3/0, 4/0 AWG",
+    "Rango de Cargas": "65 a 200 g",
+    "Temperatura de Operación": "Hasta 3.400°C"
+  },
+  "image": "/assets/img/products/mol-020-03.png",
+  "images": [
+    "/assets/img/products/mol-020-01.png",
+    "/assets/img/products/mol-020-02.png",
+    "/assets/img/products/mol-020-04.png",
+    "/assets/img/products/mol-020-05.png",
+    "/assets/img/products/mol-020-06.png"
+  ],
+  "inStock": true,
+  "badge": null
+}

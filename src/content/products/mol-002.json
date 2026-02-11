@@ -23,7 +23,19 @@
     "Rango de Cargas": "90 a 200 g",
     "Temperatura de Operación": "Hasta 3.400°C"
   },
-  "image": null,
+  "image": "/assets/img/products/mol-002-01.png",
+  "images": [
+    "/assets/img/products/mol-002-02.png",
+    "/assets/img/products/mol-002-03.png",
+    "/assets/img/products/mol-002-04.png",
+    "/assets/img/products/mol-002-05.png",
+    "/assets/img/products/mol-002-06.png",
+    "/assets/img/products/mol-002-07.png",
+    "/assets/img/products/mol-002-08.png",
+    "/assets/img/products/mol-002-09.png",
+    "/assets/img/products/mol-002-10.png",
+    "/assets/img/products/mol-002-11.png"
+  ],
   "inStock": true,
   "badge": null
 }
