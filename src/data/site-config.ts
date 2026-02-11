@@ -10,7 +10,7 @@ export const siteConfig = {
     email: 'ventas@gelchile.cl',
     emailContacto: 'kvasquezb@gelchile.cl',
     phones: ['+56 9 9949 6909', '+56 9 9825 0271', '+56 9 5098 7979'],
-    office: 'Los Diamantes N°0360, Maipú, RM',
+    office: 'Av. Uno #3016, Cerrillos, Santiago',
     warehouse: 'Camino Lo Ermita Parcela-21, Calera de Tango',
   },
   storage: {
