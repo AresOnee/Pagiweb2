@@ -1,0 +1,28 @@
+{
+  "sku": "MOL-007",
+  "title": "Molde de Grafito PG — Conexión Horizontal Paralela",
+  "category": "Soldadura Exotérmica",
+  "categorySlug": "soldadura-exotermica",
+  "description": "Molde de grafito de alta densidad tipo PG para conexión horizontal paralela de dos cables de cobre. Realiza una unión lateral entre dos conductores que corren en paralelo. Para cables trenzados de cobre o tipo Copperweld. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Conexión horizontal paralela Cable a Cable (PG)",
+    "Subtipo PGC según calibres de cable",
+    "Para cables trenzados de cobre o tipo Copperweld",
+    "Cables compatibles: N°6 a 4/0 AWG",
+    "Permite conexiones de calibres diferentes",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "PG",
+    "Tipo de Unión": "Conexión horizontal paralela (Cable a Cable)",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "PGC",
+    "Cables Compatibles": "N°6 a 4/0 AWG",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Hasta 3.400°C"
+  },
+  "image": null,
+  "inStock": true,
+  "badge": null
+}
