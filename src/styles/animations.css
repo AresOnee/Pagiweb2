@@ -63,7 +63,6 @@
 [data-aos] {
   opacity: 0;
   transition: opacity 0.4s ease, transform 0.4s ease;
-  will-change: opacity, transform;
 }
 
 [data-aos="fade-up"] {
@@ -71,15 +70,15 @@
 }
 
 [data-aos="fade-down"] {
-  transform: translateY(-30px);
+  transform: translate3d(0, -30px, 0);
 }
 
 [data-aos="fade-left"] {
-  transform: translateX(30px);
+  transform: translate3d(30px, 0, 0);
 }
 
 [data-aos="fade-right"] {
-  transform: translateX(-30px);
+  transform: translate3d(-30px, 0, 0);
 }
 
 [data-aos="zoom-in"] {
