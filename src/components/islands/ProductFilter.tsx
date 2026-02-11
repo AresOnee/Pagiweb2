@@ -222,6 +222,7 @@ export default function ProductFilter({ products, categories }: Props) {
                 key={product.sku}
                 class={styles['product-card']}
                 data-aos="fade-up"
+                data-aos-delay={index % 4 > 0 ? String((index % 4) * 100) : undefined}
                 onClick={() => handleCardClick(product)}
               >
                 <div class={styles['product-image']}>
