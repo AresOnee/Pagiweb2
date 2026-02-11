@@ -36,14 +36,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta property="og:locale" content="es_CL" />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:site_name" content="GelChile" />
-  <meta property="og:image" content={`${Astro.site}assets/img/gelchile-logo.png`} />
+  <meta property="og:image" content={`${Astro.site}assets/img/gelchile-logo.webp`} />
   <meta property="og:image:alt" content="GelChile - Sistemas de Puesta a Tierra" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={`${Astro.site}assets/img/gelchile-logo.png`} />
+  <meta name="twitter:image" content={`${Astro.site}assets/img/gelchile-logo.webp`} />
 
   <title>{title}</title>
 
@@ -51,7 +51,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <!-- Preload logo for faster LCP -->
-  <link rel="preload" as="image" href="/assets/img/gelchile-logo.png" />
+  <link rel="preload" as="image" href="/assets/img/gelchile-logo.webp" />
 
   <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.webmanifest" />
@@ -166,14 +166,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       document.addEventListener('click', function(e) {
         var link = e.target.closest('a');
         if (link && link.href && link.href.startsWith(window.location.origin) && !link.hasAttribute('download')) {
-          bar.style.width = '30%';
+          bar.style.transform = 'scaleX(0.3)';
         }
       });
 
       // Complete progress on page load
       window.addEventListener('load', function() {
-        bar.style.width = '100%';
-        setTimeout(function() { bar.style.width = '0%'; }, 300);
+        bar.style.transform = 'scaleX(1)';
+        setTimeout(function() { bar.style.transform = 'scaleX(0)'; }, 300);
       });
     })();
   </script>
@@ -186,10 +186,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       left: 0;
       height: 3px;
       background: linear-gradient(90deg, var(--color-primary-500), var(--color-accent));
-      width: 0%;
+      width: 100%;
       z-index: 9999;
-      transition: width 0.3s ease;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
       pointer-events: none;
+      will-change: transform;
     }
   </style>
 </body>

@@ -10,7 +10,7 @@ import { join, extname, basename } from 'node:path';
 
 const PRODUCTS_IMG_DIR = join(process.cwd(), 'public/assets/img/products');
 const PRODUCTS_JSON_DIR = join(process.cwd(), 'src/content/products');
-const MAX_WIDTH = 800;
+const MAX_WIDTH = 560;
 const WEBP_QUALITY = 80;
 const VALID_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg']);
 

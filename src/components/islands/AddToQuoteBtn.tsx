@@ -15,7 +15,7 @@ const btnStyle = {
   alignItems: 'center',
   gap: 'var(--spacing-2)',
   padding: 'var(--spacing-2) var(--spacing-4)',
-  background: 'var(--color-accent)',
+  background: 'var(--color-accent-dark)',
   color: 'var(--color-white)',
   borderRadius: 'var(--radius-md)',
   fontSize: 'var(--font-size-sm)',
