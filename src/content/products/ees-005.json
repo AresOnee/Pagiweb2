@@ -1,0 +1,24 @@
+{
+  "sku": "EES-005",
+  "title": "Electrodo Electromagnético Punta Cónica Hunter Energy",
+  "category": "Electrodos Electromagnéticos",
+  "categorySlug": "electrodos-electromagneticos",
+  "description": "Electrodo electromagnético Hunter Energy con diseño de punta cónica, elaborado en cobre electrolítico de alta conductividad con tratamiento anticorrosivo. Diseño cónico para facilitar la instalación directa en el terreno en sistemas de puesta a tierra.",
+  "features": [
+    "Cobre electrolítico de alta conductividad",
+    "Diseño de punta cónica para fácil hincado",
+    "Tratamiento anticorrosivo especial",
+    "Dispositivo de filtración LCR de baja frecuencia",
+    "Compatible con sistemas de puesta a tierra Hunter Energy"
+  ],
+  "specs": {
+    "Modelo": "HE Punta Cónica",
+    "Material": "Cobre electrolítico",
+    "Forma": "Punta cónica",
+    "Tipo": "Electrodo de puesta a tierra",
+    "Marca": "Hunter Energy"
+  },
+  "image": "/assets/img/products/ees-005.jpg",
+  "inStock": true,
+  "badge": null
+}

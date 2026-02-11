@@ -1,0 +1,27 @@
+{
+  "sku": "EES-001",
+  "title": "Electrodo Electromagnético Solo HE-100",
+  "category": "Electrodos Electromagnéticos",
+  "categorySlug": "electrodos-electromagneticos",
+  "description": "Electrodo electromagnético HE-100 de cobre electrolítico de alta conductividad, versión solo sin kit. Elaborado con tratamiento anticorrosivo especial, incluye dispositivo de filtración LCR de baja frecuencia montado en estructura y borne de conexión de ½ pulgada.",
+  "features": [
+    "Cobre electrolítico de alta conductividad",
+    "Tratamiento anticorrosivo especial",
+    "Dispositivo de filtración LCR de baja frecuencia",
+    "Borne de conexión de ½ pulgada",
+    "Electrodo solo — no incluye gabinete, acoplador ni Power Gem"
+  ],
+  "specs": {
+    "Modelo": "HE-100 Solo",
+    "Capacidad": "100 Amperios",
+    "Material": "Cobre electrolítico",
+    "Medidas": "20 x 65 cm (alto)",
+    "Bobina": "12 x 8 Ø",
+    "Tubo": "1 pulgada",
+    "Conexión": "Borne de ½ pulgada",
+    "Unidad": "Electrodo solo"
+  },
+  "image": "/assets/img/products/ees-001.jpg",
+  "inStock": true,
+  "badge": null
+}
