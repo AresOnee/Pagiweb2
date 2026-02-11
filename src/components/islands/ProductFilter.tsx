@@ -177,13 +177,15 @@ export default function ProductFilter({ products, categories }: Props) {
       {/* Search with H7: keyboard shortcut indicator */}
       <div class={styles['search-container']}>
         <div class={styles['search-wrapper']}>
-          <svg class={styles['search-icon']} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg class={styles['search-icon']} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
             <circle cx="11" cy="11" r="8" />
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
           </svg>
           <input
             ref={searchInputRef}
             type="text"
+            id="product-search"
+            aria-label="Buscar productos"
             class={styles['search-input']}
             placeholder="Buscar productos..."
             value={inputValue}
@@ -198,6 +200,7 @@ export default function ProductFilter({ products, categories }: Props) {
         <button
           class={`${styles['filter-btn']} ${selectedCategory === 'todos' ? styles.active : ''}`}
           onClick={() => handleCategoryClick('todos')}
+          aria-pressed={selectedCategory === 'todos'}
         >
           Todos
         </button>
@@ -206,6 +209,7 @@ export default function ProductFilter({ products, categories }: Props) {
             key={cat.id}
             class={`${styles['filter-btn']} ${selectedCategory === cat.id ? styles.active : ''}`}
             onClick={() => handleCategoryClick(cat.id)}
+            aria-pressed={selectedCategory === cat.id}
           >
             {cat.name}
           </button>
@@ -244,6 +248,15 @@ export default function ProductFilter({ products, categories }: Props) {
                 data-aos="fade-up"
                 data-aos-delay={index % 4 > 0 ? String((index % 4) * 50) : undefined}
                 onClick={() => handleCardClick(product)}
+                role="button"
+                tabindex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleCardClick(product);
+                  }
+                }}
+                aria-label={`Ver detalle: ${product.title}`}
               >
                 <div class={styles['product-image']}>
                   {product.badge && (
@@ -269,17 +282,18 @@ export default function ProductFilter({ products, categories }: Props) {
                   <button
                     class={`${styles['btn-add-quote']} ${count > 0 ? styles.added : ''}`}
                     onClick={(e) => handleAddToQuote(e, product)}
+                    aria-label={count > 0 ? `${product.title} en cotización (${count})` : `Agregar ${product.title} a cotización`}
                   >
                     {count > 0 ? (
                       <>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18" aria-hidden="true">
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                         Agregado ({count})
                       </>
                     ) : (
                       <>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18" aria-hidden="true">
                           <line x1="12" y1="5" x2="12" y2="19" />
                           <line x1="5" y1="12" x2="19" y2="12" />
                         </svg>
