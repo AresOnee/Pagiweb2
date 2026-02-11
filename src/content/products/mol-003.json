@@ -1,0 +1,29 @@
+{
+  "sku": "MOL-003",
+  "title": "Molde de Grafito GY — Cable de Paso a Varilla de Tierra",
+  "category": "Soldadura Exotérmica",
+  "categorySlug": "soldadura-exotermica",
+  "description": "Molde de grafito de alta densidad tipo GY para conexión exotérmica de cable de paso lateral a varilla de puesta a tierra. El cable pasa a través del costado de la barra a una altura indeterminada. Para uso con cable trenzado de cobre y varillas Copperweld. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Conexión tipo Cable de Paso a Varilla (GY)",
+    "Subtipo GYE según calibre de cable y barra",
+    "Compatible con barras Copperweld de 1/2\", 5/8\" y 3/4\"",
+    "Cables compatibles: N°1/0 a 4/0 AWG",
+    "Molde de dos piezas para fácil instalación",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "GY",
+    "Tipo de Unión": "Cable de paso a varilla de tierra",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "GYE",
+    "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\"",
+    "Cables Compatibles": "N°1/0 a 4/0 AWG",
+    "Rango de Cargas": "90 a 150 g",
+    "Temperatura de Operación": "Hasta 3.400°C"
+  },
+  "image": null,
+  "inStock": true,
+  "badge": null
+}

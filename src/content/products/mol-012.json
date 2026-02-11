@@ -1,0 +1,28 @@
+{
+  "sku": "MOL-012",
+  "title": "Molde de Grafito HS — Cable Despegado de Superficie Horizontal",
+  "category": "Soldadura Exotérmica",
+  "categorySlug": "soldadura-exotermica",
+  "description": "Molde de grafito de alta densidad tipo HS para conexión exotérmica de cable despegado de superficie horizontal de acero. El cable sale elevado respecto a la superficie metálica, ideal para cables de mayor calibre. Para uso con cable trenzado de cobre. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Conexión cable despegado de superficie horizontal (HS)",
+    "Subtipo HSCY según calibre de cable",
+    "Cable sale elevado respecto a la superficie",
+    "Cables compatibles: 95mm² a 240mm²",
+    "Ideal para cables de mayor calibre",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "HS",
+    "Tipo de Unión": "Cable despegado de superficie horizontal (Cable off Surface)",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "HSCY",
+    "Cables Compatibles": "95mm² a 240mm²",
+    "Rango de Cargas": "115 a 200 g",
+    "Temperatura de Operación": "Hasta 3.400°C"
+  },
+  "image": null,
+  "inStock": true,
+  "badge": null
+}

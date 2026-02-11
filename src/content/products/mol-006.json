@@ -1,0 +1,28 @@
+{
+  "sku": "MOL-006",
+  "title": "Molde de Grafito SS — Empalme Horizontal Lineal",
+  "category": "Soldadura Exotérmica",
+  "categorySlug": "soldadura-exotermica",
+  "description": "Molde de grafito de alta densidad tipo SS para empalme horizontal lineal de dos cables de cobre. Conexión en línea recta de dos conductores trenzados o sólidos de cobre o Copperweld. También disponible para conexiones de calibres diferentes o mezclados. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Empalme horizontal lineal Cable a Cable (SS)",
+    "Subtipo SSC según calibres de cable",
+    "Para cables trenzados de cobre o tipo Copperweld",
+    "Cables compatibles: N°6 a 4/0 AWG",
+    "Permite conexiones de calibres diferentes",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "SS",
+    "Tipo de Unión": "Empalme horizontal lineal (Cable a Cable)",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "SSC",
+    "Cables Compatibles": "N°6 a 4/0 AWG",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Hasta 3.400°C"
+  },
+  "image": null,
+  "inStock": true,
+  "badge": null
+}

@@ -1,0 +1,28 @@
+{
+  "sku": "MOL-010",
+  "title": "Molde de Grafito XB — Conexión en X (Cables Continuos)",
+  "category": "Soldadura Exotérmica",
+  "categorySlug": "soldadura-exotermica",
+  "description": "Molde de grafito de alta densidad tipo XB para conexión en X (cruz) horizontal de cables de cobre con cables continuos superpuestos (sin cortar). Diseño ergonómico de dos piezas que permite realizar la conexión en aproximadamente 1 minuto, 40-70% más rápido que otros métodos. Para cables trenzados concéntricos de cobre o conductores sólidos. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Conexión en X horizontal — cables continuos sin cortar (XB)",
+    "Subtipos XBQ y XBZ (diseño ergonómico de 2 piezas)",
+    "Conexión en aproximadamente 1 minuto por una persona",
+    "40-70% más rápido que métodos tradicionales",
+    "Cables compatibles: N°4 a 250 MCM",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "XB",
+    "Tipo de Unión": "Conexión en X horizontal (cables continuos)",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "XBQ, XBZ",
+    "Cables Compatibles": "N°4 a 250 MCM",
+    "Rango de Cargas": "45 a 250 g",
+    "Temperatura de Operación": "Hasta 3.400°C"
+  },
+  "image": null,
+  "inStock": true,
+  "badge": null
+}

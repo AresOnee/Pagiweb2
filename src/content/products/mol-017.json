@@ -1,0 +1,30 @@
+{
+  "sku": "MOL-017",
+  "title": "Molde de Grafito VS — Cable a Superficie de Acero Vertical",
+  "category": "Soldadura Exotérmica",
+  "categorySlug": "soldadura-exotermica",
+  "description": "Molde de grafito de alta densidad tipo VS para conexión exotérmica de cable a superficie de acero vertical, incluyendo placa plana vertical y tubo/cañería vertical u horizontal. El cable baja a 45° desde la superficie. Se debe verificar la posibilidad de perforación en tubos de pared delgada. Para uso con cable trenzado de cobre. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Cable a superficie de acero vertical y tubo (VS)",
+    "Subtipo VSC según calibre de cable",
+    "Cable a 45° desde la superficie o tubo",
+    "Para placa vertical, tubo vertical y tubo horizontal",
+    "Cables compatibles: N°6 a 4/0 AWG",
+    "Verificar perforación en tubos de pared delgada",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "VS",
+    "Tipo de Unión": "Cable a superficie de acero vertical / tubo (Vertical Steel Surface)",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "VSC",
+    "Cables Compatibles": "N°6 a 4/0 AWG",
+    "Superficies": "Placa vertical, tubo vertical, tubo horizontal",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Hasta 3.400°C"
+  },
+  "image": null,
+  "inStock": true,
+  "badge": null
+}

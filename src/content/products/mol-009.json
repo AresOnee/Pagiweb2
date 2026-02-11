@@ -1,0 +1,28 @@
+{
+  "sku": "MOL-009",
+  "title": "Molde de Grafito XA — Conexión en X (Cables Cortados)",
+  "category": "Soldadura Exotérmica",
+  "categorySlug": "soldadura-exotermica",
+  "description": "Molde de grafito de alta densidad tipo XA para conexión en X (cruz) horizontal de cables de cobre con cables cortados en el mismo plano. Los cuatro cables se unen en el punto de intersección. Para cables trenzados concéntricos de cobre o conductores sólidos de cobre/Copperweld. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Conexión en X horizontal — cables cortados en mismo plano (XA)",
+    "Subtipo XAC según calibres de cable de paso y derivación",
+    "Para cables trenzados concéntricos de cobre",
+    "Cables compatibles: N°4 a 250 MCM",
+    "Ideal para intersecciones de malla de puesta a tierra",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "XA",
+    "Tipo de Unión": "Conexión en X horizontal (cables cortados)",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "XAC",
+    "Cables Compatibles": "N°4 a 250 MCM",
+    "Rango de Cargas": "45 a 250 g",
+    "Temperatura de Operación": "Hasta 3.400°C"
+  },
+  "image": null,
+  "inStock": true,
+  "badge": null
+}
