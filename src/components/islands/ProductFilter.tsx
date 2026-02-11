@@ -242,7 +242,7 @@ export default function ProductFilter({ products, categories }: Props) {
                 key={product.sku}
                 class={styles['product-card']}
                 data-aos="fade-up"
-                data-aos-delay={index % 4 > 0 ? String((index % 4) * 100) : undefined}
+                data-aos-delay={index % 4 > 0 ? String((index % 4) * 50) : undefined}
                 onClick={() => handleCardClick(product)}
               >
                 <div class={styles['product-image']}>
@@ -250,7 +250,7 @@ export default function ProductFilter({ products, categories }: Props) {
                     <span class={styles['product-badge']}>{product.badge}</span>
                   )}
                   {product.image ? (
-                    <img src={product.image} alt={product.title} loading="lazy" width="280" height="200" />
+                    <img src={product.image} alt={product.title} loading="lazy" decoding="async" width="280" height="200" />
                   ) : (
                     <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
                       <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
