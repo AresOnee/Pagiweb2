@@ -183,11 +183,9 @@
   background: var(--color-white);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.4s ease;
   box-shadow: var(--shadow-card);
   cursor: pointer;
-  will-change: transform;
-  contain: layout style paint;
 }
 
 .product-card:hover {
