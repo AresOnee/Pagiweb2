@@ -140,14 +140,17 @@ export default function ProductFilter({ products, categories }: Props) {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: '50px' }
     );
-    cards.forEach((el) => {
-      el.classList.remove('aos-animate');
-      observer.observe(el);
+    // Use requestAnimationFrame to avoid blocking main thread during filter changes
+    requestAnimationFrame(() => {
+      cards.forEach((el) => {
+        el.classList.remove('aos-animate');
+        observer.observe(el);
+      });
     });
     return () => observer.disconnect();
-  }, [filtered]);
+  }, [sorted.length, selectedCategory, searchText]);
 
   return (
     <div>
@@ -219,7 +222,6 @@ export default function ProductFilter({ products, categories }: Props) {
                 key={product.sku}
                 class={styles['product-card']}
                 data-aos="fade-up"
-                data-aos-delay={String((index % 4) * 100)}
                 onClick={() => handleCardClick(product)}
               >
                 <div class={styles['product-image']}>

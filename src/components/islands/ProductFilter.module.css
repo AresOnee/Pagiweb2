@@ -183,13 +183,15 @@
   background: var(--color-white);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  transition: all var(--transition-base);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow: var(--shadow-card);
   cursor: pointer;
+  will-change: transform;
+  contain: layout style paint;
 }
 
 .product-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -218,11 +220,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-base);
-}
-
-.product-card:hover .product-image img {
-  transform: scale(1.05);
 }
 
 .product-image svg {
@@ -400,10 +397,16 @@
 }
 
 :global([data-theme="dark"]) .sort-select {
-  background: #1e293b;
+  background-color: #1e293b;
   border-color: #475569;
   color: #e2e8f0;
+  color-scheme: dark;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+:global([data-theme="dark"]) .sort-select option {
+  background-color: #1e293b;
+  color: #e2e8f0;
 }
 
 :global([data-theme="dark"]) .sort-label {

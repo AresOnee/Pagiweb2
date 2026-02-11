@@ -62,11 +62,12 @@
    ============================================ */
 [data-aos] {
   opacity: 0;
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: opacity, transform;
 }
 
 [data-aos="fade-up"] {
-  transform: translateY(30px);
+  transform: translate3d(0, 20px, 0);
 }
 
 [data-aos="fade-down"] {
@@ -87,7 +88,8 @@
 
 [data-aos].aos-animate {
   opacity: 1;
-  transform: translateY(0) translateX(0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
+  will-change: auto;
 }
 
 /* Delays */
