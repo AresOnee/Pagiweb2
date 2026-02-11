@@ -22,7 +22,14 @@
     "Rango de Cargas": "45 a 250 g",
     "Temperatura de Operación": "Hasta 3.400°C"
   },
-  "image": null,
+  "image": "/assets/img/products/mol-010-01.png",
+  "images": [
+    "/assets/img/products/mol-010-02.png",
+    "/assets/img/products/mol-010-03.png",
+    "/assets/img/products/mol-010-04.png",
+    "/assets/img/products/mol-010-05.png",
+    "/assets/img/products/mol-010-06.png"
+  ],
   "inStock": true,
   "badge": null
 }
