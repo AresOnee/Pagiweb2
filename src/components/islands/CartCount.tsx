@@ -45,5 +45,5 @@ export default function CartCount() {
 
   if (count === 0) return null;
 
-  return <span style={animate ? bounceStyle : badgeStyle}>{count}</span>;
+  return <span style={animate ? bounceStyle : badgeStyle} aria-label={`${count} articulo${count !== 1 ? 's' : ''} en cotizacion`}>{count}</span>;
 }

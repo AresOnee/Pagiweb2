@@ -30,8 +30,10 @@
     "Power Gem Exterior": "7 sacos de 11,36 kg c/u",
     "Mantención": "Cada 15 años (recarga Power Sub)"
   },
-  "image": "/assets/img/products/bqv-001.png",
-  "images": ["/assets/img/products/bq-diagram.png"],
+  "image": "/assets/img/products/bqv-001.webp",
+  "images": [
+    "/assets/img/products/bq-diagram.webp"
+  ],
   "inStock": true,
   "badge": null
 }

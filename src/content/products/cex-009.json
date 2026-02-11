@@ -36,10 +36,10 @@
     "Aplicación": "Sistemas de puesta a tierra",
     "Compatibilidad": "Moldes de grafito estándar"
   },
-  "image": "/assets/img/products/cex-009.jpg",
+  "image": "/assets/img/products/cex-009.webp",
   "images": [
-    "/assets/img/products/cex-009-alt.png",
-    "/assets/img/products/cex-009-alt2.jpg"
+    "/assets/img/products/cex-009-alt.webp",
+    "/assets/img/products/cex-009-alt2.webp"
   ],
   "inStock": true,
   "badge": null

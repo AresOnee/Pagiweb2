@@ -24,10 +24,10 @@ function isActive(href: string, current: string): boolean {
 <header class="header">
   <div class="container">
     <a href="/" class="logo">
-      <img src="/assets/img/gelchile-logo.png" alt="GelChile" class="logo-img" />
+      <img src="/assets/img/gelchile-logo.png" alt="GelChile" class="logo-img" width="250" height="63" />
     </a>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Navegacion principal">
       <ul class="nav-list">
         {navLinks.map((link) => (
           <li>
@@ -42,13 +42,13 @@ function isActive(href: string, current: string): boolean {
       </ul>
 
       <a href="/cotizacion" class="cart-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
           <line x1="3" y1="6" x2="21" y2="6"/>
           <path d="M16 10a4 4 0 0 1-8 0"/>
         </svg>
         <span>Cotizar</span>
-        <CartCount client:load />
+        <CartCount client:idle />
       </a>
 
       <button class="mobile-menu-btn" aria-label="Menú" aria-expanded="false">
@@ -75,7 +75,7 @@ function isActive(href: string, current: string): boolean {
     ))}
   </ul>
   <a href="/cotizacion" class="cart-btn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
       <line x1="3" y1="6" x2="21" y2="6"/>
       <path d="M16 10a4 4 0 0 1-8 0"/>

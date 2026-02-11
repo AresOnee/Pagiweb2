@@ -28,13 +28,13 @@
     "Reducción Resistividad": "Hasta 94,5% después de 75 días",
     "Mantenimiento": "No requiere"
   },
-  "image": "/assets/img/products/adi-008.png",
+  "image": "/assets/img/products/adi-008.webp",
   "images": [
-    "/assets/img/products/adi-011.png",
-    "/assets/img/products/adi-009.png",
-    "/assets/img/products/adi-003.png",
-    "/assets/img/products/adi-004.png",
-    "/assets/img/products/adi-005.png"
+    "/assets/img/products/adi-011.webp",
+    "/assets/img/products/adi-009.webp",
+    "/assets/img/products/adi-003.webp",
+    "/assets/img/products/adi-004.webp",
+    "/assets/img/products/adi-005.webp"
   ],
   "inStock": true,
   "badge": "Popular"

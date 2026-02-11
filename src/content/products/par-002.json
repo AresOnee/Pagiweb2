@@ -19,10 +19,10 @@
     "Uso": "Sellado de moldes de grafito en soldadura exotérmica",
     "Aplicación": "Manual, amasar alrededor del conductor de forma uniforme"
   },
-  "image": "/assets/img/products/mas-003.jpg",
+  "image": "/assets/img/products/mas-003.webp",
   "images": [
-    "/assets/img/products/mas-001.png",
-    "/assets/img/products/mas-002.png"
+    "/assets/img/products/mas-001.webp",
+    "/assets/img/products/mas-002.webp"
   ],
   "inStock": true,
   "badge": null

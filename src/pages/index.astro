@@ -185,7 +185,7 @@ const featured = withBadge.length >= 6
     background: var(--color-gray-50);
     border-radius: var(--radius-xl);
     text-align: center;
-    transition: all var(--transition-base);
+    transition: background var(--transition-base), box-shadow var(--transition-base);
   }
 
   .feature-card:hover {
@@ -204,7 +204,7 @@ const featured = withBadge.length >= 6
     align-items: center;
     justify-content: center;
     color: var(--color-white);
-    transition: all var(--transition-base);
+    transition: transform var(--transition-base), background var(--transition-base);
   }
 
   .feature-card:hover .feature-icon {

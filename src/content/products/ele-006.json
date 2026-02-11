@@ -26,8 +26,11 @@
     "Factor Horizontal (Fh)": "0,5",
     "Unidad": "Kit completo"
   },
-  "image": "/assets/img/products/ele-006-pack.jpg",
-  "images": ["/assets/img/products/electrode-he-700-product.png", "/assets/img/products/electrode-he-700-detail.png"],
+  "image": "/assets/img/products/ele-006-pack.webp",
+  "images": [
+    "/assets/img/products/electrode-he-700-product.webp",
+    "/assets/img/products/electrode-he-700-detail.webp"
+  ],
   "inStock": true,
   "badge": null
 }
