@@ -45,7 +45,7 @@ export interface Product {
   images?: string[];
   inStock: boolean;
   badge: BadgeValue | null;
-  variants?: Array<{ id: string; label: string }>;
+  variants?: Array<{ id: string; label: string; group?: string }>;
 }
 
 /** Category metadata from categories.json */
