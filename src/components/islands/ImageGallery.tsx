@@ -201,8 +201,8 @@ export default function ImageGallery({ images, alt, badge }: Props) {
           src={images[activeIndex]}
           alt={alt}
           class={styles['gallery-main-img']}
-          width="400"
-          height="400"
+          width="800"
+          height="800"
           decoding="async"
         />
       </div>
