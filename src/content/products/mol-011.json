@@ -35,8 +35,8 @@
   "inStock": true,
   "badge": null,
   "variants": [
-    { "id": "ha-4", "label": "Cable N°4" },
-    { "id": "ha-2", "label": "Cable N°2" },
-    { "id": "ha-1", "label": "Cable N°1" }
+    { "id": "ha-4", "label": "Cable N°4", "group": "HAA" },
+    { "id": "ha-2", "label": "Cable N°2", "group": "HAA" },
+    { "id": "ha-1", "label": "Cable N°1", "group": "HAA" }
   ]
 }

@@ -31,12 +31,12 @@
   "inStock": true,
   "badge": null,
   "variants": [
-    { "id": "vb-4", "label": "Cable N°4" },
-    { "id": "vb-2", "label": "Cable N°2" },
-    { "id": "vb-1", "label": "Cable N°1" },
-    { "id": "vb-1o", "label": "Cable N°1/0" },
-    { "id": "vb-2o", "label": "Cable N°2/0" },
-    { "id": "vb-3o", "label": "Cable N°3/0" },
-    { "id": "vb-4o", "label": "Cable N°4/0" }
+    { "id": "vb-4", "label": "Cable N°4", "group": "VBC" },
+    { "id": "vb-2", "label": "Cable N°2", "group": "VBC" },
+    { "id": "vb-1", "label": "Cable N°1", "group": "VBC" },
+    { "id": "vb-1o", "label": "Cable N°1/0", "group": "VBC" },
+    { "id": "vb-2o", "label": "Cable N°2/0", "group": "VBC" },
+    { "id": "vb-3o", "label": "Cable N°3/0", "group": "VBC" },
+    { "id": "vb-4o", "label": "Cable N°4/0", "group": "VBC" }
   ]
 }

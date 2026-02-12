@@ -1,105 +1,84 @@
 /* ============================================
    VariantSelector — CSS Module
-   Professional panel with grouped variant selection.
-   Import: import styles from './VariantSelector.module.css'
+   Technical product variant configurator.
    ============================================ */
 
-/* Panel container */
-.container {
-  border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--color-white);
+.selector {
+  border-top: 3px solid var(--color-primary);
+  padding-top: var(--spacing-4);
 }
 
-/* Panel header */
-.panelHeader {
+/* ---- Model / Subtype info ---- */
+
+.modelInfo {
+  margin-bottom: var(--spacing-4);
+}
+
+.modelLabel {
+  display: block;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--spacing-1);
+}
+
+.modelName {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  letter-spacing: 0.01em;
+}
+
+.modelSeparator {
+  color: var(--color-gray-300);
+  font-weight: var(--font-weight-normal);
+  margin: 0 var(--spacing-1);
+}
+
+/* ---- Section heading ---- */
+
+.selectorHeading {
   display: flex;
   align-items: center;
-  gap: var(--spacing-2);
-  padding: var(--spacing-3) var(--spacing-4);
-  background: var(--color-gray-50);
+  justify-content: space-between;
+  margin-bottom: var(--spacing-3);
+  padding-bottom: var(--spacing-2);
   border-bottom: 1px solid var(--color-gray-200);
 }
 
-.panelIcon {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  color: var(--color-primary);
-}
-
-.panelTitle {
+.headingText {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-gray-700);
+  color: var(--color-gray-600);
 }
 
-.selectionCount {
+.headingCount {
   font-size: var(--font-size-xs);
   color: var(--color-gray-400);
   font-weight: var(--font-weight-normal);
-  margin-left: auto;
 }
 
-/* Subtype info section */
-.subtypeInfo {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--spacing-2);
-  padding: var(--spacing-3) var(--spacing-4);
-  border-bottom: 1px solid var(--color-gray-100);
-}
+/* ---- Scrollable variant list ---- */
 
-.subtypeLabel {
-  font-size: var(--font-size-xs);
-  color: var(--color-gray-500);
-  font-weight: var(--font-weight-medium);
-}
-
-.subtypeChips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-1);
-}
-
-.subtypeChip {
-  display: inline-flex;
-  align-items: center;
-  padding: 2px var(--spacing-2);
-  background: rgba(0, 82, 204, 0.08);
-  color: var(--color-primary);
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.02em;
-}
-
-/* List body */
-.listBody {
-  padding: var(--spacing-3) var(--spacing-4);
-}
-
-/* Scrollable list */
 .list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2);
+  gap: 6px;
   max-height: 340px;
   overflow-y: auto;
   padding-right: var(--spacing-1);
-  scrollbar-width: auto;
-  scrollbar-color: var(--color-gray-300) var(--color-gray-100);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray-300) transparent;
 }
 
 .list::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 .list::-webkit-scrollbar-track {
-  background: var(--color-gray-100);
-  border-radius: 3px;
+  background: transparent;
 }
 
 .list::-webkit-scrollbar-thumb {
@@ -111,45 +90,41 @@
   background: var(--color-gray-400);
 }
 
-/* Group header */
-.groupHeader {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2);
+/* ---- Group divider ---- */
+
+.groupDivider {
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   color: var(--color-primary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: var(--spacing-2) 0;
-  margin-top: var(--spacing-3);
-  border-bottom: 2px solid rgba(0, 82, 204, 0.15);
+  padding: var(--spacing-1) 0;
+  margin-top: var(--spacing-2);
+  border-bottom: 1px dashed rgba(0, 82, 204, 0.25);
 }
 
-.groupHeader:first-child {
+.groupDivider:first-child {
   margin-top: 0;
 }
 
-/* Variant row */
+/* ---- Variant row ---- */
+
 .row {
   display: flex;
   align-items: center;
   gap: var(--spacing-3);
   padding: var(--spacing-2) var(--spacing-3);
-  border: 1px solid var(--color-gray-200);
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
-  background: var(--color-white);
+  transition: background-color 120ms ease, box-shadow 120ms ease;
+  background: transparent;
 }
 
 .row:hover {
-  border-color: var(--color-primary-light);
-  background: rgba(0, 82, 204, 0.02);
+  background: var(--color-gray-50);
 }
 
 .row.selected {
-  border-color: var(--color-primary);
   background: rgba(0, 82, 204, 0.04);
   box-shadow: inset 3px 0 0 var(--color-primary);
 }
@@ -157,8 +132,8 @@
 /* Checkbox */
 .checkbox {
   flex-shrink: 0;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   accent-color: var(--color-primary);
   cursor: pointer;
 }
@@ -178,11 +153,11 @@
   font-weight: var(--font-weight-medium);
 }
 
-/* Quantity controls */
+/* ---- Quantity controls ---- */
+
 .qtyControls {
   display: flex;
   align-items: center;
-  gap: 0;
   flex-shrink: 0;
   border: 1px solid var(--color-gray-200);
   border-radius: var(--radius-md);
@@ -190,33 +165,33 @@
 }
 
 .qtyBtn {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--color-gray-50);
   border: none;
   cursor: pointer;
-  font-size: var(--font-size-sm);
-  color: var(--color-gray-600);
-  transition: background-color 150ms ease;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+  transition: background-color 120ms ease;
   padding: 0;
 }
 
 .qtyBtn:hover {
   background: var(--color-gray-100);
-  color: var(--color-gray-900);
+  color: var(--color-gray-800);
 }
 
 .qtyInput {
-  width: 36px;
-  height: 28px;
+  width: 32px;
+  height: 26px;
   text-align: center;
   border: none;
   border-left: 1px solid var(--color-gray-200);
   border-right: 1px solid var(--color-gray-200);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-gray-900);
   background: var(--color-white);
   -moz-appearance: textfield;
@@ -229,19 +204,14 @@
   margin: 0;
 }
 
-/* Panel footer */
-.panelFooter {
-  padding: var(--spacing-3) var(--spacing-4);
-  border-top: 1px solid var(--color-gray-200);
-  background: var(--color-gray-50);
-}
+/* ---- Add button ---- */
 
-/* Add button */
 .addBtn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-2);
+  margin-top: var(--spacing-4);
   padding: var(--spacing-3) var(--spacing-4);
   background: var(--color-accent);
   color: var(--color-white);
@@ -274,63 +244,45 @@
    Dark Mode
    ============================================ */
 
-:global([data-theme="dark"]) .container {
-  background: var(--color-gray-900);
-  border-color: var(--color-gray-700);
+:global([data-theme="dark"]) .selector {
+  border-top-color: var(--color-primary-light);
 }
 
-:global([data-theme="dark"]) .panelHeader {
-  background: var(--color-gray-800);
-  border-bottom-color: var(--color-gray-700);
-}
-
-:global([data-theme="dark"]) .panelTitle {
-  color: var(--color-gray-200);
-}
-
-:global([data-theme="dark"]) .panelIcon {
-  color: var(--color-primary-light);
-}
-
-:global([data-theme="dark"]) .selectionCount {
-  color: var(--color-gray-500);
-}
-
-:global([data-theme="dark"]) .subtypeInfo {
-  border-bottom-color: var(--color-gray-700);
-}
-
-:global([data-theme="dark"]) .subtypeLabel {
+:global([data-theme="dark"]) .modelLabel {
   color: var(--color-gray-400);
 }
 
-:global([data-theme="dark"]) .subtypeChip {
-  background: rgba(59, 130, 246, 0.15);
+:global([data-theme="dark"]) .modelName {
   color: var(--color-primary-light);
 }
 
-:global([data-theme="dark"]) .listBody {
-  background: var(--color-gray-900);
+:global([data-theme="dark"]) .modelSeparator {
+  color: var(--color-gray-600);
 }
 
-:global([data-theme="dark"]) .groupHeader {
+:global([data-theme="dark"]) .selectorHeading {
+  border-bottom-color: var(--color-gray-700);
+}
+
+:global([data-theme="dark"]) .headingText {
+  color: var(--color-gray-300);
+}
+
+:global([data-theme="dark"]) .headingCount {
+  color: var(--color-gray-500);
+}
+
+:global([data-theme="dark"]) .groupDivider {
   color: var(--color-primary-light);
-  border-bottom-color: rgba(59, 130, 246, 0.2);
-}
-
-:global([data-theme="dark"]) .row {
-  background: var(--color-gray-800);
-  border-color: var(--color-gray-600);
+  border-bottom-color: rgba(59, 130, 246, 0.25);
 }
 
 :global([data-theme="dark"]) .row:hover {
-  border-color: var(--color-primary-light);
-  background: rgba(59, 130, 246, 0.08);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 :global([data-theme="dark"]) .row.selected {
-  border-color: var(--color-primary);
-  background: rgba(59, 130, 246, 0.12);
+  background: rgba(59, 130, 246, 0.1);
   box-shadow: inset 3px 0 0 var(--color-primary-light);
 }
 
@@ -344,7 +296,7 @@
 
 :global([data-theme="dark"]) .qtyBtn {
   background: var(--color-gray-700);
-  color: var(--color-gray-300);
+  color: var(--color-gray-400);
 }
 
 :global([data-theme="dark"]) .qtyBtn:hover {
@@ -358,22 +310,13 @@
   border-color: var(--color-gray-600);
 }
 
-:global([data-theme="dark"]) .panelFooter {
-  background: var(--color-gray-800);
-  border-top-color: var(--color-gray-700);
-}
-
 :global([data-theme="dark"]) .addBtn:disabled {
   background: var(--color-gray-600);
   color: var(--color-gray-400);
 }
 
 :global([data-theme="dark"]) .list {
-  scrollbar-color: var(--color-gray-600) var(--color-gray-800);
-}
-
-:global([data-theme="dark"]) .list::-webkit-scrollbar-track {
-  background: var(--color-gray-800);
+  scrollbar-color: var(--color-gray-600) transparent;
 }
 
 :global([data-theme="dark"]) .list::-webkit-scrollbar-thumb {
@@ -389,29 +332,13 @@
    ============================================ */
 
 @media (max-width: 768px) {
-  .panelHeader {
-    padding: var(--spacing-2) var(--spacing-3);
-  }
-
-  .subtypeInfo {
-    padding: var(--spacing-2) var(--spacing-3);
-  }
-
-  .listBody {
-    padding: var(--spacing-2) var(--spacing-3);
-  }
-
-  .panelFooter {
-    padding: var(--spacing-2) var(--spacing-3);
-  }
-
   .row {
     flex-wrap: wrap;
     gap: var(--spacing-2);
   }
 
   .label {
-    flex-basis: calc(100% - 30px);
+    flex-basis: calc(100% - 28px);
     order: 1;
   }
 
@@ -421,7 +348,7 @@
 
   .qtyControls {
     order: 2;
-    margin-left: 30px;
+    margin-left: 28px;
   }
 }
 
@@ -434,7 +361,7 @@
     margin-left: auto;
   }
 
-  .subtypeChips {
-    width: 100%;
+  .modelName {
+    font-size: var(--font-size-base);
   }
 }

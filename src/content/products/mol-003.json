@@ -33,17 +33,17 @@
   "inStock": true,
   "badge": null,
   "variants": [
-    { "id": "gy-12-1o", "label": "Cable N°1/0", "group": "Barra 1/2\"" },
-    { "id": "gy-12-2o", "label": "Cable N°2/0", "group": "Barra 1/2\"" },
-    { "id": "gy-12-3o", "label": "Cable N°3/0", "group": "Barra 1/2\"" },
-    { "id": "gy-12-4o", "label": "Cable N°4/0", "group": "Barra 1/2\"" },
-    { "id": "gy-58-1o", "label": "Cable N°1/0", "group": "Barra 5/8\"" },
-    { "id": "gy-58-2o", "label": "Cable N°2/0", "group": "Barra 5/8\"" },
-    { "id": "gy-58-3o", "label": "Cable N°3/0", "group": "Barra 5/8\"" },
-    { "id": "gy-58-4o", "label": "Cable N°4/0", "group": "Barra 5/8\"" },
-    { "id": "gy-34-1o", "label": "Cable N°1/0", "group": "Barra 3/4\"" },
-    { "id": "gy-34-2o", "label": "Cable N°2/0", "group": "Barra 3/4\"" },
-    { "id": "gy-34-3o", "label": "Cable N°3/0", "group": "Barra 3/4\"" },
-    { "id": "gy-34-4o", "label": "Cable N°4/0", "group": "Barra 3/4\"" }
+    { "id": "gy-12-1o", "label": "Cable N°1/0", "group": "GYE — Barra 1/2\"" },
+    { "id": "gy-12-2o", "label": "Cable N°2/0", "group": "GYE — Barra 1/2\"" },
+    { "id": "gy-12-3o", "label": "Cable N°3/0", "group": "GYE — Barra 1/2\"" },
+    { "id": "gy-12-4o", "label": "Cable N°4/0", "group": "GYE — Barra 1/2\"" },
+    { "id": "gy-58-1o", "label": "Cable N°1/0", "group": "GYE — Barra 5/8\"" },
+    { "id": "gy-58-2o", "label": "Cable N°2/0", "group": "GYE — Barra 5/8\"" },
+    { "id": "gy-58-3o", "label": "Cable N°3/0", "group": "GYE — Barra 5/8\"" },
+    { "id": "gy-58-4o", "label": "Cable N°4/0", "group": "GYE — Barra 5/8\"" },
+    { "id": "gy-34-1o", "label": "Cable N°1/0", "group": "GYE — Barra 3/4\"" },
+    { "id": "gy-34-2o", "label": "Cable N°2/0", "group": "GYE — Barra 3/4\"" },
+    { "id": "gy-34-3o", "label": "Cable N°3/0", "group": "GYE — Barra 3/4\"" },
+    { "id": "gy-34-4o", "label": "Cable N°4/0", "group": "GYE — Barra 3/4\"" }
   ]
 }
