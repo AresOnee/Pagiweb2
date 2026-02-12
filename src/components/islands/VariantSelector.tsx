@@ -90,6 +90,15 @@ export default function VariantSelector({ sku, title, category, image, variants,
   // Check if variants use groups
   const hasGroups = variants.some((v) => v.group);
 
+  // Extract unique subtype names for chips display
+  const subtypes = hasGroups
+    ? [...new Set(variants.map((v) => {
+        const g = v.group || '';
+        const dashIdx = g.indexOf(' \u2014 ');
+        return dashIdx > -1 ? g.substring(0, dashIdx) : g;
+      }))]
+    : [];
+
   // Build grouped structure preserving insertion order
   const grouped = hasGroups
     ? variants.reduce<Array<{ group: string; items: typeof variants }>>((acc, v) => {
@@ -156,37 +165,67 @@ export default function VariantSelector({ sku, title, category, image, variants,
 
   return (
     <div class={styles.container}>
-      <p class={styles.heading}>Seleccionar variante(s):</p>
-
-      <div class={styles.list}>
-        {grouped
-          ? grouped.map(({ group, items }) => (
-              <div key={group}>
-                <div class={styles.groupHeader}>{group}</div>
-                {items.map(renderVariantRow)}
-              </div>
-            ))
-          : variants.map(renderVariantRow)
-        }
+      {/* Panel header */}
+      <div class={styles.panelHeader}>
+        <svg class={styles.panelIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 3v1m0 16v1m-8-9H3m18 0h-1m-2.636-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707" />
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+        <span class={styles.panelTitle}>Configurar Variante</span>
+        <span class={styles.selectionCount}>
+          {selectedCount > 0
+            ? `${selectedCount} de ${variants.length} seleccionadas`
+            : `${variants.length} disponibles`}
+        </span>
       </div>
 
-      <button
-        type="button"
-        class={styles.addBtn}
-        onClick={handleAdd}
-        disabled={selectedCount === 0}
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
-          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-          <line x1="3" y1="6" x2="21" y2="6" />
-          <path d="M16 10a4 4 0 0 1-8 0" />
-        </svg>
-        {selectedCount === 0
-          ? 'Selecciona al menos una variante'
-          : selectedCount === 1
-            ? 'Agregar 1 variante a Cotización'
-            : `Agregar ${selectedCount} variantes a Cotización`}
-      </button>
+      {/* Subtype chips (only for grouped variants) */}
+      {hasGroups && subtypes.length > 0 && (
+        <div class={styles.subtypeInfo}>
+          <span class={styles.subtypeLabel}>Subtipos:</span>
+          <div class={styles.subtypeChips}>
+            {subtypes.map((name) => (
+              <span key={name} class={styles.subtypeChip}>{name}</span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Variant list */}
+      <div class={styles.listBody}>
+        <div class={styles.list}>
+          {grouped
+            ? grouped.map(({ group, items }) => (
+                <div key={group}>
+                  <div class={styles.groupHeader}>{group}</div>
+                  {items.map(renderVariantRow)}
+                </div>
+              ))
+            : variants.map(renderVariantRow)
+          }
+        </div>
+      </div>
+
+      {/* Panel footer with add button */}
+      <div class={styles.panelFooter}>
+        <button
+          type="button"
+          class={styles.addBtn}
+          onClick={handleAdd}
+          disabled={selectedCount === 0}
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          {selectedCount === 0
+            ? 'Selecciona al menos una variante'
+            : selectedCount === 1
+              ? 'Agregar 1 variante a Cotización'
+              : `Agregar ${selectedCount} variantes a Cotización`}
+        </button>
+      </div>
     </div>
   );
 }
