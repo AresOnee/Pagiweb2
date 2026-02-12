@@ -3,7 +3,6 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Toast from '../components/islands/Toast.tsx';
 import DarkModeToggle from '../components/islands/DarkModeToggle.tsx';
-import MobileMenu from '../components/islands/MobileMenu.tsx';
 import InstallPrompt from '../components/InstallPrompt.astro';
 import { siteConfig } from '../data/site-config';
 import '@fontsource-variable/inter';
@@ -113,12 +112,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   <Toast client:idle />
   <DarkModeToggle client:idle />
-  <MobileMenu client:idle />
   <InstallPrompt />
 
-  <!-- AOS: Animate On Scroll via IntersectionObserver -->
+  <!-- AOS: Animate On Scroll via IntersectionObserver (deferred to avoid forced reflow) -->
   <script is:inline>
-    (function() {
+    requestAnimationFrame(function() {
       var els = document.querySelectorAll('[data-aos]');
       if (!els.length || !('IntersectionObserver' in window)) {
         els.forEach(function(el) { el.classList.add('aos-animate'); });
@@ -133,7 +131,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         });
       }, { threshold: 0.1 });
       els.forEach(function(el) { observer.observe(el); });
-    })();
+    });
   </script>
 
   <!-- Service Worker Registration -->
@@ -149,6 +147,43 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           });
       });
     }
+  </script>
+
+  <!-- Mobile Menu (vanilla JS — replaces Preact island for zero hydration cost) -->
+  <script is:inline>
+    (function() {
+      var menuBtn = document.querySelector('.mobile-menu-btn');
+      var menu = document.querySelector('.mobile-menu');
+      if (!menuBtn || !menu) return;
+      var isOpen = false;
+      function openMenu() {
+        isOpen = true;
+        menu.classList.add('active');
+        menuBtn.classList.add('active');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        isOpen = false;
+        menu.classList.remove('active');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      menuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        isOpen ? closeMenu() : openMenu();
+      });
+      document.addEventListener('click', function(e) {
+        if (isOpen && !menu.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && isOpen) closeMenu();
+      });
+      menu.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
   </script>
 
   <!-- H1: Page transition progress bar script -->
