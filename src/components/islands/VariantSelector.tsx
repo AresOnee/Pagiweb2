@@ -9,7 +9,7 @@ interface Props {
   title: string;
   category: string;
   image: string | null;
-  variants: Array<{ id: string; label: string }>;
+  variants: Array<{ id: string; label: string; group?: string }>;
   onAdd?: () => void;
 }
 
@@ -18,7 +18,7 @@ interface VariantState {
   quantity: number;
 }
 
-/** Variant selector with checkboxes + individual quantities. */
+/** Variant selector with checkboxes + individual quantities. Supports grouped variants. */
 export default function VariantSelector({ sku, title, category, image, variants, onAdd }: Props) {
   const cart = useStore($cart);
 
@@ -59,7 +59,7 @@ export default function VariantSelector({ sku, title, category, image, variants,
         category,
         quantity: state[v.id].quantity,
         image,
-        variant: v.label,
+        variant: v.group ? `${v.group} — ${v.label}` : v.label,
       });
     }
 
@@ -81,9 +81,77 @@ export default function VariantSelector({ sku, title, category, image, variants,
   };
 
   // Get count of this variant already in cart
-  const getCartQty = (variantLabel: string): number => {
+  const getCartQty = (v: { label: string; group?: string }): number => {
+    const variantLabel = v.group ? `${v.group} — ${v.label}` : v.label;
     const item = cart.find((i) => i.sku === sku && i.variant === variantLabel);
     return item ? item.quantity : 0;
+  };
+
+  // Check if variants use groups
+  const hasGroups = variants.some((v) => v.group);
+
+  // Build grouped structure preserving insertion order
+  const grouped = hasGroups
+    ? variants.reduce<Array<{ group: string; items: typeof variants }>>((acc, v) => {
+        const g = v.group || '';
+        const existing = acc.find((entry) => entry.group === g);
+        if (existing) {
+          existing.items.push(v);
+        } else {
+          acc.push({ group: g, items: [v] });
+        }
+        return acc;
+      }, [])
+    : null;
+
+  const renderVariantRow = (v: (typeof variants)[0]) => {
+    const s = state[v.id];
+    const cartQty = getCartQty(v);
+    return (
+      <label key={v.id} class={`${styles.row} ${s.selected ? styles.selected : ''}`}>
+        <input
+          type="checkbox"
+          class={styles.checkbox}
+          checked={s.selected}
+          onChange={() => toggleVariant(v.id)}
+        />
+        <span class={styles.label}>
+          {v.label}
+          {cartQty > 0 && (
+            <span class={styles.inCart}> (en cotización: {cartQty})</span>
+          )}
+        </span>
+        <div class={styles.qtyControls}>
+          <button
+            type="button"
+            class={styles.qtyBtn}
+            onClick={(e) => { e.preventDefault(); setQuantity(v.id, s.quantity - 1); }}
+            aria-label="Disminuir cantidad"
+          >
+            −
+          </button>
+          <input
+            type="number"
+            class={styles.qtyInput}
+            min="1"
+            max="99"
+            value={s.quantity}
+            onInput={(e) => {
+              const val = parseInt((e.target as HTMLInputElement).value);
+              if (!isNaN(val)) setQuantity(v.id, val);
+            }}
+          />
+          <button
+            type="button"
+            class={styles.qtyBtn}
+            onClick={(e) => { e.preventDefault(); setQuantity(v.id, s.quantity + 1); }}
+            aria-label="Aumentar cantidad"
+          >
+            +
+          </button>
+        </div>
+      </label>
+    );
   };
 
   return (
@@ -91,55 +159,15 @@ export default function VariantSelector({ sku, title, category, image, variants,
       <p class={styles.heading}>Seleccionar variante(s):</p>
 
       <div class={styles.list}>
-        {variants.map((v) => {
-          const s = state[v.id];
-          const cartQty = getCartQty(v.label);
-          return (
-            <label key={v.id} class={`${styles.row} ${s.selected ? styles.selected : ''}`}>
-              <input
-                type="checkbox"
-                class={styles.checkbox}
-                checked={s.selected}
-                onChange={() => toggleVariant(v.id)}
-              />
-              <span class={styles.label}>
-                {v.label}
-                {cartQty > 0 && (
-                  <span class={styles.inCart}> (en cotización: {cartQty})</span>
-                )}
-              </span>
-              <div class={styles.qtyControls}>
-                <button
-                  type="button"
-                  class={styles.qtyBtn}
-                  onClick={(e) => { e.preventDefault(); setQuantity(v.id, s.quantity - 1); }}
-                  aria-label="Disminuir cantidad"
-                >
-                  −
-                </button>
-                <input
-                  type="number"
-                  class={styles.qtyInput}
-                  min="1"
-                  max="99"
-                  value={s.quantity}
-                  onInput={(e) => {
-                    const val = parseInt((e.target as HTMLInputElement).value);
-                    if (!isNaN(val)) setQuantity(v.id, val);
-                  }}
-                />
-                <button
-                  type="button"
-                  class={styles.qtyBtn}
-                  onClick={(e) => { e.preventDefault(); setQuantity(v.id, s.quantity + 1); }}
-                  aria-label="Aumentar cantidad"
-                >
-                  +
-                </button>
+        {grouped
+          ? grouped.map(({ group, items }) => (
+              <div key={group}>
+                <div class={styles.groupHeader}>{group}</div>
+                {items.map(renderVariantRow)}
               </div>
-            </label>
-          );
-        })}
+            ))
+          : variants.map(renderVariantRow)
+        }
       </div>
 
       <button

@@ -30,5 +30,16 @@
     "/assets/img/products/mol-016-05.webp"
   ],
   "inStock": true,
-  "badge": null
+  "badge": null,
+  "variants": [
+    { "id": "vg-6", "label": "Cable N°6 AWG" },
+    { "id": "vg-4", "label": "Cable N°4 AWG" },
+    { "id": "vg-2", "label": "Cable N°2 AWG" },
+    { "id": "vg-1", "label": "Cable N°1 AWG" },
+    { "id": "vg-1o", "label": "Cable N°1/0 AWG" },
+    { "id": "vg-2o", "label": "Cable N°2/0 AWG" },
+    { "id": "vg-3o", "label": "Cable N°3/0 AWG" },
+    { "id": "vg-4o", "label": "Cable N°4/0 AWG" },
+    { "id": "vg-250", "label": "Cable 250 MCM" }
+  ]
 }

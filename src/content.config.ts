@@ -62,6 +62,7 @@ const products = defineCollection({
     variants: z.array(z.object({
       id: z.string(),
       label: z.string(),
+      group: z.string().optional(),
     })).optional(),
   }),
 });
