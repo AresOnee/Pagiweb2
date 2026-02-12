@@ -34,8 +34,8 @@
   "inStock": true,
   "badge": null,
   "variants": [
-    { "id": "hc-4", "label": "Cable N°4" },
-    { "id": "hc-2", "label": "Cable N°2" },
-    { "id": "hc-1", "label": "Cable N°1" }
+    { "id": "hc-4", "label": "Cable N°4", "group": "HCA" },
+    { "id": "hc-2", "label": "Cable N°2", "group": "HCA" },
+    { "id": "hc-1", "label": "Cable N°1", "group": "HCA" }
   ]
 }
