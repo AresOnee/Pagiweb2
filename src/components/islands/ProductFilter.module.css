@@ -196,6 +196,11 @@
   box-shadow: var(--shadow-card-hover);
 }
 
+.product-card:focus-visible {
+  outline: 3px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
 .product-card .btn-add-quote {
   position: relative;
   z-index: 2;
