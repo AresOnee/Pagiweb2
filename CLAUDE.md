@@ -4,10 +4,11 @@
 Sitio web de catalogo para **GelChile**, empresa chilena con **mas de 20 anos de experiencia** especializada en **sistemas de puesta a tierra y proteccion electrica**. Permite a los clientes explorar productos, ver especificaciones tecnicas y solicitar cotizaciones.
 
 ## Estado Actual
-- **Sitio Astro funcional** — Fases 0-8 completadas, build exitoso (44 paginas)
+- **Sitio Astro funcional** — Fases 0-8 completadas, build exitoso (71 paginas)
 - **Pendiente:** Deploy a Cloudflare Pages (Fase 9) + configurar API keys
 - **Branch de desarrollo:** `claude/gelchile-catalog-website-PB6wG`
-- **Build:** `npm install && npm run build` — 0 errores, 38 productos validados por Zod
+- **Build:** `npm install && npm run build` — 0 errores, 64 productos validados por Zod
+- **Lighthouse Performance:** ~91 en dev server (limitado por falta de compresion gzip en dev)
 
 ## Stack Tecnico
 
@@ -55,7 +56,7 @@ src/
 │   ├── InstallPrompt.astro       # Banner PWA de instalacion
 │   └── islands/                  # 12 Preact islands (client:load/client:visible)
 │       ├── ProductFilter.tsx     # Busqueda + filtro + ordenamiento + Cmd+K
-│       ├── ProductModal.tsx      # Modal de detalle con tabs, qty, add-to-cart
+│       ├── ProductModal.tsx      # Modal de detalle con lazy-loaded ImageGallery
 │       ├── ImageGallery.tsx      # Galeria de imagenes con lightbox
 │       ├── VariantSelector.tsx   # Selector de variantes de producto
 │       ├── QuoteItems.tsx        # Lista de items en cotizacion
@@ -67,7 +68,7 @@ src/
 │       ├── Toast.tsx             # Notificaciones toast
 │       ├── TurnstileWidget.tsx   # Widget Cloudflare Turnstile
 │       └── *.module.css          # 8 CSS Modules con dark mode
-├── content/products/             # 38 archivos JSON validados por Zod
+├── content/products/             # 64 archivos JSON validados por Zod
 ├── data/
 │   ├── categories.json           # 8 categorias con slugs e iconos
 │   └── site-config.ts            # Config centralizada (contacto, API keys, storage keys)
@@ -93,16 +94,16 @@ src/
 └── types/index.ts                # CategorySlug, CategoryName, Product, CartItem, etc.
 ```
 
-## Productos (38 en 8 categorias)
+## Productos (64 en 8 categorias)
 
 | Categoria | Slug | Qty | SKUs |
 |-----------|------|-----|------|
-| Electrodos Electromagneticos | `electrodos-electromagneticos` | 8 | ELE-001–008 (HE-45 a HE-2500) |
+| Electrodos Electromagneticos | `electrodos-electromagneticos` | 13 | ELE-001–008 (HE-45 a HE-2500), EES-001–005 |
 | Electrodos de Grafito | `electrodos-grafito` | 1 | EGR-001 |
 | Barras Quimicas | `barras-quimicas` | 2 | BQH-001, BQV-001 |
 | Aditivos | `aditivos` | 2 | ADI-001, ADI-002 |
 | Pararrayos y Proteccion | `pararrayos` | 1 | PAR-001 |
-| Soldadura Exotermica | `soldadura-exotermica` | 13 | CEX-001–009, PAR-002–004, HRE-001 |
+| Soldadura Exotermica | `soldadura-exotermica` | 34 | CEX-001–009, PAR-002–004, HRE-001–002, MOL-001–020 |
 | Accesorios | `accesorios` | 9 | CAM-001, TAB-001/002, BTT-001–003, CPP-001, PPB-001, TDC-001 |
 | Servicios | `servicios` | 2 | SRV-001, SRV-002 |
 
@@ -137,7 +138,7 @@ src/
 | `src/layouts/MainLayout.astro` | Layout principal (SEO, OG tags, JSON-LD, PWA, AOS) |
 | `src/components/islands/QuoteForm.tsx` | Formulario con Web3Forms + Turnstile |
 | `src/components/islands/ProductFilter.tsx` | Filtros, busqueda y grid de productos |
-| `src/components/islands/ProductModal.tsx` | Modal de detalle con ImageGallery |
+| `src/components/islands/ProductModal.tsx` | Modal de detalle con lazy-loaded ImageGallery |
 
 ## Pendiente para Produccion (Fase 9)
 
@@ -164,8 +165,10 @@ src/
 - **Dark mode:** `:global([data-theme="dark"])` en CSS Modules. Theme persiste en `localStorage` key `gelchile_theme`
 - **Carrito:** Persiste en `localStorage` key `gelchile_cart`. Max 99 unidades por item
 - **Performance:** ProductCard y ProductFilter usan `will-change: transform`, `contain: layout style paint`, transitions especificas (no `transition: all`)
+- **Lazy-load:** ImageGallery se carga via `import()` dinamico en ProductModal (no en bundle inicial). Cache a nivel de modulo evita re-imports
 - **AOS:** Implementacion custom sin libreria. `translate3d()` para GPU. 0.4s transitions
-- **Imagenes:** Todas comprimidas a max 800px, calidad web. 82 archivos en `public/assets/img/products/`
+- **Imagenes:** Thumbnails max 300px, calidad 80 webp. Galeria/detail a 400px. 216 archivos en `public/assets/img/products/`
+- **Img sizing:** ProductCard y ProductFilter incluyen atributo `sizes` responsive para evitar descargas innecesarias
 - **SEO:** JSON-LD LocalBusiness, Open Graph, Twitter Cards, sitemap.xml auto-generado
 - **PWA:** manifest.json, service worker registration, install prompt
 - **Formulario:** Web3Forms endpoint + Cloudflare Turnstile anti-spam. Envia a ventas@gelchile.cl
@@ -188,7 +191,7 @@ Los archivos en la raiz (`index.html`, `productos.html`, `cotizacion.html`, `nos
 
 ```bash
 npm run dev       # Servidor de desarrollo (localhost:4321)
-npm run build     # Build estatico a dist/ (44 paginas)
+npm run build     # Build estatico a dist/ (71 paginas)
 npm run preview   # Preview del build
 npx astro sync    # Regenerar tipos de Content Collections
 ```
