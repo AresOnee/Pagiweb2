@@ -81,7 +81,7 @@ src/
 │   ├── faq.astro                 # 10 preguntas frecuentes
 │   └── productos/
 │       ├── index.astro           # Catalogo con filtros
-│       └── [slug].astro          # Detalle de producto (38 paginas generadas)
+│       └── [slug].astro          # Detalle de producto (64 paginas generadas)
 ├── stores/                       # nanostores con persistencia localStorage
 │   ├── cart.ts                   # $cart atom, $cartCount computed, addItem/removeItem/clearCart
 │   ├── theme.ts                  # $theme atom, toggleTheme, initTheme
@@ -167,7 +167,7 @@ src/
 - **Performance:** ProductCard y ProductFilter usan `will-change: transform`, `contain: layout style paint`, transitions especificas (no `transition: all`)
 - **Lazy-load:** ImageGallery se carga via `import()` dinamico en ProductModal (no en bundle inicial). Cache a nivel de modulo evita re-imports
 - **AOS:** Implementacion custom sin libreria. `translate3d()` para GPU. 0.4s transitions
-- **Imagenes:** Thumbnails max 300px, calidad 80 webp. Galeria/detail a 400px. 216 archivos en `public/assets/img/products/`
+- **Imagenes:** Thumbnails max 300px, calidad 80 webp. Galeria/detail a 800px max. 215 archivos en `public/assets/img/products/`
 - **Img sizing:** ProductCard y ProductFilter incluyen atributo `sizes` responsive para evitar descargas innecesarias
 - **SEO:** JSON-LD LocalBusiness, Open Graph, Twitter Cards, sitemap.xml auto-generado
 - **PWA:** manifest.json, service worker registration, install prompt
