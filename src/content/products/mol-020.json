@@ -33,12 +33,12 @@
   "inStock": true,
   "badge": null,
   "variants": [
-    { "id": "vt-4", "label": "Cable N°4 AWG" },
-    { "id": "vt-2", "label": "Cable N°2 AWG" },
-    { "id": "vt-1", "label": "Cable N°1 AWG" },
-    { "id": "vt-1o", "label": "Cable N°1/0 AWG" },
-    { "id": "vt-2o", "label": "Cable N°2/0 AWG" },
-    { "id": "vt-3o", "label": "Cable N°3/0 AWG" },
-    { "id": "vt-4o", "label": "Cable N°4/0 AWG" }
+    { "id": "vt-4", "label": "Cable N°4" },
+    { "id": "vt-2", "label": "Cable N°2" },
+    { "id": "vt-1", "label": "Cable N°1" },
+    { "id": "vt-1o", "label": "Cable N°1/0" },
+    { "id": "vt-2o", "label": "Cable N°2/0" },
+    { "id": "vt-3o", "label": "Cable N°3/0" },
+    { "id": "vt-4o", "label": "Cable N°4/0" }
   ]
 }

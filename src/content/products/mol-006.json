@@ -34,13 +34,13 @@
   "inStock": true,
   "badge": null,
   "variants": [
-    { "id": "ss-6", "label": "Cable N°6 AWG" },
-    { "id": "ss-4", "label": "Cable N°4 AWG" },
-    { "id": "ss-2", "label": "Cable N°2 AWG" },
-    { "id": "ss-1", "label": "Cable N°1 AWG" },
-    { "id": "ss-1o", "label": "Cable N°1/0 AWG" },
-    { "id": "ss-2o", "label": "Cable N°2/0 AWG" },
-    { "id": "ss-3o", "label": "Cable N°3/0 AWG" },
-    { "id": "ss-4o", "label": "Cable N°4/0 AWG" }
+    { "id": "sst-4", "label": "Cable N°4", "group": "SST" },
+    { "id": "sst-3", "label": "Cable N°3", "group": "SST" },
+    { "id": "sst-2", "label": "Cable N°2", "group": "SST" },
+    { "id": "sst-1", "label": "Cable N°1", "group": "SST" },
+    { "id": "ssc-1o", "label": "Cable N°1/0", "group": "SSC" },
+    { "id": "ssc-2o", "label": "Cable N°2/0", "group": "SSC" },
+    { "id": "ssc-3o", "label": "Cable N°3/0", "group": "SSC" },
+    { "id": "ssc-4o", "label": "Cable N°4/0", "group": "SSC" }
   ]
 }

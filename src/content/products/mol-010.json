@@ -33,21 +33,13 @@
   "inStock": true,
   "badge": null,
   "variants": [
-    { "id": "xbq-4", "label": "Cable N°4 AWG", "group": "Subtipo XBQ" },
-    { "id": "xbq-2", "label": "Cable N°2 AWG", "group": "Subtipo XBQ" },
-    { "id": "xbq-1", "label": "Cable N°1 AWG", "group": "Subtipo XBQ" },
-    { "id": "xbq-1o", "label": "Cable N°1/0 AWG", "group": "Subtipo XBQ" },
-    { "id": "xbq-2o", "label": "Cable N°2/0 AWG", "group": "Subtipo XBQ" },
-    { "id": "xbq-3o", "label": "Cable N°3/0 AWG", "group": "Subtipo XBQ" },
-    { "id": "xbq-4o", "label": "Cable N°4/0 AWG", "group": "Subtipo XBQ" },
-    { "id": "xbq-250", "label": "Cable 250 MCM", "group": "Subtipo XBQ" },
-    { "id": "xbz-4", "label": "Cable N°4 AWG", "group": "Subtipo XBZ" },
-    { "id": "xbz-2", "label": "Cable N°2 AWG", "group": "Subtipo XBZ" },
-    { "id": "xbz-1", "label": "Cable N°1 AWG", "group": "Subtipo XBZ" },
-    { "id": "xbz-1o", "label": "Cable N°1/0 AWG", "group": "Subtipo XBZ" },
-    { "id": "xbz-2o", "label": "Cable N°2/0 AWG", "group": "Subtipo XBZ" },
-    { "id": "xbz-3o", "label": "Cable N°3/0 AWG", "group": "Subtipo XBZ" },
-    { "id": "xbz-4o", "label": "Cable N°4/0 AWG", "group": "Subtipo XBZ" },
-    { "id": "xbz-250", "label": "Cable 250 MCM", "group": "Subtipo XBZ" }
+    { "id": "xb-4", "label": "Cable N°4" },
+    { "id": "xb-2", "label": "Cable N°2" },
+    { "id": "xb-1", "label": "Cable N°1" },
+    { "id": "xb-1o", "label": "Cable N°1/0" },
+    { "id": "xb-2o", "label": "Cable N°2/0" },
+    { "id": "xb-3o", "label": "Cable N°3/0" },
+    { "id": "xb-4o", "label": "Cable N°4/0" },
+    { "id": "xb-250", "label": "Cable 250 MCM" }
   ]
 }
