@@ -3,9 +3,11 @@ import { useStore } from '@nanostores/preact';
 import { $selectedProduct, closeProductModal } from '../../stores/ui';
 import { $cart, addItem } from '../../stores/cart';
 import { showToast } from '../../stores/toast';
+import { lazy, Suspense } from 'preact/compat';
 import VariantSelector from './VariantSelector';
-import ImageGallery from './ImageGallery';
 import styles from './ProductModal.module.css';
+
+const ImageGallery = lazy(() => import('./ImageGallery'));
 
 /** Product detail modal with tabs, quantity controls, add-to-cart. Mount with client:load. */
 export default function ProductModal() {
@@ -123,7 +125,13 @@ export default function ProductModal() {
                   ...(product.images || []),
                 ];
                 return allImages.length > 0 ? (
-                  <ImageGallery images={allImages} alt={product.title} badge={product.badge} />
+                  <Suspense fallback={
+                    <div class={styles['product-modal-image-main']} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '300px' }}>
+                      <span>Cargando...</span>
+                    </div>
+                  }>
+                    <ImageGallery images={allImages} alt={product.title} badge={product.badge} />
+                  </Suspense>
                 ) : (
                   <>
                     {product.badge && (
