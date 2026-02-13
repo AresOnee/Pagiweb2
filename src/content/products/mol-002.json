@@ -5,7 +5,7 @@
   "categorySlug": "soldadura-exotermica",
   "description": "Molde de grafito de alta densidad tipo GT para conexión exotérmica de dos cables a una varilla de puesta a tierra en configuración T. Permite conectar dos conductores de cobre a la parte superior de una barra Copperweld simultáneamente. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
-    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
     "Conexión tipo Cable a Varilla en T (GT)",
     "Subtipo GTC según calibre de cable y barra",
     "Compatible con barras Copperweld de 1/2\", 5/8\" y 3/4\"",
@@ -21,7 +21,7 @@
     "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\"",
     "Cables Compatibles": "N°6 a 4/0 AWG",
     "Rango de Cargas": "90 a 200 g",
-    "Temperatura de Operación": "Hasta 3.400°C"
+    "Temperatura de Operación": "Superior a 2.500°C"
   },
   "image": "/assets/img/products/mol-002-08.webp",
   "images": [

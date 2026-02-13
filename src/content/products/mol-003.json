@@ -5,7 +5,7 @@
   "categorySlug": "soldadura-exotermica",
   "description": "Molde de grafito de alta densidad tipo GY para conexión exotérmica de cable de paso lateral a varilla de puesta a tierra. El cable pasa a través del costado de la barra a una altura indeterminada. Para uso con cable trenzado de cobre y varillas Copperweld. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
-    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
     "Conexión tipo Cable de Paso a Varilla (GY)",
     "Subtipo GYE según calibre de cable y barra",
     "Compatible con barras Copperweld de 1/2\", 5/8\" y 3/4\"",
@@ -21,7 +21,7 @@
     "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\"",
     "Cables Compatibles": "N°1/0 a 4/0 AWG",
     "Rango de Cargas": "90 a 150 g",
-    "Temperatura de Operación": "Hasta 3.400°C"
+    "Temperatura de Operación": "Superior a 2.500°C"
   },
   "image": "/assets/img/products/mol-003-04.webp",
   "images": [

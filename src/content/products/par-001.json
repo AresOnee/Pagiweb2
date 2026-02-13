@@ -8,10 +8,10 @@
     "Acero inoxidable aleación 304",
     "Pértigas de 3/4\" y 1\" de diámetro",
     "Medidas disponibles: 1,5 m y 3 m",
-    "Norma NF C 17-102 protección contra descargas atmosféricas",
+    "Norma IEC 62305 protección contra descargas atmosféricas",
     "Norma NFPA 780-2020 instalación sistemas protección contra rayos",
     "Norma AEA 92305 protección contra descargas eléctricas atmosféricas",
-    "Temperatura de trabajo: -10°C a 80°C"
+    "Temperatura de trabajo: -40°C a 80°C"
   ],
   "specs": {
     "Tipo": "Franklin Tridente / Punta Captadora",
@@ -19,8 +19,8 @@
     "Pértigas": "3/4\" y 1\" de diámetro",
     "Medidas": "1,5 m y 3 m",
     "Peso": "8 kg aprox.",
-    "Temperatura de Trabajo": "-10°C a 80°C",
-    "Norma NF C 17-102": "Protección contra descargas atmosféricas",
+    "Temperatura de Trabajo": "-40°C a 80°C",
+    "Norma IEC 62305": "Protección contra descargas atmosféricas",
     "Norma NFPA 780-2020": "Instalación sistemas protección contra rayos",
     "Norma AEA 92305": "Protección contra descargas eléctricas atmosféricas"
   },

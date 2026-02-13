@@ -5,7 +5,7 @@
   "categorySlug": "soldadura-exotermica",
   "description": "Molde de grafito de alta densidad tipo VG para conexión exotérmica de cable de paso a superficie vertical de acero. El cable pasa por la superficie vertical quedando pegado a ella. Para uso con cable trenzado de cobre. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
-    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
     "Cable de paso a superficie vertical (VG)",
     "Subtipo VGC según calibre de cable",
     "Cable pasante pegado a superficie vertical",
@@ -20,7 +20,7 @@
     "Subtipos": "VGC",
     "Cables Compatibles": "N°6 a 250 MCM",
     "Rango de Cargas": "45 a 150 g",
-    "Temperatura de Operación": "Hasta 3.400°C"
+    "Temperatura de Operación": "Superior a 2.500°C"
   },
   "image": "/assets/img/products/mol-016-04.webp",
   "images": [
