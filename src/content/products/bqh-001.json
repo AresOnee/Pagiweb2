@@ -3,9 +3,9 @@
   "title": "Barra Química Horizontal",
   "category": "Barras Químicas",
   "categorySlug": "barras-quimicas",
-  "description": "Sistema de tierra física ultra eficiente en configuración horizontal. Contiene mezcla de sales cristalinas ricas en iones que al ser afectadas por la humedad inician el despido de iones libres al terreno. Fabricada en cañería de cobre ASTM C1100 (ETP 110). Ideal para suelos rocosos o condiciones difíciles de excavación.",
+  "description": "Sistema de tierra física ultra eficiente en configuración horizontal. Contiene mezcla de sales cristalinas ricas en iones que al ser afectadas por la humedad inician el despido de iones libres al terreno. Fabricada en cañería de cobre UNS C11000 (Cu-ETP). Ideal para suelos rocosos o condiciones difíciles de excavación.",
   "features": [
-    "Cañería de cobre ASTM C1100 (ETP 110)",
+    "Cañería de cobre UNS C11000 (Cu-ETP)",
     "Diámetro 2\" interior, longitud 3000 mm con radio de 500 mm",
     "Sales cristalinas despolarizantes de cobre solubles en agua",
     "Soldadura de termofusión",
@@ -17,7 +17,7 @@
   ],
   "specs": {
     "Nombre": "Barra Química Horizontal",
-    "Material Cañería": "Cobre ASTM C1100 (ETP 110)",
+    "Material Cañería": "Cobre UNS C11000 (Cu-ETP)",
     "Diámetro Interior": "2 pulgadas",
     "Longitud": "3000 mm con 500 mm de radio 100°",
     "Espesor": "2,5 mm aprox.",

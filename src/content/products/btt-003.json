@@ -3,10 +3,10 @@
   "title": "Barra Toma Tierra Copperweld 3/4\"",
   "category": "Accesorios",
   "categorySlug": "accesorios",
-  "description": "Barra de puesta a tierra tipo Copperweld de 3/4 pulgada con recubrimiento de cobre electrolítico de 30 micras sobre núcleo de acero. Disponible en largos de 1.0m, 1.5m y 3.0m. Mayor diámetro para instalaciones de alta exigencia y suelos de alta resistividad.",
+  "description": "Barra de puesta a tierra tipo Copperweld de 3/4 pulgada con recubrimiento de cobre electrolítico de 254 micras (10 mils) sobre núcleo de acero. Disponible en largos de 1.0m, 1.5m y 3.0m. Mayor diámetro para instalaciones de alta exigencia y suelos de alta resistividad.",
   "features": [
     "Núcleo de acero de alta resistencia mecánica",
-    "Recubrimiento de cobre electrolítico de 30 micras",
+    "Recubrimiento de cobre electrolítico de 254 micras (10 mils)",
     "Punta cónica de acero para fácil hincado",
     "Mayor diámetro para instalaciones de alta exigencia",
     "Disponible en 3 largos: 1.0m, 1.5m y 3.0m",
@@ -16,7 +16,7 @@
   "specs": {
     "Tipo": "Barra Toma Tierra Copperweld",
     "Material": "Acero con recubrimiento de cobre electrolítico",
-    "Recubrimiento": "30 micras de cobre",
+    "Recubrimiento": "254 micras de cobre (10 mils, UL 467)",
     "Diámetro": "3/4 pulgada (19,05 mm)",
     "Largo Opción 1": "1.0 m",
     "Largo Opción 2": "1.5 m",

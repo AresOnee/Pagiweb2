@@ -5,7 +5,7 @@
   "categorySlug": "soldadura-exotermica",
   "description": "Molde de grafito de alta densidad tipo SS para empalme horizontal lineal de dos cables de cobre. Conexión en línea recta de dos conductores trenzados o sólidos de cobre o Copperweld. También disponible para conexiones de calibres diferentes o mezclados. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
-    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
     "Empalme horizontal lineal Cable a Cable (SS)",
     "Subtipo SSC según calibres de cable",
     "Para cables trenzados de cobre o tipo Copperweld",
@@ -20,7 +20,7 @@
     "Subtipos": "SSC",
     "Cables Compatibles": "N°6 a 4/0 AWG",
     "Rango de Cargas": "45 a 200 g",
-    "Temperatura de Operación": "Hasta 3.400°C"
+    "Temperatura de Operación": "Superior a 2.500°C"
   },
   "image": "/assets/img/products/mol-006-04.webp",
   "images": [

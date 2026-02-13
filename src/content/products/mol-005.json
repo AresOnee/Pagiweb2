@@ -5,7 +5,7 @@
   "categorySlug": "soldadura-exotermica",
   "description": "Molde de grafito de alta densidad tipo ND para conexión exotérmica de cable con derivación a varilla de puesta a tierra. Similar al tipo NC pero con configuración para cables de mayor calibre. Compatible con barras Copperweld de 1/2\" a 1\" y cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
-    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
     "Conexión tipo Cable + Derivación a Varilla (ND)",
     "Subtipos NDR (regular) y NDF (cables grandes)",
     "Compatible con barras Copperweld de 1/2\" a 1\"",
@@ -21,7 +21,7 @@
     "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\", 1\"",
     "Cables Compatibles": "N°4 a 4/0 AWG",
     "Rango de Cargas": "90 a 200 g",
-    "Temperatura de Operación": "Hasta 3.400°C"
+    "Temperatura de Operación": "Superior a 2.500°C"
   },
   "image": "/assets/img/products/mol-005-04.webp",
   "images": [

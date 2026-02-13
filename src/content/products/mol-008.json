@@ -5,7 +5,7 @@
   "categorySlug": "soldadura-exotermica",
   "description": "Molde de grafito de alta densidad tipo TA para conexión en T horizontal de cables de cobre. Une un cable principal (run) con un cable de derivación (tap) formando una T. Los conductores sólidos pueden ser de cobre o Copperweld. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
-    "Grafito de alta densidad resistente hasta 3.400°C",
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
     "Conexión en T horizontal de cables (TA)",
     "Subtipo TAC según calibres de run y tap",
     "Cable principal (run) y derivación (tap) independientes",
@@ -20,7 +20,7 @@
     "Subtipos": "TAC",
     "Cables Compatibles": "16mm² a 240mm² (N°4 a 4/0 AWG)",
     "Rango de Cargas": "32 a 200 g",
-    "Temperatura de Operación": "Hasta 3.400°C"
+    "Temperatura de Operación": "Superior a 2.500°C"
   },
   "image": "/assets/img/products/mol-008-04.webp",
   "images": [
