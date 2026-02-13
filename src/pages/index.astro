@@ -18,6 +18,65 @@ const featured = withBadge.length >= 6
 <MainLayout title="GelChile — Sistemas de Puesta a Tierra y Protección Eléctrica">
   <HeroSection />
 
+  <!-- Trust Strip -->
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item" data-aos="fade-up" data-aos-delay="0">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="trust-text">
+            <strong>20+</strong>
+            <span>Años de Experiencia</span>
+          </div>
+        </div>
+        <div class="trust-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"/>
+              <rect x="14" y="3" width="7" height="7"/>
+              <rect x="14" y="14" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/>
+            </svg>
+          </div>
+          <div class="trust-text">
+            <strong>64</strong>
+            <span>Productos en Catálogo</span>
+          </div>
+        </div>
+        <div class="trust-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="1" y="3" width="15" height="13" rx="2"/>
+              <path d="M16 8h4l3 3v5a2 2 0 0 1-2 2h-1"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <div class="trust-text">
+            <strong>Todo Chile</strong>
+            <span>Despacho Nacional</span>
+          </div>
+        </div>
+        <div class="trust-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="9 11 12 14 22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+          <div class="trust-text">
+            <strong>ISO 9001</strong>
+            <span>Certificación Garantizada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Categorías -->
   <section class="section categories-section">
     <div class="container">
@@ -32,6 +91,13 @@ const featured = withBadge.length >= 6
       </div>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,60 C300,0 900,0 1200,60 L1200,60 L0,60 Z" fill="var(--color-white)"/>
+    </svg>
+  </div>
 
   <!-- Productos Destacados -->
   <section class="section featured-section">
@@ -60,6 +126,13 @@ const featured = withBadge.length >= 6
       </div>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider section-divider-reverse">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 C300,60 900,60 1200,0 L1200,0 L0,0 Z" fill="var(--color-white)"/>
+    </svg>
+  </div>
 
   <!-- Por Qué Elegirnos -->
   <section class="section features-section">
@@ -139,6 +212,82 @@ const featured = withBadge.length >= 6
 </MainLayout>
 
 <style>
+  /* Trust Strip */
+  .trust-strip {
+    background: var(--color-white);
+    padding: var(--spacing-8) 0;
+    border-bottom: 1px solid var(--color-gray-100);
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-6);
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    justify-content: center;
+  }
+
+  .trust-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--color-primary-50);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .trust-icon svg {
+    width: 22px;
+    height: 22px;
+    color: var(--color-primary);
+  }
+
+  .trust-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trust-text strong {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    line-height: 1.2;
+  }
+
+  .trust-text span {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-500);
+  }
+
+  /* Section Dividers */
+  .section-divider {
+    position: relative;
+    height: 60px;
+    background: var(--color-gray-50);
+    margin-top: -1px;
+  }
+
+  .section-divider svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .section-divider-reverse {
+    background: var(--color-white);
+  }
+
+  .section-divider-reverse svg path {
+    fill: var(--color-gray-50);
+  }
+
   /* Categories Section */
   .categories-section {
     background: var(--color-gray-50);
@@ -170,7 +319,8 @@ const featured = withBadge.length >= 6
 
   /* Features Section */
   .features-section {
-    background: var(--color-white);
+    background: var(--color-gray-50);
+    position: relative;
   }
 
   .feature-grid {
@@ -288,6 +438,43 @@ const featured = withBadge.length >= 6
   }
 
   /* Dark Mode — hardcoded hex values (variable inversion maps gray-800 to near-white) */
+  :global([data-theme="dark"]) .trust-strip {
+    background: #0f172a;
+    border-bottom-color: #1e293b;
+  }
+
+  :global([data-theme="dark"]) .trust-icon {
+    background: rgba(76, 154, 255, 0.15);
+  }
+
+  :global([data-theme="dark"]) .trust-icon svg {
+    color: #60a5fa;
+  }
+
+  :global([data-theme="dark"]) .trust-text strong {
+    color: #e2e8f0;
+  }
+
+  :global([data-theme="dark"]) .trust-text span {
+    color: #94a3b8;
+  }
+
+  :global([data-theme="dark"]) .section-divider {
+    background: #0f172a;
+  }
+
+  :global([data-theme="dark"]) .section-divider svg path {
+    fill: #0f172a;
+  }
+
+  :global([data-theme="dark"]) .section-divider-reverse {
+    background: #0f172a;
+  }
+
+  :global([data-theme="dark"]) .section-divider-reverse svg path {
+    fill: #0f172a;
+  }
+
   :global([data-theme="dark"]) .categories-section {
     background: #0f172a;
   }
@@ -332,6 +519,10 @@ const featured = withBadge.length >= 6
   }
 
   @media (max-width: 768px) {
+    .trust-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     .categories-grid,
     .featured-grid {
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -348,6 +539,16 @@ const featured = withBadge.length >= 6
   }
 
   @media (max-width: 480px) {
+    .trust-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-4);
+    }
+
+    .trust-item {
+      justify-content: flex-start;
+      padding-left: var(--spacing-4);
+    }
+
     .categories-grid,
     .featured-grid,
     .feature-grid {

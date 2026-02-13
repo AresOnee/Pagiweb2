@@ -114,6 +114,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <DarkModeToggle client:idle />
   <InstallPrompt />
 
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top-btn" class="scroll-top-btn" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
   <!-- AOS: Animate On Scroll via IntersectionObserver (deferred to avoid forced reflow) -->
   <script is:inline>
     requestAnimationFrame(function() {
@@ -208,7 +215,92 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     })();
   </script>
 
+  <!-- Scroll to Top Script -->
+  <script is:inline>
+    (function() {
+      var btn = document.getElementById('scroll-top-btn');
+      if (!btn) return;
+      var visible = false;
+      var threshold = 400;
+      var onScroll = function() {
+        var show = window.scrollY > threshold;
+        if (show !== visible) {
+          visible = show;
+          btn.classList.toggle('visible', show);
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
   <style is:global>
+    /* Scroll to Top Button */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 120px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0, 82, 204, 0.35);
+      opacity: 0;
+      transform: translateY(16px);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+      z-index: 50;
+    }
+
+    .scroll-top-btn.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .scroll-top-btn:hover {
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      box-shadow: 0 6px 20px rgba(0, 82, 204, 0.45);
+    }
+
+    .scroll-top-btn:active {
+      transform: translateY(0) scale(0.95);
+    }
+
+    .scroll-top-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Dark mode */
+    [data-theme="dark"] .scroll-top-btn {
+      background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+      box-shadow: 0 4px 14px rgba(30, 64, 175, 0.4);
+    }
+
+    [data-theme="dark"] .scroll-top-btn:hover {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+      box-shadow: 0 6px 20px rgba(30, 64, 175, 0.5);
+    }
+
+    /* Responsive: avoid overlap with DarkModeToggle */
+    @media (max-width: 480px) {
+      .scroll-top-btn {
+        bottom: 140px;
+        right: 16px;
+        width: 44px;
+        height: 44px;
+      }
+    }
+
     /* H1: Page progress bar */
     .page-progress {
       position: fixed;

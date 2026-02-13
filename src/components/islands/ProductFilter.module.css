@@ -75,7 +75,7 @@
 .search-input {
   width: 100%;
   max-width: 500px;
-  padding: var(--spacing-3) var(--spacing-5);
+  padding: var(--spacing-3) var(--spacing-10);
   padding-left: var(--spacing-10);
   background: var(--color-white);
   border: 2px solid var(--color-gray-200);
@@ -106,6 +106,36 @@
   height: 20px;
   color: var(--color-gray-400);
   pointer-events: none;
+}
+
+/* Clear search button */
+.search-clear {
+  position: absolute;
+  right: var(--spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-gray-200);
+  color: var(--color-gray-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.search-clear:hover {
+  background: var(--color-gray-300);
+  color: var(--color-gray-700);
+}
+
+.search-clear svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* H7: Keyboard shortcut indicator */
@@ -396,6 +426,16 @@
 }
 
 /* H7: Dark mode for new elements */
+:global([data-theme="dark"]) .search-clear {
+  background: #475569;
+  color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .search-clear:hover {
+  background: #64748b;
+  color: #e2e8f0;
+}
+
 :global([data-theme="dark"]) .search-shortcut {
   background: #334155;
   border-color: #475569;
