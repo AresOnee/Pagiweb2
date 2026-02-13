@@ -1,0 +1,37 @@
+{
+  "sku": "MOL-047",
+  "title": "Molde de Grafito TP — Cable a Riel",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Riel",
+  "description": "Molde de grafito de alta densidad tipo TP para conexión exotérmica de cable de cobre a riel de acero. Para cable de aterrizamiento a rieles de 85 a 140 libras. Diseño alternativo al ST con mayor área de contacto en la conexión. Compatible con cargas exotérmicas ESTWELD tipo PB.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión cable a riel de acero (TP)",
+    "Para rieles de 85 a 140 libras",
+    "Mayor área de contacto que tipo ST",
+    "Cables compatibles: N°4 a 4/0 AWG",
+    "Cargas tipo PB especiales para riel",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "TP",
+    "Tipo de Unión": "Cable a riel de acero (Cable to Rail)",
+    "Material": "Grafito de alta densidad",
+    "Rieles Compatibles": "85 a 140 libras",
+    "Cables Compatibles": "N°4 a 4/0 AWG",
+    "Rango de Cargas": "PB90 a PB150",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-047-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "tpr-1l", "label": "Cable N°4", "group": "TP" },
+    { "id": "tpr-1v", "label": "Cable N°2", "group": "TP" },
+    { "id": "tpr-1y", "label": "Cable N°1", "group": "TP" },
+    { "id": "tpr-2c", "label": "Cable N°1/0", "group": "TP" },
+    { "id": "tpr-2g", "label": "Cable N°2/0", "group": "TP" },
+    { "id": "tpr-2q", "label": "Cable N°4/0", "group": "TP" }
+  ]
+}

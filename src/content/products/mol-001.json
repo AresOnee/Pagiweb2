@@ -1,8 +1,9 @@
 {
   "sku": "MOL-001",
   "title": "Molde de Grafito GR — Cable Terminal a Varilla de Tierra",
-  "category": "Soldadura Exotérmica",
-  "categorySlug": "soldadura-exotermica",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Varilla",
   "description": "Molde de grafito de alta densidad tipo GR para conexión exotérmica de cable terminal a la parte superior de una varilla de puesta a tierra. Para uso con cable trenzado de cobre y varillas Copperweld de acero con revestimiento de cobre, galvanizado o inoxidable. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",

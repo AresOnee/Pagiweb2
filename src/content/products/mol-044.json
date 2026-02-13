@@ -1,0 +1,41 @@
+{
+  "sku": "MOL-044",
+  "title": "Molde de Grafito RJ — Cable a Varilla Corrugada Vertical en T",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Varilla Corrugada",
+  "description": "Molde de grafito de alta densidad tipo RJ para conexión exotérmica de cable de cobre perpendicular a varilla corrugada de acero en posición vertical. El cable sale horizontal mientras la varilla sube en vertical. Para aterrizamiento de columnas y pilotes de concreto armado. Compatible con cargas exotérmicas ESTWELD.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión cable perpendicular a varilla corrugada vertical (RJ)",
+    "Cable horizontal con varilla vertical",
+    "Para columnas y pilotes de concreto armado",
+    "Varillas corrugadas compatibles: 3/8\" (#3) a 2-1/4\" (#18)",
+    "Cables compatibles: N°6 a 4/0 AWG",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "RJ",
+    "Tipo de Unión": "Cable a varilla corrugada vertical en T",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "RJC, RJE",
+    "Varillas Compatibles": "#3 (3/8\") a #18 (2-1/4\")",
+    "Cables Compatibles": "N°6 a 4/0 AWG",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-044-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "rjc-511h", "label": "Varilla #4 + Cable N°6", "group": "RJC — Varilla 1/2\"" },
+    { "id": "rjc-511v", "label": "Varilla #4 + Cable N°2", "group": "RJC — Varilla 1/2\"" },
+    { "id": "rjc-551l", "label": "Varilla #5 + Cable N°4", "group": "RJC — Varilla 5/8\"" },
+    { "id": "rjc-551v", "label": "Varilla #5 + Cable N°2", "group": "RJC — Varilla 5/8\"" },
+    { "id": "rjc-552c", "label": "Varilla #5 + Cable N°1/0", "group": "RJC — Varilla 5/8\"" },
+    { "id": "rje-611l", "label": "Varilla #6 + Cable N°4", "group": "RJE — Varilla 3/4\"" },
+    { "id": "rje-611v", "label": "Varilla #6 + Cable N°2", "group": "RJE — Varilla 3/4\"" },
+    { "id": "rje-612c", "label": "Varilla #6 + Cable N°1/0", "group": "RJE — Varilla 3/4\"" },
+    { "id": "rje-612q", "label": "Varilla #6 + Cable N°4/0", "group": "RJE — Varilla 3/4\"" }
+  ]
+}

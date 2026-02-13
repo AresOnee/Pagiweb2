@@ -65,8 +65,8 @@
   position: absolute;
   top: var(--spacing-4);
   right: var(--spacing-4);
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background: var(--color-gray-100);
   border: none;
   border-radius: var(--radius-full);
@@ -106,8 +106,8 @@
 }
 
 .modal-close {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background: var(--color-gray-100);
   border: none;
   border-radius: var(--radius-full);
@@ -702,6 +702,33 @@
   }
 }
 
+@media (max-width: 480px) {
+  .product-modal {
+    padding: var(--spacing-2);
+  }
+
+  .product-modal-body {
+    padding: var(--spacing-3);
+  }
+
+  .modal-body {
+    padding: var(--spacing-3);
+  }
+
+  .modal-header {
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+
+  .modal-footer {
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+
+  .product-modal-image-main {
+    padding: var(--spacing-4);
+    min-height: 180px;
+  }
+}
+
 /* Dark mode */
 :global([data-theme="dark"]) .product-modal-body {
   scrollbar-color: var(--color-gray-600) var(--color-gray-800);
@@ -750,4 +777,12 @@
 :global([data-theme="dark"]) .tab-btn.active,
 :global([data-theme="dark"]) .tab-btn:hover {
   background: rgba(0, 82, 204, 0.2);
+}
+
+@media (pointer: coarse) {
+  .quantity-controls .qty-btn,
+  .modal-qty-btn {
+    width: 44px;
+    height: 44px;
+  }
 }

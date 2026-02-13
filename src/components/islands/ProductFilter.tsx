@@ -24,6 +24,7 @@ const sortLabels: Record<SortOption, string> = {
 /** Product filter + search + grid. Mount with client:load on /productos. */
 export default function ProductFilter({ products, categories }: Props) {
   const [selectedCategory, setSelectedCategory] = useState<string>('todos');
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string>('todos');
   const [searchText, setSearchText] = useState('');
   const [inputValue, setInputValue] = useState('');
   const [sortBy, setSortBy] = useState<SortOption>('default');
@@ -87,12 +88,22 @@ export default function ProductFilter({ products, categories }: Props) {
   const query = searchText.toLowerCase().trim();
   const filtered = products.filter((p) => {
     const matchCategory = selectedCategory === 'todos' || p.categorySlug === selectedCategory;
+    const matchSubcategory = selectedSubcategory === 'todos' || p.subcategory === selectedSubcategory;
     const matchSearch = !query ||
       p.title.toLowerCase().includes(query) ||
       p.sku.toLowerCase().includes(query) ||
       p.description.toLowerCase().includes(query);
-    return matchCategory && matchSearch;
+    return matchCategory && matchSubcategory && matchSearch;
   });
+
+  // Extract subcategories from products in the selected category
+  const subcategories = selectedCategory !== 'todos'
+    ? [...new Set(
+        products
+          .filter((p) => p.categorySlug === selectedCategory && p.subcategory)
+          .map((p) => p.subcategory!)
+      )].sort((a, b) => a.localeCompare(b, 'es'))
+    : [];
 
   // H7: Sort filtered products
   const sorted = [...filtered].sort((a, b) => {
@@ -113,6 +124,7 @@ export default function ProductFilter({ products, categories }: Props) {
 
   const handleCategoryClick = (catId: string) => {
     setSelectedCategory(catId);
+    setSelectedSubcategory('todos');
   };
 
   const handleCardClick = (product: Product) => {
@@ -234,6 +246,29 @@ export default function ProductFilter({ products, categories }: Props) {
           </button>
         ))}
       </div>
+
+      {/* Subcategory filter pills */}
+      {subcategories.length > 1 && (
+        <div class={styles['subcategory-container']}>
+          <button
+            class={`${styles['subcategory-btn']} ${selectedSubcategory === 'todos' ? styles.active : ''}`}
+            onClick={() => setSelectedSubcategory('todos')}
+            aria-pressed={selectedSubcategory === 'todos'}
+          >
+            Todos
+          </button>
+          {subcategories.map((sub) => (
+            <button
+              key={sub}
+              class={`${styles['subcategory-btn']} ${selectedSubcategory === sub ? styles.active : ''}`}
+              onClick={() => setSelectedSubcategory(sub)}
+              aria-pressed={selectedSubcategory === sub}
+            >
+              {sub}
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* H7: Product count + sorting */}
       <div class={styles['results-bar']}>

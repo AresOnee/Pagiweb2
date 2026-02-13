@@ -1,8 +1,9 @@
 {
   "sku": "MOL-018",
   "title": "Molde de Grafito VB — Cable hacia Abajo a Superficie Vertical",
-  "category": "Soldadura Exotérmica",
-  "categorySlug": "soldadura-exotermica",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Acero",
   "description": "Molde de grafito de alta densidad tipo VB para conexión exotérmica de cable vertical terminal hacia abajo a superficie plana de acero vertical o conexión lateral a tubo de acero vertical u horizontal. Subtipo VBC para cable de cobre trenzado. Debe hacerse prueba de soldadura en secciones de acero delgadas o tubo de pared delgada.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",

@@ -19,6 +19,7 @@ const categorySlugs = [
   'aditivos',
   'pararrayos',
   'soldadura-exotermica',
+  'moldes-grafito',
   'accesorios',
   'servicios',
 ] as const;
@@ -34,6 +35,7 @@ const categoryNames = [
   'Aditivos',
   'Pararrayos y Protección',
   'Soldadura Exotérmica',
+  'Moldes de Grafito',
   'Accesorios',
   'Servicios',
 ] as const;
@@ -59,6 +61,7 @@ const products = defineCollection({
     images: z.array(z.string().startsWith('/')).optional(),
     inStock: z.boolean().default(true),
     badge: z.enum(badgeValues).nullable(),
+    subcategory: z.string().optional(),
     variants: z.array(z.object({
       id: z.string(),
       label: z.string(),

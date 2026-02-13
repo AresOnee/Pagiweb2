@@ -336,11 +336,27 @@ function isActive(href: string, current: string): boolean {
     .mobile-menu-btn {
       display: flex;
     }
+
+    .nav {
+      gap: var(--spacing-2);
+    }
+
+    .cart-btn span {
+      display: none;
+    }
+
+    .logo-img {
+      width: 180px;
+    }
   }
 
   @media (max-width: 480px) {
     .header .container {
       height: 64px;
+    }
+
+    .logo-img {
+      width: 140px;
     }
   }
 </style>

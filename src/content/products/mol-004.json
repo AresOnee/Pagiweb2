@@ -1,8 +1,9 @@
 {
   "sku": "MOL-004",
   "title": "Molde de Grafito NC — Cable de Paso con Derivación a Varilla",
-  "category": "Soldadura Exotérmica",
-  "categorySlug": "soldadura-exotermica",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Varilla",
   "description": "Molde de grafito de alta densidad tipo NC para conexión exotérmica de cable de paso con derivación horizontal en la parte superior de una varilla de puesta a tierra. Permite conectar un cable pasante con una derivación lateral a la barra Copperweld. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",

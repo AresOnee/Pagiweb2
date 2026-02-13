@@ -1,0 +1,34 @@
+{
+  "sku": "MOL-025",
+  "title": "Molde de Grafito GB — Empalme de Varillas de Tierra",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Varilla",
+  "description": "Molde de grafito de alta densidad tipo GB para empalme exotérmico de dos varillas de puesta a tierra alineadas. Permite unir el extremo de una varilla con el inicio de otra para extender la profundidad de la red de tierra. Compatible con varillas Copperweld y cargas exotérmicas ESTWELD.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Empalme de dos varillas de tierra alineadas (GB)",
+    "Para varillas Copperweld de acero con revestimiento de cobre",
+    "Barras compatibles: 1/2\", 5/8\", 3/4\" y 1\"",
+    "Permite extender la profundidad del sistema de tierra",
+    "Reutilizable para múltiples soldaduras",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "GB",
+    "Tipo de Unión": "Empalme de varillas de tierra (Rod to Rod)",
+    "Material": "Grafito de alta densidad",
+    "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\", 1\"",
+    "Rango de Cargas": "250 a 3-250 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-025-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "gb-12", "label": "Barra 1/2\"", "group": "GB" },
+    { "id": "gb-58", "label": "Barra 5/8\"", "group": "GB" },
+    { "id": "gb-34", "label": "Barra 3/4\"", "group": "GB" },
+    { "id": "gb-1", "label": "Barra 1\"", "group": "GB" }
+  ]
+}

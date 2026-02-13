@@ -1,0 +1,44 @@
+{
+  "sku": "MOL-030",
+  "title": "Molde de Grafito GL — Cable a Zapata de Cobre con Barreno",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Cobre",
+  "description": "Molde de grafito de alta densidad tipo GL para conexión exotérmica de cable de cobre a zapata de cobre CADWELD con barreno NEMA. Zapatas y conexiones para sistemas de tierra y estructuras que no pueden quedar soldadas permanentemente. Ideal para subestaciones. Compatible con zapatas serie B-121 y B-122.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión cable a zapata de cobre con barreno NEMA (GL)",
+    "Zapatas serie B-121 (1 barreno) y B-122 (2 barrenos)",
+    "Todas las zapatas son de cobre estañado",
+    "Cables compatibles: N°4 a 500 MCM",
+    "Ideal para aplicaciones en subestaciones",
+    "Requiere manija L160, chispero T320"
+  ],
+  "specs": {
+    "Código Cadweld": "GL",
+    "Tipo de Unión": "Cable a zapata de cobre con barreno (Cable to Copper Lug)",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "GLC, GLD",
+    "Cables Compatibles": "N°4 a 500 MCM",
+    "Zapatas": "Serie B-121 (1 barreno), B-122 (2 barrenos)",
+    "Rango de Cargas": "32 a 150 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-030-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "glc-ce1l", "label": "Cable N°4", "group": "GLC — Zapata 1/8\"x1\"" },
+    { "id": "glc-ce1t", "label": "Cable 2 Alam.", "group": "GLC — Zapata 1/8\"x1\"" },
+    { "id": "glc-ce1v", "label": "Cable N°2", "group": "GLC — Zapata 1/8\"x1\"" },
+    { "id": "glc-ce1y", "label": "Cable N°1", "group": "GLC — Zapata 1/8\"x1\"" },
+    { "id": "glc-ce2c", "label": "Cable N°1/0", "group": "GLC — Zapata 1/8\"x1\"" },
+    { "id": "glc-ce2g", "label": "Cable N°2/0", "group": "GLC — Zapata 1/8\"x1\"" },
+    { "id": "glc-ce2l", "label": "Cable N°3/0", "group": "GLC — Zapata 1/8\"x1\"" },
+    { "id": "glc-ce2q", "label": "Cable N°4/0", "group": "GLC — Zapata 3/16\"x1\"" },
+    { "id": "glc-de2v", "label": "Cable 250 MCM", "group": "GLC — Zapata 3/16\"x1\"" },
+    { "id": "glc-ee3a", "label": "Cable 300 MCM", "group": "GLC — Zapata 1/4\"x1\"" },
+    { "id": "glc-ee3d", "label": "Cable 350 MCM", "group": "GLC — Zapata 1/4\"x1\"" },
+    { "id": "glc-eg3q", "label": "Cable 500 MCM", "group": "GLC — Zapata 1/4\"x1-1/2\"" }
+  ]
+}

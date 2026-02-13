@@ -1,8 +1,9 @@
 {
   "sku": "MOL-015",
   "title": "Molde de Grafito VV — Cable a Superficie Vertical",
-  "category": "Soldadura Exotérmica",
-  "categorySlug": "soldadura-exotermica",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Acero",
   "description": "Molde de grafito de alta densidad tipo VV para conexión exotérmica de cable a superficie vertical de acero. El cable se suelda directamente a una placa o estructura metálica en posición vertical. Para uso con cable trenzado de cobre. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",

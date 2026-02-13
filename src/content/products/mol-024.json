@@ -1,0 +1,38 @@
+{
+  "sku": "MOL-024",
+  "title": "Molde de Grafito PT — Conexión en Paralelo Horizontal Cable a Cable",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Cable",
+  "description": "Molde de grafito de alta densidad tipo PT para conexión en paralelo horizontal de dos cables de cobre. En moldes tipo PT el conductor de paso va por debajo del cable paralelo. Para sistemas de puesta a tierra donde se requiere conexión paralela horizontal. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión en paralelo horizontal (PT)",
+    "Conductor de paso va por debajo del cable paralelo",
+    "Para cables trenzados de cobre",
+    "Cables compatibles: N°6 a 4/0 AWG",
+    "Reutilizable para múltiples soldaduras",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "PT",
+    "Tipo de Unión": "Conexión en paralelo horizontal (Cable a Cable)",
+    "Material": "Grafito de alta densidad",
+    "Cables Compatibles": "N°6 a 4/0 AWG",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-024-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "pt-6", "label": "Cable N°6", "group": "PT" },
+    { "id": "pt-4", "label": "Cable N°4", "group": "PT" },
+    { "id": "pt-2", "label": "Cable N°2", "group": "PT" },
+    { "id": "pt-1", "label": "Cable N°1", "group": "PT" },
+    { "id": "pt-1o", "label": "Cable N°1/0", "group": "PT" },
+    { "id": "pt-2o", "label": "Cable N°2/0", "group": "PT" },
+    { "id": "pt-3o", "label": "Cable N°3/0", "group": "PT" },
+    { "id": "pt-4o", "label": "Cable N°4/0", "group": "PT" }
+  ]
+}

@@ -1,8 +1,9 @@
 {
   "sku": "MOL-006",
   "title": "Molde de Grafito SS — Empalme Horizontal Lineal",
-  "category": "Soldadura Exotérmica",
-  "categorySlug": "soldadura-exotermica",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Cable",
   "description": "Molde de grafito de alta densidad tipo SS para empalme horizontal lineal de dos cables de cobre. Conexión en línea recta de dos conductores trenzados o sólidos de cobre o Copperweld. También disponible para conexiones de calibres diferentes o mezclados. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",

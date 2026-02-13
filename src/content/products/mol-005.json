@@ -1,8 +1,9 @@
 {
   "sku": "MOL-005",
   "title": "Molde de Grafito ND — Cable con Derivación a Varilla",
-  "category": "Soldadura Exotérmica",
-  "categorySlug": "soldadura-exotermica",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Varilla",
   "description": "Molde de grafito de alta densidad tipo ND para conexión exotérmica de cable con derivación a varilla de puesta a tierra. Similar al tipo NC pero con configuración para cables de mayor calibre. Compatible con barras Copperweld de 1/2\" a 1\" y cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
