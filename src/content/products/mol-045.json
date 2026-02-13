@@ -1,0 +1,42 @@
+{
+  "sku": "MOL-045",
+  "title": "Molde de Grafito RR — Cable a Varilla Corrugada Horizontal",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Aplicaciones Especiales",
+  "description": "Molde de grafito de alta densidad tipo RR para conexión exotérmica de cable de cobre a varilla corrugada de acero en posición horizontal. Cable y varilla en el mismo plano horizontal. Para aterrizamiento de cimentaciones y losas de concreto armado. Compatible con cargas exotérmicas ESTWELD.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión cable a varilla corrugada horizontal (RR)",
+    "Cable y varilla en el mismo plano horizontal",
+    "Para cimentaciones y losas de concreto armado",
+    "Varillas corrugadas compatibles: 1/2\" (#4) a 1\" (#8)",
+    "Cables compatibles: N°6 a 4/0 AWG",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "RR",
+    "Tipo de Unión": "Cable a varilla corrugada horizontal",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "RRC, RRA, RRH",
+    "Varillas Compatibles": "#4 (1/2\") a #8 (1\")",
+    "Cables Compatibles": "N°6 a 4/0 AWG",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-045-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "rrc-511h", "label": "Varilla #4 + Cable N°6", "group": "RRC — Varilla 1/2\"" },
+    { "id": "rrc-511v", "label": "Varilla #4 + Cable N°2", "group": "RRC — Varilla 1/2\"" },
+    { "id": "rrc-512c", "label": "Varilla #4 + Cable N°1/0", "group": "RRC — Varilla 1/2\"" },
+    { "id": "rrc-551h", "label": "Varilla #5 + Cable N°6", "group": "RRC — Varilla 5/8\"" },
+    { "id": "rrc-551v", "label": "Varilla #5 + Cable N°2", "group": "RRC — Varilla 5/8\"" },
+    { "id": "rrc-552c", "label": "Varilla #5 + Cable N°1/0", "group": "RRC — Varilla 5/8\"" },
+    { "id": "rrc-552q", "label": "Varilla #5 + Cable N°4/0", "group": "RRC — Varilla 5/8\"" },
+    { "id": "rrh-611l", "label": "Varilla #6 + Cable N°4", "group": "RRH — Varilla 3/4\"" },
+    { "id": "rrh-612c", "label": "Varilla #6 + Cable N°1/0", "group": "RRH — Varilla 3/4\"" },
+    { "id": "rrh-612q", "label": "Varilla #6 + Cable N°4/0", "group": "RRH — Varilla 3/4\"" }
+  ]
+}

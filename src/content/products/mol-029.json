@@ -1,0 +1,36 @@
+{
+  "sku": "MOL-029",
+  "title": "Molde de Grafito VN — Cable a Viga de Acero Vertical",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Acero",
+  "description": "Molde de grafito de alta densidad tipo VN para conexión exotérmica de cable de cobre a viga o columna de acero en posición vertical. Para aterrizamiento de estructuras metálicas, vigas I, columnas y perfiles estructurales. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión cable a viga de acero vertical (VN)",
+    "Para vigas I, columnas y perfiles estructurales",
+    "Cables compatibles: N°6 a 250mm²",
+    "Unión permanente de baja resistencia eléctrica",
+    "Reutilizable para múltiples soldaduras",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "VN",
+    "Tipo de Unión": "Cable a viga de acero vertical (Cable to Steel Beam)",
+    "Material": "Grafito de alta densidad",
+    "Cables Compatibles": "N°6 a 250mm²",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-029-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "vn-6", "label": "Cable N°6", "group": "VN" },
+    { "id": "vn-4", "label": "Cable N°4", "group": "VN" },
+    { "id": "vn-2", "label": "Cable N°2", "group": "VN" },
+    { "id": "vn-1", "label": "Cable N°1", "group": "VN" },
+    { "id": "vn-1o", "label": "Cable N°1/0", "group": "VN" },
+    { "id": "vn-2o", "label": "Cable N°2/0", "group": "VN" }
+  ]
+}

@@ -1,8 +1,9 @@
 {
   "sku": "MOL-014",
   "title": "Molde de Grafito HT — Cable de Paso Despegado de Superficie Horizontal",
-  "category": "Soldadura Exotérmica",
-  "categorySlug": "soldadura-exotermica",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Acero",
   "description": "Molde de grafito de alta densidad tipo HT para conexión exotérmica de cable de paso despegado de superficie horizontal de acero. El cable pasa elevado respecto a la superficie, ideal para cables de mayor calibre. Para uso con cable trenzado de cobre. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",

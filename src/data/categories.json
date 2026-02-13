@@ -32,8 +32,14 @@
   {
     "id": "soldadura-exotermica",
     "name": "Soldadura Exotérmica",
-    "description": "Cargas, moldes, herramientas y accesorios para soldadura por termofusión",
-    "count": 34
+    "description": "Cargas, herramientas y accesorios para soldadura por termofusión",
+    "count": 14
+  },
+  {
+    "id": "moldes-grafito",
+    "name": "Moldes de Grafito",
+    "description": "Moldes CADWELD para conexiones cable-varilla, cable-cable, cable-acero, cable-cobre y especiales",
+    "count": 50
   },
   {
     "id": "accesorios",

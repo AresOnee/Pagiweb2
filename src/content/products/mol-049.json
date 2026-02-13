@@ -1,0 +1,38 @@
+{
+  "sku": "MOL-049",
+  "title": "Molde de Grafito RX — Cable a Varilla Corrugada Salida Lateral",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Aplicaciones Especiales",
+  "description": "Molde de grafito de alta densidad tipo RX para conexión exotérmica especial de cable de cobre a varilla corrugada de acero con salida lateral del cable. Diseño para aplicaciones donde el cable debe salir en dirección lateral respecto a la varilla. Para estructuras de concreto armado. Compatible con cargas exotérmicas ESTWELD.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión cable a varilla corrugada con salida lateral (RX)",
+    "Cable sale en dirección lateral respecto a la varilla",
+    "Para estructuras de concreto armado",
+    "Varillas corrugadas compatibles: 1/2\" (#4) a 1\" (#8)",
+    "Cables compatibles: N°6 a 4/0 AWG",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "RX",
+    "Tipo de Unión": "Cable a varilla corrugada salida lateral",
+    "Material": "Grafito de alta densidad",
+    "Varillas Compatibles": "#4 (1/2\") a #8 (1\")",
+    "Cables Compatibles": "N°6 a 4/0 AWG",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-049-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "rx-511h", "label": "Varilla #4 + Cable N°6", "group": "RX — Varilla 1/2\"" },
+    { "id": "rx-511v", "label": "Varilla #4 + Cable N°2", "group": "RX — Varilla 1/2\"" },
+    { "id": "rx-551l", "label": "Varilla #5 + Cable N°4", "group": "RX — Varilla 5/8\"" },
+    { "id": "rx-551v", "label": "Varilla #5 + Cable N°2", "group": "RX — Varilla 5/8\"" },
+    { "id": "rx-552c", "label": "Varilla #5 + Cable N°1/0", "group": "RX — Varilla 5/8\"" },
+    { "id": "rx-611v", "label": "Varilla #6 + Cable N°2", "group": "RX — Varilla 3/4\"" },
+    { "id": "rx-612c", "label": "Varilla #6 + Cable N°1/0", "group": "RX — Varilla 3/4\"" }
+  ]
+}

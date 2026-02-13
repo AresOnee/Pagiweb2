@@ -1,0 +1,37 @@
+{
+  "sku": "MOL-038",
+  "title": "Molde de Grafito CC — Bus de Cobre a Superficie Horizontal de Acero",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Aplicaciones Especiales",
+  "description": "Molde de grafito de alta densidad tipo CC para conexión exotérmica de bus de cobre a superficie horizontal de acero. El bus de cobre se suelda sobre la cara plana horizontal de una estructura de acero. Para aterrizamiento de plataformas y estructuras horizontales. Compatible con cargas exotérmicas ESTWELD.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión bus de cobre a superficie horizontal de acero (CC)",
+    "Para plataformas y estructuras horizontales",
+    "Bus de cobre desde 1/8\"x1\" hasta 3/8\"x2\"",
+    "Unión permanente de baja resistencia eléctrica",
+    "Reutilizable para múltiples soldaduras",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "CC",
+    "Tipo de Unión": "Bus de cobre a superficie horizontal de acero",
+    "Material": "Grafito de alta densidad",
+    "Bus Compatibles": "1/8\"x1\" a 3/8\"x2\"",
+    "Rango de Cargas": "90 a 2-250 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-038-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "cc-ce", "label": "Bus 1/8\"x1\"", "group": "CC" },
+    { "id": "cc-de", "label": "Bus 3/16\"x1\"", "group": "CC" },
+    { "id": "cc-ee", "label": "Bus 1/4\"x1\"", "group": "CC" },
+    { "id": "cc-eg", "label": "Bus 1/4\"x1-1/2\"", "group": "CC" },
+    { "id": "cc-eh", "label": "Bus 1/4\"x2\"", "group": "CC" },
+    { "id": "cc-ge", "label": "Bus 3/8\"x1\"", "group": "CC" },
+    { "id": "cc-gh", "label": "Bus 3/8\"x2\"", "group": "CC" }
+  ]
+}

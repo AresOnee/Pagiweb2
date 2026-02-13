@@ -1,8 +1,9 @@
 {
   "sku": "MOL-019",
   "title": "Molde de Grafito VF — Cable hacia Arriba a Superficie Vertical",
-  "category": "Soldadura Exotérmica",
-  "categorySlug": "soldadura-exotermica",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Acero",
   "description": "Molde de grafito de alta densidad tipo VF para conexión exotérmica de cable vertical hacia arriba a superficie plana de acero vertical o conexión lateral a tubo de acero. Subtipo VFC para cable de cobre trenzado. Incluye variantes VFR para calibres mayores. Debe hacerse prueba de soldadura en secciones de acero delgadas.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",

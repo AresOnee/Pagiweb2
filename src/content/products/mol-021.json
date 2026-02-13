@@ -1,0 +1,37 @@
+{
+  "sku": "MOL-021",
+  "title": "Molde de Grafito XBQ/XBZ — Conexión Horizontal en X Cable a Cable",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Cable",
+  "description": "Molde de grafito de alta densidad tipo XBQ/XBZ para conexión horizontal en X de dos cables de cobre cruzados. Ideal para cruces de conductores en redes de puesta a tierra donde se requiere conexión en intersección. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión horizontal en X para cruce de cables (XBQ/XBZ)",
+    "Para cables trenzados de cobre o tipo Copperweld",
+    "Cables compatibles: N°1/0 a 500 MCM",
+    "Permite conexión de dos cables cruzados en un solo molde",
+    "Reutilizable para múltiples soldaduras",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "XBQ / XBZ",
+    "Tipo de Unión": "Conexión horizontal en X (Cable a Cable)",
+    "Material": "Grafito de alta densidad",
+    "Cables Compatibles": "N°1/0 a 500 MCM",
+    "Rango de Cargas": "90 a 250 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-021-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "xbq-1o", "label": "Cable N°1/0 + N°1/0", "group": "XBQ" },
+    { "id": "xbq-2o", "label": "Cable N°2/0 + N°2/0", "group": "XBQ" },
+    { "id": "xbq-3o", "label": "Cable N°3/0 + N°3/0", "group": "XBQ" },
+    { "id": "xbq-4o", "label": "Cable N°4/0 + N°4/0", "group": "XBQ" },
+    { "id": "xbz-250", "label": "Cable 250 MCM + 250 MCM", "group": "XBZ" },
+    { "id": "xbz-350", "label": "Cable 350 MCM + 350 MCM", "group": "XBZ" },
+    { "id": "xbz-500", "label": "Cable 500 MCM + 500 MCM", "group": "XBZ" }
+  ]
+}

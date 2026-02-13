@@ -1,8 +1,9 @@
 {
   "sku": "MOL-002",
   "title": "Molde de Grafito GT — Cable a Varilla en T",
-  "category": "Soldadura Exotérmica",
-  "categorySlug": "soldadura-exotermica",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Varilla",
   "description": "Molde de grafito de alta densidad tipo GT para conexión exotérmica de dos cables a una varilla de puesta a tierra en configuración T. Permite conectar dos conductores de cobre a la parte superior de una barra Copperweld simultáneamente. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",

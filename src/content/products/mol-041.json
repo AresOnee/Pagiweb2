@@ -1,0 +1,37 @@
+{
+  "sku": "MOL-041",
+  "title": "Molde de Grafito CH — Bus de Cobre al Canto sobre Superficie de Acero",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Aplicaciones Especiales",
+  "description": "Molde de grafito de alta densidad tipo CH para conexión exotérmica de bus de cobre posicionado al canto sobre superficie de acero. El bus queda con la cara angosta en contacto con el acero, ideal para espacios reducidos. Compatible con cargas exotérmicas ESTWELD.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Bus de cobre al canto sobre superficie de acero (CH)",
+    "Bus posicionado con cara angosta sobre el acero",
+    "Ideal para espacios reducidos",
+    "Bus de cobre desde 1/8\"x1\" hasta 3/8\"x2\"",
+    "Reutilizable para múltiples soldaduras",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "CH",
+    "Tipo de Unión": "Bus de cobre al canto sobre superficie de acero",
+    "Material": "Grafito de alta densidad",
+    "Bus Compatibles": "1/8\"x1\" a 3/8\"x2\"",
+    "Rango de Cargas": "90 a 2-250 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-041-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "ch-ce", "label": "Bus 1/8\"x1\"", "group": "CH" },
+    { "id": "ch-de", "label": "Bus 3/16\"x1\"", "group": "CH" },
+    { "id": "ch-ee", "label": "Bus 1/4\"x1\"", "group": "CH" },
+    { "id": "ch-eg", "label": "Bus 1/4\"x1-1/2\"", "group": "CH" },
+    { "id": "ch-eh", "label": "Bus 1/4\"x2\"", "group": "CH" },
+    { "id": "ch-ge", "label": "Bus 3/8\"x1\"", "group": "CH" },
+    { "id": "ch-gh", "label": "Bus 3/8\"x2\"", "group": "CH" }
+  ]
+}

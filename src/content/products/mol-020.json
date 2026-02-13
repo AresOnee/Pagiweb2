@@ -1,8 +1,9 @@
 {
   "sku": "MOL-020",
   "title": "Molde de Grafito VT — Cable Despegado de Superficie Vertical",
-  "category": "Soldadura Exotérmica",
-  "categorySlug": "soldadura-exotermica",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Acero",
   "description": "Molde de grafito de alta densidad tipo VT para conexión exotérmica de cable despegado (off surface) a superficie plana de acero vertical. Subtipo VTC para cable de cobre trenzado. El cable queda separado de la superficie, ideal para instalaciones que requieren espacio entre el conductor y la pared metálica.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",

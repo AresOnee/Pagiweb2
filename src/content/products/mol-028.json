@@ -1,0 +1,36 @@
+{
+  "sku": "MOL-028",
+  "title": "Molde de Grafito HB — Cable a Superficie de Hierro Colado",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Acero",
+  "description": "Molde de grafito de alta densidad tipo HB para conexión exotérmica de cable de cobre a superficie de hierro colado o fundido. Diseñado para conexiones a tuberías, válvulas y piezas de hierro fundido en sistemas de puesta a tierra. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión cable a superficie de hierro colado/fundido (HB)",
+    "Para tuberías, válvulas y piezas de hierro fundido",
+    "Cables compatibles: N°6 a 250mm²",
+    "Unión permanente de baja resistencia eléctrica",
+    "Reutilizable para múltiples soldaduras",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "HB",
+    "Tipo de Unión": "Cable a superficie de hierro colado (Cable to Cast Iron)",
+    "Material": "Grafito de alta densidad",
+    "Cables Compatibles": "N°6 a 250mm²",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-028-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "hb-6", "label": "Cable N°6", "group": "HB" },
+    { "id": "hb-4", "label": "Cable N°4", "group": "HB" },
+    { "id": "hb-2", "label": "Cable N°2", "group": "HB" },
+    { "id": "hb-1", "label": "Cable N°1", "group": "HB" },
+    { "id": "hb-1o", "label": "Cable N°1/0", "group": "HB" },
+    { "id": "hb-2o", "label": "Cable N°2/0", "group": "HB" }
+  ]
+}

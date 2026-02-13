@@ -1,0 +1,39 @@
+{
+  "sku": "MOL-026",
+  "title": "Molde de Grafito NT — Cable a Varilla One-Shot Vertical",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Varilla",
+  "description": "Molde de grafito de alta densidad tipo NT para conexión one-shot de cable a varilla de puesta a tierra en posición vertical. Diseño de un solo uso optimizado para instalaciones rápidas donde no se requiere reutilización del molde. Compatible con cargas exotérmicas ESTWELD.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión one-shot cable a varilla vertical (NT)",
+    "Diseño de un solo uso para instalación rápida",
+    "Compatible con varillas Copperweld de 1/2\", 5/8\" y 3/4\"",
+    "Cables compatibles: N°6 a 4/0 AWG",
+    "No requiere manija — diseño autoportante",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "NT",
+    "Tipo de Unión": "Cable a varilla one-shot vertical",
+    "Material": "Grafito de alta densidad",
+    "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\"",
+    "Cables Compatibles": "N°6 a 4/0 AWG",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-026-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "nt-12-6", "label": "Cable N°6", "group": "NT — Barra 1/2\"" },
+    { "id": "nt-12-4", "label": "Cable N°4", "group": "NT — Barra 1/2\"" },
+    { "id": "nt-12-2", "label": "Cable N°2", "group": "NT — Barra 1/2\"" },
+    { "id": "nt-58-6", "label": "Cable N°6", "group": "NT — Barra 5/8\"" },
+    { "id": "nt-58-4", "label": "Cable N°4", "group": "NT — Barra 5/8\"" },
+    { "id": "nt-58-2", "label": "Cable N°2", "group": "NT — Barra 5/8\"" },
+    { "id": "nt-34-6", "label": "Cable N°6", "group": "NT — Barra 3/4\"" },
+    { "id": "nt-34-4", "label": "Cable N°4", "group": "NT — Barra 3/4\"" }
+  ]
+}

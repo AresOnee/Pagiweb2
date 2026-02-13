@@ -15,6 +15,7 @@ export type CategorySlug =
   | 'aditivos'
   | 'pararrayos'
   | 'soldadura-exotermica'
+  | 'moldes-grafito'
   | 'accesorios'
   | 'servicios';
 
@@ -26,6 +27,7 @@ export type CategoryName =
   | 'Aditivos'
   | 'Pararrayos y Protección'
   | 'Soldadura Exotérmica'
+  | 'Moldes de Grafito'
   | 'Accesorios'
   | 'Servicios';
 
@@ -45,6 +47,7 @@ export interface Product {
   images?: string[];
   inStock: boolean;
   badge: BadgeValue | null;
+  subcategory?: string;
   variants?: Array<{ id: string; label: string; group?: string }>;
 }
 

@@ -1,0 +1,39 @@
+{
+  "sku": "MOL-046",
+  "title": "Molde de Grafito ST — Cable a Tubo de Acero",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Aplicaciones Especiales",
+  "description": "Molde de grafito de alta densidad tipo ST para conexión exotérmica de cable de cobre a tubo de acero. Diseñado para aterrizamiento de tuberías metálicas en plantas industriales, refinerías y estaciones de bombeo. Compatible con tubos de acero de diversos diámetros. Compatible con cargas exotérmicas ESTWELD.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión cable a tubo de acero (ST)",
+    "Para tuberías en plantas industriales y refinerías",
+    "Tubos compatibles: 1\" a 6\" de diámetro",
+    "Cables compatibles: N°6 a 4/0 AWG",
+    "Reutilizable para múltiples soldaduras",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "ST",
+    "Tipo de Unión": "Cable a tubo de acero (Cable to Steel Pipe)",
+    "Material": "Grafito de alta densidad",
+    "Tubos Compatibles": "1\" a 6\" de diámetro",
+    "Cables Compatibles": "N°6 a 4/0 AWG",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-046-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "st-1-4", "label": "Tubo 1\" + Cable N°4", "group": "ST — Tubo 1\"" },
+    { "id": "st-1-2", "label": "Tubo 1\" + Cable N°2", "group": "ST — Tubo 1\"" },
+    { "id": "st-2-4", "label": "Tubo 2\" + Cable N°4", "group": "ST — Tubo 2\"" },
+    { "id": "st-2-2", "label": "Tubo 2\" + Cable N°2", "group": "ST — Tubo 2\"" },
+    { "id": "st-2-1o", "label": "Tubo 2\" + Cable N°1/0", "group": "ST — Tubo 2\"" },
+    { "id": "st-4-2", "label": "Tubo 4\" + Cable N°2", "group": "ST — Tubo 4\"" },
+    { "id": "st-4-1o", "label": "Tubo 4\" + Cable N°1/0", "group": "ST — Tubo 4\"" },
+    { "id": "st-6-2o", "label": "Tubo 6\" + Cable N°2/0", "group": "ST — Tubo 6\"" }
+  ]
+}
