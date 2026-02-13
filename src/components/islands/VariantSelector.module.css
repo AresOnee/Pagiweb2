@@ -550,23 +550,6 @@
   font-weight: var(--font-weight-medium);
 }
 
-.chargeBadge {
-  flex-shrink: 0;
-  display: inline-flex;
-  padding: 1px 6px;
-  background: var(--color-gray-100);
-  color: var(--color-gray-500);
-  font-size: 10px;
-  font-weight: var(--font-weight-medium);
-  border-radius: var(--radius-full);
-  white-space: nowrap;
-}
-
-.cableRowSelected .chargeBadge {
-  background: var(--color-primary-50);
-  color: var(--color-primary);
-}
-
 /* ---- CTA Area ---- */
 
 .ctaArea {
@@ -716,9 +699,10 @@
 
 :global([data-theme="dark"]) .qtyControls { border-color: var(--color-gray-600); }
 :global([data-theme="dark"]) .qtyBtn { background: var(--color-gray-700); color: var(--color-gray-400); }
-:global([data-theme="dark"]) .qtyBtn:hover { background: var(--color-gray-600); color: var(--color-white); }
+:global([data-theme="dark"]) .qtyBtn:hover { background: var(--color-gray-600); color: #ffffff; }
 :global([data-theme="dark"]) .qtyInput { background: var(--color-gray-800); color: var(--color-gray-100); border-color: var(--color-gray-600); }
 
+:global([data-theme="dark"]) .addBtn { color: #ffffff; }
 :global([data-theme="dark"]) .addBtn:disabled { background: var(--color-gray-600); color: var(--color-gray-400); }
 
 :global([data-theme="dark"]) .list { scrollbar-color: var(--color-gray-600) transparent; }
@@ -736,7 +720,7 @@
 }
 :global([data-theme="dark"]) .breadcrumbArrow { color: var(--color-gray-600); }
 
-:global([data-theme="dark"]) .stepBadge { background: var(--color-primary-light); }
+:global([data-theme="dark"]) .stepBadge { background: var(--color-primary-light); color: #ffffff; }
 :global([data-theme="dark"]) .stepLabel { color: var(--color-gray-300); }
 
 :global([data-theme="dark"]) .modelCard {
@@ -774,11 +758,12 @@
 :global([data-theme="dark"]) .barPillActive {
   background: var(--color-primary-light);
   border-color: var(--color-primary-light);
-  color: var(--color-white);
+  color: #ffffff;
 }
 :global([data-theme="dark"]) .barPillActive:hover {
   background: var(--color-primary);
   border-color: var(--color-primary);
+  color: #ffffff;
 }
 :global([data-theme="dark"]) .barDot { border-color: var(--color-gray-800); }
 
@@ -795,8 +780,6 @@
 :global([data-theme="dark"]) .cableRowSelected .gaugeDotInner { background: var(--color-primary-light); }
 
 :global([data-theme="dark"]) .cableLabel { color: var(--color-gray-200); }
-:global([data-theme="dark"]) .chargeBadge { background: var(--color-gray-700); color: var(--color-gray-400); }
-:global([data-theme="dark"]) .cableRowSelected .chargeBadge { background: rgba(59, 130, 246, 0.15); color: var(--color-primary-light); }
 
 :global([data-theme="dark"]) .cableList { scrollbar-color: var(--color-gray-600) transparent; }
 :global([data-theme="dark"]) .cableList::-webkit-scrollbar-thumb { background: var(--color-gray-600); }
@@ -810,7 +793,7 @@
 }
 
 :global([data-theme="dark"]) .ctaCount { color: var(--color-gray-300); }
-:global([data-theme="dark"]) .ctaCountBadge { background: var(--color-primary-light); }
+:global([data-theme="dark"]) .ctaCountBadge { background: var(--color-primary-light); color: #ffffff; }
 :global([data-theme="dark"]) .ctaClearBtn { color: var(--color-gray-500); }
 :global([data-theme="dark"]) .ctaClearBtn:hover { color: var(--color-error); background: rgba(255, 86, 48, 0.1); }
 
@@ -848,8 +831,7 @@
   .cableCheckbox { order: 0; }
   .gaugeDot { order: 1; }
   .cableLabel { order: 2; flex-basis: calc(100% - 60px); }
-  .chargeBadge { order: 3; margin-left: 28px; }
-  .qtyControls { order: 4; margin-left: auto; }
+  .qtyControls { order: 3; margin-left: auto; }
 }
 
 @media (max-width: 480px) {
