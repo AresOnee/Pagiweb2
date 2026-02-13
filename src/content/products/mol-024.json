@@ -1,14 +1,14 @@
 {
   "sku": "MOL-024",
-  "title": "Molde de Grafito PT — Derivación Horizontal en T Cable a Cable",
+  "title": "Molde de Grafito PT — Conexión en Paralelo Horizontal Cable a Cable",
   "category": "Moldes de Grafito",
   "categorySlug": "moldes-grafito",
   "subcategory": "Cable a Cable",
-  "description": "Molde de grafito de alta densidad tipo PT para conexión de derivación horizontal en T de cable de paso con cable derivado en el mismo plano horizontal. Cable derivado sale perpendicular al cable de paso. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "description": "Molde de grafito de alta densidad tipo PT para conexión en paralelo horizontal de dos cables de cobre. En moldes tipo PT el conductor de paso va por debajo del cable paralelo. Para sistemas de puesta a tierra donde se requiere conexión paralela horizontal. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-    "Derivación horizontal en T (PT)",
-    "Cable de paso y derivación en el mismo plano horizontal",
+    "Conexión en paralelo horizontal (PT)",
+    "Conductor de paso va por debajo del cable paralelo",
     "Para cables trenzados de cobre",
     "Cables compatibles: N°6 a 4/0 AWG",
     "Reutilizable para múltiples soldaduras",
@@ -16,7 +16,7 @@
   ],
   "specs": {
     "Código Cadweld": "PT",
-    "Tipo de Unión": "Derivación horizontal en T (Cable a Cable)",
+    "Tipo de Unión": "Conexión en paralelo horizontal (Cable a Cable)",
     "Material": "Grafito de alta densidad",
     "Cables Compatibles": "N°6 a 4/0 AWG",
     "Rango de Cargas": "45 a 200 g",

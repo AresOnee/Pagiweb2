@@ -10,7 +10,7 @@
     "Conexión cable a varilla corrugada horizontal en X (RD)",
     "Cable y varilla se cruzan en el mismo plano",
     "Para cimentaciones con cruce de varillas",
-    "Varillas corrugadas compatibles: 1/2\" (#4) a 1\" (#8)",
+    "Varillas corrugadas compatibles: 3/8\" (#3) a 2-1/4\" (#18)",
     "Cables compatibles: N°6 a 4/0 AWG",
     "Requiere masilla selladora y chispero para operación"
   ],
@@ -18,8 +18,8 @@
     "Código Cadweld": "RD",
     "Tipo de Unión": "Cable a varilla corrugada horizontal en X",
     "Material": "Grafito de alta densidad",
-    "Subtipos": "RDC, RDH",
-    "Varillas Compatibles": "#4 (1/2\") a #8 (1\")",
+    "Subtipos": "RDC, RDM, RDH",
+    "Varillas Compatibles": "#3 (3/8\") a #18 (2-1/4\")",
     "Cables Compatibles": "N°6 a 4/0 AWG",
     "Rango de Cargas": "45 a 200 g",
     "Temperatura de Operación": "Superior a 2.500°C"
@@ -28,9 +28,6 @@
   "inStock": true,
   "badge": null,
   "variants": [
-    { "id": "rdc-511h", "label": "Varilla #4 + Cable N°6", "group": "RDC — Varilla 1/2\"" },
-    { "id": "rdc-511v", "label": "Varilla #4 + Cable N°2", "group": "RDC — Varilla 1/2\"" },
-    { "id": "rdc-512c", "label": "Varilla #4 + Cable N°1/0", "group": "RDC — Varilla 1/2\"" },
     { "id": "rdc-551h", "label": "Varilla #5 + Cable N°6", "group": "RDC — Varilla 5/8\"" },
     { "id": "rdc-551v", "label": "Varilla #5 + Cable N°2", "group": "RDC — Varilla 5/8\"" },
     { "id": "rdc-552q", "label": "Varilla #5 + Cable N°4/0", "group": "RDC — Varilla 5/8\"" },

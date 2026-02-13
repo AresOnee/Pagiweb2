@@ -29,11 +29,11 @@
   "variants": [
     { "id": "nx-12-6", "label": "Cable N°6", "group": "NX — Barra 1/2\"" },
     { "id": "nx-12-4", "label": "Cable N°4", "group": "NX — Barra 1/2\"" },
-    { "id": "nx-12-2", "label": "Cable N°2", "group": "NX — Barra 1/2\"" },
     { "id": "nx-58-6", "label": "Cable N°6", "group": "NX — Barra 5/8\"" },
     { "id": "nx-58-4", "label": "Cable N°4", "group": "NX — Barra 5/8\"" },
     { "id": "nx-58-2", "label": "Cable N°2", "group": "NX — Barra 5/8\"" },
     { "id": "nx-34-6", "label": "Cable N°6", "group": "NX — Barra 3/4\"" },
-    { "id": "nx-34-4", "label": "Cable N°4", "group": "NX — Barra 3/4\"" }
+    { "id": "nx-34-4", "label": "Cable N°4", "group": "NX — Barra 3/4\"" },
+    { "id": "nx-34-2", "label": "Cable N°2", "group": "NX — Barra 3/4\"" }
   ]
 }

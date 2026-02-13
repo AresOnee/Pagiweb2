@@ -10,7 +10,7 @@
     "Conexión cable a varilla corrugada horizontal (RR)",
     "Cable y varilla en el mismo plano horizontal",
     "Para cimentaciones y losas de concreto armado",
-    "Varillas corrugadas compatibles: 1/2\" (#4) a 1\" (#8)",
+    "Varillas corrugadas compatibles: 3/8\" (#3) a 2-1/4\" (#18)",
     "Cables compatibles: N°6 a 4/0 AWG",
     "Requiere masilla selladora y chispero para operación"
   ],
@@ -19,7 +19,7 @@
     "Tipo de Unión": "Cable a varilla corrugada horizontal",
     "Material": "Grafito de alta densidad",
     "Subtipos": "RRC, RRA, RRH",
-    "Varillas Compatibles": "#4 (1/2\") a #8 (1\")",
+    "Varillas Compatibles": "#3 (3/8\") a #18 (2-1/4\")",
     "Cables Compatibles": "N°6 a 4/0 AWG",
     "Rango de Cargas": "45 a 200 g",
     "Temperatura de Operación": "Superior a 2.500°C"

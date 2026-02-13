@@ -1,14 +1,14 @@
 {
   "sku": "MOL-023",
-  "title": "Molde de Grafito PH — Derivación Vertical Cable a Cable",
+  "title": "Molde de Grafito PH — Conexión en Paralelo Vertical Cable a Cable",
   "category": "Moldes de Grafito",
   "categorySlug": "moldes-grafito",
   "subcategory": "Cable a Cable",
-  "description": "Molde de grafito de alta densidad tipo PH para conexión de derivación vertical de cable de paso horizontal con cable derivado en ángulo recto. Ideal para derivaciones en sistemas de puesta a tierra donde el cable derivado sale en dirección vertical. Compatible con cargas exotérmicas ESTWELD.",
+  "description": "Molde de grafito de alta densidad tipo PH para conexión en paralelo vertical de dos cables de cobre. Los cables quedan en posición vertical paralela uno al lado del otro. Para sistemas de puesta a tierra donde se requiere conexión paralela vertical. Compatible con cargas exotérmicas ESTWELD.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-    "Derivación vertical en ángulo recto (PH)",
-    "Cable de paso horizontal con derivación vertical",
+    "Conexión en paralelo vertical (PH)",
+    "Cables en posición vertical paralela",
     "Para cables trenzados de cobre",
     "Cables compatibles: N°6 a 4/0 AWG",
     "Reutilizable para múltiples soldaduras",
@@ -16,7 +16,7 @@
   ],
   "specs": {
     "Código Cadweld": "PH",
-    "Tipo de Unión": "Derivación vertical en ángulo recto (Cable a Cable)",
+    "Tipo de Unión": "Conexión en paralelo vertical (Cable a Cable)",
     "Material": "Grafito de alta densidad",
     "Cables Compatibles": "N°6 a 4/0 AWG",
     "Rango de Cargas": "45 a 200 g",

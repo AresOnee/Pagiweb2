@@ -1,39 +1,37 @@
 {
   "sku": "MOL-047",
-  "title": "Molde de Grafito TP — Cable a Tubo de Cobre",
+  "title": "Molde de Grafito TP — Cable a Riel",
   "category": "Moldes de Grafito",
   "categorySlug": "moldes-grafito",
-  "subcategory": "Aplicaciones Especiales",
-  "description": "Molde de grafito de alta densidad tipo TP para conexión exotérmica de cable de cobre a tubo de cobre. Diseñado para aterrizamiento de tuberías de cobre en sistemas hidráulicos y de gas. Conexión directa cable-tubo sin necesidad de abrazaderas. Compatible con cargas exotérmicas ESTWELD.",
+  "subcategory": "Cable a Riel",
+  "description": "Molde de grafito de alta densidad tipo TP para conexión exotérmica de cable de cobre a riel de acero. Para cable de aterrizamiento a rieles de 85 a 140 libras. Diseño alternativo al ST con mayor área de contacto en la conexión. Compatible con cargas exotérmicas ESTWELD tipo PB.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-    "Conexión cable a tubo de cobre (TP)",
-    "Para tuberías de cobre en sistemas hidráulicos",
-    "Conexión directa sin abrazaderas",
-    "Tubos compatibles: 1/2\" a 4\" de diámetro",
-    "Cables compatibles: N°6 a 4/0 AWG",
+    "Conexión cable a riel de acero (TP)",
+    "Para rieles de 85 a 140 libras",
+    "Mayor área de contacto que tipo ST",
+    "Cables compatibles: N°4 a 4/0 AWG",
+    "Cargas tipo PB especiales para riel",
     "Requiere masilla selladora y chispero para operación"
   ],
   "specs": {
     "Código Cadweld": "TP",
-    "Tipo de Unión": "Cable a tubo de cobre (Cable to Copper Pipe)",
+    "Tipo de Unión": "Cable a riel de acero (Cable to Rail)",
     "Material": "Grafito de alta densidad",
-    "Tubos Compatibles": "1/2\" a 4\" de diámetro",
-    "Cables Compatibles": "N°6 a 4/0 AWG",
-    "Rango de Cargas": "45 a 200 g",
+    "Rieles Compatibles": "85 a 140 libras",
+    "Cables Compatibles": "N°4 a 4/0 AWG",
+    "Rango de Cargas": "PB90 a PB150",
     "Temperatura de Operación": "Superior a 2.500°C"
   },
   "image": "/assets/img/products/mol-047-01.webp",
   "inStock": true,
   "badge": null,
   "variants": [
-    { "id": "tp-12-6", "label": "Tubo 1/2\" + Cable N°6", "group": "TP — Tubo 1/2\"" },
-    { "id": "tp-12-2", "label": "Tubo 1/2\" + Cable N°2", "group": "TP — Tubo 1/2\"" },
-    { "id": "tp-34-4", "label": "Tubo 3/4\" + Cable N°4", "group": "TP — Tubo 3/4\"" },
-    { "id": "tp-34-2", "label": "Tubo 3/4\" + Cable N°2", "group": "TP — Tubo 3/4\"" },
-    { "id": "tp-1-2", "label": "Tubo 1\" + Cable N°2", "group": "TP — Tubo 1\"" },
-    { "id": "tp-1-1o", "label": "Tubo 1\" + Cable N°1/0", "group": "TP — Tubo 1\"" },
-    { "id": "tp-2-1o", "label": "Tubo 2\" + Cable N°1/0", "group": "TP — Tubo 2\"" },
-    { "id": "tp-2-4o", "label": "Tubo 2\" + Cable N°4/0", "group": "TP — Tubo 2\"" }
+    { "id": "tpr-1l", "label": "Cable N°4", "group": "TP" },
+    { "id": "tpr-1v", "label": "Cable N°2", "group": "TP" },
+    { "id": "tpr-1y", "label": "Cable N°1", "group": "TP" },
+    { "id": "tpr-2c", "label": "Cable N°1/0", "group": "TP" },
+    { "id": "tpr-2g", "label": "Cable N°2/0", "group": "TP" },
+    { "id": "tpr-2q", "label": "Cable N°4/0", "group": "TP" }
   ]
 }

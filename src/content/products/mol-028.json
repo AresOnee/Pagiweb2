@@ -9,7 +9,7 @@
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
     "Conexión cable a superficie de hierro colado/fundido (HB)",
     "Para tuberías, válvulas y piezas de hierro fundido",
-    "Cables compatibles: N°6 a 250mm²",
+    "Cables compatibles: N°8 a N°1 AWG",
     "Unión permanente de baja resistencia eléctrica",
     "Reutilizable para múltiples soldaduras",
     "Requiere masilla selladora y chispero para operación"
@@ -18,19 +18,20 @@
     "Código Cadweld": "HB",
     "Tipo de Unión": "Cable a superficie de hierro colado (Cable to Cast Iron)",
     "Material": "Grafito de alta densidad",
-    "Cables Compatibles": "N°6 a 250mm²",
-    "Rango de Cargas": "45 a 200 g",
+    "Cables Compatibles": "N°8 a N°1 AWG",
+    "Rango de Cargas": "25XF-19 a 65XF-19",
     "Temperatura de Operación": "Superior a 2.500°C"
   },
   "image": "/assets/img/products/mol-028-01.webp",
   "inStock": true,
   "badge": null,
   "variants": [
-    { "id": "hb-6", "label": "Cable N°6", "group": "HB" },
-    { "id": "hb-4", "label": "Cable N°4", "group": "HB" },
-    { "id": "hb-2", "label": "Cable N°2", "group": "HB" },
-    { "id": "hb-1", "label": "Cable N°1", "group": "HB" },
-    { "id": "hb-1o", "label": "Cable N°1/0", "group": "HB" },
-    { "id": "hb-2o", "label": "Cable N°2/0", "group": "HB" }
+    { "id": "hba-1g", "label": "Cable N°8/6 Alam.", "group": "HBA" },
+    { "id": "hba-1h", "label": "Cable N°6", "group": "HBA" },
+    { "id": "hba-1k", "label": "Cable N°4 Alam.", "group": "HBA" },
+    { "id": "hba-1l", "label": "Cable N°4", "group": "HBA" },
+    { "id": "hba-1t", "label": "Cable N°2 Alam.", "group": "HBA" },
+    { "id": "hba-1v", "label": "Cable N°2", "group": "HBA" },
+    { "id": "hba-1y", "label": "Cable N°1", "group": "HBA" }
   ]
 }
