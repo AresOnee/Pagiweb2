@@ -149,8 +149,8 @@
 }
 
 .qtyBtn {
-  width: 26px;
-  height: 26px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,8 +169,8 @@
 }
 
 .qtyInput {
-  width: 32px;
-  height: 26px;
+  width: 36px;
+  height: 36px;
   text-align: center;
   border: none;
   border-left: 1px solid var(--color-gray-200);
@@ -840,4 +840,15 @@
   .modelName { font-size: var(--font-size-base); }
   .cableList { max-height: 240px; }
   .chipList { max-height: 70px; }
+}
+
+@media (pointer: coarse) {
+  .qtyBtn {
+    width: 44px;
+    height: 44px;
+  }
+  .qtyInput {
+    width: 40px;
+    height: 44px;
+  }
 }
