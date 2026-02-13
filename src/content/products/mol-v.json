@@ -1,0 +1,503 @@
+{
+  "sku": "MOL-V",
+  "title": "Moldes de Grafito V — Cable a Superficie Vertical",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Acero",
+  "description": "Familia de moldes de grafito tipo V que incluye los modelos VV, VG, VS, VB, VF, VT, VN. Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C para conexiones exotérmicas profesionales. Compatible con cargas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "7 tipos de molde: VV, VG, VS, VB, VF, VT, VN",
+    "Reutilizable para múltiples soldaduras",
+    "Compatible con cargas exotérmicas ESTWELD y Electro Material",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "V",
+    "Tipos Incluidos": "VV, VG, VS, VB, VF, VT, VN",
+    "Material": "Grafito de alta densidad",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-015-04.webp",
+  "images": [],
+  "inStock": true,
+  "badge": null,
+  "variants": [],
+  "moldTypes": [
+    {
+      "code": "VV",
+      "name": "Cable a Superficie Vertical",
+      "description": "Molde de grafito de alta densidad tipo VV para conexión exotérmica de cable a superficie vertical de acero. El cable se suelda directamente a una placa o estructura metálica en posición vertical. Para uso con cable trenzado de cobre. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+      "features": [
+        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+        "Conexión cable a superficie vertical (VV)",
+        "Subtipo VVC según calibre de cable",
+        "Cable soldado a placa metálica en posición vertical",
+        "Cables compatibles: N°6 a 4/0 AWG",
+        "Para estructuras de acero verticales",
+        "Requiere masilla selladora y chispero para operación"
+      ],
+      "specs": {
+        "Código Cadweld": "VV",
+        "Tipo de Unión": "Cable a superficie vertical",
+        "Material": "Grafito de alta densidad",
+        "Subtipos": "VVC",
+        "Cables Compatibles": "N°6 a 4/0 AWG",
+        "Rango de Cargas": "45 a 200 g",
+        "Temperatura de Operación": "Superior a 2.500°C"
+      },
+      "image": "/assets/img/products/mol-015-04.webp",
+      "images": [
+        "/assets/img/products/mol-015-03.webp",
+        "/assets/img/products/mol-015-05.webp",
+        "/assets/img/products/mol-015-06.webp"
+      ],
+      "variants": [
+        {
+          "id": "vvc-4",
+          "label": "Cable N°4",
+          "group": "VVC"
+        },
+        {
+          "id": "vvc-2",
+          "label": "Cable N°2",
+          "group": "VVC"
+        },
+        {
+          "id": "vvc-1",
+          "label": "Cable N°1",
+          "group": "VVC"
+        },
+        {
+          "id": "vvr-1o",
+          "label": "Cable N°1/0",
+          "group": "VVR"
+        },
+        {
+          "id": "vvr-2o",
+          "label": "Cable N°2/0",
+          "group": "VVR"
+        },
+        {
+          "id": "vvr-3o",
+          "label": "Cable N°3/0",
+          "group": "VVR"
+        },
+        {
+          "id": "vvr-4o",
+          "label": "Cable N°4/0",
+          "group": "VVR"
+        }
+      ]
+    },
+    {
+      "code": "VG",
+      "name": "Cable de Paso a Superficie Vertical",
+      "description": "Molde de grafito de alta densidad tipo VG para conexión exotérmica de cable de paso a superficie vertical de acero. El cable pasa por la superficie vertical quedando pegado a ella. Para uso con cable trenzado de cobre. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+      "features": [
+        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+        "Cable de paso a superficie vertical (VG)",
+        "Subtipo VGC según calibre de cable",
+        "Cable pasante pegado a superficie vertical",
+        "Cables compatibles: N°6 a 250 MCM",
+        "Para estructuras de acero verticales",
+        "Requiere masilla selladora y chispero para operación"
+      ],
+      "specs": {
+        "Código Cadweld": "VG",
+        "Tipo de Unión": "Cable de paso a superficie vertical",
+        "Material": "Grafito de alta densidad",
+        "Subtipos": "VGC",
+        "Cables Compatibles": "N°6 a 250 MCM",
+        "Rango de Cargas": "45 a 150 g",
+        "Temperatura de Operación": "Superior a 2.500°C"
+      },
+      "image": "/assets/img/products/mol-016-04.webp",
+      "images": [
+        "/assets/img/products/mol-016-03.webp",
+        "/assets/img/products/mol-016-05.webp"
+      ],
+      "variants": [
+        {
+          "id": "vg-4",
+          "label": "Cable N°4",
+          "group": "VGC"
+        },
+        {
+          "id": "vg-2",
+          "label": "Cable N°2",
+          "group": "VGC"
+        },
+        {
+          "id": "vg-1",
+          "label": "Cable N°1",
+          "group": "VGC"
+        },
+        {
+          "id": "vg-1o",
+          "label": "Cable N°1/0",
+          "group": "VGC"
+        },
+        {
+          "id": "vg-2o",
+          "label": "Cable N°2/0",
+          "group": "VGC"
+        },
+        {
+          "id": "vg-3o",
+          "label": "Cable N°3/0",
+          "group": "VGC"
+        },
+        {
+          "id": "vg-4o",
+          "label": "Cable N°4/0",
+          "group": "VGC"
+        }
+      ]
+    },
+    {
+      "code": "VS",
+      "name": "Cable a Superficie de Acero Vertical",
+      "description": "Molde de grafito de alta densidad tipo VS para conexión exotérmica de cable a superficie de acero vertical, incluyendo placa plana vertical y tubo/cañería vertical u horizontal. El cable baja a 45° desde la superficie. Se debe verificar la posibilidad de perforación en tubos de pared delgada. Para uso con cable trenzado de cobre. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+      "features": [
+        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+        "Cable a superficie de acero vertical y tubo (VS)",
+        "Subtipo VSC según calibre de cable",
+        "Cable a 45° desde la superficie o tubo",
+        "Para placa vertical, tubo vertical y tubo horizontal",
+        "Cables compatibles: N°6 a 4/0 AWG",
+        "Verificar perforación en tubos de pared delgada",
+        "Requiere masilla selladora y chispero para operación"
+      ],
+      "specs": {
+        "Código Cadweld": "VS",
+        "Tipo de Unión": "Cable a superficie de acero vertical / tubo (Vertical Steel Surface)",
+        "Material": "Grafito de alta densidad",
+        "Subtipos": "VSC",
+        "Cables Compatibles": "N°6 a 4/0 AWG",
+        "Superficies": "Placa vertical, tubo vertical, tubo horizontal",
+        "Rango de Cargas": "45 a 200 g",
+        "Temperatura de Operación": "Superior a 2.500°C"
+      },
+      "image": "/assets/img/products/mol-017-02.webp",
+      "images": [
+        "/assets/img/products/mol-017-03.webp",
+        "/assets/img/products/mol-017-04.webp",
+        "/assets/img/products/mol-017-05.webp",
+        "/assets/img/products/mol-017-06.webp",
+        "/assets/img/products/mol-017-08.webp",
+        "/assets/img/products/mol-017-09.webp"
+      ],
+      "variants": [
+        {
+          "id": "vs-4",
+          "label": "Cable N°4",
+          "group": "VSC"
+        },
+        {
+          "id": "vs-2",
+          "label": "Cable N°2",
+          "group": "VSC"
+        },
+        {
+          "id": "vs-1",
+          "label": "Cable N°1",
+          "group": "VSC"
+        },
+        {
+          "id": "vs-1o",
+          "label": "Cable N°1/0",
+          "group": "VSC"
+        },
+        {
+          "id": "vs-2o",
+          "label": "Cable N°2/0",
+          "group": "VSC"
+        },
+        {
+          "id": "vs-3o",
+          "label": "Cable N°3/0",
+          "group": "VSC"
+        },
+        {
+          "id": "vs-4o",
+          "label": "Cable N°4/0",
+          "group": "VSC"
+        }
+      ]
+    },
+    {
+      "code": "VB",
+      "name": "Cable hacia Abajo a Superficie Vertical",
+      "description": "Molde de grafito de alta densidad tipo VB para conexión exotérmica de cable vertical terminal hacia abajo a superficie plana de acero vertical o conexión lateral a tubo de acero vertical u horizontal. Subtipo VBC para cable de cobre trenzado. Debe hacerse prueba de soldadura en secciones de acero delgadas o tubo de pared delgada.",
+      "features": [
+        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+        "Conexión tipo Cable hacia Abajo a Superficie Vertical (VB)",
+        "Subtipo VBC según calibre de cable",
+        "Cables compatibles: N°4, 2, 1, 1/0, 2/0, 3/0 y 4/0 AWG",
+        "Compatible con superficie plana y tubo de acero vertical u horizontal",
+        "Reutilizable para múltiples soldaduras",
+        "Requiere masilla selladora y chispero para operación"
+      ],
+      "specs": {
+        "Código Cadweld": "VB",
+        "Tipo de Unión": "Cable hacia abajo a superficie de acero vertical",
+        "Material": "Grafito de alta densidad",
+        "Subtipo": "VBC",
+        "Cables Compatibles": "N°4, 2, 1, 1/0, 2/0, 3/0, 4/0 AWG",
+        "Rango de Cargas": "65 a 200 g",
+        "Temperatura de Operación": "Superior a 2.500°C"
+      },
+      "image": "/assets/img/products/mol-018-04.webp",
+      "images": [
+        "/assets/img/products/mol-018-03.webp"
+      ],
+      "variants": [
+        {
+          "id": "vb-4",
+          "label": "Cable N°4",
+          "group": "VBC"
+        },
+        {
+          "id": "vb-2",
+          "label": "Cable N°2",
+          "group": "VBC"
+        },
+        {
+          "id": "vb-1",
+          "label": "Cable N°1",
+          "group": "VBC"
+        },
+        {
+          "id": "vb-1o",
+          "label": "Cable N°1/0",
+          "group": "VBC"
+        },
+        {
+          "id": "vb-2o",
+          "label": "Cable N°2/0",
+          "group": "VBC"
+        },
+        {
+          "id": "vb-3o",
+          "label": "Cable N°3/0",
+          "group": "VBC"
+        },
+        {
+          "id": "vb-4o",
+          "label": "Cable N°4/0",
+          "group": "VBC"
+        }
+      ]
+    },
+    {
+      "code": "VF",
+      "name": "Cable hacia Arriba a Superficie Vertical",
+      "description": "Molde de grafito de alta densidad tipo VF para conexión exotérmica de cable vertical hacia arriba a superficie plana de acero vertical o conexión lateral a tubo de acero. Subtipo VFC para cable de cobre trenzado. Incluye variantes VFR para calibres mayores. Debe hacerse prueba de soldadura en secciones de acero delgadas.",
+      "features": [
+        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+        "Conexión tipo Cable hacia Arriba a Superficie Vertical (VF)",
+        "Subtipos VFC y VFR según calibre de cable",
+        "Cables compatibles: N°4 a 500 MCM",
+        "Compatible con superficie plana y tubo de acero vertical",
+        "Reutilizable para múltiples soldaduras",
+        "Requiere masilla selladora y chispero para operación"
+      ],
+      "specs": {
+        "Código Cadweld": "VF",
+        "Tipo de Unión": "Cable hacia arriba a superficie de acero vertical",
+        "Material": "Grafito de alta densidad",
+        "Subtipos": "VFC, VFR, VFF",
+        "Cables Compatibles": "N°4 a 500 MCM",
+        "Rango de Cargas": "65 a 200 g",
+        "Temperatura de Operación": "Superior a 2.500°C"
+      },
+      "image": "/assets/img/products/mol-019-02.webp",
+      "images": [
+        "/assets/img/products/mol-019-03.webp"
+      ],
+      "variants": [
+        {
+          "id": "vf-4",
+          "label": "Cable N°4",
+          "group": "VFC"
+        },
+        {
+          "id": "vf-2",
+          "label": "Cable N°2",
+          "group": "VFC"
+        },
+        {
+          "id": "vf-1",
+          "label": "Cable N°1",
+          "group": "VFC"
+        },
+        {
+          "id": "vf-1o",
+          "label": "Cable N°1/0",
+          "group": "VFC"
+        },
+        {
+          "id": "vf-2o",
+          "label": "Cable N°2/0",
+          "group": "VFC"
+        }
+      ]
+    },
+    {
+      "code": "VT",
+      "name": "Cable Despegado de Superficie Vertical",
+      "description": "Molde de grafito de alta densidad tipo VT para conexión exotérmica de cable despegado (off surface) a superficie plana de acero vertical. Subtipo VTC para cable de cobre trenzado. El cable queda separado de la superficie, ideal para instalaciones que requieren espacio entre el conductor y la pared metálica.",
+      "features": [
+        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+        "Conexión tipo Cable Despegado de Superficie Vertical (VT)",
+        "Subtipo VTC según calibre de cable",
+        "Cables compatibles: N°4, 2, 1, 1/0, 2/0, 3/0 y 4/0 AWG",
+        "Cable queda separado de la superficie metálica",
+        "Reutilizable para múltiples soldaduras",
+        "Requiere masilla selladora y chispero para operación"
+      ],
+      "specs": {
+        "Código Cadweld": "VT",
+        "Tipo de Unión": "Cable despegado de superficie de acero vertical",
+        "Material": "Grafito de alta densidad",
+        "Subtipo": "VTC",
+        "Cables Compatibles": "N°4, 2, 1, 1/0, 2/0, 3/0, 4/0 AWG",
+        "Rango de Cargas": "65 a 200 g",
+        "Temperatura de Operación": "Superior a 2.500°C"
+      },
+      "image": "/assets/img/products/mol-020-01.webp",
+      "images": [
+        "/assets/img/products/mol-020-02.webp"
+      ],
+      "variants": [
+        {
+          "id": "vt-4",
+          "label": "Cable N°4",
+          "group": "VTC"
+        },
+        {
+          "id": "vt-2",
+          "label": "Cable N°2",
+          "group": "VTC"
+        },
+        {
+          "id": "vt-1",
+          "label": "Cable N°1",
+          "group": "VTC"
+        },
+        {
+          "id": "vt-1o",
+          "label": "Cable N°1/0",
+          "group": "VTC"
+        },
+        {
+          "id": "vt-2o",
+          "label": "Cable N°2/0",
+          "group": "VTC"
+        },
+        {
+          "id": "vt-3o",
+          "label": "Cable N°3/0",
+          "group": "VTC"
+        },
+        {
+          "id": "vt-4o",
+          "label": "Cable N°4/0",
+          "group": "VTC"
+        }
+      ]
+    },
+    {
+      "code": "VN",
+      "name": "Cable a Superficie de Acero Vertical",
+      "description": "Molde de grafito de alta densidad tipo VN para conexión exotérmica de cable de cobre a superficie plana de acero en posición vertical. Para aterrizamiento de estructuras metálicas, superficies lisas de acero verticales o conexión lateral a tubo de acero horizontal. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+      "features": [
+        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+        "Conexión cable horizontal a superficie de acero vertical (VN)",
+        "Para superficies lisas de acero verticales",
+        "Cables compatibles: N°6 a 500 MCM",
+        "Unión permanente de baja resistencia eléctrica",
+        "Reutilizable para múltiples soldaduras",
+        "Requiere masilla selladora y chispero para operación"
+      ],
+      "specs": {
+        "Código Cadweld": "VN",
+        "Tipo de Unión": "Cable a superficie de acero vertical (Cable to Steel Surface)",
+        "Material": "Grafito de alta densidad",
+        "Cables Compatibles": "N°6 a 500 MCM",
+        "Rango de Cargas": "45 a 200 g",
+        "Temperatura de Operación": "Superior a 2.500°C"
+      },
+      "image": "/assets/img/products/mol-029-01.webp",
+      "images": [],
+      "variants": [
+        {
+          "id": "vnc-1h",
+          "label": "Cable N°6",
+          "group": "VNC"
+        },
+        {
+          "id": "vnc-1l",
+          "label": "Cable N°4",
+          "group": "VNC"
+        },
+        {
+          "id": "vnc-1t",
+          "label": "Cable N°2 Alam.",
+          "group": "VNC"
+        },
+        {
+          "id": "vnc-1v",
+          "label": "Cable N°2",
+          "group": "VNC"
+        },
+        {
+          "id": "vnc-1y",
+          "label": "Cable N°1",
+          "group": "VNC"
+        },
+        {
+          "id": "vnc-2c",
+          "label": "Cable N°1/0",
+          "group": "VNC"
+        },
+        {
+          "id": "vnc-2g",
+          "label": "Cable N°2/0",
+          "group": "VNC"
+        },
+        {
+          "id": "vnc-2l",
+          "label": "Cable N°3/0",
+          "group": "VNC"
+        },
+        {
+          "id": "vnc-2q",
+          "label": "Cable N°4/0",
+          "group": "VNC"
+        },
+        {
+          "id": "vnc-2v",
+          "label": "Cable 250 MCM",
+          "group": "VNC"
+        },
+        {
+          "id": "vnc-3a",
+          "label": "Cable 300 MCM",
+          "group": "VNC"
+        },
+        {
+          "id": "vnc-3d",
+          "label": "Cable 350 MCM",
+          "group": "VNC"
+        },
+        {
+          "id": "vnc-3q",
+          "label": "Cable 500 MCM",
+          "group": "VNC"
+        }
+      ]
+    }
+  ]
+}

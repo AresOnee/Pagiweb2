@@ -4,6 +4,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import AddToQuoteBtn from '../../components/islands/AddToQuoteBtn.tsx';
 import VariantSelector from '../../components/islands/VariantSelector.tsx';
 import ImageGallery from '../../components/islands/ImageGallery.tsx';
+import MoldTypeTabs from '../../components/islands/MoldTypeTabs.tsx';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '../../data/site-config';
 
@@ -16,6 +17,7 @@ export async function getStaticPaths() {
 }
 
 const { product } = Astro.props;
+const hasMoldTypes = product.moldTypes && product.moldTypes.length > 0;
 const specsEntries = Object.entries(product.specs);
 const allImages = [
   ...(product.image ? [product.image] : []),
@@ -61,62 +63,72 @@ const allImages = [
   <!-- Product Detail -->
   <section class="section product-detail">
     <div class="container">
-      <div class="product-detail-grid">
-        <!-- Image Column -->
-        <div class="product-detail-image">
-          {allImages.length > 0 ? (
-            <ImageGallery client:visible images={allImages} alt={product.title} badge={product.badge} />
-          ) : (
-            <>
-              {product.badge && <span class="detail-badge">{product.badge}</span>}
-              <div class="detail-image-wrapper">
-                <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true" class="detail-placeholder">
-                  <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
-                  <circle cx="60" cy="50" r="15" fill="#e2e8f0" stroke="#94a3b8" />
-                  <path d="M50 75h20" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-              </div>
-            </>
-          )}
-          <div class:list={['detail-stock', { 'out-stock': !product.inStock }]}>
-            <span class="stock-dot"></span>
-            {product.inStock ? 'En Stock' : 'Sin Stock'}
-          </div>
-        </div>
+      <h1 class="detail-title">{product.title}</h1>
+      <p class="detail-sku">SKU: {product.sku}</p>
 
-        <!-- Info Column -->
-        <div class="product-detail-info">
-          <span class="detail-category">{product.category}</span>
-          <h1 class="detail-title">{product.title}</h1>
-          <p class="detail-sku">SKU: {product.sku}</p>
-          <p class="detail-description">{product.description}</p>
-
-          <div class="detail-actions">
-            {product.variants && product.variants.length > 0 && product.inStock ? (
-              <VariantSelector
-                client:visible
-                sku={product.sku}
-                title={product.title}
-                category={product.category}
-                image={product.image}
-                variants={product.variants}
-              />
+      {hasMoldTypes ? (
+        <!-- Consolidated mold with tabs -->
+        <MoldTypeTabs
+          client:visible
+          sku={product.sku}
+          title={product.title}
+          category={product.category}
+          moldTypes={product.moldTypes}
+        />
+      ) : (
+        <!-- Standard product layout -->
+        <div class="product-detail-grid">
+          <div class="product-detail-image">
+            {allImages.length > 0 ? (
+              <ImageGallery client:visible images={allImages} alt={product.title} badge={product.badge} />
             ) : (
-              <AddToQuoteBtn
-                client:visible
-                sku={product.sku}
-                title={product.title}
-                category={product.category}
-                image={product.image}
-                inStock={product.inStock}
-              />
+              <>
+                {product.badge && <span class="detail-badge">{product.badge}</span>}
+                <div class="detail-image-wrapper">
+                  <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true" class="detail-placeholder">
+                    <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
+                    <circle cx="60" cy="50" r="15" fill="#e2e8f0" stroke="#94a3b8" />
+                    <path d="M50 75h20" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                </div>
+              </>
             )}
+            <div class:list={['detail-stock', { 'out-stock': !product.inStock }]}>
+              <span class="stock-dot"></span>
+              {product.inStock ? 'En Stock' : 'Sin Stock'}
+            </div>
+          </div>
+
+          <div class="product-detail-info">
+            <span class="detail-category">{product.category}</span>
+            <p class="detail-description">{product.description}</p>
+
+            <div class="detail-actions">
+              {product.variants && product.variants.length > 0 && product.inStock ? (
+                <VariantSelector
+                  client:visible
+                  sku={product.sku}
+                  title={product.title}
+                  category={product.category}
+                  image={product.image}
+                  variants={product.variants}
+                />
+              ) : (
+                <AddToQuoteBtn
+                  client:visible
+                  sku={product.sku}
+                  title={product.title}
+                  category={product.category}
+                  image={product.image}
+                  inStock={product.inStock}
+                />
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <!-- Specs -->
-      {specsEntries.length > 0 && (
+      {!hasMoldTypes && specsEntries.length > 0 && (
         <div class="product-specs">
           <h2>Especificaciones Técnicas</h2>
           <div class="specs-table">
@@ -130,8 +142,7 @@ const allImages = [
         </div>
       )}
 
-      <!-- Features -->
-      {product.features.length > 0 && (
+      {!hasMoldTypes && product.features.length > 0 && (
         <div class="product-features">
           <h2>Características</h2>
           <ul class="features-list">
