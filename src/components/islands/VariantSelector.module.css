@@ -1,14 +1,16 @@
 /* ============================================
    VariantSelector — CSS Module
-   Technical product variant configurator.
+   Multi-step configurator + flat mode.
    ============================================ */
+
+/* ---- Base container ---- */
 
 .selector {
   border-top: 3px solid var(--color-primary);
   padding-top: var(--spacing-4);
 }
 
-/* ---- Model / Subtype info ---- */
+/* ---- Model / Subtype info (flat mode) ---- */
 
 .modelInfo {
   margin-bottom: var(--spacing-4);
@@ -33,7 +35,7 @@
 
 .modelSeparator {
   color: var(--color-gray-300);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-regular);
   margin: 0 var(--spacing-1);
 }
 
@@ -57,10 +59,10 @@
 .headingCount {
   font-size: var(--font-size-xs);
   color: var(--color-gray-400);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-regular);
 }
 
-/* ---- Scrollable variant list ---- */
+/* ---- Scrollable variant list (flat mode) ---- */
 
 .list {
   display: flex;
@@ -73,24 +75,12 @@
   scrollbar-color: var(--color-gray-300) transparent;
 }
 
-.list::-webkit-scrollbar {
-  width: 5px;
-}
+.list::-webkit-scrollbar { width: 5px; }
+.list::-webkit-scrollbar-track { background: transparent; }
+.list::-webkit-scrollbar-thumb { background: var(--color-gray-300); border-radius: 3px; }
+.list::-webkit-scrollbar-thumb:hover { background: var(--color-gray-400); }
 
-.list::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.list::-webkit-scrollbar-thumb {
-  background: var(--color-gray-300);
-  border-radius: 3px;
-}
-
-.list::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gray-400);
-}
-
-/* ---- Group divider ---- */
+/* ---- Group divider (flat mode) ---- */
 
 .groupDivider {
   font-size: var(--font-size-xs);
@@ -103,11 +93,9 @@
   border-bottom: 1px dashed rgba(0, 82, 204, 0.25);
 }
 
-.groupDivider:first-child {
-  margin-top: 0;
-}
+.groupDivider:first-child { margin-top: 0; }
 
-/* ---- Variant row ---- */
+/* ---- Variant row (flat mode) ---- */
 
 .row {
   display: flex;
@@ -120,16 +108,13 @@
   background: transparent;
 }
 
-.row:hover {
-  background: var(--color-gray-50);
-}
+.row:hover { background: var(--color-gray-50); }
 
 .row.selected {
   background: rgba(0, 82, 204, 0.04);
   box-shadow: inset 3px 0 0 var(--color-primary);
 }
 
-/* Checkbox */
 .checkbox {
   flex-shrink: 0;
   width: 16px;
@@ -138,7 +123,6 @@
   cursor: pointer;
 }
 
-/* Label text */
 .label {
   flex: 1;
   font-size: var(--font-size-sm);
@@ -153,7 +137,7 @@
   font-weight: var(--font-weight-medium);
 }
 
-/* ---- Quantity controls ---- */
+/* ---- Quantity controls (shared) ---- */
 
 .qtyControls {
   display: flex;
@@ -204,7 +188,7 @@
   margin: 0;
 }
 
-/* ---- Add button ---- */
+/* ---- Add button (shared) ---- */
 
 .addBtn {
   display: flex;
@@ -225,7 +209,7 @@
 }
 
 .addBtn:hover:not(:disabled) {
-  background: var(--color-accent-dark, #c05621);
+  background: var(--color-accent-dark);
   transform: translateY(-1px);
 }
 
@@ -236,8 +220,467 @@
   transform: none;
 }
 
-.addBtn svg {
+.addBtn svg { flex-shrink: 0; }
+
+/* ============================================
+   MULTI-STEP CONFIGURATOR
+   ============================================ */
+
+/* ---- Config header ---- */
+
+.configHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-4);
+}
+
+.configTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-700);
+}
+
+.configCount {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-400);
+}
+
+/* ---- Breadcrumb ---- */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  margin-bottom: var(--spacing-3);
+  flex-wrap: wrap;
+}
+
+.breadcrumbChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.breadcrumbArrow {
+  color: var(--color-gray-300);
+  font-size: var(--font-size-xs);
+}
+
+/* ---- Step section ---- */
+
+.stepSection {
+  margin-bottom: var(--spacing-4);
+}
+
+.stepSection:last-of-type { margin-bottom: var(--spacing-3); }
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
+}
+
+.stepBadge {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-full);
   flex-shrink: 0;
+}
+
+.stepLabel {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-600);
+}
+
+/* ---- Model cards ---- */
+
+.modelCards {
+  display: flex;
+  gap: var(--spacing-2);
+  flex-wrap: wrap;
+}
+
+.modelCard {
+  flex: 1;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease;
+  background: var(--color-white);
+}
+
+.modelCard:hover { border-color: var(--color-primary-300); }
+
+.modelCardActive {
+  composes: modelCard;
+  border-color: var(--color-primary);
+  background: var(--color-primary-50);
+}
+
+.modelRadio {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 150ms ease;
+}
+
+.modelCardActive .modelRadio { border-color: var(--color-primary); }
+
+.modelRadioDot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  transform: scale(0);
+  transition: transform 150ms ease;
+}
+
+.modelCardActive .modelRadioDot { transform: scale(1); }
+
+.modelCardText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.modelCardName {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-800);
+  line-height: 1.2;
+}
+
+.modelCardSub {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+  line-height: 1.3;
+}
+
+/* Model info for 2-step-bar (single model as static info) */
+
+.modelStatic {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--color-primary-50);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+}
+
+.modelStaticLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+  font-weight: var(--font-weight-medium);
+}
+
+.modelStaticName {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+/* ---- Bar pills ---- */
+
+.barContainer {
+  background: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-2);
+}
+
+.barPills {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.barPill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-full);
+  background: var(--color-white);
+  color: var(--color-gray-600);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 150ms ease;
+  white-space: nowrap;
+}
+
+.barPill:hover {
+  border-color: var(--color-primary-300);
+  color: var(--color-primary);
+}
+
+.barPillActive {
+  composes: barPill;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.barPillActive:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.barDot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  border: 1.5px solid var(--color-white);
+}
+
+/* ---- Cable rows ---- */
+
+.cableList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 340px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray-300) transparent;
+}
+
+.cableList::-webkit-scrollbar { width: 5px; }
+.cableList::-webkit-scrollbar-track { background: transparent; }
+.cableList::-webkit-scrollbar-thumb { background: var(--color-gray-300); border-radius: 3px; }
+
+.cableRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 120ms ease, box-shadow 120ms ease;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.cableRow:hover { background: var(--color-gray-50); }
+
+.cableRowSelected {
+  composes: cableRow;
+  background: rgba(0, 82, 204, 0.04);
+  box-shadow: inset 3px 0 0 var(--color-primary);
+  border-color: rgba(0, 82, 204, 0.08);
+}
+
+.cableRowSelected:hover {
+  background: rgba(0, 82, 204, 0.06);
+}
+
+.cableCheckbox {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* Gauge dot — scaled proportionally to cable size */
+
+.gaugeDot {
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gaugeDotInner {
+  border-radius: var(--radius-full);
+  background: var(--color-primary-300);
+  transition: background-color 150ms ease;
+}
+
+.cableRowSelected .gaugeDotInner { background: var(--color-primary); }
+
+.cableLabel {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-700);
+  font-weight: var(--font-weight-medium);
+  min-width: 0;
+}
+
+.cableInCart {
+  font-size: var(--font-size-xs);
+  color: var(--color-success);
+  font-weight: var(--font-weight-medium);
+}
+
+.chargeBadge {
+  flex-shrink: 0;
+  display: inline-flex;
+  padding: 1px 6px;
+  background: var(--color-gray-100);
+  color: var(--color-gray-500);
+  font-size: 10px;
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.cableRowSelected .chargeBadge {
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+}
+
+/* ---- CTA Area ---- */
+
+.ctaArea {
+  margin-top: var(--spacing-3);
+  border: 1px dashed var(--color-gray-300);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3);
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+
+.ctaAreaActive {
+  composes: ctaArea;
+  border-color: var(--color-primary-300);
+  border-style: solid;
+  background: rgba(0, 82, 204, 0.02);
+}
+
+.ctaHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-2);
+}
+
+.ctaCount {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-600);
+}
+
+.ctaCountBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-full);
+}
+
+.ctaClearBtn {
+  border: none;
+  background: none;
+  color: var(--color-gray-400);
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  transition: color 120ms ease, background-color 120ms ease;
+}
+
+.ctaClearBtn:hover {
+  color: var(--color-error);
+  background: rgba(255, 86, 48, 0.08);
+}
+
+.chipList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: var(--spacing-3);
+  max-height: 100px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray-300) transparent;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  line-height: 1.3;
+}
+
+.chipRemove {
+  border: none;
+  background: none;
+  color: var(--color-primary-300);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  transition: color 120ms ease;
+}
+
+.chipRemove:hover { color: var(--color-error); }
+
+.ctaEmpty {
+  text-align: center;
+  padding: var(--spacing-3);
+  color: var(--color-gray-400);
+  font-size: var(--font-size-xs);
+}
+
+.ctaEmptyIcon {
+  display: block;
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-1);
+  opacity: 0.5;
 }
 
 /* ============================================
@@ -248,84 +691,137 @@
   border-top-color: var(--color-primary-light);
 }
 
-:global([data-theme="dark"]) .modelLabel {
-  color: var(--color-gray-400);
-}
+/* Flat mode dark */
 
-:global([data-theme="dark"]) .modelName {
-  color: var(--color-primary-light);
-}
+:global([data-theme="dark"]) .modelLabel { color: var(--color-gray-400); }
+:global([data-theme="dark"]) .modelName { color: var(--color-primary-light); }
+:global([data-theme="dark"]) .modelSeparator { color: var(--color-gray-600); }
 
-:global([data-theme="dark"]) .modelSeparator {
-  color: var(--color-gray-600);
-}
-
-:global([data-theme="dark"]) .selectorHeading {
-  border-bottom-color: var(--color-gray-700);
-}
-
-:global([data-theme="dark"]) .headingText {
-  color: var(--color-gray-300);
-}
-
-:global([data-theme="dark"]) .headingCount {
-  color: var(--color-gray-500);
-}
+:global([data-theme="dark"]) .selectorHeading { border-bottom-color: var(--color-gray-700); }
+:global([data-theme="dark"]) .headingText { color: var(--color-gray-300); }
+:global([data-theme="dark"]) .headingCount { color: var(--color-gray-500); }
 
 :global([data-theme="dark"]) .groupDivider {
   color: var(--color-primary-light);
   border-bottom-color: rgba(59, 130, 246, 0.25);
 }
 
-:global([data-theme="dark"]) .row:hover {
-  background: rgba(255, 255, 255, 0.04);
-}
-
+:global([data-theme="dark"]) .row:hover { background: rgba(255, 255, 255, 0.04); }
 :global([data-theme="dark"]) .row.selected {
   background: rgba(59, 130, 246, 0.1);
   box-shadow: inset 3px 0 0 var(--color-primary-light);
 }
 
-:global([data-theme="dark"]) .label {
-  color: var(--color-gray-200);
-}
+:global([data-theme="dark"]) .label { color: var(--color-gray-200); }
 
-:global([data-theme="dark"]) .qtyControls {
+:global([data-theme="dark"]) .qtyControls { border-color: var(--color-gray-600); }
+:global([data-theme="dark"]) .qtyBtn { background: var(--color-gray-700); color: var(--color-gray-400); }
+:global([data-theme="dark"]) .qtyBtn:hover { background: var(--color-gray-600); color: var(--color-white); }
+:global([data-theme="dark"]) .qtyInput { background: var(--color-gray-800); color: var(--color-gray-100); border-color: var(--color-gray-600); }
+
+:global([data-theme="dark"]) .addBtn:disabled { background: var(--color-gray-600); color: var(--color-gray-400); }
+
+:global([data-theme="dark"]) .list { scrollbar-color: var(--color-gray-600) transparent; }
+:global([data-theme="dark"]) .list::-webkit-scrollbar-thumb { background: var(--color-gray-600); }
+:global([data-theme="dark"]) .list::-webkit-scrollbar-thumb:hover { background: var(--color-gray-500); }
+
+/* Multi-step dark */
+
+:global([data-theme="dark"]) .configTitle { color: var(--color-gray-200); }
+:global([data-theme="dark"]) .configCount { color: var(--color-gray-500); }
+
+:global([data-theme="dark"]) .breadcrumbChip {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--color-primary-light);
+}
+:global([data-theme="dark"]) .breadcrumbArrow { color: var(--color-gray-600); }
+
+:global([data-theme="dark"]) .stepBadge { background: var(--color-primary-light); }
+:global([data-theme="dark"]) .stepLabel { color: var(--color-gray-300); }
+
+:global([data-theme="dark"]) .modelCard {
   border-color: var(--color-gray-600);
+  background: var(--color-gray-800);
 }
+:global([data-theme="dark"]) .modelCard:hover { border-color: var(--color-primary-light); }
+:global([data-theme="dark"]) .modelCardActive {
+  border-color: var(--color-primary-light);
+  background: rgba(59, 130, 246, 0.12);
+}
+:global([data-theme="dark"]) .modelRadio { border-color: var(--color-gray-500); }
+:global([data-theme="dark"]) .modelCardActive .modelRadio { border-color: var(--color-primary-light); }
+:global([data-theme="dark"]) .modelRadioDot { background: var(--color-primary-light); }
+:global([data-theme="dark"]) .modelCardName { color: var(--color-gray-100); }
+:global([data-theme="dark"]) .modelCardSub { color: var(--color-gray-400); }
 
-:global([data-theme="dark"]) .qtyBtn {
+:global([data-theme="dark"]) .modelStatic {
+  background: rgba(59, 130, 246, 0.1);
+  border-left-color: var(--color-primary-light);
+}
+:global([data-theme="dark"]) .modelStaticLabel { color: var(--color-gray-400); }
+:global([data-theme="dark"]) .modelStaticName { color: var(--color-primary-light); }
+
+:global([data-theme="dark"]) .barContainer { background: var(--color-gray-800); }
+:global([data-theme="dark"]) .barPill {
+  border-color: var(--color-gray-600);
   background: var(--color-gray-700);
-  color: var(--color-gray-400);
+  color: var(--color-gray-300);
 }
-
-:global([data-theme="dark"]) .qtyBtn:hover {
-  background: var(--color-gray-600);
+:global([data-theme="dark"]) .barPill:hover {
+  border-color: var(--color-primary-light);
+  color: var(--color-primary-light);
+}
+:global([data-theme="dark"]) .barPillActive {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-light);
   color: var(--color-white);
 }
+:global([data-theme="dark"]) .barPillActive:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+:global([data-theme="dark"]) .barDot { border-color: var(--color-gray-800); }
 
-:global([data-theme="dark"]) .qtyInput {
-  background: var(--color-gray-800);
-  color: var(--color-gray-100);
+:global([data-theme="dark"]) .cableRow:hover { background: rgba(255, 255, 255, 0.04); }
+:global([data-theme="dark"]) .cableRowSelected {
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: inset 3px 0 0 var(--color-primary-light);
+  border-color: rgba(59, 130, 246, 0.15);
+}
+:global([data-theme="dark"]) .cableRowSelected:hover { background: rgba(59, 130, 246, 0.14); }
+
+:global([data-theme="dark"]) .gaugeDot { background: var(--color-gray-700); }
+:global([data-theme="dark"]) .gaugeDotInner { background: var(--color-primary-400); }
+:global([data-theme="dark"]) .cableRowSelected .gaugeDotInner { background: var(--color-primary-light); }
+
+:global([data-theme="dark"]) .cableLabel { color: var(--color-gray-200); }
+:global([data-theme="dark"]) .chargeBadge { background: var(--color-gray-700); color: var(--color-gray-400); }
+:global([data-theme="dark"]) .cableRowSelected .chargeBadge { background: rgba(59, 130, 246, 0.15); color: var(--color-primary-light); }
+
+:global([data-theme="dark"]) .cableList { scrollbar-color: var(--color-gray-600) transparent; }
+:global([data-theme="dark"]) .cableList::-webkit-scrollbar-thumb { background: var(--color-gray-600); }
+
+:global([data-theme="dark"]) .ctaArea {
   border-color: var(--color-gray-600);
 }
-
-:global([data-theme="dark"]) .addBtn:disabled {
-  background: var(--color-gray-600);
-  color: var(--color-gray-400);
+:global([data-theme="dark"]) .ctaAreaActive {
+  border-color: var(--color-primary-light);
+  background: rgba(59, 130, 246, 0.05);
 }
 
-:global([data-theme="dark"]) .list {
-  scrollbar-color: var(--color-gray-600) transparent;
-}
+:global([data-theme="dark"]) .ctaCount { color: var(--color-gray-300); }
+:global([data-theme="dark"]) .ctaCountBadge { background: var(--color-primary-light); }
+:global([data-theme="dark"]) .ctaClearBtn { color: var(--color-gray-500); }
+:global([data-theme="dark"]) .ctaClearBtn:hover { color: var(--color-error); background: rgba(255, 86, 48, 0.1); }
 
-:global([data-theme="dark"]) .list::-webkit-scrollbar-thumb {
-  background: var(--color-gray-600);
+:global([data-theme="dark"]) .chip {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--color-primary-light);
 }
+:global([data-theme="dark"]) .chipRemove { color: var(--color-primary-400); }
+:global([data-theme="dark"]) .chipRemove:hover { color: var(--color-error); }
 
-:global([data-theme="dark"]) .list::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gray-500);
-}
+:global([data-theme="dark"]) .ctaEmpty { color: var(--color-gray-500); }
 
 /* ============================================
    Responsive
@@ -336,32 +832,30 @@
     flex-wrap: wrap;
     gap: var(--spacing-2);
   }
+  .label { flex-basis: calc(100% - 28px); order: 1; }
+  .checkbox { order: 0; }
+  .qtyControls { order: 2; margin-left: 28px; }
 
-  .label {
-    flex-basis: calc(100% - 28px);
-    order: 1;
-  }
+  .modelCards { flex-direction: column; }
+  .modelCard, .modelCardActive { min-width: unset; }
 
-  .checkbox {
-    order: 0;
-  }
+  .barPills { gap: 6px; }
 
-  .qtyControls {
-    order: 2;
-    margin-left: 28px;
+  .cableRow, .cableRowSelected {
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
   }
+  .cableCheckbox { order: 0; }
+  .gaugeDot { order: 1; }
+  .cableLabel { order: 2; flex-basis: calc(100% - 60px); }
+  .chargeBadge { order: 3; margin-left: 28px; }
+  .qtyControls { order: 4; margin-left: auto; }
 }
 
 @media (max-width: 480px) {
-  .list {
-    max-height: 220px;
-  }
-
-  .qtyControls {
-    margin-left: auto;
-  }
-
-  .modelName {
-    font-size: var(--font-size-base);
-  }
+  .list { max-height: 220px; }
+  .qtyControls { margin-left: auto; }
+  .modelName { font-size: var(--font-size-base); }
+  .cableList { max-height: 240px; }
+  .chipList { max-height: 70px; }
 }
