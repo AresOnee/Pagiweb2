@@ -33,12 +33,39 @@
   "inStock": true,
   "badge": null,
   "variants": [
-    { "id": "ta-4", "label": "Cable N°4 (derivación: N°4)", "group": "TAC" },
-    { "id": "ta-2", "label": "Cable N°2 (derivación: N°2, 4)", "group": "TAC" },
-    { "id": "ta-1", "label": "Cable N°1 (derivación: N°1, 2, 4)", "group": "TAC" },
-    { "id": "ta-1o", "label": "Cable N°1/0 (derivación: N°1/0, 1, 2, 4)", "group": "TAC" },
-    { "id": "ta-2o", "label": "Cable N°2/0 (derivación: N°2/0, 1/0, 1, 2, 4)", "group": "TAC" },
-    { "id": "ta-3o", "label": "Cable N°3/0 (derivación: N°3/0, 2/0, 1/0, 1, 2, 4)", "group": "TAC" },
-    { "id": "ta-4o", "label": "Cable N°4/0 (derivación: N°4/0, 3/0, 2/0, 1/0, 1, 2, 4)", "group": "TAC" }
+    { "id": "ta-4-4", "label": "Cable N°4", "group": "Cable N°4" },
+
+    { "id": "ta-2-2", "label": "Cable N°2", "group": "Cable N°2" },
+    { "id": "ta-2-4", "label": "Cable N°4", "group": "Cable N°2" },
+
+    { "id": "ta-1-1", "label": "Cable N°1", "group": "Cable N°1" },
+    { "id": "ta-1-2", "label": "Cable N°2", "group": "Cable N°1" },
+    { "id": "ta-1-4", "label": "Cable N°4", "group": "Cable N°1" },
+
+    { "id": "ta-1o-1o", "label": "Cable N°1/0", "group": "Cable N°1/0" },
+    { "id": "ta-1o-1", "label": "Cable N°1", "group": "Cable N°1/0" },
+    { "id": "ta-1o-2", "label": "Cable N°2", "group": "Cable N°1/0" },
+    { "id": "ta-1o-4", "label": "Cable N°4", "group": "Cable N°1/0" },
+
+    { "id": "ta-2o-2o", "label": "Cable N°2/0", "group": "Cable N°2/0" },
+    { "id": "ta-2o-1o", "label": "Cable N°1/0", "group": "Cable N°2/0" },
+    { "id": "ta-2o-1", "label": "Cable N°1", "group": "Cable N°2/0" },
+    { "id": "ta-2o-2", "label": "Cable N°2", "group": "Cable N°2/0" },
+    { "id": "ta-2o-4", "label": "Cable N°4", "group": "Cable N°2/0" },
+
+    { "id": "ta-3o-3o", "label": "Cable N°3/0", "group": "Cable N°3/0" },
+    { "id": "ta-3o-2o", "label": "Cable N°2/0", "group": "Cable N°3/0" },
+    { "id": "ta-3o-1o", "label": "Cable N°1/0", "group": "Cable N°3/0" },
+    { "id": "ta-3o-1", "label": "Cable N°1", "group": "Cable N°3/0" },
+    { "id": "ta-3o-2", "label": "Cable N°2", "group": "Cable N°3/0" },
+    { "id": "ta-3o-4", "label": "Cable N°4", "group": "Cable N°3/0" },
+
+    { "id": "ta-4o-4o", "label": "Cable N°4/0", "group": "Cable N°4/0" },
+    { "id": "ta-4o-3o", "label": "Cable N°3/0", "group": "Cable N°4/0" },
+    { "id": "ta-4o-2o", "label": "Cable N°2/0", "group": "Cable N°4/0" },
+    { "id": "ta-4o-1o", "label": "Cable N°1/0", "group": "Cable N°4/0" },
+    { "id": "ta-4o-1", "label": "Cable N°1", "group": "Cable N°4/0" },
+    { "id": "ta-4o-2", "label": "Cable N°2", "group": "Cable N°4/0" },
+    { "id": "ta-4o-4", "label": "Cable N°4", "group": "Cable N°4/0" }
   ]
 }

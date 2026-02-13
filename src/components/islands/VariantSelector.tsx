@@ -257,6 +257,7 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
 
   const hasBars = mode === 'three-step' || mode === 'two-step-bar';
   const hasModelStep = mode === 'three-step' || mode === 'two-step-model';
+  const isRunTap = mode === 'two-step-model' && models.every(m => m.code.startsWith('Cable '));
 
   const [activeModel, setActiveModel] = useState(models[0]?.code || '');
   const [activeBar, setActiveBar] = useState<string | null>(
@@ -343,7 +344,14 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
   const getChipLabel = (variantId: string): string => {
     const v = variants.find(x => x.id === variantId);
     if (!v) return variantId;
-    if (mode === 'two-step-model') return `${v.group} \u00B7 ${v.label}`;
+    if (mode === 'two-step-model') {
+      if (isRunTap) {
+        const run = v.group?.replace('Cable ', '') || '';
+        const tap = v.label.replace('Cable ', '');
+        return `${run} \u2192 ${tap}`;
+      }
+      return `${v.group} \u00B7 ${v.label}`;
+    }
     const g = v.group || '';
     const sep = g.indexOf(' \u2014 Barra ');
     const model = sep > -1 ? g.substring(0, sep) : g;
@@ -397,7 +405,7 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
           <div class={styles.stepHeader}>
             <span class={styles.stepBadge}>1</span>
             <span class={styles.stepLabel}>
-              {mode === 'three-step' ? 'Tipo de Molde' : 'Modelo'}
+              {mode === 'three-step' ? 'Tipo de Molde' : isRunTap ? 'Cable Principal' : 'Modelo'}
             </span>
           </div>
           <div class={styles.modelCards}>
@@ -459,7 +467,7 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
         <div class={styles.stepSection}>
           <div class={styles.stepHeader}>
             <span class={styles.stepBadge}>{cableStepNum}</span>
-            <span class={styles.stepLabel}>Calibre de Cable</span>
+            <span class={styles.stepLabel}>{isRunTap ? 'Cable Derivaci\u00F3n' : 'Calibre de Cable'}</span>
           </div>
           <div class={styles.cableList}>
             {currentCables.map(cable => {
