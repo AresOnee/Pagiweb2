@@ -36,12 +36,12 @@ const GAUGE_DOT: Record<string, number> = {
 };
 
 const MODEL_DESC: Record<string, string> = {
-  GRT: 'Calibres N°6 a N°4',   GRC: 'Calibres N°1 a 4/0',   GRP: 'Cable N°4 / Barra 3/4"',
+  GRT: 'Calibres N°6 a N°2',   GRC: 'Calibres N°2 a 4/0',   GRP: 'Cable N°4 / Barra 3/4"',
   GTC: 'Cable a Varilla en T',  GYE: 'Cable de Paso a Varilla',
   NCR: 'Cable Regular',         NCF: 'Cable Flexible',
   NDR: 'Cable Regular',         NDF: 'Cable Flexible',
   SST: 'Cables N°4 a N°1',     SSC: 'Cables N°1/0 a 4/0',
-  VVC: 'Cables N°4 a N°1',     VVR: 'Cables N°1/0 a 4/0',
+  VVC: 'Cables N°4, N°2, N°1', VVR: 'Cables N°1/0 a 4/0',
 };
 
 /* ---- Detection & Parsing ---- */
