@@ -28,18 +28,11 @@ interface ModelData { code: string; bars?: BarData[]; cables?: VariantItem[]; }
 
 /* ---- Constants ---- */
 
-const GAUGE: Record<string, { dot: number; charge: string }> = {
-  'Cable N°6':     { dot: 6,  charge: '45 g' },
-  'Cable N°4':     { dot: 8,  charge: '65 g' },
-  'Cable N°3':     { dot: 9,  charge: '75 g' },
-  'Cable N°2':     { dot: 10, charge: '90 g' },
-  'Cable N°1':     { dot: 12, charge: '115 g' },
-  'Cable N°1/0':   { dot: 14, charge: '135 g' },
-  'Cable N°2/0':   { dot: 16, charge: '150 g' },
-  'Cable N°3/0':   { dot: 18, charge: '175 g' },
-  'Cable N°4/0':   { dot: 20, charge: '200 g' },
-  'Cable 250 MCM': { dot: 22, charge: '250 g' },
-  'Cable 500 MCM': { dot: 24, charge: '250 g' },
+const GAUGE_DOT: Record<string, number> = {
+  'Cable N°6': 6,  'Cable N°4': 8,  'Cable N°3': 9,  'Cable N°2': 10,
+  'Cable N°1': 12, 'Cable N°1/0': 14, 'Cable N°2/0': 16,
+  'Cable N°3/0': 18, 'Cable N°4/0': 20,
+  'Cable 250 MCM': 22, 'Cable 500 MCM': 24,
 };
 
 const MODEL_DESC: Record<string, string> = {
@@ -471,10 +464,10 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
           <div class={styles.cableList}>
             {currentCables.map(cable => {
               const isSelected = cable.id in selected;
-              const gauge = GAUGE[cable.label];
+              const dotSize = GAUGE_DOT[cable.label];
               const cartQty = getCartQty(cable);
-              const dotOuter = gauge ? gauge.dot + 10 : 18;
-              const dotInner = gauge ? gauge.dot : 8;
+              const dotOuter = dotSize ? dotSize + 10 : 18;
+              const dotInner = dotSize || 8;
 
               return (
                 <label
@@ -487,7 +480,7 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
                     checked={isSelected}
                     onChange={() => toggleCable(cable.id)}
                   />
-                  {gauge && (
+                  {dotSize && (
                     <span
                       class={styles.gaugeDot}
                       style={{ width: `${dotOuter}px`, height: `${dotOuter}px` }}
@@ -504,7 +497,6 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
                       <span class={styles.cableInCart}> (en cotizaci{'\u00F3'}n: {cartQty})</span>
                     )}
                   </span>
-                  {gauge && <span class={styles.chargeBadge}>{gauge.charge}</span>}
                   {isSelected && (
                     <div class={styles.qtyControls}>
                       <button
