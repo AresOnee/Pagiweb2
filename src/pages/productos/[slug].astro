@@ -61,6 +61,14 @@ const allImages = [
   <!-- Product Detail -->
   <section class="section product-detail">
     <div class="container">
+      <div class="back-link-top">
+        <a href="/productos" class="back-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+          Volver al Catálogo
+        </a>
+      </div>
       <div class="product-detail-grid">
         <!-- Image Column -->
         <div class="product-detail-image">
@@ -161,6 +169,34 @@ const allImages = [
 </MainLayout>
 
 <style>
+  /* Back Link Top */
+  .back-link-top {
+    margin-bottom: var(--spacing-6);
+  }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-600);
+    transition: color var(--transition-fast);
+    padding: var(--spacing-2) 0;
+  }
+
+  .back-btn:hover {
+    color: var(--color-primary);
+  }
+
+  .back-btn svg {
+    transition: transform var(--transition-fast);
+  }
+
+  .back-btn:hover svg {
+    transform: translateX(-3px);
+  }
+
   /* Product Detail Grid */
   .product-detail-grid {
     display: grid;
@@ -381,7 +417,10 @@ const allImages = [
     gap: var(--spacing-2);
   }
 
-  /* Dark mode — handled by CSS variable inversion in dark-mode.css */
+  /* Dark mode */
+  :global([data-theme="dark"]) .back-btn:hover {
+    color: #60a5fa;
+  }
 
   /* Responsive */
   @media (max-width: 768px) {
