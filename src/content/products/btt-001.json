@@ -1,44 +1,40 @@
 {
   "sku": "BTT-001",
-  "title": "Barra Toma Tierra Copperweld 1/2\"",
+  "title": "Barra Toma Tierra Copperweld",
   "category": "Accesorios",
   "categorySlug": "accesorios",
-  "description": "Barra de puesta a tierra tipo Copperweld de 1/2 pulgada con recubrimiento de cobre electrolítico de 254 micras (10 mils) sobre núcleo de acero. Disponible en largos de 1.0m, 1.5m y 3.0m. Alta resistencia a la corrosión y excelente conductividad para sistemas de puesta a tierra.",
+  "description": "Barra de puesta a tierra tipo Copperweld con recubrimiento de cobre electrolítico de 254 micras (10 mils) sobre núcleo de acero. Disponible en diámetros de 1/2\", 5/8\" y 3/4\", con largos de 1.0m, 1.5m y 3.0m. Alta resistencia a la corrosión y excelente conductividad para sistemas de puesta a tierra residenciales, comerciales e industriales.",
   "features": [
     "Núcleo de acero de alta resistencia mecánica",
     "Recubrimiento de cobre electrolítico de 254 micras (10 mils)",
     "Punta cónica de acero para fácil hincado",
+    "3 diámetros disponibles: 1/2\", 5/8\" y 3/4\"",
+    "3 largos disponibles: 1.0m, 1.5m y 3.0m",
     "Resistente a la corrosión en suelos agresivos",
-    "Disponible en 3 largos: 1.0m, 1.5m y 3.0m",
     "Compatible con conectores y accesorios estándar de puesta a tierra",
-    "Ideal para instalaciones residenciales y comerciales"
+    "Ideal para instalaciones residenciales, comerciales e industriales"
   ],
   "specs": {
     "Tipo": "Barra Toma Tierra Copperweld",
     "Material": "Acero con recubrimiento de cobre electrolítico",
     "Recubrimiento": "254 micras de cobre (10 mils, UL 467)",
-    "Diámetro": "1/2 pulgada (12,7 mm)",
-    "Largo Opción 1": "1.0 m",
-    "Largo Opción 2": "1.5 m",
-    "Largo Opción 3": "3.0 m",
+    "Diámetros Disponibles": "1/2\" (12,7 mm), 5/8\" (15,87 mm), 3/4\" (19,05 mm)",
+    "Largos Disponibles": "1.0 m, 1.5 m, 3.0 m",
     "Punta": "Cónica de acero",
-    "Aplicación": "Sistemas de puesta a tierra residencial y comercial"
+    "Aplicación": "Sistemas de puesta a tierra residencial, comercial e industrial"
   },
   "image": "/assets/img/products/btt-001.webp",
   "inStock": true,
   "badge": null,
   "variants": [
-    {
-      "id": "1.0m",
-      "label": "Largo 1.0 m"
-    },
-    {
-      "id": "1.5m",
-      "label": "Largo 1.5 m"
-    },
-    {
-      "id": "3.0m",
-      "label": "Largo 3.0 m"
-    }
+    { "id": "12-1m", "label": "Largo 1.0 m", "group": "1/2\"" },
+    { "id": "12-15m", "label": "Largo 1.5 m", "group": "1/2\"" },
+    { "id": "12-3m", "label": "Largo 3.0 m", "group": "1/2\"" },
+    { "id": "58-1m", "label": "Largo 1.0 m", "group": "5/8\"" },
+    { "id": "58-15m", "label": "Largo 1.5 m", "group": "5/8\"" },
+    { "id": "58-3m", "label": "Largo 3.0 m", "group": "5/8\"" },
+    { "id": "34-1m", "label": "Largo 1.0 m", "group": "3/4\"" },
+    { "id": "34-15m", "label": "Largo 1.5 m", "group": "3/4\"" },
+    { "id": "34-3m", "label": "Largo 3.0 m", "group": "3/4\"" }
   ]
 }
