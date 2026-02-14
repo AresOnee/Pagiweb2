@@ -51,11 +51,15 @@ export interface Product {
   variants?: Array<{ id: string; label: string; group?: string }>;
 }
 
-/** Slim product data for catalog grid (excludes specs, features, images, variants) */
+/** Slim product data for catalog grid (excludes features, images, variants) */
 export type ProductSlim = Pick<Product,
   'sku' | 'title' | 'category' | 'categorySlug' | 'description' | 'image' | 'badge' | 'inStock' | 'subcategories'
 > & {
   hasVariants: boolean;
+  /** First 6 spec entries as tuples for card preview (3) and overlay (6) */
+  specsPreview?: Array<[string, string]>;
+  /** Total image count (main + gallery) */
+  imageCount?: number;
 };
 
 /** Category metadata from categories.json */

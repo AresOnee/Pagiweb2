@@ -4,6 +4,8 @@ import { $cartSkuMap, addItem } from '../../stores/cart';
 import { showToast } from '../../stores/toast';
 import type { ProductSlim, Category } from '../../types';
 import { slugify } from '../../utils/slugify';
+import { applicationTags } from '../../data/application-tags';
+import { getCategoryPlaceholderSvg } from '../../utils/category-placeholders';
 import styles from './ProductFilter.module.css';
 
 interface Props {
@@ -309,18 +311,78 @@ export default function ProductFilter({ products, categories }: Props) {
                   {product.image ? (
                     <img src={product.image} alt={product.title} loading={index < 4 ? "eager" : "lazy"} fetchpriority={index < 4 ? "high" : undefined} decoding="async" width="300" height="200" sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 768px) calc(50vw - 24px), (max-width: 1024px) calc(33.33vw - 24px), 280px" />
                   ) : (
-                    <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" width="120" height="120" aria-hidden="true">
-                      <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
-                      <circle cx="60" cy="50" r="15" fill="#e2e8f0" stroke="#94a3b8" />
-                      <path d="M50 75h20" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
+                    <span dangerouslySetInnerHTML={{ __html: getCategoryPlaceholderSvg(product.categorySlug) }} />
+                  )}
+                  {product.imageCount != null && product.imageCount > 1 && (
+                    <span class={styles['image-count-badge']}>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <path d="M21 15l-5-5L5 21"/>
+                      </svg>
+                      {product.imageCount}
+                    </span>
+                  )}
+                  {product.specsPreview && product.specsPreview.length > 0 && (
+                    <div class={styles['product-quick-view']}>
+                      <ul class={styles['quick-view-specs']}>
+                        {product.specsPreview.slice(0, 6).map(([label, value]) => (
+                          <li key={label}>
+                            <span class={styles['qv-label']}>{label}</span>
+                            <span class={styles['qv-value']}>{value}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <span class={styles['quick-view-link']}>
+                        Ver detalle
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14" aria-hidden="true">
+                          <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                      </span>
+                    </div>
                   )}
                 </div>
                 <div class={styles['product-content']}>
-                  <span class={styles['product-category']}>{product.category}</span>
+                  <div class={styles['product-meta-row']}>
+                    <span class={styles['product-category']}>{product.category}</span>
+                    {product.hasVariants && (
+                      <span class={styles['variant-indicator']}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="11" height="11" aria-hidden="true">
+                          <rect x="3" y="3" width="7" height="7" rx="1"/>
+                          <rect x="14" y="3" width="7" height="7" rx="1"/>
+                          <rect x="3" y="14" width="7" height="7" rx="1"/>
+                          <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                        Variantes
+                      </span>
+                    )}
+                  </div>
+                  {(applicationTags[product.categorySlug] || []).length > 0 && (
+                    <div class={styles['application-tags']}>
+                      {(applicationTags[product.categorySlug] || []).map((tag) => (
+                        <span key={tag} class={styles['app-tag']}>{tag}</span>
+                      ))}
+                    </div>
+                  )}
                   <h3 class={styles['product-title']}>{product.title}</h3>
                   <p class={styles['product-description']}>{product.description}</p>
-                  <span class={styles['product-sku']}>SKU: {product.sku}</span>
+                  {product.specsPreview && product.specsPreview.length > 0 && (
+                    <ul class={styles['product-specs-preview']}>
+                      {product.specsPreview.slice(0, 3).map(([label, value]) => (
+                        <li key={label}>
+                          <span class={styles['spec-preview-label']}>{label}:</span>
+                          <span class={styles['spec-preview-value']}>{value}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <div class={styles['product-sku-row']}>
+                    <span class={styles['product-sku']}>SKU: {product.sku}</span>
+                    <span class={`${styles['card-stock']} ${!product.inStock ? styles['out-stock'] : ''}`}>
+                      <span class={styles['stock-dot']}></span>
+                      {product.inStock ? 'En Stock' : 'Sin Stock'}
+                    </span>
+                  </div>
                 </div>
                 <div class={styles['product-footer']}>
                   <button
