@@ -1,0 +1,43 @@
+{
+  "sku": "MOL-029",
+  "title": "Molde de Grafito VN — Cable a Superficie de Acero Vertical",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Acero",
+  "description": "Molde de grafito de alta densidad tipo VN para conexión exotérmica de cable de cobre a superficie plana de acero en posición vertical. Para aterrizamiento de estructuras metálicas, superficies lisas de acero verticales o conexión lateral a tubo de acero horizontal. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión cable horizontal a superficie de acero vertical (VN)",
+    "Para superficies lisas de acero verticales",
+    "Cables compatibles: N°6 a 500 MCM",
+    "Unión permanente de baja resistencia eléctrica",
+    "Reutilizable para múltiples soldaduras",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "VN",
+    "Tipo de Unión": "Cable a superficie de acero vertical (Cable to Steel Surface)",
+    "Material": "Grafito de alta densidad",
+    "Cables Compatibles": "N°6 a 500 MCM",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-029-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "vnc-1h", "label": "Cable N°6", "group": "VNC" },
+    { "id": "vnc-1l", "label": "Cable N°4", "group": "VNC" },
+    { "id": "vnc-1t", "label": "Cable N°2 Alam.", "group": "VNC" },
+    { "id": "vnc-1v", "label": "Cable N°2", "group": "VNC" },
+    { "id": "vnc-1y", "label": "Cable N°1", "group": "VNC" },
+    { "id": "vnc-2c", "label": "Cable N°1/0", "group": "VNC" },
+    { "id": "vnc-2g", "label": "Cable N°2/0", "group": "VNC" },
+    { "id": "vnc-2l", "label": "Cable N°3/0", "group": "VNC" },
+    { "id": "vnc-2q", "label": "Cable N°4/0", "group": "VNC" },
+    { "id": "vnc-2v", "label": "Cable 250 MCM", "group": "VNC" },
+    { "id": "vnc-3a", "label": "Cable 300 MCM", "group": "VNC" },
+    { "id": "vnc-3d", "label": "Cable 350 MCM", "group": "VNC" },
+    { "id": "vnc-3q", "label": "Cable 500 MCM", "group": "VNC" }
+  ]
+}

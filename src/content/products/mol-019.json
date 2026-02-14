@@ -1,0 +1,39 @@
+{
+  "sku": "MOL-019",
+  "title": "Molde de Grafito VF — Cable hacia Arriba a Superficie Vertical",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Acero",
+  "description": "Molde de grafito de alta densidad tipo VF para conexión exotérmica de cable vertical hacia arriba a superficie plana de acero vertical o conexión lateral a tubo de acero. Subtipo VFC para cable de cobre trenzado. Incluye variantes VFR para calibres mayores. Debe hacerse prueba de soldadura en secciones de acero delgadas.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión tipo Cable hacia Arriba a Superficie Vertical (VF)",
+    "Subtipos VFC y VFR según calibre de cable",
+    "Cables compatibles: N°4 a 500 MCM",
+    "Compatible con superficie plana y tubo de acero vertical",
+    "Reutilizable para múltiples soldaduras",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "VF",
+    "Tipo de Unión": "Cable hacia arriba a superficie de acero vertical",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "VFC, VFR, VFF",
+    "Cables Compatibles": "N°4 a 500 MCM",
+    "Rango de Cargas": "65 a 200 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-019-02.webp",
+  "images": [
+    "/assets/img/products/mol-019-03.webp"
+  ],
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "vf-4", "label": "Cable N°4", "group": "VFC" },
+    { "id": "vf-2", "label": "Cable N°2", "group": "VFC" },
+    { "id": "vf-1", "label": "Cable N°1", "group": "VFC" },
+    { "id": "vf-1o", "label": "Cable N°1/0", "group": "VFC" },
+    { "id": "vf-2o", "label": "Cable N°2/0", "group": "VFC" }
+  ]
+}

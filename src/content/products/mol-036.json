@@ -1,0 +1,38 @@
+{
+  "sku": "MOL-036",
+  "title": "Molde de Grafito EP — Conexión Angular 90° de Bus de Cobre",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Bus a Bus de Cobre",
+  "description": "Molde de grafito de alta densidad tipo EP para conexión de un bus de cobre horizontal a un bus de cobre vertical en ángulo de 90° con ambas caras en posición vertical. Ideal para derivaciones angulares en subestaciones y tableros eléctricos. Compatible con cargas exotérmicas ESTWELD.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión angular 90° de buses de cobre (EP)",
+    "Bus horizontal a bus vertical con caras en posición vertical",
+    "Para buses de cobre desde 1/8\"x1\" hasta 1/2\"x2\"",
+    "Para derivaciones angulares en subestaciones y tableros",
+    "Reutilizable para múltiples soldaduras",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "EP",
+    "Tipo de Unión": "Conexión angular 90° de bus de cobre (Angular Joint)",
+    "Material": "Grafito de alta densidad",
+    "Bus Compatibles": "1/8\"x1\" a 1/2\"x2\"",
+    "Rango de Cargas": "90 a 3-250 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-036-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "ep-ce", "label": "Bus 1/8\"x1\"", "group": "EP" },
+    { "id": "ep-de", "label": "Bus 3/16\"x1\"", "group": "EP" },
+    { "id": "ep-ee", "label": "Bus 1/4\"x1\"", "group": "EP" },
+    { "id": "ep-eg", "label": "Bus 1/4\"x1-1/2\"", "group": "EP" },
+    { "id": "ep-eh", "label": "Bus 1/4\"x2\"", "group": "EP" },
+    { "id": "ep-ge", "label": "Bus 3/8\"x1\"", "group": "EP" },
+    { "id": "ep-gh", "label": "Bus 3/8\"x2\"", "group": "EP" },
+    { "id": "ep-jh", "label": "Bus 1/2\"x2\"", "group": "EP" }
+  ]
+}

@@ -49,19 +49,6 @@ export interface Product {
   badge: BadgeValue | null;
   subcategory?: string;
   variants?: Array<{ id: string; label: string; group?: string }>;
-  moldTypes?: MoldType[];
-}
-
-/** Mold type within a consolidated mold product */
-export interface MoldType {
-  code: string;
-  name: string;
-  description: string;
-  features: string[];
-  specs: Record<string, string>;
-  image: string | null;
-  images?: string[];
-  variants?: Array<{ id: string; label: string; group?: string }>;
 }
 
 /** Category metadata from categories.json */

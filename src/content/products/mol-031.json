@@ -1,0 +1,46 @@
+{
+  "sku": "MOL-031",
+  "title": "Molde de Grafito LA — Cable a Zapata de Cobre Horizontal",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Cobre",
+  "description": "Molde de grafito de alta densidad tipo LA para conexión exotérmica de cable a zapata de cobre o bus de cobre en posición horizontal. Pueden utilizarse tanto zapatas de cobre CADWELD como bus de cobre. Ideal para aplicaciones en subestaciones. Compatible con cargas exotérmicas ESTWELD.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión cable a zapata de cobre horizontal (LA)",
+    "Compatible con zapatas CADWELD y bus de cobre",
+    "Ideal para aplicaciones en subestaciones",
+    "Cables compatibles: N°4 a 1000 MCM",
+    "Requiere manija L160/L159, chispero T320",
+    "Reutilizable para múltiples soldaduras"
+  ],
+  "specs": {
+    "Código Cadweld": "LA",
+    "Tipo de Unión": "Cable a zapata de cobre horizontal (Cable to Copper Lug)",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "LAC, LAD",
+    "Cables Compatibles": "N°4 a 1000 MCM",
+    "Zapatas": "1/8\"x1\" a 1/4\"x3\"",
+    "Rango de Cargas": "45 a 2-250 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-031-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "lac-1lce", "label": "Cable N°4", "group": "LAC — Zapata 1/8\"x1\"" },
+    { "id": "lac-1tce", "label": "Cable 2 Alam.", "group": "LAC — Zapata 1/8\"x1\"" },
+    { "id": "lac-1vce", "label": "Cable N°2", "group": "LAC — Zapata 1/8\"x1\"" },
+    { "id": "lac-1yce", "label": "Cable N°1", "group": "LAC — Zapata 1/8\"x1\"" },
+    { "id": "lac-2cce", "label": "Cable N°1/0", "group": "LAC — Zapata 1/8\"x1\"" },
+    { "id": "lac-2gce", "label": "Cable N°2/0", "group": "LAC — Zapata 1/8\"x1\"" },
+    { "id": "lac-2lce", "label": "Cable N°3/0", "group": "LAC — Zapata 1/8\"x1\"" },
+    { "id": "lac-2qde", "label": "Cable N°4/0", "group": "LAC — Zapata 3/16\"x1\"" },
+    { "id": "lac-2vde", "label": "Cable 250 MCM", "group": "LAC — Zapata 3/16\"x1\"" },
+    { "id": "lac-3aee", "label": "Cable 300 MCM", "group": "LAC — Zapata 1/4\"x1\"" },
+    { "id": "lac-3dee", "label": "Cable 350 MCM", "group": "LAC — Zapata 1/4\"x1\"" },
+    { "id": "lac-3qeg", "label": "Cable 500 MCM", "group": "LAC — Zapata 1/4\"x1-1/2\"" },
+    { "id": "lad-4leh", "label": "Cable 750 MCM", "group": "LAD — Zapata 1/4\"x2\"" },
+    { "id": "lad-4yek", "label": "Cable 1000 MCM", "group": "LAD — Zapata 1/4\"x3\"" }
+  ]
+}

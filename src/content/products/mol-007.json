@@ -1,0 +1,39 @@
+{
+  "sku": "MOL-007",
+  "title": "Molde de Grafito PG — Conexión Horizontal Paralela",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Cable",
+  "description": "Molde de grafito de alta densidad tipo PG para conexión horizontal paralela de dos cables de cobre. Realiza una unión lateral entre dos conductores que corren en paralelo. Para cables trenzados de cobre o tipo Copperweld. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión horizontal paralela Cable a Cable (PG)",
+    "Subtipo PGC según calibres de cable",
+    "Para cables trenzados de cobre o tipo Copperweld",
+    "Cables compatibles: N°6 a 4/0 AWG",
+    "Permite conexiones de calibres diferentes",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "PG",
+    "Tipo de Unión": "Conexión horizontal paralela (Cable a Cable)",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "PGC",
+    "Cables Compatibles": "N°6 a 4/0 AWG",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-007-02.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "pg-6", "label": "Cable N°6", "group": "PGC" },
+    { "id": "pg-4", "label": "Cable N°4", "group": "PGC" },
+    { "id": "pg-2", "label": "Cable N°2", "group": "PGC" },
+    { "id": "pg-1", "label": "Cable N°1", "group": "PGC" },
+    { "id": "pg-1o", "label": "Cable N°1/0", "group": "PGC" },
+    { "id": "pg-2o", "label": "Cable N°2/0", "group": "PGC" },
+    { "id": "pg-3o", "label": "Cable N°3/0", "group": "PGC" },
+    { "id": "pg-4o", "label": "Cable N°4/0", "group": "PGC" }
+  ]
+}

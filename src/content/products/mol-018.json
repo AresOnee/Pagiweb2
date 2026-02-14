@@ -1,0 +1,41 @@
+{
+  "sku": "MOL-018",
+  "title": "Molde de Grafito VB — Cable hacia Abajo a Superficie Vertical",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Acero",
+  "description": "Molde de grafito de alta densidad tipo VB para conexión exotérmica de cable vertical terminal hacia abajo a superficie plana de acero vertical o conexión lateral a tubo de acero vertical u horizontal. Subtipo VBC para cable de cobre trenzado. Debe hacerse prueba de soldadura en secciones de acero delgadas o tubo de pared delgada.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión tipo Cable hacia Abajo a Superficie Vertical (VB)",
+    "Subtipo VBC según calibre de cable",
+    "Cables compatibles: N°4, 2, 1, 1/0, 2/0, 3/0 y 4/0 AWG",
+    "Compatible con superficie plana y tubo de acero vertical u horizontal",
+    "Reutilizable para múltiples soldaduras",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "VB",
+    "Tipo de Unión": "Cable hacia abajo a superficie de acero vertical",
+    "Material": "Grafito de alta densidad",
+    "Subtipo": "VBC",
+    "Cables Compatibles": "N°4, 2, 1, 1/0, 2/0, 3/0, 4/0 AWG",
+    "Rango de Cargas": "65 a 200 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-018-04.webp",
+  "images": [
+    "/assets/img/products/mol-018-03.webp"
+  ],
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "vb-4", "label": "Cable N°4", "group": "VBC" },
+    { "id": "vb-2", "label": "Cable N°2", "group": "VBC" },
+    { "id": "vb-1", "label": "Cable N°1", "group": "VBC" },
+    { "id": "vb-1o", "label": "Cable N°1/0", "group": "VBC" },
+    { "id": "vb-2o", "label": "Cable N°2/0", "group": "VBC" },
+    { "id": "vb-3o", "label": "Cable N°3/0", "group": "VBC" },
+    { "id": "vb-4o", "label": "Cable N°4/0", "group": "VBC" }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "sku": "MOL-049",
+  "title": "Molde de Grafito RX — Cable a Riel Lateral",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Riel",
+  "description": "Molde de grafito de alta densidad tipo RX para conexión exotérmica de cable de cobre a riel de acero con salida lateral del cable. Para cable de aterrizamiento a rieles de 85 a 140 libras con el cable saliendo perpendicular al riel. Compatible con cargas exotérmicas ESTWELD tipo PB.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión cable a riel con salida lateral (RX)",
+    "Para rieles de 85 a 140 libras",
+    "Cable sale perpendicular al riel",
+    "Cables compatibles: N°1/0 AWG a 1000 MCM",
+    "Subtipos RXC y RXD según calibre",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "RX",
+    "Tipo de Unión": "Cable a riel lateral (Cable to Rail)",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "RXC, RXD",
+    "Rieles Compatibles": "85 a 140 libras",
+    "Cables Compatibles": "N°1/0 AWG a 1000 MCM",
+    "Rango de Cargas": "PB90 a PB 2-200",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-049-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "rxc-2c", "label": "Cable N°1/0", "group": "RXC" },
+    { "id": "rxc-2g", "label": "Cable N°2/0", "group": "RXC" },
+    { "id": "rxc-2l", "label": "Cable N°3/0", "group": "RXC" },
+    { "id": "rxc-2q", "label": "Cable N°4/0", "group": "RXC" },
+    { "id": "rxc-2v", "label": "Cable 250 MCM", "group": "RXC" },
+    { "id": "rxd-3a", "label": "Cable 300 MCM", "group": "RXD" },
+    { "id": "rxd-3q", "label": "Cable 500 MCM", "group": "RXD" },
+    { "id": "rxd-4y", "label": "Cable 1000 MCM", "group": "RXD" }
+  ]
+}

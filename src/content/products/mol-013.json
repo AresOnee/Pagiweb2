@@ -1,0 +1,39 @@
+{
+  "sku": "MOL-013",
+  "title": "Molde de Grafito HC — Cable de Paso Pegado a Superficie Horizontal",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Acero",
+  "description": "Molde de grafito de alta densidad tipo HC para conexión exotérmica de cable de paso pegado a superficie horizontal de acero. El cable pasa por la superficie quedando en contacto directo con ella. Para uso con cable trenzado de cobre. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Cable de paso pegado a superficie horizontal (HC)",
+    "Subtipo HCA según calibre de cable",
+    "Cable pasante en contacto directo con la superficie",
+    "Cables compatibles: N°6 a 4/0 AWG",
+    "Para superficies planas de acero horizontal",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "HC",
+    "Tipo de Unión": "Cable de paso pegado a superficie horizontal",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "HCA",
+    "Cables Compatibles": "N°6 a 4/0 AWG",
+    "Rango de Cargas": "45 a 200 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-013-05.webp",
+  "images": [
+    "/assets/img/products/mol-013-04.webp",
+    "/assets/img/products/mol-013-06.webp",
+    "/assets/img/products/mol-013-07.webp"
+  ],
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "hc-4", "label": "Cable N°4", "group": "HCA" },
+    { "id": "hc-2", "label": "Cable N°2", "group": "HCA" },
+    { "id": "hc-1", "label": "Cable N°1", "group": "HCA" }
+  ]
+}

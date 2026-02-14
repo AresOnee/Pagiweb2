@@ -1,0 +1,41 @@
+{
+  "sku": "MOL-035",
+  "title": "Molde de Grafito BQ — Conexión en T de Bus de Cobre",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Bus a Bus de Cobre",
+  "description": "Molde de grafito de alta densidad tipo BQ para conexión en T de bus de cobre de paso con derivación vertical en T posicionadas cara a cara. Barra de cobre horizontal de paso con derivación perpendicular. Compatible con cargas exotérmicas ESTWELD. Algunos modelos requieren crisol M783.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión en T de bus de cobre con derivación (BQ)",
+    "Bus de paso horizontal con derivación vertical en T",
+    "Bus de cobre desde 1/8\"x1\" hasta 1/2\"x2\"",
+    "Modelos con clave K requieren crisol M783",
+    "Requiere manija L160/L159, chispero T320",
+    "Reutilizable para múltiples soldaduras"
+  ],
+  "specs": {
+    "Código Cadweld": "BQ",
+    "Tipo de Unión": "Conexión en T de bus de cobre (Tee Joint)",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "BQC, BQD, BQF, BQK",
+    "Bus Compatibles": "1/8\"x1\" a 1/2\"x2\"",
+    "Rango de Cargas": "90 a 4-250 g",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-035-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "bqc-cece", "label": "Paso 1/8\"x1\" + Der. 1/8\"x1\"", "group": "BQC" },
+    { "id": "bqc-dede", "label": "Paso 3/16\"x1\" + Der. 3/16\"x1\"", "group": "BQC" },
+    { "id": "bqc-eeee", "label": "Paso 1/4\"x1\" + Der. 1/4\"x1\"", "group": "BQC" },
+    { "id": "bqc-efef", "label": "Paso 1/4\"x1-1/4\" + Der. 1/4\"x1-1/4\"", "group": "BQC" },
+    { "id": "bqc-egeg", "label": "Paso 1/4\"x1-1/2\" + Der. 1/4\"x1-1/2\"", "group": "BQC" },
+    { "id": "bqd-eheh", "label": "Paso 1/4\"x2\" + Der. 1/4\"x2\"", "group": "BQD" },
+    { "id": "bqc-gege", "label": "Paso 3/8\"x1\" + Der. 3/8\"x1\"", "group": "BQC" },
+    { "id": "bqd-ghgh", "label": "Paso 3/8\"x1-1/2\" + Der. 3/8\"x1-1/2\"", "group": "BQD" },
+    { "id": "bqd-jeje", "label": "Paso 1/2\"x1\" + Der. 1/2\"x1\"", "group": "BQD" },
+    { "id": "bqd-jhjh", "label": "Paso 1/2\"x2\" + Der. 1/2\"x2\"", "group": "BQD" }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "sku": "MOL-050",
+  "title": "Molde de Grafito RY — Cable a Riel Terminal",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "subcategory": "Cable a Riel",
+  "description": "Molde de grafito de alta densidad tipo RY para conexión exotérmica terminal de cable de cobre a riel de acero. Para cable de aterrizamiento a rieles de 85 a 140 libras con conexión tipo terminal. Compatible con cargas exotérmicas ESTWELD tipo PB.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "Conexión cable a riel terminal (RY)",
+    "Para rieles de 85 a 140 libras",
+    "Conexión tipo terminal al riel",
+    "Cables compatibles: N°1/0 AWG a 1000 MCM",
+    "Subtipos RYC y RYD según calibre",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "RY",
+    "Tipo de Unión": "Cable a riel terminal (Cable to Rail)",
+    "Material": "Grafito de alta densidad",
+    "Subtipos": "RYC, RYD",
+    "Rieles Compatibles": "85 a 140 libras",
+    "Cables Compatibles": "N°1/0 AWG a 1000 MCM",
+    "Rango de Cargas": "PB115 a PB 2-250",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-050-01.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "ryc-2c", "label": "Cable N°1/0", "group": "RYC" },
+    { "id": "ryc-2g", "label": "Cable N°2/0", "group": "RYC" },
+    { "id": "ryc-2l", "label": "Cable N°3/0", "group": "RYC" },
+    { "id": "ryc-2q", "label": "Cable N°4/0", "group": "RYC" },
+    { "id": "ryc-2v", "label": "Cable 250 MCM", "group": "RYC" },
+    { "id": "ryd-3a", "label": "Cable 300 MCM", "group": "RYD" },
+    { "id": "ryd-3q", "label": "Cable 500 MCM", "group": "RYD" },
+    { "id": "ryd-4y", "label": "Cable 1000 MCM", "group": "RYD" }
+  ]
+}
