@@ -56,8 +56,6 @@ export type ProductSlim = Pick<Product,
   'sku' | 'title' | 'category' | 'categorySlug' | 'description' | 'image' | 'badge' | 'inStock' | 'subcategories'
 > & {
   hasVariants: boolean;
-  /** Total image count (main + gallery) */
-  imageCount?: number;
 };
 
 /** Category metadata from categories.json */

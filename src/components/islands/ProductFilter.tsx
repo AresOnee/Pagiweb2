@@ -313,16 +313,6 @@ export default function ProductFilter({ products, categories }: Props) {
                   ) : (
                     <span dangerouslySetInnerHTML={{ __html: getCategoryPlaceholderSvg(product.categorySlug) }} />
                   )}
-                  {product.imageCount != null && product.imageCount > 1 && (
-                    <span class={styles['image-count-badge']}>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12" aria-hidden="true">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <circle cx="8.5" cy="8.5" r="1.5"/>
-                        <path d="M21 15l-5-5L5 21"/>
-                      </svg>
-                      {product.imageCount}
-                    </span>
-                  )}
                 </div>
                 <div class={styles['product-content']}>
                   <div class={styles['product-meta-row']}>

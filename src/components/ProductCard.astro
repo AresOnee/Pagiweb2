@@ -14,11 +14,10 @@ interface Props {
   badge: string | null;
   inStock: boolean;
   delay?: number;
-  imageCount?: number;
   hasVariants?: boolean;
 }
 
-const { sku, title, category, categorySlug, description, image, badge, inStock, delay, imageCount, hasVariants } = Astro.props;
+const { sku, title, category, categorySlug, description, image, badge, inStock, delay, hasVariants } = Astro.props;
 const productUrl = `/productos/${slugify(title)}`;
 const tags = applicationTags[categorySlug] || [];
 ---
@@ -31,16 +30,6 @@ const tags = applicationTags[categorySlug] || [];
         <img src={image} alt={title} loading="lazy" decoding="async" width="300" height="200" sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 768px) calc(50vw - 24px), (max-width: 1024px) calc(33.33vw - 24px), 280px" />
       ) : (
         <Fragment set:html={getCategoryPlaceholderSvg(categorySlug)} />
-      )}
-      {imageCount != null && imageCount > 1 && (
-        <span class="image-count-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12" aria-hidden="true">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-          {imageCount}
-        </span>
       )}
     </div>
     <div class="product-content">
@@ -139,23 +128,6 @@ const tags = applicationTags[categorySlug] || [];
     border-radius: var(--radius-full);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    z-index: 2;
-  }
-
-  /* Image count badge */
-  .image-count-badge {
-    position: absolute;
-    bottom: var(--spacing-2);
-    right: var(--spacing-2);
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    padding: 2px 6px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    font-size: 11px;
-    font-weight: var(--font-weight-medium);
-    border-radius: var(--radius-sm);
     z-index: 2;
   }
 
