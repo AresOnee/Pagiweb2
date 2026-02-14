@@ -187,7 +187,7 @@ export default function ProductFilter({ products, categories }: Props) {
       {/* Search with H7: keyboard shortcut indicator */}
       <div class={styles['search-container']}>
         <div class={styles['search-wrapper']}>
-          <svg class={styles['search-icon']} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+          <svg class={styles['search-icon']} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20" aria-hidden="true">
             <circle cx="11" cy="11" r="8" />
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
           </svg>
@@ -309,7 +309,7 @@ export default function ProductFilter({ products, categories }: Props) {
                   {product.image ? (
                     <img src={product.image} alt={product.title} loading={index < 4 ? "eager" : "lazy"} fetchpriority={index < 4 ? "high" : undefined} decoding="async" width="300" height="200" sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 768px) calc(50vw - 24px), (max-width: 1024px) calc(33.33vw - 24px), 280px" />
                   ) : (
-                    <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
+                    <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" width="120" height="120" aria-hidden="true">
                       <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
                       <circle cx="60" cy="50" r="15" fill="#e2e8f0" stroke="#94a3b8" />
                       <path d="M50 75h20" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" />
@@ -352,7 +352,7 @@ export default function ProductFilter({ products, categories }: Props) {
         </div>
       ) : (
         <div class={styles['no-results']}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="64" height="64" aria-hidden="true">
             <circle cx="11" cy="11" r="8" />
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
             <line x1="8" y1="11" x2="14" y2="11" />

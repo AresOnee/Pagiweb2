@@ -97,7 +97,7 @@ export default function QuoteItems() {
               {item.image ? (
                 <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'var(--radius-md)' }} />
               ) : (
-                <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
+                <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1" width="48" height="48" aria-hidden="true">
                   <rect x="30" y="20" width="60" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
                   <circle cx="60" cy="50" r="15" fill="#e2e8f0" stroke="#94a3b8" />
                   <path d="M50 75h20" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" />
@@ -149,7 +149,7 @@ export default function QuoteItems() {
               onClick={() => handleRemove(item.sku, item.title, item.variant)}
               aria-label={`Eliminar ${item.title}${item.variant ? ` (${item.variant})` : ''}`}
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
