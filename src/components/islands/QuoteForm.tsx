@@ -100,25 +100,33 @@ export default function QuoteForm() {
     }
   }, []);
 
-  // H5: Auto-save form data (debounced via form state changes)
+  // Debounce ref for auto-save
+  const saveDraftRef = useRef<ReturnType<typeof setTimeout>>();
+
+  // H5: Auto-save form data (debounced — writes after 1s of inactivity)
   useEffect(() => {
     // Don't save honeypot or empty forms
     const hasContent = form.nombre || form.empresa || form.email || form.telefono || form.mensaje;
     if (!hasContent) return;
 
-    try {
-      const toSave = {
-        nombre: form.nombre,
-        empresa: form.empresa,
-        email: form.email,
-        telefono: form.telefono,
-        mensaje: form.mensaje,
-        savedAt: Date.now(),
-      };
-      localStorage.setItem(FORM_DRAFT_KEY, JSON.stringify(toSave));
-    } catch (e) {
-      console.error('Error saving form draft:', e);
-    }
+    clearTimeout(saveDraftRef.current);
+    saveDraftRef.current = setTimeout(() => {
+      try {
+        const toSave = {
+          nombre: form.nombre,
+          empresa: form.empresa,
+          email: form.email,
+          telefono: form.telefono,
+          mensaje: form.mensaje,
+          savedAt: Date.now(),
+        };
+        localStorage.setItem(FORM_DRAFT_KEY, JSON.stringify(toSave));
+      } catch (e) {
+        console.error('Error saving form draft:', e);
+      }
+    }, 1000);
+
+    return () => clearTimeout(saveDraftRef.current);
   }, [form.nombre, form.empresa, form.email, form.telefono, form.mensaje]);
 
   // H5: Clear draft helper

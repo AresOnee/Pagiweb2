@@ -7,7 +7,7 @@ Sitio web de catalogo para **GelChile**, empresa chilena con **mas de 20 anos de
 - **Sitio Astro funcional** — Fases 0-8 completadas, build exitoso (71 paginas)
 - **Pendiente:** Deploy a Cloudflare Pages (Fase 9) + configurar API keys
 - **Branch de desarrollo:** `claude/gelchile-catalog-website-PB6wG`
-- **Build:** `npm install && npm run build` — 0 errores, 64 productos validados por Zod
+- **Build:** `npm install && npm run build` — 0 errores, 58 productos validados por Zod
 - **Lighthouse Performance:** ~91 en dev server (limitado por falta de compresion gzip en dev)
 
 ## Stack Tecnico
@@ -68,9 +68,9 @@ src/
 │       ├── Toast.tsx             # Notificaciones toast
 │       ├── TurnstileWidget.tsx   # Widget Cloudflare Turnstile
 │       └── *.module.css          # 8 CSS Modules con dark mode
-├── content/products/             # 64 archivos JSON validados por Zod
+├── content/products/             # 58 archivos JSON validados por Zod
 ├── data/
-│   ├── categories.json           # 8 categorias con slugs e iconos
+│   ├── categories.json           # 9 categorias con slugs e iconos
 │   └── site-config.ts            # Config centralizada (contacto, API keys, storage keys)
 ├── layouts/MainLayout.astro      # Layout principal (SEO, OG, JSON-LD, PWA, AOS)
 ├── pages/
@@ -94,7 +94,7 @@ src/
 └── types/index.ts                # CategorySlug, CategoryName, Product, CartItem, etc.
 ```
 
-## Productos (64 en 8 categorias)
+## Productos (58 en 9 categorias)
 
 | Categoria | Slug | Qty | SKUs |
 |-----------|------|-----|------|
@@ -103,7 +103,8 @@ src/
 | Barras Quimicas | `barras-quimicas` | 2 | BQH-001, BQV-001 |
 | Aditivos | `aditivos` | 2 | ADI-001, ADI-002 |
 | Pararrayos y Proteccion | `pararrayos` | 1 | PAR-001 |
-| Soldadura Exotermica | `soldadura-exotermica` | 34 | CEX-001–009, PAR-002–004, HRE-001–002, MOL-001–020 |
+| Soldadura Exotermica | `soldadura-exotermica` | 14 | CEX-001–009, PAR-002–004, HRE-001–002 |
+| Moldes de Grafito | `moldes-grafito` | 14 | MOL-B, MOL-C, MOL-E, MOL-G, MOL-H, MOL-L, MOL-N, MOL-P, MOL-R, MOL-S, MOL-T, MOL-V, MOL-W, MOL-X |
 | Accesorios | `accesorios` | 9 | CAM-001, TAB-001/002, BTT-001–003, CPP-001, PPB-001, TDC-001 |
 | Servicios | `servicios` | 2 | SRV-001, SRV-002 |
 
@@ -125,7 +126,7 @@ src/
 }
 ```
 
-**SKU pattern:** `[A-Z]{2,3}-\d{3}`
+**SKU pattern:** `[A-Z]{2,3}-\d{3}` (excepto moldes: `MOL-[A-Z]` siguiendo nomenclatura CADWELD)
 **Campos opcionales:** `images` (galeria), `variants` (selector de variantes), `badge` ("Nuevo"/"Popular"/"Promoción")
 
 ## Archivos Clave

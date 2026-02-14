@@ -45,39 +45,46 @@ export default function TurnstileWidget({ onVerify, onExpire, onError }: Props) 
       return;
     }
 
-    // Wait for Turnstile script to load
-    const checkTurnstile = setInterval(() => {
-      if (typeof window !== 'undefined' && window.turnstile && containerRef.current) {
-        clearInterval(checkTurnstile);
+    const renderWidget = () => {
+      if (!containerRef.current || !window.turnstile || widgetIdRef.current) return;
+      try {
+        widgetIdRef.current = window.turnstile.render(containerRef.current, {
+          sitekey: siteConfig.turnstile.siteKey,
+          callback: onVerify,
+          'expired-callback': onExpire,
+          'error-callback': onError,
+          theme: 'auto',
+          size: 'normal',
+        });
+      } catch (err) {
+        console.error('[Turnstile] Render error:', err);
+        onError?.();
+      }
+    };
 
-        try {
-          widgetIdRef.current = window.turnstile.render(containerRef.current, {
-            sitekey: siteConfig.turnstile.siteKey,
-            callback: onVerify,
-            'expired-callback': onExpire,
-            'error-callback': onError,
-            theme: 'auto',
-            size: 'normal',
-          });
-        } catch (err) {
-          console.error('[Turnstile] Render error:', err);
-          onError?.();
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+    const script = document.querySelector('script[src*="turnstile"]') as HTMLScriptElement | null;
+
+    // If Turnstile script already loaded, render immediately
+    if (typeof window !== 'undefined' && window.turnstile) {
+      renderWidget();
+    } else {
+      // Listen for the script's load event instead of polling
+      if (script) {
+        script.addEventListener('load', renderWidget);
+      }
+
+      // Timeout after 10 seconds as fallback
+      timeout = setTimeout(() => {
+        if (!widgetIdRef.current) {
+          console.warn('[Turnstile] Script did not load within 10 seconds');
         }
-      }
-    }, 100);
-
-    // Timeout after 10 seconds
-    const timeout = setTimeout(() => {
-      clearInterval(checkTurnstile);
-      if (!widgetIdRef.current) {
-        console.warn('[Turnstile] Script did not load within 10 seconds');
-        // Don't auto-verify on timeout - user should reload
-      }
-    }, 10000);
+      }, 10000);
+    }
 
     return () => {
-      clearInterval(checkTurnstile);
-      clearTimeout(timeout);
+      if (timeout) clearTimeout(timeout);
+      if (script) script.removeEventListener('load', renderWidget);
       if (widgetIdRef.current && window.turnstile) {
         try {
           window.turnstile.remove(widgetIdRef.current);
