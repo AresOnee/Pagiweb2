@@ -39,7 +39,7 @@ const productUrl = `/productos/${sku.toLowerCase()}`;
     </div>
   </a>
   <div class="product-footer">
-    <AddToQuoteBtn client:idle sku={sku} title={title} category={category} image={image} inStock={inStock} />
+    <AddToQuoteBtn client:visible sku={sku} title={title} category={category} image={image} inStock={inStock} />
   </div>
 </article>
 

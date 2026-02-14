@@ -101,10 +101,6 @@
     await deferredPrompt.prompt();
     const { outcome } = await deferredPrompt.userChoice;
 
-    if (outcome === 'accepted') {
-      console.log('[PWA] User accepted install prompt');
-    }
-
     deferredPrompt = null;
   });
 
@@ -112,7 +108,6 @@
   window.addEventListener('appinstalled', () => {
     hideInstallPrompt();
     deferredPrompt = null;
-    console.log('[PWA] App installed successfully');
   });
 </script>
 

@@ -12,7 +12,7 @@ const PRECACHE_ASSETS = [
   '/productos',
   '/nosotros',
   '/cotizacion',
-  '/assets/img/gelchile-logo.png',
+  '/assets/img/gelchile-logo.webp',
   '/favicon.svg',
   '/icon-192.svg',
   '/icon-512.svg',
@@ -22,7 +22,6 @@ const PRECACHE_ASSETS = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[SW] Precaching assets');
       return cache.addAll(PRECACHE_ASSETS);
     })
   );
@@ -36,10 +35,7 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames
           .filter((name) => name !== CACHE_NAME)
-          .map((name) => {
-            console.log('[SW] Deleting old cache:', name);
-            return caches.delete(name);
-          })
+          .map((name) => caches.delete(name))
       );
     })
   );

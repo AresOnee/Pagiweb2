@@ -265,12 +265,13 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
   );
   const [selected, setSelected] = useState<Record<string, number>>({});
 
-  /* Derived data */
-  const currentModel = models.find(m => m.code === activeModel);
-  const availableBars = hasBars ? currentModel?.bars : null;
-  const currentCables = hasBars
-    ? currentModel?.bars?.find(b => b.size === activeBar)?.cables
-    : currentModel?.cables;
+  /* Derived data (memoized to avoid recalculating on every render) */
+  const currentModel = useMemo(() => models.find(m => m.code === activeModel), [models, activeModel]);
+  const availableBars = useMemo(() => hasBars ? currentModel?.bars : null, [hasBars, currentModel]);
+  const currentCables = useMemo(() => {
+    if (hasBars) return currentModel?.bars?.find(b => b.size === activeBar)?.cables;
+    return currentModel?.cables;
+  }, [hasBars, currentModel, activeBar]);
 
   const selectedEntries = Object.entries(selected);
   const selectedCount = selectedEntries.length;

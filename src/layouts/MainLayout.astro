@@ -66,6 +66,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   <!-- Cloudflare Turnstile (anti-spam) — solo en páginas con formulario -->
   {includeTurnstile && (
+    <link rel="preconnect" href="https://challenges.cloudflare.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.web3forms.com" />
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   )}
 
@@ -145,13 +147,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <script is:inline>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-          .then(function(reg) {
-            console.log('[SW] Registered:', reg.scope);
-          })
-          .catch(function(err) {
-            console.log('[SW] Registration failed:', err);
-          });
+        navigator.serviceWorker.register('/sw.js');
       });
     }
   </script>
