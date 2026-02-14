@@ -53,11 +53,13 @@ const allImages = [
   })} />
 
   <div class="detail-header-offset">
-    <Breadcrumb items={[
-      { label: 'Inicio', href: '/' },
-      { label: 'Productos', href: '/productos' },
-      { label: product.title },
-    ]} />
+    <div class="detail-hero-breadcrumb">
+      <Breadcrumb items={[
+        { label: 'Inicio', href: '/' },
+        { label: 'Productos', href: '/productos' },
+        { label: product.title },
+      ]} />
+    </div>
   </div>
 
   <!-- Product Detail -->
@@ -171,9 +173,35 @@ const allImages = [
 </MainLayout>
 
 <style>
-  /* Offset for fixed header (this page has no page-hero) */
+  /* Mini hero header with blue gradient (this page has no page-hero) */
   .detail-header-offset {
     padding-top: 72px;
+    background: linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-primary-dark) 60%, var(--color-primary) 100%);
+  }
+
+  .detail-hero-breadcrumb :global(.breadcrumb) {
+    background: transparent;
+    border-bottom: none;
+  }
+
+  .detail-hero-breadcrumb :global(.breadcrumb-item) {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .detail-hero-breadcrumb :global(.breadcrumb-item a) {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .detail-hero-breadcrumb :global(.breadcrumb-item a:hover) {
+    color: #ffffff;
+  }
+
+  .detail-hero-breadcrumb :global(.breadcrumb-item.active) {
+    color: #ffffff;
+  }
+
+  .detail-hero-breadcrumb :global(.breadcrumb-separator) {
+    color: rgba(255, 255, 255, 0.4);
   }
 
   /* Back Link Top */
@@ -186,14 +214,17 @@ const allImages = [
     align-items: center;
     gap: var(--spacing-2);
     font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
-    color: var(--color-gray-600);
-    transition: color var(--transition-fast);
-    padding: var(--spacing-2) 0;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    background: var(--color-primary-50);
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--radius-full);
+    transition: background var(--transition-fast), color var(--transition-fast);
   }
 
   .back-btn:hover {
-    color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-white);
   }
 
   .back-btn svg {
@@ -215,10 +246,10 @@ const allImages = [
   /* Image Column */
   .product-detail-image {
     position: relative;
-    background: linear-gradient(145deg, var(--color-gray-50) 0%, var(--color-gray-100) 100%);
+    background: linear-gradient(145deg, var(--color-primary-50) 0%, var(--color-gray-50) 100%);
     border-radius: var(--radius-xl);
     overflow: hidden;
-    border: 1px solid var(--color-gray-200);
+    border: 1px solid var(--color-primary-100);
   }
 
   .detail-image-wrapper {
@@ -264,7 +295,7 @@ const allImages = [
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     color: var(--color-success);
-    border-top: 1px solid var(--color-gray-200);
+    border-top: 1px solid var(--color-primary-100);
   }
 
   .detail-stock.out-stock {
@@ -334,21 +365,27 @@ const allImages = [
   /* Specs Section */
   .product-specs {
     margin-top: var(--spacing-12);
+    background: var(--color-primary-50);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-8);
   }
 
   .product-specs h2 {
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
-    color: var(--color-gray-900);
+    color: var(--color-primary-dark);
     margin-bottom: var(--spacing-6);
+    padding-left: var(--spacing-4);
+    border-left: 4px solid var(--color-primary);
   }
 
   .specs-table {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--color-gray-200);
+    border: 1px solid var(--color-primary-100);
     border-radius: var(--radius-lg);
     overflow: hidden;
+    background: var(--color-white);
   }
 
   .spec-row {
@@ -358,13 +395,13 @@ const allImages = [
   .spec-label,
   .spec-value {
     padding: var(--spacing-3) var(--spacing-4);
-    border-bottom: 1px solid var(--color-gray-100);
+    border-bottom: 1px solid var(--color-primary-50);
   }
 
   .spec-label {
     font-weight: var(--font-weight-semibold);
-    color: var(--color-gray-600);
-    background: var(--color-gray-50);
+    color: var(--color-primary-dark);
+    background: rgba(0, 82, 204, 0.05);
     font-size: var(--font-size-sm);
   }
 
@@ -381,13 +418,19 @@ const allImages = [
   /* Features Section */
   .product-features {
     margin-top: var(--spacing-12);
+    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-primary-50) 100%);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-8);
+    border: 1px solid var(--color-primary-100);
   }
 
   .product-features h2 {
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
-    color: var(--color-gray-900);
+    color: var(--color-primary-dark);
     margin-bottom: var(--spacing-6);
+    padding-left: var(--spacing-4);
+    border-left: 4px solid var(--color-primary);
   }
 
   .features-list {
@@ -408,7 +451,7 @@ const allImages = [
 
   .features-list li svg {
     flex-shrink: 0;
-    color: var(--color-success);
+    color: var(--color-primary);
     margin-top: 2px;
   }
 
@@ -425,8 +468,66 @@ const allImages = [
   }
 
   /* Dark mode */
+  :global([data-theme="dark"]) .detail-header-offset {
+    background: linear-gradient(135deg, #0a1628 0%, var(--color-primary-dark) 60%, #1e3a8a 100%);
+  }
+
+  :global([data-theme="dark"]) .back-btn {
+    background: rgba(76, 154, 255, 0.15);
+    color: var(--color-primary-light);
+  }
+
   :global([data-theme="dark"]) .back-btn:hover {
-    color: #60a5fa;
+    background: var(--color-primary);
+    color: #ffffff;
+  }
+
+  :global([data-theme="dark"]) .product-detail-image {
+    background: linear-gradient(145deg, rgba(76, 154, 255, 0.08) 0%, rgba(30, 41, 59, 0.5) 100%);
+    border-color: rgba(76, 154, 255, 0.2);
+  }
+
+  :global([data-theme="dark"]) .detail-stock {
+    border-top-color: rgba(76, 154, 255, 0.2);
+  }
+
+  :global([data-theme="dark"]) .product-specs {
+    background: rgba(76, 154, 255, 0.08);
+    border: 1px solid rgba(76, 154, 255, 0.15);
+  }
+
+  :global([data-theme="dark"]) .product-specs h2 {
+    color: #93bbfc;
+    border-left-color: var(--color-primary-light);
+  }
+
+  :global([data-theme="dark"]) .specs-table {
+    background: rgba(15, 23, 42, 0.6);
+    border-color: rgba(76, 154, 255, 0.2);
+  }
+
+  :global([data-theme="dark"]) .spec-label {
+    background: rgba(76, 154, 255, 0.08);
+    color: #93bbfc;
+  }
+
+  :global([data-theme="dark"]) .spec-label,
+  :global([data-theme="dark"]) .spec-value {
+    border-bottom-color: rgba(76, 154, 255, 0.1);
+  }
+
+  :global([data-theme="dark"]) .product-features {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(76, 154, 255, 0.08) 100%);
+    border-color: rgba(76, 154, 255, 0.15);
+  }
+
+  :global([data-theme="dark"]) .product-features h2 {
+    color: #93bbfc;
+    border-left-color: var(--color-primary-light);
+  }
+
+  :global([data-theme="dark"]) .features-list li svg {
+    color: var(--color-primary-light);
   }
 
   /* Responsive */
@@ -448,6 +549,11 @@ const allImages = [
 
     .detail-title {
       font-size: var(--font-size-2xl);
+    }
+
+    .product-specs,
+    .product-features {
+      padding: var(--spacing-6);
     }
 
     .specs-table {
