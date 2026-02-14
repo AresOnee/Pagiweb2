@@ -1,0 +1,311 @@
+{
+  "sku": "MOL-V",
+  "title": "Moldes de Grafito V — Cable a Superficie Vertical",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "description": "Familia de moldes de grafito tipo V para conexiones exotérmicas de cable a superficies verticales de acero. Incluye cable directo (VV), de paso (VG), a 45° (VS), hacia abajo (VB), hacia arriba (VF), despegado (VT) y horizontal (VN). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "7 tipos de molde: VV, VG, VS, VB, VF, VT, VN",
+    "Cable a superficies verticales de acero",
+    "Cables compatibles: N°4 a 500 MCM",
+    "Reutilizable para múltiples soldaduras",
+    "Compatible con cargas exotérmicas ESTWELD y Electro Material",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "V",
+    "Tipos Incluidos": "VV, VG, VS, VB, VF, VT, VN",
+    "Material": "Grafito de alta densidad",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-015-04.webp",
+  "images": [
+    "/assets/img/products/mol-015-03.webp",
+    "/assets/img/products/mol-015-05.webp",
+    "/assets/img/products/mol-015-06.webp",
+    "/assets/img/products/mol-016-03.webp",
+    "/assets/img/products/mol-016-05.webp",
+    "/assets/img/products/mol-017-03.webp",
+    "/assets/img/products/mol-017-04.webp",
+    "/assets/img/products/mol-017-05.webp",
+    "/assets/img/products/mol-017-06.webp",
+    "/assets/img/products/mol-017-08.webp",
+    "/assets/img/products/mol-017-09.webp",
+    "/assets/img/products/mol-018-03.webp",
+    "/assets/img/products/mol-019-03.webp",
+    "/assets/img/products/mol-020-02.webp"
+  ],
+  "inStock": true,
+  "badge": null,
+  "subcategories": [
+    "Cable a Acero"
+  ],
+  "variants": [
+    {
+      "id": "vvc-4",
+      "label": "Cable N°4",
+      "group": "VVC"
+    },
+    {
+      "id": "vvc-2",
+      "label": "Cable N°2",
+      "group": "VVC"
+    },
+    {
+      "id": "vvc-1",
+      "label": "Cable N°1",
+      "group": "VVC"
+    },
+    {
+      "id": "vvr-1o",
+      "label": "Cable N°1/0",
+      "group": "VVR"
+    },
+    {
+      "id": "vvr-2o",
+      "label": "Cable N°2/0",
+      "group": "VVR"
+    },
+    {
+      "id": "vvr-3o",
+      "label": "Cable N°3/0",
+      "group": "VVR"
+    },
+    {
+      "id": "vvr-4o",
+      "label": "Cable N°4/0",
+      "group": "VVR"
+    },
+    {
+      "id": "vg-4",
+      "label": "Cable N°4",
+      "group": "VGC"
+    },
+    {
+      "id": "vg-2",
+      "label": "Cable N°2",
+      "group": "VGC"
+    },
+    {
+      "id": "vg-1",
+      "label": "Cable N°1",
+      "group": "VGC"
+    },
+    {
+      "id": "vg-1o",
+      "label": "Cable N°1/0",
+      "group": "VGC"
+    },
+    {
+      "id": "vg-2o",
+      "label": "Cable N°2/0",
+      "group": "VGC"
+    },
+    {
+      "id": "vg-3o",
+      "label": "Cable N°3/0",
+      "group": "VGC"
+    },
+    {
+      "id": "vg-4o",
+      "label": "Cable N°4/0",
+      "group": "VGC"
+    },
+    {
+      "id": "vs-4",
+      "label": "Cable N°4",
+      "group": "VSC"
+    },
+    {
+      "id": "vs-2",
+      "label": "Cable N°2",
+      "group": "VSC"
+    },
+    {
+      "id": "vs-1",
+      "label": "Cable N°1",
+      "group": "VSC"
+    },
+    {
+      "id": "vs-1o",
+      "label": "Cable N°1/0",
+      "group": "VSC"
+    },
+    {
+      "id": "vs-2o",
+      "label": "Cable N°2/0",
+      "group": "VSC"
+    },
+    {
+      "id": "vs-3o",
+      "label": "Cable N°3/0",
+      "group": "VSC"
+    },
+    {
+      "id": "vs-4o",
+      "label": "Cable N°4/0",
+      "group": "VSC"
+    },
+    {
+      "id": "vb-4",
+      "label": "Cable N°4",
+      "group": "VBC"
+    },
+    {
+      "id": "vb-2",
+      "label": "Cable N°2",
+      "group": "VBC"
+    },
+    {
+      "id": "vb-1",
+      "label": "Cable N°1",
+      "group": "VBC"
+    },
+    {
+      "id": "vb-1o",
+      "label": "Cable N°1/0",
+      "group": "VBC"
+    },
+    {
+      "id": "vb-2o",
+      "label": "Cable N°2/0",
+      "group": "VBC"
+    },
+    {
+      "id": "vb-3o",
+      "label": "Cable N°3/0",
+      "group": "VBC"
+    },
+    {
+      "id": "vb-4o",
+      "label": "Cable N°4/0",
+      "group": "VBC"
+    },
+    {
+      "id": "vf-4",
+      "label": "Cable N°4",
+      "group": "VFC"
+    },
+    {
+      "id": "vf-2",
+      "label": "Cable N°2",
+      "group": "VFC"
+    },
+    {
+      "id": "vf-1",
+      "label": "Cable N°1",
+      "group": "VFC"
+    },
+    {
+      "id": "vf-1o",
+      "label": "Cable N°1/0",
+      "group": "VFC"
+    },
+    {
+      "id": "vf-2o",
+      "label": "Cable N°2/0",
+      "group": "VFC"
+    },
+    {
+      "id": "vt-4",
+      "label": "Cable N°4",
+      "group": "VTC"
+    },
+    {
+      "id": "vt-2",
+      "label": "Cable N°2",
+      "group": "VTC"
+    },
+    {
+      "id": "vt-1",
+      "label": "Cable N°1",
+      "group": "VTC"
+    },
+    {
+      "id": "vt-1o",
+      "label": "Cable N°1/0",
+      "group": "VTC"
+    },
+    {
+      "id": "vt-2o",
+      "label": "Cable N°2/0",
+      "group": "VTC"
+    },
+    {
+      "id": "vt-3o",
+      "label": "Cable N°3/0",
+      "group": "VTC"
+    },
+    {
+      "id": "vt-4o",
+      "label": "Cable N°4/0",
+      "group": "VTC"
+    },
+    {
+      "id": "vnc-1h",
+      "label": "Cable N°6",
+      "group": "VNC"
+    },
+    {
+      "id": "vnc-1l",
+      "label": "Cable N°4",
+      "group": "VNC"
+    },
+    {
+      "id": "vnc-1t",
+      "label": "Cable N°2 Alam.",
+      "group": "VNC"
+    },
+    {
+      "id": "vnc-1v",
+      "label": "Cable N°2",
+      "group": "VNC"
+    },
+    {
+      "id": "vnc-1y",
+      "label": "Cable N°1",
+      "group": "VNC"
+    },
+    {
+      "id": "vnc-2c",
+      "label": "Cable N°1/0",
+      "group": "VNC"
+    },
+    {
+      "id": "vnc-2g",
+      "label": "Cable N°2/0",
+      "group": "VNC"
+    },
+    {
+      "id": "vnc-2l",
+      "label": "Cable N°3/0",
+      "group": "VNC"
+    },
+    {
+      "id": "vnc-2q",
+      "label": "Cable N°4/0",
+      "group": "VNC"
+    },
+    {
+      "id": "vnc-2v",
+      "label": "Cable 250 MCM",
+      "group": "VNC"
+    },
+    {
+      "id": "vnc-3a",
+      "label": "Cable 300 MCM",
+      "group": "VNC"
+    },
+    {
+      "id": "vnc-3d",
+      "label": "Cable 350 MCM",
+      "group": "VNC"
+    },
+    {
+      "id": "vnc-3q",
+      "label": "Cable 500 MCM",
+      "group": "VNC"
+    }
+  ]
+}

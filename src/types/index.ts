@@ -47,7 +47,7 @@ export interface Product {
   images?: string[];
   inStock: boolean;
   badge: BadgeValue | null;
-  subcategory?: string;
+  subcategories?: string[];
   variants?: Array<{ id: string; label: string; group?: string }>;
 }
 

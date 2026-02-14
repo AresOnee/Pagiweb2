@@ -1,0 +1,184 @@
+{
+  "sku": "MOL-C",
+  "title": "Moldes de Grafito C — Bus de Cobre a Acero",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "description": "Familia de moldes de grafito para conexiones de bus de cobre a superficies de acero. Incluye bus horizontal al canto (CC), bus vertical (CF), bus plano (CG) y bus al canto sobre superficie (CH). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "4 tipos de molde: CC, CF, CG, CH",
+    "Conexiones de bus de cobre a superficies de acero",
+    "Reutilizable para múltiples soldaduras",
+    "Compatible con cargas exotérmicas ESTWELD y Electro Material",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "C",
+    "Tipos Incluidos": "CC, CF, CG, CH",
+    "Material": "Grafito de alta densidad",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-038-01.webp",
+  "inStock": true,
+  "badge": null,
+  "subcategories": [
+    "Bus a Acero"
+  ],
+  "variants": [
+    {
+      "id": "cc-ce",
+      "label": "Bus 1/8\"x1\"",
+      "group": "CC"
+    },
+    {
+      "id": "cc-de",
+      "label": "Bus 3/16\"x1\"",
+      "group": "CC"
+    },
+    {
+      "id": "cc-ee",
+      "label": "Bus 1/4\"x1\"",
+      "group": "CC"
+    },
+    {
+      "id": "cc-eg",
+      "label": "Bus 1/4\"x1-1/2\"",
+      "group": "CC"
+    },
+    {
+      "id": "cc-eh",
+      "label": "Bus 1/4\"x2\"",
+      "group": "CC"
+    },
+    {
+      "id": "cc-ge",
+      "label": "Bus 3/8\"x1\"",
+      "group": "CC"
+    },
+    {
+      "id": "cc-gh",
+      "label": "Bus 3/8\"x2\"",
+      "group": "CC"
+    },
+    {
+      "id": "cf-ce",
+      "label": "Bus 1/8\"x1\"",
+      "group": "CF"
+    },
+    {
+      "id": "cf-de",
+      "label": "Bus 3/16\"x1\"",
+      "group": "CF"
+    },
+    {
+      "id": "cf-ee",
+      "label": "Bus 1/4\"x1\"",
+      "group": "CF"
+    },
+    {
+      "id": "cf-eg",
+      "label": "Bus 1/4\"x1-1/2\"",
+      "group": "CF"
+    },
+    {
+      "id": "cf-eh",
+      "label": "Bus 1/4\"x2\"",
+      "group": "CF"
+    },
+    {
+      "id": "cf-ge",
+      "label": "Bus 3/8\"x1\"",
+      "group": "CF"
+    },
+    {
+      "id": "cf-gh",
+      "label": "Bus 3/8\"x2\"",
+      "group": "CF"
+    },
+    {
+      "id": "cf-je",
+      "label": "Bus 1/2\"x1\"",
+      "group": "CF"
+    },
+    {
+      "id": "cf-jg",
+      "label": "Bus 1/2\"x1-1/2\"",
+      "group": "CF"
+    },
+    {
+      "id": "cf-jh",
+      "label": "Bus 1/2\"x2\"",
+      "group": "CF"
+    },
+    {
+      "id": "cg-ce",
+      "label": "Bus 1/8\"x1\"",
+      "group": "CG"
+    },
+    {
+      "id": "cg-de",
+      "label": "Bus 3/16\"x1\"",
+      "group": "CG"
+    },
+    {
+      "id": "cg-ee",
+      "label": "Bus 1/4\"x1\"",
+      "group": "CG"
+    },
+    {
+      "id": "cg-eg",
+      "label": "Bus 1/4\"x1-1/2\"",
+      "group": "CG"
+    },
+    {
+      "id": "cg-eh",
+      "label": "Bus 1/4\"x2\"",
+      "group": "CG"
+    },
+    {
+      "id": "cg-ge",
+      "label": "Bus 3/8\"x1\"",
+      "group": "CG"
+    },
+    {
+      "id": "cg-gh",
+      "label": "Bus 3/8\"x2\"",
+      "group": "CG"
+    },
+    {
+      "id": "ch-ce",
+      "label": "Bus 1/8\"x1\"",
+      "group": "CH"
+    },
+    {
+      "id": "ch-de",
+      "label": "Bus 3/16\"x1\"",
+      "group": "CH"
+    },
+    {
+      "id": "ch-ee",
+      "label": "Bus 1/4\"x1\"",
+      "group": "CH"
+    },
+    {
+      "id": "ch-eg",
+      "label": "Bus 1/4\"x1-1/2\"",
+      "group": "CH"
+    },
+    {
+      "id": "ch-eh",
+      "label": "Bus 1/4\"x2\"",
+      "group": "CH"
+    },
+    {
+      "id": "ch-ge",
+      "label": "Bus 3/8\"x1\"",
+      "group": "CH"
+    },
+    {
+      "id": "ch-gh",
+      "label": "Bus 3/8\"x2\"",
+      "group": "CH"
+    }
+  ]
+}

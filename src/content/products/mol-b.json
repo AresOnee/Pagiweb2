@@ -1,0 +1,180 @@
+{
+  "sku": "MOL-B",
+  "title": "Moldes de Grafito B — Bus de Cobre",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "description": "Familia de moldes de grafito para conexiones de bus de cobre. Incluye empalmes a tope (BA), conexiones en T (BQ) y conexiones a superficie vertical de acero (BW). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C. Compatible con cargas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "3 tipos de molde: BA, BQ, BW",
+    "Para bus de cobre en empalmes, T y conexión a acero",
+    "Reutilizable para múltiples soldaduras",
+    "Compatible con cargas exotérmicas ESTWELD y Electro Material",
+    "Requiere masilla selladora y chispero para operación"
+  ],
+  "specs": {
+    "Código Cadweld": "B",
+    "Tipos Incluidos": "BA, BQ, BW",
+    "Material": "Grafito de alta densidad",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-034-01.webp",
+  "inStock": true,
+  "badge": null,
+  "subcategories": [
+    "Bus a Bus de Cobre",
+    "Bus a Acero"
+  ],
+  "variants": [
+    {
+      "id": "ba-ce",
+      "label": "Bus 1/8\"x1\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-de",
+      "label": "Bus 3/16\"x1\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-ee",
+      "label": "Bus 1/4\"x1\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-ef",
+      "label": "Bus 1/4\"x1-1/4\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-eg",
+      "label": "Bus 1/4\"x1-1/2\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-eh",
+      "label": "Bus 1/4\"x2\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-ge",
+      "label": "Bus 3/8\"x1\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-gh",
+      "label": "Bus 3/8\"x2\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-je",
+      "label": "Bus 1/2\"x1\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-jh",
+      "label": "Bus 1/2\"x2\"",
+      "group": "BA"
+    },
+    {
+      "id": "bqc-cece",
+      "label": "Paso 1/8\"x1\" + Der. 1/8\"x1\"",
+      "group": "BQC"
+    },
+    {
+      "id": "bqc-dede",
+      "label": "Paso 3/16\"x1\" + Der. 3/16\"x1\"",
+      "group": "BQC"
+    },
+    {
+      "id": "bqc-eeee",
+      "label": "Paso 1/4\"x1\" + Der. 1/4\"x1\"",
+      "group": "BQC"
+    },
+    {
+      "id": "bqc-efef",
+      "label": "Paso 1/4\"x1-1/4\" + Der. 1/4\"x1-1/4\"",
+      "group": "BQC"
+    },
+    {
+      "id": "bqc-egeg",
+      "label": "Paso 1/4\"x1-1/2\" + Der. 1/4\"x1-1/2\"",
+      "group": "BQC"
+    },
+    {
+      "id": "bqd-eheh",
+      "label": "Paso 1/4\"x2\" + Der. 1/4\"x2\"",
+      "group": "BQD"
+    },
+    {
+      "id": "bqc-gege",
+      "label": "Paso 3/8\"x1\" + Der. 3/8\"x1\"",
+      "group": "BQC"
+    },
+    {
+      "id": "bqd-ghgh",
+      "label": "Paso 3/8\"x1-1/2\" + Der. 3/8\"x1-1/2\"",
+      "group": "BQD"
+    },
+    {
+      "id": "bqd-jeje",
+      "label": "Paso 1/2\"x1\" + Der. 1/2\"x1\"",
+      "group": "BQD"
+    },
+    {
+      "id": "bqd-jhjh",
+      "label": "Paso 1/2\"x2\" + Der. 1/2\"x2\"",
+      "group": "BQD"
+    },
+    {
+      "id": "bw-ce",
+      "label": "Bus 1/8\"x1\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-de",
+      "label": "Bus 3/16\"x1\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-ee",
+      "label": "Bus 1/4\"x1\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-eg",
+      "label": "Bus 1/4\"x1-1/2\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-eh",
+      "label": "Bus 1/4\"x2\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-ge",
+      "label": "Bus 3/8\"x1\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-gh",
+      "label": "Bus 3/8\"x2\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-je",
+      "label": "Bus 1/2\"x1\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-jg",
+      "label": "Bus 1/2\"x1-1/2\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-jh",
+      "label": "Bus 1/2\"x2\"",
+      "group": "BW"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "sku": "MOL-X",
+  "title": "Moldes de Grafito X — Conexiones en X Cable a Cable",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "description": "Familia de moldes de grafito tipo X para conexiones en cruz (X) de cables. Incluye cables cortados (XA), cables continuos (XB) y cables mayores continuos (XBQ/XBZ). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C. Compatible con cargas ESTWELD y Electro Material.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "3 tipos de molde: XA, XB, XBQ/XBZ",
+    "Conexiones en cruz (X) horizontal de cables",
+    "Cables compatibles: N°4 a 250 MCM",
+    "Diseño ergonómico de dos piezas (XB)",
+    "Reutilizable para múltiples soldaduras",
+    "Compatible con cargas exotérmicas ESTWELD y Electro Material"
+  ],
+  "specs": {
+    "Código Cadweld": "X",
+    "Tipos Incluidos": "XA, XB, XBQ/XBZ",
+    "Material": "Grafito de alta densidad",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-009-05.webp",
+  "images": [
+    "/assets/img/products/mol-009-03.webp",
+    "/assets/img/products/mol-009-06.webp",
+    "/assets/img/products/mol-009-07.webp",
+    "/assets/img/products/mol-010-02.webp",
+    "/assets/img/products/mol-010-03.webp",
+    "/assets/img/products/mol-010-04.webp",
+    "/assets/img/products/mol-010-05.webp",
+    "/assets/img/products/mol-010-06.webp"
+  ],
+  "inStock": true,
+  "badge": null,
+  "subcategories": [
+    "Cable a Cable"
+  ],
+  "variants": [
+    {
+      "id": "xa-4",
+      "label": "Cable N°4",
+      "group": "XAC"
+    },
+    {
+      "id": "xa-2",
+      "label": "Cable N°2",
+      "group": "XAC"
+    },
+    {
+      "id": "xa-1",
+      "label": "Cable N°1",
+      "group": "XAC"
+    },
+    {
+      "id": "xa-1o",
+      "label": "Cable N°1/0",
+      "group": "XAC"
+    },
+    {
+      "id": "xa-2o",
+      "label": "Cable N°2/0",
+      "group": "XAC"
+    },
+    {
+      "id": "xa-3o",
+      "label": "Cable N°3/0",
+      "group": "XAC"
+    },
+    {
+      "id": "xa-4o",
+      "label": "Cable N°4/0",
+      "group": "XAC"
+    },
+    {
+      "id": "xa-250",
+      "label": "Cable 250 MCM",
+      "group": "XAC"
+    },
+    {
+      "id": "xb-4",
+      "label": "Cable N°4",
+      "group": "XB"
+    },
+    {
+      "id": "xb-2",
+      "label": "Cable N°2",
+      "group": "XB"
+    },
+    {
+      "id": "xb-1",
+      "label": "Cable N°1",
+      "group": "XB"
+    },
+    {
+      "id": "xb-1o",
+      "label": "Cable N°1/0",
+      "group": "XB"
+    },
+    {
+      "id": "xb-2o",
+      "label": "Cable N°2/0",
+      "group": "XB"
+    },
+    {
+      "id": "xb-3o",
+      "label": "Cable N°3/0",
+      "group": "XB"
+    },
+    {
+      "id": "xb-4o",
+      "label": "Cable N°4/0",
+      "group": "XB"
+    },
+    {
+      "id": "xb-250",
+      "label": "Cable 250 MCM",
+      "group": "XB"
+    },
+    {
+      "id": "xbq-1o",
+      "label": "Cable N°1/0 + N°1/0",
+      "group": "XBQ"
+    },
+    {
+      "id": "xbq-2o",
+      "label": "Cable N°2/0 + N°2/0",
+      "group": "XBQ"
+    },
+    {
+      "id": "xbq-3o",
+      "label": "Cable N°3/0 + N°3/0",
+      "group": "XBQ"
+    },
+    {
+      "id": "xbq-4o",
+      "label": "Cable N°4/0 + N°4/0",
+      "group": "XBQ"
+    },
+    {
+      "id": "xbz-250",
+      "label": "Cable 250 MCM + 250 MCM",
+      "group": "XBZ"
+    },
+    {
+      "id": "xbz-350",
+      "label": "Cable 350 MCM + 350 MCM",
+      "group": "XBZ"
+    },
+    {
+      "id": "xbz-500",
+      "label": "Cable 500 MCM + 500 MCM",
+      "group": "XBZ"
+    }
+  ]
+}

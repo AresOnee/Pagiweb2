@@ -1,0 +1,395 @@
+{
+  "sku": "MOL-N",
+  "title": "Moldes de Grafito N — Cable con Derivación a Varilla",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "description": "Familia de moldes de grafito tipo N para conexiones exotérmicas de cable con derivación a varilla de tierra. Incluye cable de paso con derivación (NC), cable con derivación (ND), one-shot vertical (NT) y one-shot angular (NX). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "4 tipos de molde: NC, ND, NT, NX",
+    "Para conexiones cable con derivación a varilla de tierra",
+    "Compatible con barras Copperweld de 1/2\", 5/8\", 3/4\" y 1\"",
+    "Cables compatibles: N°6 a 4/0 AWG",
+    "Reutilizable para múltiples soldaduras",
+    "Compatible con cargas exotérmicas ESTWELD y Electro Material"
+  ],
+  "specs": {
+    "Código Cadweld": "N",
+    "Tipos Incluidos": "NC, ND, NT, NX",
+    "Material": "Grafito de alta densidad",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-004-06.webp",
+  "images": [
+    "/assets/img/products/mol-004-03.webp",
+    "/assets/img/products/mol-004-05.webp",
+    "/assets/img/products/mol-005-03.webp"
+  ],
+  "inStock": true,
+  "badge": null,
+  "subcategories": [
+    "Cable a Varilla"
+  ],
+  "variants": [
+    {
+      "id": "ncr-12-4",
+      "label": "Cable N°4",
+      "group": "NCR — Barra 1/2\""
+    },
+    {
+      "id": "ncr-12-2",
+      "label": "Cable N°2",
+      "group": "NCR — Barra 1/2\""
+    },
+    {
+      "id": "ncr-12-1",
+      "label": "Cable N°1",
+      "group": "NCR — Barra 1/2\""
+    },
+    {
+      "id": "ncr-12-1o",
+      "label": "Cable N°1/0",
+      "group": "NCR — Barra 1/2\""
+    },
+    {
+      "id": "ncr-12-2o",
+      "label": "Cable N°2/0",
+      "group": "NCR — Barra 1/2\""
+    },
+    {
+      "id": "ncr-12-3o",
+      "label": "Cable N°3/0",
+      "group": "NCR — Barra 1/2\""
+    },
+    {
+      "id": "ncr-12-4o",
+      "label": "Cable N°4/0",
+      "group": "NCR — Barra 1/2\""
+    },
+    {
+      "id": "ncr-58-4",
+      "label": "Cable N°4",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-58-2",
+      "label": "Cable N°2",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-58-1",
+      "label": "Cable N°1",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-58-1o",
+      "label": "Cable N°1/0",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-58-2o",
+      "label": "Cable N°2/0",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-58-3o",
+      "label": "Cable N°3/0",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-58-4o",
+      "label": "Cable N°4/0",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-34-4",
+      "label": "Cable N°4",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-34-2",
+      "label": "Cable N°2",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-34-1",
+      "label": "Cable N°1",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-34-1o",
+      "label": "Cable N°1/0",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-34-2o",
+      "label": "Cable N°2/0",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-34-3o",
+      "label": "Cable N°3/0",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-34-4o",
+      "label": "Cable N°4/0",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-1-4",
+      "label": "Cable N°4",
+      "group": "NCR — Barra 1\""
+    },
+    {
+      "id": "ncr-1-2",
+      "label": "Cable N°2",
+      "group": "NCR — Barra 1\""
+    },
+    {
+      "id": "ncr-1-1",
+      "label": "Cable N°1",
+      "group": "NCR — Barra 1\""
+    },
+    {
+      "id": "ncr-1-1o",
+      "label": "Cable N°1/0",
+      "group": "NCR — Barra 1\""
+    },
+    {
+      "id": "ncr-1-2o",
+      "label": "Cable N°2/0",
+      "group": "NCR — Barra 1\""
+    },
+    {
+      "id": "ncf-1-3o",
+      "label": "Cable N°3/0",
+      "group": "NCF — Barra 1\""
+    },
+    {
+      "id": "ncf-1-4o",
+      "label": "Cable N°4/0",
+      "group": "NCF — Barra 1\""
+    },
+    {
+      "id": "ndr-12-4",
+      "label": "Cable N°4",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-12-2",
+      "label": "Cable N°2",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-12-1",
+      "label": "Cable N°1",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-12-1o",
+      "label": "Cable N°1/0",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-12-2o",
+      "label": "Cable N°2/0",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-12-3o",
+      "label": "Cable N°3/0",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-12-4o",
+      "label": "Cable N°4/0",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-58-4",
+      "label": "Cable N°4",
+      "group": "NDR — Barra 5/8\""
+    },
+    {
+      "id": "ndr-58-2",
+      "label": "Cable N°2",
+      "group": "NDR — Barra 5/8\""
+    },
+    {
+      "id": "ndr-58-1",
+      "label": "Cable N°1",
+      "group": "NDR — Barra 5/8\""
+    },
+    {
+      "id": "ndr-58-1o",
+      "label": "Cable N°1/0",
+      "group": "NDR — Barra 5/8\""
+    },
+    {
+      "id": "ndr-58-2o",
+      "label": "Cable N°2/0",
+      "group": "NDR — Barra 5/8\""
+    },
+    {
+      "id": "ndr-34-4",
+      "label": "Cable N°4",
+      "group": "NDR — Barra 3/4\""
+    },
+    {
+      "id": "ndr-34-2",
+      "label": "Cable N°2",
+      "group": "NDR — Barra 3/4\""
+    },
+    {
+      "id": "ndr-34-1",
+      "label": "Cable N°1",
+      "group": "NDR — Barra 3/4\""
+    },
+    {
+      "id": "ndr-34-1o",
+      "label": "Cable N°1/0",
+      "group": "NDR — Barra 3/4\""
+    },
+    {
+      "id": "ndr-34-2o",
+      "label": "Cable N°2/0",
+      "group": "NDR — Barra 3/4\""
+    },
+    {
+      "id": "ndr-1-4",
+      "label": "Cable N°4",
+      "group": "NDR — Barra 1\""
+    },
+    {
+      "id": "ndr-1-2",
+      "label": "Cable N°2",
+      "group": "NDR — Barra 1\""
+    },
+    {
+      "id": "ndr-1-1",
+      "label": "Cable N°1",
+      "group": "NDR — Barra 1\""
+    },
+    {
+      "id": "ndr-1-1o",
+      "label": "Cable N°1/0",
+      "group": "NDR — Barra 1\""
+    },
+    {
+      "id": "ndf-58-3o",
+      "label": "Cable N°3/0",
+      "group": "NDF — Barra 5/8\""
+    },
+    {
+      "id": "ndf-58-4o",
+      "label": "Cable N°4/0",
+      "group": "NDF — Barra 5/8\""
+    },
+    {
+      "id": "ndf-34-3o",
+      "label": "Cable N°3/0",
+      "group": "NDF — Barra 3/4\""
+    },
+    {
+      "id": "ndf-34-4o",
+      "label": "Cable N°4/0",
+      "group": "NDF — Barra 3/4\""
+    },
+    {
+      "id": "ndf-1-2o",
+      "label": "Cable N°2/0",
+      "group": "NDF — Barra 1\""
+    },
+    {
+      "id": "ndf-1-3o",
+      "label": "Cable N°3/0",
+      "group": "NDF — Barra 1\""
+    },
+    {
+      "id": "ndf-1-4o",
+      "label": "Cable N°4/0",
+      "group": "NDF — Barra 1\""
+    },
+    {
+      "id": "nt-12-6",
+      "label": "Cable N°6",
+      "group": "NT — Barra 1/2\""
+    },
+    {
+      "id": "nt-12-4",
+      "label": "Cable N°4",
+      "group": "NT — Barra 1/2\""
+    },
+    {
+      "id": "nt-58-6",
+      "label": "Cable N°6",
+      "group": "NT — Barra 5/8\""
+    },
+    {
+      "id": "nt-58-4",
+      "label": "Cable N°4",
+      "group": "NT — Barra 5/8\""
+    },
+    {
+      "id": "nt-58-2",
+      "label": "Cable N°2",
+      "group": "NT — Barra 5/8\""
+    },
+    {
+      "id": "nt-34-6",
+      "label": "Cable N°6",
+      "group": "NT — Barra 3/4\""
+    },
+    {
+      "id": "nt-34-4",
+      "label": "Cable N°4",
+      "group": "NT — Barra 3/4\""
+    },
+    {
+      "id": "nt-34-2",
+      "label": "Cable N°2",
+      "group": "NT — Barra 3/4\""
+    },
+    {
+      "id": "nx-12-6",
+      "label": "Cable N°6",
+      "group": "NX — Barra 1/2\""
+    },
+    {
+      "id": "nx-12-4",
+      "label": "Cable N°4",
+      "group": "NX — Barra 1/2\""
+    },
+    {
+      "id": "nx-58-6",
+      "label": "Cable N°6",
+      "group": "NX — Barra 5/8\""
+    },
+    {
+      "id": "nx-58-4",
+      "label": "Cable N°4",
+      "group": "NX — Barra 5/8\""
+    },
+    {
+      "id": "nx-58-2",
+      "label": "Cable N°2",
+      "group": "NX — Barra 5/8\""
+    },
+    {
+      "id": "nx-34-6",
+      "label": "Cable N°6",
+      "group": "NX — Barra 3/4\""
+    },
+    {
+      "id": "nx-34-4",
+      "label": "Cable N°4",
+      "group": "NX — Barra 3/4\""
+    },
+    {
+      "id": "nx-34-2",
+      "label": "Cable N°2",
+      "group": "NX — Barra 3/4\""
+    }
+  ]
+}

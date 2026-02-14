@@ -1,0 +1,275 @@
+{
+  "sku": "MOL-R",
+  "title": "Moldes de Grafito R — Varilla Corrugada y Riel",
+  "category": "Moldes de Grafito",
+  "categorySlug": "moldes-grafito",
+  "description": "Familia de moldes de grafito tipo R para conexiones a varilla corrugada y riel. Incluye cable a varilla corrugada en T (RC), en X horizontal (RD), vertical en T (RJ), horizontal (RR), cable a riel lateral (RX) y terminal (RY). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C.",
+  "features": [
+    "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
+    "6 tipos de molde: RC, RD, RJ, RR, RX, RY",
+    "Para conexiones a varilla corrugada y riel de acero",
+    "Cables compatibles: N°4 a 1000 MCM",
+    "Reutilizable para múltiples soldaduras",
+    "Compatible con cargas exotérmicas ESTWELD y Electro Material"
+  ],
+  "specs": {
+    "Código Cadweld": "R",
+    "Tipos Incluidos": "RC, RD, RJ, RR, RX, RY",
+    "Material": "Grafito de alta densidad",
+    "Temperatura de Operación": "Superior a 2.500°C"
+  },
+  "image": "/assets/img/products/mol-042-01.webp",
+  "inStock": true,
+  "badge": null,
+  "subcategories": [
+    "Cable a Varilla Corrugada",
+    "Cable a Riel"
+  ],
+  "variants": [
+    {
+      "id": "rce-551l",
+      "label": "Varilla #5 + Cable N°4",
+      "group": "RCE — Varilla 5/8\""
+    },
+    {
+      "id": "rce-551v",
+      "label": "Varilla #5 + Cable N°2",
+      "group": "RCE — Varilla 5/8\""
+    },
+    {
+      "id": "rce-552c",
+      "label": "Varilla #5 + Cable N°1/0",
+      "group": "RCE — Varilla 5/8\""
+    },
+    {
+      "id": "rce-552q",
+      "label": "Varilla #5 + Cable N°4/0",
+      "group": "RCE — Varilla 5/8\""
+    },
+    {
+      "id": "rce-611l",
+      "label": "Varilla #6 + Cable N°4",
+      "group": "RCE — Varilla 3/4\""
+    },
+    {
+      "id": "rce-611v",
+      "label": "Varilla #6 + Cable N°2",
+      "group": "RCE — Varilla 3/4\""
+    },
+    {
+      "id": "rce-612c",
+      "label": "Varilla #6 + Cable N°1/0",
+      "group": "RCE — Varilla 3/4\""
+    },
+    {
+      "id": "rce-612q",
+      "label": "Varilla #6 + Cable N°4/0",
+      "group": "RCE — Varilla 3/4\""
+    },
+    {
+      "id": "rdc-551h",
+      "label": "Varilla #5 + Cable N°6",
+      "group": "RDC — Varilla 5/8\""
+    },
+    {
+      "id": "rdc-551v",
+      "label": "Varilla #5 + Cable N°2",
+      "group": "RDC — Varilla 5/8\""
+    },
+    {
+      "id": "rdc-552q",
+      "label": "Varilla #5 + Cable N°4/0",
+      "group": "RDC — Varilla 5/8\""
+    },
+    {
+      "id": "rdh-611l",
+      "label": "Varilla #6 + Cable N°4",
+      "group": "RDH — Varilla 3/4\""
+    },
+    {
+      "id": "rdh-612c",
+      "label": "Varilla #6 + Cable N°1/0",
+      "group": "RDH — Varilla 3/4\""
+    },
+    {
+      "id": "rdh-612q",
+      "label": "Varilla #6 + Cable N°4/0",
+      "group": "RDH — Varilla 3/4\""
+    },
+    {
+      "id": "rjc-511h",
+      "label": "Varilla #4 + Cable N°6",
+      "group": "RJC — Varilla 1/2\""
+    },
+    {
+      "id": "rjc-511v",
+      "label": "Varilla #4 + Cable N°2",
+      "group": "RJC — Varilla 1/2\""
+    },
+    {
+      "id": "rjc-551l",
+      "label": "Varilla #5 + Cable N°4",
+      "group": "RJC — Varilla 5/8\""
+    },
+    {
+      "id": "rjc-551v",
+      "label": "Varilla #5 + Cable N°2",
+      "group": "RJC — Varilla 5/8\""
+    },
+    {
+      "id": "rjc-552c",
+      "label": "Varilla #5 + Cable N°1/0",
+      "group": "RJC — Varilla 5/8\""
+    },
+    {
+      "id": "rje-611l",
+      "label": "Varilla #6 + Cable N°4",
+      "group": "RJE — Varilla 3/4\""
+    },
+    {
+      "id": "rje-611v",
+      "label": "Varilla #6 + Cable N°2",
+      "group": "RJE — Varilla 3/4\""
+    },
+    {
+      "id": "rje-612c",
+      "label": "Varilla #6 + Cable N°1/0",
+      "group": "RJE — Varilla 3/4\""
+    },
+    {
+      "id": "rje-612q",
+      "label": "Varilla #6 + Cable N°4/0",
+      "group": "RJE — Varilla 3/4\""
+    },
+    {
+      "id": "rrc-511h",
+      "label": "Varilla #4 + Cable N°6",
+      "group": "RRC — Varilla 1/2\""
+    },
+    {
+      "id": "rrc-511v",
+      "label": "Varilla #4 + Cable N°2",
+      "group": "RRC — Varilla 1/2\""
+    },
+    {
+      "id": "rrc-512c",
+      "label": "Varilla #4 + Cable N°1/0",
+      "group": "RRC — Varilla 1/2\""
+    },
+    {
+      "id": "rrc-551h",
+      "label": "Varilla #5 + Cable N°6",
+      "group": "RRC — Varilla 5/8\""
+    },
+    {
+      "id": "rrc-551v",
+      "label": "Varilla #5 + Cable N°2",
+      "group": "RRC — Varilla 5/8\""
+    },
+    {
+      "id": "rrc-552c",
+      "label": "Varilla #5 + Cable N°1/0",
+      "group": "RRC — Varilla 5/8\""
+    },
+    {
+      "id": "rrc-552q",
+      "label": "Varilla #5 + Cable N°4/0",
+      "group": "RRC — Varilla 5/8\""
+    },
+    {
+      "id": "rrh-611l",
+      "label": "Varilla #6 + Cable N°4",
+      "group": "RRH — Varilla 3/4\""
+    },
+    {
+      "id": "rrh-612c",
+      "label": "Varilla #6 + Cable N°1/0",
+      "group": "RRH — Varilla 3/4\""
+    },
+    {
+      "id": "rrh-612q",
+      "label": "Varilla #6 + Cable N°4/0",
+      "group": "RRH — Varilla 3/4\""
+    },
+    {
+      "id": "rxc-2c",
+      "label": "Cable N°1/0",
+      "group": "RXC"
+    },
+    {
+      "id": "rxc-2g",
+      "label": "Cable N°2/0",
+      "group": "RXC"
+    },
+    {
+      "id": "rxc-2l",
+      "label": "Cable N°3/0",
+      "group": "RXC"
+    },
+    {
+      "id": "rxc-2q",
+      "label": "Cable N°4/0",
+      "group": "RXC"
+    },
+    {
+      "id": "rxc-2v",
+      "label": "Cable 250 MCM",
+      "group": "RXC"
+    },
+    {
+      "id": "rxd-3a",
+      "label": "Cable 300 MCM",
+      "group": "RXD"
+    },
+    {
+      "id": "rxd-3q",
+      "label": "Cable 500 MCM",
+      "group": "RXD"
+    },
+    {
+      "id": "rxd-4y",
+      "label": "Cable 1000 MCM",
+      "group": "RXD"
+    },
+    {
+      "id": "ryc-2c",
+      "label": "Cable N°1/0",
+      "group": "RYC"
+    },
+    {
+      "id": "ryc-2g",
+      "label": "Cable N°2/0",
+      "group": "RYC"
+    },
+    {
+      "id": "ryc-2l",
+      "label": "Cable N°3/0",
+      "group": "RYC"
+    },
+    {
+      "id": "ryc-2q",
+      "label": "Cable N°4/0",
+      "group": "RYC"
+    },
+    {
+      "id": "ryc-2v",
+      "label": "Cable 250 MCM",
+      "group": "RYC"
+    },
+    {
+      "id": "ryd-3a",
+      "label": "Cable 300 MCM",
+      "group": "RYD"
+    },
+    {
+      "id": "ryd-3q",
+      "label": "Cable 500 MCM",
+      "group": "RYD"
+    },
+    {
+      "id": "ryd-4y",
+      "label": "Cable 1000 MCM",
+      "group": "RYD"
+    }
+  ]
+}
