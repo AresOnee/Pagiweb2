@@ -1,10 +1,10 @@
 /**
  * Gel Chile - Service Worker for PWA
- * Implements network-first strategy with offline fallback
+ * Stale-while-revalidate for assets, network-first for HTML
  */
 
 // BUILD_TIMESTAMP is replaced by the build script for cache busting
-const CACHE_NAME = 'gelchile-1771090200341';
+const CACHE_NAME = 'gelchile-1771093463359';
 const OFFLINE_URL = '/offline.html';
 
 // Assets to cache on install
@@ -43,7 +43,14 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch: network-first strategy
+// Helpers
+function isAsset(url) {
+  return url.pathname.startsWith('/_astro/') ||
+         url.pathname.startsWith('/assets/') ||
+         url.pathname.match(/\.(webp|png|jpg|svg|woff2|css|js)$/);
+}
+
+// Fetch handler with split strategy
 self.addEventListener('fetch', (event) => {
   // Skip non-GET requests
   if (event.request.method !== 'GET') return;
@@ -57,37 +64,43 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  event.respondWith(
-    // Try network first
-    fetch(event.request)
-      .then((response) => {
-        // Clone response to cache
-        const responseClone = response.clone();
+  const url = new URL(event.request.url);
 
-        // Cache successful responses
-        if (response.status === 200) {
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseClone);
+  if (isAsset(url)) {
+    // Stale-while-revalidate for static assets
+    event.respondWith(
+      caches.match(event.request).then((cached) => {
+        const fetchPromise = fetch(event.request).then((response) => {
+          if (response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        }).catch(() => cached);
+
+        return cached || fetchPromise;
+      })
+    );
+  } else {
+    // Network-first for HTML pages
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => {
+          return caches.match(event.request).then((cached) => {
+            if (cached) return cached;
+            if (event.request.headers.get('Accept')?.includes('text/html')) {
+              return caches.match(OFFLINE_URL);
+            }
+            return new Response('', { status: 503, statusText: 'Offline' });
           });
-        }
-
-        return response;
-      })
-      .catch(() => {
-        // Network failed, try cache
-        return caches.match(event.request).then((cachedResponse) => {
-          if (cachedResponse) {
-            return cachedResponse;
-          }
-
-          // For HTML pages, return offline page
-          if (event.request.headers.get('Accept')?.includes('text/html')) {
-            return caches.match(OFFLINE_URL);
-          }
-
-          // Return empty response for other assets
-          return new Response('', { status: 503, statusText: 'Offline' });
-        });
-      })
-  );
+        })
+    );
+  }
 });

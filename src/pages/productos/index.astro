@@ -78,13 +78,13 @@ const categories = categoriesData as Category[];
     });
   }
 
-  // Save on scroll (debounced)
+  // Save on scroll (debounced — 500ms to reduce main-thread work)
   let scrollTimer: ReturnType<typeof setTimeout>;
   window.addEventListener('scroll', () => {
     clearTimeout(scrollTimer);
     scrollTimer = setTimeout(() => {
       sessionStorage.setItem(SCROLL_KEY, String(window.scrollY));
-    }, 150);
+    }, 500);
   }, { passive: true });
 </script>
 

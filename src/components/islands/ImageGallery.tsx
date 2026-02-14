@@ -21,13 +21,18 @@ export default function ImageGallery({ images, alt, badge }: Props) {
 
   const hasMultiple = images.length > 1;
 
-  // --- Hover zoom ---
+  // --- Hover zoom (throttled with rAF) ---
+  const rafRef = useRef(0);
   const handleMouseMove = useCallback((e: MouseEvent) => {
-    if (!mainImageRef.current || !imgRef.current) return;
-    const rect = mainImageRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    imgRef.current.style.transformOrigin = `${x}% ${y}%`;
+    if (rafRef.current) return;
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = 0;
+      if (!mainImageRef.current || !imgRef.current) return;
+      const rect = mainImageRef.current.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      imgRef.current.style.transformOrigin = `${x}% ${y}%`;
+    });
   }, []);
 
   const handleMouseEnter = useCallback(() => setIsZooming(true), []);
