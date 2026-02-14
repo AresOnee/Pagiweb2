@@ -1,16 +1,17 @@
 {
   "sku": "MOL-G",
-  "title": "Moldes de Grafito G — Conexiones Cable a Varilla",
+  "title": "Moldes de Grafito G — Cable a Varilla y Zapata",
   "category": "Moldes de Grafito",
   "categorySlug": "moldes-grafito",
-  "subcategory": "Cable a Varilla",
-  "description": "Familia de moldes de grafito tipo G que incluye los modelos GR, GT, GY, GB, GL. Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C para conexiones exotérmicas profesionales. Compatible con cargas ESTWELD y Electro Material.",
+  "description": "Familia de moldes de grafito tipo G para conexiones exotérmicas de cable a varilla de tierra y zapata de cobre. Incluye terminal (GR), en T (GT), de paso (GY), empalme de varillas (GB) y cable a zapata (GL). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
     "5 tipos de molde: GR, GT, GY, GB, GL",
+    "Para conexiones cable a varilla y cable a zapata de cobre",
+    "Compatible con barras Copperweld de 1/2\", 5/8\" y 3/4\"",
+    "Cables compatibles: N°4 a 500 MCM",
     "Reutilizable para múltiples soldaduras",
-    "Compatible con cargas exotérmicas ESTWELD y Electro Material",
-    "Requiere masilla selladora y chispero para operación"
+    "Compatible con cargas exotérmicas ESTWELD y Electro Material"
   ],
   "specs": {
     "Código Cadweld": "G",
@@ -19,542 +20,405 @@
     "Temperatura de Operación": "Superior a 2.500°C"
   },
   "image": "/assets/img/products/mol-001-07.webp",
-  "images": [],
+  "images": [
+    "/assets/img/products/mol-001-02.webp",
+    "/assets/img/products/mol-001-04.webp",
+    "/assets/img/products/mol-001-06.webp",
+    "/assets/img/products/mol-001-08.webp",
+    "/assets/img/products/mol-001-09.webp",
+    "/assets/img/products/mol-002-05.webp",
+    "/assets/img/products/mol-002-09.webp",
+    "/assets/img/products/mol-002-10.webp",
+    "/assets/img/products/mol-002-11.webp",
+    "/assets/img/products/mol-003-03.webp",
+    "/assets/img/products/mol-003-05.webp"
+  ],
   "inStock": true,
   "badge": null,
-  "variants": [],
-  "moldTypes": [
+  "subcategories": [
+    "Cable a Varilla",
+    "Cable a Cobre"
+  ],
+  "variants": [
     {
-      "code": "GR",
-      "name": "Cable Terminal a Varilla de Tierra",
-      "description": "Molde de grafito de alta densidad tipo GR para conexión exotérmica de cable terminal a la parte superior de una varilla de puesta a tierra. Para uso con cable trenzado de cobre y varillas Copperweld de acero con revestimiento de cobre, galvanizado o inoxidable. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión tipo Cable Terminal a Varilla (GR)",
-        "Subtipos GRT, GRC, GRP según calibre",
-        "Compatible con barras Copperweld de 1/2\", 5/8\" y 3/4\"",
-        "Cables compatibles: N°6 a 4/0 AWG",
-        "Reutilizable para múltiples soldaduras",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "GR",
-        "Tipo de Unión": "Cable terminal a varilla de tierra",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "GRT, GRC, GRP",
-        "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\"",
-        "Cables Compatibles": "N°6 a 4/0 AWG",
-        "Rango de Cargas": "45 a 200 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-001-07.webp",
-      "images": [
-        "/assets/img/products/mol-001-02.webp",
-        "/assets/img/products/mol-001-04.webp",
-        "/assets/img/products/mol-001-06.webp",
-        "/assets/img/products/mol-001-08.webp",
-        "/assets/img/products/mol-001-09.webp"
-      ],
-      "variants": [
-        {
-          "id": "grt-12-6",
-          "label": "Cable N°6",
-          "group": "GRT — Barra 1/2\""
-        },
-        {
-          "id": "grt-12-4",
-          "label": "Cable N°4",
-          "group": "GRT — Barra 1/2\""
-        },
-        {
-          "id": "grt-12-2",
-          "label": "Cable N°2",
-          "group": "GRT — Barra 1/2\""
-        },
-        {
-          "id": "grt-58-6",
-          "label": "Cable N°6",
-          "group": "GRT — Barra 5/8\""
-        },
-        {
-          "id": "grt-58-4",
-          "label": "Cable N°4",
-          "group": "GRT — Barra 5/8\""
-        },
-        {
-          "id": "grt-34-6",
-          "label": "Cable N°6",
-          "group": "GRT — Barra 3/4\""
-        },
-        {
-          "id": "grc-12-1",
-          "label": "Cable N°1",
-          "group": "GRC — Barra 1/2\""
-        },
-        {
-          "id": "grc-12-1o",
-          "label": "Cable N°1/0",
-          "group": "GRC — Barra 1/2\""
-        },
-        {
-          "id": "grc-12-2o",
-          "label": "Cable N°2/0",
-          "group": "GRC — Barra 1/2\""
-        },
-        {
-          "id": "grc-12-3o",
-          "label": "Cable N°3/0",
-          "group": "GRC — Barra 1/2\""
-        },
-        {
-          "id": "grc-12-4o",
-          "label": "Cable N°4/0",
-          "group": "GRC — Barra 1/2\""
-        },
-        {
-          "id": "grc-58-2",
-          "label": "Cable N°2",
-          "group": "GRC — Barra 5/8\""
-        },
-        {
-          "id": "grc-58-1",
-          "label": "Cable N°1",
-          "group": "GRC — Barra 5/8\""
-        },
-        {
-          "id": "grc-58-1o",
-          "label": "Cable N°1/0",
-          "group": "GRC — Barra 5/8\""
-        },
-        {
-          "id": "grc-58-2o",
-          "label": "Cable N°2/0",
-          "group": "GRC — Barra 5/8\""
-        },
-        {
-          "id": "grc-58-3o",
-          "label": "Cable N°3/0",
-          "group": "GRC — Barra 5/8\""
-        },
-        {
-          "id": "grc-58-4o",
-          "label": "Cable N°4/0",
-          "group": "GRC — Barra 5/8\""
-        },
-        {
-          "id": "grc-34-2",
-          "label": "Cable N°2",
-          "group": "GRC — Barra 3/4\""
-        },
-        {
-          "id": "grc-34-1",
-          "label": "Cable N°1",
-          "group": "GRC — Barra 3/4\""
-        },
-        {
-          "id": "grc-34-1o",
-          "label": "Cable N°1/0",
-          "group": "GRC — Barra 3/4\""
-        },
-        {
-          "id": "grc-34-2o",
-          "label": "Cable N°2/0",
-          "group": "GRC — Barra 3/4\""
-        },
-        {
-          "id": "grc-34-3o",
-          "label": "Cable N°3/0",
-          "group": "GRC — Barra 3/4\""
-        },
-        {
-          "id": "grc-34-4o",
-          "label": "Cable N°4/0",
-          "group": "GRC — Barra 3/4\""
-        },
-        {
-          "id": "grp-34-4",
-          "label": "Cable N°4",
-          "group": "GRP — Barra 3/4\""
-        }
-      ]
+      "id": "grt-12-6",
+      "label": "Cable N°6",
+      "group": "GRT — Barra 1/2\""
     },
     {
-      "code": "GT",
-      "name": "Cable a Varilla en T",
-      "description": "Molde de grafito de alta densidad tipo GT para conexión exotérmica de dos cables a una varilla de puesta a tierra en configuración T. Permite conectar dos conductores de cobre a la parte superior de una barra Copperweld simultáneamente. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión tipo Cable a Varilla en T (GT)",
-        "Subtipo GTC según calibre de cable y barra",
-        "Compatible con barras Copperweld de 1/2\", 5/8\" y 3/4\"",
-        "Cables compatibles: N°6 a 4/0 AWG",
-        "Reutilizable para múltiples soldaduras",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "GT",
-        "Tipo de Unión": "Cable a varilla en T",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "GTC",
-        "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\"",
-        "Cables Compatibles": "N°6 a 4/0 AWG",
-        "Rango de Cargas": "90 a 200 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-002-08.webp",
-      "images": [
-        "/assets/img/products/mol-002-05.webp",
-        "/assets/img/products/mol-002-09.webp",
-        "/assets/img/products/mol-002-10.webp",
-        "/assets/img/products/mol-002-11.webp"
-      ],
-      "variants": [
-        {
-          "id": "gt-12-6",
-          "label": "Cable N°6",
-          "group": "GTC — Barra 1/2\""
-        },
-        {
-          "id": "gt-12-4",
-          "label": "Cable N°4",
-          "group": "GTC — Barra 1/2\""
-        },
-        {
-          "id": "gt-12-2",
-          "label": "Cable N°2",
-          "group": "GTC — Barra 1/2\""
-        },
-        {
-          "id": "gt-12-1",
-          "label": "Cable N°1",
-          "group": "GTC — Barra 1/2\""
-        },
-        {
-          "id": "gt-12-1o",
-          "label": "Cable N°1/0",
-          "group": "GTC — Barra 1/2\""
-        },
-        {
-          "id": "gt-12-2o",
-          "label": "Cable N°2/0",
-          "group": "GTC — Barra 1/2\""
-        },
-        {
-          "id": "gt-12-3o",
-          "label": "Cable N°3/0",
-          "group": "GTC — Barra 1/2\""
-        },
-        {
-          "id": "gt-12-4o",
-          "label": "Cable N°4/0",
-          "group": "GTC — Barra 1/2\""
-        },
-        {
-          "id": "gt-58-6",
-          "label": "Cable N°6",
-          "group": "GTC — Barra 5/8\""
-        },
-        {
-          "id": "gt-58-4",
-          "label": "Cable N°4",
-          "group": "GTC — Barra 5/8\""
-        },
-        {
-          "id": "gt-58-2",
-          "label": "Cable N°2",
-          "group": "GTC — Barra 5/8\""
-        },
-        {
-          "id": "gt-58-1",
-          "label": "Cable N°1",
-          "group": "GTC — Barra 5/8\""
-        },
-        {
-          "id": "gt-58-1o",
-          "label": "Cable N°1/0",
-          "group": "GTC — Barra 5/8\""
-        },
-        {
-          "id": "gt-58-2o",
-          "label": "Cable N°2/0",
-          "group": "GTC — Barra 5/8\""
-        },
-        {
-          "id": "gt-58-3o",
-          "label": "Cable N°3/0",
-          "group": "GTC — Barra 5/8\""
-        },
-        {
-          "id": "gt-58-4o",
-          "label": "Cable N°4/0",
-          "group": "GTC — Barra 5/8\""
-        },
-        {
-          "id": "gt-34-6",
-          "label": "Cable N°6",
-          "group": "GTC — Barra 3/4\""
-        },
-        {
-          "id": "gt-34-4",
-          "label": "Cable N°4",
-          "group": "GTC — Barra 3/4\""
-        },
-        {
-          "id": "gt-34-2",
-          "label": "Cable N°2",
-          "group": "GTC — Barra 3/4\""
-        },
-        {
-          "id": "gt-34-1",
-          "label": "Cable N°1",
-          "group": "GTC — Barra 3/4\""
-        },
-        {
-          "id": "gt-34-1o",
-          "label": "Cable N°1/0",
-          "group": "GTC — Barra 3/4\""
-        },
-        {
-          "id": "gt-34-2o",
-          "label": "Cable N°2/0",
-          "group": "GTC — Barra 3/4\""
-        },
-        {
-          "id": "gt-34-3o",
-          "label": "Cable N°3/0",
-          "group": "GTC — Barra 3/4\""
-        },
-        {
-          "id": "gt-34-4o",
-          "label": "Cable N°4/0",
-          "group": "GTC — Barra 3/4\""
-        }
-      ]
+      "id": "grt-12-4",
+      "label": "Cable N°4",
+      "group": "GRT — Barra 1/2\""
     },
     {
-      "code": "GY",
-      "name": "Cable de Paso a Varilla de Tierra",
-      "description": "Molde de grafito de alta densidad tipo GY para conexión exotérmica de cable de paso lateral a varilla de puesta a tierra. El cable pasa a través del costado de la barra a una altura indeterminada. Para uso con cable trenzado de cobre y varillas Copperweld. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión tipo Cable de Paso a Varilla (GY)",
-        "Subtipo GYE según calibre de cable y barra",
-        "Compatible con barras Copperweld de 1/2\", 5/8\" y 3/4\"",
-        "Cables compatibles: N°1/0 a 4/0 AWG",
-        "Molde de dos piezas para fácil instalación",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "GY",
-        "Tipo de Unión": "Cable de paso a varilla de tierra",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "GYE",
-        "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\"",
-        "Cables Compatibles": "N°1/0 a 4/0 AWG",
-        "Rango de Cargas": "90 a 150 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-003-04.webp",
-      "images": [
-        "/assets/img/products/mol-003-03.webp",
-        "/assets/img/products/mol-003-05.webp"
-      ],
-      "variants": [
-        {
-          "id": "gy-12-1o",
-          "label": "Cable N°1/0",
-          "group": "GYE — Barra 1/2\""
-        },
-        {
-          "id": "gy-12-2o",
-          "label": "Cable N°2/0",
-          "group": "GYE — Barra 1/2\""
-        },
-        {
-          "id": "gy-12-3o",
-          "label": "Cable N°3/0",
-          "group": "GYE — Barra 1/2\""
-        },
-        {
-          "id": "gy-12-4o",
-          "label": "Cable N°4/0",
-          "group": "GYE — Barra 1/2\""
-        },
-        {
-          "id": "gy-58-1o",
-          "label": "Cable N°1/0",
-          "group": "GYE — Barra 5/8\""
-        },
-        {
-          "id": "gy-58-2o",
-          "label": "Cable N°2/0",
-          "group": "GYE — Barra 5/8\""
-        },
-        {
-          "id": "gy-58-3o",
-          "label": "Cable N°3/0",
-          "group": "GYE — Barra 5/8\""
-        },
-        {
-          "id": "gy-58-4o",
-          "label": "Cable N°4/0",
-          "group": "GYE — Barra 5/8\""
-        },
-        {
-          "id": "gy-34-1o",
-          "label": "Cable N°1/0",
-          "group": "GYE — Barra 3/4\""
-        },
-        {
-          "id": "gy-34-2o",
-          "label": "Cable N°2/0",
-          "group": "GYE — Barra 3/4\""
-        },
-        {
-          "id": "gy-34-3o",
-          "label": "Cable N°3/0",
-          "group": "GYE — Barra 3/4\""
-        },
-        {
-          "id": "gy-34-4o",
-          "label": "Cable N°4/0",
-          "group": "GYE — Barra 3/4\""
-        }
-      ]
+      "id": "grt-12-2",
+      "label": "Cable N°2",
+      "group": "GRT — Barra 1/2\""
     },
     {
-      "code": "GB",
-      "name": "Empalme de Varillas de Tierra",
-      "description": "Molde de grafito de alta densidad tipo GB para empalme exotérmico de dos varillas de puesta a tierra alineadas. Permite unir el extremo de una varilla con el inicio de otra para extender la profundidad de la red de tierra. Compatible con varillas Copperweld y cargas exotérmicas ESTWELD.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Empalme de dos varillas de tierra alineadas (GB)",
-        "Para varillas Copperweld de acero con revestimiento de cobre",
-        "Barras compatibles: 1/2\", 5/8\", 3/4\" y 1\"",
-        "Permite extender la profundidad del sistema de tierra",
-        "Reutilizable para múltiples soldaduras",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "GB",
-        "Tipo de Unión": "Empalme de varillas de tierra (Rod to Rod)",
-        "Material": "Grafito de alta densidad",
-        "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\", 1\"",
-        "Rango de Cargas": "250 a 3-250 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-025-01.webp",
-      "images": [],
-      "variants": [
-        {
-          "id": "gb-12",
-          "label": "Barra 1/2\"",
-          "group": "GB"
-        },
-        {
-          "id": "gb-58",
-          "label": "Barra 5/8\"",
-          "group": "GB"
-        },
-        {
-          "id": "gb-34",
-          "label": "Barra 3/4\"",
-          "group": "GB"
-        },
-        {
-          "id": "gb-1",
-          "label": "Barra 1\"",
-          "group": "GB"
-        }
-      ]
+      "id": "grt-58-6",
+      "label": "Cable N°6",
+      "group": "GRT — Barra 5/8\""
     },
     {
-      "code": "GL",
-      "name": "Cable a Zapata de Cobre con Barreno",
-      "description": "Molde de grafito de alta densidad tipo GL para conexión exotérmica de cable de cobre a zapata de cobre CADWELD con barreno NEMA. Zapatas y conexiones para sistemas de tierra y estructuras que no pueden quedar soldadas permanentemente. Ideal para subestaciones. Compatible con zapatas serie B-121 y B-122.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión cable a zapata de cobre con barreno NEMA (GL)",
-        "Zapatas serie B-121 (1 barreno) y B-122 (2 barrenos)",
-        "Todas las zapatas son de cobre estañado",
-        "Cables compatibles: N°4 a 500 MCM",
-        "Ideal para aplicaciones en subestaciones",
-        "Requiere manija L160, chispero T320"
-      ],
-      "specs": {
-        "Código Cadweld": "GL",
-        "Tipo de Unión": "Cable a zapata de cobre con barreno (Cable to Copper Lug)",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "GLC, GLD",
-        "Cables Compatibles": "N°4 a 500 MCM",
-        "Zapatas": "Serie B-121 (1 barreno), B-122 (2 barrenos)",
-        "Rango de Cargas": "32 a 150 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-030-01.webp",
-      "images": [],
-      "variants": [
-        {
-          "id": "glc-ce1l",
-          "label": "Cable N°4",
-          "group": "GLC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "glc-ce1t",
-          "label": "Cable 2 Alam.",
-          "group": "GLC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "glc-ce1v",
-          "label": "Cable N°2",
-          "group": "GLC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "glc-ce1y",
-          "label": "Cable N°1",
-          "group": "GLC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "glc-ce2c",
-          "label": "Cable N°1/0",
-          "group": "GLC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "glc-ce2g",
-          "label": "Cable N°2/0",
-          "group": "GLC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "glc-ce2l",
-          "label": "Cable N°3/0",
-          "group": "GLC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "glc-ce2q",
-          "label": "Cable N°4/0",
-          "group": "GLC — Zapata 3/16\"x1\""
-        },
-        {
-          "id": "glc-de2v",
-          "label": "Cable 250 MCM",
-          "group": "GLC — Zapata 3/16\"x1\""
-        },
-        {
-          "id": "glc-ee3a",
-          "label": "Cable 300 MCM",
-          "group": "GLC — Zapata 1/4\"x1\""
-        },
-        {
-          "id": "glc-ee3d",
-          "label": "Cable 350 MCM",
-          "group": "GLC — Zapata 1/4\"x1\""
-        },
-        {
-          "id": "glc-eg3q",
-          "label": "Cable 500 MCM",
-          "group": "GLC — Zapata 1/4\"x1-1/2\""
-        }
-      ]
+      "id": "grt-58-4",
+      "label": "Cable N°4",
+      "group": "GRT — Barra 5/8\""
+    },
+    {
+      "id": "grt-34-6",
+      "label": "Cable N°6",
+      "group": "GRT — Barra 3/4\""
+    },
+    {
+      "id": "grc-12-1",
+      "label": "Cable N°1",
+      "group": "GRC — Barra 1/2\""
+    },
+    {
+      "id": "grc-12-1o",
+      "label": "Cable N°1/0",
+      "group": "GRC — Barra 1/2\""
+    },
+    {
+      "id": "grc-12-2o",
+      "label": "Cable N°2/0",
+      "group": "GRC — Barra 1/2\""
+    },
+    {
+      "id": "grc-12-3o",
+      "label": "Cable N°3/0",
+      "group": "GRC — Barra 1/2\""
+    },
+    {
+      "id": "grc-12-4o",
+      "label": "Cable N°4/0",
+      "group": "GRC — Barra 1/2\""
+    },
+    {
+      "id": "grc-58-2",
+      "label": "Cable N°2",
+      "group": "GRC — Barra 5/8\""
+    },
+    {
+      "id": "grc-58-1",
+      "label": "Cable N°1",
+      "group": "GRC — Barra 5/8\""
+    },
+    {
+      "id": "grc-58-1o",
+      "label": "Cable N°1/0",
+      "group": "GRC — Barra 5/8\""
+    },
+    {
+      "id": "grc-58-2o",
+      "label": "Cable N°2/0",
+      "group": "GRC — Barra 5/8\""
+    },
+    {
+      "id": "grc-58-3o",
+      "label": "Cable N°3/0",
+      "group": "GRC — Barra 5/8\""
+    },
+    {
+      "id": "grc-58-4o",
+      "label": "Cable N°4/0",
+      "group": "GRC — Barra 5/8\""
+    },
+    {
+      "id": "grc-34-2",
+      "label": "Cable N°2",
+      "group": "GRC — Barra 3/4\""
+    },
+    {
+      "id": "grc-34-1",
+      "label": "Cable N°1",
+      "group": "GRC — Barra 3/4\""
+    },
+    {
+      "id": "grc-34-1o",
+      "label": "Cable N°1/0",
+      "group": "GRC — Barra 3/4\""
+    },
+    {
+      "id": "grc-34-2o",
+      "label": "Cable N°2/0",
+      "group": "GRC — Barra 3/4\""
+    },
+    {
+      "id": "grc-34-3o",
+      "label": "Cable N°3/0",
+      "group": "GRC — Barra 3/4\""
+    },
+    {
+      "id": "grc-34-4o",
+      "label": "Cable N°4/0",
+      "group": "GRC — Barra 3/4\""
+    },
+    {
+      "id": "grp-34-4",
+      "label": "Cable N°4",
+      "group": "GRP — Barra 3/4\""
+    },
+    {
+      "id": "gt-12-6",
+      "label": "Cable N°6",
+      "group": "GTC — Barra 1/2\""
+    },
+    {
+      "id": "gt-12-4",
+      "label": "Cable N°4",
+      "group": "GTC — Barra 1/2\""
+    },
+    {
+      "id": "gt-12-2",
+      "label": "Cable N°2",
+      "group": "GTC — Barra 1/2\""
+    },
+    {
+      "id": "gt-12-1",
+      "label": "Cable N°1",
+      "group": "GTC — Barra 1/2\""
+    },
+    {
+      "id": "gt-12-1o",
+      "label": "Cable N°1/0",
+      "group": "GTC — Barra 1/2\""
+    },
+    {
+      "id": "gt-12-2o",
+      "label": "Cable N°2/0",
+      "group": "GTC — Barra 1/2\""
+    },
+    {
+      "id": "gt-12-3o",
+      "label": "Cable N°3/0",
+      "group": "GTC — Barra 1/2\""
+    },
+    {
+      "id": "gt-12-4o",
+      "label": "Cable N°4/0",
+      "group": "GTC — Barra 1/2\""
+    },
+    {
+      "id": "gt-58-6",
+      "label": "Cable N°6",
+      "group": "GTC — Barra 5/8\""
+    },
+    {
+      "id": "gt-58-4",
+      "label": "Cable N°4",
+      "group": "GTC — Barra 5/8\""
+    },
+    {
+      "id": "gt-58-2",
+      "label": "Cable N°2",
+      "group": "GTC — Barra 5/8\""
+    },
+    {
+      "id": "gt-58-1",
+      "label": "Cable N°1",
+      "group": "GTC — Barra 5/8\""
+    },
+    {
+      "id": "gt-58-1o",
+      "label": "Cable N°1/0",
+      "group": "GTC — Barra 5/8\""
+    },
+    {
+      "id": "gt-58-2o",
+      "label": "Cable N°2/0",
+      "group": "GTC — Barra 5/8\""
+    },
+    {
+      "id": "gt-58-3o",
+      "label": "Cable N°3/0",
+      "group": "GTC — Barra 5/8\""
+    },
+    {
+      "id": "gt-58-4o",
+      "label": "Cable N°4/0",
+      "group": "GTC — Barra 5/8\""
+    },
+    {
+      "id": "gt-34-6",
+      "label": "Cable N°6",
+      "group": "GTC — Barra 3/4\""
+    },
+    {
+      "id": "gt-34-4",
+      "label": "Cable N°4",
+      "group": "GTC — Barra 3/4\""
+    },
+    {
+      "id": "gt-34-2",
+      "label": "Cable N°2",
+      "group": "GTC — Barra 3/4\""
+    },
+    {
+      "id": "gt-34-1",
+      "label": "Cable N°1",
+      "group": "GTC — Barra 3/4\""
+    },
+    {
+      "id": "gt-34-1o",
+      "label": "Cable N°1/0",
+      "group": "GTC — Barra 3/4\""
+    },
+    {
+      "id": "gt-34-2o",
+      "label": "Cable N°2/0",
+      "group": "GTC — Barra 3/4\""
+    },
+    {
+      "id": "gt-34-3o",
+      "label": "Cable N°3/0",
+      "group": "GTC — Barra 3/4\""
+    },
+    {
+      "id": "gt-34-4o",
+      "label": "Cable N°4/0",
+      "group": "GTC — Barra 3/4\""
+    },
+    {
+      "id": "gy-12-1o",
+      "label": "Cable N°1/0",
+      "group": "GYE — Barra 1/2\""
+    },
+    {
+      "id": "gy-12-2o",
+      "label": "Cable N°2/0",
+      "group": "GYE — Barra 1/2\""
+    },
+    {
+      "id": "gy-12-3o",
+      "label": "Cable N°3/0",
+      "group": "GYE — Barra 1/2\""
+    },
+    {
+      "id": "gy-12-4o",
+      "label": "Cable N°4/0",
+      "group": "GYE — Barra 1/2\""
+    },
+    {
+      "id": "gy-58-1o",
+      "label": "Cable N°1/0",
+      "group": "GYE — Barra 5/8\""
+    },
+    {
+      "id": "gy-58-2o",
+      "label": "Cable N°2/0",
+      "group": "GYE — Barra 5/8\""
+    },
+    {
+      "id": "gy-58-3o",
+      "label": "Cable N°3/0",
+      "group": "GYE — Barra 5/8\""
+    },
+    {
+      "id": "gy-58-4o",
+      "label": "Cable N°4/0",
+      "group": "GYE — Barra 5/8\""
+    },
+    {
+      "id": "gy-34-1o",
+      "label": "Cable N°1/0",
+      "group": "GYE — Barra 3/4\""
+    },
+    {
+      "id": "gy-34-2o",
+      "label": "Cable N°2/0",
+      "group": "GYE — Barra 3/4\""
+    },
+    {
+      "id": "gy-34-3o",
+      "label": "Cable N°3/0",
+      "group": "GYE — Barra 3/4\""
+    },
+    {
+      "id": "gy-34-4o",
+      "label": "Cable N°4/0",
+      "group": "GYE — Barra 3/4\""
+    },
+    {
+      "id": "gb-12",
+      "label": "Barra 1/2\"",
+      "group": "GB"
+    },
+    {
+      "id": "gb-58",
+      "label": "Barra 5/8\"",
+      "group": "GB"
+    },
+    {
+      "id": "gb-34",
+      "label": "Barra 3/4\"",
+      "group": "GB"
+    },
+    {
+      "id": "gb-1",
+      "label": "Barra 1\"",
+      "group": "GB"
+    },
+    {
+      "id": "glc-ce1l",
+      "label": "Cable N°4",
+      "group": "GLC — Zapata 1/8\"x1\""
+    },
+    {
+      "id": "glc-ce1t",
+      "label": "Cable 2 Alam.",
+      "group": "GLC — Zapata 1/8\"x1\""
+    },
+    {
+      "id": "glc-ce1v",
+      "label": "Cable N°2",
+      "group": "GLC — Zapata 1/8\"x1\""
+    },
+    {
+      "id": "glc-ce1y",
+      "label": "Cable N°1",
+      "group": "GLC — Zapata 1/8\"x1\""
+    },
+    {
+      "id": "glc-ce2c",
+      "label": "Cable N°1/0",
+      "group": "GLC — Zapata 1/8\"x1\""
+    },
+    {
+      "id": "glc-ce2g",
+      "label": "Cable N°2/0",
+      "group": "GLC — Zapata 1/8\"x1\""
+    },
+    {
+      "id": "glc-ce2l",
+      "label": "Cable N°3/0",
+      "group": "GLC — Zapata 1/8\"x1\""
+    },
+    {
+      "id": "glc-ce2q",
+      "label": "Cable N°4/0",
+      "group": "GLC — Zapata 3/16\"x1\""
+    },
+    {
+      "id": "glc-de2v",
+      "label": "Cable 250 MCM",
+      "group": "GLC — Zapata 3/16\"x1\""
+    },
+    {
+      "id": "glc-ee3a",
+      "label": "Cable 300 MCM",
+      "group": "GLC — Zapata 1/4\"x1\""
+    },
+    {
+      "id": "glc-ee3d",
+      "label": "Cable 350 MCM",
+      "group": "GLC — Zapata 1/4\"x1\""
+    },
+    {
+      "id": "glc-eg3q",
+      "label": "Cable 500 MCM",
+      "group": "GLC — Zapata 1/4\"x1-1/2\""
     }
   ]
 }

@@ -1,13 +1,13 @@
 {
   "sku": "MOL-B",
-  "title": "Moldes de Grafito B — Conexiones de Bus de Cobre",
+  "title": "Moldes de Grafito B — Bus de Cobre",
   "category": "Moldes de Grafito",
   "categorySlug": "moldes-grafito",
-  "subcategory": "Bus a Bus de Cobre",
-  "description": "Familia de moldes de grafito tipo B que incluye los modelos BA, BQ, BW. Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C para conexiones exotérmicas profesionales. Compatible con cargas ESTWELD y Electro Material.",
+  "description": "Familia de moldes de grafito para conexiones de bus de cobre. Incluye empalmes a tope (BA), conexiones en T (BQ) y conexiones a superficie vertical de acero (BW). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C. Compatible con cargas ESTWELD y Electro Material.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
     "3 tipos de molde: BA, BQ, BW",
+    "Para bus de cobre en empalmes, T y conexión a acero",
     "Reutilizable para múltiples soldaduras",
     "Compatible con cargas exotérmicas ESTWELD y Electro Material",
     "Requiere masilla selladora y chispero para operación"
@@ -19,239 +19,162 @@
     "Temperatura de Operación": "Superior a 2.500°C"
   },
   "image": "/assets/img/products/mol-034-01.webp",
-  "images": [],
   "inStock": true,
   "badge": null,
-  "variants": [],
-  "moldTypes": [
+  "subcategories": [
+    "Bus a Bus de Cobre",
+    "Bus a Acero"
+  ],
+  "variants": [
     {
-      "code": "BA",
-      "name": "Empalme a Tope de Bus de Cobre",
-      "description": "Molde de grafito de alta densidad tipo BA para empalme a tope de dos buses de cobre enfrentados. Conexión permanente de dos barras de cobre planas alineadas. Para buses de cobre de diversas dimensiones utilizados en subestaciones y tableros eléctricos. Compatible con cargas exotérmicas ESTWELD.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Empalme a tope de buses de cobre enfrentados (BA)",
-        "Conexión permanente de baja resistencia eléctrica",
-        "Para buses de cobre desde 1/8\"x1\" hasta 1/2\"x2\"",
-        "Ideal para subestaciones y tableros eléctricos",
-        "Reutilizable para múltiples soldaduras",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "BA",
-        "Tipo de Unión": "Empalme a tope de bus de cobre (Butt Splice)",
-        "Material": "Grafito de alta densidad",
-        "Bus Compatibles": "1/8\"x1\" a 1/2\"x2\"",
-        "Rango de Cargas": "90 a 3-250 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-034-01.webp",
-      "images": [],
-      "variants": [
-        {
-          "id": "ba-ce",
-          "label": "Bus 1/8\"x1\"",
-          "group": "BA"
-        },
-        {
-          "id": "ba-de",
-          "label": "Bus 3/16\"x1\"",
-          "group": "BA"
-        },
-        {
-          "id": "ba-ee",
-          "label": "Bus 1/4\"x1\"",
-          "group": "BA"
-        },
-        {
-          "id": "ba-ef",
-          "label": "Bus 1/4\"x1-1/4\"",
-          "group": "BA"
-        },
-        {
-          "id": "ba-eg",
-          "label": "Bus 1/4\"x1-1/2\"",
-          "group": "BA"
-        },
-        {
-          "id": "ba-eh",
-          "label": "Bus 1/4\"x2\"",
-          "group": "BA"
-        },
-        {
-          "id": "ba-ge",
-          "label": "Bus 3/8\"x1\"",
-          "group": "BA"
-        },
-        {
-          "id": "ba-gh",
-          "label": "Bus 3/8\"x2\"",
-          "group": "BA"
-        },
-        {
-          "id": "ba-je",
-          "label": "Bus 1/2\"x1\"",
-          "group": "BA"
-        },
-        {
-          "id": "ba-jh",
-          "label": "Bus 1/2\"x2\"",
-          "group": "BA"
-        }
-      ]
+      "id": "ba-ce",
+      "label": "Bus 1/8\"x1\"",
+      "group": "BA"
     },
     {
-      "code": "BQ",
-      "name": "Conexión en T de Bus de Cobre",
-      "description": "Molde de grafito de alta densidad tipo BQ para conexión en T de bus de cobre de paso con derivación vertical en T posicionadas cara a cara. Barra de cobre horizontal de paso con derivación perpendicular. Compatible con cargas exotérmicas ESTWELD. Algunos modelos requieren crisol M783.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión en T de bus de cobre con derivación (BQ)",
-        "Bus de paso horizontal con derivación vertical en T",
-        "Bus de cobre desde 1/8\"x1\" hasta 1/2\"x2\"",
-        "Modelos con clave K requieren crisol M783",
-        "Requiere manija L160/L159, chispero T320",
-        "Reutilizable para múltiples soldaduras"
-      ],
-      "specs": {
-        "Código Cadweld": "BQ",
-        "Tipo de Unión": "Conexión en T de bus de cobre (Tee Joint)",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "BQC, BQD, BQF, BQK",
-        "Bus Compatibles": "1/8\"x1\" a 1/2\"x2\"",
-        "Rango de Cargas": "90 a 4-250 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-035-01.webp",
-      "images": [],
-      "variants": [
-        {
-          "id": "bqc-cece",
-          "label": "Paso 1/8\"x1\" + Der. 1/8\"x1\"",
-          "group": "BQC"
-        },
-        {
-          "id": "bqc-dede",
-          "label": "Paso 3/16\"x1\" + Der. 3/16\"x1\"",
-          "group": "BQC"
-        },
-        {
-          "id": "bqc-eeee",
-          "label": "Paso 1/4\"x1\" + Der. 1/4\"x1\"",
-          "group": "BQC"
-        },
-        {
-          "id": "bqc-efef",
-          "label": "Paso 1/4\"x1-1/4\" + Der. 1/4\"x1-1/4\"",
-          "group": "BQC"
-        },
-        {
-          "id": "bqc-egeg",
-          "label": "Paso 1/4\"x1-1/2\" + Der. 1/4\"x1-1/2\"",
-          "group": "BQC"
-        },
-        {
-          "id": "bqd-eheh",
-          "label": "Paso 1/4\"x2\" + Der. 1/4\"x2\"",
-          "group": "BQD"
-        },
-        {
-          "id": "bqc-gege",
-          "label": "Paso 3/8\"x1\" + Der. 3/8\"x1\"",
-          "group": "BQC"
-        },
-        {
-          "id": "bqd-ghgh",
-          "label": "Paso 3/8\"x1-1/2\" + Der. 3/8\"x1-1/2\"",
-          "group": "BQD"
-        },
-        {
-          "id": "bqd-jeje",
-          "label": "Paso 1/2\"x1\" + Der. 1/2\"x1\"",
-          "group": "BQD"
-        },
-        {
-          "id": "bqd-jhjh",
-          "label": "Paso 1/2\"x2\" + Der. 1/2\"x2\"",
-          "group": "BQD"
-        }
-      ]
+      "id": "ba-de",
+      "label": "Bus 3/16\"x1\"",
+      "group": "BA"
     },
     {
-      "code": "BW",
-      "name": "Bus de Cobre a Superficie Vertical de Acero",
-      "description": "Molde de grafito de alta densidad tipo BW para conexión exotérmica de bus de cobre a superficie vertical de acero. El bus de cobre se suelda a la superficie plana vertical de una estructura de acero. Para aterrizamiento de estructuras metálicas con bus de cobre. Compatible con cargas exotérmicas ESTWELD.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión bus de cobre a superficie vertical de acero (BW)",
-        "Para aterrizamiento de estructuras metálicas con bus",
-        "Bus de cobre desde 1/8\"x1\" hasta 1/2\"x2\"",
-        "Unión permanente de baja resistencia eléctrica",
-        "Reutilizable para múltiples soldaduras",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "BW",
-        "Tipo de Unión": "Bus de cobre a superficie vertical de acero",
-        "Material": "Grafito de alta densidad",
-        "Bus Compatibles": "1/8\"x1\" a 1/2\"x2\"",
-        "Rango de Cargas": "115 a 2-250 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-037-01.webp",
-      "images": [],
-      "variants": [
-        {
-          "id": "bw-ce",
-          "label": "Bus 1/8\"x1\"",
-          "group": "BW"
-        },
-        {
-          "id": "bw-de",
-          "label": "Bus 3/16\"x1\"",
-          "group": "BW"
-        },
-        {
-          "id": "bw-ee",
-          "label": "Bus 1/4\"x1\"",
-          "group": "BW"
-        },
-        {
-          "id": "bw-eg",
-          "label": "Bus 1/4\"x1-1/2\"",
-          "group": "BW"
-        },
-        {
-          "id": "bw-eh",
-          "label": "Bus 1/4\"x2\"",
-          "group": "BW"
-        },
-        {
-          "id": "bw-ge",
-          "label": "Bus 3/8\"x1\"",
-          "group": "BW"
-        },
-        {
-          "id": "bw-gh",
-          "label": "Bus 3/8\"x2\"",
-          "group": "BW"
-        },
-        {
-          "id": "bw-je",
-          "label": "Bus 1/2\"x1\"",
-          "group": "BW"
-        },
-        {
-          "id": "bw-jg",
-          "label": "Bus 1/2\"x1-1/2\"",
-          "group": "BW"
-        },
-        {
-          "id": "bw-jh",
-          "label": "Bus 1/2\"x2\"",
-          "group": "BW"
-        }
-      ]
+      "id": "ba-ee",
+      "label": "Bus 1/4\"x1\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-ef",
+      "label": "Bus 1/4\"x1-1/4\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-eg",
+      "label": "Bus 1/4\"x1-1/2\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-eh",
+      "label": "Bus 1/4\"x2\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-ge",
+      "label": "Bus 3/8\"x1\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-gh",
+      "label": "Bus 3/8\"x2\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-je",
+      "label": "Bus 1/2\"x1\"",
+      "group": "BA"
+    },
+    {
+      "id": "ba-jh",
+      "label": "Bus 1/2\"x2\"",
+      "group": "BA"
+    },
+    {
+      "id": "bqc-cece",
+      "label": "Paso 1/8\"x1\" + Der. 1/8\"x1\"",
+      "group": "BQC"
+    },
+    {
+      "id": "bqc-dede",
+      "label": "Paso 3/16\"x1\" + Der. 3/16\"x1\"",
+      "group": "BQC"
+    },
+    {
+      "id": "bqc-eeee",
+      "label": "Paso 1/4\"x1\" + Der. 1/4\"x1\"",
+      "group": "BQC"
+    },
+    {
+      "id": "bqc-efef",
+      "label": "Paso 1/4\"x1-1/4\" + Der. 1/4\"x1-1/4\"",
+      "group": "BQC"
+    },
+    {
+      "id": "bqc-egeg",
+      "label": "Paso 1/4\"x1-1/2\" + Der. 1/4\"x1-1/2\"",
+      "group": "BQC"
+    },
+    {
+      "id": "bqd-eheh",
+      "label": "Paso 1/4\"x2\" + Der. 1/4\"x2\"",
+      "group": "BQD"
+    },
+    {
+      "id": "bqc-gege",
+      "label": "Paso 3/8\"x1\" + Der. 3/8\"x1\"",
+      "group": "BQC"
+    },
+    {
+      "id": "bqd-ghgh",
+      "label": "Paso 3/8\"x1-1/2\" + Der. 3/8\"x1-1/2\"",
+      "group": "BQD"
+    },
+    {
+      "id": "bqd-jeje",
+      "label": "Paso 1/2\"x1\" + Der. 1/2\"x1\"",
+      "group": "BQD"
+    },
+    {
+      "id": "bqd-jhjh",
+      "label": "Paso 1/2\"x2\" + Der. 1/2\"x2\"",
+      "group": "BQD"
+    },
+    {
+      "id": "bw-ce",
+      "label": "Bus 1/8\"x1\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-de",
+      "label": "Bus 3/16\"x1\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-ee",
+      "label": "Bus 1/4\"x1\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-eg",
+      "label": "Bus 1/4\"x1-1/2\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-eh",
+      "label": "Bus 1/4\"x2\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-ge",
+      "label": "Bus 3/8\"x1\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-gh",
+      "label": "Bus 3/8\"x2\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-je",
+      "label": "Bus 1/2\"x1\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-jg",
+      "label": "Bus 1/2\"x1-1/2\"",
+      "group": "BW"
+    },
+    {
+      "id": "bw-jh",
+      "label": "Bus 1/2\"x2\"",
+      "group": "BW"
     }
   ]
 }

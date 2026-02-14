@@ -50,9 +50,9 @@ function detectMode(variants: Props['variants']): ConfigMode {
   if (!variants.some(v => v.group)) return 'flat';
   const groups = [...new Set(variants.map(v => v.group).filter(Boolean))] as string[];
   if (groups.length <= 1) return 'flat';
-  const hasBars = groups.some(g => g.includes(' \u2014 Barra '));
-  if (hasBars) {
-    const models = [...new Set(groups.map(g => g.split(' \u2014 Barra ')[0]))];
+  const hasSep = groups.some(g => g.includes(' \u2014 '));
+  if (hasSep) {
+    const models = [...new Set(groups.map(g => { const i = g.indexOf(' \u2014 '); return i > -1 ? g.substring(0, i) : g; }))];
     return models.length === 1 ? 'two-step-bar' : 'three-step';
   }
   return 'two-step-model';
@@ -65,9 +65,9 @@ function parseHierarchy(variants: Props['variants'], mode: ConfigMode): ModelDat
   if (mode === 'three-step' || mode === 'two-step-bar') {
     for (const v of variants) {
       const g = v.group || '';
-      const sep = g.indexOf(' \u2014 Barra ');
+      const sep = g.indexOf(' \u2014 ');
       const modelCode = sep > -1 ? g.substring(0, sep) : g;
-      const barSize = sep > -1 ? g.substring(sep + 9) : '';
+      const barSize = sep > -1 ? g.substring(sep + 3) : '';
       if (!map.has(modelCode)) map.set(modelCode, { code: modelCode, bars: [] });
       const model = map.get(modelCode)!;
       let bar = model.bars!.find(b => b.size === barSize);
@@ -353,11 +353,11 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
       return `${v.group} \u00B7 ${v.label}`;
     }
     const g = v.group || '';
-    const sep = g.indexOf(' \u2014 Barra ');
+    const sep = g.indexOf(' \u2014 ');
     const model = sep > -1 ? g.substring(0, sep) : g;
-    const bar = sep > -1 ? `\u00D8${g.substring(sep + 9)}` : '';
-    if (mode === 'two-step-bar') return bar ? `${bar} ${v.label}` : v.label;
-    return bar ? `${model} ${bar} ${v.label}` : `${model} \u00B7 ${v.label}`;
+    const param = sep > -1 ? g.substring(sep + 3) : '';
+    if (mode === 'two-step-bar') return param ? `${param} ${v.label}` : v.label;
+    return param ? `${model} ${param} ${v.label}` : `${model} \u00B7 ${v.label}`;
   };
 
   const getCartQty = (v: { label: string; group?: string }): number => {
@@ -383,11 +383,11 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
         {hasModelStep && hasBars && activeBar && (
           <>
             <span class={styles.breadcrumbArrow}>{'\u203A'}</span>
-            <span class={styles.breadcrumbChip}>{'\u00D8'}{activeBar}</span>
+            <span class={styles.breadcrumbChip}>{activeBar}</span>
           </>
         )}
         {!hasModelStep && hasBars && activeBar && (
-          <span class={styles.breadcrumbChip}>{'\u00D8'}{activeBar}</span>
+          <span class={styles.breadcrumbChip}>{activeBar}</span>
         )}
       </div>
 
@@ -432,42 +432,50 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
         </div>
       )}
 
-      {/* Step: Bar selection (3-step, 2-step-bar) */}
-      {hasBars && availableBars && availableBars.length > 0 && (
-        <div class={styles.stepSection}>
-          <div class={styles.stepHeader}>
-            <span class={styles.stepBadge}>{barStepNum}</span>
-            <span class={styles.stepLabel}>Di{'\u00E1'}metro de Barra</span>
-          </div>
-          <div class={styles.barContainer}>
-            <div class={styles.barPills}>
-              {availableBars.map(bar => {
-                const isActive = bar.size === activeBar;
-                const hasSel = !isActive && barHasSelections(bar.size);
-                return (
-                  <button
-                    key={bar.size}
-                    type="button"
-                    class={isActive ? styles.barPillActive : styles.barPill}
-                    onClick={() => setActiveBar(bar.size)}
-                    aria-pressed={isActive}
-                  >
-                    {'\u00D8'} {bar.size}
-                    {hasSel && <span class={styles.barDot} />}
-                  </button>
-                );
-              })}
+      {/* Step: Parameter selection (bar/zapata/bus/varilla) */}
+      {hasBars && availableBars && (availableBars.length > 1 || (availableBars.length === 1 && availableBars[0].size)) && (() => {
+        const firstWord = availableBars.find(b => b.size)?.size.split(' ')[0] || '';
+        const stepLabel = firstWord === 'Barra' ? 'Di\u00E1metro de Barra'
+          : firstWord === 'Zapata' ? 'Zapata'
+          : firstWord === 'Bus' ? 'Dimensi\u00F3n de Bus'
+          : firstWord === 'Varilla' ? 'Di\u00E1metro de Varilla'
+          : 'Configuraci\u00F3n';
+        return (
+          <div class={styles.stepSection}>
+            <div class={styles.stepHeader}>
+              <span class={styles.stepBadge}>{barStepNum}</span>
+              <span class={styles.stepLabel}>{stepLabel}</span>
+            </div>
+            <div class={styles.barContainer}>
+              <div class={styles.barPills}>
+                {availableBars.map(bar => {
+                  const isActive = bar.size === activeBar;
+                  const hasSel = !isActive && barHasSelections(bar.size);
+                  return (
+                    <button
+                      key={bar.size}
+                      type="button"
+                      class={isActive ? styles.barPillActive : styles.barPill}
+                      onClick={() => setActiveBar(bar.size)}
+                      aria-pressed={isActive}
+                    >
+                      {bar.size}
+                      {hasSel && <span class={styles.barDot} />}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
 
       {/* Step: Cable selection */}
       {currentCables && currentCables.length > 0 && (
         <div class={styles.stepSection}>
           <div class={styles.stepHeader}>
             <span class={styles.stepBadge}>{cableStepNum}</span>
-            <span class={styles.stepLabel}>{isRunTap ? 'Cable Derivaci\u00F3n' : 'Calibre de Cable'}</span>
+            <span class={styles.stepLabel}>{isRunTap ? 'Cable Derivaci\u00F3n' : 'Seleccionar Variante'}</span>
           </div>
           <div class={styles.cableList}>
             {currentCables.map(cable => {

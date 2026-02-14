@@ -47,20 +47,7 @@ export interface Product {
   images?: string[];
   inStock: boolean;
   badge: BadgeValue | null;
-  subcategory?: string;
-  variants?: Array<{ id: string; label: string; group?: string }>;
-  moldTypes?: MoldType[];
-}
-
-/** Mold type within a consolidated mold product */
-export interface MoldType {
-  code: string;
-  name: string;
-  description: string;
-  features: string[];
-  specs: Record<string, string>;
-  image: string | null;
-  images?: string[];
+  subcategories?: string[];
   variants?: Array<{ id: string; label: string; group?: string }>;
 }
 

@@ -88,7 +88,7 @@ export default function ProductFilter({ products, categories }: Props) {
   const query = searchText.toLowerCase().trim();
   const filtered = products.filter((p) => {
     const matchCategory = selectedCategory === 'todos' || p.categorySlug === selectedCategory;
-    const matchSubcategory = selectedSubcategory === 'todos' || p.subcategory === selectedSubcategory;
+    const matchSubcategory = selectedSubcategory === 'todos' || (p.subcategories?.includes(selectedSubcategory) ?? false);
     const matchSearch = !query ||
       p.title.toLowerCase().includes(query) ||
       p.sku.toLowerCase().includes(query) ||
@@ -100,8 +100,8 @@ export default function ProductFilter({ products, categories }: Props) {
   const subcategories = selectedCategory !== 'todos'
     ? [...new Set(
         products
-          .filter((p) => p.categorySlug === selectedCategory && p.subcategory)
-          .map((p) => p.subcategory!)
+          .filter((p) => p.categorySlug === selectedCategory && p.subcategories?.length)
+          .flatMap((p) => p.subcategories!)
       )].sort((a, b) => a.localeCompare(b, 'es'))
     : [];
 

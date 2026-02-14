@@ -50,7 +50,7 @@ const products = defineCollection({
   schema: z.object({
     sku: z
       .string()
-      .regex(/^[A-Z]{2,3}-(\d{3}|[A-Z]{1,2})$/, 'SKU must match pattern XX(X)-000 or XX(X)-A(B)'),
+      .regex(/^[A-Z]{2,3}-[A-Z0-9]{1,3}$/, 'SKU must match pattern XX(X)-000 or XX(X)-X'),
     title: z.string().min(5).max(100),
     category: z.enum(categoryNames),
     categorySlug: z.enum(categorySlugs),
@@ -61,25 +61,11 @@ const products = defineCollection({
     images: z.array(z.string().startsWith('/')).optional(),
     inStock: z.boolean().default(true),
     badge: z.enum(badgeValues).nullable(),
-    subcategory: z.string().optional(),
+    subcategories: z.array(z.string()).optional(),
     variants: z.array(z.object({
       id: z.string(),
       label: z.string(),
       group: z.string().optional(),
-    })).optional(),
-    moldTypes: z.array(z.object({
-      code: z.string(),
-      name: z.string(),
-      description: z.string().min(20).max(500),
-      features: z.array(z.string().min(1)).min(1),
-      specs: z.record(z.string(), z.string()),
-      image: z.string().startsWith('/').nullable(),
-      images: z.array(z.string().startsWith('/')).optional(),
-      variants: z.array(z.object({
-        id: z.string(),
-        label: z.string(),
-        group: z.string().optional(),
-      })).optional(),
     })).optional(),
   }),
 });

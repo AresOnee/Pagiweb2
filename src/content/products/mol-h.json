@@ -3,11 +3,11 @@
   "title": "Moldes de Grafito H — Cable a Superficie Horizontal",
   "category": "Moldes de Grafito",
   "categorySlug": "moldes-grafito",
-  "subcategory": "Cable a Acero",
-  "description": "Familia de moldes de grafito tipo H que incluye los modelos HA, HS, HC, HT, HB. Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C para conexiones exotérmicas profesionales. Compatible con cargas ESTWELD y Electro Material.",
+  "description": "Familia de moldes de grafito tipo H para conexiones exotérmicas de cable a superficies horizontales de acero. Incluye cable pegado (HA), despegado (HS), de paso pegado (HC), de paso despegado (HT) y a hierro colado (HB). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
     "5 tipos de molde: HA, HS, HC, HT, HB",
+    "Cable a superficies horizontales de acero y hierro colado",
     "Reutilizable para múltiples soldaduras",
     "Compatible con cargas exotérmicas ESTWELD y Electro Material",
     "Requiere masilla selladora y chispero para operación"
@@ -19,273 +19,138 @@
     "Temperatura de Operación": "Superior a 2.500°C"
   },
   "image": "/assets/img/products/mol-011-07.webp",
-  "images": [],
+  "images": [
+    "/assets/img/products/mol-011-03.webp",
+    "/assets/img/products/mol-011-04.webp",
+    "/assets/img/products/mol-011-05.webp",
+    "/assets/img/products/mol-011-06.webp",
+    "/assets/img/products/mol-011-08.webp",
+    "/assets/img/products/mol-012-04.webp",
+    "/assets/img/products/mol-013-04.webp",
+    "/assets/img/products/mol-013-06.webp",
+    "/assets/img/products/mol-013-07.webp",
+    "/assets/img/products/mol-014-03.webp"
+  ],
   "inStock": true,
   "badge": null,
-  "variants": [],
-  "moldTypes": [
+  "subcategories": [
+    "Cable a Acero"
+  ],
+  "variants": [
     {
-      "code": "HA",
-      "name": "Cable Pegado a Superficie Horizontal",
-      "description": "Molde de grafito de alta densidad tipo HA para conexión exotérmica de cable pegado a superficie horizontal de acero. El cable queda en contacto directo con la superficie metálica plana o tubo horizontal. Para uso con cable trenzado de cobre. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión cable pegado a superficie horizontal (HA)",
-        "Subtipo HAA según calibre de cable",
-        "Cable queda en contacto directo con la superficie",
-        "Cables compatibles: N°6 a 250mm²",
-        "Para superficies planas de acero o tubo horizontal",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "HA",
-        "Tipo de Unión": "Cable pegado a superficie horizontal (Cable on Surface)",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "HAA",
-        "Cables Compatibles": "N°6 a 250mm²",
-        "Rango de Cargas": "45 a 200 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-011-07.webp",
-      "images": [
-        "/assets/img/products/mol-011-03.webp",
-        "/assets/img/products/mol-011-04.webp",
-        "/assets/img/products/mol-011-05.webp",
-        "/assets/img/products/mol-011-06.webp",
-        "/assets/img/products/mol-011-08.webp"
-      ],
-      "variants": [
-        {
-          "id": "ha-4",
-          "label": "Cable N°4",
-          "group": "HAA"
-        },
-        {
-          "id": "ha-2",
-          "label": "Cable N°2",
-          "group": "HAA"
-        },
-        {
-          "id": "ha-1",
-          "label": "Cable N°1",
-          "group": "HAA"
-        }
-      ]
+      "id": "ha-4",
+      "label": "Cable N°4",
+      "group": "HAA"
     },
     {
-      "code": "HS",
-      "name": "Cable Despegado de Superficie Horizontal",
-      "description": "Molde de grafito de alta densidad tipo HS para conexión exotérmica de cable despegado de superficie horizontal de acero. El cable sale elevado respecto a la superficie metálica, ideal para cables de mayor calibre. Para uso con cable trenzado de cobre. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión cable despegado de superficie horizontal (HS)",
-        "Subtipo HSCY según calibre de cable",
-        "Cable sale elevado respecto a la superficie",
-        "Cables compatibles: 95mm² a 240mm²",
-        "Ideal para cables de mayor calibre",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "HS",
-        "Tipo de Unión": "Cable despegado de superficie horizontal (Cable off Surface)",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "HSCY",
-        "Cables Compatibles": "95mm² a 240mm²",
-        "Rango de Cargas": "115 a 200 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-012-02.webp",
-      "images": [
-        "/assets/img/products/mol-012-04.webp"
-      ],
-      "variants": [
-        {
-          "id": "hs-1o",
-          "label": "Cable N°1/0",
-          "group": "HSC"
-        },
-        {
-          "id": "hs-2o",
-          "label": "Cable N°2/0",
-          "group": "HSC"
-        },
-        {
-          "id": "hs-3o",
-          "label": "Cable N°3/0",
-          "group": "HSC"
-        },
-        {
-          "id": "hs-4o",
-          "label": "Cable N°4/0",
-          "group": "HSC"
-        }
-      ]
+      "id": "ha-2",
+      "label": "Cable N°2",
+      "group": "HAA"
     },
     {
-      "code": "HC",
-      "name": "Cable de Paso Pegado a Superficie Horizontal",
-      "description": "Molde de grafito de alta densidad tipo HC para conexión exotérmica de cable de paso pegado a superficie horizontal de acero. El cable pasa por la superficie quedando en contacto directo con ella. Para uso con cable trenzado de cobre. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Cable de paso pegado a superficie horizontal (HC)",
-        "Subtipo HCA según calibre de cable",
-        "Cable pasante en contacto directo con la superficie",
-        "Cables compatibles: N°6 a 4/0 AWG",
-        "Para superficies planas de acero horizontal",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "HC",
-        "Tipo de Unión": "Cable de paso pegado a superficie horizontal",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "HCA",
-        "Cables Compatibles": "N°6 a 4/0 AWG",
-        "Rango de Cargas": "45 a 200 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-013-05.webp",
-      "images": [
-        "/assets/img/products/mol-013-04.webp",
-        "/assets/img/products/mol-013-06.webp",
-        "/assets/img/products/mol-013-07.webp"
-      ],
-      "variants": [
-        {
-          "id": "hc-4",
-          "label": "Cable N°4",
-          "group": "HCA"
-        },
-        {
-          "id": "hc-2",
-          "label": "Cable N°2",
-          "group": "HCA"
-        },
-        {
-          "id": "hc-1",
-          "label": "Cable N°1",
-          "group": "HCA"
-        }
-      ]
+      "id": "ha-1",
+      "label": "Cable N°1",
+      "group": "HAA"
     },
     {
-      "code": "HT",
-      "name": "Cable de Paso Despegado de Superficie Horizontal",
-      "description": "Molde de grafito de alta densidad tipo HT para conexión exotérmica de cable de paso despegado de superficie horizontal de acero. El cable pasa elevado respecto a la superficie, ideal para cables de mayor calibre. Para uso con cable trenzado de cobre. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Cable de paso despegado de superficie horizontal (HT)",
-        "Subtipo HTC según calibre de cable",
-        "Cable pasante elevado respecto a la superficie",
-        "Cables compatibles: N°1/0 a 500 MCM",
-        "Para superficies planas de acero horizontal",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "HT",
-        "Tipo de Unión": "Cable de paso despegado de superficie horizontal (Cable off Surface)",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "HTC",
-        "Cables Compatibles": "N°1/0 a 500 MCM",
-        "Rango de Cargas": "90 a 250 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-014-06.webp",
-      "images": [
-        "/assets/img/products/mol-014-03.webp"
-      ],
-      "variants": [
-        {
-          "id": "ht-1o",
-          "label": "Cable N°1/0",
-          "group": "HTC"
-        },
-        {
-          "id": "ht-2o",
-          "label": "Cable N°2/0",
-          "group": "HTC"
-        },
-        {
-          "id": "ht-3o",
-          "label": "Cable N°3/0",
-          "group": "HTC"
-        },
-        {
-          "id": "ht-4o",
-          "label": "Cable N°4/0",
-          "group": "HTC"
-        },
-        {
-          "id": "ht-250",
-          "label": "Cable 250 MCM",
-          "group": "HTC"
-        },
-        {
-          "id": "ht-500",
-          "label": "Cable 500 MCM",
-          "group": "HTC"
-        }
-      ]
+      "id": "hs-1o",
+      "label": "Cable N°1/0",
+      "group": "HSC"
     },
     {
-      "code": "HB",
-      "name": "Cable a Superficie de Hierro Colado",
-      "description": "Molde de grafito de alta densidad tipo HB para conexión exotérmica de cable de cobre a superficie de hierro colado o fundido. Diseñado para conexiones a tuberías, válvulas y piezas de hierro fundido en sistemas de puesta a tierra. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión cable a superficie de hierro colado/fundido (HB)",
-        "Para tuberías, válvulas y piezas de hierro fundido",
-        "Cables compatibles: N°8 a N°1 AWG",
-        "Unión permanente de baja resistencia eléctrica",
-        "Reutilizable para múltiples soldaduras",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "HB",
-        "Tipo de Unión": "Cable a superficie de hierro colado (Cable to Cast Iron)",
-        "Material": "Grafito de alta densidad",
-        "Cables Compatibles": "N°8 a N°1 AWG",
-        "Rango de Cargas": "25XF-19 a 65XF-19",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-028-01.webp",
-      "images": [],
-      "variants": [
-        {
-          "id": "hba-1g",
-          "label": "Cable N°8/6 Alam.",
-          "group": "HBA"
-        },
-        {
-          "id": "hba-1h",
-          "label": "Cable N°6",
-          "group": "HBA"
-        },
-        {
-          "id": "hba-1k",
-          "label": "Cable N°4 Alam.",
-          "group": "HBA"
-        },
-        {
-          "id": "hba-1l",
-          "label": "Cable N°4",
-          "group": "HBA"
-        },
-        {
-          "id": "hba-1t",
-          "label": "Cable N°2 Alam.",
-          "group": "HBA"
-        },
-        {
-          "id": "hba-1v",
-          "label": "Cable N°2",
-          "group": "HBA"
-        },
-        {
-          "id": "hba-1y",
-          "label": "Cable N°1",
-          "group": "HBA"
-        }
-      ]
+      "id": "hs-2o",
+      "label": "Cable N°2/0",
+      "group": "HSC"
+    },
+    {
+      "id": "hs-3o",
+      "label": "Cable N°3/0",
+      "group": "HSC"
+    },
+    {
+      "id": "hs-4o",
+      "label": "Cable N°4/0",
+      "group": "HSC"
+    },
+    {
+      "id": "hc-4",
+      "label": "Cable N°4",
+      "group": "HCA"
+    },
+    {
+      "id": "hc-2",
+      "label": "Cable N°2",
+      "group": "HCA"
+    },
+    {
+      "id": "hc-1",
+      "label": "Cable N°1",
+      "group": "HCA"
+    },
+    {
+      "id": "ht-1o",
+      "label": "Cable N°1/0",
+      "group": "HTC"
+    },
+    {
+      "id": "ht-2o",
+      "label": "Cable N°2/0",
+      "group": "HTC"
+    },
+    {
+      "id": "ht-3o",
+      "label": "Cable N°3/0",
+      "group": "HTC"
+    },
+    {
+      "id": "ht-4o",
+      "label": "Cable N°4/0",
+      "group": "HTC"
+    },
+    {
+      "id": "ht-250",
+      "label": "Cable 250 MCM",
+      "group": "HTC"
+    },
+    {
+      "id": "ht-500",
+      "label": "Cable 500 MCM",
+      "group": "HTC"
+    },
+    {
+      "id": "hba-1g",
+      "label": "Cable N°8/6 Alam.",
+      "group": "HBA"
+    },
+    {
+      "id": "hba-1h",
+      "label": "Cable N°6",
+      "group": "HBA"
+    },
+    {
+      "id": "hba-1k",
+      "label": "Cable N°4 Alam.",
+      "group": "HBA"
+    },
+    {
+      "id": "hba-1l",
+      "label": "Cable N°4",
+      "group": "HBA"
+    },
+    {
+      "id": "hba-1t",
+      "label": "Cable N°2 Alam.",
+      "group": "HBA"
+    },
+    {
+      "id": "hba-1v",
+      "label": "Cable N°2",
+      "group": "HBA"
+    },
+    {
+      "id": "hba-1y",
+      "label": "Cable N°1",
+      "group": "HBA"
     }
   ]
 }

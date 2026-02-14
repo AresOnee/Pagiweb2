@@ -3,14 +3,15 @@
   "title": "Moldes de Grafito N — Cable con Derivación a Varilla",
   "category": "Moldes de Grafito",
   "categorySlug": "moldes-grafito",
-  "subcategory": "Cable a Varilla",
-  "description": "Familia de moldes de grafito tipo N que incluye los modelos NC, ND, NT, NX. Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C para conexiones exotérmicas profesionales. Compatible con cargas ESTWELD y Electro Material.",
+  "description": "Familia de moldes de grafito tipo N para conexiones exotérmicas de cable con derivación a varilla de tierra. Incluye cable de paso con derivación (NC), cable con derivación (ND), one-shot vertical (NT) y one-shot angular (NX). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
     "4 tipos de molde: NC, ND, NT, NX",
+    "Para conexiones cable con derivación a varilla de tierra",
+    "Compatible con barras Copperweld de 1/2\", 5/8\", 3/4\" y 1\"",
+    "Cables compatibles: N°6 a 4/0 AWG",
     "Reutilizable para múltiples soldaduras",
-    "Compatible con cargas exotérmicas ESTWELD y Electro Material",
-    "Requiere masilla selladora y chispero para operación"
+    "Compatible con cargas exotérmicas ESTWELD y Electro Material"
   ],
   "specs": {
     "Código Cadweld": "N",
@@ -19,485 +20,376 @@
     "Temperatura de Operación": "Superior a 2.500°C"
   },
   "image": "/assets/img/products/mol-004-06.webp",
-  "images": [],
+  "images": [
+    "/assets/img/products/mol-004-03.webp",
+    "/assets/img/products/mol-004-05.webp",
+    "/assets/img/products/mol-005-03.webp"
+  ],
   "inStock": true,
   "badge": null,
-  "variants": [],
-  "moldTypes": [
+  "subcategories": [
+    "Cable a Varilla"
+  ],
+  "variants": [
     {
-      "code": "NC",
-      "name": "Cable de Paso con Derivación a Varilla",
-      "description": "Molde de grafito de alta densidad tipo NC para conexión exotérmica de cable de paso con derivación horizontal en la parte superior de una varilla de puesta a tierra. Permite conectar un cable pasante con una derivación lateral a la barra Copperweld. Compatible con cargas exotérmicas ESTWELD y Electro Material.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión tipo Cable de Paso + Derivación a Varilla (NC)",
-        "Subtipos NCR (regular) y NCF (cables grandes)",
-        "Compatible con barras Copperweld de 1/2\" a 1\"",
-        "Cables compatibles: N°4 a 4/0 AWG",
-        "Reutilizable para múltiples soldaduras",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "NC",
-        "Tipo de Unión": "Cable de paso con derivación a varilla",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "NCR, NCF",
-        "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\", 1\"",
-        "Cables Compatibles": "N°4 a 4/0 AWG",
-        "Rango de Cargas": "90 a 200 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-004-06.webp",
-      "images": [
-        "/assets/img/products/mol-004-03.webp",
-        "/assets/img/products/mol-004-05.webp"
-      ],
-      "variants": [
-        {
-          "id": "ncr-12-4",
-          "label": "Cable N°4",
-          "group": "NCR — Barra 1/2\""
-        },
-        {
-          "id": "ncr-12-2",
-          "label": "Cable N°2",
-          "group": "NCR — Barra 1/2\""
-        },
-        {
-          "id": "ncr-12-1",
-          "label": "Cable N°1",
-          "group": "NCR — Barra 1/2\""
-        },
-        {
-          "id": "ncr-12-1o",
-          "label": "Cable N°1/0",
-          "group": "NCR — Barra 1/2\""
-        },
-        {
-          "id": "ncr-12-2o",
-          "label": "Cable N°2/0",
-          "group": "NCR — Barra 1/2\""
-        },
-        {
-          "id": "ncr-12-3o",
-          "label": "Cable N°3/0",
-          "group": "NCR — Barra 1/2\""
-        },
-        {
-          "id": "ncr-12-4o",
-          "label": "Cable N°4/0",
-          "group": "NCR — Barra 1/2\""
-        },
-        {
-          "id": "ncr-58-4",
-          "label": "Cable N°4",
-          "group": "NCR — Barra 5/8\""
-        },
-        {
-          "id": "ncr-58-2",
-          "label": "Cable N°2",
-          "group": "NCR — Barra 5/8\""
-        },
-        {
-          "id": "ncr-58-1",
-          "label": "Cable N°1",
-          "group": "NCR — Barra 5/8\""
-        },
-        {
-          "id": "ncr-58-1o",
-          "label": "Cable N°1/0",
-          "group": "NCR — Barra 5/8\""
-        },
-        {
-          "id": "ncr-58-2o",
-          "label": "Cable N°2/0",
-          "group": "NCR — Barra 5/8\""
-        },
-        {
-          "id": "ncr-58-3o",
-          "label": "Cable N°3/0",
-          "group": "NCR — Barra 5/8\""
-        },
-        {
-          "id": "ncr-58-4o",
-          "label": "Cable N°4/0",
-          "group": "NCR — Barra 5/8\""
-        },
-        {
-          "id": "ncr-34-4",
-          "label": "Cable N°4",
-          "group": "NCR — Barra 3/4\""
-        },
-        {
-          "id": "ncr-34-2",
-          "label": "Cable N°2",
-          "group": "NCR — Barra 3/4\""
-        },
-        {
-          "id": "ncr-34-1",
-          "label": "Cable N°1",
-          "group": "NCR — Barra 3/4\""
-        },
-        {
-          "id": "ncr-34-1o",
-          "label": "Cable N°1/0",
-          "group": "NCR — Barra 3/4\""
-        },
-        {
-          "id": "ncr-34-2o",
-          "label": "Cable N°2/0",
-          "group": "NCR — Barra 3/4\""
-        },
-        {
-          "id": "ncr-34-3o",
-          "label": "Cable N°3/0",
-          "group": "NCR — Barra 3/4\""
-        },
-        {
-          "id": "ncr-34-4o",
-          "label": "Cable N°4/0",
-          "group": "NCR — Barra 3/4\""
-        },
-        {
-          "id": "ncr-1-4",
-          "label": "Cable N°4",
-          "group": "NCR — Barra 1\""
-        },
-        {
-          "id": "ncr-1-2",
-          "label": "Cable N°2",
-          "group": "NCR — Barra 1\""
-        },
-        {
-          "id": "ncr-1-1",
-          "label": "Cable N°1",
-          "group": "NCR — Barra 1\""
-        },
-        {
-          "id": "ncr-1-1o",
-          "label": "Cable N°1/0",
-          "group": "NCR — Barra 1\""
-        },
-        {
-          "id": "ncr-1-2o",
-          "label": "Cable N°2/0",
-          "group": "NCR — Barra 1\""
-        },
-        {
-          "id": "ncf-1-3o",
-          "label": "Cable N°3/0",
-          "group": "NCF — Barra 1\""
-        },
-        {
-          "id": "ncf-1-4o",
-          "label": "Cable N°4/0",
-          "group": "NCF — Barra 1\""
-        }
-      ]
+      "id": "ncr-12-4",
+      "label": "Cable N°4",
+      "group": "NCR — Barra 1/2\""
     },
     {
-      "code": "ND",
-      "name": "Cable con Derivación a Varilla",
-      "description": "Molde de grafito de alta densidad tipo ND para conexión exotérmica de cable con derivación a varilla de puesta a tierra. Similar al tipo NC pero con configuración para cables de mayor calibre. Compatible con barras Copperweld de 1/2\" a 1\" y cargas exotérmicas ESTWELD y Electro Material.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión tipo Cable + Derivación a Varilla (ND)",
-        "Subtipos NDR (regular) y NDF (cables grandes)",
-        "Compatible con barras Copperweld de 1/2\" a 1\"",
-        "Cables compatibles: N°4 a 4/0 AWG",
-        "Reutilizable para múltiples soldaduras",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "ND",
-        "Tipo de Unión": "Cable con derivación a varilla",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "NDR, NDF",
-        "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\", 1\"",
-        "Cables Compatibles": "N°4 a 4/0 AWG",
-        "Rango de Cargas": "90 a 200 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-005-04.webp",
-      "images": [
-        "/assets/img/products/mol-005-03.webp"
-      ],
-      "variants": [
-        {
-          "id": "ndr-12-4",
-          "label": "Cable N°4",
-          "group": "NDR — Barra 1/2\""
-        },
-        {
-          "id": "ndr-12-2",
-          "label": "Cable N°2",
-          "group": "NDR — Barra 1/2\""
-        },
-        {
-          "id": "ndr-12-1",
-          "label": "Cable N°1",
-          "group": "NDR — Barra 1/2\""
-        },
-        {
-          "id": "ndr-12-1o",
-          "label": "Cable N°1/0",
-          "group": "NDR — Barra 1/2\""
-        },
-        {
-          "id": "ndr-12-2o",
-          "label": "Cable N°2/0",
-          "group": "NDR — Barra 1/2\""
-        },
-        {
-          "id": "ndr-12-3o",
-          "label": "Cable N°3/0",
-          "group": "NDR — Barra 1/2\""
-        },
-        {
-          "id": "ndr-12-4o",
-          "label": "Cable N°4/0",
-          "group": "NDR — Barra 1/2\""
-        },
-        {
-          "id": "ndr-58-4",
-          "label": "Cable N°4",
-          "group": "NDR — Barra 5/8\""
-        },
-        {
-          "id": "ndr-58-2",
-          "label": "Cable N°2",
-          "group": "NDR — Barra 5/8\""
-        },
-        {
-          "id": "ndr-58-1",
-          "label": "Cable N°1",
-          "group": "NDR — Barra 5/8\""
-        },
-        {
-          "id": "ndr-58-1o",
-          "label": "Cable N°1/0",
-          "group": "NDR — Barra 5/8\""
-        },
-        {
-          "id": "ndr-58-2o",
-          "label": "Cable N°2/0",
-          "group": "NDR — Barra 5/8\""
-        },
-        {
-          "id": "ndr-34-4",
-          "label": "Cable N°4",
-          "group": "NDR — Barra 3/4\""
-        },
-        {
-          "id": "ndr-34-2",
-          "label": "Cable N°2",
-          "group": "NDR — Barra 3/4\""
-        },
-        {
-          "id": "ndr-34-1",
-          "label": "Cable N°1",
-          "group": "NDR — Barra 3/4\""
-        },
-        {
-          "id": "ndr-34-1o",
-          "label": "Cable N°1/0",
-          "group": "NDR — Barra 3/4\""
-        },
-        {
-          "id": "ndr-34-2o",
-          "label": "Cable N°2/0",
-          "group": "NDR — Barra 3/4\""
-        },
-        {
-          "id": "ndr-1-4",
-          "label": "Cable N°4",
-          "group": "NDR — Barra 1\""
-        },
-        {
-          "id": "ndr-1-2",
-          "label": "Cable N°2",
-          "group": "NDR — Barra 1\""
-        },
-        {
-          "id": "ndr-1-1",
-          "label": "Cable N°1",
-          "group": "NDR — Barra 1\""
-        },
-        {
-          "id": "ndr-1-1o",
-          "label": "Cable N°1/0",
-          "group": "NDR — Barra 1\""
-        },
-        {
-          "id": "ndf-58-3o",
-          "label": "Cable N°3/0",
-          "group": "NDF — Barra 5/8\""
-        },
-        {
-          "id": "ndf-58-4o",
-          "label": "Cable N°4/0",
-          "group": "NDF — Barra 5/8\""
-        },
-        {
-          "id": "ndf-34-3o",
-          "label": "Cable N°3/0",
-          "group": "NDF — Barra 3/4\""
-        },
-        {
-          "id": "ndf-34-4o",
-          "label": "Cable N°4/0",
-          "group": "NDF — Barra 3/4\""
-        },
-        {
-          "id": "ndf-1-2o",
-          "label": "Cable N°2/0",
-          "group": "NDF — Barra 1\""
-        },
-        {
-          "id": "ndf-1-3o",
-          "label": "Cable N°3/0",
-          "group": "NDF — Barra 1\""
-        },
-        {
-          "id": "ndf-1-4o",
-          "label": "Cable N°4/0",
-          "group": "NDF — Barra 1\""
-        }
-      ]
+      "id": "ncr-12-2",
+      "label": "Cable N°2",
+      "group": "NCR — Barra 1/2\""
     },
     {
-      "code": "NT",
-      "name": "Cable a Varilla One-Shot Vertical",
-      "description": "Molde de grafito de alta densidad tipo NT para conexión one-shot de cable a varilla de puesta a tierra en posición vertical. Diseño de un solo uso optimizado para instalaciones rápidas donde no se requiere reutilización del molde. Compatible con cargas exotérmicas ESTWELD.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión one-shot cable a varilla vertical (NT)",
-        "Diseño de un solo uso para instalación rápida",
-        "Compatible con varillas Copperweld de 1/2\", 5/8\" y 3/4\"",
-        "Cables compatibles: N°6 a 4/0 AWG",
-        "No requiere manija — diseño autoportante",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "NT",
-        "Tipo de Unión": "Cable a varilla one-shot vertical",
-        "Material": "Grafito de alta densidad",
-        "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\"",
-        "Cables Compatibles": "N°6 a 4/0 AWG",
-        "Rango de Cargas": "45 a 200 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-026-01.webp",
-      "images": [],
-      "variants": [
-        {
-          "id": "nt-12-6",
-          "label": "Cable N°6",
-          "group": "NT — Barra 1/2\""
-        },
-        {
-          "id": "nt-12-4",
-          "label": "Cable N°4",
-          "group": "NT — Barra 1/2\""
-        },
-        {
-          "id": "nt-58-6",
-          "label": "Cable N°6",
-          "group": "NT — Barra 5/8\""
-        },
-        {
-          "id": "nt-58-4",
-          "label": "Cable N°4",
-          "group": "NT — Barra 5/8\""
-        },
-        {
-          "id": "nt-58-2",
-          "label": "Cable N°2",
-          "group": "NT — Barra 5/8\""
-        },
-        {
-          "id": "nt-34-6",
-          "label": "Cable N°6",
-          "group": "NT — Barra 3/4\""
-        },
-        {
-          "id": "nt-34-4",
-          "label": "Cable N°4",
-          "group": "NT — Barra 3/4\""
-        },
-        {
-          "id": "nt-34-2",
-          "label": "Cable N°2",
-          "group": "NT — Barra 3/4\""
-        }
-      ]
+      "id": "ncr-12-1",
+      "label": "Cable N°1",
+      "group": "NCR — Barra 1/2\""
     },
     {
-      "code": "NX",
-      "name": "Cable a Varilla One-Shot Angular",
-      "description": "Molde de grafito de alta densidad tipo NX para conexión one-shot de cable a varilla de puesta a tierra en ángulo. Diseño de un solo uso con salida angular del cable para instalaciones donde el cable debe salir en dirección oblicua respecto a la varilla. Compatible con cargas exotérmicas ESTWELD.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión one-shot cable a varilla angular (NX)",
-        "Diseño de un solo uso para instalación rápida",
-        "Salida angular del cable respecto a la varilla",
-        "Compatible con varillas Copperweld de 1/2\", 5/8\" y 3/4\"",
-        "Cables compatibles: N°6 a 4/0 AWG",
-        "Requiere masilla selladora y chispero para operación"
-      ],
-      "specs": {
-        "Código Cadweld": "NX",
-        "Tipo de Unión": "Cable a varilla one-shot angular",
-        "Material": "Grafito de alta densidad",
-        "Barras Compatibles": "Copperweld 1/2\", 5/8\", 3/4\"",
-        "Cables Compatibles": "N°6 a 4/0 AWG",
-        "Rango de Cargas": "45 a 200 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-027-01.webp",
-      "images": [],
-      "variants": [
-        {
-          "id": "nx-12-6",
-          "label": "Cable N°6",
-          "group": "NX — Barra 1/2\""
-        },
-        {
-          "id": "nx-12-4",
-          "label": "Cable N°4",
-          "group": "NX — Barra 1/2\""
-        },
-        {
-          "id": "nx-58-6",
-          "label": "Cable N°6",
-          "group": "NX — Barra 5/8\""
-        },
-        {
-          "id": "nx-58-4",
-          "label": "Cable N°4",
-          "group": "NX — Barra 5/8\""
-        },
-        {
-          "id": "nx-58-2",
-          "label": "Cable N°2",
-          "group": "NX — Barra 5/8\""
-        },
-        {
-          "id": "nx-34-6",
-          "label": "Cable N°6",
-          "group": "NX — Barra 3/4\""
-        },
-        {
-          "id": "nx-34-4",
-          "label": "Cable N°4",
-          "group": "NX — Barra 3/4\""
-        },
-        {
-          "id": "nx-34-2",
-          "label": "Cable N°2",
-          "group": "NX — Barra 3/4\""
-        }
-      ]
+      "id": "ncr-12-1o",
+      "label": "Cable N°1/0",
+      "group": "NCR — Barra 1/2\""
+    },
+    {
+      "id": "ncr-12-2o",
+      "label": "Cable N°2/0",
+      "group": "NCR — Barra 1/2\""
+    },
+    {
+      "id": "ncr-12-3o",
+      "label": "Cable N°3/0",
+      "group": "NCR — Barra 1/2\""
+    },
+    {
+      "id": "ncr-12-4o",
+      "label": "Cable N°4/0",
+      "group": "NCR — Barra 1/2\""
+    },
+    {
+      "id": "ncr-58-4",
+      "label": "Cable N°4",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-58-2",
+      "label": "Cable N°2",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-58-1",
+      "label": "Cable N°1",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-58-1o",
+      "label": "Cable N°1/0",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-58-2o",
+      "label": "Cable N°2/0",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-58-3o",
+      "label": "Cable N°3/0",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-58-4o",
+      "label": "Cable N°4/0",
+      "group": "NCR — Barra 5/8\""
+    },
+    {
+      "id": "ncr-34-4",
+      "label": "Cable N°4",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-34-2",
+      "label": "Cable N°2",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-34-1",
+      "label": "Cable N°1",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-34-1o",
+      "label": "Cable N°1/0",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-34-2o",
+      "label": "Cable N°2/0",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-34-3o",
+      "label": "Cable N°3/0",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-34-4o",
+      "label": "Cable N°4/0",
+      "group": "NCR — Barra 3/4\""
+    },
+    {
+      "id": "ncr-1-4",
+      "label": "Cable N°4",
+      "group": "NCR — Barra 1\""
+    },
+    {
+      "id": "ncr-1-2",
+      "label": "Cable N°2",
+      "group": "NCR — Barra 1\""
+    },
+    {
+      "id": "ncr-1-1",
+      "label": "Cable N°1",
+      "group": "NCR — Barra 1\""
+    },
+    {
+      "id": "ncr-1-1o",
+      "label": "Cable N°1/0",
+      "group": "NCR — Barra 1\""
+    },
+    {
+      "id": "ncr-1-2o",
+      "label": "Cable N°2/0",
+      "group": "NCR — Barra 1\""
+    },
+    {
+      "id": "ncf-1-3o",
+      "label": "Cable N°3/0",
+      "group": "NCF — Barra 1\""
+    },
+    {
+      "id": "ncf-1-4o",
+      "label": "Cable N°4/0",
+      "group": "NCF — Barra 1\""
+    },
+    {
+      "id": "ndr-12-4",
+      "label": "Cable N°4",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-12-2",
+      "label": "Cable N°2",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-12-1",
+      "label": "Cable N°1",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-12-1o",
+      "label": "Cable N°1/0",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-12-2o",
+      "label": "Cable N°2/0",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-12-3o",
+      "label": "Cable N°3/0",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-12-4o",
+      "label": "Cable N°4/0",
+      "group": "NDR — Barra 1/2\""
+    },
+    {
+      "id": "ndr-58-4",
+      "label": "Cable N°4",
+      "group": "NDR — Barra 5/8\""
+    },
+    {
+      "id": "ndr-58-2",
+      "label": "Cable N°2",
+      "group": "NDR — Barra 5/8\""
+    },
+    {
+      "id": "ndr-58-1",
+      "label": "Cable N°1",
+      "group": "NDR — Barra 5/8\""
+    },
+    {
+      "id": "ndr-58-1o",
+      "label": "Cable N°1/0",
+      "group": "NDR — Barra 5/8\""
+    },
+    {
+      "id": "ndr-58-2o",
+      "label": "Cable N°2/0",
+      "group": "NDR — Barra 5/8\""
+    },
+    {
+      "id": "ndr-34-4",
+      "label": "Cable N°4",
+      "group": "NDR — Barra 3/4\""
+    },
+    {
+      "id": "ndr-34-2",
+      "label": "Cable N°2",
+      "group": "NDR — Barra 3/4\""
+    },
+    {
+      "id": "ndr-34-1",
+      "label": "Cable N°1",
+      "group": "NDR — Barra 3/4\""
+    },
+    {
+      "id": "ndr-34-1o",
+      "label": "Cable N°1/0",
+      "group": "NDR — Barra 3/4\""
+    },
+    {
+      "id": "ndr-34-2o",
+      "label": "Cable N°2/0",
+      "group": "NDR — Barra 3/4\""
+    },
+    {
+      "id": "ndr-1-4",
+      "label": "Cable N°4",
+      "group": "NDR — Barra 1\""
+    },
+    {
+      "id": "ndr-1-2",
+      "label": "Cable N°2",
+      "group": "NDR — Barra 1\""
+    },
+    {
+      "id": "ndr-1-1",
+      "label": "Cable N°1",
+      "group": "NDR — Barra 1\""
+    },
+    {
+      "id": "ndr-1-1o",
+      "label": "Cable N°1/0",
+      "group": "NDR — Barra 1\""
+    },
+    {
+      "id": "ndf-58-3o",
+      "label": "Cable N°3/0",
+      "group": "NDF — Barra 5/8\""
+    },
+    {
+      "id": "ndf-58-4o",
+      "label": "Cable N°4/0",
+      "group": "NDF — Barra 5/8\""
+    },
+    {
+      "id": "ndf-34-3o",
+      "label": "Cable N°3/0",
+      "group": "NDF — Barra 3/4\""
+    },
+    {
+      "id": "ndf-34-4o",
+      "label": "Cable N°4/0",
+      "group": "NDF — Barra 3/4\""
+    },
+    {
+      "id": "ndf-1-2o",
+      "label": "Cable N°2/0",
+      "group": "NDF — Barra 1\""
+    },
+    {
+      "id": "ndf-1-3o",
+      "label": "Cable N°3/0",
+      "group": "NDF — Barra 1\""
+    },
+    {
+      "id": "ndf-1-4o",
+      "label": "Cable N°4/0",
+      "group": "NDF — Barra 1\""
+    },
+    {
+      "id": "nt-12-6",
+      "label": "Cable N°6",
+      "group": "NT — Barra 1/2\""
+    },
+    {
+      "id": "nt-12-4",
+      "label": "Cable N°4",
+      "group": "NT — Barra 1/2\""
+    },
+    {
+      "id": "nt-58-6",
+      "label": "Cable N°6",
+      "group": "NT — Barra 5/8\""
+    },
+    {
+      "id": "nt-58-4",
+      "label": "Cable N°4",
+      "group": "NT — Barra 5/8\""
+    },
+    {
+      "id": "nt-58-2",
+      "label": "Cable N°2",
+      "group": "NT — Barra 5/8\""
+    },
+    {
+      "id": "nt-34-6",
+      "label": "Cable N°6",
+      "group": "NT — Barra 3/4\""
+    },
+    {
+      "id": "nt-34-4",
+      "label": "Cable N°4",
+      "group": "NT — Barra 3/4\""
+    },
+    {
+      "id": "nt-34-2",
+      "label": "Cable N°2",
+      "group": "NT — Barra 3/4\""
+    },
+    {
+      "id": "nx-12-6",
+      "label": "Cable N°6",
+      "group": "NX — Barra 1/2\""
+    },
+    {
+      "id": "nx-12-4",
+      "label": "Cable N°4",
+      "group": "NX — Barra 1/2\""
+    },
+    {
+      "id": "nx-58-6",
+      "label": "Cable N°6",
+      "group": "NX — Barra 5/8\""
+    },
+    {
+      "id": "nx-58-4",
+      "label": "Cable N°4",
+      "group": "NX — Barra 5/8\""
+    },
+    {
+      "id": "nx-58-2",
+      "label": "Cable N°2",
+      "group": "NX — Barra 5/8\""
+    },
+    {
+      "id": "nx-34-6",
+      "label": "Cable N°6",
+      "group": "NX — Barra 3/4\""
+    },
+    {
+      "id": "nx-34-4",
+      "label": "Cable N°4",
+      "group": "NX — Barra 3/4\""
+    },
+    {
+      "id": "nx-34-2",
+      "label": "Cable N°2",
+      "group": "NX — Barra 3/4\""
     }
   ]
 }

@@ -1,16 +1,16 @@
 {
   "sku": "MOL-L",
-  "title": "Moldes de Grafito L — Cable a Zapata y Bus de Cobre",
+  "title": "Moldes de Grafito L — Cable a Cobre (Zapata y Bus)",
   "category": "Moldes de Grafito",
   "categorySlug": "moldes-grafito",
-  "subcategory": "Cable a Cobre",
-  "description": "Familia de moldes de grafito tipo L que incluye los modelos LA, LJ, LQ. Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C para conexiones exotérmicas profesionales. Compatible con cargas ESTWELD y Electro Material.",
+  "description": "Familia de moldes de grafito tipo L para conexiones exotérmicas de cable a componentes de cobre. Incluye cable a zapata horizontal (LA), cable horizontal a bus (LJ) y cable vertical a bus (LQ). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
     "3 tipos de molde: LA, LJ, LQ",
+    "Para conexiones cable a zapata y cable a bus de cobre",
+    "Cables compatibles: N°4 a 500 MCM",
     "Reutilizable para múltiples soldaduras",
-    "Compatible con cargas exotérmicas ESTWELD y Electro Material",
-    "Requiere masilla selladora y chispero para operación"
+    "Compatible con cargas exotérmicas ESTWELD y Electro Material"
   ],
   "specs": {
     "Código Cadweld": "L",
@@ -19,274 +19,191 @@
     "Temperatura de Operación": "Superior a 2.500°C"
   },
   "image": "/assets/img/products/mol-031-01.webp",
-  "images": [],
   "inStock": true,
   "badge": null,
-  "variants": [],
-  "moldTypes": [
+  "subcategories": [
+    "Cable a Cobre"
+  ],
+  "variants": [
     {
-      "code": "LA",
-      "name": "Cable a Zapata de Cobre Horizontal",
-      "description": "Molde de grafito de alta densidad tipo LA para conexión exotérmica de cable a zapata de cobre o bus de cobre en posición horizontal. Pueden utilizarse tanto zapatas de cobre CADWELD como bus de cobre. Ideal para aplicaciones en subestaciones. Compatible con cargas exotérmicas ESTWELD.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Conexión cable a zapata de cobre horizontal (LA)",
-        "Compatible con zapatas CADWELD y bus de cobre",
-        "Ideal para aplicaciones en subestaciones",
-        "Cables compatibles: N°4 a 1000 MCM",
-        "Requiere manija L160/L159, chispero T320",
-        "Reutilizable para múltiples soldaduras"
-      ],
-      "specs": {
-        "Código Cadweld": "LA",
-        "Tipo de Unión": "Cable a zapata de cobre horizontal (Cable to Copper Lug)",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "LAC, LAD",
-        "Cables Compatibles": "N°4 a 1000 MCM",
-        "Zapatas": "1/8\"x1\" a 1/4\"x3\"",
-        "Rango de Cargas": "45 a 2-250 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-031-01.webp",
-      "images": [],
-      "variants": [
-        {
-          "id": "lac-1lce",
-          "label": "Cable N°4",
-          "group": "LAC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "lac-1tce",
-          "label": "Cable 2 Alam.",
-          "group": "LAC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "lac-1vce",
-          "label": "Cable N°2",
-          "group": "LAC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "lac-1yce",
-          "label": "Cable N°1",
-          "group": "LAC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "lac-2cce",
-          "label": "Cable N°1/0",
-          "group": "LAC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "lac-2gce",
-          "label": "Cable N°2/0",
-          "group": "LAC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "lac-2lce",
-          "label": "Cable N°3/0",
-          "group": "LAC — Zapata 1/8\"x1\""
-        },
-        {
-          "id": "lac-2qde",
-          "label": "Cable N°4/0",
-          "group": "LAC — Zapata 3/16\"x1\""
-        },
-        {
-          "id": "lac-2vde",
-          "label": "Cable 250 MCM",
-          "group": "LAC — Zapata 3/16\"x1\""
-        },
-        {
-          "id": "lac-3aee",
-          "label": "Cable 300 MCM",
-          "group": "LAC — Zapata 1/4\"x1\""
-        },
-        {
-          "id": "lac-3dee",
-          "label": "Cable 350 MCM",
-          "group": "LAC — Zapata 1/4\"x1\""
-        },
-        {
-          "id": "lac-3qeg",
-          "label": "Cable 500 MCM",
-          "group": "LAC — Zapata 1/4\"x1-1/2\""
-        },
-        {
-          "id": "lad-4leh",
-          "label": "Cable 750 MCM",
-          "group": "LAD — Zapata 1/4\"x2\""
-        },
-        {
-          "id": "lad-4yek",
-          "label": "Cable 1000 MCM",
-          "group": "LAD — Zapata 1/4\"x3\""
-        }
-      ]
+      "id": "lac-1lce",
+      "label": "Cable N°4",
+      "group": "LAC — Zapata 1/8\"x1\""
     },
     {
-      "code": "LJ",
-      "name": "Cable Horizontal a Bus de Cobre Horizontal",
-      "description": "Molde de grafito de alta densidad tipo LJ para derivación de cable horizontal al canto de un bus de cobre plano horizontal. La distancia mínima entre dos conexiones está indicada como C. Para usarse con cable de cobre trenzado. Compatible con cargas exotérmicas ESTWELD.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Derivación de cable horizontal a bus de cobre horizontal (LJ)",
-        "Cable se conecta al canto del bus de cobre",
-        "Distancia mínima entre conexiones indicada como C",
-        "Bus de cobre desde 1/4\"x1-1/2\" hasta 1/2\"x1-1/2\"",
-        "Cables compatibles: 2 Alam. a 1000 MCM",
-        "Requiere manija L160/L159, chispero T320"
-      ],
-      "specs": {
-        "Código Cadweld": "LJ",
-        "Tipo de Unión": "Cable horizontal a bus de cobre horizontal (Cable to Copper Bus)",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "LJC, LJD",
-        "Bus Compatibles": "1/4\"x1-1/2\" a 1/2\"x1-1/2\"",
-        "Cables Compatibles": "2 Alam. a 1000 MCM",
-        "Rango de Cargas": "65 a 2-250 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-032-01.webp",
-      "images": [],
-      "variants": [
-        {
-          "id": "ljc-eg1t",
-          "label": "Cable 2 Alam.",
-          "group": "LJC — Bus 1/4\"x1-1/2\""
-        },
-        {
-          "id": "ljc-eg1v",
-          "label": "Cable N°2",
-          "group": "LJC — Bus 1/4\"x1-1/2\""
-        },
-        {
-          "id": "ljc-eg2c",
-          "label": "Cable N°1/0",
-          "group": "LJC — Bus 1/4\"x1-1/2\""
-        },
-        {
-          "id": "ljc-eg2g",
-          "label": "Cable N°2/0",
-          "group": "LJC — Bus 1/4\"x1-1/2\""
-        },
-        {
-          "id": "ljc-eg2l",
-          "label": "Cable N°3/0",
-          "group": "LJC — Bus 1/4\"x1-1/2\""
-        },
-        {
-          "id": "ljc-eg2q",
-          "label": "Cable N°4/0",
-          "group": "LJC — Bus 1/4\"x1-1/2\""
-        },
-        {
-          "id": "ljc-gg2c",
-          "label": "Cable N°1/0",
-          "group": "LJC — Bus 3/8\"x1-1/2\""
-        },
-        {
-          "id": "ljc-gg2l",
-          "label": "Cable N°3/0",
-          "group": "LJC — Bus 3/8\"x1-1/2\""
-        },
-        {
-          "id": "ljc-gg3q",
-          "label": "Cable 500 MCM",
-          "group": "LJC — Bus 3/8\"x1-1/2\""
-        },
-        {
-          "id": "ljc-jg2c",
-          "label": "Cable N°1/0",
-          "group": "LJC — Bus 1/2\"x1-1/2\""
-        },
-        {
-          "id": "ljc-jg3q",
-          "label": "Cable 500 MCM",
-          "group": "LJC — Bus 1/2\"x1-1/2\""
-        },
-        {
-          "id": "ljd-jg4y",
-          "label": "Cable 1000 MCM",
-          "group": "LJD — Bus 1/2\"x1-1/2\""
-        }
-      ]
+      "id": "lac-1tce",
+      "label": "Cable 2 Alam.",
+      "group": "LAC — Zapata 1/8\"x1\""
     },
     {
-      "code": "LQ",
-      "name": "Cable Vertical a Bus de Cobre Horizontal",
-      "description": "Molde de grafito de alta densidad tipo LQ para conexión de cable de paso en posición vertical a la parte superior de un bus de cobre horizontal con las caras en posición vertical. Para usarse con cable de cobre trenzado. Compatible con cargas exotérmicas ESTWELD.",
-      "features": [
-        "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-        "Cable vertical a bus de cobre horizontal (LQ)",
-        "Cable de paso vertical sobre la parte superior del bus",
-        "Bus de cobre desde 1/4\"x2\" hasta 1/2\"x2\"",
-        "Cables compatibles: N°2 a 750 MCM",
-        "Requiere manija L160/L159, chispero T320",
-        "Reutilizable para múltiples soldaduras"
-      ],
-      "specs": {
-        "Código Cadweld": "LQ",
-        "Tipo de Unión": "Cable vertical a bus de cobre horizontal (Cable to Copper Bus)",
-        "Material": "Grafito de alta densidad",
-        "Subtipos": "LQE, LQJ",
-        "Bus Compatibles": "1/4\"x2\" a 1/2\"x2\"",
-        "Cables Compatibles": "N°2 a 750 MCM",
-        "Rango de Cargas": "250 a 3-250 g",
-        "Temperatura de Operación": "Superior a 2.500°C"
-      },
-      "image": "/assets/img/products/mol-033-01.webp",
-      "images": [],
-      "variants": [
-        {
-          "id": "lqe-eh1v",
-          "label": "Cable N°2",
-          "group": "LQE — Bus 1/4\"x2\""
-        },
-        {
-          "id": "lqj-eh2c",
-          "label": "Cable N°1/0",
-          "group": "LQJ — Bus 1/4\"x2\""
-        },
-        {
-          "id": "lqj-eh2g",
-          "label": "Cable N°2/0",
-          "group": "LQJ — Bus 1/4\"x2\""
-        },
-        {
-          "id": "lqj-eh2q",
-          "label": "Cable N°4/0",
-          "group": "LQJ — Bus 1/4\"x2\""
-        },
-        {
-          "id": "lqj-eh3q",
-          "label": "Cable 500 MCM",
-          "group": "LQJ — Bus 1/4\"x2\""
-        },
-        {
-          "id": "lqj-gh2c",
-          "label": "Cable N°1/0",
-          "group": "LQJ — Bus 3/8\"x2\""
-        },
-        {
-          "id": "lqj-gh3q",
-          "label": "Cable 500 MCM",
-          "group": "LQJ — Bus 3/8\"x2\""
-        },
-        {
-          "id": "lqj-jh2c",
-          "label": "Cable N°1/0",
-          "group": "LQJ — Bus 1/2\"x2\""
-        },
-        {
-          "id": "lqj-jh3q",
-          "label": "Cable 500 MCM",
-          "group": "LQJ — Bus 1/2\"x2\""
-        },
-        {
-          "id": "lqj-jh4l",
-          "label": "Cable 750 MCM",
-          "group": "LQJ — Bus 1/2\"x2\""
-        }
-      ]
+      "id": "lac-1vce",
+      "label": "Cable N°2",
+      "group": "LAC — Zapata 1/8\"x1\""
+    },
+    {
+      "id": "lac-1yce",
+      "label": "Cable N°1",
+      "group": "LAC — Zapata 1/8\"x1\""
+    },
+    {
+      "id": "lac-2cce",
+      "label": "Cable N°1/0",
+      "group": "LAC — Zapata 1/8\"x1\""
+    },
+    {
+      "id": "lac-2gce",
+      "label": "Cable N°2/0",
+      "group": "LAC — Zapata 1/8\"x1\""
+    },
+    {
+      "id": "lac-2lce",
+      "label": "Cable N°3/0",
+      "group": "LAC — Zapata 1/8\"x1\""
+    },
+    {
+      "id": "lac-2qde",
+      "label": "Cable N°4/0",
+      "group": "LAC — Zapata 3/16\"x1\""
+    },
+    {
+      "id": "lac-2vde",
+      "label": "Cable 250 MCM",
+      "group": "LAC — Zapata 3/16\"x1\""
+    },
+    {
+      "id": "lac-3aee",
+      "label": "Cable 300 MCM",
+      "group": "LAC — Zapata 1/4\"x1\""
+    },
+    {
+      "id": "lac-3dee",
+      "label": "Cable 350 MCM",
+      "group": "LAC — Zapata 1/4\"x1\""
+    },
+    {
+      "id": "lac-3qeg",
+      "label": "Cable 500 MCM",
+      "group": "LAC — Zapata 1/4\"x1-1/2\""
+    },
+    {
+      "id": "lad-4leh",
+      "label": "Cable 750 MCM",
+      "group": "LAD — Zapata 1/4\"x2\""
+    },
+    {
+      "id": "lad-4yek",
+      "label": "Cable 1000 MCM",
+      "group": "LAD — Zapata 1/4\"x3\""
+    },
+    {
+      "id": "ljc-eg1t",
+      "label": "Cable 2 Alam.",
+      "group": "LJC — Bus 1/4\"x1-1/2\""
+    },
+    {
+      "id": "ljc-eg1v",
+      "label": "Cable N°2",
+      "group": "LJC — Bus 1/4\"x1-1/2\""
+    },
+    {
+      "id": "ljc-eg2c",
+      "label": "Cable N°1/0",
+      "group": "LJC — Bus 1/4\"x1-1/2\""
+    },
+    {
+      "id": "ljc-eg2g",
+      "label": "Cable N°2/0",
+      "group": "LJC — Bus 1/4\"x1-1/2\""
+    },
+    {
+      "id": "ljc-eg2l",
+      "label": "Cable N°3/0",
+      "group": "LJC — Bus 1/4\"x1-1/2\""
+    },
+    {
+      "id": "ljc-eg2q",
+      "label": "Cable N°4/0",
+      "group": "LJC — Bus 1/4\"x1-1/2\""
+    },
+    {
+      "id": "ljc-gg2c",
+      "label": "Cable N°1/0",
+      "group": "LJC — Bus 3/8\"x1-1/2\""
+    },
+    {
+      "id": "ljc-gg2l",
+      "label": "Cable N°3/0",
+      "group": "LJC — Bus 3/8\"x1-1/2\""
+    },
+    {
+      "id": "ljc-gg3q",
+      "label": "Cable 500 MCM",
+      "group": "LJC — Bus 3/8\"x1-1/2\""
+    },
+    {
+      "id": "ljc-jg2c",
+      "label": "Cable N°1/0",
+      "group": "LJC — Bus 1/2\"x1-1/2\""
+    },
+    {
+      "id": "ljc-jg3q",
+      "label": "Cable 500 MCM",
+      "group": "LJC — Bus 1/2\"x1-1/2\""
+    },
+    {
+      "id": "ljd-jg4y",
+      "label": "Cable 1000 MCM",
+      "group": "LJD — Bus 1/2\"x1-1/2\""
+    },
+    {
+      "id": "lqe-eh1v",
+      "label": "Cable N°2",
+      "group": "LQE — Bus 1/4\"x2\""
+    },
+    {
+      "id": "lqj-eh2c",
+      "label": "Cable N°1/0",
+      "group": "LQJ — Bus 1/4\"x2\""
+    },
+    {
+      "id": "lqj-eh2g",
+      "label": "Cable N°2/0",
+      "group": "LQJ — Bus 1/4\"x2\""
+    },
+    {
+      "id": "lqj-eh2q",
+      "label": "Cable N°4/0",
+      "group": "LQJ — Bus 1/4\"x2\""
+    },
+    {
+      "id": "lqj-eh3q",
+      "label": "Cable 500 MCM",
+      "group": "LQJ — Bus 1/4\"x2\""
+    },
+    {
+      "id": "lqj-gh2c",
+      "label": "Cable N°1/0",
+      "group": "LQJ — Bus 3/8\"x2\""
+    },
+    {
+      "id": "lqj-gh3q",
+      "label": "Cable 500 MCM",
+      "group": "LQJ — Bus 3/8\"x2\""
+    },
+    {
+      "id": "lqj-jh2c",
+      "label": "Cable N°1/0",
+      "group": "LQJ — Bus 1/2\"x2\""
+    },
+    {
+      "id": "lqj-jh3q",
+      "label": "Cable 500 MCM",
+      "group": "LQJ — Bus 1/2\"x2\""
+    },
+    {
+      "id": "lqj-jh4l",
+      "label": "Cable 750 MCM",
+      "group": "LQJ — Bus 1/2\"x2\""
     }
   ]
 }
