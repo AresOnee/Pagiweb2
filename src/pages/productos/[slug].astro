@@ -52,11 +52,13 @@ const allImages = [
     }
   })} />
 
-  <Breadcrumb items={[
-    { label: 'Inicio', href: '/' },
-    { label: 'Productos', href: '/productos' },
-    { label: product.title },
-  ]} />
+  <div class="detail-header-offset">
+    <Breadcrumb items={[
+      { label: 'Inicio', href: '/' },
+      { label: 'Productos', href: '/productos' },
+      { label: product.title },
+    ]} />
+  </div>
 
   <!-- Product Detail -->
   <section class="section product-detail">
@@ -169,9 +171,9 @@ const allImages = [
 </MainLayout>
 
 <style>
-  /* Offset breadcrumb for fixed header (this page has no page-hero) */
-  :global(.breadcrumb) {
-    padding-top: calc(72px + var(--spacing-4));
+  /* Offset for fixed header (this page has no page-hero) */
+  .detail-header-offset {
+    padding-top: 72px;
   }
 
   /* Back Link Top */
@@ -429,8 +431,8 @@ const allImages = [
 
   /* Responsive */
   @media (max-width: 480px) {
-    :global(.breadcrumb) {
-      padding-top: calc(64px + var(--spacing-3));
+    .detail-header-offset {
+      padding-top: 64px;
     }
   }
 
