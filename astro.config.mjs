@@ -7,8 +7,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://gelchile.cl',
   prefetch: {
-    prefetchAll: true,
-    defaultStrategy: 'viewport',
+    defaultStrategy: 'hover',
   },
   integrations: [
     preact(),
@@ -18,4 +17,15 @@ export default defineConfig({
       lastmod: new Date(),
     }),
   ],
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'preact-vendor': ['preact', 'preact/hooks', 'nanostores', '@nanostores/preact'],
+          },
+        },
+      },
+    },
+  },
 });

@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node -e \"import('fs').then(fs=>{let s=fs.readFileSync('public/sw.js','utf8');s=s.replace(/gelchile-\\d+/,'gelchile-'+Date.now());fs.writeFileSync('public/sw.js',s)})\" && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "optimize-images": "node scripts/optimize-images.mjs"

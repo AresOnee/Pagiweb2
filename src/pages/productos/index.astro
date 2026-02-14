@@ -2,28 +2,24 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import ProductFilter from '../../components/islands/ProductFilter.tsx';
-import ProductModal from '../../components/islands/ProductModal.tsx';
 import { getCollection } from 'astro:content';
 import categoriesData from '../../data/categories.json';
-import type { Product, Category } from '../../types';
+import type { ProductSlim, Category } from '../../types';
 
 const allProducts = await getCollection('products');
 
-// Map to plain Product[] for island serialization
-const products: Product[] = allProducts.map(p => ({
+// Map to slim data for island serialization (excludes specs, features, images, variants)
+const products: ProductSlim[] = allProducts.map(p => ({
   sku: p.data.sku,
   title: p.data.title,
   category: p.data.category,
   categorySlug: p.data.categorySlug,
   description: p.data.description,
-  features: p.data.features,
-  specs: p.data.specs,
   image: p.data.image,
-  images: p.data.images,
   inStock: p.data.inStock,
   badge: p.data.badge,
   subcategories: p.data.subcategories,
-  variants: p.data.variants,
+  hasVariants: (p.data.variants?.length ?? 0) > 0,
 }));
 
 const categories = categoriesData as Category[];
@@ -46,12 +42,9 @@ const categories = categoriesData as Category[];
   <section class="section products-section">
     <div class="container">
       <h2 class="sr-only">Catálogo de productos</h2>
-      <ProductFilter client:idle products={products} categories={categories} />
+      <ProductFilter client:visible products={products} categories={categories} />
     </div>
   </section>
-
-  <!-- Product Modal (reads from $selectedProduct store) -->
-  <ProductModal client:idle />
 
   <!-- CTA -->
   <section class="cta-section">

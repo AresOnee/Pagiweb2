@@ -24,6 +24,12 @@
   --color-primary-50: rgba(0, 82, 204, 0.2);
   --color-primary-light: #60a5fa;
 
+  /* Semantic tokens for dark mode */
+  --color-surface-card: #1e293b;
+  --color-surface-elevated: #334155;
+  --color-text-on-primary: #FFFFFF;
+  --color-text-on-accent: #FFFFFF;
+
   /* Sombras */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
@@ -66,15 +72,7 @@
   color: #ffffff;
 }
 
-/* Button text fixes — var(--color-white) resolves to #1e293b in dark mode,
-   which is invisible on colored/gradient button backgrounds */
-[data-theme="dark"] .btn-primary {
-  color: #ffffff;
-}
-
-[data-theme="dark"] .btn-accent {
-  color: #ffffff;
-}
+/* Button text: handled by --color-text-on-primary/--color-text-on-accent tokens */
 
 [data-theme="dark"] .btn-secondary:hover {
   color: #ffffff;
@@ -99,7 +97,6 @@
 }
 
 [data-theme="dark"] .category-card,
-[data-theme="dark"] .product-card,
 [data-theme="dark"] .testimonial-card,
 [data-theme="dark"] .feature-card,
 [data-theme="dark"] .stat-card,
@@ -212,10 +209,7 @@
    that must always render as white in dark mode
    (the variable inverts to #1e293b which is dark)
    ============================================ */
-[data-theme="dark"] .btn-primary,
-[data-theme="dark"] .btn-accent,
-[data-theme="dark"] .btn-add-quote,
-[data-theme="dark"] .product-badge {
+[data-theme="dark"] .btn-add-quote {
   color: #ffffff;
 }
 

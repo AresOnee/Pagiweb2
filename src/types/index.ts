@@ -51,6 +51,13 @@ export interface Product {
   variants?: Array<{ id: string; label: string; group?: string }>;
 }
 
+/** Slim product data for catalog grid (excludes specs, features, images, variants) */
+export type ProductSlim = Pick<Product,
+  'sku' | 'title' | 'category' | 'categorySlug' | 'description' | 'image' | 'badge' | 'inStock' | 'subcategories'
+> & {
+  hasVariants: boolean;
+};
+
 /** Category metadata from categories.json */
 export interface Category {
   id: CategorySlug;

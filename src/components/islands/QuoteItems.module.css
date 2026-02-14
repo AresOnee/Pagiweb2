@@ -30,6 +30,7 @@
 .quote-item-image {
   width: 80px;
   height: 80px;
+  aspect-ratio: 1;
   background: var(--color-white);
   border-radius: var(--radius-md);
   display: flex;

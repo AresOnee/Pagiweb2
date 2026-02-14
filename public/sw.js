@@ -3,7 +3,8 @@
  * Implements network-first strategy with offline fallback
  */
 
-const CACHE_NAME = 'gelchile-v1';
+// BUILD_TIMESTAMP is replaced by the build script for cache busting
+const CACHE_NAME = 'gelchile-1771047075801';
 const OFFLINE_URL = '/offline.html';
 
 // Assets to cache on install
