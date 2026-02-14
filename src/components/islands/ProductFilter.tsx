@@ -3,6 +3,7 @@ import { useStore } from '@nanostores/preact';
 import { $cartSkuMap, addItem } from '../../stores/cart';
 import { showToast } from '../../stores/toast';
 import type { ProductSlim, Category } from '../../types';
+import { slugify } from '../../utils/slugify';
 import styles from './ProductFilter.module.css';
 
 interface Props {
@@ -126,7 +127,7 @@ export default function ProductFilter({ products, categories }: Props) {
     setSelectedSubcategory('todos');
   };
 
-  const getProductUrl = (product: ProductSlim) => `/productos/${product.sku.toLowerCase()}`;
+  const getProductUrl = (product: ProductSlim) => `/productos/${slugify(product.title)}`;
 
   const handleAddToQuote = (e: Event, product: ProductSlim) => {
     e.stopPropagation();
