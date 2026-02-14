@@ -169,6 +169,11 @@ const allImages = [
 </MainLayout>
 
 <style>
+  /* Offset breadcrumb for fixed header (this page has no page-hero) */
+  :global(.breadcrumb) {
+    padding-top: calc(72px + var(--spacing-4));
+  }
+
   /* Back Link Top */
   .back-link-top {
     margin-bottom: var(--spacing-6);
@@ -423,6 +428,12 @@ const allImages = [
   }
 
   /* Responsive */
+  @media (max-width: 480px) {
+    :global(.breadcrumb) {
+      padding-top: calc(64px + var(--spacing-3));
+    }
+  }
+
   @media (max-width: 768px) {
     .product-detail-grid {
       grid-template-columns: 1fr;
