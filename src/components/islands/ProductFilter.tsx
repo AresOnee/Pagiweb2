@@ -30,7 +30,6 @@ export default function ProductFilter({ products, categories }: Props) {
   const [searchText, setSearchText] = useState('');
   const [inputValue, setInputValue] = useState('');
   const [sortBy, setSortBy] = useState<SortOption>('default');
-  const [mounted, setMounted] = useState(false);
   const cartSkuMap = useStore($cartSkuMap);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout>>();
@@ -40,9 +39,6 @@ export default function ProductFilter({ products, categories }: Props) {
     clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(() => setSearchText(value), 200);
   };
-
-  // Mark component as mounted (client-side only) to enable hover overlays
-  useEffect(() => setMounted(true), []);
 
   // Read initial category from URL on mount
   useEffect(() => {
@@ -327,24 +323,6 @@ export default function ProductFilter({ products, categories }: Props) {
                       {product.imageCount}
                     </span>
                   )}
-                  {mounted && product.specsPreview && product.specsPreview.length > 0 && (
-                    <div class={styles['product-quick-view']}>
-                      <ul class={styles['quick-view-specs']}>
-                        {product.specsPreview.slice(0, 6).map(([label, value]) => (
-                          <li key={label}>
-                            <span class={styles['qv-label']}>{label}</span>
-                            <span class={styles['qv-value']}>{value}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <span class={styles['quick-view-link']}>
-                        Ver detalle
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14" aria-hidden="true">
-                          <polyline points="9 18 15 12 9 6" />
-                        </svg>
-                      </span>
-                    </div>
-                  )}
                 </div>
                 <div class={styles['product-content']}>
                   <div class={styles['product-meta-row']}>
@@ -370,16 +348,6 @@ export default function ProductFilter({ products, categories }: Props) {
                   )}
                   <h3 class={styles['product-title']}>{product.title}</h3>
                   <p class={styles['product-description']}>{product.description}</p>
-                  {product.specsPreview && product.specsPreview.length > 0 && (
-                    <ul class={styles['product-specs-preview']}>
-                      {product.specsPreview.slice(0, 3).map(([label, value]) => (
-                        <li key={label}>
-                          <span class={styles['spec-preview-label']}>{label}:</span>
-                          <span class={styles['spec-preview-value']}>{value}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
                   <div class={styles['product-sku-row']}>
                     <span class={styles['product-sku']}>SKU: {product.sku}</span>
                     <span class={`${styles['card-stock']} ${!product.inStock ? styles['out-stock'] : ''}`}>

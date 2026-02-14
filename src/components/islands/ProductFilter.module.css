@@ -393,39 +393,6 @@
   overflow: hidden;
 }
 
-/* Specs Preview */
-.product-specs-preview {
-  list-style: none;
-  margin-bottom: var(--spacing-3);
-  padding: var(--spacing-2) 0;
-  border-top: 1px dashed var(--color-gray-200);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-1);
-}
-
-.product-specs-preview li {
-  display: flex;
-  gap: var(--spacing-1);
-  font-size: var(--font-size-xs);
-  line-height: 1.4;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.spec-preview-label {
-  color: var(--color-gray-500);
-  font-weight: var(--font-weight-medium);
-  flex-shrink: 0;
-}
-
-.spec-preview-value {
-  color: var(--color-gray-700);
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 /* SKU + Stock row */
 .product-sku-row {
   display: flex;
@@ -479,68 +446,6 @@
   font-weight: var(--font-weight-medium);
   border-radius: var(--radius-sm);
   z-index: 2;
-}
-
-/* Quick View Overlay */
-.product-quick-view {
-  position: absolute;
-  inset: 0;
-  background: rgba(9, 30, 66, 0.88);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: var(--spacing-4);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .product-card:hover .product-quick-view {
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
-
-.quick-view-specs {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-1);
-  margin-bottom: var(--spacing-3);
-}
-
-.quick-view-specs li {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--spacing-2);
-  font-size: var(--font-size-xs);
-  line-height: 1.4;
-}
-
-.qv-label {
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: var(--font-weight-medium);
-  flex-shrink: 0;
-}
-
-.qv-value {
-  color: #ffffff;
-  text-align: right;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.quick-view-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-1);
-  color: #4C9AFF;
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  align-self: center;
 }
 
 .product-footer {
@@ -689,19 +594,6 @@
   color: #94a3b8;
 }
 
-/* Dark mode — new visual elements */
-:global([data-theme="dark"]) .product-specs-preview {
-  border-top-color: #334155;
-}
-
-:global([data-theme="dark"]) .spec-preview-label {
-  color: #94a3b8;
-}
-
-:global([data-theme="dark"]) .spec-preview-value {
-  color: #cbd5e1;
-}
-
 :global([data-theme="dark"]) .app-tag {
   background: rgba(76, 154, 255, 0.1);
   color: #94a3b8;
@@ -709,10 +601,6 @@
 
 :global([data-theme="dark"]) .variant-indicator {
   background: #c45000;
-}
-
-:global([data-theme="dark"]) .product-quick-view {
-  background: rgba(2, 6, 23, 0.92);
 }
 
 :global([data-theme="dark"]) .card-stock {
@@ -739,12 +627,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Hide keyboard shortcut and quick view overlay on mobile */
+  /* Hide keyboard shortcut on mobile */
   .search-shortcut {
-    display: none;
-  }
-
-  .product-quick-view {
     display: none;
   }
 
