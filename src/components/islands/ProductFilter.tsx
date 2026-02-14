@@ -1,13 +1,12 @@
 import { useState, useEffect, useRef } from 'preact/hooks';
 import { useStore } from '@nanostores/preact';
 import { $cartSkuMap, addItem } from '../../stores/cart';
-import { openProductModal } from '../../stores/ui';
 import { showToast } from '../../stores/toast';
-import type { Product, Category } from '../../types';
+import type { ProductSlim, Category } from '../../types';
 import styles from './ProductFilter.module.css';
 
 interface Props {
-  products: Product[];
+  products: ProductSlim[];
   categories: Category[];
 }
 
@@ -127,15 +126,13 @@ export default function ProductFilter({ products, categories }: Props) {
     setSelectedSubcategory('todos');
   };
 
-  const handleCardClick = (product: Product) => {
-    openProductModal(product);
-  };
+  const getProductUrl = (product: ProductSlim) => `/productos/${product.sku.toLowerCase()}`;
 
-  const handleAddToQuote = (e: Event, product: Product) => {
+  const handleAddToQuote = (e: Event, product: ProductSlim) => {
     e.stopPropagation();
     e.preventDefault();
-    if (product.variants?.length) {
-      openProductModal(product);
+    if (product.hasVariants) {
+      window.location.href = getProductUrl(product);
       return;
     }
     addItem({ sku: product.sku, title: product.title, category: product.category, quantity: 1, image: product.image });
@@ -296,21 +293,13 @@ export default function ProductFilter({ products, categories }: Props) {
           {sorted.map((product, index) => {
             const count = getCartCount(product.sku);
             return (
-              <div
+              <a
                 key={product.sku}
+                href={getProductUrl(product)}
                 class={styles['product-card']}
                 data-aos="fade-up"
                 data-aos-delay={index % 4 > 0 ? String((index % 4) * 50) : undefined}
-                onClick={() => handleCardClick(product)}
-                role="button"
-                tabindex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    handleCardClick(product);
-                  }
-                }}
-                aria-label={`Ver detalle: ${product.title}`}
+                data-astro-prefetch="hover"
               >
                 <div class={styles['product-image']}>
                   {product.badge && (
@@ -356,7 +345,7 @@ export default function ProductFilter({ products, categories }: Props) {
                     )}
                   </button>
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>

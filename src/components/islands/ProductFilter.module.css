@@ -242,6 +242,8 @@
 /* Product card */
 .product-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--color-white);
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -251,6 +253,8 @@
   contain: layout style paint;
   content-visibility: auto;
   contain-intrinsic-size: auto 400px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .product-card:hover {
@@ -277,6 +281,7 @@
 .product-image {
   position: relative;
   height: 200px;
+  aspect-ratio: 3/2;
   background: linear-gradient(135deg, var(--color-gray-100) 0%, var(--color-gray-50) 100%);
   display: flex;
   align-items: center;

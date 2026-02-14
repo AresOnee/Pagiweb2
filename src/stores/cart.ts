@@ -100,12 +100,16 @@ export function restoreCart(items: CartItem[]): void {
   $cart.set(items);
 }
 
+let _cartInitialized = false;
+
 /**
  * Initialize the cart from localStorage and set up auto-persistence.
  * Must be called client-side only (e.g., in a Preact island's useEffect).
+ * Guard prevents duplicate initialization from multiple islands.
  */
 export function initCart(): void {
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined' || _cartInitialized) return;
+  _cartInitialized = true;
 
   try {
     const stored = localStorage.getItem(siteConfig.storage.cartKey);

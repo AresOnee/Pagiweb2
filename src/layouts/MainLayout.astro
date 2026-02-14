@@ -15,9 +15,10 @@ interface Props {
   title: string;
   description?: string;
   includeTurnstile?: boolean;
+  preloadImage?: string;
 }
 
-const { title, description = 'Sistemas de Puesta a Tierra y Protección Eléctrica', includeTurnstile = false } = Astro.props;
+const { title, description = 'Sistemas de Puesta a Tierra y Protección Eléctrica', includeTurnstile = false, preloadImage } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -54,6 +55,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <!-- Preload Inter Latin font for faster LCP text rendering -->
   <link rel="preload" as="font" type="font/woff2" href={interLatinUrl} crossorigin />
 
+  <!-- Preload hero/LCP image when specified -->
+  {preloadImage && (
+    <link rel="preload" as="image" type="image/webp" href={preloadImage} fetchpriority="high" />
+  )}
+
   <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.webmanifest" />
   <meta name="theme-color" content="#0052cc" />
@@ -64,10 +70,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   <!-- Inter font: self-hosted via @fontsource-variable/inter, preloaded above -->
 
+  <!-- DNS prefetch for form APIs (low-cost hint for potential navigation to /cotizacion) -->
+  <link rel="dns-prefetch" href="https://api.web3forms.com" />
+
   <!-- Cloudflare Turnstile (anti-spam) — solo en páginas con formulario -->
   {includeTurnstile && (
     <link rel="preconnect" href="https://challenges.cloudflare.com" crossorigin />
-    <link rel="dns-prefetch" href="https://api.web3forms.com" />
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   )}
 
@@ -123,8 +131,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </svg>
   </button>
 
-  <!-- AOS: Animate On Scroll via IntersectionObserver (deferred to avoid forced reflow) -->
+  <!-- Consolidated inline scripts: AOS, SW, mobile menu, progress bar, scroll-to-top -->
   <script is:inline>
+    // AOS: Animate On Scroll via IntersectionObserver
     requestAnimationFrame(function() {
       var els = document.querySelectorAll('[data-aos]');
       if (!els.length || !('IntersectionObserver' in window)) {
@@ -141,19 +150,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       }, { threshold: 0.1 });
       els.forEach(function(el) { observer.observe(el); });
     });
-  </script>
 
-  <!-- Service Worker Registration -->
-  <script is:inline>
+    // Service Worker Registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         navigator.serviceWorker.register('/sw.js');
       });
     }
-  </script>
 
-  <!-- Mobile Menu (vanilla JS — replaces Preact island for zero hydration cost) -->
-  <script is:inline>
+    // Mobile Menu
     (function() {
       var menuBtn = document.querySelector('.mobile-menu-btn');
       var menu = document.querySelector('.mobile-menu');
@@ -187,32 +192,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         link.addEventListener('click', closeMenu);
       });
     })();
-  </script>
 
-  <!-- H1: Page transition progress bar script -->
-  <script is:inline>
+    // Page transition progress bar
     (function() {
       var bar = document.getElementById('page-progress');
       if (!bar) return;
-
-      // Handle link clicks for SPA-like navigation feedback
       document.addEventListener('click', function(e) {
         var link = e.target.closest('a');
         if (link && link.href && link.href.startsWith(window.location.origin) && !link.hasAttribute('download')) {
           bar.style.transform = 'scaleX(0.3)';
         }
       });
-
-      // Complete progress on page load
       window.addEventListener('load', function() {
         bar.style.transform = 'scaleX(1)';
         setTimeout(function() { bar.style.transform = 'scaleX(0)'; }, 300);
       });
     })();
-  </script>
 
-  <!-- Scroll to Top Script -->
-  <script is:inline>
+    // Scroll to Top
     (function() {
       var btn = document.getElementById('scroll-top-btn');
       if (!btn) return;
