@@ -33,7 +33,7 @@
 .filter-btn.active {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   border-color: var(--color-primary);
-  color: var(--color-white);
+  color: var(--color-text-on-primary);
   box-shadow: 0 4px 14px rgba(0, 82, 204, 0.3);
 }
 
@@ -66,7 +66,7 @@
 .subcategory-btn.active {
   background: var(--color-primary);
   border-color: var(--color-primary);
-  color: var(--color-white);
+  color: var(--color-text-on-primary);
 }
 
 /* Product grid */
@@ -244,7 +244,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background: var(--color-white);
+  background: var(--color-surface-card);
   border-radius: var(--radius-xl);
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.4s ease;
@@ -313,7 +313,7 @@
   left: var(--spacing-3);
   padding: var(--spacing-1) var(--spacing-3);
   background: var(--color-primary);
-  color: var(--color-white);
+  color: var(--color-text-on-primary);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   border-radius: var(--radius-full);
@@ -419,12 +419,7 @@
   margin-bottom: var(--spacing-2);
 }
 
-/* Dark mode — hardcoded hex values (variable inversion maps gray-800 to near-white) */
-:global([data-theme="dark"]) .product-card {
-  background: #1e293b;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
+/* Dark mode — card background handled by --color-surface-card token */
 :global([data-theme="dark"]) .product-card:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }

@@ -46,7 +46,7 @@ const productUrl = `/productos/${sku.toLowerCase()}`;
 <style>
   .product-card {
     position: relative;
-    background: var(--color-white);
+    background: var(--color-surface-card);
     border-radius: var(--radius-xl);
     overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -95,7 +95,7 @@ const productUrl = `/productos/${sku.toLowerCase()}`;
     left: var(--spacing-3);
     padding: var(--spacing-1) var(--spacing-3);
     background: var(--color-primary);
-    color: var(--color-white);
+    color: var(--color-text-on-primary);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-semibold);
     border-radius: var(--radius-full);
@@ -182,12 +182,7 @@ const productUrl = `/productos/${sku.toLowerCase()}`;
     height: 18px;
   }
 
-  /* Dark mode — explicit hardcoded values to avoid variable inversion issues */
-  :global([data-theme="dark"]) .product-card {
-    background: #1e293b;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  }
-
+  /* Dark mode — card background handled by --color-surface-card token */
   :global([data-theme="dark"]) .product-card:hover {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
   }
@@ -195,10 +190,6 @@ const productUrl = `/productos/${sku.toLowerCase()}`;
   :global([data-theme="dark"]) .product-image {
     background: linear-gradient(90deg, #334155 25%, #1e293b 50%, #334155 75%);
     background-size: 200% 100%;
-  }
-
-  :global([data-theme="dark"]) .product-badge {
-    color: #ffffff;
   }
 
   :global([data-theme="dark"]) .product-category {
