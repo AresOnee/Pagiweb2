@@ -205,9 +205,11 @@ const overlaySpecs = specsPreview?.slice(0, 6) || [];
     z-index: 1;
   }
 
-  .product-card:hover .product-quick-view {
-    opacity: 1;
-    pointer-events: auto;
+  @media (hover: hover) and (pointer: fine) {
+    .product-card:hover .product-quick-view {
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 
   .quick-view-specs {
@@ -251,12 +253,6 @@ const overlaySpecs = specsPreview?.slice(0, 6) || [];
   }
 
   @media (max-width: 768px) {
-    .product-quick-view {
-      display: none;
-    }
-  }
-
-  @media (hover: none) {
     .product-quick-view {
       display: none;
     }

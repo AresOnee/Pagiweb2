@@ -251,8 +251,6 @@
   box-shadow: var(--shadow-card);
   cursor: pointer;
   contain: layout style paint;
-  content-visibility: auto;
-  contain-intrinsic-size: auto 480px;
   text-decoration: none;
   color: inherit;
 }
@@ -498,9 +496,11 @@
   z-index: 1;
 }
 
-.product-card:hover .product-quick-view {
-  opacity: 1;
-  pointer-events: auto;
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover .product-quick-view {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .quick-view-specs {
@@ -731,12 +731,6 @@
 @media (max-width: 1024px) {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (hover: none) {
-  .product-quick-view {
-    display: none;
   }
 }
 
