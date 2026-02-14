@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'preact/hooks';
+import { useState, useEffect, useRef, useMemo, useCallback } from 'preact/hooks';
 import { useStore } from '@nanostores/preact';
 import { $cartSkuMap, addItem } from '../../stores/cart';
 import { showToast } from '../../stores/toast';
@@ -84,9 +84,9 @@ export default function ProductFilter({ products, categories }: Props) {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [inputValue]);
 
-  // Filter products
+  // Filter products (memoized)
   const query = searchText.toLowerCase().trim();
-  const filtered = products.filter((p) => {
+  const filtered = useMemo(() => products.filter((p) => {
     const matchCategory = selectedCategory === 'todos' || p.categorySlug === selectedCategory;
     const matchSubcategory = selectedSubcategory === 'todos' || (p.subcategories?.includes(selectedSubcategory) ?? false);
     const matchSearch = !query ||
@@ -94,19 +94,19 @@ export default function ProductFilter({ products, categories }: Props) {
       p.sku.toLowerCase().includes(query) ||
       p.description.toLowerCase().includes(query);
     return matchCategory && matchSubcategory && matchSearch;
-  });
+  }), [products, selectedCategory, selectedSubcategory, query]);
 
-  // Extract subcategories from products in the selected category
-  const subcategories = selectedCategory !== 'todos'
+  // Extract subcategories from products in the selected category (memoized)
+  const subcategories = useMemo(() => selectedCategory !== 'todos'
     ? [...new Set(
         products
           .filter((p) => p.categorySlug === selectedCategory && p.subcategories?.length)
           .flatMap((p) => p.subcategories!)
       )].sort((a, b) => a.localeCompare(b, 'es'))
-    : [];
+    : [], [products, selectedCategory]);
 
-  // H7: Sort filtered products
-  const sorted = [...filtered].sort((a, b) => {
+  // H7: Sort filtered products (memoized)
+  const sorted = useMemo(() => [...filtered].sort((a, b) => {
     switch (sortBy) {
       case 'name-asc':
         return a.title.localeCompare(b.title, 'es');
@@ -120,16 +120,16 @@ export default function ProductFilter({ products, categories }: Props) {
         if (!a.badge && b.badge) return 1;
         return 0;
     }
-  });
+  }), [filtered, sortBy]);
 
-  const handleCategoryClick = (catId: string) => {
+  const handleCategoryClick = useCallback((catId: string) => {
     setSelectedCategory(catId);
     setSelectedSubcategory('todos');
-  };
+  }, []);
 
-  const getProductUrl = (product: ProductSlim) => `/productos/${slugify(product.title)}`;
+  const getProductUrl = useCallback((product: ProductSlim) => `/productos/${slugify(product.title)}`, []);
 
-  const handleAddToQuote = (e: Event, product: ProductSlim) => {
+  const handleAddToQuote = useCallback((e: Event, product: ProductSlim) => {
     e.stopPropagation();
     e.preventDefault();
     if (product.hasVariants) {
@@ -138,9 +138,9 @@ export default function ProductFilter({ products, categories }: Props) {
     }
     addItem({ sku: product.sku, title: product.title, category: product.category, quantity: 1, image: product.image });
     showToast(`${product.title} agregado a la cotización`, 'success');
-  };
+  }, [getProductUrl]);
 
-  const getCartCount = (sku: string) => cartSkuMap.get(sku) || 0;
+  const getCartCount = useCallback((sku: string) => cartSkuMap.get(sku) || 0, [cartSkuMap]);
 
   // Scroll reveal for dynamically rendered product cards
   const gridRef = useRef<HTMLDivElement>(null);

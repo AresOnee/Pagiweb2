@@ -120,8 +120,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   <Footer />
 
-  <Toast client:idle />
-  <DarkModeToggle client:idle />
+  <Toast client:visible />
+  <DarkModeToggle client:visible />
   <InstallPrompt />
 
   <!-- Scroll to Top Button -->
