@@ -30,6 +30,7 @@ export default function ProductFilter({ products, categories }: Props) {
   const [searchText, setSearchText] = useState('');
   const [inputValue, setInputValue] = useState('');
   const [sortBy, setSortBy] = useState<SortOption>('default');
+  const [mounted, setMounted] = useState(false);
   const cartSkuMap = useStore($cartSkuMap);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout>>();
@@ -39,6 +40,9 @@ export default function ProductFilter({ products, categories }: Props) {
     clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(() => setSearchText(value), 200);
   };
+
+  // Mark component as mounted (client-side only) to enable hover overlays
+  useEffect(() => setMounted(true), []);
 
   // Read initial category from URL on mount
   useEffect(() => {
@@ -323,7 +327,7 @@ export default function ProductFilter({ products, categories }: Props) {
                       {product.imageCount}
                     </span>
                   )}
-                  {product.specsPreview && product.specsPreview.length > 0 && (
+                  {mounted && product.specsPreview && product.specsPreview.length > 0 && (
                     <div class={styles['product-quick-view']}>
                       <ul class={styles['quick-view-specs']}>
                         {product.specsPreview.slice(0, 6).map(([label, value]) => (
