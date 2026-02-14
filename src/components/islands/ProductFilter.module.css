@@ -431,23 +431,6 @@
   animation: none;
 }
 
-/* Image count badge */
-.image-count-badge {
-  position: absolute;
-  bottom: var(--spacing-2);
-  right: var(--spacing-2);
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  padding: 2px 6px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-size: 11px;
-  font-weight: var(--font-weight-medium);
-  border-radius: var(--radius-sm);
-  z-index: 2;
-}
-
 .product-footer {
   display: flex;
   align-items: center;

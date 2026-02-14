@@ -320,7 +320,6 @@ const productSlug = slugify(product.title);
                 badge={rp.badge}
                 inStock={rp.inStock}
                 delay={(i % 4) * 100}
-                imageCount={(rp.image ? 1 : 0) + (rp.images?.length ?? 0)}
                 hasVariants={(rp.variants?.length ?? 0) > 0}
               />
             ))}
@@ -344,7 +343,6 @@ const productSlug = slugify(product.title);
                 badge={cp.badge}
                 inStock={cp.inStock}
                 delay={(i % 4) * 100}
-                imageCount={(cp.image ? 1 : 0) + (cp.images?.length ?? 0)}
                 hasVariants={(cp.variants?.length ?? 0) > 0}
               />
             ))}

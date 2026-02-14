@@ -20,7 +20,6 @@ const products: ProductSlim[] = allProducts.map(p => ({
   badge: p.data.badge,
   subcategories: p.data.subcategories,
   hasVariants: (p.data.variants?.length ?? 0) > 0,
-  imageCount: (p.data.image ? 1 : 0) + (p.data.images?.length ?? 0),
 }));
 
 const categories = categoriesData as Category[];
