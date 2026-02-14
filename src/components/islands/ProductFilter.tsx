@@ -182,7 +182,7 @@ export default function ProductFilter({ products, categories }: Props) {
         }
       });
     });
-  }, [sorted.length, selectedCategory, searchText]);
+  }, [sorted.length, selectedCategory, selectedSubcategory, searchText]);
 
   return (
     <div>
