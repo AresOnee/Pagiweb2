@@ -320,7 +320,6 @@ const productSlug = slugify(product.title);
                 badge={rp.badge}
                 inStock={rp.inStock}
                 delay={(i % 4) * 100}
-                specsPreview={Object.entries(rp.specs).slice(0, 6) as [string, string][]}
                 imageCount={(rp.image ? 1 : 0) + (rp.images?.length ?? 0)}
                 hasVariants={(rp.variants?.length ?? 0) > 0}
               />
@@ -345,7 +344,6 @@ const productSlug = slugify(product.title);
                 badge={cp.badge}
                 inStock={cp.inStock}
                 delay={(i % 4) * 100}
-                specsPreview={Object.entries(cp.specs).slice(0, 6) as [string, string][]}
                 imageCount={(cp.image ? 1 : 0) + (cp.images?.length ?? 0)}
                 hasVariants={(cp.variants?.length ?? 0) > 0}
               />
