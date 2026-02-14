@@ -4,11 +4,11 @@
 Sitio web de catalogo para **GelChile**, empresa chilena con **mas de 20 anos de experiencia** especializada en **sistemas de puesta a tierra y proteccion electrica**. Permite a los clientes explorar productos, ver especificaciones tecnicas y solicitar cotizaciones.
 
 ## Estado Actual
-- **Sitio Astro funcional** — Fases 0-8 completadas, build exitoso (71 paginas)
+- **Sitio Astro funcional** — Fases 0-8 completadas + optimizaciones Lighthouse, build exitoso (63 paginas)
 - **Pendiente:** Deploy a Cloudflare Pages (Fase 9) + configurar API keys
-- **Branch de desarrollo:** `claude/gelchile-catalog-website-PB6wG`
-- **Build:** `npm install && npm run build` — 0 errores, 58 productos validados por Zod
-- **Lighthouse Performance:** ~91 en dev server (limitado por falta de compresion gzip en dev)
+- **Branch de desarrollo:** `claude/lighthouse-optimization-9VK3k`
+- **Build:** `npm install && npm run build` — 0 errores, 56 productos validados por Zod
+- **Lighthouse Performance:** Optimizado (prefetch hover, aspect-ratio, hydration mejorada)
 
 ## Stack Tecnico
 
@@ -54,21 +54,20 @@ src/
 │   ├── FAQ.astro                 # Acordeon de preguntas frecuentes
 │   ├── ObfuscatedEmail.astro     # Email ofuscado anti-spam
 │   ├── InstallPrompt.astro       # Banner PWA de instalacion
-│   └── islands/                  # 12 Preact islands (client:load/client:visible)
+│   └── islands/                  # 11 Preact islands (client:load/client:visible)
 │       ├── ProductFilter.tsx     # Busqueda + filtro + ordenamiento + Cmd+K
-│       ├── ProductModal.tsx      # Modal de detalle con lazy-loaded ImageGallery
 │       ├── ImageGallery.tsx      # Galeria de imagenes con lightbox
-│       ├── VariantSelector.tsx   # Selector de variantes de producto
+│       ├── VariantSelector.tsx   # Selector de variantes (con agrupacion)
 │       ├── QuoteItems.tsx        # Lista de items en cotizacion
 │       ├── QuoteForm.tsx         # Formulario cotizacion (Web3Forms + Turnstile)
 │       ├── CartCount.tsx         # Contador del carrito en header
 │       ├── AddToQuoteBtn.tsx     # Boton agregar a cotizacion
 │       ├── DarkModeToggle.tsx    # Toggle modo oscuro
-│       ├── MobileMenu.tsx        # Menu hamburguesa movil
+│       ├── RecentlyViewed.tsx    # Productos visitados recientemente (ultimos 8)
 │       ├── Toast.tsx             # Notificaciones toast
 │       ├── TurnstileWidget.tsx   # Widget Cloudflare Turnstile
-│       └── *.module.css          # 8 CSS Modules con dark mode
-├── content/products/             # 58 archivos JSON validados por Zod
+│       └── *.module.css          # 7 CSS Modules con dark mode
+├── content/products/             # 56 archivos JSON validados por Zod
 ├── data/
 │   ├── categories.json           # 9 categorias con slugs e iconos
 │   └── site-config.ts            # Config centralizada (contacto, API keys, storage keys)
@@ -79,14 +78,16 @@ src/
 │   ├── cotizacion.astro          # Carrito y formulario
 │   ├── cotizacion-enviada.astro  # Pagina de exito post-envio
 │   ├── faq.astro                 # 10 preguntas frecuentes
+│   ├── 404.astro                 # Pagina de error personalizada
 │   └── productos/
 │       ├── index.astro           # Catalogo con filtros
-│       └── [slug].astro          # Detalle de producto (64 paginas generadas)
+│       └── [slug].astro          # Detalle de producto (URLs SEO-friendly basadas en titulo)
 ├── stores/                       # nanostores con persistencia localStorage
 │   ├── cart.ts                   # $cart atom, $cartCount computed, addItem/removeItem/clearCart
 │   ├── theme.ts                  # $theme atom, toggleTheme, initTheme
 │   ├── toast.ts                  # showToast (success/error/info)
-│   └── ui.ts                     # $selectedProduct, $mobileMenuOpen
+│   ├── ui.ts                     # $selectedProduct, $mobileMenuOpen
+│   └── recentlyViewed.ts        # Ultimos 8 productos visitados (localStorage)
 ├── styles/
 │   ├── global.css                # Variables CSS (:root), reset, tipografia, botones
 │   ├── dark-mode.css             # [data-theme="dark"] overrides globales
@@ -94,7 +95,7 @@ src/
 └── types/index.ts                # CategorySlug, CategoryName, Product, CartItem, etc.
 ```
 
-## Productos (58 en 9 categorias)
+## Productos (56 en 9 categorias)
 
 | Categoria | Slug | Qty | SKUs |
 |-----------|------|-----|------|
@@ -105,7 +106,7 @@ src/
 | Pararrayos y Proteccion | `pararrayos` | 1 | PAR-001 |
 | Soldadura Exotermica | `soldadura-exotermica` | 14 | CEX-001–009, PAR-002–004, HRE-001–002 |
 | Moldes de Grafito | `moldes-grafito` | 14 | MOL-B, MOL-C, MOL-E, MOL-G, MOL-H, MOL-L, MOL-N, MOL-P, MOL-R, MOL-S, MOL-T, MOL-V, MOL-W, MOL-X |
-| Accesorios | `accesorios` | 9 | CAM-001, TAB-001/002, BTT-001–003, CPP-001, PPB-001, TDC-001 |
+| Accesorios | `accesorios` | 7 | CAM-001, TAB-001/002, BTT-001, CPP-001, PPB-001, TDC-001 |
 | Servicios | `servicios` | 2 | SRV-001, SRV-002 |
 
 ### Estructura JSON por producto
@@ -139,7 +140,7 @@ src/
 | `src/layouts/MainLayout.astro` | Layout principal (SEO, OG tags, JSON-LD, PWA, AOS) |
 | `src/components/islands/QuoteForm.tsx` | Formulario con Web3Forms + Turnstile |
 | `src/components/islands/ProductFilter.tsx` | Filtros, busqueda y grid de productos |
-| `src/components/islands/ProductModal.tsx` | Modal de detalle con lazy-loaded ImageGallery |
+| `src/stores/recentlyViewed.ts` | Productos visitados recientemente (ultimos 8) |
 
 ## Pendiente para Produccion (Fase 9)
 
@@ -165,14 +166,17 @@ src/
 
 - **Dark mode:** `:global([data-theme="dark"])` en CSS Modules. Theme persiste en `localStorage` key `gelchile_theme`
 - **Carrito:** Persiste en `localStorage` key `gelchile_cart`. Max 99 unidades por item
-- **Performance:** ProductCard y ProductFilter usan `will-change: transform`, `contain: layout style paint`, transitions especificas (no `transition: all`)
-- **Lazy-load:** ImageGallery se carga via `import()` dinamico en ProductModal (no en bundle inicial). Cache a nivel de modulo evita re-imports
+- **Performance:** ProductCard y ProductFilter usan `will-change: transform`, `contain: layout style paint`, transitions especificas (no `transition: all`). Prefetch strategy `hover` para navegacion rapida. Aspect-ratio CSS en imagenes
+- **Lazy-load:** ImageGallery se carga via `import()` dinamico. Cache a nivel de modulo evita re-imports
 - **AOS:** Implementacion custom sin libreria. `translate3d()` para GPU. 0.4s transitions
-- **Imagenes:** Thumbnails max 300px, calidad 80 webp. Galeria/detail a 800px max. 215 archivos en `public/assets/img/products/`
+- **Imagenes:** Thumbnails max 300px, calidad 80 webp. Galeria/detail a 800px max. 198 archivos en `public/assets/img/products/`
 - **Img sizing:** ProductCard y ProductFilter incluyen atributo `sizes` responsive para evitar descargas innecesarias
-- **SEO:** JSON-LD LocalBusiness, Open Graph, Twitter Cards, sitemap.xml auto-generado
-- **PWA:** manifest.json, service worker registration, install prompt
+- **SEO:** JSON-LD LocalBusiness, Open Graph, Twitter Cards, sitemap.xml auto-generado. URLs SEO-friendly basadas en titulo del producto
+- **PWA:** manifest.webmanifest, service worker con cache-busting automatico en build, install prompt
 - **Formulario:** Web3Forms endpoint + Cloudflare Turnstile anti-spam. Envia a ventas@gelchile.cl
+- **Recently Viewed:** Ultimos 8 productos visitados, persistidos en `localStorage` key `gelchile_recently_viewed`
+- **404:** Pagina de error personalizada con SVG y enlace al catalogo
+- **Scroll memory:** Recuerda posicion de scroll al volver al catalogo desde detalle de producto
 
 ## Servicios de Terceros
 
@@ -191,8 +195,9 @@ Los archivos en la raiz (`index.html`, `productos.html`, `cotizacion.html`, `nos
 ## Comandos
 
 ```bash
-npm run dev       # Servidor de desarrollo (localhost:4321)
-npm run build     # Build estatico a dist/ (71 paginas)
-npm run preview   # Preview del build
-npx astro sync    # Regenerar tipos de Content Collections
+npm run dev              # Servidor de desarrollo (localhost:4321)
+npm run build            # Build estatico a dist/ (63 paginas) + cache-bust SW
+npm run preview          # Preview del build
+npm run optimize-images  # Optimizar imagenes con script Node
+npx astro sync           # Regenerar tipos de Content Collections
 ```
