@@ -1,5 +1,6 @@
 ---
 import AddToQuoteBtn from './islands/AddToQuoteBtn.tsx';
+import { slugify } from '../utils/slugify';
 
 interface Props {
   sku: string;
@@ -14,7 +15,7 @@ interface Props {
 }
 
 const { sku, title, category, categorySlug, description, image, badge, inStock, delay } = Astro.props;
-const productUrl = `/productos/${sku.toLowerCase()}`;
+const productUrl = `/productos/${slugify(title)}`;
 ---
 
 <article class="product-card" data-aos="fade-up" data-aos-delay={delay ? String(delay) : undefined}>

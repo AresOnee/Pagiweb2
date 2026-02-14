@@ -6,11 +6,12 @@ import VariantSelector from '../../components/islands/VariantSelector.tsx';
 import ImageGallery from '../../components/islands/ImageGallery.tsx';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '../../data/site-config';
+import { slugify } from '../../utils/slugify';
 
 export async function getStaticPaths() {
   const products = await getCollection('products');
   return products.map(product => ({
-    params: { slug: product.data.sku.toLowerCase() },
+    params: { slug: slugify(product.data.title) },
     props: { product: product.data },
   }));
 }
@@ -31,7 +32,7 @@ const allImages = [
     "name": product.title,
     "description": product.description,
     "sku": product.sku,
-    "url": `${siteConfig.url}/productos/${product.sku.toLowerCase()}`,
+    "url": `${siteConfig.url}/productos/${slugify(product.title)}`,
     "image": allImages.length > 0 ? allImages.map(img => `${siteConfig.url}${img}`) : undefined,
     "brand": {
       "@type": "Brand",
@@ -40,7 +41,7 @@ const allImages = [
     "category": product.category,
     "offers": {
       "@type": "Offer",
-      "url": `${siteConfig.url}/productos/${product.sku.toLowerCase()}`,
+      "url": `${siteConfig.url}/productos/${slugify(product.title)}`,
       "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       "priceCurrency": "CLP",
       "price": "0",
