@@ -8,7 +8,7 @@ import type { ProductSlim, Category } from '../../types';
 
 const allProducts = await getCollection('products');
 
-// Map to slim data for island serialization (excludes specs, features, images, variants)
+// Map to slim data for island serialization (includes spec preview for cards)
 const products: ProductSlim[] = allProducts.map(p => ({
   sku: p.data.sku,
   title: p.data.title,
@@ -20,6 +20,8 @@ const products: ProductSlim[] = allProducts.map(p => ({
   badge: p.data.badge,
   subcategories: p.data.subcategories,
   hasVariants: (p.data.variants?.length ?? 0) > 0,
+  specsPreview: Object.entries(p.data.specs).slice(0, 6) as [string, string][],
+  imageCount: (p.data.image ? 1 : 0) + (p.data.images?.length ?? 0),
 }));
 
 const categories = categoriesData as Category[];

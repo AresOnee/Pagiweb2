@@ -16,6 +16,7 @@ export const siteConfig = {
   storage: {
     cartKey: 'gelchile_cart',
     themeKey: 'gelchile_theme',
+    recentlyViewedKey: 'gelchile_recently_viewed',
   },
   ui: {
     toastDuration: 3000,
