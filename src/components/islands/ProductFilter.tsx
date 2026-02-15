@@ -311,14 +311,14 @@ export default function ProductFilter({ products, categories }: Props) {
               <a
                 key={product.sku}
                 href={getProductUrl(product)}
-                class={styles['product-card']}
+                class="product-card"
                 data-aos="fade-up"
                 data-aos-delay={index % 3 > 0 ? String((index % 3) * 75) : undefined}
                 data-astro-prefetch="hover"
               >
-                <div class={styles['product-image']}>
+                <div class="product-image">
                   {product.badge && (
-                    <span class={`${styles['product-badge']} ${product.badge === 'Popular' ? styles['badge-popular'] : product.badge === 'Pro' ? styles['badge-pro'] : ''}`}>{product.badge}</span>
+                    <span class={`product-badge ${product.badge === 'Popular' ? 'badge-popular' : product.badge === 'Pro' ? 'badge-pro' : ''}`}>{product.badge}</span>
                   )}
                   {product.image ? (
                     <img src={product.image} alt={product.title} loading={index < 4 ? "eager" : "lazy"} fetchpriority={index < 4 ? "high" : undefined} decoding="async" width="300" height="200" sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 768px) calc(50vw - 24px), (max-width: 1024px) calc(33.33vw - 24px), 280px" />
@@ -326,11 +326,11 @@ export default function ProductFilter({ products, categories }: Props) {
                     <span dangerouslySetInnerHTML={{ __html: getCategoryPlaceholderSvg(product.categorySlug) }} />
                   )}
                 </div>
-                <div class={styles['product-content']}>
-                  <div class={styles['product-meta-row']}>
-                    <span class={styles['product-category']}>{product.category}</span>
+                <div class="product-content">
+                  <div class="product-meta-row">
+                    <span class="product-category">{product.category}</span>
                     {product.hasVariants && (
-                      <span class={styles['variant-indicator']}>
+                      <span class="variant-indicator">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="11" height="11" aria-hidden="true">
                           <rect x="3" y="3" width="7" height="7" rx="1" />
                           <rect x="14" y="3" width="7" height="7" rx="1" />
@@ -342,25 +342,25 @@ export default function ProductFilter({ products, categories }: Props) {
                     )}
                   </div>
                   {(applicationTags[product.categorySlug] || []).length > 0 && (
-                    <div class={styles['application-tags']}>
+                    <div class="application-tags">
                       {(applicationTags[product.categorySlug] || []).map((tag) => (
-                        <span key={tag} class={styles['app-tag']}>{tag}</span>
+                        <span key={tag} class="app-tag">{tag}</span>
                       ))}
                     </div>
                   )}
-                  <h3 class={styles['product-title']}>{product.title}</h3>
-                  <p class={styles['product-description']}>{product.description}</p>
-                  <div class={styles['product-sku-row']}>
-                    <span class={styles['product-sku']}>SKU: {product.sku}</span>
-                    <span class={`${styles['card-stock']} ${!product.inStock ? styles['out-stock'] : ''}`}>
-                      <span class={styles['stock-dot']}></span>
+                  <h3 class="product-title">{product.title}</h3>
+                  <p class="product-description">{product.description}</p>
+                  <div class="product-sku-row">
+                    <span class="product-sku">SKU: {product.sku}</span>
+                    <span class={`card-stock ${!product.inStock ? 'out-stock' : ''}`}>
+                      <span class="stock-dot"></span>
                       {product.inStock ? 'En Stock' : 'Sin Stock'}
                     </span>
                   </div>
                 </div>
-                <div class={styles['product-footer']}>
+                <div class="product-footer">
                   <button
-                    class={`${styles['btn-add-quote']} ${count > 0 ? styles.added : ''}`}
+                    class={`btn-add-quote ${count > 0 ? 'added' : ''}`}
                     onClick={(e) => handleAddToQuote(e, product)}
                     aria-label={count > 0 ? `Agregado ${product.title} (${count})` : `Cotizar ${product.title}`}
                   >

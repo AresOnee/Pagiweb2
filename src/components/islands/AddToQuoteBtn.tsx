@@ -10,28 +10,6 @@ interface Props {
   inStock?: boolean;
 }
 
-const btnStyle: Record<string, string> = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  gap: 'var(--spacing-2)',
-  width: '100%',
-  padding: 'var(--spacing-3) var(--spacing-6)',
-  background: 'linear-gradient(135deg, #C45000 0%, #E86100 100%)',
-  color: 'var(--color-white)',
-  borderRadius: 'var(--radius-lg)',
-  fontSize: 'var(--font-size-base)',
-  fontWeight: 'var(--font-weight-semibold)',
-  border: 'none',
-  cursor: 'pointer',
-  transition: 'background 300ms ease, transform 300ms ease, box-shadow 300ms ease',
-};
-
-const btnAddedStyle: Record<string, string> = {
-  ...btnStyle,
-  background: 'var(--color-success)',
-};
-
 /** Add-to-quote button. Mount with client:visible on ProductCard. */
 export default function AddToQuoteBtn({ sku, title, category, image, inStock = true }: Props) {
   const cart = useStore($cart);
@@ -48,7 +26,7 @@ export default function AddToQuoteBtn({ sku, title, category, image, inStock = t
   if (!inStock) {
     return (
       <button
-        style={{ ...btnStyle, background: 'var(--color-gray-400)', cursor: 'not-allowed', opacity: '0.7' }}
+        class="btn-add-quote no-stock"
         disabled
         aria-label={`${title} sin stock`}
       >
@@ -63,7 +41,7 @@ export default function AddToQuoteBtn({ sku, title, category, image, inStock = t
 
   return (
     <button
-      style={existing ? btnAddedStyle : btnStyle}
+      class={`btn-add-quote ${existing ? 'added' : ''}`}
       onClick={handleClick}
       aria-label={existing ? `Agregado ${title} (${existing.quantity})` : `Cotizar ${title}`}
     >
