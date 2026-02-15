@@ -2,14 +2,14 @@
  * Gel Chile — Content Collections Configuration
  * Astro 5 Content Layer API with Zod validation.
  *
- * Validates all 38 product JSON files in src/content/products/.
+ * Validates all 56 product JSON files in src/content/products/.
  * Replaces the old schemas/product.schema.js (demo data).
  */
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 /**
- * The 8 product category slugs used for URL routing.
+ * The 9 product category slugs used for URL routing.
  * Update this tuple when adding a new category.
  */
 const categorySlugs = [
@@ -25,7 +25,7 @@ const categorySlugs = [
 ] as const;
 
 /**
- * The 7 display names for product categories.
+ * The 9 display names for product categories.
  * Must stay in sync with categorySlugs.
  */
 const categoryNames = [

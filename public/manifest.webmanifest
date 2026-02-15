@@ -1,6 +1,6 @@
 {
-  "name": "Gel Chile - Sistemas de Puesta a Tierra",
-  "short_name": "Gel Chile",
+  "name": "GelChile - Sistemas de Puesta a Tierra",
+  "short_name": "GelChile",
   "description": "Sistemas de Puesta a Tierra y Protección Eléctrica. Electrodos electromagnéticos, barras químicas, aditivos y más.",
   "start_url": "/",
   "display": "standalone",
@@ -9,7 +9,10 @@
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "es-CL",
-  "categories": ["business", "shopping"],
+  "categories": [
+    "business",
+    "shopping"
+  ],
   "icons": [
     {
       "src": "/icon-192.svg",
@@ -31,14 +34,24 @@
       "short_name": "Productos",
       "description": "Explorar catálogo de productos",
       "url": "/productos",
-      "icons": [{ "src": "/icon-192.svg", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/icon-192.svg",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Cotización",
       "short_name": "Cotizar",
       "description": "Ver mi cotización",
       "url": "/cotizacion",
-      "icons": [{ "src": "/icon-192.svg", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/icon-192.svg",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }
