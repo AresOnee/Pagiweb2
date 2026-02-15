@@ -34,6 +34,12 @@
     "Cantidad por caja": "20 cartuchos"
   },
   "image": "/assets/img/products/cex-001.webp",
+  "images": [
+    "/assets/img/products/cex-001-alt.webp",
+    "/assets/img/products/cex-001-alt2.webp",
+    "/assets/img/products/cex-001-caja.webp",
+    "/assets/img/products/cex-001-caja2.webp"
+  ],
   "inStock": true,
   "badge": null
 }

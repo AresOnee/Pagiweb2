@@ -1,0 +1,43 @@
+{
+  "sku": "CEX-010",
+  "title": "Carga Exotérmica ESTWELD CAP-32",
+  "category": "Soldadura Exotérmica",
+  "categorySlug": "soldadura-exotermica",
+  "description": "Pack de cargas exotérmicas ESTWELD modelo E20A, presentación CAP-32 para soldadura por termofusión. Caja con 20 cartuchos individuales de polvo aluminotérmico (tapa roja), polvo de ignición (tapa negra), disco metálico y accesorios. Genera temperaturas de aproximadamente 2.500°C para uniones permanentes de conductores de cobre en sistemas de puesta a tierra. Certificación UL, CE, ISO 9001.",
+  "features": [
+    "Temperatura de reacción de aproximadamente 2.500°C",
+    "Unión metalúrgica permanente cobre-cobre de baja resistividad",
+    "Alta capacidad de carga de corriente, igual al conductor",
+    "Resistente a corriente de falla repetitiva sin degradación",
+    "Fuerte capacidad anticorrosión por acoplamiento de cobre",
+    "No requiere fuente de energía externa ni operador profesional",
+    "Composición: óxido de cobre, cobre y aluminio",
+    "Incluye polvo de ignición y disco metálico en cada cartucho",
+    "Compatible con moldes de grafito estándar",
+    "20 cartuchos por caja",
+    "Carga más pequeña de la línea ESTWELD",
+    "Certificación UL, CE, ISO 9001, ISO 14001, RoHS",
+    "Marca ESTWELD"
+  ],
+  "specs": {
+    "Modelo": "E20A — CAP-32",
+    "Marca": "ESTWELD",
+    "Tipo": "Polvo aluminotérmico para soldadura exotérmica",
+    "Composición": "Óxido de cobre, cobre, aluminio",
+    "Método": "Soldadura por termofusión (Cadweld)",
+    "Temperatura de reacción": "Aproximadamente 2.500°C",
+    "Material de unión": "Cobre molecular",
+    "Empaque": "Botella de plástico",
+    "Certificación": "ISO 9001, ISO 14001, ISO 45001, UL, CE, RoHS",
+    "Aplicación": "Sistemas de puesta a tierra",
+    "Compatibilidad": "Moldes de grafito estándar",
+    "Peso por cartucho": "32 g",
+    "Cantidad por caja": "20 cartuchos"
+  },
+  "image": "/assets/img/products/cex-010.webp",
+  "images": [
+    "/assets/img/products/cex-010-alt.webp"
+  ],
+  "inStock": true,
+  "badge": null
+}

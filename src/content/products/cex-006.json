@@ -32,6 +32,10 @@
     "Peso por cartucho": "200 g"
   },
   "image": "/assets/img/products/cex-006.webp",
+  "images": [
+    "/assets/img/products/cex-006-alt.webp",
+    "/assets/img/products/cex-006-caja.webp"
+  ],
   "inStock": true,
   "badge": null
 }

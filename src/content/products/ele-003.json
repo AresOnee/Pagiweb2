@@ -27,7 +27,8 @@
   },
   "image": "/assets/img/products/electrode-he-100-product.webp",
   "images": [
-    "/assets/img/products/electrode-he-100-detail.webp"
+    "/assets/img/products/electrode-he-100-detail.webp",
+    "/assets/img/products/electrode-he-100-alt.webp"
   ],
   "inStock": true,
   "badge": null

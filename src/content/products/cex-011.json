@@ -1,0 +1,42 @@
+{
+  "sku": "CEX-011",
+  "title": "Carga Exotérmica Electro Material C-115",
+  "category": "Soldadura Exotérmica",
+  "categorySlug": "soldadura-exotermica",
+  "description": "Pack de cargas exotérmicas Electro Material C-115 para soldadura por termofusión. Caja con 10 cartuchos de 115g de polvo aluminotérmico, polvo de ignición y disco metálico. Fabricado por KLK Electro Materiales (España). Composición: óxido de cobre, cobre, estaño y fluoruro de calcio. Certificación UL Listed. Alternativa de calidad para uniones permanentes de conductores de cobre.",
+  "features": [
+    "Polvo aluminotérmico de 115g por cartucho",
+    "Incluye polvo de ignición en cada envase",
+    "Disco metálico incluido",
+    "Temperatura de reacción de aproximadamente 2.500°C",
+    "Unión metalúrgica permanente cobre-cobre",
+    "Composición: óxido de dicobre 24-75%, cobre, estaño, fluoruro de calcio",
+    "Sólido granular gris claro, inodoro",
+    "Compatible con moldes de grafito estándar",
+    "No requiere fuente de energía externa",
+    "10 cartuchos por caja",
+    "Certificación UL Listed",
+    "Fabricante: KLK Electro Materiales (España)",
+    "Marca Electro Material"
+  ],
+  "specs": {
+    "Modelo": "C-115",
+    "Marca": "Electro Material",
+    "Fabricante": "KLK Electro Materiales, S.L.U. (Gijón, España)",
+    "Peso por cartucho": "115 g (aluminotérmico)",
+    "Composición": "Óxido de dicobre 24-75%, cobre 2.5-25%, estaño 2.5-10%, fluoruro de calcio 2.5-10%",
+    "Aspecto": "Sólido granular gris claro, inodoro",
+    "Tipo": "Polvo aluminotérmico para soldadura exotérmica",
+    "Método": "Soldadura por termofusión",
+    "Temperatura de reacción": "Aproximadamente 2.500°C",
+    "Número ONU": "UN3077 — Sustancia sólida peligrosa para el medio ambiente",
+    "Certificación": "UL Listed",
+    "Normativa Chile": "D.S.594/00, D.S.148/03, NCH 382/2017, NCH 2190/2019",
+    "Cantidad por caja": "10 cartuchos",
+    "Aplicación": "Sistemas de puesta a tierra",
+    "Compatibilidad": "Moldes de grafito estándar"
+  },
+  "image": "/assets/img/products/cex-011.webp",
+  "inStock": true,
+  "badge": null
+}

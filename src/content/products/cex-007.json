@@ -34,6 +34,10 @@
     "Cantidad por caja": "10 cartuchos"
   },
   "image": "/assets/img/products/cex-007.webp",
+  "images": [
+    "/assets/img/products/cex-007-alt.webp",
+    "/assets/img/products/cex-007-caja.webp"
+  ],
   "inStock": true,
   "badge": null
 }

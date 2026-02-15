@@ -21,8 +21,11 @@
   },
   "image": "/assets/img/products/mas-003.webp",
   "images": [
+    "/assets/img/products/mas-004.webp",
     "/assets/img/products/mas-001.webp",
-    "/assets/img/products/mas-002.webp"
+    "/assets/img/products/mas-002.webp",
+    "/assets/img/products/mas-005.webp",
+    "/assets/img/products/mas-006.webp"
   ],
   "inStock": true,
   "badge": null

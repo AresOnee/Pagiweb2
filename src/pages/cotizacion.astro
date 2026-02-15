@@ -25,10 +25,10 @@ import { siteConfig } from '../data/site-config';
     <div class="container">
       <div class="quote-layout">
         <div class="quote-items-column">
-          <QuoteItems client:load />
+          <QuoteItems client:only="preact" />
         </div>
         <div class="quote-form-column">
-          <QuoteForm client:load />
+          <QuoteForm client:only="preact" />
         </div>
       </div>
 

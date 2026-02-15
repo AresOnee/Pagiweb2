@@ -37,6 +37,9 @@
     "Compatibilidad": "Moldes de grafito estándar"
   },
   "image": "/assets/img/products/cex-008.webp",
+  "images": [
+    "/assets/img/products/cex-008-alt.webp"
+  ],
   "inStock": true,
   "badge": null
 }

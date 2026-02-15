@@ -29,7 +29,9 @@
   "image": "/assets/img/products/ele-006-pack.webp",
   "images": [
     "/assets/img/products/electrode-he-700-product.webp",
-    "/assets/img/products/electrode-he-700-detail.webp"
+    "/assets/img/products/electrode-he-700-detail.webp",
+    "/assets/img/products/electrode-he-700-alt.webp",
+    "/assets/img/products/ele-006-pack2.webp"
   ],
   "inStock": true,
   "badge": null
