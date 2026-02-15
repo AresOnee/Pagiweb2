@@ -10,22 +10,24 @@ interface Props {
   inStock?: boolean;
 }
 
-const btnStyle = {
+const btnStyle: Record<string, string> = {
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'center',
   gap: 'var(--spacing-2)',
-  padding: 'var(--spacing-2) var(--spacing-4)',
-  background: 'var(--color-accent-dark)',
+  width: '100%',
+  padding: 'var(--spacing-3) var(--spacing-6)',
+  background: 'linear-gradient(135deg, #C45000 0%, #E86100 100%)',
   color: 'var(--color-white)',
-  borderRadius: 'var(--radius-md)',
-  fontSize: 'var(--font-size-sm)',
+  borderRadius: 'var(--radius-lg)',
+  fontSize: 'var(--font-size-base)',
   fontWeight: 'var(--font-weight-semibold)',
   border: 'none',
   cursor: 'pointer',
-  transition: 'background 300ms ease, transform 300ms ease',
+  transition: 'background 300ms ease, transform 300ms ease, box-shadow 300ms ease',
 };
 
-const btnAddedStyle = {
+const btnAddedStyle: Record<string, string> = {
   ...btnStyle,
   background: 'var(--color-success)',
 };
@@ -63,7 +65,7 @@ export default function AddToQuoteBtn({ sku, title, category, image, inStock = t
     <button
       style={existing ? btnAddedStyle : btnStyle}
       onClick={handleClick}
-      aria-label={existing ? `${title} en cotización` : `Agregar ${title} a cotización`}
+      aria-label={existing ? `Agregado ${title} (${existing.quantity})` : `Cotizar ${title}`}
     >
       {existing ? (
         <>

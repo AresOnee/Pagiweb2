@@ -25,7 +25,7 @@ const tags = applicationTags[categorySlug] || [];
 <article class="product-card" data-aos="fade-up" data-aos-delay={delay ? String(delay) : undefined}>
   <a href={productUrl} class="product-link">
     <div class="product-image">
-      {badge && <span class="product-badge">{badge}</span>}
+      {badge && <span class:list={['product-badge', { 'badge-popular': badge === 'Popular', 'badge-pro': badge === 'Pro' }]}>{badge}</span>}
       {image ? (
         <img src={image} alt={title} loading="lazy" decoding="async" width="300" height="200" sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 768px) calc(50vw - 24px), (max-width: 1024px) calc(33.33vw - 24px), 280px" />
       ) : (
@@ -93,21 +93,25 @@ const tags = applicationTags[categorySlug] || [];
 
   .product-image {
     position: relative;
-    height: 200px;
+    height: 220px;
     aspect-ratio: 3/2;
-    background: linear-gradient(90deg, var(--color-gray-100) 25%, var(--color-gray-50) 50%, var(--color-gray-100) 75%);
-    background-size: 200% 100%;
-    animation: skeleton-loading 1.5s ease-in-out infinite;
+    background: linear-gradient(135deg, rgba(0, 82, 204, 0.04) 0%, rgba(0, 82, 204, 0.01) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: var(--spacing-4);
   }
 
   .product-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .product-card:hover .product-image img {
+    transform: scale(1.08);
   }
 
   .product-image :global(svg) {
@@ -129,10 +133,19 @@ const tags = applicationTags[categorySlug] || [];
     text-transform: uppercase;
     letter-spacing: 0.5px;
     z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .badge-popular {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8C38 100%);
+  }
+
+  .badge-pro {
+    background: linear-gradient(135deg, #0052CC 0%, #2684FF 100%);
   }
 
   .product-content {
-    padding: var(--spacing-5);
+    padding: var(--spacing-5) var(--spacing-6);
   }
 
   /* Meta row: category + variant indicator */
@@ -245,34 +258,37 @@ const tags = applicationTags[categorySlug] || [];
   .product-footer {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding: 0 var(--spacing-5) var(--spacing-5);
+    justify-content: stretch;
+    padding: 0 var(--spacing-6) var(--spacing-6);
     padding-top: var(--spacing-4);
     border-top: 1px solid var(--color-gray-100);
-    margin: 0 var(--spacing-5);
+    margin: 0 var(--spacing-6);
     padding-left: 0;
     padding-right: 0;
-    margin-bottom: var(--spacing-5);
+    margin-bottom: var(--spacing-6);
   }
 
   .btn-add-quote {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: var(--spacing-2);
-    padding: var(--spacing-2) var(--spacing-4);
-    background: var(--color-accent);
+    width: 100%;
+    padding: var(--spacing-3) var(--spacing-4);
+    background: linear-gradient(135deg, #C45000 0%, #E86100 100%);
     color: var(--color-white);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
     border: none;
     cursor: pointer;
-    transition: background var(--transition-base), transform var(--transition-base);
+    transition: background var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
   }
 
   .btn-add-quote:hover {
-    background: var(--color-accent-dark);
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #A34400 0%, #C45000 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(196, 80, 0, 0.3);
   }
 
   .btn-add-quote svg {
@@ -286,8 +302,7 @@ const tags = applicationTags[categorySlug] || [];
   }
 
   :global([data-theme="dark"]) .product-image {
-    background: linear-gradient(90deg, #334155 25%, #1e293b 50%, #334155 75%);
-    background-size: 200% 100%;
+    background: linear-gradient(135deg, rgba(76, 154, 255, 0.06) 0%, rgba(30, 41, 59, 0.8) 100%);
   }
 
   :global([data-theme="dark"]) .product-category {
@@ -326,7 +341,7 @@ const tags = applicationTags[categorySlug] || [];
   }
 
   :global([data-theme="dark"]) .product-sku {
-    color: #64748b;
+    color: #94a3b8;
   }
 
   :global([data-theme="dark"]) .app-tag {
@@ -343,6 +358,6 @@ const tags = applicationTags[categorySlug] || [];
   }
 
   :global([data-theme="dark"]) .card-stock.out-stock {
-    color: #64748b;
+    color: #94a3b8;
   }
 </style>
