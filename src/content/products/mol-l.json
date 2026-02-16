@@ -6,7 +6,7 @@
   "description": "Familia de moldes de grafito tipo L para conexiones exotérmicas de cable a componentes de cobre. Incluye cable a zapata horizontal (LA), cable horizontal a bus (LJ) y cable vertical a bus (LQ). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-    "3 tipos de molde: LA, LJ, LQ",
+    "4 tipos de molde: LA, LE, LJ, LQ",
     "Para conexiones cable a zapata y cable a bus de cobre",
     "Cables compatibles: N°4 a 500 MCM",
     "Reutilizable para múltiples soldaduras",
@@ -14,11 +14,11 @@
   ],
   "specs": {
     "Código Cadweld": "L",
-    "Tipos Incluidos": "LA, LJ, LQ",
+    "Tipos Incluidos": "LA, LE, LJ, LQ",
     "Material": "Grafito de alta densidad",
     "Temperatura de Operación": "Superior a 2.500°C"
   },
-  "image": "/assets/img/products/mol-031-01.webp",
+  "image": "/assets/img/products/mol-l-la.webp",
   "inStock": true,
   "badge": null,
   "subcategories": [
@@ -204,6 +204,25 @@
       "id": "lqj-jh4l",
       "label": "Cable 750 MCM",
       "group": "LQJ — Bus 1/2\"x2\""
+    },
+    {
+      "id": "le-std",
+      "label": "Consultar",
+      "group": "LE — Consultar"
     }
-  ]
+  ],
+  "images": [
+    "/assets/img/products/mol-l-le.webp",
+    "/assets/img/products/mol-l-lj.webp",
+    "/assets/img/products/mol-l-lq.webp"
+  ],
+  "imageMap": {
+    "LAC": 0,
+    "LAD": 0,
+    "LE": 1,
+    "LJC": 2,
+    "LJD": 2,
+    "LQE": 3,
+    "LQJ": 3
+  }
 }

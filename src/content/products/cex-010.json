@@ -34,9 +34,9 @@
     "Peso por cartucho": "32 g",
     "Cantidad por caja": "20 cartuchos"
   },
-  "image": "/assets/img/products/cex-010.webp",
+  "image": "/assets/img/products/cex-010-alt.webp",
   "images": [
-    "/assets/img/products/cex-010-alt.webp"
+    "/assets/img/products/cex-010.webp"
   ],
   "inStock": true,
   "badge": null

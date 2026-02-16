@@ -1,14 +1,17 @@
 import { useState, useEffect, useRef, useCallback } from 'preact/hooks';
+import { useStore } from '@nanostores/preact';
 import { createPortal } from 'preact/compat';
+import { $activeVariantGroup } from '../../stores/ui';
 import styles from './ImageGallery.module.css';
 
 interface Props {
   images: string[];
   alt: string;
   badge?: string | null;
+  imageMap?: Record<string, number>;
 }
 
-export default function ImageGallery({ images, alt, badge }: Props) {
+export default function ImageGallery({ images, alt, badge, imageMap }: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -20,6 +23,16 @@ export default function ImageGallery({ images, alt, badge }: Props) {
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
   const hasMultiple = images.length > 1;
+
+  // --- Auto-navigate when variant group changes ---
+  const variantGroup = useStore($activeVariantGroup);
+  useEffect(() => {
+    if (!imageMap || !variantGroup) return;
+    const idx = imageMap[variantGroup];
+    if (idx !== undefined && idx >= 0 && idx < images.length) {
+      setActiveIndex(idx);
+    }
+  }, [variantGroup, imageMap, images.length]);
 
   // --- Hover zoom (throttled with rAF) ---
   const rafRef = useRef(0);

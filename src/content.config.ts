@@ -67,6 +67,7 @@ const products = defineCollection({
       label: z.string(),
       group: z.string().optional(),
     })).optional(),
+    imageMap: z.record(z.string(), z.number()).optional(),
   }),
 });
 

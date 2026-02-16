@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 import categoriesData from '../../data/categories.json';
 import type { ProductSlim, Category } from '../../types';
 
-const allProducts = await getCollection('products');
+const allProducts = (await getCollection('products')).filter(p => p.data.categorySlug !== 'servicios');
 
 // Map to slim data for island serialization
 const products: ProductSlim[] = allProducts.map(p => ({
@@ -22,7 +22,7 @@ const products: ProductSlim[] = allProducts.map(p => ({
   hasVariants: (p.data.variants?.length ?? 0) > 0,
 }));
 
-const categories = categoriesData as Category[];
+const categories = (categoriesData as Category[]).filter(c => c.id !== 'servicios');
 ---
 
 <MainLayout title="Productos — GelChile" description="Catálogo completo de productos para sistemas de puesta a tierra y protección eléctrica">

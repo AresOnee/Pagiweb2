@@ -34,7 +34,14 @@
     "/assets/img/products/mol-017-09.webp",
     "/assets/img/products/mol-018-03.webp",
     "/assets/img/products/mol-019-03.webp",
-    "/assets/img/products/mol-020-02.webp"
+    "/assets/img/products/mol-020-02.webp",
+    "/assets/img/products/mol-v-vv.webp",
+    "/assets/img/products/mol-v-vg.webp",
+    "/assets/img/products/mol-v-vs.webp",
+    "/assets/img/products/mol-v-vb.webp",
+    "/assets/img/products/mol-v-vf.webp",
+    "/assets/img/products/mol-v-vt.webp",
+    "/assets/img/products/mol-v-vn.webp"
   ],
   "inStock": true,
   "badge": null,
@@ -113,6 +120,11 @@
       "group": "VGC"
     },
     {
+      "id": "vg-250",
+      "label": "Cable 250 MCM",
+      "group": "VGC"
+    },
+    {
       "id": "vs-4",
       "label": "Cable N°4",
       "group": "VSC"
@@ -145,6 +157,31 @@
     {
       "id": "vs-4o",
       "label": "Cable N°4/0",
+      "group": "VSC"
+    },
+    {
+      "id": "vs-250",
+      "label": "Cable 250 MCM",
+      "group": "VSC"
+    },
+    {
+      "id": "vs-300",
+      "label": "Cable 300 MCM",
+      "group": "VSC"
+    },
+    {
+      "id": "vs-350",
+      "label": "Cable 350 MCM",
+      "group": "VSC"
+    },
+    {
+      "id": "vs-500",
+      "label": "Cable 500 MCM",
+      "group": "VSC"
+    },
+    {
+      "id": "vs-750",
+      "label": "Cable 750 MCM",
       "group": "VSC"
     },
     {
@@ -183,6 +220,26 @@
       "group": "VBC"
     },
     {
+      "id": "vb-250",
+      "label": "Cable 250 MCM",
+      "group": "VBC"
+    },
+    {
+      "id": "vb-300",
+      "label": "Cable 300 MCM",
+      "group": "VBC"
+    },
+    {
+      "id": "vb-350",
+      "label": "Cable 350 MCM",
+      "group": "VBC"
+    },
+    {
+      "id": "vb-500",
+      "label": "Cable 500 MCM",
+      "group": "VBC"
+    },
+    {
       "id": "vf-4",
       "label": "Cable N°4",
       "group": "VFC"
@@ -205,6 +262,36 @@
     {
       "id": "vf-2o",
       "label": "Cable N°2/0",
+      "group": "VFC"
+    },
+    {
+      "id": "vf-3o",
+      "label": "Cable N°3/0",
+      "group": "VFC"
+    },
+    {
+      "id": "vf-4o",
+      "label": "Cable N°4/0",
+      "group": "VFC"
+    },
+    {
+      "id": "vf-250",
+      "label": "Cable 250 MCM",
+      "group": "VFC"
+    },
+    {
+      "id": "vf-300",
+      "label": "Cable 300 MCM",
+      "group": "VFC"
+    },
+    {
+      "id": "vf-350",
+      "label": "Cable 350 MCM",
+      "group": "VFC"
+    },
+    {
+      "id": "vf-500",
+      "label": "Cable 500 MCM",
       "group": "VFC"
     },
     {
@@ -240,6 +327,11 @@
     {
       "id": "vt-4o",
       "label": "Cable N°4/0",
+      "group": "VTC"
+    },
+    {
+      "id": "vt-250",
+      "label": "Cable 250 MCM",
       "group": "VTC"
     },
     {
@@ -307,5 +399,15 @@
       "label": "Cable 500 MCM",
       "group": "VNC"
     }
-  ]
+  ],
+  "imageMap": {
+    "VVC": 15,
+    "VVR": 15,
+    "VGC": 16,
+    "VSC": 17,
+    "VBC": 18,
+    "VFC": 19,
+    "VTC": 20,
+    "VNC": 21
+  }
 }

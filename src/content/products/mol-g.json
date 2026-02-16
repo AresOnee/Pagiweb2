@@ -22,16 +22,15 @@
   "image": "/assets/img/products/mol-001-07.webp",
   "images": [
     "/assets/img/products/mol-001-02.webp",
-    "/assets/img/products/mol-001-04.webp",
-    "/assets/img/products/mol-001-06.webp",
-    "/assets/img/products/mol-001-08.webp",
     "/assets/img/products/mol-001-09.webp",
     "/assets/img/products/mol-002-05.webp",
-    "/assets/img/products/mol-002-09.webp",
-    "/assets/img/products/mol-002-10.webp",
     "/assets/img/products/mol-002-11.webp",
     "/assets/img/products/mol-003-03.webp",
-    "/assets/img/products/mol-003-05.webp"
+    "/assets/img/products/mol-g-gr.webp",
+    "/assets/img/products/mol-g-gt.webp",
+    "/assets/img/products/mol-g-gy.webp",
+    "/assets/img/products/mol-g-gl.webp",
+    "/assets/img/products/mol-g-gb.webp"
   ],
   "inStock": true,
   "badge": null,
@@ -96,6 +95,11 @@
       "group": "GRC — Barra 1/2\""
     },
     {
+      "id": "grc-12-250",
+      "label": "Cable 250 MCM",
+      "group": "GRC — Barra 1/2\""
+    },
+    {
       "id": "grc-58-2",
       "label": "Cable N°2",
       "group": "GRC — Barra 5/8\""
@@ -126,6 +130,26 @@
       "group": "GRC — Barra 5/8\""
     },
     {
+      "id": "grc-58-250",
+      "label": "Cable 250 MCM",
+      "group": "GRC — Barra 5/8\""
+    },
+    {
+      "id": "grc-58-300",
+      "label": "Cable 300 MCM",
+      "group": "GRC — Barra 5/8\""
+    },
+    {
+      "id": "grc-58-350",
+      "label": "Cable 350 MCM",
+      "group": "GRC — Barra 5/8\""
+    },
+    {
+      "id": "grc-58-500",
+      "label": "Cable 500 MCM",
+      "group": "GRC — Barra 5/8\""
+    },
+    {
       "id": "grc-34-2",
       "label": "Cable N°2",
       "group": "GRC — Barra 3/4\""
@@ -153,6 +177,26 @@
     {
       "id": "grc-34-4o",
       "label": "Cable N°4/0",
+      "group": "GRC — Barra 3/4\""
+    },
+    {
+      "id": "grc-34-250",
+      "label": "Cable 250 MCM",
+      "group": "GRC — Barra 3/4\""
+    },
+    {
+      "id": "grc-34-300",
+      "label": "Cable 300 MCM",
+      "group": "GRC — Barra 3/4\""
+    },
+    {
+      "id": "grc-34-350",
+      "label": "Cable 350 MCM",
+      "group": "GRC — Barra 3/4\""
+    },
+    {
+      "id": "grc-34-500",
+      "label": "Cable 500 MCM",
       "group": "GRC — Barra 3/4\""
     },
     {
@@ -201,6 +245,16 @@
       "group": "GTC — Barra 1/2\""
     },
     {
+      "id": "gt-12-250",
+      "label": "Cable 250 MCM",
+      "group": "GTC — Barra 1/2\""
+    },
+    {
+      "id": "gt-12-300",
+      "label": "Cable 300 MCM",
+      "group": "GTC — Barra 1/2\""
+    },
+    {
       "id": "gt-58-6",
       "label": "Cable N°6",
       "group": "GTC — Barra 5/8\""
@@ -238,6 +292,26 @@
     {
       "id": "gt-58-4o",
       "label": "Cable N°4/0",
+      "group": "GTC — Barra 5/8\""
+    },
+    {
+      "id": "gt-58-250",
+      "label": "Cable 250 MCM",
+      "group": "GTC — Barra 5/8\""
+    },
+    {
+      "id": "gt-58-300",
+      "label": "Cable 300 MCM",
+      "group": "GTC — Barra 5/8\""
+    },
+    {
+      "id": "gt-58-350",
+      "label": "Cable 350 MCM",
+      "group": "GTC — Barra 5/8\""
+    },
+    {
+      "id": "gt-58-500",
+      "label": "Cable 500 MCM",
       "group": "GTC — Barra 5/8\""
     },
     {
@@ -281,6 +355,21 @@
       "group": "GTC — Barra 3/4\""
     },
     {
+      "id": "gt-34-300",
+      "label": "Cable 300 MCM",
+      "group": "GTC — Barra 3/4\""
+    },
+    {
+      "id": "gt-34-350",
+      "label": "Cable 350 MCM",
+      "group": "GTC — Barra 3/4\""
+    },
+    {
+      "id": "gt-34-500",
+      "label": "Cable 500 MCM",
+      "group": "GTC — Barra 3/4\""
+    },
+    {
       "id": "gy-12-1o",
       "label": "Cable N°1/0",
       "group": "GYE — Barra 1/2\""
@@ -298,6 +387,16 @@
     {
       "id": "gy-12-4o",
       "label": "Cable N°4/0",
+      "group": "GYE — Barra 1/2\""
+    },
+    {
+      "id": "gy-12-250",
+      "label": "Cable 250 MCM",
+      "group": "GYE — Barra 1/2\""
+    },
+    {
+      "id": "gy-12-300",
+      "label": "Cable 300 MCM",
       "group": "GYE — Barra 1/2\""
     },
     {
@@ -321,6 +420,26 @@
       "group": "GYE — Barra 5/8\""
     },
     {
+      "id": "gy-58-250",
+      "label": "Cable 250 MCM",
+      "group": "GYE — Barra 5/8\""
+    },
+    {
+      "id": "gy-58-300",
+      "label": "Cable 300 MCM",
+      "group": "GYE — Barra 5/8\""
+    },
+    {
+      "id": "gy-58-350",
+      "label": "Cable 350 MCM",
+      "group": "GYE — Barra 5/8\""
+    },
+    {
+      "id": "gy-58-500",
+      "label": "Cable 500 MCM",
+      "group": "GYE — Barra 5/8\""
+    },
+    {
       "id": "gy-34-1o",
       "label": "Cable N°1/0",
       "group": "GYE — Barra 3/4\""
@@ -338,6 +457,26 @@
     {
       "id": "gy-34-4o",
       "label": "Cable N°4/0",
+      "group": "GYE — Barra 3/4\""
+    },
+    {
+      "id": "gy-34-250",
+      "label": "Cable 250 MCM",
+      "group": "GYE — Barra 3/4\""
+    },
+    {
+      "id": "gy-34-300",
+      "label": "Cable 300 MCM",
+      "group": "GYE — Barra 3/4\""
+    },
+    {
+      "id": "gy-34-350",
+      "label": "Cable 350 MCM",
+      "group": "GYE — Barra 3/4\""
+    },
+    {
+      "id": "gy-34-500",
+      "label": "Cable 500 MCM",
       "group": "GYE — Barra 3/4\""
     },
     {
@@ -420,5 +559,14 @@
       "label": "Cable 500 MCM",
       "group": "GLC — Zapata 1/4\"x1-1/2\""
     }
-  ]
+  ],
+  "imageMap": {
+    "GRT": 6,
+    "GRC": 6,
+    "GRP": 6,
+    "GTC": 7,
+    "GYE": 8,
+    "GLC": 9,
+    "GB": 10
+  }
 }

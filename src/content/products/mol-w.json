@@ -19,7 +19,7 @@
     "Material": "Grafito de alta densidad",
     "Temperatura de Operación": "Superior a 2.500°C"
   },
-  "image": "/assets/img/products/mol-048-01.webp",
+  "image": "/assets/img/products/mol-w-w.webp",
   "inStock": true,
   "badge": null,
   "subcategories": [
@@ -56,5 +56,6 @@
       "label": "Cable N°4/0 Campo",
       "group": "W — Armado en Campo"
     }
-  ]
+  ],
+  "images": []
 }

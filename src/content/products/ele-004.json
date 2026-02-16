@@ -26,10 +26,7 @@
     "Normativa": "IEEE puesta a tierra",
     "Unidad": "Kit completo"
   },
-  "image": "/assets/img/products/electrode-he-200-product.webp",
-  "images": [
-    "/assets/img/products/electrode-he-200-alt.webp"
-  ],
+  "image": "/assets/img/products/electrode-he-200-alt.webp",
   "inStock": true,
   "badge": null
 }

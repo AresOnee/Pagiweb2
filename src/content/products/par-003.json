@@ -17,8 +17,7 @@
   },
   "image": "/assets/img/products/chi-004.webp",
   "images": [
-    "/assets/img/products/chi-001.webp",
-    "/assets/img/products/par-003-alt.webp"
+    "/assets/img/products/chi-001.webp"
   ],
   "inStock": true,
   "badge": null

@@ -22,7 +22,9 @@
   "image": "/assets/img/products/mol-008-04.webp",
   "images": [
     "/assets/img/products/mol-008-03.webp",
-    "/assets/img/products/mol-008-06.webp"
+    "/assets/img/products/mol-008-06.webp",
+    "/assets/img/products/mol-t-ta.webp",
+    "/assets/img/products/mol-t-tp.webp"
   ],
   "inStock": true,
   "badge": null,
@@ -172,6 +174,36 @@
       "group": "Cable N°4/0"
     },
     {
+      "id": "ta-250-250",
+      "label": "Cable 250 MCM",
+      "group": "Cable 250 MCM"
+    },
+    {
+      "id": "ta-300-300",
+      "label": "Cable 300 MCM",
+      "group": "Cable 300 MCM"
+    },
+    {
+      "id": "ta-350-350",
+      "label": "Cable 350 MCM",
+      "group": "Cable 350 MCM"
+    },
+    {
+      "id": "ta-500-500",
+      "label": "Cable 500 MCM",
+      "group": "Cable 500 MCM"
+    },
+    {
+      "id": "ta-750-750",
+      "label": "Cable 750 MCM",
+      "group": "Cable 750 MCM"
+    },
+    {
+      "id": "ta-1000-1000",
+      "label": "Cable 1000 MCM",
+      "group": "Cable 1000 MCM"
+    },
+    {
       "id": "tpr-1l",
       "label": "Cable N°4",
       "group": "TP"
@@ -201,5 +233,21 @@
       "label": "Cable N°4/0",
       "group": "TP"
     }
-  ]
+  ],
+  "imageMap": {
+    "Cable N°4": 3,
+    "Cable N°2": 3,
+    "Cable N°1": 3,
+    "Cable N°1/0": 3,
+    "Cable N°2/0": 3,
+    "Cable N°3/0": 3,
+    "Cable N°4/0": 3,
+    "Cable 250 MCM": 3,
+    "Cable 300 MCM": 3,
+    "Cable 350 MCM": 3,
+    "Cable 500 MCM": 3,
+    "Cable 750 MCM": 3,
+    "Cable 1000 MCM": 3,
+    "TP": 4
+  }
 }

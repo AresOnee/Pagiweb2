@@ -38,8 +38,7 @@
   },
   "image": "/assets/img/products/cex-009.webp",
   "images": [
-    "/assets/img/products/cex-009-alt.webp",
-    "/assets/img/products/cex-009-alt2.webp"
+    "/assets/img/products/cex-009-alt.webp"
   ],
   "inStock": true,
   "badge": null

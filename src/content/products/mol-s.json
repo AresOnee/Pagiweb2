@@ -20,9 +20,9 @@
   },
   "image": "/assets/img/products/mol-006-04.webp",
   "images": [
-    "/assets/img/products/mol-006-03.webp",
-    "/assets/img/products/mol-006-05.webp",
-    "/assets/img/products/mol-006-06.webp"
+    "/assets/img/products/mol-006-06.webp",
+    "/assets/img/products/mol-s-ss.webp",
+    "/assets/img/products/mol-s-st.webp"
   ],
   "inStock": true,
   "badge": null,
@@ -72,6 +72,36 @@
       "group": "SSC"
     },
     {
+      "id": "ssc-250",
+      "label": "Cable 250 MCM",
+      "group": "SSC"
+    },
+    {
+      "id": "ssc-300",
+      "label": "Cable 300 MCM",
+      "group": "SSC"
+    },
+    {
+      "id": "ssd-350",
+      "label": "Cable 350 MCM",
+      "group": "SSD"
+    },
+    {
+      "id": "ssd-500",
+      "label": "Cable 500 MCM",
+      "group": "SSD"
+    },
+    {
+      "id": "ssd-750",
+      "label": "Cable 750 MCM",
+      "group": "SSD"
+    },
+    {
+      "id": "ssd-1000",
+      "label": "Cable 1000 MCM",
+      "group": "SSD"
+    },
+    {
       "id": "str-1l",
       "label": "Cable N°4",
       "group": "ST"
@@ -101,5 +131,11 @@
       "label": "Cable N°4/0",
       "group": "ST"
     }
-  ]
+  ],
+  "imageMap": {
+    "SST": 2,
+    "SSC": 2,
+    "SSD": 2,
+    "ST": 3
+  }
 }

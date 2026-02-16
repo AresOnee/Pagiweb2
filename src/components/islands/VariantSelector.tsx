@@ -1,7 +1,8 @@
-import { useState, useMemo } from 'preact/hooks';
+import { useState, useMemo, useEffect } from 'preact/hooks';
 import { useStore } from '@nanostores/preact';
 import { $cart, addItem } from '../../stores/cart';
 import { showToast } from '../../stores/toast';
+import { $activeVariantGroup } from '../../stores/ui';
 import styles from './VariantSelector.module.css';
 
 /* ---- Types ---- */
@@ -265,6 +266,9 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
   );
   const [selected, setSelected] = useState<Record<string, number>>({});
 
+  // Emit initial model to gallery on mount
+  useEffect(() => { $activeVariantGroup.set(models[0]?.code || ''); }, []);
+
   /* Derived data (memoized to avoid recalculating on every render) */
   const currentModel = useMemo(() => models.find(m => m.code === activeModel), [models, activeModel]);
   const availableBars = useMemo(() => hasBars ? currentModel?.bars : null, [hasBars, currentModel]);
@@ -280,6 +284,7 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
   /* Handlers */
   const handleModelChange = (code: string) => {
     setActiveModel(code);
+    $activeVariantGroup.set(code);
     if (hasBars) {
       const newModel = models.find(m => m.code === code);
       const bars = newModel?.bars || [];

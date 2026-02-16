@@ -33,13 +33,7 @@
   },
   "image": "/assets/img/products/cex-002.webp",
   "images": [
-    "/assets/img/products/cex-002-alt.webp",
-    "/assets/img/products/cex-002-alt2.webp",
-    "/assets/img/products/cex-002-alt3.webp",
-    "/assets/img/products/cex-002-alt4.webp",
-    "/assets/img/products/cex-002-alt5.webp",
-    "/assets/img/products/cex-002-caja.webp",
-    "/assets/img/products/cex-002-caja2.webp"
+    "/assets/img/products/cex-002-alt2.webp"
   ],
   "inStock": true,
   "badge": null

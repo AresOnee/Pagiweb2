@@ -6,7 +6,7 @@
   "description": "Familia de moldes de grafito para conexiones de bus de cobre. Incluye empalmes a tope (BA), conexiones en T (BQ) y conexiones a superficie vertical de acero (BW). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C. Compatible con cargas ESTWELD y Electro Material.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-    "3 tipos de molde: BA, BQ, BW",
+    "5 tipos de molde: BA, BB, BM, BQ, BW",
     "Para bus de cobre en empalmes, T y conexión a acero",
     "Reutilizable para múltiples soldaduras",
     "Compatible con cargas exotérmicas ESTWELD y Electro Material",
@@ -14,11 +14,11 @@
   ],
   "specs": {
     "Código Cadweld": "B",
-    "Tipos Incluidos": "BA, BQ, BW",
+    "Tipos Incluidos": "BA, BB, BM, BQ, BW",
     "Material": "Grafito de alta densidad",
     "Temperatura de Operación": "Superior a 2.500°C"
   },
-  "image": "/assets/img/products/mol-034-01.webp",
+  "image": "/assets/img/products/mol-b-ba.webp",
   "inStock": true,
   "badge": null,
   "subcategories": [
@@ -175,6 +175,30 @@
       "id": "bw-jh",
       "label": "Bus 1/2\"x2\"",
       "group": "BW"
+    },
+    {
+      "id": "bb-std",
+      "label": "Consultar",
+      "group": "BB"
+    },
+    {
+      "id": "bm-std",
+      "label": "Consultar",
+      "group": "BM"
     }
-  ]
+  ],
+  "images": [
+    "/assets/img/products/mol-b-bb.webp",
+    "/assets/img/products/mol-b-bm.webp",
+    "/assets/img/products/mol-b-bq.webp",
+    "/assets/img/products/mol-b-bw.webp"
+  ],
+  "imageMap": {
+    "BA": 0,
+    "BB": 1,
+    "BM": 2,
+    "BQC": 3,
+    "BQD": 3,
+    "BW": 4
+  }
 }

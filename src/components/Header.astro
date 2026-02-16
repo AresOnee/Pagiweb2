@@ -23,7 +23,7 @@ function isActive(href: string, current: string): boolean {
 <header class="header">
   <div class="container">
     <a href="/" class="logo">
-      <img src="/assets/img/gelchile-logo.webp" alt="GelChile" class="logo-img" width="250" height="63" fetchpriority="high" />
+      <img src="/assets/img/gelchile-logo.webp" alt="GelChile" class="logo-img" width="250" height="71" fetchpriority="high" />
     </a>
 
     <nav class="nav" aria-label="Navegacion principal">
@@ -118,7 +118,7 @@ function isActive(href: string, current: string): boolean {
   .logo-img {
     width: 250px;
     height: auto;
-    aspect-ratio: 250 / 63;
+    aspect-ratio: 250 / 71;
     object-fit: contain;
   }
 
@@ -277,12 +277,6 @@ function isActive(href: string, current: string): boolean {
     color: #ffffff;
   }
 
-  :global([data-theme="dark"]) .logo-img {
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: var(--radius-md);
-    padding: 4px;
-  }
-
   :global([data-theme="dark"]) .nav-link {
     color: #94a3b8;
   }
@@ -317,13 +311,6 @@ function isActive(href: string, current: string): boolean {
 
   :global([data-theme="dark"]) .mobile-menu-btn span {
     background: #94a3b8;
-  }
-
-  /* Dark mode — give logo a white pill bg so it looks clean on dark header */
-  :global([data-theme="dark"]) .logo-img {
-    background: #ffffff;
-    border-radius: 6px;
-    padding: 2px;
   }
 
   /* Responsive */

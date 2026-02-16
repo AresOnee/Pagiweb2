@@ -14,7 +14,7 @@ import { complementaryCategories } from '../../data/complementary-categories';
 import { getCategoryPlaceholderSvg } from '../../utils/category-placeholders';
 
 export async function getStaticPaths() {
-  const products = await getCollection('products');
+  const products = (await getCollection('products')).filter(p => p.data.categorySlug !== 'servicios');
   return products.map(product => {
     const sameCategory = products.filter(
       p => p.data.categorySlug === product.data.categorySlug && p.data.sku !== product.data.sku
@@ -141,7 +141,7 @@ function getSpecIcon(label: string): string {
         <!-- Image Column -->
         <div class="product-detail-image" data-aos="fade-right">
           {allImages.length > 0 ? (
-            <ImageGallery client:visible images={allImages} alt={product.title} badge={product.badge} />
+            <ImageGallery client:visible images={allImages} alt={product.title} badge={product.badge} imageMap={product.imageMap} />
           ) : (
             <>
               {product.badge && <span class="detail-badge">{product.badge}</span>}

@@ -30,10 +30,8 @@
   },
   "image": "/assets/img/products/ele-005-pack.webp",
   "images": [
-    "/assets/img/products/electrode-he-400-product.webp",
     "/assets/img/products/electrode-he-400-detail.webp",
-    "/assets/img/products/electrode-he-400-alt.webp",
-    "/assets/img/products/ele-005-pack2.webp"
+    "/assets/img/products/electrode-he-400-alt.webp"
   ],
   "inStock": true,
   "badge": "Popular"

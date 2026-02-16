@@ -6,7 +6,7 @@ import ProductCard from '../components/ProductCard.astro';
 import { getCollection } from 'astro:content';
 import categories from '../data/categories.json';
 
-const allProducts = await getCollection('products');
+const allProducts = (await getCollection('products')).filter(p => p.data.categorySlug !== 'servicios');
 
 // Featured: products with badge first, then fill to 6
 const withBadge = allProducts.filter(p => p.data.badge !== null);
@@ -15,7 +15,7 @@ const featured = withBadge.length >= 6
   : [...withBadge, ...allProducts.filter(p => !p.data.badge).slice(0, 6 - withBadge.length)];
 ---
 
-<MainLayout title="GelChile — Sistemas de Puesta a Tierra y Protección Eléctrica" preloadImage="/assets/img/gelchile-electrodo-grafito.webp">
+<MainLayout title="GelChile — Sistemas de Puesta a Tierra y Protección Eléctrica" preloadImage="/assets/img/gelchile-hero-logo.webp">
   <HeroSection />
 
   <!-- Trust Strip -->
@@ -43,7 +43,7 @@ const featured = withBadge.length >= 6
             </svg>
           </div>
           <div class="trust-text">
-            <strong>64</strong>
+            <strong>56</strong>
             <span>Productos en Catálogo</span>
           </div>
         </div>

@@ -1,0 +1,40 @@
+{
+  "sku": "CCD-001",
+  "title": "Cable de Cobre Desnudo",
+  "category": "Accesorios",
+  "categorySlug": "accesorios",
+  "description": "Cable de cobre desnudo trenzado para sistemas de puesta a tierra. Conductor de cobre electrolítico de alta pureza, flexible y resistente a la corrosión. Disponible en configuraciones de 7, 19, 37 y 61 hebras según calibre, cubriendo desde 8 AWG hasta 750 MCM para todo tipo de instalaciones.",
+  "features": [
+    "Cobre electrolítico de alta pureza y conductividad",
+    "4 configuraciones de hebras: 7, 19, 37 y 61 hilos",
+    "Disponible en calibres de 8 AWG a 750 MCM",
+    "Sin aislación — conductor desnudo para puesta a tierra",
+    "Compatible con soldadura exotérmica y conectores mecánicos",
+    "Cumple normas ASTM B8 para conductores de cobre desnudo"
+  ],
+  "specs": {
+    "Tipo": "Cable de cobre desnudo trenzado",
+    "Material": "Cobre electrolítico (Cu-ETP)",
+    "Configuraciones": "7, 19, 37 y 61 hebras",
+    "Rango de Calibres": "8 AWG a 750 MCM",
+    "Norma": "ASTM B8",
+    "Aplicación": "Sistemas de puesta a tierra, mallas, bajantes de pararrayo"
+  },
+  "image": "/assets/img/products/ccd-001.webp",
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "7h-awg-8", "label": "N°8 AWG (8,37 mm²)", "group": "7 Hebras" },
+    { "id": "7h-awg-6", "label": "N°6 AWG (13,3 mm²)", "group": "7 Hebras" },
+    { "id": "7h-awg-4", "label": "N°4 AWG (21,2 mm²)", "group": "7 Hebras" },
+    { "id": "19h-awg-2", "label": "N°2 AWG (33,6 mm²)", "group": "19 Hebras" },
+    { "id": "19h-awg-1-0", "label": "N°1/0 AWG (53,5 mm²)", "group": "19 Hebras" },
+    { "id": "19h-awg-2-0", "label": "N°2/0 AWG (67,4 mm²)", "group": "19 Hebras" },
+    { "id": "19h-awg-3-0", "label": "N°3/0 AWG (85,0 mm²)", "group": "19 Hebras" },
+    { "id": "19h-awg-4-0", "label": "N°4/0 AWG (107 mm²)", "group": "19 Hebras" },
+    { "id": "37h-mcm-250", "label": "250 MCM (127 mm²)", "group": "37 Hebras" },
+    { "id": "37h-mcm-350", "label": "350 MCM (177 mm²)", "group": "37 Hebras" },
+    { "id": "37h-mcm-500", "label": "500 MCM (253 mm²)", "group": "37 Hebras" },
+    { "id": "61h-mcm-750", "label": "750 MCM (380 mm²)", "group": "61 Hebras" }
+  ]
+}
