@@ -1,0 +1,40 @@
+{
+  "sku": "TPT-001",
+  "title": "Terminales o Platos para Tierra",
+  "category": "Accesorios",
+  "categorySlug": "accesorios",
+  "description": "Terminales o platos para tierra de aleación de cobre fundido, diseñados para embeber en construcciones de concreto. Ofrecen puntos de conexión convenientes y permanentes para el sistema de puesta a tierra de equipos, maquinaria y aterrizamiento estructural. La fundición en aleación de cobre garantiza capacidad de conducción igual a la del conductor o perno, sin aflojarse ni corroerse.",
+  "features": [
+    "Aleación de cobre fundido de alta conductividad",
+    "Se embeben en concreto antes del vaciado",
+    "Puntos de conexión permanentes para sistema de tierra",
+    "No se aflojan ni corroen",
+    "Capacidad de conducción igual al conductor o perno equivalente",
+    "5 modelos disponibles: B161-2Q, B161-3Q, B162-2Q, B164-2Q, B164-3Q",
+    "Compatible con conexiones CADWELD por soldadura exotérmica"
+  ],
+  "specs": {
+    "Tipo": "Terminal / Plato para Tierra (Ground Plate)",
+    "Material": "Aleación de cobre fundido",
+    "B161-2Q": "4 barrenos, rosca 3/8\"-16 UNC × 13 mm prof., perno equiv. 4/0 AWG (63,5 × 57 mm)",
+    "B161-3Q": "4 barrenos, rosca 3/8\"-16 UNC × 13 mm prof., perno equiv. 500 MCM (76 × 57 mm)",
+    "B162-2Q": "2 barrenos, rosca 1/2\"-13 UNC × 13 mm prof., perno equiv. 4/0 AWG (44,5 × 82,5 mm)",
+    "B164-2Q": "4 barrenos, rosca 1/2\"-13 UNC × 13 mm prof., perno equiv. 4/0 AWG (82,5 × 82,5 mm)",
+    "B164-3Q": "4 barrenos, rosca 1/2\"-13 UNC × 13 mm prof., perno equiv. 500 MCM (76 × 82,5 mm)",
+    "Instalación": "Embebido en concreto",
+    "Aplicación": "Aterrizamiento de equipos, maquinaria y estructuras"
+  },
+  "image": "/assets/img/products/tpt-001.webp",
+  "images": [
+    "/assets/img/products/tpt-001-02.webp"
+  ],
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "b161-2q", "label": "B161-2Q — 4 barr., 3/8\"-16, equiv. 4/0", "group": "4 Barrenos (3/8\")" },
+    { "id": "b161-3q", "label": "B161-3Q — 4 barr., 3/8\"-16, equiv. 500 MCM", "group": "4 Barrenos (3/8\")" },
+    { "id": "b162-2q", "label": "B162-2Q — 2 barr., 1/2\"-13, equiv. 4/0", "group": "2 Barrenos (1/2\")" },
+    { "id": "b164-2q", "label": "B164-2Q — 4 barr., 1/2\"-13, equiv. 4/0", "group": "4 Barrenos (1/2\")" },
+    { "id": "b164-3q", "label": "B164-3Q — 4 barr., 1/2\"-13, equiv. 500 MCM", "group": "4 Barrenos (1/2\")" }
+  ]
+}
