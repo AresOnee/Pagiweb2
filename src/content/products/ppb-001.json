@@ -21,11 +21,11 @@
     "TMG 180.1": "Cables de 8 a 2 AWG (10mm² - 35mm²)",
     "TMG 180.2": "Cables de 2 a 2/0 AWG (35mm² - 70mm²)",
     "TMG 180.3": "Cables de 2/0 a 4/0 AWG (70mm² - 95mm²)",
-    "GC 26": "Dos cables de 2 a 2/0 AWG (10mm² - 35mm²)",
+    "GC 26": "Dos cables de 2 a 2/0 AWG (33mm² - 67mm²)",
     "GC 29": "Dos cables de 2/0 a 4/0 AWG (70mm² - 95mm²)",
-    "GCM 26": "Dos cables a superficie plana, 2 a 2/0 AWG (10mm² - 35mm²)",
+    "GCM 26": "Dos cables a superficie plana, 2 a 2/0 AWG (33mm² - 67mm²)",
     "GCM 29": "Dos cables a superficie plana, 2/0 a 4/0 AWG (70mm² - 95mm²)",
-    "GB 26": "Un cable de 2 a 2/0 AWG (10mm² - 35mm²)",
+    "GB 26": "Un cable de 2 a 2/0 AWG (33mm² - 67mm²)",
     "GB 29": "Un cable de 2/0 a 4/0 AWG (70mm² - 95mm²)",
     "Total Variantes": "11 modelos (3 TMG + 2 GC + 2 GCM + 2 GB + 2 GCM superficie)"
   },
@@ -47,7 +47,7 @@
     },
     {
       "id": "gc-26",
-      "label": "GC 26 — Dos cables, 2-2/0 AWG (10-35mm²)"
+      "label": "GC 26 — Dos cables, 2-2/0 AWG (33-67mm²)"
     },
     {
       "id": "gc-29",
@@ -55,7 +55,7 @@
     },
     {
       "id": "gcm-26",
-      "label": "GCM 26 — Superficie plana, 2-2/0 AWG (10-35mm²)"
+      "label": "GCM 26 — Superficie plana, 2-2/0 AWG (33-67mm²)"
     },
     {
       "id": "gcm-29",
@@ -63,7 +63,7 @@
     },
     {
       "id": "gb-26",
-      "label": "GB 26 — Un cable, 2-2/0 AWG (10-35mm²)"
+      "label": "GB 26 — Un cable, 2-2/0 AWG (33-67mm²)"
     },
     {
       "id": "gb-29",

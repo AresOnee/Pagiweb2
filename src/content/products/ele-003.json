@@ -9,17 +9,15 @@
     "Dispositivo de filtración LCR de baja frecuencia",
     "Acoplador de impedancia capacidad 100A",
     "Gabinete de 300 x 250 x 150 mm",
-    "Incluye 3 sacos Power Gem (11,36 kg c/u)",
-    "Terminal de conexión de 1/2 pulgada",
-    "Tratamiento anticorrosivo",
-    "Mejora de suelo de 0,47%"
+    "Incluye 3 sacos Power Gem (11,36 kg total)",
+    "Tratamiento anticorrosivo"
   ],
   "specs": {
     "Modelo": "HE-100k",
     "Capacidad": "100 Amperios",
-    "Material Electrodo": "Cobre electrolítico",
+    "Material Electrodo": "Cobre electrolítico altamente conductivo",
     "Gabinete": "300 x 250 x 150 mm",
-    "Power Gem Incluido": "3 sacos de 11,36 kg",
+    "Power Gem Incluido": "11,36 kg total (3 sacos)",
     "Resistividad Diseño": "ρ = 30 Ω·m",
     "Factor Vertical (Fv)": "0,86",
     "Factor Horizontal (Fh)": "0,5",

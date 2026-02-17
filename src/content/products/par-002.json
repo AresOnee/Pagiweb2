@@ -5,7 +5,7 @@
   "categorySlug": "soldadura-exotermica",
   "description": "Pasta de sellado compuesta de material refractario aislante para evitar pérdidas de cobre fundido entre las paredes del molde de grafito y los conductores en el proceso de soldadura exotérmica. No requiere secado, mantiene su plasticidad original durante largo periodo de tiempo.",
   "features": [
-    "Material refractario aislante",
+    "Material de mica con propiedades refractarias",
     "Evita pérdidas de cobre fundido en soldadura exotérmica",
     "No requiere secado previo",
     "Mantiene plasticidad original por largo periodo",
@@ -14,7 +14,10 @@
   ],
   "specs": {
     "Tipo": "Pasta de sellado / Masilla",
-    "Material": "Refractario aislante",
+    "Material": "Mica",
+    "Longitud": "125 mm",
+    "Diámetro": "6 mm",
+    "Vida Útil": "24 meses",
     "Secado": "No requiere",
     "Uso": "Sellado de moldes de grafito en soldadura exotérmica",
     "Aplicación": "Manual, amasar alrededor del conductor de forma uniforme"

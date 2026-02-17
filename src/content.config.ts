@@ -69,6 +69,11 @@ const products = defineCollection({
       subtitle: z.string().optional(),
     })).optional(),
     imageMap: z.record(z.string(), z.number()).optional(),
+    techTable: z.object({
+      title: z.string(),
+      headers: z.array(z.string()),
+      rows: z.array(z.array(z.string())),
+    }).optional(),
   }),
 });
 

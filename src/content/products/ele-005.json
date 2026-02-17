@@ -13,12 +13,14 @@
     "Power Gem certificado LAPEM y laboratorio acreditado EMA",
     "Cumple norma CRETIB de no toxicidad",
     "Ideal para sites de cómputo y data centers",
-    "Pozo de 110 x 90 x 90 cm"
+    "Pozo de 110 x 90 x 90 cm",
+    "Tratamiento especial anticorrosivo",
+    "Borne de conexión de 1/2 pulgada"
   ],
   "specs": {
     "Modelo": "HE-400k",
     "Capacidad": "400 Amperios",
-    "Material Electrodo": "Cobre electrolítico",
+    "Material Electrodo": "Cobre electrolítico altamente conductivo",
     "Gabinete": "NEMA 4 — 20 x 30 x 15 cm",
     "Pozo": "110 x 90 x 90 cm",
     "Power Gem Incluido": "4 sacos de 11,36 kg",

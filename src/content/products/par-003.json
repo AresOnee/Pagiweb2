@@ -3,21 +3,21 @@
   "title": "Chispero para Soldadura Exotérmica",
   "category": "Soldadura Exotérmica",
   "categorySlug": "soldadura-exotermica",
-  "description": "Chispero o ignitor certificado para el proceso de soldadura exotérmica en sistemas de puesta a tierra. Herramienta indispensable para la ignición segura de cargas exotérmicas en moldes de grafito.",
+  "description": "Chispero o ignitor marca ROCKY para el proceso de soldadura exotérmica en sistemas de puesta a tierra. Herramienta indispensable para la ignición segura de cargas exotérmicas en moldes de grafito.",
   "features": [
-    "Certificado de calidad",
+    "Marca ROCKY — chispero de pedernal para ignición segura",
     "Diseñado para soldadura exotérmica",
     "Ignición segura de cargas exotérmicas",
     "Compatible con moldes de grafito estándar"
   ],
   "specs": {
-    "Tipo": "Chispero / Ignitor",
-    "Uso": "Ignición de soldadura exotérmica",
-    "Certificación": "Certificado de calidad"
+    "Tipo": "Chispero / Ignitor de pedernal",
+    "Marca": "ROCKY",
+    "Uso": "Ignición de soldadura exotérmica"
   },
   "image": "/assets/img/products/chi-004.webp",
   "images": [
-    "/assets/img/products/chi-001.webp"
+    "/assets/img/products/chi-003.webp"
   ],
   "inStock": true,
   "badge": null

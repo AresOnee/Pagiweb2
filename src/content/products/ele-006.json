@@ -12,12 +12,13 @@
     "Incluye 4 sacos Power Gem (11,36 kg c/u)",
     "Ideal para sites de cómputo y data centers",
     "Pozo de 110 x 90 x 90 cm",
-    "Tratamiento anticorrosivo"
+    "Tratamiento anticorrosivo",
+    "Borne de conexión de 1/2 pulgada"
   ],
   "specs": {
     "Modelo": "HE-700k",
     "Capacidad": "700 Amperios",
-    "Material Electrodo": "Cobre electrolítico",
+    "Material Electrodo": "Cobre electrolítico altamente conductivo",
     "Gabinete": "NEMA 4 — 20 x 30 x 12 cm",
     "Pozo": "110 x 90 x 90 cm",
     "Power Gem Incluido": "4 sacos de 11,36 kg",

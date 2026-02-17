@@ -20,7 +20,11 @@
     "Rango de Anchos": "1\" a 3\"",
     "Aplicación": "Mallas de puesta a tierra, salas eléctricas, subestaciones"
   },
-  "image": "/assets/img/products/flc-001.webp",
+  "image": "/assets/img/products/flc-001-02.webp",
+  "images": [
+    "/assets/img/products/flc-001-03.webp",
+    "/assets/img/products/flc-001-04.webp"
+  ],
   "inStock": true,
   "badge": null,
   "variants": [

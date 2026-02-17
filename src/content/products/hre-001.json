@@ -7,14 +7,13 @@
   "features": [
     "Paleta plana de acero para remoción eficiente de escoria",
     "Mango en forma de L para agarre ergonómico",
-    "Construcción robusta en acero galvanizado",
-    "Diseñada para uso con soldadura exotérmica (Cadweld)",
-    "Herramienta indispensable para instalaciones de puesta a tierra",
-    "Resistente al calor residual de la soldadura"
+    "Construcción robusta en acero",
+    "Diseñada para uso con soldadura exotérmica",
+    "Herramienta indispensable para instalaciones de puesta a tierra"
   ],
   "specs": {
     "Tipo": "Raspador de Escoria",
-    "Material": "Acero galvanizado",
+    "Material": "Acero",
     "Forma del Mango": "L (angular)",
     "Uso": "Eliminación de escoria post soldadura exotérmica",
     "Aplicación": "Sistemas de puesta a tierra y soldadura exotérmica"

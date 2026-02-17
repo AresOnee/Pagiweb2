@@ -11,13 +11,12 @@
     "Gabinete de 300 x 250 x 150 mm",
     "Máxima capacidad de la línea Hunter Energy",
     "Power Gem certificado, base orgánica",
-    "Tratamiento anticorrosivo",
-    "Terminal de conexión de 1/2 pulgada"
+    "Tratamiento anticorrosivo"
   ],
   "specs": {
     "Modelo": "HE-2500k",
     "Capacidad": "2500 Amperios",
-    "Material Electrodo": "Cobre electrolítico",
+    "Material Electrodo": "Cobre electrolítico altamente conductivo",
     "Gabinete": "300 x 250 x 150 mm",
     "Power Gem": "11,36 kg, base orgánica, certificado",
     "Resistividad Diseño": "ρ = 30 Ω·m",

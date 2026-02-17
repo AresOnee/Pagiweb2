@@ -3,20 +3,20 @@
   "title": "Tenaza Sujetadora para Moldes de Grafito",
   "category": "Soldadura Exotérmica",
   "categorySlug": "soldadura-exotermica",
-  "description": "Tenaza metálica de sujeción para moldes de grafito en soldadura exotérmica. Mecanismo de tijera con tornillo de ajuste que permite fijar ambas mitades del molde con presión uniforme durante el proceso de soldadura por termofusión. Mangos de vinilo para agarre seguro.",
+  "description": "Tenaza metálica de sujeción para moldes de grafito en soldadura exotérmica. Mecanismo de prensa tipo toggle con tornillo de ajuste que permite fijar ambas mitades del molde con presión uniforme durante el proceso de soldadura por termofusión. Mangos de vinilo para agarre seguro.",
   "features": [
-    "Mecanismo de tijera con tornillo de ajuste de presión",
-    "Mangos de vinilo aislantes para agarre seguro",
-    "Acero galvanizado resistente a la corrosión",
+    "Mecanismo tipo toggle (sobre-centro) con tornillo de ajuste de presión",
+    "Mangos de vinilo azul para agarre seguro",
+    "Acero resistente a la corrosión",
     "Sujeta ambas mitades del molde de grafito de forma uniforme",
     "Herramienta indispensable del kit de soldadura exotérmica",
     "Compatible con moldes de grafito GelChile y CADWELD"
   ],
   "specs": {
     "Tipo": "Tenaza sujetadora de moldes",
-    "Material": "Acero galvanizado",
-    "Mangos": "Vinilo aislante (azul)",
-    "Mecanismo": "Tijera con tornillo de ajuste",
+    "Material": "Acero",
+    "Mangos": "Vinilo (azul)",
+    "Mecanismo": "Toggle (sobre-centro) con tornillo de ajuste",
     "Uso": "Sujeción de moldes de grafito durante soldadura exotérmica",
     "Aplicación": "Sistemas de puesta a tierra y soldadura exotérmica"
   },
