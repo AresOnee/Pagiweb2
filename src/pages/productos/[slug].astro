@@ -961,6 +961,15 @@ function getSpecIcon(label: string): string {
     border-color: rgba(76, 154, 255, 0.2);
   }
 
+  :global([data-theme="dark"]) .detail-badge {
+    color: #ffffff;
+  }
+
+  :global([data-theme="dark"]) .detail-category {
+    background: rgba(96, 165, 250, 0.15);
+    color: #60a5fa;
+  }
+
   :global([data-theme="dark"]) .detail-stock {
     border-top-color: rgba(76, 154, 255, 0.2);
   }
@@ -1019,6 +1028,11 @@ function getSpecIcon(label: string): string {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 
+  :global([data-theme="dark"]) .stat-card-icon {
+    background: rgba(96, 165, 250, 0.15);
+    color: #60a5fa;
+  }
+
   :global([data-theme="dark"]) .stat-card-label {
     color: #60a5fa;
   }
@@ -1029,7 +1043,7 @@ function getSpecIcon(label: string): string {
 
   :global([data-theme="dark"]) .detail-app-tag {
     background: rgba(76, 154, 255, 0.1);
-    color: #94a3b8;
+    color: #b0bec5;
   }
 
   /* Trust Section */
@@ -1115,7 +1129,8 @@ function getSpecIcon(label: string): string {
   }
 
   :global([data-theme="dark"]) .trust-card-icon {
-    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.15) 0%, rgba(59, 130, 246, 0.25) 100%);
+    color: #60a5fa;
   }
 
   :global([data-theme="dark"]) .trust-card-text strong {
@@ -1123,7 +1138,7 @@ function getSpecIcon(label: string): string {
   }
 
   :global([data-theme="dark"]) .trust-card-text span {
-    color: #94a3b8;
+    color: #b0bec5;
   }
 
   :global([data-theme="dark"]) .related-title {

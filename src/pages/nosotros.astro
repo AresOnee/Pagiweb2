@@ -313,7 +313,7 @@ import { siteConfig } from '../data/site-config';
   }
 
   :global([data-theme="dark"]) .founder-description {
-    color: #94a3b8;
+    color: #cbd5e1;
   }
 
   /* About Section */
@@ -520,7 +520,7 @@ import { siteConfig } from '../data/site-config';
   }
 
   /* Dark Mode — variable inversion handles cards, text, borders automatically.
-     Only override already-dark elements (page-hero, CTA) and link contrast. */
+     Only override already-dark elements (page-hero, CTA) and link/icon contrast. */
   :global([data-theme="dark"]) .page-hero {
     background: linear-gradient(135deg, #0a1628 0%, var(--color-primary-dark) 100%);
   }
@@ -529,8 +529,30 @@ import { siteConfig } from '../data/site-config';
     color: #ffffff;
   }
 
-  :global([data-theme="dark"]) .page-hero-title {
-    color: #ffffff;
+  :global([data-theme="dark"]) .value-icon {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.12) 0%, rgba(96, 165, 250, 0.22) 100%);
+    color: #60a5fa;
+  }
+
+  :global([data-theme="dark"]) .value-card h3 {
+    color: #f1f5f9;
+  }
+
+  :global([data-theme="dark"]) .value-card p {
+    color: #b0bec5;
+  }
+
+  :global([data-theme="dark"]) .contact-icon {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.12) 0%, rgba(96, 165, 250, 0.22) 100%);
+    color: #60a5fa;
+  }
+
+  :global([data-theme="dark"]) .contact-card h3 {
+    color: #f1f5f9;
+  }
+
+  :global([data-theme="dark"]) .contact-card p {
+    color: #b0bec5;
   }
 
   :global([data-theme="dark"]) .contact-card a {
@@ -541,7 +563,7 @@ import { siteConfig } from '../data/site-config';
     background: linear-gradient(135deg, #0a1628 0%, #003D99 100%);
   }
 
-  :global([data-theme="dark"]) .cta-title {
+  :global([data-theme="dark"]) .founder-badge {
     color: #ffffff;
   }
 

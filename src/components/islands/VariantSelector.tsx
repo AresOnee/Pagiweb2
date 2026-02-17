@@ -12,7 +12,7 @@ interface Props {
   title: string;
   category: string;
   image: string | null;
-  variants: Array<{ id: string; label: string; group?: string }>;
+  variants: Array<{ id: string; label: string; group?: string; subtitle?: string }>;
   onAdd?: () => void;
 }
 
@@ -23,7 +23,7 @@ interface VariantState {
 
 type ConfigMode = 'flat' | 'three-step' | 'two-step-bar' | 'two-step-model';
 
-interface VariantItem { id: string; label: string; group: string; }
+interface VariantItem { id: string; label: string; group: string; subtitle?: string; }
 interface BarData { size: string; cables: VariantItem[]; }
 interface ModelData { code: string; bars?: BarData[]; cables?: VariantItem[]; }
 
@@ -73,13 +73,13 @@ function parseHierarchy(variants: Props['variants'], mode: ConfigMode): ModelDat
       const model = map.get(modelCode)!;
       let bar = model.bars!.find(b => b.size === barSize);
       if (!bar) { bar = { size: barSize, cables: [] }; model.bars!.push(bar); }
-      bar.cables.push({ id: v.id, label: v.label, group: g });
+      bar.cables.push({ id: v.id, label: v.label, group: g, subtitle: v.subtitle });
     }
   } else {
     for (const v of variants) {
       const code = v.group || '';
       if (!map.has(code)) map.set(code, { code, cables: [] });
-      map.get(code)!.cables!.push({ id: v.id, label: v.label, group: code });
+      map.get(code)!.cables!.push({ id: v.id, label: v.label, group: code, subtitle: v.subtitle });
     }
   }
 
@@ -190,6 +190,7 @@ function FlatSelector({ sku, title, category, image, variants, onAdd }: Props) {
         <input type="checkbox" class={styles.checkbox} checked={s.selected} onChange={() => toggleVariant(v.id)} />
         <span class={styles.label}>
           {v.label}
+          {v.subtitle && <span class={styles.labelSub}>{v.subtitle}</span>}
           {cartQty > 0 && <span class={styles.inCart}> (en cotización: {cartQty})</span>}
         </span>
         <div class={styles.qtyControls}>
@@ -515,6 +516,7 @@ function StepConfigurator({ sku, title, category, image, variants, onAdd, mode }
                   )}
                   <span class={styles.cableLabel}>
                     {cable.label}
+                    {cable.subtitle && <span class={styles.cableLabelSub}>{cable.subtitle}</span>}
                     {cartQty > 0 && (
                       <span class={styles.cableInCart}> (en cotizaci{'\u00F3'}n: {cartQty})</span>
                     )}

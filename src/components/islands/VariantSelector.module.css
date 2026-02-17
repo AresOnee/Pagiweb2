@@ -137,6 +137,15 @@
   font-weight: var(--font-weight-medium);
 }
 
+.labelSub {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+  font-weight: var(--font-weight-regular);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
 /* ---- Quantity controls (shared) ---- */
 
 .qtyControls {
@@ -550,6 +559,15 @@
   font-weight: var(--font-weight-medium);
 }
 
+.cableLabelSub {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+  font-weight: var(--font-weight-regular);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
 /* ---- CTA Area ---- */
 
 .ctaArea {
@@ -676,12 +694,12 @@
 
 /* Flat mode dark */
 
-:global([data-theme="dark"]) .modelLabel { color: var(--color-gray-400); }
+:global([data-theme="dark"]) .modelLabel { color: #b0bec5; }
 :global([data-theme="dark"]) .modelName { color: var(--color-primary-light); }
 :global([data-theme="dark"]) .modelSeparator { color: var(--color-gray-600); }
 
-:global([data-theme="dark"]) .selectorHeading { border-bottom-color: var(--color-gray-700); }
-:global([data-theme="dark"]) .headingText { color: var(--color-gray-300); }
+:global([data-theme="dark"]) .selectorHeading { border-bottom-color: #334155; }
+:global([data-theme="dark"]) .headingText { color: #b0bec5; }
 :global([data-theme="dark"]) .headingCount { color: var(--color-gray-500); }
 
 :global([data-theme="dark"]) .groupDivider {
@@ -695,15 +713,16 @@
   box-shadow: inset 3px 0 0 var(--color-primary-light);
 }
 
-:global([data-theme="dark"]) .label { color: var(--color-gray-200); }
+:global([data-theme="dark"]) .label { color: #e2e8f0; }
+:global([data-theme="dark"]) .labelSub { color: #94a3b8; }
 
-:global([data-theme="dark"]) .qtyControls { border-color: var(--color-gray-600); }
-:global([data-theme="dark"]) .qtyBtn { background: var(--color-gray-700); color: var(--color-gray-400); }
-:global([data-theme="dark"]) .qtyBtn:hover { background: var(--color-gray-600); color: #ffffff; }
-:global([data-theme="dark"]) .qtyInput { background: var(--color-gray-800); color: var(--color-gray-100); border-color: var(--color-gray-600); }
+:global([data-theme="dark"]) .qtyControls { border-color: #475569; }
+:global([data-theme="dark"]) .qtyBtn { background: #334155; color: #b0bec5; }
+:global([data-theme="dark"]) .qtyBtn:hover { background: #475569; color: #ffffff; }
+:global([data-theme="dark"]) .qtyInput { background: #1e293b; color: #f1f5f9; border-color: #475569; }
 
 :global([data-theme="dark"]) .addBtn { color: #ffffff; }
-:global([data-theme="dark"]) .addBtn:disabled { background: var(--color-gray-600); color: var(--color-gray-400); }
+:global([data-theme="dark"]) .addBtn:disabled { background: #475569; color: #94a3b8; }
 
 :global([data-theme="dark"]) .list { scrollbar-color: var(--color-gray-600) transparent; }
 :global([data-theme="dark"]) .list::-webkit-scrollbar-thumb { background: var(--color-gray-600); }
@@ -711,7 +730,7 @@
 
 /* Multi-step dark */
 
-:global([data-theme="dark"]) .configTitle { color: var(--color-gray-200); }
+:global([data-theme="dark"]) .configTitle { color: #e2e8f0; }
 :global([data-theme="dark"]) .configCount { color: var(--color-gray-500); }
 
 :global([data-theme="dark"]) .breadcrumbChip {
@@ -721,35 +740,35 @@
 :global([data-theme="dark"]) .breadcrumbArrow { color: var(--color-gray-600); }
 
 :global([data-theme="dark"]) .stepBadge { background: var(--color-primary-light); color: #ffffff; }
-:global([data-theme="dark"]) .stepLabel { color: var(--color-gray-300); }
+:global([data-theme="dark"]) .stepLabel { color: #b0bec5; }
 
 :global([data-theme="dark"]) .modelCard {
-  border-color: var(--color-gray-600);
-  background: var(--color-gray-800);
+  border-color: #475569;
+  background: #1e293b;
 }
 :global([data-theme="dark"]) .modelCard:hover { border-color: var(--color-primary-light); }
 :global([data-theme="dark"]) .modelCardActive {
   border-color: var(--color-primary-light);
   background: rgba(59, 130, 246, 0.12);
 }
-:global([data-theme="dark"]) .modelRadio { border-color: var(--color-gray-500); }
+:global([data-theme="dark"]) .modelRadio { border-color: #64748b; }
 :global([data-theme="dark"]) .modelCardActive .modelRadio { border-color: var(--color-primary-light); }
 :global([data-theme="dark"]) .modelRadioDot { background: var(--color-primary-light); }
-:global([data-theme="dark"]) .modelCardName { color: var(--color-gray-100); }
-:global([data-theme="dark"]) .modelCardSub { color: var(--color-gray-400); }
+:global([data-theme="dark"]) .modelCardName { color: #f1f5f9; }
+:global([data-theme="dark"]) .modelCardSub { color: #b0bec5; }
 
 :global([data-theme="dark"]) .modelStatic {
   background: rgba(59, 130, 246, 0.1);
   border-left-color: var(--color-primary-light);
 }
-:global([data-theme="dark"]) .modelStaticLabel { color: var(--color-gray-400); }
+:global([data-theme="dark"]) .modelStaticLabel { color: #b0bec5; }
 :global([data-theme="dark"]) .modelStaticName { color: var(--color-primary-light); }
 
-:global([data-theme="dark"]) .barContainer { background: var(--color-gray-800); }
+:global([data-theme="dark"]) .barContainer { background: #1e293b; }
 :global([data-theme="dark"]) .barPill {
-  border-color: var(--color-gray-600);
-  background: var(--color-gray-700);
-  color: var(--color-gray-300);
+  border-color: #475569;
+  background: #334155;
+  color: #b0bec5;
 }
 :global([data-theme="dark"]) .barPill:hover {
   border-color: var(--color-primary-light);
@@ -765,7 +784,7 @@
   border-color: var(--color-primary);
   color: #ffffff;
 }
-:global([data-theme="dark"]) .barDot { border-color: var(--color-gray-800); }
+:global([data-theme="dark"]) .barDot { border-color: #1e293b; }
 
 :global([data-theme="dark"]) .cableRow:hover { background: rgba(255, 255, 255, 0.04); }
 :global([data-theme="dark"]) .cableRowSelected {
@@ -775,24 +794,25 @@
 }
 :global([data-theme="dark"]) .cableRowSelected:hover { background: rgba(59, 130, 246, 0.14); }
 
-:global([data-theme="dark"]) .gaugeDot { background: var(--color-gray-700); }
+:global([data-theme="dark"]) .gaugeDot { background: #334155; }
 :global([data-theme="dark"]) .gaugeDotInner { background: var(--color-primary-400); }
 :global([data-theme="dark"]) .cableRowSelected .gaugeDotInner { background: var(--color-primary-light); }
 
-:global([data-theme="dark"]) .cableLabel { color: var(--color-gray-200); }
+:global([data-theme="dark"]) .cableLabel { color: #e2e8f0; }
+:global([data-theme="dark"]) .cableLabelSub { color: #94a3b8; }
 
 :global([data-theme="dark"]) .cableList { scrollbar-color: var(--color-gray-600) transparent; }
 :global([data-theme="dark"]) .cableList::-webkit-scrollbar-thumb { background: var(--color-gray-600); }
 
 :global([data-theme="dark"]) .ctaArea {
-  border-color: var(--color-gray-600);
+  border-color: #475569;
 }
 :global([data-theme="dark"]) .ctaAreaActive {
   border-color: var(--color-primary-light);
   background: rgba(59, 130, 246, 0.05);
 }
 
-:global([data-theme="dark"]) .ctaCount { color: var(--color-gray-300); }
+:global([data-theme="dark"]) .ctaCount { color: #b0bec5; }
 :global([data-theme="dark"]) .ctaCountBadge { background: var(--color-primary-light); color: #ffffff; }
 :global([data-theme="dark"]) .ctaClearBtn { color: var(--color-gray-500); }
 :global([data-theme="dark"]) .ctaClearBtn:hover { color: var(--color-error); background: rgba(255, 86, 48, 0.1); }

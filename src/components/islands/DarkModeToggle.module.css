@@ -53,6 +53,7 @@
 /* Dark mode state — applied via [data-theme="dark"] on <html> */
 :global([data-theme="dark"]) .theme-toggle {
   background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+  color: #ffffff;
 }
 
 :global([data-theme="dark"]) .icon-sun {

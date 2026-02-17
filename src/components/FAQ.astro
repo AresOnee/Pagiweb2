@@ -120,7 +120,7 @@ const { items, title = 'Preguntas Frecuentes' } = Astro.props;
 
   /* Dark mode */
   :global([data-theme="dark"]) .faq-title {
-    color: var(--color-gray-100);
+    color: #f1f5f9;
   }
 
   :global([data-theme="dark"]) .faq-item {
@@ -128,7 +128,7 @@ const { items, title = 'Preguntas Frecuentes' } = Astro.props;
   }
 
   :global([data-theme="dark"]) .faq-question {
-    color: var(--color-gray-200);
+    color: #e2e8f0;
   }
 
   :global([data-theme="dark"]) .faq-question:hover {
@@ -136,7 +136,11 @@ const { items, title = 'Preguntas Frecuentes' } = Astro.props;
   }
 
   :global([data-theme="dark"]) .faq-answer {
-    color: var(--color-gray-400);
+    color: #b0bec5;
+  }
+
+  :global([data-theme="dark"]) .faq-icon {
+    color: #64748b;
   }
 
   :global([data-theme="dark"]) .faq-item[open] .faq-icon {
