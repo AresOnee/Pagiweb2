@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import { siteConfig } from '../../data/site-config';
 
 interface Props {
@@ -35,6 +35,7 @@ declare global {
 export default function TurnstileWidget({ onVerify, onExpire, onError }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Skip if no site key configured
@@ -56,8 +57,10 @@ export default function TurnstileWidget({ onVerify, onExpire, onError }: Props) 
           theme: 'auto',
           size: 'normal',
         });
+        setIsLoading(false);
       } catch (err) {
         console.error('[Turnstile] Render error:', err);
+        setIsLoading(false);
         onError?.();
       }
     };
@@ -78,6 +81,7 @@ export default function TurnstileWidget({ onVerify, onExpire, onError }: Props) 
       timeout = setTimeout(() => {
         if (!widgetIdRef.current) {
           console.warn('[Turnstile] Script did not load within 10 seconds');
+          setIsLoading(false);
         }
       }, 10000);
     }
@@ -113,9 +117,21 @@ export default function TurnstileWidget({ onVerify, onExpire, onError }: Props) 
   }
 
   return (
-    <div
-      ref={containerRef}
-      style={{ marginBottom: 'var(--spacing-4)', minHeight: '65px' }}
-    />
+    <div style={{ marginBottom: 'var(--spacing-4)' }}>
+      {isLoading && (
+        <div style={{
+          padding: 'var(--spacing-3)',
+          background: 'var(--color-gray-100)',
+          borderRadius: 'var(--radius-md)',
+          fontSize: 'var(--font-size-sm)',
+          color: 'var(--color-gray-500)',
+          textAlign: 'center',
+          animation: 'pulse 1.5s ease-in-out infinite',
+        }}>
+          Cargando verificación de seguridad...
+        </div>
+      )}
+      <div ref={containerRef} style={{ minHeight: isLoading ? '0' : '65px' }} />
+    </div>
   );
 }

@@ -4,7 +4,7 @@
  */
 
 // BUILD_TIMESTAMP is replaced by the build script for cache busting
-const CACHE_NAME = 'gelchile-1771350857764';
+const CACHE_NAME = 'gelchile-1771437876081';
 const OFFLINE_URL = '/offline.html';
 
 // Assets to cache on install

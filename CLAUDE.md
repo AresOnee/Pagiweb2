@@ -4,11 +4,11 @@
 Sitio web de catalogo para **GelChile**, empresa chilena con **mas de 20 anos de experiencia** especializada en **sistemas de puesta a tierra y proteccion electrica**. Permite a los clientes explorar productos, ver especificaciones tecnicas y solicitar cotizaciones.
 
 ## Estado Actual
-- **Sitio Astro funcional** — Fases 0-8 completadas + optimizaciones Lighthouse, build exitoso (63 paginas)
+- **Sitio Astro funcional** — Fases 0-8 completadas + optimizaciones Lighthouse + correcciones UX Nielsen, build exitoso (67 paginas)
 - **Pendiente:** Deploy a Cloudflare Pages (Fase 9) + configurar API keys
-- **Branch de desarrollo:** `claude/lighthouse-optimization-9VK3k`
-- **Build:** `npm install && npm run build` — 0 errores, 56 productos validados por Zod
+- **Build:** `npm install && npm run build` — 0 errores, 62 productos validados por Zod
 - **Lighthouse Performance:** Optimizado (prefetch hover, aspect-ratio, hydration mejorada)
+- **UX/Accesibilidad:** Correcciones heuristicas de Nielsen implementadas (WCAG AA, aria-live, scroll-to-error)
 
 ## Stack Tecnico
 
@@ -67,9 +67,9 @@ src/
 │       ├── Toast.tsx             # Notificaciones toast
 │       ├── TurnstileWidget.tsx   # Widget Cloudflare Turnstile
 │       └── *.module.css          # 7 CSS Modules con dark mode
-├── content/products/             # 56 archivos JSON validados por Zod
+├── content/products/             # 62 archivos JSON validados por Zod
 ├── data/
-│   ├── categories.json           # 9 categorias con slugs e iconos
+│   ├── categories.json           # 8 categorias con slugs (Servicios no incluido)
 │   └── site-config.ts            # Config centralizada (contacto, API keys, storage keys)
 ├── layouts/MainLayout.astro      # Layout principal (SEO, OG, JSON-LD, PWA, AOS)
 ├── pages/
@@ -95,7 +95,7 @@ src/
 └── types/index.ts                # CategorySlug, CategoryName, Product, CartItem, etc.
 ```
 
-## Productos (56 en 9 categorias)
+## Productos (62 en 9 categorias)
 
 | Categoria | Slug | Qty | SKUs |
 |-----------|------|-----|------|
@@ -104,9 +104,9 @@ src/
 | Barras Quimicas | `barras-quimicas` | 2 | BQH-001, BQV-001 |
 | Aditivos | `aditivos` | 2 | ADI-001, ADI-002 |
 | Pararrayos y Proteccion | `pararrayos` | 1 | PAR-001 |
-| Soldadura Exotermica | `soldadura-exotermica` | 14 | CEX-001–009, PAR-002–004, HRE-001–002 |
+| Soldadura Exotermica | `soldadura-exotermica` | 17 | CEX-001–011, PAR-002–004, HRE-001–003 |
 | Moldes de Grafito | `moldes-grafito` | 14 | MOL-B, MOL-C, MOL-E, MOL-G, MOL-H, MOL-L, MOL-N, MOL-P, MOL-R, MOL-S, MOL-T, MOL-V, MOL-W, MOL-X |
-| Accesorios | `accesorios` | 7 | CAM-001, TAB-001/002, BTT-001, CPP-001, PPB-001, TDC-001 |
+| Accesorios | `accesorios` | 10 | CAM-001, TAB-001/002, BTT-001, CPP-001, PPB-001, TDC-001, CCD-001, FLC-001, TPT-001 |
 | Servicios | `servicios` | 2 | SRV-001, SRV-002 |
 
 ### Estructura JSON por producto
@@ -128,7 +128,7 @@ src/
 ```
 
 **SKU pattern:** `[A-Z]{2,3}-\d{3}` (excepto moldes: `MOL-[A-Z]` siguiendo nomenclatura CADWELD)
-**Campos opcionales:** `images` (galeria), `variants` (selector de variantes), `badge` ("Nuevo"/"Popular"/"Promoción")
+**Campos opcionales:** `images` (galeria), `variants` (selector de variantes), `badge` ("Popular"/"Pro"/"Servicio"/null)
 
 ## Archivos Clave
 
@@ -173,10 +173,24 @@ src/
 - **Img sizing:** ProductCard y ProductFilter incluyen atributo `sizes` responsive para evitar descargas innecesarias
 - **SEO:** JSON-LD LocalBusiness, Open Graph, Twitter Cards, sitemap.xml auto-generado. URLs SEO-friendly basadas en titulo del producto
 - **PWA:** manifest.webmanifest, service worker con cache-busting automatico en build, install prompt
-- **Formulario:** Web3Forms endpoint + Cloudflare Turnstile anti-spam. Envia a ventas@gelchile.cl
+- **Formulario:** Web3Forms endpoint + Cloudflare Turnstile anti-spam. Envia a ventas@gelchile.cl. Errores especificos por campo + scroll-to-error. Loading state en Turnstile widget
 - **Recently Viewed:** Ultimos 8 productos visitados, persistidos en `localStorage` key `gelchile_recently_viewed`
 - **404:** Pagina de error personalizada con SVG y enlace al catalogo
 - **Scroll memory:** Recuerda posicion de scroll al volver al catalogo desde detalle de producto
+
+## Mejoras UX — Heuristicas de Nielsen (18 feb 2026)
+
+Analisis heuristico completo (puntuacion 7.5/10). Correcciones implementadas:
+
+| Cambio | Archivo | Detalle |
+|--------|---------|---------|
+| Color error WCAG AA | `src/styles/global.css` | `#FF5630` → `#C9372C` (contraste 5.9:1, pasa AA) |
+| Dark mode error bg | `src/components/islands/QuoteForm.module.css` | Alpha 0.1 → 0.2 para legibilidad |
+| Errores especificos + scroll | `src/components/islands/QuoteForm.tsx` | Muestra nombres de campos con error, scroll al primero |
+| Error de red mejorado | `src/components/islands/QuoteForm.tsx` | Distingue TypeError (conexion) de error generico |
+| Loading state Turnstile | `src/components/islands/TurnstileWidget.tsx` | Skeleton con pulse animation mientras carga script |
+| Shortcut OS-aware | `src/components/islands/ProductFilter.tsx` | `⌘K` en Mac, `Ctrl+K` en Windows |
+| aria-live resultados | `src/components/islands/ProductFilter.tsx` | Screen readers anuncian cambios en resultados de filtro |
 
 ## Servicios de Terceros
 
@@ -196,7 +210,7 @@ Los archivos en la raiz (`index.html`, `productos.html`, `cotizacion.html`, `nos
 
 ```bash
 npm run dev              # Servidor de desarrollo (localhost:4321)
-npm run build            # Build estatico a dist/ (63 paginas) + cache-bust SW
+npm run build            # Build estatico a dist/ (67 paginas) + cache-bust SW
 npm run preview          # Preview del build
 npm run optimize-images  # Optimizar imagenes con script Node
 npx astro sync           # Regenerar tipos de Content Collections

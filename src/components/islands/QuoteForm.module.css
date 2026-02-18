@@ -245,7 +245,7 @@
 
 :global([data-theme="dark"]) .form-input.error,
 :global([data-theme="dark"]) .form-textarea.error {
-  background: rgba(255, 86, 48, 0.1);
+  background: rgba(201, 55, 44, 0.2);
 }
 
 .form-input.success,

@@ -199,7 +199,17 @@ export default function QuoteForm() {
     }
 
     if (!validateAll()) {
-      showToast('Por favor corrige los errores del formulario', 'error');
+      const fieldNames: Record<string, string> = { nombre: 'Nombre', email: 'Email', telefono: 'Teléfono' };
+      const errorFields = Object.keys(validators)
+        .filter(k => validators[k]?.(form[k as keyof FormData] || ''))
+        .map(k => fieldNames[k] || k);
+      showToast(`Corrige: ${errorFields.join(', ')}`, 'error');
+      // Scroll al primer campo con error
+      setTimeout(() => {
+        const firstErrorField = document.querySelector(`.${styles.error}`) as HTMLElement;
+        firstErrorField?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstErrorField?.focus();
+      }, 50);
       return;
     }
 
@@ -270,7 +280,10 @@ export default function QuoteForm() {
       window.location.href = '/cotizacion-enviada';
     } catch (error) {
       console.error('Error al enviar cotización:', error);
-      showToast('Error al enviar la cotización. Inténtalo nuevamente.', 'error');
+      const msg = error instanceof TypeError
+        ? 'Error de conexión. Verifica tu internet e inténtalo nuevamente.'
+        : 'Error al enviar la cotización. Inténtalo nuevamente o contáctanos a ventas@gelchile.cl';
+      showToast(msg, 'error');
     } finally {
       setIsSubmitting(false);
     }

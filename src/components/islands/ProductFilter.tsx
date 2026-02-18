@@ -221,7 +221,7 @@ export default function ProductFilter({ products, categories }: Props) {
               </svg>
             </button>
           ) : (
-            <kbd class={styles['search-shortcut']}>⌘K</kbd>
+            <kbd class={styles['search-shortcut']}>{typeof navigator !== 'undefined' && /Mac|iPhone|iPad|iPod/.test(navigator.platform) ? '⌘K' : 'Ctrl+K'}</kbd>
           )}
         </div>
       </div>
@@ -283,7 +283,7 @@ export default function ProductFilter({ products, categories }: Props) {
       )}
 
       {/* H7: Product count + sorting */}
-      <div class={styles['results-bar']}>
+      <div class={styles['results-bar']} aria-live="polite" aria-atomic="true">
         <p class={styles['product-count']}>
           {sorted.length} {sorted.length === 1 ? 'producto encontrado' : 'productos encontrados'}
         </p>
