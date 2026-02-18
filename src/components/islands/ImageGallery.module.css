@@ -259,6 +259,15 @@
   background: rgba(0, 0, 0, 0.95);
 }
 
+:global([data-theme="dark"]) .gallery-badge {
+  color: #ffffff;
+}
+
+:global([data-theme="dark"]) .lightbox-close,
+:global([data-theme="dark"]) .lightbox-arrow {
+  color: #ffffff;
+}
+
 /* ============================================
    Responsive
    ============================================ */

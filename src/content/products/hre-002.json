@@ -3,20 +3,22 @@
   "title": "Martillo Peña ½ Libra",
   "category": "Soldadura Exotérmica",
   "categorySlug": "soldadura-exotermica",
-  "description": "Martillo de peña de ½ libra para operaciones de soldadura exotérmica en sistemas de puesta a tierra. Herramienta esencial del kit de operación para posicionar moldes de grafito, ajustar conductores y asistir en el proceso de soldadura por termofusión.",
+  "description": "Martillo de peña de ½ libra para operaciones de soldadura exotérmica en sistemas de puesta a tierra. Herramienta esencial del kit de operación para romper la capa de escoria, separar las mitades del molde, posicionar conductores y asistir en el proceso de soldadura por termofusión.",
   "features": [
     "Peso ½ libra (aproximadamente 227 g)",
     "Cabeza de acero de alta dureza con extremo de peña",
-    "Mango ergonómico resistente a impactos",
+    "Mango de madera (hickory)",
+    "Certificación TÜV GS (Tested Safety)",
     "Diseñado para operaciones de soldadura exotérmica",
-    "Herramienta indispensable del kit de operación",
-    "Ideal para posicionamiento de moldes y conductores"
+    "Herramienta indispensable del kit de operación"
   ],
   "specs": {
     "Tipo": "Martillo de Peña (Ball Peen)",
     "Peso": "½ libra (227 g aprox.)",
     "Material Cabeza": "Acero de alta dureza",
-    "Uso": "Operaciones de soldadura exotérmica",
+    "Material Mango": "Madera (hickory)",
+    "Certificación": "TÜV GS (Geprüfte Sicherheit)",
+    "Uso": "Remoción de escoria, separación de moldes, posicionamiento de conductores",
     "Aplicación": "Sistemas de puesta a tierra y soldadura exotérmica"
   },
   "image": "/assets/img/products/hre-002.webp",

@@ -24,6 +24,10 @@
     "Aplicación": "Sistemas de puesta a tierra residencial, comercial e industrial"
   },
   "image": "/assets/img/products/btt-001.webp",
+  "images": [
+    "/assets/img/products/btt-001-02.webp",
+    "/assets/img/products/btt-001-03.webp"
+  ],
   "inStock": true,
   "badge": null,
   "variants": [

@@ -48,7 +48,8 @@ export interface Product {
   inStock: boolean;
   badge: BadgeValue | null;
   subcategories?: string[];
-  variants?: Array<{ id: string; label: string; group?: string }>;
+  variants?: Array<{ id: string; label: string; group?: string; subtitle?: string }>;
+  techTable?: { title: string; headers: string[]; rows: string[][] };
 }
 
 /** Slim product data for catalog grid (excludes features, images, variants) */

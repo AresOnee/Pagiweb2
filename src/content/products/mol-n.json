@@ -9,7 +9,7 @@
     "4 tipos de molde: NC, ND, NT, NX",
     "Para conexiones cable con derivación a varilla de tierra",
     "Compatible con barras Copperweld de 1/2\", 5/8\", 3/4\" y 1\"",
-    "Cables compatibles: N°6 a 4/0 AWG",
+    "Cables compatibles: N°6 AWG a 500 MCM",
     "Reutilizable para múltiples soldaduras",
     "Compatible con cargas exotérmicas ESTWELD y Electro Material"
   ],
@@ -23,7 +23,11 @@
   "images": [
     "/assets/img/products/mol-004-03.webp",
     "/assets/img/products/mol-004-05.webp",
-    "/assets/img/products/mol-005-03.webp"
+    "/assets/img/products/mol-005-03.webp",
+    "/assets/img/products/mol-n-nc.webp",
+    "/assets/img/products/mol-n-nd.webp",
+    "/assets/img/products/mol-n-nt.webp",
+    "/assets/img/products/mol-n-nx.webp"
   ],
   "inStock": true,
   "badge": null,
@@ -172,6 +176,51 @@
       "group": "NCF — Barra 1\""
     },
     {
+      "id": "ncf-1-250",
+      "label": "Cable 250 MCM",
+      "group": "NCF — Barra 1\""
+    },
+    {
+      "id": "ncf-1-300",
+      "label": "Cable 300 MCM",
+      "group": "NCF — Barra 1\""
+    },
+    {
+      "id": "ncf-1-350",
+      "label": "Cable 350 MCM",
+      "group": "NCF — Barra 1\""
+    },
+    {
+      "id": "ncf-1-500",
+      "label": "Cable 500 MCM",
+      "group": "NCF — Barra 1\""
+    },
+    {
+      "id": "ncf-58-250",
+      "label": "Cable 250 MCM",
+      "group": "NCF — Barra 5/8\""
+    },
+    {
+      "id": "ncf-34-250",
+      "label": "Cable 250 MCM",
+      "group": "NCF — Barra 3/4\""
+    },
+    {
+      "id": "ncf-34-300",
+      "label": "Cable 300 MCM",
+      "group": "NCF — Barra 3/4\""
+    },
+    {
+      "id": "ncf-34-350",
+      "label": "Cable 350 MCM",
+      "group": "NCF — Barra 3/4\""
+    },
+    {
+      "id": "ncf-34-500",
+      "label": "Cable 500 MCM",
+      "group": "NCF — Barra 3/4\""
+    },
+    {
       "id": "ndr-12-4",
       "label": "Cable N°4",
       "group": "NDR — Barra 1/2\""
@@ -287,6 +336,11 @@
       "group": "NDF — Barra 5/8\""
     },
     {
+      "id": "ndf-58-250",
+      "label": "Cable 250 MCM",
+      "group": "NDF — Barra 5/8\""
+    },
+    {
       "id": "ndf-34-3o",
       "label": "Cable N°3/0",
       "group": "NDF — Barra 3/4\""
@@ -294,6 +348,26 @@
     {
       "id": "ndf-34-4o",
       "label": "Cable N°4/0",
+      "group": "NDF — Barra 3/4\""
+    },
+    {
+      "id": "ndf-34-250",
+      "label": "Cable 250 MCM",
+      "group": "NDF — Barra 3/4\""
+    },
+    {
+      "id": "ndf-34-300",
+      "label": "Cable 300 MCM",
+      "group": "NDF — Barra 3/4\""
+    },
+    {
+      "id": "ndf-34-350",
+      "label": "Cable 350 MCM",
+      "group": "NDF — Barra 3/4\""
+    },
+    {
+      "id": "ndf-34-500",
+      "label": "Cable 500 MCM",
       "group": "NDF — Barra 3/4\""
     },
     {
@@ -309,6 +383,26 @@
     {
       "id": "ndf-1-4o",
       "label": "Cable N°4/0",
+      "group": "NDF — Barra 1\""
+    },
+    {
+      "id": "ndf-1-250",
+      "label": "Cable 250 MCM",
+      "group": "NDF — Barra 1\""
+    },
+    {
+      "id": "ndf-1-300",
+      "label": "Cable 300 MCM",
+      "group": "NDF — Barra 1\""
+    },
+    {
+      "id": "ndf-1-350",
+      "label": "Cable 350 MCM",
+      "group": "NDF — Barra 1\""
+    },
+    {
+      "id": "ndf-1-500",
+      "label": "Cable 500 MCM",
       "group": "NDF — Barra 1\""
     },
     {
@@ -391,5 +485,13 @@
       "label": "Cable N°2",
       "group": "NX — Barra 3/4\""
     }
-  ]
+  ],
+  "imageMap": {
+    "NCR": 4,
+    "NCF": 4,
+    "NDR": 5,
+    "NDF": 5,
+    "NT": 6,
+    "NX": 7
+  }
 }

@@ -6,7 +6,7 @@
   "description": "Familia de moldes de grafito para conexiones de bus de cobre a superficies de acero. Incluye bus horizontal al canto (CC), bus vertical (CF), bus plano (CG) y bus al canto sobre superficie (CH). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-    "4 tipos de molde: CC, CF, CG, CH",
+    "6 tipos de molde: CC, CF, CG, CH, CN, CP",
     "Conexiones de bus de cobre a superficies de acero",
     "Reutilizable para múltiples soldaduras",
     "Compatible con cargas exotérmicas ESTWELD y Electro Material",
@@ -14,11 +14,11 @@
   ],
   "specs": {
     "Código Cadweld": "C",
-    "Tipos Incluidos": "CC, CF, CG, CH",
+    "Tipos Incluidos": "CC, CF, CG, CH, CN, CP",
     "Material": "Grafito de alta densidad",
     "Temperatura de Operación": "Superior a 2.500°C"
   },
-  "image": "/assets/img/products/mol-038-01.webp",
+  "image": "/assets/img/products/mol-c-cc.webp",
   "inStock": true,
   "badge": null,
   "subcategories": [
@@ -179,6 +179,31 @@
       "id": "ch-gh",
       "label": "Bus 3/8\"x2\"",
       "group": "CH"
+    },
+    {
+      "id": "cn-std",
+      "label": "Consultar",
+      "group": "CN"
+    },
+    {
+      "id": "cp-std",
+      "label": "Consultar",
+      "group": "CP"
     }
-  ]
+  ],
+  "images": [
+    "/assets/img/products/mol-c-cf.webp",
+    "/assets/img/products/mol-c-cg.webp",
+    "/assets/img/products/mol-c-ch.webp",
+    "/assets/img/products/mol-c-cn.webp",
+    "/assets/img/products/mol-c-cp.webp"
+  ],
+  "imageMap": {
+    "CC": 0,
+    "CF": 1,
+    "CG": 2,
+    "CH": 3,
+    "CN": 4,
+    "CP": 5
+  }
 }

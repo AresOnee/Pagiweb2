@@ -29,7 +29,11 @@
     "/assets/img/products/mol-013-04.webp",
     "/assets/img/products/mol-013-06.webp",
     "/assets/img/products/mol-013-07.webp",
-    "/assets/img/products/mol-014-03.webp"
+    "/assets/img/products/mol-014-03.webp",
+    "/assets/img/products/mol-h-ha.webp",
+    "/assets/img/products/mol-h-hc.webp",
+    "/assets/img/products/mol-h-hs.webp",
+    "/assets/img/products/mol-h-ht.webp"
   ],
   "inStock": true,
   "badge": null,
@@ -70,6 +74,36 @@
     {
       "id": "hs-4o",
       "label": "Cable N°4/0",
+      "group": "HSC"
+    },
+    {
+      "id": "hs-250",
+      "label": "Cable 250 MCM",
+      "group": "HSC"
+    },
+    {
+      "id": "hs-300",
+      "label": "Cable 300 MCM",
+      "group": "HSC"
+    },
+    {
+      "id": "hs-350",
+      "label": "Cable 350 MCM",
+      "group": "HSC"
+    },
+    {
+      "id": "hs-500",
+      "label": "Cable 500 MCM",
+      "group": "HSC"
+    },
+    {
+      "id": "hs-750",
+      "label": "Cable 750 MCM",
+      "group": "HSC"
+    },
+    {
+      "id": "hs-1000",
+      "label": "Cable 1000 MCM",
       "group": "HSC"
     },
     {
@@ -118,6 +152,16 @@
       "group": "HTC"
     },
     {
+      "id": "ht-300",
+      "label": "Cable 300 MCM",
+      "group": "HTC"
+    },
+    {
+      "id": "ht-350",
+      "label": "Cable 350 MCM",
+      "group": "HTC"
+    },
+    {
       "id": "hba-1g",
       "label": "Cable N°8/6 Alam.",
       "group": "HBA"
@@ -152,5 +196,11 @@
       "label": "Cable N°1",
       "group": "HBA"
     }
-  ]
+  ],
+  "imageMap": {
+    "HAA": 11,
+    "HCA": 12,
+    "HSC": 13,
+    "HTC": 14
+  }
 }

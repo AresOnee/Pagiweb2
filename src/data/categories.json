@@ -33,7 +33,7 @@
     "id": "soldadura-exotermica",
     "name": "Soldadura Exotérmica",
     "description": "Cargas, herramientas y accesorios para soldadura por termofusión",
-    "count": 14
+    "count": 17
   },
   {
     "id": "moldes-grafito",
@@ -45,12 +45,6 @@
     "id": "accesorios",
     "name": "Accesorios",
     "description": "Camarillas, tableros eléctricos, barras toma tierra y componentes",
-    "count": 7
-  },
-  {
-    "id": "servicios",
-    "name": "Servicios",
-    "description": "Medición e instalación de puesta a tierra",
-    "count": 2
+    "count": 10
   }
 ]

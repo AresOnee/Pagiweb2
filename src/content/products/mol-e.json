@@ -1,24 +1,24 @@
 {
   "sku": "MOL-E",
-  "title": "Molde de Grafito EP — Conexión Angular 90° de Bus",
+  "title": "Moldes de Grafito E — Conexiones de Bus (EP, EB)",
   "category": "Moldes de Grafito",
   "categorySlug": "moldes-grafito",
-  "description": "Molde de grafito tipo EP para conexión angular a 90° entre dos buses de cobre. Permite unir buses perpendiculares en sistemas de barras de tierra y distribución. Molde de alta densidad resistente a temperaturas superiores a 2.500°C.",
+  "description": "Familia de moldes de grafito tipo E para conexiones entre buses de cobre. Incluye conexión angular a 90° (EP) y conexión de bus empernada (EB). Moldes de alta densidad resistentes a temperaturas superiores a 2.500°C.",
   "features": [
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
-    "Conexión angular 90° entre buses de cobre (EP)",
-    "Para sistemas de barras de tierra y distribución",
+    "2 tipos de molde: EP, EB",
+    "Para conexiones entre buses de cobre",
     "Reutilizable para múltiples soldaduras",
     "Compatible con cargas exotérmicas ESTWELD y Electro Material",
     "Requiere masilla selladora y chispero para operación"
   ],
   "specs": {
-    "Código Cadweld": "EP",
-    "Tipos Incluidos": "EP",
+    "Código Cadweld": "E",
+    "Tipos Incluidos": "EP, EB",
     "Material": "Grafito de alta densidad",
     "Temperatura de Operación": "Superior a 2.500°C"
   },
-  "image": "/assets/img/products/mol-036-01.webp",
+  "image": "/assets/img/products/mol-e-ep.webp",
   "inStock": true,
   "badge": null,
   "subcategories": [
@@ -64,6 +64,18 @@
       "id": "ep-jh",
       "label": "Bus 1/2\"x2\"",
       "group": "EP"
+    },
+    {
+      "id": "eb-std",
+      "label": "Consultar",
+      "group": "EB"
     }
-  ]
+  ],
+  "images": [
+    "/assets/img/products/mol-e-eb.webp"
+  ],
+  "imageMap": {
+    "EP": 0,
+    "EB": 1
+  }
 }

@@ -1,0 +1,45 @@
+{
+  "sku": "FLC-001",
+  "title": "Fleje de Cobre para Malla de Tierra",
+  "category": "Accesorios",
+  "categorySlug": "accesorios",
+  "description": "Fleje (platina) de cobre electrolítico para construcción de mallas de puesta a tierra. Tira plana de cobre de alta conductividad que se tiende formando una retícula sobre el piso, con uniones por soldadura exotérmica en cada cruce. Disponible en múltiples espesores y anchos según requerimientos del proyecto.",
+  "features": [
+    "Cobre electrolítico de alta pureza UNS C11000",
+    "Tira plana flexible para tendido en malla",
+    "13 medidas disponibles (espesor x ancho)",
+    "Uniones por soldadura exotérmica en cada cruce",
+    "Compatible con moldes de grafito tipo B, C y E",
+    "Ideal para salas eléctricas, subestaciones y centros de datos"
+  ],
+  "specs": {
+    "Tipo": "Fleje (platina) de cobre",
+    "Material": "Cobre electrolítico UNS C11000",
+    "Formato": "Tira plana (rollo)",
+    "Rango de Espesores": "1/8\" a 1/2\"",
+    "Rango de Anchos": "1\" a 3\"",
+    "Aplicación": "Mallas de puesta a tierra, salas eléctricas, subestaciones"
+  },
+  "image": "/assets/img/products/flc-001-02.webp",
+  "images": [
+    "/assets/img/products/flc-001-03.webp",
+    "/assets/img/products/flc-001-04.webp"
+  ],
+  "inStock": true,
+  "badge": null,
+  "variants": [
+    { "id": "18x1", "label": "1/8\" x 1\"", "group": "Espesor 1/8\"" },
+    { "id": "316x1", "label": "3/16\" x 1\"", "group": "Espesor 3/16\"" },
+    { "id": "14x1", "label": "1/4\" x 1\"", "group": "Espesor 1/4\"" },
+    { "id": "14x114", "label": "1/4\" x 1-1/4\"", "group": "Espesor 1/4\"" },
+    { "id": "14x112", "label": "1/4\" x 1-1/2\"", "group": "Espesor 1/4\"" },
+    { "id": "14x2", "label": "1/4\" x 2\"", "group": "Espesor 1/4\"" },
+    { "id": "14x3", "label": "1/4\" x 3\"", "group": "Espesor 1/4\"" },
+    { "id": "38x1", "label": "3/8\" x 1\"", "group": "Espesor 3/8\"" },
+    { "id": "38x112", "label": "3/8\" x 1-1/2\"", "group": "Espesor 3/8\"" },
+    { "id": "38x2", "label": "3/8\" x 2\"", "group": "Espesor 3/8\"" },
+    { "id": "12x1", "label": "1/2\" x 1\"", "group": "Espesor 1/2\"" },
+    { "id": "12x112", "label": "1/2\" x 1-1/2\"", "group": "Espesor 1/2\"" },
+    { "id": "12x2", "label": "1/2\" x 2\"", "group": "Espesor 1/2\"" }
+  ]
+}

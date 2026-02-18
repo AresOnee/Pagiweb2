@@ -61,15 +61,50 @@ export default function QuoteItems() {
     return (
       <div class={styles['quote-empty']}>
         <div class={styles['quote-empty-icon']}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="40" height="40">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <path d="M16 10a4 4 0 0 1-8 0" />
+          <svg viewBox="0 0 120 120" fill="none" width="80" height="80" aria-hidden="true">
+            {/* Shopping bag body */}
+            <rect x="25" y="40" width="70" height="60" rx="8" fill="url(#emptyGrad)" stroke="#0052CC" strokeWidth="2" opacity="0.9">
+              <animate attributeName="y" values="40;38;40" dur="3s" repeatCount="indefinite" />
+            </rect>
+            {/* Bag handles */}
+            <path d="M42 40V30a18 18 0 0136 0v10" stroke="#0052CC" strokeWidth="3" fill="none" strokeLinecap="round">
+              <animate attributeName="d" values="M42 40V30a18 18 0 0136 0v10;M42 38V28a18 18 0 0136 0v8;M42 40V30a18 18 0 0136 0v10" dur="3s" repeatCount="indefinite" />
+            </path>
+            {/* Plus icon (bouncing) */}
+            <g>
+              <animateTransform attributeName="transform" type="translate" values="0,0;0,-2;0,0" dur="3s" repeatCount="indefinite" />
+              <circle cx="60" cy="70" r="14" fill="white" stroke="#0052CC" strokeWidth="2" />
+              <line x1="60" y1="63" x2="60" y2="77" stroke="#E86100" strokeWidth="3" strokeLinecap="round">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
+              </line>
+              <line x1="53" y1="70" x2="67" y2="70" stroke="#E86100" strokeWidth="3" strokeLinecap="round">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
+              </line>
+            </g>
+            {/* Sparkle decorations */}
+            <circle cx="30" cy="35" r="2" fill="#0052CC" opacity="0.4">
+              <animate attributeName="opacity" values="0;0.6;0" dur="2.5s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="90" cy="32" r="1.5" fill="#E86100" opacity="0.3">
+              <animate attributeName="opacity" values="0;0.5;0" dur="2s" begin="0.5s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="85" cy="45" r="1" fill="#0052CC" opacity="0.3">
+              <animate attributeName="opacity" values="0;0.4;0" dur="1.8s" begin="1s" repeatCount="indefinite" />
+            </circle>
+            <defs>
+              <linearGradient id="emptyGrad" x1="25" y1="40" x2="95" y2="100" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#E8F0FE" />
+                <stop offset="1" stopColor="#D2E3FC" />
+              </linearGradient>
+            </defs>
           </svg>
         </div>
         <h3>Tu cotización está vacía</h3>
-        <p>Agrega productos desde nuestro catálogo para solicitar una cotización</p>
-        <a href="/productos" class="btn btn-primary">Ver Productos</a>
+        <p>Agrega productos desde nuestro catálogo para solicitar una cotización personalizada</p>
+        <a href="/productos" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18" style="margin-right: 6px"><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" /></svg>
+          Ver Productos
+        </a>
       </div>
     );
   }

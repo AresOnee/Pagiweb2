@@ -13,8 +13,16 @@
   ],
   "specs": {
     "Marca": "TIBOX",
+    "Modelo": "ST2 315 TIBOX",
     "Dimensiones": "300 x 200 x 150 mm",
+    "Material": "Metálico (acero 1,2 mm)",
     "Protección": "IP65",
+    "Certificaciones": "CE, RoHS",
+    "Normativa": "IEC 60670:2002 / EN 62208",
+    "Impacto (IK)": "IK 10",
+    "Color": "Gris RAL 7035",
+    "Placa de Montaje": "Incluida (1,5 mm)",
+    "Instalación": "Sobrepuesto",
     "Uso": "Sistemas de puesta a tierra y distribución eléctrica"
   },
   "image": "/assets/img/products/tab-001.webp",

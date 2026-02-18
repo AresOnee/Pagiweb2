@@ -18,7 +18,7 @@
     "Material": "Grafito de alta densidad",
     "Temperatura de Operación": "Superior a 2.500°C"
   },
-  "image": "/assets/img/products/mol-042-01.webp",
+  "image": "/assets/img/products/mol-r-rc.webp",
   "inStock": true,
   "badge": null,
   "subcategories": [
@@ -271,5 +271,25 @@
       "label": "Cable 1000 MCM",
       "group": "RYD"
     }
-  ]
+  ],
+  "images": [
+    "/assets/img/products/mol-r-rd.webp",
+    "/assets/img/products/mol-r-rj.webp",
+    "/assets/img/products/mol-r-rr.webp",
+    "/assets/img/products/mol-r-rx.webp",
+    "/assets/img/products/mol-r-ry.webp"
+  ],
+  "imageMap": {
+    "RCE": 0,
+    "RDC": 1,
+    "RDH": 1,
+    "RJC": 2,
+    "RJE": 2,
+    "RRC": 3,
+    "RRH": 3,
+    "RXC": 4,
+    "RXD": 4,
+    "RYC": 5,
+    "RYD": 5
+  }
 }

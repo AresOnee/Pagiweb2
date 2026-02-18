@@ -8,7 +8,7 @@
     "Grafito de alta densidad resistente a temperaturas superiores a 2.500°C",
     "3 tipos de molde: XA, XB, XBQ/XBZ",
     "Conexiones en cruz (X) horizontal de cables",
-    "Cables compatibles: N°4 a 250 MCM",
+    "Cables compatibles: N°4 AWG a 500 MCM",
     "Diseño ergonómico de dos piezas (XB)",
     "Reutilizable para múltiples soldaduras",
     "Compatible con cargas exotérmicas ESTWELD y Electro Material"
@@ -28,7 +28,9 @@
     "/assets/img/products/mol-010-03.webp",
     "/assets/img/products/mol-010-04.webp",
     "/assets/img/products/mol-010-05.webp",
-    "/assets/img/products/mol-010-06.webp"
+    "/assets/img/products/mol-010-06.webp",
+    "/assets/img/products/mol-x-xa.webp",
+    "/assets/img/products/mol-x-xb.webp"
   ],
   "inStock": true,
   "badge": null,
@@ -77,6 +79,21 @@
       "group": "XAC"
     },
     {
+      "id": "xa-300",
+      "label": "Cable 300 MCM",
+      "group": "XAC"
+    },
+    {
+      "id": "xa-350",
+      "label": "Cable 350 MCM",
+      "group": "XAC"
+    },
+    {
+      "id": "xa-500",
+      "label": "Cable 500 MCM",
+      "group": "XAC"
+    },
+    {
       "id": "xb-4",
       "label": "Cable N°4",
       "group": "XB"
@@ -117,6 +134,21 @@
       "group": "XB"
     },
     {
+      "id": "xb-300",
+      "label": "Cable 300 MCM",
+      "group": "XB"
+    },
+    {
+      "id": "xb-350",
+      "label": "Cable 350 MCM",
+      "group": "XB"
+    },
+    {
+      "id": "xb-500",
+      "label": "Cable 500 MCM",
+      "group": "XB"
+    },
+    {
       "id": "xbq-1o",
       "label": "Cable N°1/0 + N°1/0",
       "group": "XBQ"
@@ -150,6 +182,17 @@
       "id": "xbz-500",
       "label": "Cable 500 MCM + 500 MCM",
       "group": "XBZ"
+    },
+    {
+      "id": "xbz-300",
+      "label": "Cable 300 MCM + 300 MCM",
+      "group": "XBZ"
     }
-  ]
+  ],
+  "imageMap": {
+    "XAC": 9,
+    "XB": 10,
+    "XBQ": 10,
+    "XBZ": 10
+  }
 }

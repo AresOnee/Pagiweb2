@@ -6,7 +6,7 @@ import ProductCard from '../components/ProductCard.astro';
 import { getCollection } from 'astro:content';
 import categories from '../data/categories.json';
 
-const allProducts = await getCollection('products');
+const allProducts = (await getCollection('products')).filter(p => p.data.categorySlug !== 'servicios');
 
 // Featured: products with badge first, then fill to 6
 const withBadge = allProducts.filter(p => p.data.badge !== null);
@@ -15,7 +15,7 @@ const featured = withBadge.length >= 6
   : [...withBadge, ...allProducts.filter(p => !p.data.badge).slice(0, 6 - withBadge.length)];
 ---
 
-<MainLayout title="GelChile — Sistemas de Puesta a Tierra y Protección Eléctrica" preloadImage="/assets/img/gelchile-electrodo-grafito.webp">
+<MainLayout title="GelChile — Sistemas de Puesta a Tierra y Protección Eléctrica" preloadImage="/assets/img/gelchile-hero-logo.webp">
   <HeroSection />
 
   <!-- Trust Strip -->
@@ -43,7 +43,7 @@ const featured = withBadge.length >= 6
             </svg>
           </div>
           <div class="trust-text">
-            <strong>64</strong>
+            <strong>56</strong>
             <span>Productos en Catálogo</span>
           </div>
         </div>
@@ -456,7 +456,7 @@ const featured = withBadge.length >= 6
   }
 
   :global([data-theme="dark"]) .trust-text span {
-    color: #94a3b8;
+    color: #b0bec5;
   }
 
   :global([data-theme="dark"]) .section-divider {
@@ -500,14 +500,28 @@ const featured = withBadge.length >= 6
   }
 
   :global([data-theme="dark"]) .feature-description {
-    color: #94a3b8;
+    color: #b0bec5;
   }
 
   :global([data-theme="dark"]) .cta-section {
     background: linear-gradient(135deg, #0a1628 0%, #003D99 100%);
   }
 
+  :global([data-theme="dark"]) .feature-icon {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.15) 0%, rgba(59, 130, 246, 0.25) 100%);
+    color: #60a5fa;
+  }
+
+  :global([data-theme="dark"]) .feature-card:hover .feature-icon {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.3) 0%, rgba(59, 130, 246, 0.4) 100%);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+  }
+
   :global([data-theme="dark"]) .cta-title {
+    color: #ffffff;
+  }
+
+  :global([data-theme="dark"]) .cta-founder strong {
     color: #ffffff;
   }
 

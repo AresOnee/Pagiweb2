@@ -366,6 +366,18 @@
   background: rgba(54, 179, 126, 0.15);
 }
 
+:global([data-theme="dark"]) .qty-btn:hover {
+  color: #ffffff;
+}
+
+:global([data-theme="dark"]) .remove-item-btn:hover {
+  color: #ffffff;
+}
+
+:global([data-theme="dark"]) .step-number {
+  color: #ffffff;
+}
+
 /* How it works */
 .how-it-works {
   margin-top: var(--spacing-12);

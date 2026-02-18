@@ -11,7 +11,7 @@
     "Resistente a corriente de falla repetitiva sin degradación",
     "Fuerte capacidad anticorrosión por acoplamiento de cobre",
     "No requiere fuente de energía externa ni operador profesional",
-    "Composición: óxido de cobre, cobre y aluminio",
+    "Composición: óxido de dicobre, cobre, estaño y fluoruro de calcio",
     "Incluye polvo de ignición y disco metálico en cada cartucho",
     "Compatible con moldes de grafito estándar",
     "20 cartuchos por caja",
@@ -22,7 +22,7 @@
     "Modelo": "E20A — CAP-45",
     "Marca": "ESTWELD",
     "Tipo": "Polvo aluminotérmico para soldadura exotérmica",
-    "Composición": "Óxido de cobre, cobre, aluminio",
+    "Composición": "Óxido de dicobre, cobre, estaño, fluoruro de calcio",
     "Método": "Soldadura por termofusión (Cadweld)",
     "Temperatura de reacción": "Aproximadamente 2.500°C",
     "Material de unión": "Cobre molecular",
@@ -34,6 +34,9 @@
     "Cantidad por caja": "20 cartuchos"
   },
   "image": "/assets/img/products/cex-001.webp",
+  "images": [
+    "/assets/img/products/cex-001-alt2.webp"
+  ],
   "inStock": true,
   "badge": null
 }

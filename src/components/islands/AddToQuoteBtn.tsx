@@ -10,26 +10,6 @@ interface Props {
   inStock?: boolean;
 }
 
-const btnStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: 'var(--spacing-2)',
-  padding: 'var(--spacing-2) var(--spacing-4)',
-  background: 'var(--color-accent-dark)',
-  color: 'var(--color-white)',
-  borderRadius: 'var(--radius-md)',
-  fontSize: 'var(--font-size-sm)',
-  fontWeight: 'var(--font-weight-semibold)',
-  border: 'none',
-  cursor: 'pointer',
-  transition: 'background 300ms ease, transform 300ms ease',
-};
-
-const btnAddedStyle = {
-  ...btnStyle,
-  background: 'var(--color-success)',
-};
-
 /** Add-to-quote button. Mount with client:visible on ProductCard. */
 export default function AddToQuoteBtn({ sku, title, category, image, inStock = true }: Props) {
   const cart = useStore($cart);
@@ -46,7 +26,7 @@ export default function AddToQuoteBtn({ sku, title, category, image, inStock = t
   if (!inStock) {
     return (
       <button
-        style={{ ...btnStyle, background: 'var(--color-gray-400)', cursor: 'not-allowed', opacity: '0.7' }}
+        class="btn-add-quote no-stock"
         disabled
         aria-label={`${title} sin stock`}
       >
@@ -61,9 +41,9 @@ export default function AddToQuoteBtn({ sku, title, category, image, inStock = t
 
   return (
     <button
-      style={existing ? btnAddedStyle : btnStyle}
+      class={`btn-add-quote ${existing ? 'added' : ''}`}
       onClick={handleClick}
-      aria-label={existing ? `${title} en cotización` : `Agregar ${title} a cotización`}
+      aria-label={existing ? `Agregado ${title} (${existing.quantity})` : `Cotizar ${title}`}
     >
       {existing ? (
         <>
