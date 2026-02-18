@@ -26,10 +26,15 @@ npm run build 2>&1 | Select-Object -Last 3
 $serveJob = Start-Process -FilePath "npx" -ArgumentList "-y","serve","dist","-l","4321" -PassThru -WindowStyle Hidden
 Start-Sleep -Seconds 3
 
+# Buscar cloudflared dinámicamente (funciona en cualquier máquina)
+$cfExe = Get-ChildItem -Recurse -Filter "cloudflared.exe" -Path "$env:LOCALAPPDATA\Microsoft\WinGet","C:\Program Files","C:\Program Files (x86)" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName -First 1
+if (-not $cfExe) { $cfExe = (Get-Command cloudflared -ErrorAction SilentlyContinue).Source }
+if (-not $cfExe) { Write-Host "ERROR: cloudflared no encontrado. Instalar con: winget install Cloudflare.cloudflared" -ForegroundColor Red; return }
+
 # Lanzar cloudflared y capturar la URL del túnel desde su log
 $logFile = "$env:TEMP\cloudflared_tunnel.log"
 Remove-Item $logFile -ErrorAction SilentlyContinue
-$cfProcess = Start-Process -FilePath 'C:\Users\V\AppData\Local\Microsoft\WinGet\Packages\Cloudflare.cloudflared_Microsoft.Winget.Source_8wekyb3d8bbwe\cloudflared.exe' -ArgumentList 'tunnel','--url','http://localhost:4321' -RedirectStandardError $logFile -PassThru -WindowStyle Hidden
+$cfProcess = Start-Process -FilePath $cfExe -ArgumentList 'tunnel','--url','http://localhost:4321' -RedirectStandardError $logFile -PassThru -WindowStyle Hidden
 
 # Esperar hasta 30s a que aparezca la URL en el log
 $url = $null
